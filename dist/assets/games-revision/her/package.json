@@ -1,0 +1,8 @@
+{
+  "name":"her-sound-inline-original-scenes",
+  "private":true,
+  "type":"module",
+  "scripts":{"build":"node build.mjs"},
+  "dependencies":{"react":"19.2.6","react-dom":"19.2.6"},
+  "devDependencies":{"vite":"8.0.13","@vitejs/plugin-react":"6.0.2","postcss":"8.5.6"}
+}

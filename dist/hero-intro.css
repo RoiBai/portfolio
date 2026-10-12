@@ -1,0 +1,10 @@
+/* Full-viewport arrival, then the original compact name band. */
+.hero-stage{position:relative;height:100vh;height:100svh;background:#050505}
+.hero-stage #name-hero{position:sticky;top:0;height:var(--intro-scene-height,100%);min-height:0}
+.hero-scroll-cue{position:absolute;z-index:3;bottom:24px;left:50%;translate:-50% 0;width:150px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:12px;color:#b4b6b9;opacity:var(--intro-cue-opacity,1);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.hero-scroll-cue svg{width:14px;height:8px;fill:none;stroke:currentColor;stroke-width:1}
+.hero-scroll-cue span{font:400 9px/1.3 Inter,Arial,sans-serif;letter-spacing:.19em;text-transform:uppercase}
+.hero-scroll-cue:is(:hover,:focus-visible){color:#fff}
+.hero-scroll-cue:focus-visible{outline:1px solid #85878c;outline-offset:8px}
+.hero-scroll-cue[aria-hidden="true"]{pointer-events:none;visibility:hidden}
+@media(max-width:699px){.hero-scroll-cue{bottom:22px}}

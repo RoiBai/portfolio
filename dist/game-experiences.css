@@ -1,0 +1,92 @@
+@import url('/assets/games-revision/her/original-scoped.css');
+/* Native case-page excerpts. Original artwork and mechanics retain their source design. */
+.game-experience{width:100%;min-width:0;margin:22px 0;color:inherit;isolation:isolate}
+.game-experience *{box-sizing:border-box}
+.game-experience button,.game-experience input{font:inherit;touch-action:manipulation}
+.game-experience button:focus-visible,.game-experience input:focus-visible,.game-experience a:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+.gx-instruction{font-size:14px!important;line-height:1.55!important;max-width:740px;margin:0 0 20px!important}
+.gx-inline-status,.gx-caption{font-size:12px!important;line-height:1.5!important;min-height:1.5em;margin:14px 0 0!important}
+.gx-her-island{--story-canvas-width:1200px!important;background:transparent!important;color:#392f2a;font-family:Georgia,'Times New Roman',serif;min-height:0}
+.gx-her-island .player-level-section{width:100%;max-width:1200px;margin:0 auto;padding:0}
+.gx-her-island .editor-shell,.gx-her-island .workspace,.gx-her-island .canvas-wrap{min-height:0;background:transparent}
+.gx-her-island .game-board,.gx-her-island .final-chapter{background:transparent!important}
+.gx-her-island .final-chapter{width:100%!important;max-width:100%}
+.gx-her-island .level-chapter-heading strong,.gx-her-island .final-chapter-heading strong{font-family:Georgia,serif;font-size:clamp(24px,2.8cqw,43px)}
+.gx-her-island .prompt-object strong{font-family:Georgia,serif;font-size:clamp(12px,1.4cqw,21px);line-height:1.4;white-space:normal}
+.gx-her-island .choice-caption{font-family:Georgia,serif;font-size:clamp(10px,1.12cqw,17px);line-height:1.2;white-space:normal;text-align:center}
+.gx-her-island .level-choice-instruction,.gx-her-island .level-clue-slot,.gx-her-island .final-chapter-caption,.gx-her-island .final-chapter-prompt{font-family:Georgia,serif;font-size:clamp(11px,1.14cqw,18px);line-height:1.45;white-space:normal}
+.gx-her-island .level-clue-slot{padding-inline:8px}
+.gx-her-island .gx-loading{padding:80px 20px;text-align:center}
+.gx-her-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;margin:0 0 26px;padding:0}
+.gx-her-guide li{border-left:2px solid currentColor;padding-left:12px;font-size:12px;line-height:1.5}
+.gx-her-guide strong,.gx-her-guide span{display:block}.gx-her-guide span{opacity:.75;margin-top:4px}
+.gx-wind-track{--gx-wind-travel:clamp(660px,90vh,960px);height:calc(var(--gx-wind-panel-height,540px) + var(--gx-wind-travel));position:relative}
+.gx-wind-panel{position:sticky;top:80px;padding:12px 0 20px;background:var(--bg,#f2eee5)}
+.gx-wind-art{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;align-items:start}
+.gx-wind-art figure{margin:0;min-width:0}
+.gx-wind-art canvas,.gx-wind-art img{display:block;width:100%;height:auto;aspect-ratio:536/360;object-fit:contain}
+.gx-wind-art figcaption{display:block;padding:0;font-size:10px;line-height:1.3;margin-top:4px;opacity:.6}
+.gx-wind-control{display:flex;gap:16px;align-items:center;width:min(600px,100%);margin:28px auto 0;font-size:12px}
+.gx-wind-control input{flex:1;min-width:0;accent-color:#9a5b47;height:32px}
+.gx-animal-choices{display:flex;justify-content:center;align-items:end;gap:7%;border-bottom:1px solid currentColor;padding-bottom:20px}
+.gx-animal{border:0!important;border-radius:0!important;padding:0 10px!important;background:transparent!important;color:inherit;display:grid;justify-items:center;width:40%;max-width:290px;cursor:pointer}
+.gx-animal img{width:100%;height:auto;max-height:240px;object-fit:contain;filter:grayscale(.75);opacity:.72;transition:filter .2s,opacity .2s,transform .2s}
+.gx-animal:hover img,.gx-animal:focus-visible img,.gx-animal[aria-pressed=true] img{filter:none;opacity:1;transform:translateY(-4px)}
+.gx-animal span{font-size:20px;margin-top:6px}
+.gx-animal small{font-size:12px;margin-top:5px}
+.gx-animal[aria-pressed=true] span{text-decoration:underline;text-underline-offset:6px}
+.gx-animal-record{max-width:750px;margin:22px auto 0;min-height:265px}
+.gx-animal-record h3{font-size:clamp(23px,3vw,34px);line-height:1.1;margin:9px 0 16px}
+.gx-animal-record p{font-size:15px;line-height:1.6;margin:12px 0}
+.gx-animal-record .gx-record-date{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.gx-animal-record .gx-record-note{font-size:13px;opacity:.8}
+.gx-sources{display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:18px}
+.gx-sources a{font-size:12px;text-underline-offset:4px}
+@media(max-width:760px){
+ .gx-her-island .player-level-section{width:100%;padding:0}
+ .gx-her-island .prompt-object strong{font-size:15px!important}
+ .gx-her-island .level-chapter-heading strong{font-size:27px!important}
+ .gx-her-island .choice-caption{font-size:12px!important}
+ .gx-her-island .level-choice-instruction,.gx-her-island .level-clue-slot,.gx-her-island .final-chapter-caption,.gx-her-island .final-chapter-prompt{font-size:14px!important}
+ .gx-her-guide{grid-template-columns:1fr;gap:9px}.gx-her-guide li{font-size:12px}
+ .gx-wind-art{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.gx-wind-art figcaption{font-size:9px}.gx-wind-panel{top:96px}.gx-wind-panel .gx-instruction{font-size:12px!important;line-height:1.45!important;margin-bottom:12px!important}
+ .gx-animal img{max-height:190px}.gx-animal span{font-size:18px}.gx-animal-record{min-height:380px}
+}
+@media(prefers-reduced-motion:reduce){.game-experience *,.game-experience *::before,.game-experience *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Original CandleArchive wax/flame design, scoped; no external embed. */
+.gx-candles .candle-scene { position:relative; min-height:320px; padding:54px clamp(14px,2.2vw,30px) 34px; overflow:hidden; perspective:900px; border:1px solid rgba(246,240,233,.34); background:linear-gradient(180deg,rgba(20,29,24,.68),rgba(34,45,38,.78)); box-shadow:9px 10px 0 rgba(31,35,30,.35); isolation:isolate; }
+.gx-candles .candle-scene::before { content:""; position:absolute; inset:0; z-index:-1; opacity:.25; background-image:repeating-linear-gradient(92deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 9px),radial-gradient(circle at 8% 16%,rgba(255,213,137,.2),transparent 28%); }
+.gx-candles .candle-wall { position:absolute; left:8%; right:8%; bottom:64px; height:150px; z-index:-1; background:radial-gradient(ellipse at 7% 76%,rgba(255,177,79,.16),transparent 23%),linear-gradient(90deg,rgba(255,255,255,.025),transparent 22%,rgba(0,0,0,.08)); transform:rotateX(6deg); }
+.gx-candles .candle-row { min-height:214px; display:flex; align-items:end; justify-content:space-between; gap:clamp(4px,.75vw,12px); transform:rotateX(2deg); transform-style:preserve-3d; }
+.gx-candles .candle { --candle-h:clamp(108px,9.4vw,150px); --wax-dark:#5e625b; --wax-mid:#9b9a8e; --wax-light:#d3cbb4; position:relative; flex:1 1 0; min-width:34px; max-width:58px; height:calc(var(--candle-h) + 47px); padding:0; border:0; background:transparent; cursor:pointer; transform-style:preserve-3d; filter:drop-shadow(5px 8px 5px rgba(0,0,0,.28)); }
+.gx-candles .candle:nth-child(3n+2) { --candle-h:clamp(96px,8.4vw,134px); }
+.gx-candles .candle:nth-child(4n) { --candle-h:clamp(116px,10.1vw,160px); }
+.gx-candles .candle:focus-visible { outline:1px dashed var(--paper-light); outline-offset:6px; }
+.gx-candles .candle-body { position:absolute; left:10%; right:10%; bottom:8px; height:var(--candle-h); overflow:hidden; border:1px solid rgba(24,25,22,.66); border-top:0; border-radius:3px 3px 9px 9px/2px 2px 5px 5px; background:radial-gradient(ellipse at 32% 18%,rgba(255,255,255,.32),transparent 27%),radial-gradient(ellipse at 72% 72%,rgba(32,30,27,.18),transparent 48%),linear-gradient(90deg,var(--wax-dark) 0%,var(--wax-mid) 17%,var(--wax-light) 40%,#b8b4a4 60%,#797d74 82%,#4d524c 100%); box-shadow:inset 6px 0 8px rgba(255,255,255,.1),inset -9px 0 12px rgba(0,0,0,.22),inset 0 -14px 18px rgba(0,0,0,.1),0 1px 0 rgba(255,255,255,.08); transition:filter 190ms ease,background 190ms ease; }
+.gx-candles .candle-body::before { content:""; position:absolute; left:20%; top:2%; width:20%; height:88%; border-radius:48%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent); filter:blur(1px); transform:skewX(-3deg); }
+.gx-candles .candle-body::after { content:""; position:absolute; inset:0; opacity:.3; background:repeating-linear-gradient(94deg,transparent 0 8px,rgba(28,27,23,.1) 9px,transparent 10px 17px); mix-blend-mode:multiply; }
+.gx-candles .candle-body i { position:absolute; left:53%; top:-1px; z-index:2; width:14%; height:34%; border-radius:0 0 62% 48%; background:linear-gradient(90deg,rgba(67,65,58,.28),rgba(226,215,187,.7) 48%,rgba(65,65,59,.22)); box-shadow:2px 2px 2px rgba(0,0,0,.08); }
+.gx-candles .candle-rim { position:absolute; left:10%; right:10%; bottom:calc(var(--candle-h) + 1px); height:14px; z-index:3; border:1px solid rgba(24,25,22,.67); border-radius:50%; background:radial-gradient(ellipse at 49% 54%,#242621 0 11%,#5a5d56 15% 24%,#bcb7a4 29% 48%,#ded5bc 52% 64%,#62665f 76% 100%); box-shadow:inset 0 3px 2px rgba(255,255,255,.22),inset 0 -3px 3px rgba(0,0,0,.22),0 2px 2px rgba(0,0,0,.25); transform:rotate(-1deg); }
+.gx-candles .candle:nth-child(even) .candle-rim { transform:rotate(1.5deg); }
+.gx-candles .candle-base { position:absolute; left:13%; right:13%; bottom:5px; height:8px; z-index:-1; border-radius:50%; background:rgba(17,20,17,.58); filter:blur(2px); transform:translateY(4px); }
+.gx-candles .candle-wick { position:absolute; left:calc(50% - 1px); bottom:calc(var(--candle-h) + 10px); width:2px; height:15px; z-index:4; border-radius:2px; background:#171814; transform:rotate(2deg); }
+.gx-candles .candle-flame { position:absolute; left:50%; bottom:calc(var(--candle-h) + 21px); width:23px; height:38px; z-index:5; opacity:0; transform:translateX(-50%) scale(.35); transform-origin:50% 100%; transition:opacity 180ms ease,transform 180ms ease; }
+.gx-candles .candle-flame::before { content:""; position:absolute; inset:-20px -24px -22px; border-radius:50%; background:radial-gradient(circle,rgba(255,189,75,.4),rgba(255,148,41,.14) 35%,transparent 70%); filter:blur(7px); }
+.gx-candles .candle-flame i { position:absolute; inset:0; display:block; border-radius:58% 42% 58% 42%/70% 46% 54% 30%; background:radial-gradient(ellipse at 51% 73%,#fff5bd 0 16%,#ffd765 18% 45%,#e17836 65%,rgba(176,54,24,.75) 82%); box-shadow:0 0 9px rgba(255,199,83,.68); transform:rotate(5deg); }
+.gx-candles .candle.is-lit .candle-flame { opacity:1; transform:translateX(-50%) scale(1); animation:gx-flame-breathe 2.8s ease-in-out infinite; }
+.gx-candles .candle.is-lit .candle-body { --wax-dark:#83643d; --wax-mid:#c49a61; --wax-light:#efd59f; filter:saturate(.9) brightness(1.08); }
+.gx-candles .candle.is-lit .candle-rim { background:radial-gradient(ellipse at 49% 52%,#3d2819 0 11%,#8d6536 15% 26%,#d6ad6f 30% 50%,#efd49d 54% 65%,#886945 77% 100%); }
+.gx-candles .candle.is-lit { filter:drop-shadow(0 0 10px rgba(255,184,72,.22)) drop-shadow(5px 7px 4px rgba(0,0,0,.22)); }
+.gx-candles .candle.is-dark:hover .candle-rim { background:radial-gradient(ellipse at center,#171814 0 18%,#b0ad9b 21% 47%,#ddd5bd 50% 61%,#777a72 72%); }
+@keyframes gx-flame-breathe { 0%,100% { transform:translateX(-50%) scale(1) rotate(-1deg); } 45% { transform:translateX(-50%) scale(.94,1.07) rotate(2deg); } 70% { transform:translateX(-50%) scale(1.04,.97) rotate(-2deg); } }
+.gx-candles .candle-shelf { position:absolute; left:-3%; right:-3%; bottom:31px; height:32px; z-index:-1; border-top:1px solid rgba(246,240,233,.38); background:linear-gradient(180deg,#777468,#4a4d47 46%,#2f3430); box-shadow:0 18px 22px rgba(0,0,0,.34); transform:rotateX(57deg); transform-origin:top; }
+.gx-candles .candle-status { position:absolute; right:14px; bottom:8px; margin:0; font:500 .52rem var(--font-mono); letter-spacing:.08em; color:rgba(246,240,233,.64); }
+.gx-candles .candle-scene{min-height:290px;max-width:850px;margin:auto}.gx-candles .candle-status{font:11px/1.4 Inter,sans-serif}.gx-candles .candle:focus-visible{outline-color:#f1d49f}.gx-candles .candle[aria-disabled=true]{cursor:default}.gx-candles .candle{transition:none}
+/* Keep the interactive buttons on a flat hit plane. The wax and shelf retain
+   their dimensional shading without nested preserve-3d click-through gaps. */
+.gx-candles .candle-row{transform:none;transform-style:flat}
+.gx-candles .candle{transform-style:flat}
+@keyframes gx-flame-breathe{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(.94,1.05)}}
+@media(max-width:600px){.gx-candles .candle-scene{padding:28px 8px 34px;min-height:260px}.gx-candles .candle-row{gap:2px;min-height:194px}.gx-candles .candle{min-width:24px;--candle-h:100px}.gx-candles .candle:nth-child(3n+2){--candle-h:88px}.gx-candles .candle:nth-child(4n){--candle-h:108px}}
+@media(prefers-reduced-motion:reduce){.gx-candles .candle,.gx-candles .candle *{animation:none!important;transition:none!important}}

@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+site/
+workbench/
+tripo/
+*.zip
+.env*
+.site-files.json

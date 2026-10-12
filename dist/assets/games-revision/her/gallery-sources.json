@@ -1,0 +1,151 @@
+{
+  "fileKey": "zESmtcPKcAs7hQf7zKHfID",
+  "source4xArchive": "workbench/her-original-4x",
+  "delivery": "2x native Figma export encoded as lossless WebP, pixel-exact verified",
+  "files": [
+    {
+      "src": "/assets/games-revision/her/wind/01.webp",
+      "sourceNode": "39:1316",
+      "width": 1072,
+      "height": 719,
+      "bytes": 815772,
+      "sha256": "d4ee8bca1d35bf9e69cbcaa58e58d2ad2e7983f013e4995b745e57df0337f289"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/02.webp",
+      "sourceNode": "39:1331",
+      "width": 1072,
+      "height": 719,
+      "bytes": 900236,
+      "sha256": "3c59e94ce087abd6d09c616d207552ca85f911575bf7655b46adcdb3426fb36f"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/03.webp",
+      "sourceNode": "39:1337",
+      "width": 1072,
+      "height": 719,
+      "bytes": 987324,
+      "sha256": "8f39b4fdd3b56cbd900187ebbfc7737375287ad7e66a78eff169bf27dd3a64eb"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/04.webp",
+      "sourceNode": "39:1374",
+      "width": 1072,
+      "height": 719,
+      "bytes": 974302,
+      "sha256": "c5c5964604c7801046b5d01d1071a1e818142ec897a628e07c0f7b4432e69257"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/05.webp",
+      "sourceNode": "39:1390",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1000570,
+      "sha256": "f2f2750c096d766420f4cfa41a817b69cc1bc690066dc8217fd2f55edf621bfd"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/06.webp",
+      "sourceNode": "39:1394",
+      "width": 1072,
+      "height": 719,
+      "bytes": 849378,
+      "sha256": "23b58eeeb2a993598fad185723f3ca2deb830bc0a31383bcbe55668bc461798a"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/07.webp",
+      "sourceNode": "39:1425",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1071360,
+      "sha256": "4604a128e490ac5a8d7105f1fa926ec5baf3f796f3eb66421d921bd2deec6e27"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/08.webp",
+      "sourceNode": "39:1427",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1042160,
+      "sha256": "38e8ee2cb6ad344ea8497c2f3e9e1c6ecf126acac51d9a7ff4d06924506c3605"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/09.webp",
+      "sourceNode": "39:1429",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1117634,
+      "sha256": "5381a00c927cfe41b1a598b6f4689b1ba6876e3813ad5b41e4ff78a610d4e164"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/10.webp",
+      "sourceNode": "39:1472",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1082852,
+      "sha256": "c81d546a907726794f045c6e86764ada30b82a66fa42062162234201200ae450"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/11.webp",
+      "sourceNode": "39:1455",
+      "width": 1072,
+      "height": 719,
+      "bytes": 964058,
+      "sha256": "cc56c3255c685c7b59350c3dd54aac9c1759c46f2f0e4ae6d0b58a31f42065c9"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/12.webp",
+      "sourceNode": "39:1476",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1006756,
+      "sha256": "f77139314da270af770f2db7b0337cff738371837f9a906f197d25da77223e69"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/13.webp",
+      "sourceNode": "39:1524",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1073408,
+      "sha256": "eab5bb5267c3d2b5d5a365868a3973abb775709388bd53a5ff150fb881ef10bb"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/14.webp",
+      "sourceNode": "39:1495",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1015904,
+      "sha256": "0258ee86946beb85619d9584115d0a730bc718079156c9b119ed8382c2522595"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/15.webp",
+      "sourceNode": "39:1497",
+      "width": 1072,
+      "height": 719,
+      "bytes": 983816,
+      "sha256": "2bbd8b41b9dc085513b7cc529d8adff121bd6f13387ca5ea67b79f46b8245075"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/16.webp",
+      "sourceNode": "39:1576",
+      "width": 1072,
+      "height": 719,
+      "bytes": 948456,
+      "sha256": "be8a43f23bc88f3812c95d20559af1b18aafedbe82671c906d0750fa73233d7a"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/17.webp",
+      "sourceNode": "39:1587",
+      "width": 1072,
+      "height": 719,
+      "bytes": 873818,
+      "sha256": "aae3aab2c84db47d5bdb1afc4e89f28e41c1b560e96d91c411ea88ff1b33a031"
+    },
+    {
+      "src": "/assets/games-revision/her/wind/18.webp",
+      "sourceNode": "39:1603",
+      "width": 1072,
+      "height": 719,
+      "bytes": 1003168,
+      "sha256": "a7f703cd801a8aebce0ae2047a184e971d680691f11b937ff7721cb4a210a29e"
+    }
+  ]
+}

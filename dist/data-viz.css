@@ -1,0 +1,40 @@
+/* Native project evidence. All colors inherit the case study's own palette. */
+.native-data-visual{--viz-progress:1;--viz-panel:color-mix(in srgb,var(--ink) 4%,var(--bg));width:100%;max-width:100%;min-width:0;margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
+.dv-shell{border:1px solid var(--line);border-radius:3px;padding:clamp(18px,2vw,30px);background:var(--viz-panel)}
+.dv-kicker{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.dv-title{font-family:inherit;font-size:clamp(23px,2.1vw,33px);font-weight:500;line-height:1.18;letter-spacing:-.025em;margin:0 0 12px;text-wrap:balance}
+.dv-description,.dv-note{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+.dv-panels{display:grid;gap:28px;margin-top:26px}
+.dv-panel+.dv-panel{border-top:1px solid var(--line);padding-top:23px}
+.dv-panel-title{font-size:15px;font-weight:500;line-height:1.4;margin:0 0 8px}
+.dv-unit{font-size:10px;line-height:1.5;color:var(--muted);margin:0 0 19px}
+.dv-rows{display:grid;gap:17px}
+.dv-row-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:7px;font-size:12px;line-height:1.4}
+.dv-row-label{max-width:76%;overflow-wrap:anywhere}
+.dv-value{font-size:16px;white-space:nowrap;font-weight:500;font-variant-numeric:tabular-nums}
+.dv-track{height:9px;background:color-mix(in srgb,var(--ink) 9%,var(--bg));position:relative;overflow:hidden;border-radius:1px}
+.dv-fill{display:block;height:100%;width:var(--bar-size);background:var(--accent);transform:scaleX(var(--viz-progress));transform-origin:left}
+.dv-row[data-series="comparison"] .dv-fill{background:color-mix(in srgb,var(--ink) 45%,var(--bg))}
+.dv-row[data-series="comparison"] .dv-value{color:var(--muted)}
+.dv-axis{display:flex;justify-content:space-between;font-size:9px;line-height:1.4;color:var(--muted);margin-top:8px}
+.dv-panel .dv-note{margin-top:14px;font-size:11px}
+.dv-scope{border-top:1px solid var(--line);padding-top:18px;margin-top:25px;font-size:11px;line-height:1.7;color:var(--muted)}
+.dv-table-disclosure{margin-top:15px;font-size:11px;color:var(--muted)}
+.dv-table-disclosure>summary{cursor:pointer;width:fit-content;line-height:1.5;padding:5px 0;border-bottom:1px solid var(--line)}
+.dv-table-disclosure>summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.dv-table-wrap{overflow:auto;margin-top:12px;max-width:100%}
+.dv-table{border-collapse:collapse;width:100%;font-size:11px;text-align:left;line-height:1.5}
+.dv-table caption{text-align:left;font-size:11px;margin-bottom:9px;color:var(--ink)}
+.dv-table :is(th,td){padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top;font-weight:400}
+.dv-table th{font-weight:600;color:var(--ink)}
+.dv-table td:last-child{white-space:nowrap}
+.dv-steps{list-style:none;padding:0;margin:25px 0 0;display:grid;gap:0;counter-reset:dv-step}
+.dv-step{display:grid;grid-template-columns:28px 1fr;gap:13px;padding:16px 0;border-top:1px solid var(--line);position:relative}
+.dv-step::before{counter-increment:dv-step;content:counter(dv-step,decimal-leading-zero);font-size:10px;color:var(--accent);padding-top:3px}
+.dv-step h4{font-size:15px;font-weight:500;line-height:1.4;margin:0 0 5px}
+.dv-step p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+.dv-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+[data-counter-display]{font-variant-numeric:tabular-nums}
+.stats strong>[data-counter-display]{display:inline;font:inherit;letter-spacing:inherit;line-height:inherit;margin:0;max-width:none;color:inherit}
+@media(max-width:640px){.dv-shell{padding:18px 15px}.dv-title{font-size:24px}.dv-row-head{font-size:11px}.dv-value{font-size:15px}.dv-panels{gap:23px}.dv-row-label{max-width:72%}.dv-table :is(th,td){padding:7px 5px}}
+@media(prefers-reduced-motion:reduce){.native-data-visual{--viz-progress:1!important}.dv-fill{transform:none!important}}

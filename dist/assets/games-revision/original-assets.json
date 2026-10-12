@@ -1,0 +1,830 @@
+[
+  {
+    "path": "/assets/games-revision/ourworld/laika-sputnik-2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "17b8ddf9660f03c778d17714c1a9fdb600890448c12aee5d8acad54c93d3708e"
+  },
+  {
+    "path": "/assets/games-revision/ourworld/chunee-exeter-exchange.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "ad5bf75eba0c9b99fc09a51a7fd9187f5cb79d4170fad7ef5484e4b06ecb8b56"
+  },
+  {
+    "path": "/assets/games-revision/ourworld/freya-oslo-walrus.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "14bb17f7e7bc9b6eb94d9a4b97c9ef1661ae90cea077e510737320fda3f64940"
+  },
+  {
+    "path": "/assets/games-revision/her/figma-9068.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "fee9db517741e1347bda88052e81908f9b49512071de8ef59286373e7a18bd66"
+  },
+  {
+    "path": "/assets/games-revision/her/figma-9059.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "1c5881e09f4f96d64580119b8b14ca5279db725afb59613546db016d3b24930d"
+  },
+  {
+    "path": "/assets/games-revision/her/figma-9116.png",
+    "size": [
+      1023,
+      1537
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "17eadc61c4224d072a55c7d81f6a32b7fb4752bfaef097bc2a28038f531959b8"
+  },
+  {
+    "path": "/assets/games-revision/her/paper-background.png",
+    "size": [
+      1728,
+      1117
+    ],
+    "alphaExtrema": [
+      255,
+      255
+    ],
+    "sha256": "d73c61f03cca5e6da6d74eada0dcfaeba6e9382814fd59dd296b694185f51bea"
+  },
+  {
+    "path": "/assets/games-revision/her/ui/hint-magnifier.png",
+    "size": [
+      80,
+      80
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "f8f80122734bce284f6676396fa3b33921b360df8cc5f875cd9d7599933e329e"
+  },
+  {
+    "path": "/assets/games-revision/her/wind/06.png",
+    "size": [
+      265,
+      178
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "48ed5d4249dd22da29d4568daeeacb7afc8aab3c09d27e7ec242fe78a0956dc0"
+  },
+  {
+    "path": "/assets/games-revision/her/wind/07.png",
+    "size": [
+      265,
+      177
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "598a4fd8dd9dcf72a133687980c8e72443fb29b9b47173b8190285b7e328e452"
+  },
+  {
+    "path": "/assets/games-revision/her/wind/08.png",
+    "size": [
+      264,
+      177
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "46f457e9e3ed864f5d5e5ab233bbdc063bc26ce7eef100e7f60531a22fc7d40b"
+  },
+  {
+    "path": "/assets/games-revision/her/game/solid-scene-shangguan-waner.png",
+    "size": [
+      531,
+      354
+    ],
+    "alphaExtrema": [
+      255,
+      255
+    ],
+    "sha256": "e843d76bcafc74d40d8c605c146fb85b45949418c7e673fcc22c26e975c781ea"
+  },
+  {
+    "path": "/assets/games-revision/her/game/solid-scene-generic.png",
+    "size": [
+      531,
+      354
+    ],
+    "alphaExtrema": [
+      255,
+      255
+    ],
+    "sha256": "c59ea15a625b392c7e9c28182ec1b3b86e2c0fb7d9becab19a1baacf7a32b186"
+  },
+  {
+    "path": "/assets/games-revision/her/game/slot-frame.png",
+    "size": [
+      547,
+      369
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "33afbfe2e21d5b1c6e0d7d1a24a258ab0c91fb789832fe3150d37a873cef6780"
+  },
+  {
+    "path": "/assets/games-revision/her/game/bubble.png",
+    "size": [
+      169,
+      124
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "98002f4173ed7d8d6096196fa7e783ad9513c01f01ef6670b34447b817489f44"
+  },
+  {
+    "path": "/assets/games-revision/her/game/princess-taiping-close-side.png",
+    "size": [
+      273,
+      354
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "c284590b30fe49a6133f922877ec137f5ca01cae0ef66b4c8af642f29a7cc4b4"
+  },
+  {
+    "path": "/assets/games-revision/her/game/edict-large.png",
+    "size": [
+      273,
+      354
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "9960013188b4301eacfe8f2cb4ff988c3dbe9f1f3d8c2c857fb9335e195b4f22"
+  },
+  {
+    "path": "/assets/games-revision/her/game/emperor-zhongzong-close-side.png",
+    "size": [
+      310,
+      354
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "68387f8fbdbccca57f9bdf0ee58d86d01094ff2c2463f893bb18f4eb1ef8a371"
+  },
+  {
+    "path": "/assets/games-revision/her/game/scene-royal-deaths.png",
+    "size": [
+      531,
+      354
+    ],
+    "alphaExtrema": [
+      255,
+      255
+    ],
+    "sha256": "dd7a385306f33791671b7e3557cf1414500281e57227306b3519ef07e30f2746"
+  },
+  {
+    "path": "/assets/games-revision/her/game/li-chongmao-close-side.png",
+    "size": [
+      273,
+      354
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "0eee81a7028369bf4cfb570701858cc4721d0bab8fcce331deb260399a0daaa9"
+  },
+  {
+    "path": "/assets/games-revision/her/game/slot-empty.png",
+    "size": [
+      547,
+      369
+    ],
+    "alphaExtrema": [
+      0,
+      196
+    ],
+    "sha256": "5d3a868188a5ad3250d5066b141e8b79ea7c5323fd888d4a5e76dc701707a620"
+  },
+  {
+    "path": "/assets/games-revision/her/game/solid-scene-princess-taiping.png",
+    "size": [
+      531,
+      354
+    ],
+    "alphaExtrema": [
+      255,
+      255
+    ],
+    "sha256": "864f4f3a13a589f31ddb546e6cc8e6e16883471efc7618a8e9f1e17bb8f9cedb"
+  },
+  {
+    "path": "/assets/games-revision/her/game/shangguan-waner-close-side.png",
+    "size": [
+      273,
+      354
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "c37b3fc9cdf901a830722197c78e6a7cf7f7d166f776f88432f7f4d853820acf"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-area-frame.png",
+    "size": [
+      1615,
+      250
+    ],
+    "alphaExtrema": [
+      0,
+      196
+    ],
+    "sha256": "2715320d5e4d2af87022bc3dd7ee75bc688402d0371f550aad1b8adfff1ca37f"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-three/shangguan-waner-choice.png",
+    "size": [
+      200,
+      197
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "ab45bb08d2ec998815de6b4e858028839e674a1ac3adbe9a811a114034195aa8"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-three/princess-taiping-choice.png",
+    "size": [
+      200,
+      197
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "55b16133fd9cfb287aa9c18ce19496ab3b42d0662ab5357c184922f00dad113a"
+  },
+  {
+    "path": "/assets/games-revision/her/game/death/emperor-zhongzong-death-avatar.png",
+    "size": [
+      193,
+      198
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "367503e19eec4dec4533bc13e12b383325f5c4bc22ba18bc588b861fa17240aa"
+  },
+  {
+    "path": "/assets/games-revision/her/game/death/shangguan-waner-death-avatar.png",
+    "size": [
+      193,
+      193
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "9fc7dc8c7bffd2d3a2f41213ea839a2e3bf5c1a042c661fb73cab60f5b85cf05"
+  },
+  {
+    "path": "/assets/games-revision/her/game/death/li-chongmao-death-avatar.png",
+    "size": [
+      176,
+      197
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "96345c5abff364a024d8b3fc0ebceba7e1adcb77afd4b4b2d2cc26ca08b2bee4"
+  },
+  {
+    "path": "/assets/games-revision/her/game/death/princess-taiping-death-avatar.png",
+    "size": [
+      183,
+      193
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "6b68ef662d2d5f78ec8ebf79c052cfbbfd5fb2c5c14fd064490ad6a9153c39df"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-four/balance-large-icon.png",
+    "size": [
+      819,
+      391
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "c5650a9fb2ef484309a864249edb8f350cb69e6292d68ed4f1bfc5530bc425b2"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/empress-wei-choice.png",
+    "size": [
+      196,
+      197
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "22649c0a2e6c2607bbc504c91a698d41edab88ac76553df6723fabc6b0e4e995"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/emperor-zhongzong-choice.png",
+    "size": [
+      196,
+      197
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "c6de122918bbc827ebca86b3a1e9b3225dcc286c41a604d89afd5cea92fde7b2"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/li-chongmao-choice.png",
+    "size": [
+      190,
+      197
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "0ceaa9b2103ad870a418e733c277bc055521fe56d793a56dc59157f37d30900c"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/center-line.png",
+    "size": [
+      4,
+      135
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "a98fc6ceb364a8e8a412ff5e5e9e426d094e40af3f2a5f2c3376af9abd651439"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/empress-wei-background.png",
+    "size": [
+      662,
+      432
+    ],
+    "alphaExtrema": [
+      255,
+      255
+    ],
+    "sha256": "93814b9f00d9abcc38291cb1f1b60586ba147ff6f5e712c78d706010d39da6b8"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/top-left.png",
+    "size": [
+      265,
+      226
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "096473cc252092b1294dc17926465f091b24601c16bcf9fb93ac2630a7934e81"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/li-dan-close-side.png",
+    "size": [
+      310,
+      354
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "e7f336ba919c893919f252e86516697a6352e42e14e16b0a9d56de3cea468f99"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/top-right.png",
+    "size": [
+      272,
+      226
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "d645f9e4232542735c4f934c317499d6ea30e124da45432f5c4d1c3090ad910e"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/empress-wei-close-side.png",
+    "size": [
+      310,
+      354
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "8a19f4f62cd169a3df85094017cdfd1183749c141e6d42a278570ef05f3726b0"
+  },
+  {
+    "path": "/assets/games-revision/her/game/level-five/li-dan-choice.png",
+    "size": [
+      196,
+      197
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "ac16636cc08d62b2cd550b6f2c72e16f5d90f6a440301add67aa284ded966793"
+  },
+  {
+    "path": "/assets/games-revision/her/game/final-chapter/resolved-1.png",
+    "size": [
+      536,
+      360
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "9305700ca7bdd7a18124ed9c131b8c8a8de3884b38602afb6cb811d42780e832"
+  },
+  {
+    "path": "/assets/games-revision/her/game/final-chapter/resolved-2.png",
+    "size": [
+      536,
+      360
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "ab036eee6e0202dcb374088cedcced1657cea329b0fe6407607e04aff32e1f75"
+  },
+  {
+    "path": "/assets/games-revision/her/game/final-chapter/resolved-3.png",
+    "size": [
+      536,
+      360
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "987417bdf56783c6e52b8801ebdb84091a88ba9b9f1c8b8d7c3934865bb81847"
+  },
+  {
+    "path": "/assets/games-revision/her/game/final-chapter/initial-1.png",
+    "size": [
+      536,
+      360
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "63b920dc7df374720971044eb7401aed2472e215a4357c3b1944301f529f6b8a"
+  },
+  {
+    "path": "/assets/games-revision/her/game/final-chapter/initial-2.png",
+    "size": [
+      536,
+      360
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "d37198600b619f036cd8f9a6a8cbc2ce491442a914d6a66f4eb713fa5baa9fea"
+  },
+  {
+    "path": "/assets/games-revision/her/game/final-chapter/initial-3.png",
+    "size": [
+      536,
+      360
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "e94c0ec674837eb1d0f2c6faf7d6aeb58445980c11ff632871d7a9224454bbbd"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/empress-wei.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "3467051088550a3e4c82d0ded9e09e433949c91dffbeb427f9fa4d5522643ae4"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/power.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "b0fc2e1eddb368365baf47b80849a09d636444953e941b2faccba26ae767b2f8"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/shangguan-waner.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "f2d808916baa19f23cb3cd310a47f4ceb2dc1d35ee5a7eabdd2cf82fd88efc9d"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/emperor-zhongzong.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "012427090561d82a9e301c4753ddcf4587e7d68fbba53e6f171fff5ecae0f315"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/edict.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "e3c2460865a6cf05a10be83dca1f500cd3830285a4f3e0c39cedacbd44fab7ab"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/balance.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "a59fa1ed43c98c541ccbb34541f4f113e77ab1f17f1075485758bd73cb4c891b"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/li-dan.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "684f9a154c90fcf0c7af6e3cdd6723ee34a30a35ecd12af8ab6435bda344f277"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/princess-taiping.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "deb65bb04513d602613725c0a3e57bfefb299330b8541becb1242d655abc9ed5"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/li-chongmao.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "1926876c9a83dfce09de09048a759c64a738d5a50f1710276cb3d4b6d12d8c14"
+  },
+  {
+    "path": "/assets/games-revision/her/game/choice-normalized/death.png",
+    "size": [
+      192,
+      192
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "d60afb0061428d809a8c4a5aa52ecd279bf9a8ce086f242e43ea3bba4f4a9f00"
+  },
+  {
+    "path": "/assets/games-revision/loofa/lufa-reclining.png",
+    "size": [
+      569,
+      399
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "b5bfd78b525c5a8807801a4252ae95447b29b9f4300bc08c04bf540bacdbf630"
+  },
+  {
+    "path": "/assets/games-revision/loofa/lufa.png",
+    "size": [
+      188,
+      636
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "39e6524ae88841d1de031e1c8eb6735e986b52c89535f28f339586aad8f8da76"
+  },
+  {
+    "path": "/assets/games-revision/loofa/swap-plates.png",
+    "size": [
+      691,
+      1139
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "8b2b4b61a33d5739b9f748aff21420124e421faa4775e87d8276cad7e9278254"
+  },
+  {
+    "path": "/assets/games-revision/loofa/hyber.png",
+    "size": [
+      231,
+      271
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "6bf720be6cc265d233012d75f618e152a00d54494080582f70542e174ec167a1"
+  },
+  {
+    "path": "/assets/games-revision/loofa/joma.png",
+    "size": [
+      248,
+      391
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "d769d45629d8a8476e73094de74563f071708beeefe8dfb032cb1fd340667837"
+  },
+  {
+    "path": "/assets/games-revision/loofa/ave.png",
+    "size": [
+      247,
+      348
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "ee98f52d2ea61d1c9599aed9e9381ee121f127fc36227d68aa4f0ca132657769"
+  },
+  {
+    "path": "/assets/games-revision/loofa/onion-man.png",
+    "size": [
+      629,
+      1633
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "e0f9569aa74e15a7eae0b7bdafd8c56fe84862a006ab61aae1b2a23af037c175"
+  },
+  {
+    "path": "/assets/games-revision/loofa/ekvin.png",
+    "size": [
+      385,
+      528
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "0b38a97f74d8615a3744512e8107c1f95a2bc85369e285baa6dd6571ef0e7fb0"
+  },
+  {
+    "path": "/assets/games-revision/loofa/lolo.png",
+    "size": [
+      274,
+      379
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "c93e2d2bc498d0ff871d89fce085c86ca5e063dc9e4f2e4ccf717afa4af2a23d"
+  },
+  {
+    "path": "/assets/games-revision/loofa/dish-1.png",
+    "size": [
+      262,
+      262
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "5e983e0e1685d6bd89f4fa828bbebd05f098cf84bdf25a60789ea9ffece89f73"
+  },
+  {
+    "path": "/assets/games-revision/loofa/aunty.png",
+    "size": [
+      317,
+      571
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "4266c0cc0995a9146c57769721e37c7e26eccae8e5c50a1e30e3b9150638ce56"
+  },
+  {
+    "path": "/assets/games-revision/loofa/dish-2.png",
+    "size": [
+      262,
+      262
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sha256": "11191d220ef666152c672182ad5dc466a2570a2e49908050e00a10e74aab5321"
+  }
+]

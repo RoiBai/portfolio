@@ -1,0 +1,93 @@
+/* Local Google Fonts. Load after styles.css or universe.css.
+   Both families are distributed under the SIL Open Font License 1.1.
+   Source URLs, checksums and license copies: /assets/fonts/.
+   Canvas: await document.fonts.load('600 120px "Space Grotesk"');
+           context.font = '600 120px "Space Grotesk"'; */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./assets/fonts/SpaceGrotesk-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-Italic-Variable.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --font-body: "Inter", sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-editorial: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  font-synthesis: none;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+.eyebrow,
+.section-kicker,
+.small-number,
+.project-meta,
+.footer-bottom,
+.collection-scroll,
+blockquote cite,
+.orbit-guide,
+.orb-label small,
+.preview-id,
+.scene-coordinate span {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+.next-title,
+.case-hero h1,
+.section-heading h2,
+.project-end h2,
+.name-fallback h1,
+.preview-line h2,
+.directory-heading h2,
+body.serif .case-hero h1,
+body.serif .section-heading h2,
+body.serif .project-end h2 {
+  font-family: var(--font-display);
+}
+
+.case-hero h1,
+.name-fallback h1,
+.next-title,
+body.serif .case-hero h1 {
+  font-weight: 600;
+}
+
+h1 em,
+h2 em {
+  font-family: inherit;
+}
+
+/* Retain the Chinese color project's editorial body and serif accents. */
+body.serif .section-body > p,
+body.serif .hero-subtitle,
+body.serif .stats strong,
+body[data-project="color-in-context"] .section-body > p,
+body[data-project="traditional-color"] .section-body > p {
+  font-family: var(--font-editorial);
+}
