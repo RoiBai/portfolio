@@ -43,6 +43,7 @@ export function setupHomePosition() {
       }
       restoring = false;
       save();
+      document.dispatchEvent(new CustomEvent('portfolio:home-restored',{detail:{historyReturn:!!event?.persisted||navigation==='back_forward'}}));
     });
   };
   window.addEventListener('scroll', () => {

@@ -8,6 +8,7 @@ const output=path.resolve(arg('--out')||path.join(root,'site'));
 const base=('/'+(arg('--base')||'').replace(/^\/+|\/+$/g,'')).replace(/^\/$/,'');
 if(output===source||source.startsWith(output+path.sep)||output.startsWith(source+path.sep)||!output.startsWith(root+path.sep))throw Error('Output must be a separate folder inside the project');
 const files=new Set(),queue=[];
+const stripAuthoring=text=>text.replace(/<script[^>]*data-authoring[^>]*>[\s\S]*?<\/script>/g,'');
 function add(relative,allowDirectory=false){
  relative=relative.replace(/^\//,'').split(/[?#]/)[0];
  const full=path.resolve(source,relative);
@@ -27,7 +28,7 @@ for(const f of fs.readdirSync(path.join(source,'assets/fonts')))if(/LICENSE|OFL|
 add('vendor/three/LICENSE');
 while(queue.length){
  const relative=queue.shift();if(!/\.(html|js|css|json|svg)$/.test(relative))continue;
- const text=fs.readFileSync(path.join(source,relative),'utf8');
+ const text=stripAuthoring(fs.readFileSync(path.join(source,relative),'utf8'));
  const absolute=/["'`(](\/(?:assets|website-assets|vendor)\/[\w./%+@-]+)/g;
  for(const match of text.matchAll(absolute))add(decodeURI(match[1]));
  for(const match of text.matchAll(/(?:src|href)=["'](\/(?!\/)[^"'#?]+)["']/g))add(match[1]);
@@ -36,6 +37,7 @@ while(queue.length){
 }
 const roots=new Set([...files].filter(f=>!f.includes('/')));
 const transform=(text,ext)=>{
+ text=stripAuthoring(text);
  text=text.replace(/(["'`(])(\/(?:assets|website-assets|vendor)(?:\/|(?=["'`])))/g,(_,q,p)=>q+base+p);
  text=text.replace(/(["'])(\/[\w-]+\.(?:css|js|json))(?=["'])/g,(all,q,p,offset)=>text.slice(offset-8,offset)==='siteURL('?all:roots.has(p.slice(1))?q+base+p:all);
  if(ext==='.html'){

@@ -264,3 +264,16 @@ body[data-project="glancemap"] .section-visuals .project-figure{max-width:min(80
  .case-section.with-visual .section-visuals.study-route{order:1}
  .layered-scroll-hint{grid-row:2;grid-column:1;margin-top:-14px}
 }
+
+/* One continuous, same-tab reading path through the eleven projects. */
+.project-next{margin:100px 0 0;border-top:1px solid color-mix(in srgb,var(--ink) 25%,transparent)}
+.next-project-link{position:relative;display:grid;grid-template-columns:1fr auto;gap:16px;padding:54px 0 70px;color:var(--ink);text-decoration:none}
+.next-label{grid-column:1/-1;font:500 14px var(--font-body);letter-spacing:.06em;text-transform:uppercase}
+.next-category{grid-column:1;font:400 15px var(--font-body);opacity:.65;margin-top:14px}
+.next-project-name{grid-column:1;font:500 clamp(30px,4vw,60px)/1.12 var(--font-display);max-width:1000px;transition:transform .3s ease}
+.next-project-arrow{grid-column:2;grid-row:2/4;align-self:center;font-size:48px;transition:transform .3s ease}
+.next-project-link:hover .next-project-name{transform:translateX(7px)}
+.next-project-link:hover .next-project-arrow{transform:translate(5px,-5px)}
+.next-project-link:focus-visible{outline:2px solid var(--accent);outline-offset:8px}
+@media(max-width:640px){.project-next{margin-top:60px}.next-project-link{padding:32px 0 46px;gap:12px}.next-project-arrow{font-size:32px}}
+@media(prefers-reduced-motion:reduce){.next-project-link *{transition:none!important;transform:none!important}}

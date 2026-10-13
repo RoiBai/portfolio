@@ -17,7 +17,7 @@ async function startNameHero() {
   if (!interaction.hasAttribute('tabindex')) interaction.tabIndex = 0;
   if (!interaction.hasAttribute('role')) interaction.setAttribute('role', 'button');
   if (!interaction.hasAttribute('aria-label')) interaction.setAttribute('aria-label', 'Ruiyuan Bai. Discover the researcher, gamer, developer and dog walker.');
-  interaction.setAttribute('aria-pressed', 'false');
+  interaction.removeAttribute('aria-pressed');
   if (portrait) {
     portrait.addEventListener('load', () => hero.classList.add('hero-has-portrait'));
     if (portrait.complete && portrait.naturalWidth) hero.classList.add('hero-has-portrait');
@@ -25,7 +25,7 @@ async function startNameHero() {
 
   const fontFamily = getComputedStyle(hero).getPropertyValue('--hero-particle-font').trim() || '"Source Serif Pro", Georgia, serif';
   await document.fonts.load(`600 120px ${fontFamily}`).catch(() => {});
-  interaction.setAttribute('aria-label', 'Ruiyuan Bai. Hover, focus or tap to discover four roles. Drag horizontally or use arrow keys to rotate the space. Press Escape to return to the name.');
+  interaction.setAttribute('aria-label', 'Ruiyuan Bai. Researcher, Gamer, Developer, Dog Walker orbit the name. Drag to rotate the 3D space; arrow keys rotate, Home resets.');
   const renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: false, powerPreference: 'low-power'});
   renderer.setClearColor(0x000000, 1);
   renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.8));
@@ -49,7 +49,7 @@ async function startNameHero() {
   let raf = 0, lastTime = 0, ready = false, lastPhase = '', lastTarget = -1;
   let pointer = {x: 0, y: 0};
   const orbit = {yaw: 0, pitch: 0};
-  const orbitLimit = {yaw: THREE.MathUtils.degToRad(55), pitch: THREE.MathUtils.degToRad(25)};
+  const orbitLimit = {yaw: Infinity, pitch: THREE.MathUtils.degToRad(60)};
   let gesture = null, dragging = false, suppressHover = false;
 
   // Genuine displaced sphere geometry, restored from the original universe scene.
@@ -261,6 +261,36 @@ async function startNameHero() {
     geometryBuilds.portrait++;
   }
 
+
+  const identityOrbit = new THREE.Group(); scene.add(identityOrbit);
+  const roleWords = ['Researcher','Gamer','Developer','Dog Walker'];
+  const labels=roleWords.map(word=>{
+    const c=document.createElement('canvas'); c.width=720;c.height=128;
+    const ctx=c.getContext('2d');ctx.font=`600 64px ${fontFamily}`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#e4e4e4';ctx.fillText(word,360,64);
+    const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;
+    const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,transparent:true,depthTest:false,depthWrite:false}));
+    sprite.userData.word=word;identityOrbit.add(sprite);return sprite;
+  });
+  const orbitGeometry=new THREE.BufferGeometry();
+  const orbitLine=new THREE.LineLoop(orbitGeometry,new THREE.LineBasicMaterial({color:0x8b8b8b,transparent:true,opacity:.28,depthWrite:false}));
+  identityOrbit.add(orbitLine);
+  let orbitRadii={x:1,y:1,z:1};
+  function layoutIdentityOrbit(){
+    const unit=worldHeight/height;
+    orbitRadii={x:width*(mobile?.32:.365)*unit,y:height*(mobile?.30:.29)*unit,z:mobile?1.8:3.8};
+    const vertices=[];
+    for(let i=0;i<240;i++){const a=i/240*Math.PI*2;vertices.push(Math.cos(a)*orbitRadii.x,Math.sin(a)*orbitRadii.y,Math.sin(a+.4)*orbitRadii.z);}
+    orbitGeometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+    const fontPixels=mobile?17:Math.max(20,Math.min(28,width*.021));
+    labels.forEach(label=>label.scale.set(fontPixels*11.25*unit,fontPixels*2*unit,1));
+  }
+  function updateIdentityOrbit(){
+    identityOrbit.rotation.set(space.rotation.x,space.rotation.y,0);
+    labels.forEach((label,i)=>{
+      const a=Math.PI*.25+i*Math.PI*.5+(reduced.matches?0:motionTime*.018);
+      label.position.set(Math.cos(a)*orbitRadii.x,Math.sin(a)*orbitRadii.y,Math.sin(a+.4)*orbitRadii.z);
+    });
+  }
   function sampleText(roles) {
     const scale = Math.min(2, 2200 / width);
     const mask = document.createElement('canvas');
@@ -270,7 +300,7 @@ async function startNameHero() {
     const family = fontFamily;
     ctx.imageSmoothingEnabled = false;
     if (!roles) {
-      let size = Math.min(160, width * (mobile ? .175 : .11));
+      let size = Math.min(160, width * (mobile ? .16 : .09));
       ctx.font = `600 ${size}px ${family}`;
       size *= Math.min(1, (width * (mobile ? .90 : .80)) / ctx.measureText('Ruiyuan Bai').width);
       ctx.font = `600 ${size}px ${family}`;
@@ -372,6 +402,7 @@ async function startNameHero() {
     const offsetBounds=(source,anchor)=>source?{...source,top:source.top+(height-maskHeight)*anchor,bottom:source.bottom+(height-maskHeight)*anchor}:null;
     nameBounds=offsetBounds(nameMaskBounds,mobile?.44:.48);
     roleBounds=offsetBounds(roleMaskBounds,mobile?.39:.45);
+    layoutIdentityOrbit();
     starUniforms.uExpanded.value=expansion;
     const moonDepth = 36, units = worldHeight / height * moonDepth / 28;
     const compactRadius = mobile ? Math.min(94,width*.24) : Math.min(128,compactHeight*.31);
@@ -408,7 +439,7 @@ async function startNameHero() {
     hero.dispatchEvent(new CustomEvent('name-hero-state', {bubbles: true, detail: {target: target ? 'roles' : 'name', progress, phase: currentPhase}}));
   }
   function syncTarget() {
-    target = !dragging && (hover || focused || pinned) ? 1 : 0;
+    target = 0;
     hero.dataset.heroTarget = target ? 'roles' : 'name';
     interaction.setAttribute('aria-pressed', String(!!target));
     if (reduced.matches) { progress = target; velocity = 0; }
@@ -454,102 +485,43 @@ async function startNameHero() {
     const portraitProgress = smooth(.72, .985, progress);
     hero.style.setProperty('--hero-portrait-opacity', portraitProgress.toFixed(4));
     if (photoPoints) photoPoints.visible = progress > .04 && progress < .985;
+    updateIdentityOrbit();
     renderer.render(scene, camera); frame++; notifyState();
     if (!reduced.matches) requestFrame();
   }
 
-  function inRevealRegion(event) {
-    if (!nameBounds) return false;
-    const box = hero.getBoundingClientRect(), x = event.clientX - box.left, y = event.clientY - box.top;
-    const contains = (bounds, padding = 26) => bounds && x >= bounds.left - padding && x <= bounds.right + padding && y >= bounds.top - padding && y <= bounds.bottom + padding;
-    if (contains(nameBounds, mobile ? 22 : 32)) return true;
-    if (progress > .08 || hover || pinned) {
-      if (contains(roleBounds, 32)) return true;
-      if (photoBounds && contains({left:photoBounds.left,top:photoBounds.top,right:photoBounds.left+photoBounds.width,bottom:photoBounds.top+photoBounds.height},24)) return true;
-    }
-    return false;
-  }
-  interaction.addEventListener('pointerenter', event => {
-    if (event.pointerType !== 'touch' && !dragging && !suppressHover) { hover = inRevealRegion(event); syncTarget(); }
-  });
-  interaction.addEventListener('pointerleave', () => {
-    hover = false; pointer = {x: 0, y: 0};
-    if (!dragging) suppressHover = false;
-    syncTarget();
-  });
   interaction.addEventListener('pointerdown', event => {
     if (!event.isPrimary || (event.pointerType === 'mouse' && event.button !== 0)) return;
-    gesture = {id: event.pointerId, type: event.pointerType, x: event.clientX, y: event.clientY, yaw: orbit.yaw, pitch: orbit.pitch, intent: 'pending'};
+    gesture = {id:event.pointerId, type:event.pointerType, x:event.clientX, y:event.clientY, yaw:orbit.yaw, pitch:orbit.pitch, intent:'pending'};
   });
   interaction.addEventListener('pointermove', event => {
-    if (gesture?.id === event.pointerId) {
-      const dx = event.clientX - gesture.x, dy = event.clientY - gesture.y;
-      if (gesture.intent === 'pending' && Math.hypot(dx, dy) > 8) {
-        if (gesture.type === 'touch' && Math.abs(dy) > Math.abs(dx) * 1.15) {
-          // Leave vertical gestures to native page scrolling; they are never taps.
-          gesture.intent = 'scroll'; hover = false; focused = false; pinned = false; syncTarget();
-        } else if (gesture.type !== 'touch' || Math.abs(dx) > Math.abs(dy) * 1.15) {
-          gesture.intent = 'rotate'; dragging = true; suppressHover = true;
-          hover = false; focused = false; pinned = false;
-          interaction.setPointerCapture(event.pointerId);
-          hero.dataset.dragging = 'true'; syncTarget();
-        }
-      }
-      if (gesture.intent === 'rotate') {
-        orbit.yaw = THREE.MathUtils.clamp(gesture.yaw + dx / width * Math.PI * 1.5, -orbitLimit.yaw, orbitLimit.yaw);
-        orbit.pitch = THREE.MathUtils.clamp(gesture.pitch + dy / height * 1.25, -orbitLimit.pitch, orbitLimit.pitch);
-        pointer = {x: 0, y: 0}; requestFrame();
-        return;
-      }
+    if (!gesture || gesture.id !== event.pointerId) return;
+    const dx=event.clientX-gesture.x, dy=event.clientY-gesture.y;
+    if (gesture.intent === 'pending' && Math.hypot(dx,dy)>7) {
+      gesture.intent=gesture.type==='touch' && Math.abs(dy)>Math.abs(dx)*1.15 ? 'scroll' : 'rotate';
+      if(gesture.intent==='rotate') {dragging=true;hero.dataset.dragging='true';interaction.setPointerCapture(event.pointerId);}
     }
-    if (event.pointerType !== 'touch' && !reduced.matches && !dragging) {
-      const bounds = interaction.getBoundingClientRect();
-      pointer = {x: (event.clientX - bounds.left) / bounds.width * 2 - 1, y: -((event.clientY - bounds.top) / bounds.height * 2 - 1)};
+    if(gesture.intent==='rotate') {
+      orbit.yaw=gesture.yaw+dx/width*Math.PI*2;
+      orbit.pitch=THREE.MathUtils.clamp(gesture.pitch+dy/height*2,-orbitLimit.pitch,orbitLimit.pitch);
       requestFrame();
     }
-    if (event.pointerType !== 'touch' && !dragging && !suppressHover) {
-      const nextHover = inRevealRegion(event);
-      if (nextHover !== hover) { hover = nextHover; syncTarget(); }
-    }
   });
-  function finishGesture(event, cancelled = false) {
-    if (!gesture || gesture.id !== event.pointerId) return;
-    const finished = gesture; gesture = null;
-    dragging = false; hero.dataset.dragging = 'false';
-    if (finished.intent === 'rotate') {
-      hover = false; focused = false; pinned = false; suppressHover = true;
-    } else if (!cancelled && finished.intent === 'pending' && finished.type === 'touch' && inRevealRegion(event)) {
-      pinned = !pinned; focused = false; hover = false;
-    }
-    if (interaction.hasPointerCapture(event.pointerId)) interaction.releasePointerCapture(event.pointerId);
-    syncTarget();
+  function finishGesture(event) {
+    if(!gesture || gesture.id!==event.pointerId)return;
+    gesture=null;dragging=false;hero.dataset.dragging='false';
+    if(interaction.hasPointerCapture(event.pointerId))interaction.releasePointerCapture(event.pointerId);
+    requestFrame();
   }
-  interaction.addEventListener('pointerup', event => finishGesture(event));
-  interaction.addEventListener('pointercancel', event => finishGesture(event, true));
-  interaction.addEventListener('lostpointercapture', event => finishGesture(event, true));
-  interaction.addEventListener('focusin', event => {
-    // Pointer taps use the toggle above; keyboard focus always reveals all four roles.
-    if (!dragging && event.target.matches(':focus-visible')) { focused = true; syncTarget(); }
+  ['pointerup','pointercancel','lostpointercapture'].forEach(type=>interaction.addEventListener(type,finishGesture));
+  interaction.addEventListener('keydown',event=>{
+    if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','Escape'].includes(event.key))return;
+    event.preventDefault();
+    if(['Home','Escape'].includes(event.key)){orbit.yaw=0;orbit.pitch=0;}
+    else if(event.key==='ArrowLeft'||event.key==='ArrowRight')orbit.yaw+=event.key==='ArrowLeft'?-.2:.2;
+    else orbit.pitch=THREE.MathUtils.clamp(orbit.pitch+(event.key==='ArrowUp'?-.15:.15),-orbitLimit.pitch,orbitLimit.pitch);
+    requestFrame();
   });
-  interaction.addEventListener('focusout', event => {
-    if (!interaction.contains(event.relatedTarget)) { focused = false; pinned = false; syncTarget(); }
-  });
-  interaction.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { event.preventDefault(); hover = false; focused = false; pinned = false; syncTarget(); }
-    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home'].includes(event.key)) {
-      event.preventDefault(); hover = false; focused = false; pinned = false; suppressHover = true;
-      if (event.key === 'Home') { orbit.yaw = 0; orbit.pitch = 0; }
-      else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') orbit.yaw = THREE.MathUtils.clamp(orbit.yaw + (event.key === 'ArrowLeft' ? -.14 : .14), -orbitLimit.yaw, orbitLimit.yaw);
-      else orbit.pitch = THREE.MathUtils.clamp(orbit.pitch + (event.key === 'ArrowUp' ? -.10 : .10), -orbitLimit.pitch, orbitLimit.pitch);
-      pointer = {x: 0, y: 0}; syncTarget();
-    }
-    if ((event.key === 'Enter' || event.key === ' ') && event.target === interaction) {
-      event.preventDefault(); pinned = !target; hover = false; focused = false; syncTarget();
-    }
-  });
-  document.addEventListener('pointerdown', event => {
-    if (!interaction.contains(event.target) && pinned) { pinned = false; syncTarget(); }
-  }, {passive: true});
   document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else requestFrame(); });
   window.addEventListener('pagehide', () => { pageActive = false; stop(); });
   window.addEventListener('pageshow', () => { pageActive = true; lastTime = 0; requestFrame(); });
@@ -563,7 +535,7 @@ async function startNameHero() {
   observer.observe(hero);
   new ResizeObserver(queueResize).observe(hero);
   resize(); ready = true;
-  readPortrait().catch(error => console.warn('Portrait particles unavailable; the original photo remains available on hover.',error));
+
   hero.dataset.heroReady = 'true'; hero.dataset.heroTarget = 'name'; hero.dataset.heroPhase = 'name';
   // Name starts completely formed. No intro timer can delay first-paint legibility.
   render(performance.now());
@@ -571,12 +543,12 @@ async function startNameHero() {
     ready, frame, renderer: 'three-webgl', particleCount, starCount,
     viewport: {width, height, mobile}, target: target ? 'roles' : 'name', progress, velocity, phase: phase(),
     burst: Math.pow(Math.max(0, Math.sin(progress * Math.PI)), 1.18),
-    roles: ['Researcher', 'Gamer', 'Developer', 'Dog Walker'],
+    roles: roleWords, rolesAlwaysVisible:true, orbitRadii:{...orbitRadii}, rolePositions:labels.map(l=>({word:l.userData.word,position:l.position.toArray()})),
     name: 'Ruiyuan Bai', nameBounds: {...nameBounds}, roleBounds: {...roleBounds},
     positionDimensions: 3, depthPixels: mobile ? 18 : 32, font: fontFamily, fontWeight: 600, textFacing: progress > .80 ? 'front-facing-roles' : 'restrained-3d-name', textRotation: points ? [points.rotation.x,points.rotation.y,points.rotation.z] : [0,0,0],
     moon: {visible:moon.visible,geometry:moonGeometry.type,vertices:moonPosition.count,craters:craters.length,position:moon.position.toArray(),rotation:[moon.rotation.x,moon.rotation.y,moon.rotation.z],scale:moon.scale.x},
     spaceRotation: [space.rotation.x,space.rotation.y,space.rotation.z],
-    orbit: {yaw:orbit.yaw,pitch:orbit.pitch,yawDegrees:THREE.MathUtils.radToDeg(orbit.yaw),pitchDegrees:THREE.MathUtils.radToDeg(orbit.pitch),limitsDegrees:{yaw:55,pitch:25},dragging,intent:gesture?.intent||null,suppressHover},
+    orbit: {yaw:orbit.yaw,pitch:orbit.pitch,yawDegrees:THREE.MathUtils.radToDeg(orbit.yaw),pitchDegrees:THREE.MathUtils.radToDeg(orbit.pitch),limitsDegrees:{yaw:'unlimited',pitch:60},dragging,intent:gesture?.intent||null,suppressHover},
     reducedMotion: reduced.matches, visible, documentHidden: document.hidden, running: !!raf,
     paused: !canRender() || reduced.matches, motionTime, renderCalls: renderer.info.render.calls,
     portraitVisible: hero.classList.contains('hero-has-portrait') && progress > .72,
