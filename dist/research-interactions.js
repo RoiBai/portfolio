@@ -1,15 +1,8 @@
-// Exact option labels from original PersonaMail intent panel, Figma 1835:637.
-// This local control demonstrates the selection UI; it does not call an AI model.
+// An authored scenario illustrating PersonaMail's saved context and local editing.
+// These example messages are static; no AI request or external email is sent.
 let instance = 0;
-const choices = ["Vague, ‘family matter’", 'Briefly hint at reason', 'No explanation given', 'Offer full disclosure'];
 export function renderPersonaIntent() {
-  const id = `persona-intent-${++instance}`;
-  return `<figure class="project-figure persona-intent-demo" aria-labelledby="${id}-title">
-    <fieldset class="persona-intent-panel"><legend id="${id}-title">Explanation Specificity</legend>${choices.map((label,i)=>`<label><input type="radio" name="${id}" value="${i}" ${i===0?'checked':''}><span>${label}</span></label>`).join('')}</fieldset>
-    <figcaption><strong>Change one section’s intent</strong><p>Select how much to explain. In PersonaMail, this control revises the selected justification while preserving the rest of the email.</p><small>Interactive interface excerpt · selection only</small></figcaption>
-  </figure>`;
+ const id=`persona-intent-${++instance}`;
+ return `<figure class="project-figure persona-intent-demo persona-email-demo" aria-labelledby="${id}-title"><div class="persona-kept-context"><h3 id="${id}-title">Context to carry forward</h3><dl><div><dt>Relationship</dt><dd>PhD student → familiar supervisor</dd></div><div><dt>Tone</dt><dd>Polite · Appreciative</dd></div><div><dt>Style</dt><dd>Brief, without a long explanation</dd></div></dl></div><fieldset class="persona-example-switch"><legend>Change the request</legend><label><input type="radio" name="${id}" value="leave" checked><span>Taking a day off</span></label><label><input type="radio" name="${id}" value="meeting"><span>Missing a meeting</span></label></fieldset><div class="persona-email-drafts"><article class="persona-email-leave"><h4>Away from the lab today</h4><p>Hi Professor,</p><p>I’m taking a day off and won’t be in the lab today. Thank you for understanding.</p><p>Best,<br>[Your name]</p></article><article class="persona-email-meeting"><h4>Tomorrow’s morning meeting</h4><p>Hi Professor,</p><p>I’ll miss tomorrow’s morning meeting. Thank you for understanding.</p><p>Best,<br>[Your name]</p></article></div><figcaption><strong>Same relationship. A new message.</strong><p>The request changes; the tone and brevity stay consistent.</p><small>Illustrative emails based on the author’s scenario</small></figcaption></figure>`;
 }
-export function setupPersonaIntent() {
-  // Native radio controls support pointer, touch and arrow-key selection without listeners.
-  return () => {};
-}
+export function setupPersonaIntent(){return()=>{};}

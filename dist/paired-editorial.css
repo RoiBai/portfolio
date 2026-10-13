@@ -1,0 +1,15 @@
+/* Ordinary copy scrolls with its illustration; only explicit stories are pinned. */
+body[data-view=project] .case-section>.section-body,body[data-view=project] .case-section>.section-visuals{position:static!important;top:auto!important}
+@media(min-width:800px){
+ body[data-view=project] .case-section.editorial-pair{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:27px 6%;align-items:start}
+ body[data-view=project] .case-section.editorial-pair>.section-heading{grid-column:1/-1!important;grid-row:1!important;max-width:100%}
+ body[data-view=project] .case-section.editorial-pair>.section-visuals{grid-column:1!important;grid-row:2!important;width:100%;max-width:none;margin:0!important;align-self:start}
+ body[data-view=project] .case-section.editorial-pair>.section-body{grid-column:2!important;grid-row:2!important;align-self:start;margin:0!important;padding:0!important}
+ body[data-view=project] .case-section.editorial-pair>.section-visuals .project-figure{display:block;width:100%;max-width:100%;margin:0}
+ body[data-view=project] .case-section.editorial-pair>.section-visuals .figure-media{padding:0;width:100%}
+ body[data-view=project] .case-section.editorial-pair>.section-visuals figcaption{display:block;width:100%;max-width:none;margin:0;padding:14px 0 0;border:0;font-size:17px;line-height:1.55}
+ body[data-view=project] .case-section.editorial-pair>.section-visuals figcaption>span:first-child{display:none}
+ body[data-view=project] .case-section.editorial-pair>.section-visuals figcaption p{max-width:none;text-wrap:pretty;margin:0}
+}
+
+body[data-view=project]{overflow-anchor:none}

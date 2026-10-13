@@ -1,3 +1,12 @@
+import { renderGlanceResults, setupGlanceResults } from './glance-results.js';
+import { setupAmbulanceEditorial } from './ambulance-editorial.js';
+import { setupAmbulanceRecording } from './ambulance-recording.js';
+import { setupLoofaEditorial } from './loofa-editorial.js';
+import { renderResearchFigure, setupResearchFigures } from './research-figures.js';
+import { setupColorInteractions } from './color-interactions.js';
+import { setupIconInteractions } from './icon-interactions.js';
+import { setupGamesMotion } from './games-motion.js';
+import { renderGlanceScroll, setupGlanceScroll } from './glance-scroll.js';
 import { setupNewsEmbeds } from './news-embeds.js';
 import { renderPersonaIntent } from './research-interactions.js';
 import { renderGlanceChapter, setupGlanceEditorial } from './glance-editorial.js';
@@ -11,7 +20,9 @@ import { projectHomeOrigin, prepareHomeReturn } from './home-position.js';
 import { emphasize, rolePanel, comicPanel, publicLink } from './case-editorial.js';
 import { replacementFor, renderDataVisual, setupDataViz, DATA_VISUAL_ADDITIONS } from './data-viz.js';
 const homeOrigin = projectHomeOrigin();
-let glanceCleanup = () => {}, newsCleanup = () => {};
+let glanceResultsCleanup=()=>{};
+let researchFiguresCleanup=()=>{}, colorCleanup=()=>{}, iconCleanup=()=>{}, gamesMotionCleanup=()=>{}, gamesCleanup=()=>{}, ambulanceRecordingCleanup=()=>{}, ambulanceCleanup=()=>{}, loofaCleanup=()=>{};
+let glanceCleanup = () => {}, glanceScrollCleanup = () => {}, newsCleanup = () => {};
 let experienceCleanup = () => {}, verseCleanup = () => {}, sourceCleanup = () => {}, layeredCleanup = () => {};
 const main = document.querySelector('main');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)');
@@ -25,6 +36,7 @@ const normalizedList = v => !v ? [] : Array.isArray(v) ? v : [v];
 function imageSrc(v) { return typeof v === 'string' ? v : v?.src || v?.path; }
 function paragraph(body,highlights=[]) { return normalizedList(body).map(t => `<p>${emphasize(typeof t === 'string' ? t : t.text || t.body || '',highlights)}</p>`).join(''); }
 function figure(f, i=0, hero=false) {
+ if(f?.researchFigure)return renderResearchFigure(f.researchFigure);
  if(f?.layeredSource)return layeredFigure(f);
  if(f?.comic)return comicPanel(f.comic,hero);
  if(f?.dataVisual)return renderDataVisual(f.dataVisual);
@@ -43,7 +55,7 @@ function figure(f, i=0, hero=false) {
 function links(p) {const list=[...normalizedList(p.links)];if(games[p.id]&&!list.some(l=>(l.url||l.href||'').replace(/\/$/,'')===games[p.id].source.replace(/\/$/,'')))list.unshift({label:'Play original',url:games[p.id].source});return list.filter(l=>publicLink(l.url||l.href)).map(l=>`<a class="text-link" href="${esc(l.url||l.href)}" target="_blank" rel="noopener noreferrer">${esc(l.label)} ${arrow}</a>`).join('');}
 function setTheme(p) { const t=p?.theme||{}; document.documentElement.style.setProperty('--bg',t.background||t.bg||'#050505'); document.documentElement.style.setProperty('--ink',t.ink||'#f4f4f4');document.documentElement.style.setProperty('--accent',t.accent||'#f4f4f4');document.body.dataset.project=p?.id||'';document.body.classList.toggle('serif',p?.id==='color-in-context'||p?.id==='traditional-color'); }
 function section(s,i,hideFigures=false,projectId='') {
- if(projectId==='glancemap'){const custom=renderGlanceChapter(s,i);if(custom)return custom;}
+ if(projectId==='glancemap'){const custom=renderGlanceResults(s,i)||renderGlanceScroll(s,i)||renderGlanceChapter(s,i);if(custom)return custom;}
  const fs=[...normalizedList(s.figures).map(f=>({...f,dataVisual:f.dataVisual||replacementFor(projectId,s.id,imageSrc(f))})),...DATA_VISUAL_ADDITIONS.filter(v=>v.projectId===projectId&&v.sectionId===s.id).map(v=>({dataVisual:v.visual}))];
  const items=normalizedList(s.items),wide=fs.some(f=>f.width/f.height>=4),composition=fs.some(f=>f.sourceComposition||f.layeredSource||f.panoramaMin||f.animateLines&&f.width/f.height>2);
  const comparison=s.figureLayout==='comparison'||projectId==='traditional-color'&&s.id==='outcomes';
@@ -53,23 +65,24 @@ function section(s,i,hideFigures=false,projectId='') {
  return `<section id="${esc(s.id)}" data-reveal-group class="case-section ${i%2?'from-right':'from-left'} ${fs.length?'with-visual':'text-only'} ${wide?'wide-visual':''} ${composition?'has-composition':''} ${interaction?'with-experience':''} ${s.experiencePosition==='before-body'?'experience-first':''} ${s.layout?`layout-${esc(s.layout)}`:''}"><div class="section-heading reveal"><div class="eyebrow"><span>${String(i+1).padStart(2,'0')}</span> / ${esc(s.nav||s.id.replaceAll('-',' '))}</div><h2>${heading(s.title)}</h2></div>${interaction&&s.experiencePosition==='before-body'?`<div class="section-experience reveal">${interaction}</div>`:''}<div class="section-body reveal">${paragraph(s.body,s.highlights)}${projectId==='glancemap'&&s.id.startsWith('process')?'':insights}${s.quote?`<blockquote>${esc(s.quote.text||s.quote)}${s.quote.attribution?`<cite>${esc(s.quote.attribution)}</cite>`:''}</blockquote>`:''}${projectId==='glancemap'&&s.id.startsWith('process')?insights:''}</div>${fs.length?`<div style="--figure-count:${fs.length}" class="section-visuals ${fs.length>1?'multiple':''} ${comparison?'comparisons':''} ${['character-row','dish-grid','study-route','final-design'].includes(s.figureLayout)?s.figureLayout:''}">${visuals}</div>`:''}${interaction&&s.experiencePosition!=='before-body'?`<div class="section-experience reveal">${interaction}</div>`:''}</section>`;
 }
 function nextProject(p){
- if(p.id==='versecolor')return `<footer class="project-next project-next-home"><a class="next-project-link" href="${siteURL('/')}" style="--next-bg:#1c2422;--next-ink:#f5f5ef"><span class="next-project-copy"><span class="next-label">Back to all projects ↗</span><span class="next-category">Ruiyuan Bai</span><span class="next-project-name">Explore another story</span></span><span class="next-project-arrow" aria-hidden="true">↗</span></a></footer>`;
+ if(p.id==='versecolor')return `<footer class="project-next project-next-home"><a class="next-project-link" href="${siteURL('/')}" style="--next-bg:#1c2422;--next-ink:#f5f5ef"><span class="next-project-copy"><span class="next-project-name">Back to all projects</span></span><span class="next-project-arrow" aria-hidden="true">↗</span></a></footer>`;
  const order=['glancemap','traditional-color','icon-colors','ambulance','loofasoup','hersound','ourworld','personamail','beyond-the-gaze','suzhou-scrollverse','versecolor'];
  const list=order.map(id=>projects.find(item=>item.id===id)).filter(Boolean);
  const next=list[(list.findIndex(item=>item.id===p.id)+1)%list.length];
  if(!next)return '';
  const category=next.slug.startsWith('/games/')?'Games':next.slug.startsWith('/research/')?'Research':'Design';
- const covers={'glancemap':'/assets/design-revision/glance-918-247-source.png','traditional-color':'/website-assets/atlas-display.svg','icon-colors':'/website-assets/icon-comic-cutout-1.svg','ambulance':'/website-assets/ambulance-display.svg','loofasoup':'/website-assets/lufa-display.svg','hersound':'/website-assets/waner-display.svg','ourworld':'/website-assets/freya-display.svg','personamail':'/website-assets/research-personamail@3x.png','beyond-the-gaze':'/website-assets/research-gaze@3x.png','suzhou-scrollverse':'/website-assets/research-suzhou@3x.png','versecolor':'/website-assets/research-versecolor-v2@3x.png'};
+ const covers={'glancemap':'/assets/design-revision/glance-918-247-source.png','traditional-color':'/website-assets/atlas-display.svg','icon-colors':'/website-assets/icon-comic-cutout-1.svg','ambulance':'/website-assets/ambulance-display.svg','loofasoup':'/assets/games-motion/loofa-ensemble-cutout.png','hersound':'/website-assets/waner-display.svg','ourworld':'/website-assets/freya-display.svg','personamail':'/website-assets/research-personamail@3x.png','beyond-the-gaze':'/website-assets/research-gaze@3x.png','suzhou-scrollverse':'/website-assets/research-suzhou@3x.png','versecolor':'/website-assets/research-versecolor-v2@3x.png'};
  const palettes={'glancemap':['#101210','#f4f5f1'],'traditional-color':['#263a3d','#f2eee5'],'icon-colors':['#080b0d','#77fbfe'],'ambulance':['#394b5a','#f8f3ef'],'loofasoup':['#354e3b','#f4edcf'],'hersound':['#4c626b','#fff3ea'],'ourworld':['#445c51','#f4eee2'],'personamail':['#4c5b78','#f7f8fc'],'beyond-the-gaze':['#334e5c','#fbf6fa'],'suzhou-scrollverse':['#555d44','#fcfaf6'],'versecolor':['#365e53','#f8fbf6']};
  const colors=palettes[next.id]||['#222','#fff'];
  return `<footer class="project-next"><a href="${siteURL(next.slug)}" class="next-project-link" style="--next-bg:${colors[0]};--next-ink:${colors[1]}"><span class="next-project-copy"><span class="next-label">Next Project <span aria-hidden="true">→</span></span><span class="next-category">${category}</span><span class="next-project-name">${esc(next.title)}</span></span><img class="next-project-image" src="${esc(covers[next.id])}" alt="${esc(next.title)} — project artwork" loading="lazy" decoding="async"><span class="next-project-arrow" aria-hidden="true">↗</span></a></footer>`;
 }
 function renderProject(p) {
- newsCleanup();experienceCleanup();verseCleanup();sourceCleanup();layeredCleanup();glanceCleanup();
+ ambulanceRecordingCleanup();ambulanceCleanup();loofaCleanup();glanceResultsCleanup();gamesCleanup();researchFiguresCleanup();colorCleanup();iconCleanup();gamesMotionCleanup();glanceScrollCleanup();newsCleanup();experienceCleanup();verseCleanup();sourceCleanup();layeredCleanup();glanceCleanup();
  setTheme(p);document.body.dataset.view='project';document.title=`${p.title} — Ruiyuan Bai`;
  const meta=typeof p.meta==='string'?p.meta:normalizedList(p.meta).filter(m=>typeof m==='string'||!/^my role$/i.test(m.label)).map(m=>typeof m==='string'?m:(m.label?m.label+': ':'')+(m.value||m.text||'')).join(' · ');
- main.innerHTML=`<div class="chapter-bar"><a class="back-link" href="${siteURL('/')}">← All projects</a><nav class="chapter-nav" aria-label="On this page"><a href="#overview" class="active">Overview</a>${games[p.id]&&!['hersound','ourworld'].includes(p.id)?'<a href="#play">Play</a>':''}${p.sections.map(s=>`<a href="#${esc(s.id)}">${esc(s.nav||s.id.replaceAll('-',' '))}</a>`).join('')}</nav></div><article class="case-study"><section class="case-hero" id="overview"><div class="eyebrow">${esc(p.kicker||p.category)}</div><h1>${heading(p.title)}</h1><p class="hero-subtitle">${esc(p.subtitle)}</p><div class="hero-overview" data-reveal-group><div class="hero-bottom reveal"><p>${esc(p.description)}</p>${rolePanel(p.role)}${p.outcome?`<div class="hero-outcome"><span>Outcome</span><p>${esc(p.outcome)}</p></div>`:''}<div class="hero-links">${links(p)}</div><div class="project-meta">${esc(meta)}</div></div>${figure(p.hero,0,true)}</div>${p.stats?.length?`<div class="stats">${p.stats.map(s=>`<div><strong class="${String(s.value).length>8?'stat-long':''}">${esc(s.value)}</strong><span>${esc(s.label)}</span>${s.detail?`<small>${esc(s.detail)}</small>`:''}</div>`).join('')}</div>`:''}</section>${['hersound','ourworld'].includes(p.id)?'':gameSection(p.id)}${p.sections.map((s,i)=>section(s,i,false,p.id)).join('')}${nextProject(p)}</article>`;
- glanceCleanup=setupGlanceEditorial(main);setupGames();setupDataViz(main);experienceCleanup=setupGameExperiences(main);newsCleanup=setupNewsEmbeds(main);sourceCleanup=setupSourceFigures(main);layeredCleanup=setupLayeredFigures(main);
+ main.innerHTML=`<div class="chapter-bar"><a class="back-link" href="${siteURL('/')}">← All projects</a><nav class="chapter-nav" aria-label="On this page"><a href="#overview" class="active">Overview</a>${games[p.id]&&!['hersound','ourworld'].includes(p.id)?'<a href="#play">Play</a>':''}${p.sections.map(s=>`<a href="#${esc(s.id)}">${esc(s.nav||s.id.replaceAll('-',' '))}</a>`).join('')}</nav></div><article class="case-study"><section class="case-hero" id="overview"><div class="eyebrow">${esc(p.kicker||p.category)}</div><div class="project-title-row"><h1>${heading(p.title)}</h1><div class="project-pills" aria-label="Project themes">${(p.tags||[]).map(tag=>`<span class="project-pill">${esc(tag)}</span>`).join('')}</div></div><p class="hero-subtitle">${esc(p.subtitle)}</p><div class="hero-overview" data-reveal-group><div class="hero-bottom reveal"><p>${emphasize(p.description,p.highlights||[])}</p>${rolePanel(p.role)}${p.outcome?`<div class="hero-outcome"><span>Outcome</span><p>${esc(p.outcome)}</p></div>`:''}<div class="hero-links">${links(p)}</div>${meta?`<div class="project-meta">${esc(meta)}</div>`:''}</div>${figure(p.hero,0,true)}</div>${p.stats?.length?`<div class="stats">${p.stats.map(s=>`<div><strong class="${String(s.value).length>8?'stat-long':''}">${esc(s.value)}</strong><span>${esc(s.label)}</span>${s.detail?`<small>${esc(s.detail)}</small>`:''}</div>`).join('')}</div>`:''}</section>${['hersound','ourworld'].includes(p.id)?'':gameSection(p.id)}${p.sections.map((s,i)=>section(s,i,false,p.id)).join('')}${nextProject(p)}</article>`;
+ glanceResultsCleanup=setupGlanceResults(main);glanceScrollCleanup=setupGlanceScroll(main);glanceCleanup=setupGlanceEditorial(main);gamesCleanup=setupGames(main);setupDataViz(main);experienceCleanup=setupGameExperiences(main);newsCleanup=setupNewsEmbeds(main);sourceCleanup=setupSourceFigures(main);colorCleanup=setupColorInteractions(main,p);iconCleanup=setupIconInteractions(main,p);layeredCleanup=setupLayeredFigures(main);researchFiguresCleanup=setupResearchFigures(main);gamesMotionCleanup=setupGamesMotion(main);
+ ambulanceCleanup=setupAmbulanceEditorial(main,p);ambulanceRecordingCleanup=setupAmbulanceRecording(main,p);loofaCleanup=setupLoofaEditorial(main,p);
  if(p.id==='versecolor')verseCleanup=setupVerseInteraction(main);
 }
 // A chapter is one reveal unit: its text and all corresponding figures enter together.
@@ -93,22 +106,16 @@ function setupMotion(){
  setupPairedColumns();
 }
 function updatePairedColumns(){
- cancelAnimationFrame(layoutFrame);
- layoutFrame=requestAnimationFrame(()=>{
-  const available=innerHeight-140,desktop=innerWidth>=640;
-  const measurements=pairedColumns.map(([copy,visuals])=>({copy,visuals,copyHeight:copy.offsetHeight,visualHeight:visuals.offsetHeight}));
-  for(const {copy,visuals,copyHeight,visualHeight} of measurements){
-   copy.classList.toggle('reading-companion',desktop&&copyHeight<available&&visualHeight>copyHeight+60);
-   visuals.classList.toggle('reading-companion',desktop&&visualHeight<available&&copyHeight>visualHeight+60);
-  }
- });
+ document.querySelectorAll('.reading-companion').forEach(n=>n.classList.remove('reading-companion'));
 }
 function setupPairedColumns(){
- layoutObserver?.disconnect();
- pairedColumns=[...document.querySelectorAll('.case-section.with-visual')].map(section=>[section.querySelector('.section-body'),section.querySelector('.section-visuals')]);
- layoutObserver=new ResizeObserver(updatePairedColumns);
- pairedColumns.flat().forEach(column=>layoutObserver.observe(column));
- updatePairedColumns();
+ layoutObserver?.disconnect();updatePairedColumns();
+ for(const section of document.querySelectorAll('.case-section.with-visual')){
+  const visual=section.querySelector(':scope > .section-visuals');
+  const count=visual?.querySelectorAll(':scope > .project-figure').length;
+  const custom=section.matches('.has-composition,.with-experience,.ambulance-chapter,.loofa-gameplay-editorial')||section.querySelector('[data-ic-study],.icon-guideline-tier,.research-process,.atlas-feature,[data-research-figure],.persona-intent-demo');
+  section.classList.toggle('editorial-pair',!!visual&&count===1&&!custom&&!['characters','production','future','study','atlas','refinement','gradients','reflection'].includes(section.id));
+ }
 }
 window.addEventListener('resize',updatePairedColumns,{passive:true});
 function resetScroll(){window.scrollTo({top:0,left:0,behavior:'instant'});}
@@ -123,7 +130,7 @@ async function settleHero(){const im=main.querySelector('.hero-figure img');awai
 async function navigate(url,push=true,sourceElement=null){
  if(sitePath(new URL(url,location.href).pathname)==='/'){prepareHomeReturn(homeOrigin);const detail={phase:'before',to:url,kind:'native',sourceElement,commit:()=>location.assign(url)};if(document.dispatchEvent(new CustomEvent('portfolio-transition',{cancelable:true,detail})))detail.commit();return;}
  const version=++renderVersion;
- const commit=async()=>{if(version!==renderVersion)return;if(push)history.pushState({},'',url);render();await settleHero();document.body.classList.remove('leaving');document.dispatchEvent(new CustomEvent('portfolio-transition',{detail:{phase:'after',to:location.pathname,source:'project-app'}}));main.focus({preventScroll:true});if(location.hash)requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:'instant'}));};
+ const commit=async()=>{if(version!==renderVersion)return;if(push)history.pushState({},'',url);render();await settleHero();if(version!==renderVersion)return;if(!location.hash)resetScroll();document.body.classList.remove('leaving');document.dispatchEvent(new CustomEvent('portfolio-transition',{detail:{phase:'after',to:location.pathname,source:'project-app'}}));main.focus({preventScroll:true});if(location.hash)requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:'instant'}));};
  const detail={phase:'before',from:location.pathname,to:url,source:'project-app',kind:'spa',sourceElement,commit};
  const event=new CustomEvent('portfolio-transition',{cancelable:true,detail});
  if(document.dispatchEvent(event))commit();else if(detail.finished)await detail.finished;
@@ -132,6 +139,6 @@ document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a||e.met
 history.scrollRestoration='manual';window.addEventListener('popstate',()=>navigate(location.pathname,false));window.addEventListener('pageshow',()=>resetScroll());
 try{
  const response=await fetch(siteURL('/content.json'));if(!response.ok)throw Error('Content unavailable');
- projects=(await response.json()).projects;render();await settleHero();
+ projects=(await response.json()).projects;render();await settleHero();if(!location.hash)resetScroll();
  document.dispatchEvent(new CustomEvent('portfolio-transition',{detail:{phase:'ready',to:location.pathname,source:'project-app'}}));
 }catch(error){main.innerHTML='<section class="not-found"><h1>A brief intermission.</h1><p>The portfolio could not load. Please refresh the page.</p><button onclick="location.reload()">Try again</button></section>';console.error(error);}

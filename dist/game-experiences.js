@@ -10,32 +10,29 @@ const animals = [
     "id": "chunee-exeter-exchange",
     "name": "Chunee",
     "year": "1826",
-    "date": "March 1, 1826",
+    "date": "March 1826",
     "image": "chunee-exeter-exchange.png",
     "title": "Chunee was shot inside a menagerie",
-    "body": "Chunee, Asian elephant, is the identified subject of this record. Years of menagerie confinement ended in a prolonged public killing at Exeter Exchange, London.",
+    "body": "Years of menagerie confinement ended in a prolonged public killing at Exeter Exchange, London.",
     "note": "Contemporary accounts disagree on the exact number of shots.",
     "sources": [
       {
         "name": "London Museum · Chunee the elephant",
         "url": "https://www.londonmuseum.org.uk/collections/v/object-99934/the-destruction-of-the-elephant-at-exeter-change-march-1st1826/"
-      },
-      {
-        "name": "Smithsonian Libraries and Archives · Once There Were Billions",
-        "url": "https://blog.library.si.edu/blog/2014/08/28/once-there-were-billions-100-year-anniversary-of-the-death-martha-the-last-passenger-pigeon/"
       }
     ],
+    "species": "Asian elephant",
     "width": 1024,
     "height": 1024
   },
   {
     "id": "eldey-last-great-auks",
-    "name": "The last confirmed great auk pair",
+    "name": "The great auk pair",
     "year": "1844",
     "date": "June 1844",
     "image": "eldey-last-great-auks.png",
     "title": "Collectors killed the last confirmed great auk pair",
-    "body": "The last confirmed great auk pair, Great auks, is the identified subject of this record. Fishermen killed a breeding pair to supply museum collectors at Eldey Island.",
+    "body": "Fishermen killed a breeding pair to supply museum collectors at Eldey Island.",
     "note": "Modern references differ between June 3 and July 3; the timeline uses month precision.",
     "sources": [
       {
@@ -47,50 +44,145 @@ const animals = [
         "url": "https://www.cincymuseum.org/press/great-auk-paper/"
       }
     ],
+    "species": "Great auks",
     "width": 1024,
     "height": 1024
   },
   {
-    "id": "laika",
+    "id": "balaclava-light-brigade-horses",
+    "name": "Light Brigade horses",
+    "year": "1854",
+    "date": "October 25, 1854",
+    "image": "balaclava-light-brigade-horses.png",
+    "title": "The Light Brigade's horses were ordered into artillery fire",
+    "body": "A misunderstood military order sent the British Light Brigade directly toward Russian guns; the National Army Museum records the loss of 475 horses.",
+    "note": "Contemporary records do not agree on how many of the 475 died during the charge versus after injury.",
+    "sources": [
+      {
+        "name": "National Army Museum · The order that launched the Charge of the Light Brigade, 1854",
+        "url": "https://collection.nam.ac.uk/detail.php?acc=1962-11-4-3"
+      },
+      {
+        "name": "National Army Museum · Battle of Balaklava",
+        "url": "https://www.nam.ac.uk/explore/battle-balaklava"
+      }
+    ],
+    "species": "Military horses",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "cher-ami-1918",
+    "name": "Cher Ami",
+    "year": "1918",
+    "date": "4 October 1918",
+    "image": "cher-ami-pigeon.png",
+    "title": "A message carried through gunfire",
+    "body": "Cher Ami carried a message to stop friendly fire during the First World War. Wounded on the flight, the pigeon survived for several months and died in 1919.",
+    "note": "The bird’s sex, the cause of individual wounds and some mission details remain disputed.",
+    "sources": [
+      {
+        "name": "Smithsonian Institution · Solving a 100-Year-Old Mystery About a Pigeon",
+        "url": "https://www.smithsonianmag.com/blogs/national-museum-american-history/2021/07/19/cher-ami/"
+      },
+      {
+        "name": "U.S. National Archives · The Lost Battalion and the Message of Cher Ami",
+        "url": "https://prologue.blogs.archives.gov/2018/10/04/cher-ami/"
+      }
+    ],
+    "species": "Homing pigeon",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "thylacine-1936",
+    "name": "The last captive thylacine",
+    "year": "1936",
+    "date": "7 September 1936",
+    "image": "last-captive-thylacine.png",
+    "title": "The last known thylacine died in captivity",
+    "body": "Hunting and bounty schemes depleted the species. The last known captive thylacine died at Hobart Zoo; no later surviving animal has been scientifically confirmed.",
+    "note": "The animal’s name, sex and immediate cause of death remain uncertain.",
+    "sources": [
+      {
+        "name": "Queen Victoria Museum & Art Gallery · Tasmanian Tiger: precious little remains",
+        "url": "https://www.qvmag.tas.gov.au/Whats-on/Museum-at-Inveresk/Tasmanian-Tiger-precious-little-remains"
+      },
+      {
+        "name": "National Museum of Australia · Extinction of thylacine",
+        "url": "https://www.nma.gov.au/defining-moments/resources/extinction-of-thylacine"
+      }
+    ],
+    "species": "Thylacine",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "laika-1957",
     "name": "Laika",
     "year": "1957",
     "date": "3 November 1957",
     "image": "laika-sputnik-2.png",
-    "title": "A journey without a return.",
-    "body": "Laika was sent into Earth orbit aboard Sputnik 2. The spacecraft had no return design. Later mission accounts corrected the early claim that she survived for days: she died within hours from overheating and stress.",
-    "note": "The change in the published account matters: visitors can compare the sources instead of treating the first report as final.",
+    "title": "A journey without a return",
+    "body": "Laika was sent into orbit aboard Sputnik 2, a spacecraft with no return design. She died within hours from overheating and stress.",
+    "note": "Later mission accounts corrected the early claim that she had survived for days.",
     "sources": [
       {
-        "name": "NASA · The first animal in orbit",
+        "name": "NASA · 60 Years Ago: The First Animal in Orbit",
         "url": "https://www.nasa.gov/history/60-years-ago-the-first-animal-in-orbit/"
       },
       {
-        "name": "Smithsonian · Laika’s one-way trip",
+        "name": "Smithsonian Magazine · The Sad, Sad Story of Laika, the Space Dog",
         "url": "https://www.smithsonianmag.com/smithsonian-institution/sad-story-laika-space-dog-and-her-one-way-trip-orbit-1-180968728/"
       }
     ],
+    "species": "Domestic dog",
     "width": 1024,
     "height": 1024
   },
   {
-    "id": "digit-gorilla-poaching",
-    "name": "Digit",
-    "year": "1977",
-    "date": "December 31, 1977",
-    "image": "digit-gorilla-poaching.png",
-    "title": "Digit was killed by poachers",
-    "body": "Digit, Mountain gorilla, is the identified subject of this record. Poachers killed a habituated mountain gorilla while targeting wildlife at Virunga Mountains.",
-    "note": "Digit was killed; his death helped catalyze anti-poaching work.",
+    "id": "skylab-spiders-1973",
+    "name": "Arabella and Anita",
+    "year": "1973",
+    "date": "28 July 1973",
+    "image": "arabella-anita-skylab.png",
+    "title": "Two spiders in an orbital experiment",
+    "body": "Arabella and Anita were sent to Skylab to study web-building in weightlessness. Both spiders died around the end of the mission and were preserved as specimens.",
+    "note": "The archive follows the NASA and Smithsonian records linked below.",
     "sources": [
       {
-        "name": "Dian Fossey Gorilla Fund · Digit's legacy",
-        "url": "https://gorillafund.org/who-we-are/digit-fund/"
+        "name": "NASA · A Brief History of Animals in Space",
+        "url": "https://www.nasa.gov/history/a-brief-history-of-animals-in-space/"
       },
       {
-        "name": "International Gorilla Conservation Programme · Mountain gorilla conservation history",
-        "url": "https://www.nationalgeographic.com/magazine/article/mountain-gorillas-virunga-peril-dian-fossey"
+        "name": "Smithsonian National Air and Space Museum · Spider, Arabella, Skylab 3",
+        "url": "https://airandspace.si.edu/collection-objects/spider-arabella-skylab-3/nasm_A19740993000"
       }
     ],
+    "species": "Cross orb-weaver spiders",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "sandoz-rhine-fish",
+    "name": "Rhine river fish",
+    "year": "1986",
+    "date": "November 1, 1986",
+    "image": "sandoz-rhine-fish.png",
+    "title": "Chemical firefighting runoff killed Rhine fish",
+    "body": "Firefighting water carried pesticides and chemicals from a warehouse into the Rhine at Rhine River downstream of Basel.",
+    "note": "Mortality can only be estimated by reach and species; sources agree on mass fish death.",
+    "sources": [
+      {
+        "name": "International Commission for the Protection of the Rhine · The turning point: the Sandoz accident",
+        "url": "https://www.iksr.org/en/icpr/about-us/history/the-turning-point-the-sandoz-accident/"
+      },
+      {
+        "name": "Eawag · Rhine running red, fish dead — 30th anniversary",
+        "url": "https://www.eawag.ch/en/info/portal/news/news-archive/archive-detail/rhine-running-red-fish-dead-30th-anniversary-of-the-sandoz-blaze/"
+      }
+    ],
+    "species": "European eels and other river fish",
     "width": 1024,
     "height": 1024
   },
@@ -101,7 +193,7 @@ const animals = [
     "date": "2006",
     "image": "ming-ocean-quahog.png",
     "title": "Ming died when researchers opened the shell",
-    "body": "Ming / Hafrún, Ocean quahog, is the identified subject of this record. Researchers collected a live clam and opened its shell before its exceptional age was known at Icelandic coastal waters.",
+    "body": "Researchers collected a live clam and opened its shell before its exceptional age was known at Icelandic coastal waters.",
     "note": "The team could not know the live animal's exact age before opening the shell; it was not deliberately killed after its age was known.",
     "sources": [
       {
@@ -113,116 +205,30 @@ const animals = [
         "url": "https://blogs.nature.com/blog/a_clam_named_ming/"
       }
     ],
+    "species": "Ocean quahog",
     "width": 1024,
     "height": 1024
   },
   {
-    "id": "margaash-snow-leopard",
-    "name": "Margaash",
-    "year": "2018",
-    "date": "October 23, 2018",
-    "image": "margaash-snow-leopard.png",
-    "title": "Margaash was shot after a door was left open",
-    "body": "Margaash, Snow leopard, is the identified subject of this record. A keeper error left an enclosure door open and the escaped cat was shot at Dudley Zoo.",
-    "note": "Margaash was killed by a zoo marksman.",
+    "id": "juma-2016",
+    "name": "Juma",
+    "year": "2016",
+    "date": "20 June 2016",
+    "image": "juma-olympic-jaguar.png",
+    "title": "A jaguar brought to a torch ceremony",
+    "body": "Juma was taken to an Olympic torch event under military control. After escaping restraint, she was shot by soldiers when sedation failed.",
+    "note": "The army’s account describes an immediate safety threat; public footage cannot establish the full sequence.",
     "sources": [
       {
-        "name": "Dudley Zoo · Spring ZooNooz 2019 — Margaash incident",
-        "url": "https://www.dudleyzoo.org.uk/wp-content/uploads/Spring-ZooNooz-2019.pdf"
+        "name": "Brazilian Army via Reuters · Army statement on Juma's death",
+        "url": "https://www.newsweek.com/jaguar-shot-dead-brazil-escaped-soldier-juma-amazon-olympics-manaus-amazon-472950"
       },
       {
-        "name": "The Guardian · Snow leopard shot dead after escaping zoo enclosure",
-        "url": "https://www.theguardian.com/world/2018/nov/30/snow-leopard-shot-dead-in-west-midlands-after-escaping-zoo-enclosure"
+        "name": "Agência Brasil via AS · IPAAM notification and Rio 2016 response",
+        "url": "https://as.com/masdeporte/2016/06/22/juegosolimpicos/1466593276_686613.html"
       }
     ],
-    "width": 1024,
-    "height": 1024
-  },
-  {
-    "id": "spitfire-wolf-926f",
-    "name": "Spitfire (926F)",
-    "year": "2018",
-    "date": "November 24, 2018",
-    "image": "spitfire-wolf-926f.png",
-    "title": "Spitfire was legally shot outside Yellowstone",
-    "body": "Spitfire (926F), Gray wolf, is the identified subject of this record. A habituated wolf crossed an invisible park boundary into a hunting zone at Near Silver Gate, Montana.",
-    "note": "A hunter legally killed the wolf just outside the park.",
-    "sources": [
-      {
-        "name": "National Park Service · Yellowstone Wolf Project annual report 2018",
-        "url": "https://home.nps.gov/yell/learn/science-publications-reports.htm"
-      },
-      {
-        "name": "New York Times · Famous Yellowstone wolf shot",
-        "url": "https://www.nytimes.com/2018/11/30/science/wolf-yellowstone-shot.html"
-      }
-    ],
-    "width": 1024,
-    "height": 1024
-  },
-  {
-    "id": "honey-inubosaki-dolphin",
-    "name": "Honey",
-    "year": "2020",
-    "date": "March 29, 2020",
-    "image": "honey-inubosaki-dolphin.png",
-    "title": "Honey died after the aquarium was abandoned",
-    "body": "Honey, Common bottlenose dolphin, is the identified subject of this record. A dolphin was left in a closed aquarium with minimal care at Inubosaki Marine Park.",
-    "note": "The facility did not release a complete veterinary report.",
-    "sources": [
-      {
-        "name": "Dolphin Project · Honey rescue campaign record",
-        "url": "https://arcj.org/en/issues-en/entertainment-en/zoo-en/honey-died/"
-      },
-      {
-        "name": "Japan Times · Honey the dolphin dies at abandoned aquarium",
-        "url": "https://www.japantimes.co.jp/news/2020/04/03/national/honey-dolphin-dies/"
-      }
-    ],
-    "width": 1024,
-    "height": 1024
-  },
-  {
-    "id": "freya",
-    "name": "Freya",
-    "year": "2022",
-    "date": "14 August 2022",
-    "image": "freya-oslo-walrus.png",
-    "title": "People did not keep their distance.",
-    "body": "Crowds repeatedly approached Freya in Oslofjord despite warnings. Authorities killed her, citing a continuing risk to people. A later examination confirmed that she had been healthy.",
-    "note": "Authorities and animal-protection groups disagreed about whether relocation or stricter separation were viable alternatives. The archive preserves that uncertainty.",
-    "sources": [
-      {
-        "name": "Norwegian Veterinary Institute · Examination",
-        "url": "https://kommunikasjon.ntb.no/pressemelding/17939937/obduksjonen-av-hvalrossen-freya-er-klar?publisherId=17848243"
-      },
-      {
-        "name": "NOAH · Challenge to the decision",
-        "url": "https://www.dyrsrettigheter.no/rettsvern/noah-klager-avlivingen-av-freya-inn-til-sivilombudet/"
-      }
-    ],
-    "width": 1024,
-    "height": 1024
-  },
-  {
-    "id": "grizzly-399-vehicle",
-    "name": "Grizzly 399",
-    "year": "2024",
-    "date": "October 22, 2024",
-    "image": "grizzly-399-vehicle.png",
-    "title": "Grizzly 399 was killed by a vehicle",
-    "body": "Grizzly 399, Grizzly bear, is the identified subject of this record. Road traffic killed a repeatedly monitored wild bear at Snake River Canyon, Wyoming.",
-    "note": "The twenty-eight-year-old bear died in a vehicle collision.",
-    "sources": [
-      {
-        "name": "U.S. Fish and Wildlife Service · Grizzly bear 399 killed in vehicle collision",
-        "url": "https://www.fws.gov/press-release/2024-10/grizzly-bear-399-fatally-struck-vehicle-snake-river-canyon"
-      },
-      {
-        "name": "Associated Press · Grizzly 399 killed by vehicle",
-        "url": "https://apnews.com/article/3e13c4b5234926cbd799dbb3db1ffac8"
-      }
-    ],
+    "species": "Jaguar",
     "width": 1024,
     "height": 1024
   }
@@ -232,9 +238,14 @@ export function renderGameExperience(projectId, part='all') {
   if(projectId==='hersound') {
     if(part==='all')return ['assemble','erase','restore'].map(p=>renderGameExperience(projectId,p)).join('');
     if(part==='assemble'||part==='restore')return `<div class="game-experience gx-her" data-experience="hersound-${part}">
-      <p class="gx-instruction">${part==='assemble'?'<strong>Start with the first frame.</strong> Choose <strong>Lake</strong>, then select the frame. Add <strong>Waner</strong> and <strong>Taiping</strong> the same way. Both women belong in the picture because this is a journey they shared.':'<strong>Choose POWER below, then select each picture.</strong> The same people return with their agency restored. Watch the images change before reading their stories.'}</p>
-      ${part==='assemble'?'<ol class="gx-her-guide"><li><strong>1 · Lake + Waner + Taiping</strong><span>A journey they took together.</span></li><li><strong>2 · Banquet + Waner + Taiping</strong><span>A meal they shared.</span></li><li><strong>3 · Poetry + Waner + Taiping</strong><span>Memories preserved in verse.</span></li></ol>':''}
-      <div class="gx-her-island" data-her-part="${part}" aria-busy="true"><p class="gx-loading" role="status">Opening the scene…</p></div>
+      <div class="gx-her-layout"><aside class="gx-play-guide">
+        <p class="gx-guide-kicker">${part==='assemble'?'A guided chapter':'The final chapter'}</p>
+        <div class="gx-guide-icons" aria-hidden="true"><img src="${ASSETS}/her/game/choice-normalized/${part==='assemble'?'shangguan-waner':'power'}.png" alt="">${part==='assemble'?`<img src="${ASSETS}/her/game/choice-normalized/princess-taiping.png" alt="">`:''}</div>
+        <h3>${part==='assemble'?'Bring them into the same story':'Give them the power to act'}</h3>
+        <p class="gx-instruction">${part==='assemble'?'The first frame is complete. Taiping is selected for you: add her to the second frame, then build the last scene.':'Choose <strong>POWER</strong>. Select each picture to restore their agency.'}</p>
+        ${part==='assemble'?'<ol class="gx-her-guide"><li><strong>01 · A completed example</strong><span>Lake + Waner + Taiping</span></li><li><strong>02 · Add Taiping</strong><span>Waner and the banquet are already here</span></li><li><strong>03 · Build it yourself</strong><span>Poetry + Waner + Taiping</span></li></ol>':'<p class="gx-guide-meaning">In this last puzzle, the change is in who gets to define their lives. The same women become political actors and trusted allies.</p>'}
+        <a class="gx-full-game" href="https://she.ruiyuanbai.com/" target="_blank" rel="noopener noreferrer">Play the complete story ↗</a>
+      </aside><div class="gx-her-island" data-her-part="${part}" aria-busy="true"><p class="gx-loading" role="status">Opening the scene…</p></div></div>
       <p class="gx-inline-status" role="status" aria-live="polite"></p>
     </div>`;
     if(part==='erase')return `<div class="game-experience gx-her gx-wind" data-experience="hersound-erase">
@@ -250,8 +261,8 @@ export function renderGameExperience(projectId, part='all') {
   if(projectId==='ourworld') {
     if(part==='all')return ['archive','candles'].map(p=>renderGameExperience(projectId,p)).join('');
     if(part==='archive')return `<div class="game-experience gx-archive" data-experience="ourworld-archive">
-      <p class="gx-instruction">Ten animal stories from the archive. Choose an animal to read their story and original sources.</p>
-      <div class="gx-animal-choices" role="group" aria-label="Ten animal stories from the archive">${animals.map((a,i)=>`<button type="button" class="gx-animal" data-animal="${a.id}" aria-pressed="${i===0}" aria-controls="gx-animal-record"><img src="${ASSETS}/ourworld/${a.image}" width="${a.width}" height="${a.height}" alt="${a.name}, archive portrait" loading="lazy"><span>${a.name}</span><small>${a.year}</small></button>`).join('')}</div>
+      <div class="gx-archive-top"><div><p class="gx-guide-kicker">Selected cases · 1826–2016</p><p class="gx-instruction">Ten records from the larger archive. Follow the timeline and choose a life to remember.</p></div><a class="gx-full-game" href="https://www.ruiyuanbai.com/art/Earth-is-not-humanitys-alone/demo" target="_blank" rel="noopener noreferrer">Explore the full archive ↗</a></div>
+      <div class="gx-timeline-window" tabindex="0" aria-label="Scroll through ten selected animal histories"><div class="gx-animal-choices" role="group" aria-label="Selected cases from 1826 to 2016">${animals.map((a,i)=>`<button type="button" class="gx-animal" data-animal="${a.id}" aria-pressed="${i===0}" aria-controls="gx-animal-record"><small>${a.year}</small><span class="gx-timeline-dot" aria-hidden="true"></span><img src="${ASSETS}/ourworld/${a.image}" width="${a.width}" height="${a.height}" alt="${a.name}, archive portrait" loading="lazy"><span>${a.name}</span></button>`).join('')}</div></div>
       <div class="gx-animal-record" id="gx-animal-record" aria-live="polite"></div>
     </div>`;
     if(part==='candles')return `<div class="game-experience gx-candles" data-experience="ourworld-candles">
@@ -265,8 +276,25 @@ export function renderGameExperience(projectId, part='all') {
 
 function setupHer(section) {
   const host=section.querySelector('[data-her-part]');
-  let disposed=false,unmount=()=>{};
-  const complete=e=>{section.querySelector('.gx-inline-status').textContent=e.detail.complete?(host.dataset.herPart==='assemble'?'All three scenes are complete.':'Their agency returns to view.'):'';};
+  let disposed=false,unmount=()=>{},collapseFrame=0;
+  const collapse=()=>{
+    cancelAnimationFrame(collapseFrame);
+    collapseFrame=requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(disposed||host.dataset.herPart!=='restore')return;
+      const stage=host.querySelector('.final-chapter'),board=host.querySelector('.final-chapter-board');
+      if(!stage||!board)return;
+      if(host.dataset.complete!=='true'){stage.style.removeProperty('height');stage.classList.remove('gx-completed-stage');return;}
+      const top=board.getBoundingClientRect().top;
+      const bottom=Math.max(...[...board.querySelectorAll('.final-chapter-slot,.final-chapter-slot-wrap>p')].map(el=>el.getBoundingClientRect().bottom));
+      stage.style.height=Math.ceil(bottom-top+24)+'px';stage.classList.add('gx-completed-stage');
+    }));
+  };
+  const complete=e=>{
+    section.classList.toggle('is-done',e.detail.complete);
+    section.querySelector('.gx-inline-status').textContent=e.detail.complete?(host.dataset.herPart==='assemble'?'All three scenes are complete.':'Their agency returns to view.'):'';
+    collapse();
+  };
+  window.addEventListener('resize',collapse);
   host.addEventListener('portfolio:game-experience',complete);
   herModule ||= import('./assets/games-revision/her/bundle/her-inline.js');
   herModule.then(module=>{
@@ -274,7 +302,7 @@ function setupHer(section) {
     unmount=module.mountHerExperience(host,host.dataset.herPart);
     host.setAttribute('aria-busy','false');
   }).catch(()=>{if(!disposed){host.innerHTML='<p>The scene could not load. <a href="https://she.ruiyuanbai.com/" target="_blank" rel="noopener noreferrer">Open the full game ↗</a></p>';host.setAttribute('aria-busy','false');}});
-  return()=>{disposed=true;host.removeEventListener('portfolio:game-experience',complete);unmount();};
+  return()=>{disposed=true;cancelAnimationFrame(collapseFrame);window.removeEventListener('resize',collapse);host.removeEventListener('portfolio:game-experience',complete);unmount();};
 }
 
 // Original target scenes, scroll behavior and wind equations. The eight animated
@@ -319,16 +347,37 @@ function setupWind(section) {
 }
 function setupArchive(section) {
   const record=section.querySelector('.gx-animal-record'),buttons=[...section.querySelectorAll('[data-animal]')];
-  const select=id=>{const a=animals.find(a=>a.id===id);buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.animal===id)));section.dataset.selected=id;record.innerHTML=`<p class="gx-record-date">${esc(a.date)}</p><h3>${esc(a.title)}</h3><p>${esc(a.body)}</p><p class="gx-record-note">${esc(a.note)}</p><div class="gx-sources">${a.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`).join('')}</div>`;};
+  const select=id=>{const a=animals.find(a=>a.id===id);buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.animal===id)));section.dataset.selected=id;record.innerHTML=`<figure class="gx-selected-portrait"><img src="${ASSETS}/ourworld/${a.image}" width="${a.width}" height="${a.height}" alt="${esc(a.name)}"><figcaption>${esc(a.species)}</figcaption></figure><div class="gx-record-copy"><p class="gx-record-date">${esc(a.date)}</p><h3>What happened to ${esc(a.name.replace(/^The /,'the '))}?</h3><p class="gx-record-summary">${esc(a.title)}</p><p>${esc(a.body)}</p><p class="gx-record-note">${esc(a.note)}</p><div class="gx-sources">${a.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`).join('')}</div></div>`;};
   const click=e=>{const b=e.target.closest('[data-animal]');if(b&&section.contains(b))select(b.dataset.animal);};
-  section.addEventListener('click',click);select('laika');return()=>section.removeEventListener('click',click);
+  section.addEventListener('click',click);select('laika-1957');return()=>section.removeEventListener('click',click);
 }
 function setupCandles(section) {
   const click=e=>{const b=e.target.closest('[data-candle]');if(!b||b.dataset.candle==='0')return;const lit=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(lit));b.setAttribute('aria-label',`${lit?'Put out':'Light'} candle ${Number(b.dataset.candle)+1}`);b.classList.toggle('is-lit',lit);b.classList.toggle('is-dark',!lit);const n=section.querySelectorAll('.candle.is-lit').length;section.querySelector('.candle-status').textContent=`${n} of 10 candles lit`;section.dataset.litCount=String(n);};
   section.dataset.litCount='1';section.addEventListener('click',click);return()=>section.removeEventListener('click',click);
 }
+
+function setupHerArticle(root) {
+  const containers=root.querySelectorAll('.case-study .hero-bottom>p,.case-study .section-body,.case-study #abstract figcaption,.gx-play-guide');
+  const labels=[];
+  for(const container of containers){
+    const walker=document.createTreeWalker(container,NodeFilter.SHOW_TEXT);const nodes=[];
+    while(walker.nextNode()){const node=walker.currentNode;if(/\b(Waner|Taiping)\b/.test(node.textContent)&&!node.parentElement.closest('.her-name'))nodes.push(node);}
+    for(const node of nodes){const fragment=document.createDocumentFragment();for(const text of node.textContent.split(/(\bWaner\b|\bTaiping\b)/)){if(text==='Waner'||text==='Taiping'){const mark=document.createElement('span');mark.className='her-name her-name-'+text.toLowerCase();mark.textContent=text;fragment.append(mark);labels.push(mark);}else fragment.append(document.createTextNode(text));}node.replaceWith(fragment);}
+  }
+  return()=>labels.forEach(mark=>mark.replaceWith(document.createTextNode(mark.textContent)));
+}
+function setupArchiveHero(root) {
+  const figure=root.querySelector('.case-hero .hero-figure'),media=figure?.querySelector('.figure-media');if(!media)return()=>{};
+  const original=[...media.childNodes];const gallery=document.createElement('div');gallery.className='gx-hero-menagerie';gallery.setAttribute('role','img');gallery.setAttribute('aria-label','Chunee, Laika, Freya, great auks and Juma: five lives in Our World');
+  const portraits=[['chunee-exeter-exchange','Chunee'],['laika-sputnik-2','Laika'],['freya-oslo-walrus','Freya'],['eldey-last-great-auks','Great auks'],['juma-olympic-jaguar','Juma']];
+  gallery.innerHTML=portraits.map(([id,name],i)=>`<img class="gx-hero-animal gx-hero-animal-${i}" src="${ASSETS}/ourworld/${id}.png" alt="${name}" width="1254" height="1254" decoding="async">`).join('');media.replaceChildren(gallery);figure.classList.add('gx-archive-hero');
+  return()=>{media.replaceChildren(...original);figure.classList.remove('gx-archive-hero');};
+}
+
 export function setupGameExperiences(root=document) {
   const sections=[...(root.matches?.('[data-experience]')?[root]:[]),...root.querySelectorAll('[data-experience]')],disposers=[];
+  if(document.body.dataset.project==='hersound')disposers.push(setupHerArticle(root));
+  if(document.body.dataset.project==='ourworld')disposers.push(setupArchiveHero(root));
   for(const section of sections){installed.get(section)?.();const id=section.dataset.experience;const dispose=id==='hersound-erase'?setupWind(section):id.startsWith('hersound-')?setupHer(section):id==='ourworld-archive'?setupArchive(section):id==='ourworld-candles'?setupCandles(section):()=>{};installed.set(section,dispose);disposers.push(()=>{if(installed.get(section)===dispose){dispose();installed.delete(section);}});}
   return()=>disposers.forEach(dispose=>dispose());
 }

@@ -176,3 +176,9 @@
  .comic-art{height:auto;min-height:210px;align-items:center}
  .comic-art figcaption{font-size:9px;line-height:1.45;margin-top:8px}
 }
+
+.project-choice .art-lufa img{width:100%;max-width:340px;height:auto;max-height:225px;object-fit:contain}.art-lufa{padding:0;align-self:center}
+@media(max-width:699px){.project-choice .art-lufa img{max-width:170px;max-height:140px}}
+
+.art-our-ensemble{position:relative;width:100%;padding:0;height:205px}.art-our-ensemble img{position:absolute;width:53%!important;height:90%!important;max-width:none!important;object-fit:contain;inset:auto}.art-our-ensemble img:nth-child(1){left:10%;top:-10%;width:68%!important}.art-our-ensemble img:nth-child(2){left:-3%;bottom:-20%;width:46%!important}.art-our-ensemble img:nth-child(3){right:-2%;bottom:-19%;width:58%!important}.art-our-ensemble img:nth-child(4){right:-4%;top:-13%;width:32%!important}.art-our-ensemble img:nth-child(5){left:24%;bottom:-27%;width:48%!important}
+@media(max-width:699px){.art-our-ensemble{height:140px}}

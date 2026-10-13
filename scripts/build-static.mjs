@@ -23,7 +23,9 @@ function add(relative,allowDirectory=false){
 }
 ['universe.html','index.html','content.json'].forEach(f=>add(f));
 // These excerpts address artwork dynamically by filename; include their original sprites.
-add('assets/games-revision',true);
+for(const dir of ['assets/games-revision','assets/games-motion','assets/research-interactive','assets/scroll-story','assets/ambulance-editorial','assets/icon-original-explorations','assets/color-atlas-demo'])add(dir,true);
+// Original images addressed through composed filenames in the case-study modules.
+for(const file of ['assets/design-followup/color-agent-palace-a.jpg','assets/design-followup/color-agent-palace-b.jpg','assets/research-editorial/suzhou-scroll.png','assets/research-editorial/suzhou-perspectives.png','assets/research-editorial/suzhou-cultural-clues.png','assets/games-other-followup/ambulance-hospital-tab-all-three-names-and-capacity.png'])add(file);
 for(const f of fs.readdirSync(path.join(source,'assets/fonts')))if(/LICENSE|OFL|sources\.json/.test(f))add('assets/fonts/'+f);
 add('vendor/three/LICENSE');
 while(queue.length){

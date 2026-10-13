@@ -337,86 +337,9 @@ export const DATA_VISUAL_REPLACEMENTS = [
       "../research_portfolio/verse.txt:322–335 — Results",
       "../research_portfolio/v2/hll-definition-results-copy.md — omit d=1.07 because cognitive ease/load labels conflict"
     ]
-  },
-  {
-    "projectId": "icon-colors",
-    "sectionId": "meaning",
-    "originalSrc": "/assets/figure-08-study-2-rating-results-508b6772.webp",
-    "visual": {
-      "id": "icon-opposite-clarity-meaning",
-      "type": "bars",
-      "title": "Visible does not always mean appropriate",
-      "description": "Opposite-color icons: average ratings across the 12 tested colors.",
-      "panels": [
-        {
-          "title": "Two different judgments",
-          "unit": "Mean rating; response scale 1–5",
-          "min": 0,
-          "max": 5,
-          "rows": [
-            {
-              "label": "Easy to see · clarity",
-              "value": 4.39,
-              "display": "4.39 / 5",
-              "series": "primary"
-            },
-            {
-              "label": "Color fits the icon · meaning",
-              "value": 2.75,
-              "display": "2.75 / 5",
-              "series": "comparison"
-            }
-          ],
-          "note": ""
-        }
-      ],
-      "scope": "The same 20 participants took part in all three studies. These are overall means for opposite-color icons, not universal color standards. Individual hues and contexts can differ."
-    },
-    "sources": [
-      "workbench/icon-colors-current-data.json — visible Figma 1751:317, 1751:320, scope 1751:323"
-    ]
   }
 ];
-export const DATA_VISUAL_ADDITIONS = [
-  {
-    "projectId": "icon-colors",
-    "sectionId": "refinement",
-    "insert": "after",
-    "visual": {
-      "id": "icon-outline-meaning",
-      "type": "bars",
-      "title": "Keep the color. Clarify the symbol.",
-      "description": "Meaning ratings for colored outlines compared with the original black-symbol designs.",
-      "panels": [
-        {
-          "title": "Color–icon meaning",
-          "unit": "Mean rating; response scale 1–5",
-          "min": 0,
-          "max": 5,
-          "rows": [
-            {
-              "label": "Original black-symbol design",
-              "value": 3.71,
-              "display": "3.71 / 5",
-              "series": "comparison"
-            },
-            {
-              "label": "Colored icon + outline",
-              "value": 4.13,
-              "display": "4.13 / 5",
-              "series": "primary"
-            }
-          ],
-          "note": ""
-        }
-      ],
-      "scope": "These means compare the tested design treatments. They do not imply that an outline improves every icon, hue, or viewing condition."
-    },
-    "sources": [
-      "workbench/icon-colors-current-data.json — visible Figma 1751:374; comparison definition 1751:375"
-    ]
-  }
-];
+export const DATA_VISUAL_ADDITIONS = [];
 
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 let instanceId = 0;

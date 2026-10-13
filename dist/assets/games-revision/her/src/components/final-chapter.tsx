@@ -95,7 +95,7 @@ const SLOT_CAPTIONS = [
   'They are companions and political allies who trust each other.',
 ];
 
-const FINAL_CHAPTER_PROMPT = 'Follow the surviving evidence. Restore the agency hidden from view.';
+const FINAL_CHAPTER_PROMPT = 'Follow the evidence. Restore their agency.';
 
 export function resolveFinalChapterLayout(config?: FinalChapterConfig): FinalChapterLayoutState {
   const saved = config?.layout ?? {};
@@ -296,7 +296,7 @@ export default function FinalChapter({
         {(!previewOnly || editorMode) && (
           <>
             <p className="final-chapter-instruction" style={layoutStyle('instruction')} {...elementProps('instruction')}>
-              Choose an icon, then a frame. Reconstruct all three scenes to continue.
+              Choose POWER. Select all three pictures.
             </p>
             <img
               className="final-chapter-choice-frame"

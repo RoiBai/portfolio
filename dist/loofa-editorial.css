@@ -1,0 +1,50 @@
+body[data-project=loofasoup] .project-title-row{position:relative;padding-right:155px;align-items:center;gap:18px 25px}
+.loofa-title-character{position:absolute;right:0;top:50%;transform:translateY(-50%) rotate(-5deg);width:145px;height:102px;object-fit:contain}
+body[data-project=loofasoup] .hero-figure .figure-media{padding:0;background:none}
+body[data-project=loofasoup] .hero-figure img{width:100%;max-height:430px!important;object-fit:contain}
+body[data-project=loofasoup] #characters,body[data-project=loofasoup] #production{display:block!important}
+body[data-project=loofasoup] #characters>.section-body,body[data-project=loofasoup] #production>.section-body{position:static!important;margin:18px 0 30px;max-width:880px}
+body[data-project=loofasoup] #characters>.section-visuals,body[data-project=loofasoup] #production>.section-visuals{width:100%;max-width:none}
+body[data-project=loofasoup] .case-section.loofa-gameplay-editorial{display:block!important}
+.loofa-gameplay-guide{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:45px;align-items:start;margin-top:28px}
+.loofa-gameplay-film{min-width:0}.loofa-gameplay-film .loofa-recording{margin:0}.loofa-gameplay-film .loofa-recording figcaption{display:block}.loofa-gameplay-film .loofa-recording figcaption span{margin-bottom:8px;display:block}
+.loofa-gameplay-notes{list-style:none;padding:0;margin:0;display:grid;gap:22px}
+.loofa-gameplay-notes>li{display:grid;grid-template-columns:32px 1fr;gap:13px;opacity:0;transform:translateY(18px);transition:opacity .45s,transform .55s;border-bottom:1px solid #bbc498;padding-bottom:18px}
+.loofa-gameplay-notes>li.is-shown{opacity:1;transform:none}.loofa-gameplay-notes>li>span{font-size:14px;font-weight:600;padding-top:5px;color:#426b43}
+.loofa-gameplay-notes h3{font-size:23px;line-height:1.3;margin:0 0 7px;font-weight:550}.loofa-gameplay-notes p{font-size:19px!important;line-height:1.55!important;margin:0;text-wrap:pretty}
+.loofa-joma-personal{margin-top:14px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:15px}.loofa-joma-personal>strong{background:#d5e2a3;border-radius:24px;padding:8px 13px;transform:rotate(-4deg);color:#294b35;font-size:18px}.loofa-joma-personal>span{display:grid;text-align:center;gap:3px}.loofa-joma-personal img{width:95px!important;height:54px!important;object-fit:contain}
+@media(max-width:900px){.loofa-gameplay-guide{grid-template-columns:1fr;gap:25px}.loofa-gameplay-film{max-width:720px;margin:auto}.loofa-gameplay-notes{grid-template-columns:1fr 1fr;gap:24px}body[data-project=loofasoup] .project-title-row{padding-right:100px}.loofa-title-character{width:95px;height:75px}}
+@media(max-width:600px){.loofa-gameplay-notes{grid-template-columns:1fr}.loofa-gameplay-notes h3{font-size:22px}.loofa-gameplay-notes p{font-size:18px!important}body[data-project=loofasoup] .project-title-row{padding-right:0;display:flex}.loofa-title-character{position:static;transform:rotate(-5deg);width:110px;height:80px;order:-1}body[data-project=loofasoup] .hero-figure img{max-height:none!important}.loofa-gameplay-film .loofa-recording figcaption p{font-size:16px!important}}
+@media(prefers-reduced-motion:reduce){.loofa-gameplay-notes>li{opacity:1;transform:none;transition:none}}
+
+body[data-project=loofasoup] .loofa-recording video{height:auto!important;aspect-ratio:16/9;max-height:none!important;object-fit:contain}
+/* Keep Lufa next to the name, independently of the keyword pills. */
+body[data-project=loofasoup] .project-title-row{padding-right:0}
+.loofa-name-lockup{display:flex;align-items:center;gap:15px;min-width:0}
+body[data-project=loofasoup] .loofa-title-character{position:static;transform:rotate(-5deg);width:134px;height:100px;order:0;flex:0 0 auto}
+body[data-project=loofasoup] #abstract .project-figure{max-width:460px;margin-inline:auto}
+body[data-project=loofasoup] #abstract .figure-media img{max-height:340px!important;object-fit:contain}
+body[data-project=loofasoup] #production .dish-grid{display:grid!important;grid-template-columns:repeat(9,minmax(0,1fr))!important;gap:24px 30px!important;background:none!important;padding:12px 0!important}
+body[data-project=loofasoup] #production .dish-grid .project-figure{width:100%;max-width:104px;margin:0}
+body[data-project=loofasoup] #production .dish-grid .figure-media{height:100px;background:none!important;border:0}
+body[data-project=loofasoup] #production .dish-grid img{max-height:96px!important;object-fit:contain}
+body[data-project=loofasoup] .loofa-joma-personal{gap:14px;margin-top:12px;align-items:center;justify-content:flex-start}
+body[data-project=loofasoup] .loofa-joma-personal>strong{font-size:25px;line-height:1.1;background:#e2cd64;color:#243d2b;border:2px solid #426b43;box-shadow:4px 4px 0 #426b43;padding:11px 16px;transform:rotate(-7deg)}
+body[data-project=loofasoup] .loofa-joma-personal img{width:120px!important;height:70px!important}
+@media(max-width:900px){body[data-project=loofasoup] #production .dish-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:18px!important}}
+@media(max-width:600px){.loofa-name-lockup{gap:8px;width:100%}body[data-project=loofasoup] .loofa-title-character{width:85px;height:66px}body[data-project=loofasoup] #production .dish-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}body[data-project=loofasoup] #production .dish-grid .figure-media{height:68px}body[data-project=loofasoup] #production .dish-grid img{max-height:68px!important}}
+body[data-project=loofasoup] #routes{display:block!important}
+body[data-project=loofasoup] #routes>.section-body{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;margin:24px 0}
+body[data-project=loofasoup] #routes .insights{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin:0}
+body[data-project=loofasoup] #routes .insight{border:0;padding:0;display:block}
+body[data-project=loofasoup] #routes .insight .small-number{display:none}
+body[data-project=loofasoup] #routes .insight h3{font-size:22px;line-height:1.3;margin-bottom:8px}
+body[data-project=loofasoup] #routes .insight p{font-size:18px;line-height:1.5}
+body[data-project=loofasoup] #routes>.section-visuals{max-width:none;width:100%}
+body[data-project=loofasoup] #routes .figure-pair{display:grid!important;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+body[data-project=loofasoup] #routes .project-figure{max-width:none;width:100%;margin:0}
+body[data-project=loofasoup] #routes .figure-media{padding:0!important}
+body[data-project=loofasoup] #routes .figure-media img{width:100%;height:auto;max-height:none!important}
+body[data-project=loofasoup] #routes figcaption{display:block;font-size:17px!important;line-height:1.45;padding-top:12px}
+body[data-project=loofasoup] #routes figcaption>span{display:none}
+@media(max-width:650px){body[data-project=loofasoup] #routes>.section-body{display:block;margin:20px 0}body[data-project=loofasoup] #routes .insights{margin-top:20px}body[data-project=loofasoup] #routes .figure-pair{gap:13px}body[data-project=loofasoup] #routes figcaption{font-size:14px!important}body[data-project=loofasoup] #routes .insight h3{font-size:20px}}

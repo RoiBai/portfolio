@@ -8,7 +8,7 @@ export function emphasize(text, phrases = []) {
     ranges.push({start, end});
   }
   let cursor = 0, result = '';
-  for (const {start,end} of ranges.sort((a,b) => a.start-b.start).slice(0,2)) {
+  for (const {start,end} of ranges.sort((a,b) => a.start-b.start).slice(0,3)) {
     result += esc(source.slice(cursor,start)) + `<strong class="text-emphasis">${esc(source.slice(start,end))}</strong>`;
     cursor = end;
   }

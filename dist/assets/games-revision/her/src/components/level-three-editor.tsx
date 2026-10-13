@@ -591,6 +591,7 @@ export type LevelThreeEditorProps = {
   persistLocal?: boolean;
   playOnly?: boolean;
   previewOnly?: boolean;
+  portfolioGuided?: boolean;
 };
 
 export default function LevelThreeEditor({
@@ -604,6 +605,7 @@ export default function LevelThreeEditor({
   persistLocal = true,
   playOnly = false,
   previewOnly = false,
+  portfolioGuided = false,
 }: LevelThreeEditorProps) {
   const boardRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<
@@ -641,14 +643,14 @@ export default function LevelThreeEditor({
   const [layerOverrides, setLayerOverrides] = useState<LayerOverrides>(() => migrateLayerOverrides(initialConfig?.layerOverrides));
   const [slots, setSlots] = useState<SlotState[]>(
     playOnly && !previewOnly && !initiallyComplete
-      ? EMPTY_SLOTS()
+      ? (portfolioGuided ? [{ items: ['lake', 'waner', 'taiping'] }, { items: ['banquet', 'waner'] }, { items: [] }] : EMPTY_SLOTS())
       : SAMPLE_SLOTS.map((slot) => ({ items: [...slot.items] })),
   );
   const [history, setHistory] = useState<SlotState[][]>([]);
   const [selection, setSelection] = useState<Selection>(
     playOnly ? null : { kind: 'layout', id: 'prompt' },
   );
-  const [selectedChoice, setSelectedChoice] = useState<ItemId | null>(null);
+  const [selectedChoice, setSelectedChoice] = useState<ItemId | null>(portfolioGuided ? 'taiping' : null);
   const [hoverSlot, setHoverSlot] = useState<number | null>(null);
   const [hydrated, setHydrated] = useState(() => Boolean(initialConfig || !persistLocal));
   const [saveLabel, setSaveLabel] = useState('已自动保存');
@@ -841,6 +843,7 @@ export default function LevelThreeEditor({
   };
 
   const dropItem = (slotIndex: number, item: ItemId) => {
+    if (portfolioGuided && slotIndex === 0) return;
     commitSlots(placeItem(slots, slotIndex, item));
     setSelectedChoice(null);
     setHoverSlot(null);
@@ -871,8 +874,8 @@ export default function LevelThreeEditor({
 
   const clearScenes = () => {
     if (slots.every((slot) => !slot.items.length)) return;
-    commitSlots(EMPTY_SLOTS());
-    setSelectedChoice(null);
+    commitSlots(portfolioGuided ? [{ items: ['lake', 'waner', 'taiping'] }, { items: ['banquet', 'waner'] }, { items: [] }] : EMPTY_SLOTS());
+    setSelectedChoice(portfolioGuided ? 'taiping' : null);
   };
 
   const clearSlot = (slotIndex: number) => {
@@ -1301,7 +1304,7 @@ export default function LevelThreeEditor({
                 style={layoutStyle('prompt')}
                 onPointerDown={(event) => beginLayoutDrag('prompt', event)}
               >
-                <strong>Waner and Taiping share journeys, banquets, and poetry.</strong>
+                <strong><span className="her-name her-name-waner">Waner</span> and <span className="her-name her-name-taiping">Taiping</span> share journeys, banquets, and poetry.</strong>
               </div>
 
               {slots.map((slot, slotIndex) => {
@@ -1315,10 +1318,12 @@ export default function LevelThreeEditor({
                     key={layoutId}
                     data-slot-index={slotIndex}
                     role="button"
-                    tabIndex={mode === 'play' ? 0 : -1}
-                    aria-label={`Scene frame ${slotIndex + 1}${mode === 'play' && !selectedChoice && slot.items.length ? '，Tap to clear' : ''}`}
+                    tabIndex={mode === 'play' && !(portfolioGuided && slotIndex === 0) ? 0 : -1}
+                    aria-disabled={portfolioGuided && slotIndex === 0 ? true : undefined}
+                    aria-label={portfolioGuided && slotIndex === 0 ? 'Scene frame 1, completed example' : `Scene frame ${slotIndex + 1}${mode === 'play' && !selectedChoice && slot.items.length ? ', tap to clear' : ''}`}
                     onClick={() => {
                       if (mode === 'play') {
+                        if (portfolioGuided && slotIndex === 0) return;
                         if (selectedChoice) dropItem(slotIndex, selectedChoice);
                         else clearSlot(slotIndex);
                       } else if (mode === 'edit') {
@@ -1328,12 +1333,13 @@ export default function LevelThreeEditor({
                     onKeyDown={(event) => {
                       if (mode === 'play' && (event.key === 'Enter' || event.key === ' ')) {
                         event.preventDefault();
+                        if (portfolioGuided && slotIndex === 0) return;
                         if (selectedChoice) dropItem(slotIndex, selectedChoice);
                         else clearSlot(slotIndex);
                       }
                     }}
                     onDragOver={(event) => {
-                      if (mode !== 'play') return;
+                      if (mode !== 'play' || (portfolioGuided && slotIndex === 0)) return;
                       event.preventDefault();
                       event.dataTransfer.dropEffect = 'move';
                       setHoverSlot(slotIndex);
@@ -1341,7 +1347,7 @@ export default function LevelThreeEditor({
                     onDragLeave={(event) => {
                       if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setHoverSlot(null);
                     }}
-                    onDrop={(event) => handleDrop(slotIndex, event)}
+                    onDrop={(event) => { if (!(portfolioGuided && slotIndex === 0)) handleDrop(slotIndex, event); }}
                   >
                     <div className="scene-viewport">
                       <div className="scene-artwork-clip">
@@ -1377,17 +1383,17 @@ export default function LevelThreeEditor({
                         {slotIndex + 1}
                       </button>
                     )}
-                    {mode === 'play' && selectedChoice && (
+                    {mode === 'play' && selectedChoice && !(portfolioGuided && slotIndex === 0) && (
                       <span className="click-drop-label">Place here</span>
                     )}
-                    {mode === 'play' && !selectedChoice && slot.items.length > 0 && (
+                    {mode === 'play' && !selectedChoice && slot.items.length > 0 && !(portfolioGuided && slotIndex === 0) && (
                       <span className="click-drop-label clear-slot-label">Tap to clear</span>
                     )}
                   </div>
                 );
               })}
 
-              <p className="level-choice-instruction">Choose an icon, then a frame. Reconstruct all three scenes to continue.</p>
+              <p className="level-choice-instruction">{portfolioGuided ? 'Add Taiping to the banquet. Then build the poetry scene.' : 'Choose an icon, then a frame. Reconstruct all three scenes to continue.'}</p>
               <img className="level-choice-frame" src={`${ROOT}/choice-area-frame.png`} alt="" draggable={false} />
 
               {CHOICE_ORDER.map((item, choiceIndex) => {

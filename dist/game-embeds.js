@@ -40,7 +40,7 @@ export function gameSection(id) {
   const game = games[id];
   if (!game || game.native) return '';
   return `<section id="play" class="play-section" aria-labelledby="play-title" data-game="${id}">
-    <div class="play-heading"><div><p class="eyebrow">Interactive experience</p><h2 id="play-title">${id === 'hersound' ? 'Play the story. Uncover her voice.' : 'Step inside the project.'}</h2><p>${escape(game.intro)}</p></div><a href="${game.source}" target="_blank" rel="noopener noreferrer" class="text-link">Open original ↗</a></div>
+    <div class="play-heading"><div><p class="eyebrow">Interactive experience</p><h2 id="play-title">${id === 'hersound' ? 'Play the story. Uncover her voice.' : 'Step inside the project'}</h2><p>${escape(game.intro)}</p></div><a href="${game.source}" target="_blank" rel="noopener noreferrer" class="text-link">Open original ↗</a></div>
     <ol class="play-guide">${game.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol>
     <div class="play-stage">
       <div class="play-cover"><span class="play-symbol" aria-hidden="true">▷</span><h3>${escape(game.title)}</h3><button class="play-start" type="button">${escape(game.label)} <span aria-hidden="true">→</span></button></div>
@@ -49,8 +49,9 @@ export function gameSection(id) {
   </section>`;
 }
 
-export function setupGames() {
-  document.querySelectorAll('[data-game]').forEach(section => {
+export function setupGames(root=document) {
+  const cleanups=[];
+  root.querySelectorAll('[data-game]').forEach(section => {
     const game = games[section.dataset.game];
     if (!game) return;
     const stage = section.querySelector('.play-stage');
@@ -61,6 +62,7 @@ export function setupGames() {
     const close = section.querySelector('.play-close');
     const initialStatus = status.textContent;
     let frame, loadTimer;
+    const events=new AbortController(),options={signal:events.signal};
     start.addEventListener('click', () => {
       if (frame) return;
       cover.hidden = true;
@@ -77,11 +79,11 @@ export function setupGames() {
       stage.append(frame);
       full.hidden = close.hidden = false;
       loadTimer = setTimeout(() => { status.textContent = 'Still loading? You can also use “Open original” above.'; }, 20000);
-    });
+    },options);
     full.addEventListener('click', async () => {
       try { await stage.requestFullscreen(); }
       catch { status.textContent = 'Use “Open original” for a larger game window.'; }
-    });
+    },options);
     close.addEventListener('click', async () => {
       clearTimeout(loadTimer);
       if (document.fullscreenElement) await document.exitFullscreen().catch(()=>{});
@@ -90,6 +92,8 @@ export function setupGames() {
       cover.hidden = false;
       status.textContent = initialStatus;
       start.focus({preventScroll:true});
-    });
+    },options);
+    cleanups.push(()=>{events.abort();clearTimeout(loadTimer);frame?.remove();});
   });
+  return()=>cleanups.forEach(dispose=>dispose());
 }

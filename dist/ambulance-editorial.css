@@ -1,0 +1,87 @@
+/* Ambulance Rush: source artwork and live typesetting, not scaled presentation boards. */
+body[data-project="ambulance"] .ambulance-chapter{display:block;padding-block:50px;min-height:0;gap:0}
+body[data-project="ambulance"] .ambulance-chapter>.section-heading{width:100%;max-width:none;margin:0 0 28px}
+body[data-project="ambulance"] .ambulance-chapter h2{max-width:22ch;font-size:clamp(34px,3.7vw,52px);line-height:1.1;color:#255a9b;text-wrap:balance}
+body[data-project="ambulance"] .ambulance-chapter p{font-size:21px;line-height:1.48;max-width:none;margin:0 0 18px;text-wrap:pretty;color:#27313a}
+body[data-project="ambulance"] .ambulance-chapter h3{font-size:24px;line-height:1.18;text-wrap:balance;margin:0 0 9px;color:#255a9b}
+body[data-project="ambulance"] .ambulance-chapter figure{margin:0;max-width:100%;min-width:0;background:none;border:0;box-shadow:none;padding:0}
+body[data-project="ambulance"] .ambulance-chapter img{display:block;max-width:100%;height:auto;border:0;border-radius:0}
+body[data-project="ambulance"] .ambulance-chapter figcaption{display:block;padding:12px 0 0;margin:0;color:#4d565d;font-size:17px;line-height:1.4;max-width:none;text-wrap:pretty}
+body[data-project="ambulance"] .ar-news-grid,body[data-project="ambulance"] .ar-reflection-grid,body[data-project="ambulance"] .ar-output-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center}
+body[data-project="ambulance"] .ar-news-photo img{width:100%}
+body[data-project="ambulance"] .ar-news-copy .news-preview{margin:22px 0 18px;padding:18px 0;border:0;border-top:1px solid #b6c0c6;background:none;border-radius:0}
+body[data-project="ambulance"] .ambulance-chapter .news-preview h4{font-size:25px;line-height:1.2;text-wrap:balance;margin:13px 0 15px}
+body[data-project="ambulance"] .ambulance-chapter .news-preview-meta{font-size:15px}
+body[data-project="ambulance"] .ambulance-chapter .news-preview-actions{font-size:17px}
+body[data-project="ambulance"] .ar-takeaway{border-left:3px solid #de596a;padding-left:18px;margin:20px 0 0}
+body[data-project="ambulance"] .ar-section-deck{max-width:850px;margin-bottom:26px}
+body[data-project="ambulance"] .ar-map-comparison{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.85fr) minmax(0,1fr);gap:30px;align-items:center;margin-top:18px}
+body[data-project="ambulance"] .ar-map{position:relative;z-index:1}
+body[data-project="ambulance"] .ar-map figcaption{font-weight:650;font-size:20px;color:#255a9b;padding:0 0 15px}
+body[data-project="ambulance"] .ar-map-crop{position:relative;aspect-ratio:400/340;overflow:hidden;background:transparent}
+body[data-project="ambulance"] .ar-map-real img{max-width:none;width:139.4655%;height:auto;position:absolute;left:-15.7225%;top:-5.55%;mix-blend-mode:multiply;opacity:.72}
+body[data-project="ambulance"] .ar-map-game img{width:100%;max-width:none;height:auto}
+body[data-project="ambulance"] .ar-map-pin{position:absolute;display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#285fa4;color:white;box-shadow:0 0 0 2px #f2eee5;font-weight:650;font-size:17px;transform:translate(-50%,-50%);opacity:0;transition:opacity .32s}
+body[data-project="ambulance"] .ar-hospitals{position:relative;z-index:3;display:grid;gap:24px;margin:30px 0 0;padding:0;list-style:none}
+body[data-project="ambulance"] .ar-hospitals li{display:flex;gap:12px;align-items:center;background:var(--bg);padding:10px 6px}
+body[data-project="ambulance"] .ar-hospitals h3{font-size:22px;margin:5px 0 0}
+body[data-project="ambulance"] .ar-step-number{color:#c54859;font-size:17px;font-weight:700;flex:none;min-width:24px;line-height:1.4}
+body[data-project="ambulance"] .ar-region{font-size:14px;text-transform:uppercase;letter-spacing:.09em;color:#556571}
+body[data-project="ambulance"] .ar-connections{position:absolute;inset:0;z-index:2;pointer-events:none}
+body[data-project="ambulance"] .ar-connections i{position:absolute;height:2px;border-top:2px solid #285fa4;box-shadow:0 0 0 1px #f7f4edcc;transform-origin:left center;opacity:0;transition:opacity .4s}
+body[data-project="ambulance"] .ar-game-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.1fr) minmax(0,1fr);gap:30px;align-items:center;position:relative;margin-top:32px}
+body[data-project="ambulance"] .ar-game-frame{position:relative;z-index:1}
+body[data-project="ambulance"] .ar-game-frame>img{width:100%}
+body[data-project="ambulance"] .ar-game-frame figcaption{text-align:center;font-size:17px}
+body[data-project="ambulance"] .ar-game-notes{position:relative;z-index:3;display:grid;gap:25px}
+body[data-project="ambulance"] .ar-game-note{display:grid;grid-template-columns:25px minmax(0,1fr);gap:8px;align-items:start;background:var(--bg)}
+body[data-project="ambulance"] .ar-game-note h3{font-size:22px}
+body[data-project="ambulance"] .ar-game-note p{font-size:19px;line-height:1.42;margin:0}
+body[data-project="ambulance"] .ar-game-note .ar-hospital-panel{width:76px;margin-top:10px}
+body[data-project="ambulance"] .ar-urgency{display:flex;gap:12px;flex-wrap:wrap;margin-top:11px;font-size:14px;font-weight:650}
+body[data-project="ambulance"] .ar-urgency span{display:flex;gap:5px;align-items:center;color:#336345}
+body[data-project="ambulance"] .ar-urgency span::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
+body[data-project="ambulance"] .ar-urgency span:nth-child(2){color:#866c13}
+body[data-project="ambulance"] .ar-urgency span:nth-child(3){color:#ba4050}
+body[data-project="ambulance"] .ar-pressure{display:grid;grid-template-columns:minmax(240px,.5fr) 1fr;align-items:start;gap:30px;border-top:1px solid #c8c6be;padding-top:22px;margin-top:32px}
+body[data-project="ambulance"] .ar-pressure h3{color:#b94454}
+body[data-project="ambulance"] .ar-pressure p{margin:0}
+body[data-project="ambulance"] [data-ar-step]{opacity:.18;translate:0 16px;transition:opacity .36s ease,translate .4s ease}
+body[data-project="ambulance"] [data-ar-step].ar-is-visible{opacity:1;translate:0 0}
+body[data-project="ambulance"] .ar-connections .ar-is-visible,body[data-project="ambulance"] .ar-map-pin.ar-is-visible{opacity:1}
+body[data-project="ambulance"] .ar-reflection-copy blockquote{margin:24px 0 0;border-left:3px solid #d84a5f;padding-left:22px}
+body[data-project="ambulance"] .ar-reflection-copy blockquote>span{font-size:14px;color:#a94151;text-transform:uppercase;letter-spacing:.08em}
+body[data-project="ambulance"] .ar-reflection-copy blockquote p{font-size:25px;line-height:1.35;margin:13px 0 0}
+body[data-project="ambulance"] .ar-output-grid{align-items:start}
+body[data-project="ambulance"] .ar-development{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:end}
+body[data-project="ambulance"] .ar-development figure{align-self:start}
+body[data-project="ambulance"] .ar-development img{width:100%;max-height:340px;object-fit:cover;object-position:center}
+body[data-project="ambulance"] .ar-development>p{grid-column:1/-1;border-top:1px solid #c8c6be;padding-top:18px}
+body[data-project="ambulance"] .ar-output-copy .news-preview{border:0;border-top:1px solid #b6c0c6;border-radius:0;background:none;margin:20px 0;padding:20px 0}
+body[data-project="ambulance"] .ar-publication{padding-top:18px;border-top:1px solid #b6c0c6}
+body[data-project="ambulance"] .ar-publication>span{display:block;margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:#255a9b;font-weight:650}
+body[data-project="ambulance"] .ar-publication h3{font-size:25px}
+body[data-project="ambulance"] .ar-publication p{font-size:17px}
+@media(max-width:999px){body[data-project="ambulance"] .ar-map-comparison{grid-template-columns:1fr 1fr;gap:24px}body[data-project="ambulance"] .ar-hospitals{grid-row:2;grid-column:1/-1;grid-template-columns:repeat(3,1fr);gap:12px;margin:0}body[data-project="ambulance"] .ar-hospitals li{padding:10px 0;align-items:start}body[data-project="ambulance"] .ar-hospitals h3{font-size:19px}body[data-project="ambulance"] .ar-connections{display:none}body[data-project="ambulance"] .ar-game-layout{grid-template-columns:1fr 1fr;gap:25px}body[data-project="ambulance"] .ar-game-frame{grid-row:1;grid-column:1/-1;width:100%;max-width:680px;justify-self:center}body[data-project="ambulance"] .ar-game-notes{align-self:start}body[data-project="ambulance"] .ar-news-grid,body[data-project="ambulance"] .ar-reflection-grid,body[data-project="ambulance"] .ar-output-grid{gap:25px}body[data-project="ambulance"] .ar-reflection-copy blockquote p{font-size:23px}}
+@media(max-width:600px){body[data-project="ambulance"] .ambulance-chapter{padding-block:34px}body[data-project="ambulance"] .ambulance-chapter h2{font-size:34px;max-width:none}body[data-project="ambulance"] .ambulance-chapter p{font-size:19px;line-height:1.48}body[data-project="ambulance"] .ambulance-chapter>.section-heading{margin-bottom:23px}body[data-project="ambulance"] .ar-news-grid,body[data-project="ambulance"] .ar-reflection-grid,body[data-project="ambulance"] .ar-output-grid{grid-template-columns:1fr;gap:22px}body[data-project="ambulance"] .ambulance-chapter figcaption{font-size:16px}body[data-project="ambulance"] .ar-news-copy .news-preview{margin:20px 0}body[data-project="ambulance"] .ambulance-chapter .news-preview h4{font-size:23px}body[data-project="ambulance"] .ar-map-comparison{gap:18px}body[data-project="ambulance"] .ar-map figcaption{font-size:17px;padding-bottom:12px}body[data-project="ambulance"] .ar-map-pin{width:23px;height:23px;font-size:14px}body[data-project="ambulance"] .ar-hospitals{grid-template-columns:1fr;gap:5px}body[data-project="ambulance"] .ar-hospitals li{gap:12px}body[data-project="ambulance"] .ar-hospitals h3{font-size:23px}body[data-project="ambulance"] .ar-region{font-size:13px}body[data-project="ambulance"] .ar-game-layout{grid-template-columns:1fr;gap:24px;margin-top:24px}body[data-project="ambulance"] .ar-game-frame{grid-row:1;grid-column:1}body[data-project="ambulance"] .ar-game-notes{gap:24px}body[data-project="ambulance"] .ar-game-note{grid-template-columns:26px minmax(0,1fr);gap:10px}body[data-project="ambulance"] .ar-game-note h3{font-size:24px}body[data-project="ambulance"] .ar-game-note p{font-size:19px}body[data-project="ambulance"] .ar-hospital-panel{float:right;margin:0 0 0 15px!important}body[data-project="ambulance"] .ar-game-note>div:has(.ar-hospital-panel){display:grid;grid-template-columns:1fr 68px;column-gap:14px}body[data-project="ambulance"] .ar-game-note>div:has(.ar-hospital-panel) h3{grid-column:1/-1}body[data-project="ambulance"] .ar-hospital-panel{grid-column:2;grid-row:2;width:68px!important}body[data-project="ambulance"] .ar-pressure{grid-template-columns:1fr;gap:5px;margin-top:25px}body[data-project="ambulance"] .ar-reflection-copy blockquote p{font-size:24px}body[data-project="ambulance"] .ar-development{gap:15px}body[data-project="ambulance"] .ar-development img{max-height:250px}body[data-project="ambulance"] .ar-publication h3{font-size:24px}}
+@media(prefers-reduced-motion:reduce){body[data-project="ambulance"] [data-ar-step],body[data-project="ambulance"] .ar-map-pin,body[data-project="ambulance"] .ar-connections i{opacity:1;translate:none;transition:none}}
+@media(max-width:600px){body[data-project="ambulance"] .ar-game-note .ar-hospital-panel{margin:0!important;float:none}}
+
+/* Original Unity PNG frame with accessible, sharp text from the portfolio version. */
+body[data-project="ambulance"] .ar-reflection-grid>.ar-postgame{width:100%;max-width:620px;justify-self:center}
+body[data-project="ambulance"] .ar-postgame-original{padding:28px 25px;background:center/cover no-repeat url('/assets/ambulance-editorial/postgame-background-original.png')}
+body[data-project="ambulance"] .ar-postgame-readable{padding:54px 26px 27px;background:center/100% 100% no-repeat url('/assets/ambulance-editorial/postgame-frame-original.png');color:#262c2a}
+body[data-project="ambulance"] .ar-postgame-readable p{font-size:17px;line-height:1.45;margin:0 0 17px;color:#262c2a}
+body[data-project="ambulance"] .ar-postgame-readable p:last-child{margin:0}
+body[data-project="ambulance"] .ar-postgame-readable strong{font-weight:700;color:inherit}
+body[data-project="ambulance"] .ar-audience-result{display:flex;gap:35px;align-items:center;padding:10px 0 18px}
+body[data-project="ambulance"] .ar-audience-result>strong{font-size:clamp(65px,7vw,100px);line-height:1;color:#285fa4;font-weight:600;letter-spacing:-.055em}
+body[data-project="ambulance"] .ar-audience-result>p{margin:0;max-width:310px;font-size:27px;line-height:1.2}
+@media(max-width:600px){body[data-project="ambulance"] .ar-postgame-original{padding:16px 12px}body[data-project="ambulance"] .ar-postgame-readable{padding:42px 18px 20px}body[data-project="ambulance"] .ar-postgame-readable p{font-size:17px;line-height:1.48}body[data-project="ambulance"] .ar-audience-result{display:block;padding:0}body[data-project="ambulance"] .ar-audience-result>p{margin-top:13px;font-size:25px}}
+
+/* Portfolio leader geometry: pink and blue elbow lines, drawn in CSS. */
+body[data-project="ambulance"] .ar-connections i.ar-elbow{inset:0;width:auto;height:auto;border:0;box-shadow:none;transform:none;overflow:visible}
+body[data-project="ambulance"] .ar-elbow .ar-connector-segment{position:absolute;display:block;box-sizing:content-box;filter:drop-shadow(0 0 1px #fff)}
+body[data-project="ambulance"] .ar-elbow .is-horizontal{border-top:3px dashed var(--connector-color);height:0!important}
+body[data-project="ambulance"] .ar-elbow .is-vertical{border-left:3px dashed var(--connector-color);width:0!important}
+body[data-project="ambulance"] .ar-elbow .ar-connector-target{position:absolute;width:9px;height:9px;translate:-3px -3px;border:2px solid #fff;border-radius:50%;background:var(--connector-color);box-sizing:border-box}

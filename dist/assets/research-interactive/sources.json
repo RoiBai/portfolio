@@ -1,0 +1,697 @@
+[
+  {
+    "file": "gaze-art-1-original.jpg",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 3,
+    "figure": 1,
+    "image": "Im1.jpg",
+    "size": [
+      800,
+      619
+    ]
+  },
+  {
+    "file": "gaze-art-1-regions.png",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 3,
+    "figure": 1,
+    "image": "Im2.png",
+    "size": [
+      2126,
+      1653
+    ]
+  },
+  {
+    "file": "gaze-art-2-original.jpg",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 3,
+    "figure": 1,
+    "image": "Im3.jpg",
+    "size": [
+      1379,
+      1069
+    ]
+  },
+  {
+    "file": "gaze-art-2-regions.png",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 3,
+    "figure": 1,
+    "image": "Im4.png",
+    "size": [
+      2157,
+      1658
+    ]
+  },
+  {
+    "file": "gaze-art-3-original.jpg",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 3,
+    "figure": 1,
+    "image": "Im5.jpg",
+    "size": [
+      1379,
+      1103
+    ]
+  },
+  {
+    "file": "gaze-art-3-regions.png",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 3,
+    "figure": 1,
+    "image": "Im6.png",
+    "size": [
+      2081,
+      1667
+    ]
+  },
+  {
+    "file": "suzhou-rating-vectors.json",
+    "pdf": "iConference_The_Prosperous_Suzhou_Scroll (6).pdf",
+    "page": 15,
+    "figure": 4,
+    "source": "PDF native line/rectangle/curve coordinates. Normalized to original displayed axis 2.5–5. No pixel estimation.",
+    "plotBounds": [
+      223.17509088,
+      512.438473728
+    ],
+    "items": 19
+  },
+  {
+    "file": "gaze-1-heatmap.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      560,
+      99,
+      1004,
+      418
+    ],
+    "size": [
+      444,
+      319
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-1-scanpath.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      560,
+      498,
+      1004,
+      814
+    ],
+    "size": [
+      444,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-1-regions.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      560,
+      894,
+      1004,
+      1210
+    ],
+    "size": [
+      444,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-2-heatmap.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      1050,
+      99,
+      1494,
+      418
+    ],
+    "size": [
+      444,
+      319
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-2-scanpath.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      1050,
+      498,
+      1494,
+      814
+    ],
+    "size": [
+      444,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-2-regions.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      1050,
+      894,
+      1494,
+      1210
+    ],
+    "size": [
+      444,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-3-heatmap.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      1540,
+      99,
+      1981,
+      418
+    ],
+    "size": [
+      441,
+      319
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-3-scanpath.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      1540,
+      498,
+      1981,
+      814
+    ],
+    "size": [
+      441,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-3-regions.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      1540,
+      894,
+      1981,
+      1210
+    ],
+    "size": [
+      441,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-4-heatmap.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      2030,
+      99,
+      2474,
+      418
+    ],
+    "size": [
+      444,
+      319
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-4-scanpath.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      2030,
+      498,
+      2474,
+      814
+    ],
+    "size": [
+      444,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-4-regions.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      2030,
+      894,
+      2474,
+      1210
+    ],
+    "size": [
+      444,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-5-heatmap.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      2520,
+      99,
+      2964,
+      418
+    ],
+    "size": [
+      444,
+      319
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-5-scanpath.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      2520,
+      498,
+      2964,
+      814
+    ],
+    "size": [
+      444,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-5-regions.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      2520,
+      894,
+      2964,
+      1210
+    ],
+    "size": [
+      444,
+      316
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-study-photo.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 4,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      50,
+      140,
+      440,
+      420
+    ],
+    "size": [
+      390,
+      280
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-composition-1.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 6,
+    "figure": 4,
+    "sourceImage": "research_portfolio/assets/gaze/hll-composition-cases.png",
+    "sourceSize": [
+      3178,
+      1210
+    ],
+    "crop": [
+      145,
+      399,
+      820,
+      861
+    ],
+    "size": [
+      675,
+      462
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-composition-2.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 6,
+    "figure": 4,
+    "sourceImage": "research_portfolio/assets/gaze/hll-composition-cases.png",
+    "sourceSize": [
+      3178,
+      1210
+    ],
+    "crop": [
+      1300,
+      397,
+      1922,
+      878
+    ],
+    "size": [
+      622,
+      481
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-composition-3.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 6,
+    "figure": 4,
+    "sourceImage": "research_portfolio/assets/gaze/hll-composition-cases.png",
+    "sourceSize": [
+      3178,
+      1210
+    ],
+    "crop": [
+      2354,
+      397,
+      2977,
+      877
+    ],
+    "size": [
+      623,
+      480
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-haywain-a3.webp",
+    "pdf": "A_Gaze_Selection_Language_Framework_for_Open_Ended_Art_Interpretation (1).pdf",
+    "page": 6,
+    "figure": 5,
+    "sourceImage": "research_portfolio/assets/gaze/hll-metrics-case.png",
+    "sourceSize": [
+      3294,
+      598
+    ],
+    "crop": [
+      835,
+      113,
+      1482,
+      553
+    ],
+    "size": [
+      647,
+      440
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "suzhou-tiles.webp",
+    "pdf": "iConference_The_Prosperous_Suzhou_Scroll (6).pdf",
+    "page": 13,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/suzhou/fig3-runtime-pipeline.png",
+    "sourceSize": [
+      3200,
+      1000
+    ],
+    "crop": [
+      1602,
+      160,
+      2393,
+      320
+    ],
+    "size": [
+      791,
+      160
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "suzhou-scene.webp",
+    "pdf": "iConference_The_Prosperous_Suzhou_Scroll (6).pdf",
+    "page": 13,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/suzhou/fig3-runtime-pipeline.png",
+    "sourceSize": [
+      3200,
+      1000
+    ],
+    "crop": [
+      1092,
+      410,
+      1425,
+      563
+    ],
+    "size": [
+      333,
+      153
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "suzhou-renderer.webp",
+    "pdf": "iConference_The_Prosperous_Suzhou_Scroll (6).pdf",
+    "page": 13,
+    "figure": 3,
+    "sourceImage": "research_portfolio/assets/suzhou/fig3-runtime-pipeline.png",
+    "sourceSize": [
+      3200,
+      1000
+    ],
+    "crop": [
+      2564,
+      244,
+      3054,
+      514
+    ],
+    "size": [
+      490,
+      270
+    ],
+    "method": "Native-pixel crop; no upscaling or generated detail"
+  },
+  {
+    "file": "gaze-method-1.webp",
+    "sourceImage": "research_portfolio/assets/gaze/study-procedure.png",
+    "sourceSize": [
+      3298,
+      600
+    ],
+    "crop": [
+      706,
+      197,
+      900,
+      390
+    ],
+    "page": 4,
+    "figure": 2,
+    "method": "Native source crop; no resizing, generated detail, or recoloring"
+  },
+  {
+    "file": "gaze-method-2.webp",
+    "sourceImage": "research_portfolio/assets/gaze/study-procedure.png",
+    "sourceSize": [
+      3298,
+      600
+    ],
+    "crop": [
+      1430,
+      195,
+      1622,
+      391
+    ],
+    "page": 4,
+    "figure": 2,
+    "method": "Native source crop; no resizing, generated detail, or recoloring"
+  },
+  {
+    "file": "gaze-method-3.webp",
+    "sourceImage": "research_portfolio/assets/gaze/study-procedure.png",
+    "sourceSize": [
+      3298,
+      600
+    ],
+    "crop": [
+      1880,
+      197,
+      2074,
+      389
+    ],
+    "page": 4,
+    "figure": 2,
+    "method": "Native source crop; no resizing, generated detail, or recoloring"
+  },
+  {
+    "file": "gaze-signal-1.webp",
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      45,
+      132,
+      450,
+      422
+    ],
+    "page": 4,
+    "figure": 3,
+    "method": "Native source crop; no resizing, generated detail, or recoloring"
+  },
+  {
+    "file": "gaze-signal-2.webp",
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      45,
+      490,
+      450,
+      795
+    ],
+    "page": 4,
+    "figure": 3,
+    "method": "Native source crop; no resizing, generated detail, or recoloring"
+  },
+  {
+    "file": "gaze-signal-3.webp",
+    "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
+    "sourceSize": [
+      3024,
+      1248
+    ],
+    "crop": [
+      45,
+      850,
+      450,
+      1163
+    ],
+    "page": 4,
+    "figure": 3,
+    "method": "Native source crop; no resizing, generated detail, or recoloring"
+  },
+  {
+    "file": "suzhou-original-handscroll.jpg",
+    "sourceImage": "Suzhou project/import/assets/function-original-image2-figma-refresh.jpg",
+    "method": "Original existing Figma-exported painting source, copied without resizing",
+    "size": [
+      10000,
+      2628
+    ]
+  }
+]

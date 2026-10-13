@@ -82,7 +82,11 @@
               "nodeId": "918:220"
             }
           ],
-          "items": []
+          "items": [],
+          "highlights": [
+            "look away to check the path",
+            "Earlier ideas stay visible"
+          ]
         },
         {
           "id": "problem",
@@ -247,6 +251,9 @@
               "title": "Insight → short, connected phrases",
               "body": "Keep text brief. Keep relationships visible."
             }
+          ],
+          "highlights": [
+            "context and the right timing"
           ]
         },
         {
@@ -304,7 +311,10 @@
           "quote": {
             "text": "“I know each word, but not what they mean together.”\n“I only need a glance or two.”",
             "attribution": "Pilot 8 participant · translated"
-          }
+          },
+          "highlights": [
+            "clear connections"
+          ]
         },
         {
           "id": "process-history",
@@ -361,7 +371,10 @@
           "quote": {
             "text": "“I forgot what it had said.”\n“I used the mind map to help me recall what I had heard.”",
             "attribution": "Pilot 10 · Participant 2 · translated"
-          }
+          },
+          "highlights": [
+            "a way back into the explanation"
+          ]
         },
         {
           "id": "goals",
@@ -416,7 +429,8 @@
           "title": "An illustrated baseline for audio learning",
           "body": [
             "Both prototypes used the same narration, illustrations and timing. GlanceMap added a persistent mind map.",
-            "Illustration Only builds on AudioXtend (CHI 2024), whose co-author joined this project. Its earlier 12-person study found +33.3% immediate and +32.7% seven-day recall over audio alone. These are prior-work results."
+            "Illustration Only builds on AudioXtend (CHI 2024). One of AudioXtend’s co-authors joined this project.",
+            "In AudioXtend’s earlier study with 12 people, adding illustrations improved recall by 33.3% immediately and 32.7% after seven days, compared with audio alone. These are prior-work results, not GlanceMap’s results."
           ],
           "nav": "Baseline",
           "figures": [
@@ -441,7 +455,16 @@
               "nodeId": "918:441"
             }
           ],
-          "items": []
+          "items": [],
+          "highlights": [
+            "same narration, illustrations and timing",
+            "persistent mind map",
+            "AudioXtend (CHI 2024)",
+            "12 people",
+            "33.3% immediately",
+            "32.7% after seven days",
+            "prior-work results"
+          ]
         },
         {
           "id": "study",
@@ -575,7 +598,12 @@
             }
           ],
           "figureLayout": "comparison",
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "Free recall improved",
+            "Picture recognition fell by 7.1 percentage points",
+            "No detectable gait difference"
+          ]
         },
         {
           "id": "next",
@@ -584,7 +612,7 @@
           "body": [
             "Keep relationships visible, retain earlier context, and give important pictures enough room."
           ],
-          "nav": "Implications",
+          "nav": "Limitations & next steps",
           "figures": [],
           "sourceRefs": [
             {
@@ -592,7 +620,11 @@
               "nodeId": "918:585"
             }
           ],
-          "items": []
+          "items": [],
+          "highlights": [
+            "Keep relationships visible",
+            "retain earlier context"
+          ]
         }
       ],
       "role": {
@@ -609,6 +641,14 @@
       },
       "sourceNotes": [
         "Responsibilities confirmed from the author’s CV record, 14 October 2026."
+      ],
+      "tags": [
+        "AR",
+        "Learning on-the-go",
+        "Glanceable interfaces"
+      ],
+      "highlights": [
+        "audio lessons while walking"
       ]
     },
     {
@@ -706,7 +746,26 @@
             "The guide helps designers choose shadows, outlines or gray backplates for attention cues, everyday controls and persistent status."
           ],
           "nav": "Abstract",
-          "figures": [],
+          "figures": [
+            {
+              "src": "/website-assets/icon-before.svg",
+              "width": 180,
+              "height": 180,
+              "displayWidth": 180,
+              "alt": "Original yellow bulb before adding a shadow",
+              "caption": "Before · White symbol",
+              "className": "icon-bulb-original"
+            },
+            {
+              "src": "/website-assets/icon-after.svg",
+              "width": 180,
+              "height": 180,
+              "displayWidth": 180,
+              "alt": "Original yellow bulb with the shadow refinement",
+              "caption": "After · With shadow",
+              "className": "icon-bulb-original"
+            }
+          ],
           "items": [],
           "sourceRefs": [
             {
@@ -714,7 +773,12 @@
               "nodeId": "1699:285"
             }
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "not always the most comfortable",
+            "wrong meaning"
+          ],
+          "figureLayout": "comparison"
         },
         {
           "id": "problem",
@@ -758,6 +822,21 @@
                   }
                 ]
               }
+            },
+            {
+              "src": "/assets/icon-original-explorations/outdoor-prototype-source.png",
+              "width": 2988,
+              "height": 1676,
+              "displayWidth": 660,
+              "className": "icon-outdoor-context",
+              "alt": "Original street scene used as the background of the portfolio’s AR parking preview",
+              "caption": "An AR icon shares the view with changing light, buildings and movement.",
+              "sourceRefs": [
+                {
+                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                  "nodeId": "1723:307"
+                }
+              ]
             }
           ],
           "items": [],
@@ -767,7 +846,12 @@
               "nodeId": "1699:289"
             }
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "clear",
+            "comfortable",
+            "meaningful"
+          ]
         },
         {
           "id": "setup",
@@ -775,13 +859,13 @@
           "title": "The same people. Two lighting conditions",
           "body": [
             "The same 20 people completed Studies 1–3. We used XREAL Air 2 Pro for the main tests, with a HoloLens 2 check.",
-            "Indoor: 250–300 lux. Outdoor: 1,500–2,000 lux. Participants viewed randomized pairs, rated them and explained their choices."
+            "Participants viewed randomized pairs, rated them and explained their choices."
           ],
           "nav": "Study setup",
           "figures": [
             {
-              "src": "/assets/design-revision/icon-indoor.png",
-              "width": 1976,
+              "src": "/assets/icon-original-explorations/indoor-photo.png",
+              "width": 1780,
               "height": 1334,
               "alt": "indoor experiment photograph.",
               "caption": "Indoor experiment · 250–300 lux.",
@@ -794,8 +878,8 @@
               ]
             },
             {
-              "src": "/assets/design-revision/icon-outdoor.png",
-              "width": 1976,
+              "src": "/assets/icon-original-explorations/outdoor-photo.png",
+              "width": 1780,
               "height": 1334,
               "alt": "outdoor experiment photograph.",
               "caption": "Outdoor experiment · 1,500–2,000 lux.",
@@ -816,7 +900,11 @@
           ],
           "figureLayout": "comparison",
           "items": [],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "same 20 people",
+            "randomized pairs"
+          ]
         },
         {
           "id": "baseline",
@@ -862,15 +950,19 @@
               "nodeId": "1792:338"
             }
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "36 pairs",
+            "Clarity and comfort"
+          ]
         },
         {
           "id": "meaning",
           "eyebrow": "STUDY 2",
           "title": "Study 2 · Add meaning",
           "body": [
-            "In a separate workshop, eight designers agreed on one icon for each selected color. We retested the 36 pairs as meaningful icons.",
-            "High clarity could still mean low semantic scores. A color must fit the icon’s meaning, not just be easy to see."
+            "Eight designers agreed on one icon per color. Study 2 retested the same 36 pairs with these meaningful symbols.",
+            "A clear color pair can still suggest the wrong meaning. Color needs to fit the symbol."
           ],
           "nav": "Study 2",
           "figures": [
@@ -891,14 +983,6 @@
                   "nodeId": "1704:478"
                 }
               ]
-            },
-            {
-              "src": "/assets/figure-08-study-2-rating-results-508b6772.webp",
-              "width": 2672,
-              "height": 520,
-              "alt": "Clarity, comfort and semantic fit ratings",
-              "caption": "Ratings across three measures with 95% confidence intervals.",
-              "displayWidth": 650
             }
           ],
           "items": [],
@@ -928,15 +1012,20 @@
               "nodeId": "1792:343"
             }
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "Eight designers",
+            "36 pairs",
+            "wrong meaning"
+          ]
         },
         {
           "id": "refinement",
           "eyebrow": "STUDY 3",
           "title": "Study 3 · Refine and retest",
           "body": [
-            "Study 3 tested workshop ideas: shadows, gradients, outlines and gray backplates. We rated clarity, comfort, meaning and visual prominence.",
-            "Shadows raised clarity by 0.88–1.62 points across four hues. Outlines raised the semantic rating from 3.71 to 4.13 / 5. Gray backplates were least intrusive."
+            "Designers proposed shadows, gradients, outlines and gray backplates. We retested clarity, comfort, meaning and visual prominence.",
+            "Shadows improved clarity (+0.88–1.62); outlines improved meaning (3.71 → 4.13 / 5); gray backplates were least intrusive."
           ],
           "nav": "Study 3",
           "figures": [
@@ -974,7 +1063,12 @@
             }
           ],
           "items": [],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "+0.88–1.62",
+            "3.71 → 4.13 / 5",
+            "least intrusive"
+          ]
         },
         {
           "id": "guidelines",
@@ -1018,42 +1112,45 @@
               "width": 400.0,
               "height": 124.0,
               "alt": "white icons with shadows.",
-              "caption": "Urgent alerts: white icon + shadow. For information that needs attention now.",
+              "caption": "White icon + shadow. For information that needs attention now.",
               "displayWidth": 300,
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                   "nodeId": "1751:330"
                 }
-              ]
+              ],
+              "captionTitle": "Urgent alerts"
             },
             {
               "src": "/assets/design-revision/icon-controls.svg",
               "width": 400.0,
               "height": 124.0,
               "alt": "colored outline icon examples.",
-              "caption": "Everyday controls: colored icon + outline. Keep functions distinct while more of the scene shows through.",
+              "caption": "Colored icon + outline. Distinguish functions while more of the scene shows through.",
               "displayWidth": 300,
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                   "nodeId": "1751:353"
                 }
-              ]
+              ],
+              "captionTitle": "Everyday controls"
             },
             {
               "src": "/assets/design-revision/icon-status.svg",
               "width": 400.0,
               "height": 124.0,
               "alt": "colored icons on gray backgrounds.",
-              "caption": "Status updates: colored icon + gray backplate. Keep information on screen with less distraction. Backplate brightness: 30%.",
+              "caption": "Colored icon + gray backplate. Stay visible with less distraction. Backplate brightness: 30%.",
               "displayWidth": 300,
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                   "nodeId": "1751:378"
                 }
-              ]
+              ],
+              "captionTitle": "Persistent status"
             }
           ],
           "items": [],
@@ -1063,7 +1160,10 @@
               "nodeId": "1699:293"
             }
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "icon’s role"
+          ]
         },
         {
           "id": "gradients",
@@ -1097,7 +1197,11 @@
             }
           ],
           "items": [],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "±30° apart",
+            "ret​est clarity, comfort and meaning"
+          ]
         },
         {
           "id": "reflection",
@@ -1131,7 +1235,11 @@
             }
           ],
           "items": [],
-          "layout": "editorial"
+          "layout": "editorial",
+          "highlights": [
+            "20 participants and static 2D icons",
+            "culture, genre and context"
+          ]
         }
       ],
       "role": {
@@ -1146,7 +1254,15 @@
         "boundary": "I am second author; my advisor is first author."
       },
       "outcome": "A practical guide to AR icon colors, shadows, outlines and gray backplates. Journal manuscript under review; SSRN preprint available.",
-      "sourceNotes": []
+      "sourceNotes": [],
+      "tags": [
+        "AR",
+        "Color perception",
+        "Design guidelines"
+      ],
+      "highlights": [
+        "clear, comfortable AR icons"
+      ]
     },
     {
       "id": "traditional-color",
@@ -1154,20 +1270,7 @@
       "subtitle": "A color carries a story",
       "description": "A research-led website for choosing traditional Chinese colors through their origins, cultural meanings and historical context.",
       "kicker": "CULTURAL HERITAGE · INFORMATION DESIGN",
-      "meta": [
-        {
-          "label": "Focus",
-          "value": "Information design · cultural heritage"
-        },
-        {
-          "label": "Approach",
-          "value": "Interviews · co-design · design trials"
-        },
-        {
-          "label": "Progression",
-          "value": "ColoGene → Color Atlas → future Color Agent"
-        }
-      ],
+      "meta": [],
       "stats": [
         {
           "value": "12",
@@ -1188,6 +1291,11 @@
       ],
       "links": [
         {
+          "label": "Read the ColoGene paper",
+          "url": "https://doi.org/10.1145/3772363.3798765",
+          "type": "paper"
+        },
+        {
           "label": "Explore Color Atlas",
           "url": "https://yue-77.github.io/chinese-colors-atlas/index.html",
           "type": "website"
@@ -1206,12 +1314,12 @@
         "cutout": "/cutouts/color-in-context.png"
       },
       "hero": {
-        "src": "/assets/atlas-all-colors-live-177b5bb1.webp",
-        "width": 1280,
-        "height": 720,
-        "alt": "The complete atlas of 48 traditional colors, grouped by origin.",
+        "src": "/website-assets/atlas-display.svg",
+        "width": 470.0,
+        "height": 400.97900390625,
+        "alt": "The original Color Atlas wheel, with 48 traditional colors arranged by origin",
         "caption": "48 colors · four origin categories: mineral, plant, nature and literary.",
-        "displayWidth": 900,
+        "displayWidth": 520,
         "sourceRefs": [
           {
             "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -1225,22 +1333,28 @@
           "eyebrow": "ABSTRACT",
           "title": "A color carries a story",
           "body": [
-            "Color can signal status and symbolism, record a material source, and belong to a particular time and place."
+            "From historical color records to palettes grounded in a design brief."
           ],
           "nav": "Abstract",
           "figures": [],
           "items": [
             {
               "title": "ColoGene",
-              "body": "Context beside every color. Co-designed with practicing designers; CHI 2026 Poster accepted."
+              "version": "Version 1.0",
+              "status": "CHI Poster 2026",
+              "body": "Historical context beside each color, co-designed with practicing designers."
             },
             {
               "title": "Color Atlas",
-              "body": "48 connected colors and recommendations shaped by a design brief. 25 designers explored the new workflow."
+              "version": "Version 2.0",
+              "status": "In progress",
+              "body": "48 connected colors and brief-based palettes. The study with 25 designers is complete."
             },
             {
               "title": "Color Agent",
-              "body": "A future direction: apply a palette to artwork, then refine it through dialogue."
+              "version": "Version 3.0",
+              "status": "Future",
+              "body": "A concept for previewing palettes on artwork and refining them through dialogue."
             }
           ],
           "sourceRefs": [
@@ -1248,6 +1362,10 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "658:264"
             }
+          ],
+          "highlights": [
+            "status and symbolism",
+            "material source"
           ]
         },
         {
@@ -1255,20 +1373,20 @@
           "eyebrow": "DESIGNER RESEARCH",
           "title": "What makes a color belong?",
           "body": [
-            "A museum souvenir sparked a color debate: how do designers judge cultural fit? We interviewed 12 Chinese designers of museum products and historical websites for 30–45 minutes each."
+            "We interviewed 12 Chinese designers for 30–45 minutes each about choosing colors for museum products and historical websites."
           ],
           "items": [
             {
-              "title": "Does it fit my historical brief?",
-              "body": "“A color may represent different things in different cultures.” “…whether this color existed in that historical context.” Show meaning, origin and period beside the value."
+              "title": "Does it fit the brief?",
+              "body": "Show a color’s meaning, origin and period so designers can judge its historical fit."
             },
             {
               "title": "Which reference can I trust?",
-              "body": "“But the colors people share are not really consistent.” Two websites list Zhu sha as #CA3433 and #9D2933. Connect names and values to historical sources."
+              "body": "Two websites list Zhu Sha as #CA3433 and #9D2933. Link names and values to their sources."
             },
             {
               "title": "How do I build a whole palette?",
-              "body": "“I’m torn over which colors to use.” Designers need complete palettes with a clear cultural rationale."
+              "body": "Offer complete palettes with a clear cultural rationale."
             }
           ],
           "quote": null,
@@ -1309,6 +1427,10 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "658:265"
             }
+          ],
+          "highlights": [
+            "12 Chinese designers",
+            "30–45 minutes"
           ]
         },
         {
@@ -1373,6 +1495,9 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "658:266"
             }
+          ],
+          "highlights": [
+            "five ways to explore color knowledge"
           ]
         },
         {
@@ -1380,8 +1505,8 @@
           "eyebrow": "EARLY EVIDENCE",
           "title": "Early signals from a ten-designer pilot",
           "body": [
-            "Five designers used ColoGene; five used their usual workflow. Both groups colored the same Jiangnan and Tang templates.",
-            "All five ColoGene users finished within 15 minutes; one baseline user did not. Questionnaire gains were 8.66 versus 1.21 points—early descriptive results from five people per group."
+            "Five designers used ColoGene and five used their usual workflow on the same Jiangnan and Tang templates.",
+            "All five ColoGene users finished within 15 minutes (usual workflow: four of five), with questionnaire gains of 8.66 versus 1.21 points—descriptive results from this small pilot."
           ],
           "items": [
             {
@@ -1417,219 +1542,170 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "658:266"
             }
+          ],
+          "highlights": [
+            "within 15 minutes",
+            "8.66 versus 1.21 points",
+            "early descriptive results"
           ]
         },
         {
           "id": "atlas",
           "eyebrow": "VERSION 2 · COLOR ATLAS",
-          "title": "Follow the connections",
-          "body": [
-            "Color Atlas connects 48 colors through mineral, plant, nature and literary origins. Hovering a color reveals shared family, period, region and craft relationships."
-          ],
+          "title": "Color Atlas",
+          "body": [],
           "items": [],
           "nav": "Atlas",
-          "figures": [
-            {
-              "src": "/assets/design-revision/atlas-selected.png",
-              "width": 1800,
-              "height": 1346,
-              "alt": "selected-color atlas with its connected family, period, region and craft relationships.",
-              "caption": "Hover a color to compare its shared context: family, period, region and craft.",
-              "displayWidth": 800,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1130:267"
-                }
-              ]
-            }
-          ],
+          "figures": [],
           "sourceRefs": [
             {
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "658:267"
+            }
+          ],
+          "highlights": [
+            "48 colors",
+            "shared family, period, region and craft relationships"
+          ],
+          "colorAtlasChapters": [
+            {
+              "id": "connections",
+              "title": "From origins to color families",
+              "body": [
+                "48 colors, grouped by mineral, plant, nature and literary origins, then by color family."
+              ],
+              "figures": [],
+              "highlights": [
+                "48 colors",
+                "shared family, period, region and craft relationships"
+              ],
+              "demo": {
+                "src": "/assets/color-atlas-demo/atlas-origins.mp4",
+                "poster": "/assets/color-atlas-demo/atlas-origins-poster.jpg",
+                "originalRange": "00:05.3–01:02.0"
+              }
+            },
+            {
+              "id": "record",
+              "title": "Read the color’s record",
+              "body": [
+                "Tianqing · #6E9CB3 describes the sky clearing after rain. Its record links Ru-ware glaze, historical era and classical references.",
+                "The listed sources are Guide to the Study of Antiquities and Miscellaneous Records of Qingbo."
+              ],
+              "figures": [
+                {
+                  "src": "/assets/design-revision/atlas-record-top.png",
+                  "width": 960,
+                  "height": 1211,
+                  "alt": "Tianqing name and value card.",
+                  "caption": "Tianqing · #6E9CB3",
+                  "displayWidth": 340,
+                  "sourceRefs": [
+                    {
+                      "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                      "nodeId": "1130:288"
+                    }
+                  ]
+                },
+                {
+                  "src": "/assets/design-revision/atlas-record-bottom.png",
+                  "width": 960,
+                  "height": 831,
+                  "alt": "Tianqing record from origin through its semantic graph.",
+                  "caption": "Origin, cultural context, historical era and classical references",
+                  "displayWidth": 500,
+                  "sourceRefs": [
+                    {
+                      "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                      "nodeId": "1130:290"
+                    }
+                  ]
+                }
+              ],
+              "highlights": [
+                "sky clearing after rain"
+              ]
+            },
+            {
+              "id": "brief",
+              "title": "From a brief to five colors",
+              "body": [
+                "Six original briefs reveal six five-color palettes—from a New Year gift box to Song-ceramic branding."
+              ],
+              "figures": [],
+              "highlights": [
+                "compare five suggested colors",
+                "check the rationale, values and source texts"
+              ],
+              "demo": {
+                "src": "/assets/color-atlas-demo/preset-palettes.mp4",
+                "poster": "/assets/color-atlas-demo/preset-palettes-poster.jpg",
+                "originalRange": "01:04.2–01:55.6"
+              }
+            },
+            {
+              "id": "artworks",
+              "title": "The same artwork, a different color direction",
+              "body": [
+                "The study is complete: 25 designers each created three artworks with their usual workflow and three with Color Atlas. The paired artifacts show how their choices changed.",
+                "Designers wanted more palette directions, fuller sources, support for every object in a complex brief, and freedom to refine suggestions."
+              ],
+              "figures": [
+                {
+                  "src": "/assets/p16-storyboard-without-e74ddf81.webp",
+                  "width": 1554,
+                  "height": 1080,
+                  "alt": "Participant 16 Tang-themed storyboard using the usual workflow",
+                  "caption": "P16 · usual workflow.",
+                  "displayWidth": 850
+                },
+                {
+                  "src": "/assets/p16-storyboard-with-c713a84c.webp",
+                  "width": 1554,
+                  "height": 1080,
+                  "alt": "Participant 16 Tang-themed storyboard using the atlas",
+                  "caption": "P16 · with the atlas.",
+                  "displayWidth": 850
+                },
+                {
+                  "src": "/assets/p17-street-without-425d9ad0.webp",
+                  "width": 1724,
+                  "height": 1293,
+                  "alt": "Participant 17 canal-street illustration using the usual workflow",
+                  "caption": "P17 · usual workflow.",
+                  "displayWidth": 850
+                },
+                {
+                  "src": "/assets/p17-street-with-9dd2defc.webp",
+                  "width": 1649,
+                  "height": 1237,
+                  "alt": "Participant 17 canal-street illustration using the atlas",
+                  "caption": "P17 · with the atlas.",
+                  "displayWidth": 850
+                },
+                {
+                  "src": "/assets/p19-tape-without-6a70447f.webp",
+                  "width": 1280,
+                  "height": 1811,
+                  "alt": "Participant 19 ornamental tape with the usual workflow",
+                  "caption": "P19 · usual workflow.",
+                  "displayWidth": 850
+                },
+                {
+                  "src": "/assets/p19-tape-with-a01b6794.webp",
+                  "width": 1280,
+                  "height": 1811,
+                  "alt": "Participant 19 ornamental tape with the atlas",
+                  "caption": "P19 · with the atlas.",
+                  "displayWidth": 850
+                }
+              ],
+              "highlights": [
+                "25 designers",
+                "how their choices changed"
+              ]
             }
           ]
-        },
-        {
-          "id": "sources",
-          "eyebrow": "TRACE THE SOURCE",
-          "title": "Read the color’s record",
-          "body": [
-            "Tianqing · #6E9CB3 describes the sky clearing after rain. Its record links Ru-ware glaze, historical era and classical references.",
-            "The listed sources are Guide to the Study of Antiquities and Miscellaneous Records of Qingbo."
-          ],
-          "nav": "Sources",
-          "figures": [
-            {
-              "src": "/assets/design-revision/atlas-record-top.png",
-              "width": 960,
-              "height": 1211,
-              "alt": "Tianqing name and value card.",
-              "caption": "Tianqing · #6E9CB3",
-              "displayWidth": 340,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1130:288"
-                }
-              ]
-            },
-            {
-              "src": "/assets/design-revision/atlas-record-bottom.png",
-              "width": 960,
-              "height": 831,
-              "alt": "Tianqing record from origin through its semantic graph.",
-              "caption": "Origin, cultural context, historical era and classical references",
-              "displayWidth": 500,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1130:290"
-                }
-              ]
-            }
-          ],
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "658:267"
-            },
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "1130:288"
-            },
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "1130:290"
-            }
-          ],
-          "figureLayout": "comparison",
-          "items": []
-        },
-        {
-          "id": "compose",
-          "eyebrow": "COLOR COMPOSE",
-          "title": "From a brief to five colors",
-          "body": [
-            "Describe a brief, then compare five suggested colors. The recommendation matches the brief to color records and their relationships.",
-            "For “Serene Song-ceramic branding,” check the rationale, values and source texts before choosing."
-          ],
-          "nav": "Compose",
-          "figures": [
-            {
-              "src": "/assets/design-revision/atlas-compose-brief.png",
-              "width": 1920,
-              "height": 637,
-              "alt": "Color Compose interface with an entered design brief.",
-              "caption": "01 · Describe the brief. “Serene Song-ceramic branding.”",
-              "displayWidth": 780,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1130:325"
-                }
-              ]
-            },
-            {
-              "src": "/assets/design-revision/atlas-compose-result.png",
-              "width": 1920,
-              "height": 1134,
-              "alt": "Color Compose interface with all five recommendation cards.",
-              "caption": "02 · Receive five colors. 03 · Check the rationale and source texts.",
-              "displayWidth": 850,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1130:327"
-                }
-              ]
-            }
-          ],
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "658:267"
-            },
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "1130:325"
-            },
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "1130:327"
-            }
-          ],
-          "items": []
-        },
-        {
-          "id": "outcomes",
-          "eyebrow": "DESIGN TRIALS",
-          "title": "The same artwork, a different color direction",
-          "body": [
-            "25 designers created three artworks with their usual workflow and three with Color Atlas. The paired artifacts show how their choices changed.",
-            "Designers wanted more palette directions, fuller sources, support for every object in a complex brief, and freedom to refine suggestions."
-          ],
-          "nav": "Outcomes",
-          "figures": [
-            {
-              "src": "/assets/p16-storyboard-without-e74ddf81.webp",
-              "width": 1554,
-              "height": 1080,
-              "alt": "Participant 16 Tang-themed storyboard using the usual workflow",
-              "caption": "P16 · usual workflow.",
-              "displayWidth": 850
-            },
-            {
-              "src": "/assets/p16-storyboard-with-c713a84c.webp",
-              "width": 1554,
-              "height": 1080,
-              "alt": "Participant 16 Tang-themed storyboard using the atlas",
-              "caption": "P16 · with the atlas.",
-              "displayWidth": 850
-            },
-            {
-              "src": "/assets/p17-street-without-425d9ad0.webp",
-              "width": 1724,
-              "height": 1293,
-              "alt": "Participant 17 canal-street illustration using the usual workflow",
-              "caption": "P17 · usual workflow.",
-              "displayWidth": 850
-            },
-            {
-              "src": "/assets/p17-street-with-9dd2defc.webp",
-              "width": 1649,
-              "height": 1237,
-              "alt": "Participant 17 canal-street illustration using the atlas",
-              "caption": "P17 · with the atlas.",
-              "displayWidth": 850
-            },
-            {
-              "src": "/assets/p19-tape-without-6a70447f.webp",
-              "width": 1280,
-              "height": 1811,
-              "alt": "Participant 19 ornamental tape with the usual workflow",
-              "caption": "P19 · usual workflow.",
-              "displayWidth": 850
-            },
-            {
-              "src": "/assets/p19-tape-with-a01b6794.webp",
-              "width": 1280,
-              "height": 1811,
-              "alt": "Participant 19 ornamental tape with the atlas",
-              "caption": "P19 · with the atlas.",
-              "displayWidth": 850
-            }
-          ],
-          "figureLayout": "comparison",
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "658:267"
-            }
-          ],
-          "items": [],
-          "studyTimeline": "10 min pre-interview → 45 min usual workflow → 45 min Atlas → 20 min post-interview → 10 min questionnaire"
         },
         {
           "id": "future",
@@ -1801,7 +1877,10 @@
             }
           ],
           "figureLayout": "layered-source",
-          "status": "Future design concept · not yet implemented or evaluated."
+          "status": "Future design concept · not yet implemented or evaluated.",
+          "highlights": [
+            "Six needs from the designer interviews"
+          ]
         }
       ],
       "role": {
@@ -1814,13 +1893,17 @@
         "details": "I designed the website and conducted and analyzed user interviews."
       },
       "outcome": "ColoGene: CHI 2026 Poster accepted. Color Atlas: ongoing research. Color Agent: a future design concept.",
-      "sourceNotes": []
+      "sourceNotes": [],
+      "tags": [],
+      "highlights": [
+        "origins, cultural meanings and historical context"
+      ]
     },
     {
       "id": "personamail",
       "title": "PersonaMail",
-      "subtitle": "Making communication intent editable",
-      "description": "An AI email editor that remembers useful context and lets writers change one section at a time.",
+      "subtitle": "A short email that sounds like you",
+      "description": "An AI email editor that remembers your relationship context and writing preferences, so a familiar request does not start from scratch.",
       "kicker": "Research / AI co-writing",
       "meta": "IUI Companion ’26 · March 2026 · Published demo · 2nd author",
       "stats": [
@@ -1842,11 +1925,6 @@
           "label": "Read the paper",
           "url": "https://doi.org/10.1145/3742414.3794765",
           "source": "/Users/roi/Documents/ChatGPT/研究生申请/research_portfolio/persona.md"
-        },
-        {
-          "label": "Source code",
-          "url": "https://github.com/Synteraction-Lab/IUI26-PersonaMail",
-          "source": "/Users/roi/Documents/ChatGPT/研究生申请/research_portfolio/tmp/persona/fulltext.txt"
         }
       ],
       "category": "Research",
@@ -1866,58 +1944,59 @@
         "width": 1052,
         "height": 892,
         "displayWidth": 620,
-        "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
-        "alt": "Edit the intent of one section without rewriting the whole email.",
-        "caption": "Edit the intent of one section without rewriting the whole email."
+        "sourceOrigin": "Illustrative scenario supplied by the project author; product capabilities follow the original PersonaMail prototype.",
+        "alt": "A PhD student writes a brief leave email to a familiar supervisor, then reuses that context for a missed meeting",
+        "caption": "",
+        "researchFigure": {
+          "kind": "persona-opening",
+          "image": "/assets/research-interactive/persona-phd-story.png"
+        }
       },
       "sections": [
         {
           "id": "challenge",
           "nav": "Challenge",
           "eyebrow": "Challenge",
-          "title": "A similar request should not mean starting over",
+          "title": "You need a short note, not another long rewrite",
           "body": [
-            "You decline a senior colleague’s dinner invitation and work out a respectful, concise reply. Weeks later, a similar request arrives."
+            "You’re a PhD student taking a day off from the lab. You ask a general AI for an email, but repeated revisions still feel too long and unlike you."
           ],
           "items": [
             {
-              "title": "With general AI",
-              "body": "Explain the relationship and writing preferences again."
+              "title": "The missing context",
+              "body": "You and your supervisor already know each other. A long explanation is unnecessary."
             },
             {
-              "title": "With PersonaMail",
-              "body": "Reuse saved context; add the new request, tone, and length."
+              "title": "The writing goal",
+              "body": "Keep it polite, appreciative, and brief."
             }
           ],
           "figures": [],
           "highlights": [
-            "one section",
-            "reusable",
-            "context",
-            "8",
-            "97"
+            "too long and unlike you",
+            "polite, appreciative, and brief"
           ]
         },
         {
           "id": "research",
           "nav": "Research",
           "eyebrow": "Research",
-          "title": "Three barriers shaped the design",
+          "title": "Tell the editor who you’re writing to",
           "body": [
-            "Eight participants tried three writing tools. A review of 97 social-psychology papers informed the communication factors."
+            "Eight participants tried three writing tools. A review of 97 social-psychology papers informed the relationship and situation controls."
           ],
           "items": [
             {
-              "title": "Explain social goals",
-              "body": "Make sensitive relationship and situation needs explicit."
+              "title": "Relationship",
+              "body": "A PhD student writing to a familiar supervisor."
             },
             {
-              "title": "Control one section",
-              "body": "Revise a section’s purpose while keeping the rest."
+              "title": "Tone",
+              "body": "Polite and appreciative, without distant formality."
             },
             {
-              "title": "Reuse what worked",
-              "body": "Carry successful strategies into similar emails."
+              "title": "Local edits",
+              "body": "Shorten the explanation while keeping the rest of the email."
             }
           ],
           "figures": [
@@ -1925,20 +2004,17 @@
               "src": "/assets/research-editorial/persona-context-panel.png",
               "width": 971,
               "height": 602,
-              "displayWidth": 1080,
+              "displayWidth": 980,
               "sourceOrigin": "Discrete original interface panel extracted from the paper figure; native pixels.",
               "alt": "Choose relationship and situation factors, then add details that preset choices miss.",
-              "caption": "Choose relationship and situation factors, then add details that preset choices miss.",
+              "caption": "Define the relationship and add situation details that preset choices do not capture.",
               "className": "research-source-figure",
-              "captionTitle": "Set the context"
+              "captionTitle": "The original context controls"
             }
           ],
           "highlights": [
-            "one section",
-            "reusable",
-            "context",
-            "8",
-            "97"
+            "Eight participants",
+            "97 social-psychology papers"
           ],
           "layout": "editorial"
         },
@@ -1946,18 +2022,26 @@
           "id": "interaction",
           "nav": "Interaction",
           "eyebrow": "Interaction",
-          "title": "Keep the reason private",
+          "title": "Polite, appreciative, and brief",
           "body": [
-            "In the demonstration, the writer withdraws from a dinner invitation. They change only the justification from a detailed explanation to a private reason."
+            "Define the relationship and writing goal, then refine the part that needs changing. The short example below shows the intended tone."
           ],
           "items": [],
-          "figures": [],
+          "figures": [
+            {
+              "src": "/assets/research-editorial/persona-intent-editor.png",
+              "width": 1052,
+              "height": 892,
+              "displayWidth": 570,
+              "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
+              "alt": "Edit the intent of one section without rewriting the whole email.",
+              "caption": "The prototype lets writers revise one communication unit while keeping the rest of the email.",
+              "captionTitle": "The original section editor"
+            }
+          ],
           "highlights": [
-            "one section",
-            "reusable",
-            "context",
-            "8",
-            "97"
+            "relationship and writing goal",
+            "refine the part"
           ],
           "layout": "editorial",
           "interaction": "persona-intent"
@@ -1966,12 +2050,17 @@
           "id": "reflection",
           "nav": "Takeaway",
           "eyebrow": "Takeaway",
-          "title": "Carry useful choices into the next email",
+          "title": "Next time, change the message",
           "body": [
-            "Saved anchors carry recurring context forward. Edits and optional explanations refine the personal stylebook. A future personal writing agent could use these preferences to prepare a draft for review.",
-            "This demonstration reports formative findings and a working prototype, not comparative effectiveness results."
+            "Now you need to miss a morning meeting. Reuse the supervisor context and the polite, appreciative style; update what you need to say.",
+            "Saved anchors preserve recurring context. Edits and optional explanations refine a personal stylebook for later drafts. The writer still reviews the email."
           ],
-          "items": [],
+          "items": [
+            {
+              "title": "Published prototype",
+              "body": "The IUI Companion ’26 demo reports formative findings and a working system, not a comparative effectiveness test."
+            }
+          ],
           "figures": [
             {
               "src": "/assets/research-editorial/persona-saved-anchors.png",
@@ -1980,17 +2069,14 @@
               "displayWidth": 1080,
               "sourceOrigin": "Discrete original interface panel extracted from the paper figure; native pixels.",
               "alt": "Original saved persona and situation anchors.",
-              "caption": "Original saved persona and situation anchors.",
+              "caption": "Original persona and situation anchors preserve recurring context for later emails.",
               "className": "research-source-figure",
-              "captionTitle": "Keep what worked"
+              "captionTitle": "Saved context for the next request"
             }
           ],
           "highlights": [
-            "one section",
-            "reusable",
-            "context",
-            "8",
-            "97"
+            "Reuse the supervisor context",
+            "personal stylebook"
           ],
           "layout": "editorial"
         }
@@ -2009,10 +2095,20 @@
         "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
         "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
-        "Readability: the original intent crop is only 290×171px; its four labels are now live HTML, sourced from Figma 1835:637. Selection-only demo, no simulated AI rewriting. Native 2058×1216 and 988×808 image sources verified against both published paper and 01 PersonaMail.pdf; no artificial enlargement presented as new detail."
+        "Readability: the original intent crop is only 290×171px; its four labels are now live HTML, sourced from Figma 1835:637. Selection-only demo, no simulated AI rewriting. Native 2058×1216 and 988×808 image sources verified against both published paper and 01 PersonaMail.pdf; no artificial enlargement presented as new detail.",
+        "14 October interactive revision: GitHub link removed at the author’s request. Original four-option intent selector is HTML at a readable native UI size; source scans were not upscaled."
       ],
-      "contentRevision": "2026-10-14-research-readability",
-      "outcome": "Published IUI Companion ’26 demonstration: reusable context, local intent editing, and a personal stylebook."
+      "contentRevision": "2026-10-14-research-interactive",
+      "outcome": "Published IUI Companion ’26 demonstration: reusable context, local intent editing, and a personal stylebook.",
+      "tags": [
+        "Human–AI interaction",
+        "Email",
+        "Intent"
+      ],
+      "highlights": [
+        "relationship context",
+        "writing preferences"
+      ]
     },
     {
       "id": "beyond-the-gaze",
@@ -2052,16 +2148,15 @@
         "cutout": "/cutouts/beyond-the-gaze.png"
       },
       "hero": {
-        "src": "/assets/research-revision/gaze-matched-evidence-4x.webp",
-        "zoomSrc": "/assets/research-revision/gaze-matched-evidence-4x.png",
-        "width": 7360,
-        "height": 2936,
-        "displayWidth": 1120,
-        "alt": "Three views of The Stonemason’s Yard connect gaze, recalled regions, and interpretation.",
-        "caption": "Three views of The Stonemason’s Yard connect gaze, recalled regions, and interpretation.",
-        "sourceNode": "1465:258",
-        "sourceOrigin": "Current visible Figma portfolio; 4× export, 13 October 2026",
-        "exportScale": 4
+        "researchFigure": {
+          "kind": "gaze-artwork"
+        },
+        "alt": "Original paintings and their semantic regions, selectable by category",
+        "sourceOrigin": "Gaze paper Figure 1, page 3: six independently embedded native images.",
+        "src": "/assets/research-interactive/gaze-art-1-original.jpg",
+        "width": 800,
+        "height": 619,
+        "displayWidth": 740
       },
       "sections": [
         {
@@ -2070,129 +2165,89 @@
           "eyebrow": "Method",
           "title": "Look. Recall. Explain",
           "body": [
-            "Gaze–Selection–Language compares three signals within the same region. HLL means high gaze, low later selection, and no coded interpretive claim."
+            "After calibration, viewers completed 24 self-paced painting trials. Each trial separated looking, recall and explanation."
           ],
           "items": [],
           "figures": [
             {
-              "alt": "The original study sequence; questionnaires and interviews followed.",
-              "caption": "The original study sequence; questionnaires and interviews followed.",
-              "displayWidth": 1200,
-              "width": 1200,
-              "height": 210,
-              "sourceOrigin": "Editable web reconstruction of the original paper workflow; no paper screenshot.",
-              "sourceComposition": {
-                "viewBox": [
-                  0,
-                  0,
-                  1200,
-                  210
-                ],
-                "layers": [],
-                "labels": [
-                  {
-                    "x": 0,
-                    "y": 22,
-                    "width": 345,
-                    "height": 155,
-                    "title": "01 / Look freely",
-                    "body": [
-                      "View each painting at your own pace."
-                    ],
-                    "fontSize": 22,
-                    "lineHeight": 1.35,
-                    "color": "#252a2d"
-                  },
-                  {
-                    "x": 400,
-                    "y": 22,
-                    "width": 345,
-                    "height": 155,
-                    "title": "02 / Recall regions",
-                    "body": [
-                      "Select meaningful details with the painting hidden."
-                    ],
-                    "fontSize": 22,
-                    "lineHeight": 1.35,
-                    "color": "#252a2d"
-                  },
-                  {
-                    "x": 800,
-                    "y": 22,
-                    "width": 345,
-                    "height": 155,
-                    "title": "03 / Explain",
-                    "body": [
-                      "Describe what those details mean."
-                    ],
-                    "fontSize": 22,
-                    "lineHeight": 1.35,
-                    "color": "#252a2d"
-                  }
-                ],
-                "leaders": [
-                  {
-                    "d": "M 350 80 L 386 80 L 379 73 M 386 80 L 379 87",
-                    "stroke": "#737c77",
-                    "strokeWidth": 2
-                  },
-                  {
-                    "d": "M 750 80 L 786 80 L 779 73 M 786 80 L 779 87",
-                    "stroke": "#737c77",
-                    "strokeWidth": 2
-                  }
-                ],
-                "mobileMinWidth": 860
-              }
+              "researchFigure": {
+                "kind": "gaze-procedure"
+              },
+              "alt": "Study sequence with original participant photo",
+              "sourceOrigin": "Gaze paper Figure 2 procedure and Figure 3 native participant-photo crop, page 4."
             }
           ],
           "highlights": [
-            "9.4%",
-            "12",
-            "24",
-            "156",
-            "HLL"
+            "24 self-paced painting trials"
           ],
           "layout": "editorial"
+        },
+        {
+          "id": "signals",
+          "nav": "GSL & HLL",
+          "eyebrow": "Gaze–Selection–Language",
+          "title": "How the three signals agree—or diverge",
+          "body": [],
+          "items": [],
+          "figures": [
+            {
+              "researchFigure": {
+                "kind": "gaze-signals"
+              },
+              "alt": "Original Gaze, Selection and Language evidence, with the HLL definition",
+              "sourceOrigin": "Gaze paper section 3.3 and Figure 3: three original source panels at native resolution."
+            }
+          ],
+          "layout": "editorial",
+          "highlights": []
+        },
+        {
+          "id": "evidence",
+          "nav": "Evidence",
+          "eyebrow": "Evidence",
+          "title": "Three views of the same painting",
+          "body": [
+            "Heatmaps show where looks accumulated. Scanpaths show the order of eye movements. Semantic regions let us compare gaze with what viewers select and explain."
+          ],
+          "figures": [
+            {
+              "researchFigure": {
+                "kind": "gaze-evidence"
+              },
+              "alt": "Five paintings with their original heatmaps, scanpaths and region maps",
+              "sourceOrigin": "Gaze paper Figure 3, page 4: individual panels cropped at native resolution."
+            }
+          ],
+          "items": [],
+          "layout": "editorial",
+          "highlights": [
+            "where looks accumulated",
+            "what viewers select and explain"
+          ]
         },
         {
           "id": "study",
           "nav": "Study",
           "eyebrow": "Study",
-          "title": "The mismatch was not limited to one painting",
+          "title": "The mismatch appeared across the study",
           "body": [
             "12 of 15 enrolled participants passed gaze-quality checks. They viewed 24 paintings, each divided into 5–7 semantic regions.",
-            "156 of 1,651 cleaned region records showed HLL. It appeared in all 12 analyzed viewers and all 24 paintings."
+            "HLL appeared in 156 of 1,651 cleaned region records (9.4%), across every analyzed viewer and painting."
           ],
-          "items": [
-            {
-              "title": "What characterizes these regions?",
-              "body": "Some occupied connective positions in the composition."
-            },
-            {
-              "title": "How does attention accumulate?",
-              "body": "Selected cases showed repeated visits without uniformly long fixations."
-            }
-          ],
+          "items": [],
           "figures": [
             {
-              "src": "/assets/research-editorial/gaze-selected-cases.png",
-              "width": 3178,
-              "height": 1210,
-              "displayWidth": 1160,
-              "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
-              "alt": "Selected examples: regions linking foreground, background, and changes in depth.",
-              "caption": "Selected examples: regions linking foreground, background, and changes in depth.",
-              "className": "research-source-figure",
-              "captionTitle": "Read the relationships in each scene"
+              "researchFigure": {
+                "kind": "gaze-composition"
+              },
+              "alt": "Three original HLL composition examples, with source outlines and lines",
+              "sourceOrigin": "Gaze paper Figure 4, page 6: three native artwork crops with original annotations retained."
             }
           ],
           "highlights": [
-            "9.4%",
-            "12",
-            "24",
-            "156",
-            "HLL"
+            "12 of 15",
+            "24 paintings",
+            "9.4%"
           ],
           "layout": "editorial"
         },
@@ -2202,26 +2257,34 @@
           "eyebrow": "One example",
           "title": "Many returns. Shorter fixations",
           "body": [
-            "For one viewer of The Hay Wain, region A3 received 38 visits versus a trial mean of 20.33. Mean fixation duration was 0.051 s versus 0.17 s. These are single-case measurements."
+            "For one viewer, a region in The Hay Wain drew many returns but shorter fixations than the average region in that trial."
           ],
           "items": [],
           "figures": [
+            {
+              "src": "/assets/research-interactive/gaze-haywain-a3.webp",
+              "width": 647,
+              "height": 440,
+              "displayWidth": 440,
+              "className": "research-source-figure",
+              "captionTitle": "A3: a focal region",
+              "caption": "The original region overlay places this single-case result in the painting. It is not a group average.",
+              "alt": "The Hay Wain with focal region A3 emphasized in the original eye-tracking figure",
+              "sourceOrigin": "Gaze paper Figure 5, page 6: native crop retaining the original region boundaries."
+            },
             {
               "src": "/assets/hll-metrics-case-c5d7bdfe.webp",
               "width": 3294,
               "height": 598,
               "alt": "Figure 5 · One participant–painting–region example, with the original comparison table.",
-              "caption": "Figure 5 · One participant–painting–region example, with the original comparison table.",
+              "caption": "Single-case measurements, compared with the same trial’s region mean",
               "sourceOrigin": "Original project paper figure; retained native pixels and source composition.",
               "displayWidth": 1050
             }
           ],
           "highlights": [
-            "9.4%",
-            "12",
-            "24",
-            "156",
-            "HLL"
+            "one viewer",
+            "many returns but shorter fixations"
           ],
           "layout": "editorial"
         },
@@ -2237,11 +2300,8 @@
           "items": [],
           "figures": [],
           "highlights": [
-            "9.4%",
-            "12",
-            "24",
-            "156",
-            "HLL"
+            "viewers’ selections and explanations",
+            "does not prove an absence of understanding"
           ]
         }
       ],
@@ -2258,10 +2318,19 @@
       "sourceNotes": [
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
         "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
-        "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots."
+        "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
+        "14 October interactive revision: original embedded images from Figures 1, 3, 4 and 5 supplement the original portfolio. Each visual crop has native dimensions and provenance in assets/research-interactive/sources.json. No simulated eye-tracking data."
       ],
-      "contentRevision": "2026-10-14-research-readability",
-      "outcome": "HLL appeared in 9.4% of cleaned region records, across every analyzed viewer and painting."
+      "contentRevision": "2026-10-14-research-interactive",
+      "outcome": "HLL appeared in 9.4% of cleaned region records, across every analyzed viewer and painting.",
+      "tags": [
+        "Eye tracking",
+        "Art appreciation",
+        "Mixed methods"
+      ],
+      "highlights": [
+        "regions viewers later select and explain"
+      ]
     },
     {
       "id": "suzhou-scrollverse",
@@ -2300,67 +2369,85 @@
         "cutout": "/cutouts/suzhou-scrollverse.png"
       },
       "hero": {
-        "src": "/assets/research-editorial/suzhou-scroll.png",
-        "width": 755,
-        "height": 1196,
-        "displayWidth": 420,
-        "alt": "Continuous handscroll exploration through eight core scenes and twelve contextual videos.",
-        "caption": "Follow the handscroll through 8 core scenes and 12 contextual videos.",
-        "sourceOrigin": "Original paper Figure 2, center module; native pixels."
+        "src": "/assets/research-interactive/suzhou-original-handscroll.jpg",
+        "width": 10000,
+        "height": 2628,
+        "displayWidth": 820,
+        "alt": "Original handscroll painting used in Suzhou ScrollVerse",
+        "caption": "Explore the painting through its scenes, people and cultural clues.",
+        "sourceOrigin": "Original Figma-exported painting from the Suzhou project source assets; native 10000 × 2628 pixels."
       },
       "sections": [
+        {
+          "id": "needs",
+          "nav": "Reader needs",
+          "eyebrow": "Reader needs",
+          "title": "A long painting needs more than zoom",
+          "body": [
+            "191 survey responses and 30 interviews informed the design. Viewers wanted help locating details, following the story, and understanding cultural context."
+          ],
+          "figures": [
+            {
+              "researchFigure": {
+                "kind": "suzhou-survey"
+              },
+              "alt": "Formative survey: needs, barriers, and preferred functions",
+              "sourceOrigin": "Suzhou paper Figure 1 and accompanying reported percentages, pages 7–8. HTML/CSS bars; no chart screenshot."
+            }
+          ],
+          "items": [],
+          "layout": "editorial",
+          "highlights": [
+            "191 survey responses",
+            "30 interviews"
+          ]
+        },
         {
           "id": "experience",
           "nav": "Experience",
           "eyebrow": "Experience",
           "title": "Follow the sequence. Choose a perspective",
-          "body": [
-            "191 survey responses and 30 interviews shaped the design. People could see local details but struggled to locate them within the scroll and explain their cultural meaning.",
-            "ScrollVerse connects sequential unfolding, social perspectives, and painted evidence."
-          ],
-          "items": [
-            {
-              "title": "Follow the sequence",
-              "body": "Scroll through the painting with a visible progress marker."
-            },
-            {
-              "title": "Choose a perspective",
-              "body": "Explore as a commoner, scholar, or merchant."
-            },
-            {
-              "title": "Return to the evidence",
-              "body": "Find a detail and follow its cultural clues."
-            }
-          ],
+          "body": [],
+          "items": [],
           "figures": [
             {
-              "src": "/assets/research-editorial/suzhou-perspectives.png",
-              "width": 618,
-              "height": 1196,
-              "displayWidth": 460,
-              "alt": "Choose a scholar, merchant, or commoner’s perspective.",
-              "caption": "Choose a scholar, merchant, or commoner’s perspective.",
-              "sourceOrigin": "Original paper Figure 2, separate native module; no duplicated full figure."
-            },
-            {
-              "src": "/assets/research-editorial/suzhou-cultural-clues.png",
-              "width": 744,
-              "height": 1196,
-              "displayWidth": 460,
-              "alt": "Observe a detail, locate a clue, and uncover its historical context.",
-              "caption": "Observe a detail, locate a clue, and uncover its historical context.",
-              "sourceOrigin": "Original paper Figure 2, separate native module; no duplicated full figure."
+              "researchFigure": {
+                "kind": "suzhou-experience"
+              },
+              "alt": "The three original system modules: handscroll, social perspectives and cultural clues",
+              "sourceOrigin": "Original paper Figure 2, separate modules. Each appears once on this page."
             }
           ],
           "highlights": [
-            "25 of 30",
-            "26 of 30",
-            "191",
-            "30",
-            "60"
+            "social perspectives",
+            "painted evidence"
           ],
           "layout": "editorial",
           "figureLayout": "comparison"
+        },
+        {
+          "id": "runtime",
+          "nav": "How it works",
+          "eyebrow": "How it works",
+          "title": "Keep the scene and its story together",
+          "body": [
+            "The viewer’s position and chosen role determine which scene and story appear. Original painting tiles stay connected to scene records, hotspots, and contextual videos."
+          ],
+          "figures": [
+            {
+              "researchFigure": {
+                "kind": "suzhou-runtime"
+              },
+              "alt": "Original runtime images with progressive HTML step explanations",
+              "sourceOrigin": "Suzhou paper Figure 3, page 13: three original native crops; explanations follow the original pipeline."
+            }
+          ],
+          "items": [],
+          "layout": "editorial",
+          "highlights": [
+            "position and chosen role",
+            "Original painting tiles"
+          ]
         },
         {
           "id": "study",
@@ -2368,35 +2455,51 @@
           "eyebrow": "Study",
           "title": "Compare two ways of viewing",
           "body": [
-            "60 participants were randomly assigned to ScrollVerse or an annotation viewer, with 30 per group. Questionnaires and interviews followed.",
-            "25 of 30 ScrollVerse participants reported clearer understanding; 26 of 30 would recommend it or try a similar experience. Usability and workload differences were not significant.",
-            "Taking a historical character’s perspective made the scene more memorable for P14 and encouraged further exploration.",
-            "These results describe perceived understanding, not a historical knowledge test. The next step is to separate the contribution of each feature."
+            "60 participants were randomly assigned to ScrollVerse or an annotation viewer, with 30 per group. Questionnaires and interviews followed."
           ],
           "items": [],
           "figures": [
             {
-              "src": "/assets/fig4-study-results-bc437b38.webp",
-              "width": 1865,
-              "height": 1285,
-              "alt": "Figure 4 · Item means and 95% confidence intervals; n = 30 per condition. Full scale 1–5; displayed range 2.5–5.",
-              "caption": "Figure 4 · Item means and 95% confidence intervals; n = 30 per condition. Full scale 1–5; displayed range 2.5–5.",
-              "sourceOrigin": "Original project paper figure; retained native pixels and source composition.",
-              "displayWidth": 1050
+              "researchFigure": {
+                "kind": "suzhou-study"
+              },
+              "alt": "Compact comparative results with the explanation beside each measurement",
+              "sourceOrigin": "Original manuscript SUS and workload scores plus portfolio 25/30 and 26/30 self-report counts; native HTML/CSS."
             }
           ],
           "highlights": [
-            "25 of 30",
-            "26 of 30",
-            "191",
-            "30",
-            "60"
+            "60 participants",
+            "30 per group"
+          ],
+          "layout": "editorial"
+        },
+        {
+          "id": "ratings",
+          "nav": "Experience ratings",
+          "eyebrow": "Experience ratings",
+          "title": "Where the experience differed",
+          "body": [
+            "Participants described a clearer sense of unfolding, position, and historical context. Usability and workload differences were not statistically significant."
+          ],
+          "figures": [
+            {
+              "researchFigure": {
+                "kind": "suzhou-ratings"
+              },
+              "alt": "All 19 original study item ratings, grouped into four dimensions",
+              "sourceOrigin": "Suzhou paper Figure 4, page 15. HTML/CSS means and 95% CIs preserve original PDF vector coordinates; full scale 1–5, displayed 2.5–5."
+            }
+          ],
+          "items": [],
+          "layout": "editorial",
+          "highlights": [
+            "unfolding, position, and historical context",
+            "not statistically significant"
           ],
           "quote": {
             "text": "from the perspective of people at the time",
             "attribution": "P14 · Post-study interview"
-          },
-          "layout": "editorial"
+          }
         }
       ],
       "role": {
@@ -2412,10 +2515,19 @@
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
         "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
         "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
-        "Responsibilities confirmed from the author’s CV record, 14 October 2026."
+        "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
+        "14 October interactive revision: Figure 1 reported percentages rebuilt as HTML/CSS; Figure 3 original image excerpts with native HTML explanation; all 19 Figure 4 intervals and means recreated using exact native PDF coordinates. Coordinates are plotted evidence, not participant-level raw data. No new claim of objective learning or equivalence."
       ],
-      "contentRevision": "2026-10-14-research-readability",
-      "outcome": "25 of 30 ScrollVerse participants reported a clearer understanding of everyday life in Qing-dynasty Suzhou."
+      "contentRevision": "2026-10-14-research-interactive",
+      "outcome": "25 of 30 ScrollVerse participants reported a clearer understanding of everyday life in Qing-dynasty Suzhou.",
+      "tags": [
+        "Cultural heritage",
+        "Storytelling",
+        "Visualization"
+      ],
+      "highlights": [
+        "people, places, and cultural meanings"
+      ]
     },
     {
       "id": "versecolor",
@@ -2439,7 +2551,13 @@
           "detail": "Manuscript-reported questionnaire effect size"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "Comparison platform · Souyun",
+          "url": "https://sou-yun.cn/",
+          "source": "Paper comparison platform; URL verified 14 October 2026"
+        }
+      ],
       "category": "Research",
       "slug": "/research/versecolor",
       "theme": {
@@ -2477,7 +2595,7 @@
             },
             {
               "title": "Compare across poems",
-              "body": "P7 described recurring links between greens and nature in Li Bai’s poetry."
+              "body": "Trace recurring color links across source poems."
             }
           ],
           "figures": [
@@ -2492,10 +2610,8 @@
             }
           ],
           "highlights": [
-            "Cohen’s d = 2.29",
-            "d = 1.91",
-            "30",
-            "green"
+            "expert-reviewed graph",
+            "source poems"
           ],
           "layout": "editorial"
         },
@@ -2511,10 +2627,8 @@
           "figures": [],
           "interaction": "verse",
           "highlights": [
-            "Cohen’s d = 2.29",
-            "d = 1.91",
-            "30",
-            "green"
+            "green",
+            "farewell context"
           ],
           "layout": "editorial"
         },
@@ -2529,82 +2643,17 @@
           "items": [],
           "figures": [
             {
-              "alt": "The original comparative study sequence.",
-              "caption": "The original comparative study sequence.",
-              "displayWidth": 1200,
-              "width": 1200,
-              "height": 210,
-              "sourceOrigin": "Editable web reconstruction of the original paper workflow; no paper screenshot.",
-              "sourceComposition": {
-                "viewBox": [
-                  0,
-                  0,
-                  1200,
-                  210
-                ],
-                "layers": [],
-                "labels": [
-                  {
-                    "x": 0,
-                    "y": 22,
-                    "width": 345,
-                    "height": 155,
-                    "title": "01 / Read a task",
-                    "body": [
-                      "Explore color imagery in a poem."
-                    ],
-                    "fontSize": 22,
-                    "lineHeight": 1.35,
-                    "color": "#252a2d"
-                  },
-                  {
-                    "x": 400,
-                    "y": 22,
-                    "width": 345,
-                    "height": 155,
-                    "title": "02 / Use one tool",
-                    "body": [
-                      "VerseColor or Souyun."
-                    ],
-                    "fontSize": 22,
-                    "lineHeight": 1.35,
-                    "color": "#252a2d"
-                  },
-                  {
-                    "x": 800,
-                    "y": 22,
-                    "width": 345,
-                    "height": 155,
-                    "title": "03 / Reflect",
-                    "body": [
-                      "Questionnaire and interview."
-                    ],
-                    "fontSize": 22,
-                    "lineHeight": 1.35,
-                    "color": "#252a2d"
-                  }
-                ],
-                "leaders": [
-                  {
-                    "d": "M 350 80 L 386 80 L 379 73 M 386 80 L 379 87",
-                    "stroke": "#737c77",
-                    "strokeWidth": 2
-                  },
-                  {
-                    "d": "M 750 80 L 786 80 L 779 73 M 786 80 L 779 87",
-                    "stroke": "#737c77",
-                    "strokeWidth": 2
-                  }
-                ],
-                "mobileMinWidth": 860
-              }
+              "researchFigure": {
+                "kind": "verse-procedure"
+              },
+              "alt": "Two-phase study flow: formative interviews, pre-test, matched interpretation tasks, usability questionnaire and interview",
+              "sourceOrigin": "Original manuscript Figure 2 procedure rebuilt in HTML/CSS. Current portfolio 30-participant count overrides older draft sample."
             }
           ],
           "highlights": [
-            "Cohen’s d = 2.29",
-            "d = 1.91",
-            "30",
-            "green"
+            "Eight reader interviews",
+            "eight experts",
+            "Thirty participants"
           ],
           "layout": "editorial"
         },
@@ -2664,10 +2713,9 @@
             "attribution": "P13 · Post-task interview"
           },
           "highlights": [
-            "Cohen’s d = 2.29",
-            "d = 1.91",
-            "30",
-            "green"
+            "relational-support ratings",
+            "imagery-support ratings",
+            "not measured learning gains"
           ],
           "layout": "editorial"
         }
@@ -2686,17 +2734,26 @@
         "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
         "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
-        "Poem example follows current original portfolio frame 1835:6887: green highlighted in the poem, dashed connection, shared two-row context panel and the following two lines. Original vector symbols 1835:6904 and 1835:6911 retained."
+        "Poem example follows current original portfolio frame 1835:6887: green highlighted in the poem, dashed connection, shared two-row context panel and the following two lines. Original vector symbols 1835:6904 and 1835:6911 retained.",
+        "14 October interactive revision: original poem interaction retained; study sequence is responsive HTML/CSS with current portfolio counts. Souyun linked as the comparison platform, not as a VerseColor demo."
       ],
-      "contentRevision": "2026-10-14-research-readability",
-      "outcome": "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery; Souyun was easier to use."
+      "contentRevision": "2026-10-14-research-interactive",
+      "outcome": "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery; Souyun was easier to use.",
+      "tags": [
+        "Chinese poetry",
+        "Color",
+        "Visual exploration"
+      ],
+      "highlights": [
+        "imagery, emotion, and original lines"
+      ]
     },
     {
       "id": "ambulance",
       "title": "Ambulance Rush",
       "subtitle": "A faster driver cannot create a hospital bed",
-      "description": "A serious journalism game about Adelaide’s ambulance-ramping crisis. Players take the driver’s seat and face the trade-offs of emergency care.",
-      "kicker": "PUBLIC HEALTH NEWS / SERIOUS JOURNALISM GAME",
+      "description": "A 3D journalism game about Adelaide’s ambulance-ramping crisis. Drive emergency calls, check hospital capacity and face the limits that faster driving cannot solve.",
+      "kicker": "JOURNALISM GAME · DRIVING SIMULATION",
       "meta": "Programming · Team Coordination · Paper Co-author (3rd) · Unity 3D, C#, WebGL · 2024",
       "stats": [
         {
@@ -2768,14 +2825,13 @@
           "nav": "Abstract",
           "figures": [
             {
-              "src": "/assets/ambulance-paper-p12-img0-2dc89022.webp",
-              "width": 1241,
-              "height": 696,
-              "alt": "Reporting and real data frame the crisis before play.",
-              "caption": "Reporting and real data frame the crisis before play.",
-              "displayWidth": 470,
-              "sourceNode": "1577:7212",
-              "sourceOrigin": "Original in-game context screen"
+              "src": "/assets/ambulance-editorial/ambulance-cutout.png",
+              "width": 1672,
+              "height": 941,
+              "displayWidth": 600,
+              "alt": "Ambulance isolated from the original ABC photograph",
+              "caption": "ABC News · Che Chorley",
+              "sourceOrigin": "Vehicle cutout derived from the ABC photograph already cited in the portfolio"
             }
           ],
           "highlights": [
@@ -2794,396 +2850,19 @@
           "figures": [
             {
               "src": "/assets/games-other-followup/ambulance-original-sa-health-map-context-kept.png",
-              "width": 1550,
-              "height": 425,
-              "displayWidth": 1150,
-              "alt": "Real Adelaide hospital map beside the game map, matching Lyell McEwin, Royal Adelaide and Flinders with original numbered pins.",
-              "caption": "The same three hospitals, translated from real Adelaide into the game map.",
-              "sourceNode": "1577:7312–7356 / 1594:316–327",
-              "sourceOrigin": "Current author portfolio, original SA Health map and original game map with authored positions and connections.",
-              "sourceComposition": {
-                "viewBox": [
-                  1700,
-                  155,
-                  1550,
-                  425
-                ],
-                "background": "#fcfaf6",
-                "layers": [
-                  {
-                    "src": "/assets/games-other-followup/ambulance-real-map-author-crop.svg",
-                    "x": 1730,
-                    "y": 220,
-                    "width": 400,
-                    "height": 340,
-                    "sourceNode": "1577:7312 / 1577:7313"
-                  },
-                  {
-                    "src": "/assets/games-other-followup/ambulance-game-map-author-crop.svg",
-                    "x": 2820,
-                    "y": 220,
-                    "width": 400,
-                    "height": 340,
-                    "sourceNode": "1577:7279 / 1577:7280"
-                  },
-                  {
-                    "x": 1955.4416256,
-                    "y": 261.4687399,
-                    "width": 208.05274880000002,
-                    "height": 46.0355202,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-real-map-connection1-subtle-separation.svg",
-                    "sourceNode": "1594:317",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2746.5026,
-                    "y": 300.5,
-                    "width": 180.9948,
-                    "height": 12.0,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-game-map-connection1-subtle-separation.svg",
-                    "sourceNode": "1594:319",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 1890.9751096,
-                    "y": 410.4997136,
-                    "width": 272.5317808,
-                    "height": 15.8575728,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-real-map-connection2-subtle-separation.svg",
-                    "sourceNode": "1594:321",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2746.4945,
-                    "y": 410.4998,
-                    "width": 130.011,
-                    "height": 18.0004,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-game-map-connection2-subtle-separation.svg",
-                    "sourceNode": "1594:323",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 1874.9487056,
-                    "y": 512.4098897,
-                    "width": 288.53858879999996,
-                    "height": 15.0892206,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-real-map-connection3-subtle-separation.svg",
-                    "sourceNode": "1594:325",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2746.5083,
-                    "y": 466.5008,
-                    "width": 315.9834,
-                    "height": 60.998400000000004,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-game-map-connection3-subtle-separation.svg",
-                    "sourceNode": "1594:327",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 1956.9495456,
-                    "y": 262.9715104,
-                    "width": 205.03690880000002,
-                    "height": 43.0299792,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-real-map-connection1.svg",
-                    "sourceNode": "1594:316",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2747.999,
-                    "y": 302.0,
-                    "width": 178.002,
-                    "height": 9.0,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-game-map-connection1.svg",
-                    "sourceNode": "1594:318",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 1892.488585,
-                    "y": 412.0000894,
-                    "width": 269.50482999999997,
-                    "height": 12.856821199999999,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-real-map-connection2.svg",
-                    "sourceNode": "1594:320",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2747.9951,
-                    "y": 412.0002,
-                    "width": 127.0098,
-                    "height": 14.9996,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-game-map-connection2.svg",
-                    "sourceNode": "1594:322",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 1876.4409524,
-                    "y": 513.9095903,
-                    "width": 285.5540952,
-                    "height": 12.0898194,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-real-map-connection3.svg",
-                    "sourceNode": "1594:324",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2747.9915,
-                    "y": 468.002,
-                    "width": 313.017,
-                    "height": 57.996,
-                    "src": "/assets/games-other-followup/ambulance-v4-smooth-game-map-connection3.svg",
-                    "sourceNode": "1594:326",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2925.0,
-                    "y": 282.0,
-                    "width": 54.0,
-                    "height": 54.0,
-                    "src": "/assets/games-other-followup/ambulance-map-pin-lyell-mc-ewin-hospital.svg",
-                    "sourceNode": "1577:7281",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 2874.0,
-                    "y": 398.0,
-                    "width": 54.0,
-                    "height": 54.0,
-                    "src": "/assets/games-other-followup/ambulance-map-pin-lyell-mc-ewin-hospital.svg",
-                    "sourceNode": "1577:7283",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 3060.0,
-                    "y": 443.0,
-                    "width": 54.0,
-                    "height": 54.0,
-                    "src": "/assets/games-other-followup/ambulance-map-pin-lyell-mc-ewin-hospital.svg",
-                    "sourceNode": "1577:7285",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 1903.94,
-                    "y": 237.97,
-                    "width": 54.0,
-                    "height": 54.0,
-                    "src": "/assets/games-other-followup/ambulance-map-selected-hospital-pin1.svg",
-                    "sourceNode": "1577:7343",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 1839.48,
-                    "y": 395.86,
-                    "width": 54.0,
-                    "height": 54.0,
-                    "src": "/assets/games-other-followup/ambulance-map-selected-hospital-pin1.svg",
-                    "sourceNode": "1577:7349",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 1823.44,
-                    "y": 488.91,
-                    "width": 54.0,
-                    "height": 54.0,
-                    "src": "/assets/games-other-followup/ambulance-map-selected-hospital-pin1.svg",
-                    "sourceNode": "1577:7355",
-                    "kind": "image"
-                  }
-                ],
-                "labels": [
-                  {
-                    "x": 1730.0,
-                    "y": 170.0,
-                    "width": 400.0,
-                    "height": 44.0,
-                    "title": "REAL ADELAIDE MAP",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7401"
-                  },
-                  {
-                    "x": 2820.0,
-                    "y": 170.0,
-                    "width": 400.0,
-                    "height": 44.0,
-                    "title": "GAME MAP",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7332"
-                  },
-                  {
-                    "x": 2147.0,
-                    "y": 280.0,
-                    "width": 573.0,
-                    "height": 56.0,
-                    "title": "Lyell McEwin Hospital",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7318",
-                    "textAlign": "center"
-                  },
-                  {
-                    "x": 2225.0,
-                    "y": 238.0,
-                    "width": 530.0,
-                    "height": 44.0,
-                    "title": "",
-                    "body": "NORTH",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 400,
-                    "color": "#697074",
-                    "sourceNode": "1577:7319"
-                  },
-                  {
-                    "x": 2190.0,
-                    "y": 390.0,
-                    "width": 530.0,
-                    "height": 56.0,
-                    "title": "Royal Adelaide Hospital",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7324",
-                    "textAlign": "center"
-                  },
-                  {
-                    "x": 2229.0,
-                    "y": 351.0,
-                    "width": 530.0,
-                    "height": 44.0,
-                    "title": "",
-                    "body": "CENTRAL",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 400,
-                    "color": "#697074",
-                    "sourceNode": "1577:7325"
-                  },
-                  {
-                    "x": 2190.0,
-                    "y": 500.0,
-                    "width": 530.0,
-                    "height": 56.0,
-                    "title": "Flinders Medical Centre",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7330",
-                    "textAlign": "center"
-                  },
-                  {
-                    "x": 2229.0,
-                    "y": 464.0,
-                    "width": 530.0,
-                    "height": 44.0,
-                    "title": "",
-                    "body": "SOUTH",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 400,
-                    "color": "#697074",
-                    "sourceNode": "1577:7331"
-                  },
-                  {
-                    "x": 2928.0,
-                    "y": 291.0,
-                    "width": 48.0,
-                    "height": 44.0,
-                    "title": "1",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:7282",
-                    "textAlign": "center"
-                  },
-                  {
-                    "x": 2877.0,
-                    "y": 407.0,
-                    "width": 48.0,
-                    "height": 44.0,
-                    "title": "2",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:7284",
-                    "textAlign": "center"
-                  },
-                  {
-                    "x": 3063.0,
-                    "y": 452.0,
-                    "width": 48.0,
-                    "height": 44.0,
-                    "title": "3",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:7286",
-                    "textAlign": "center"
-                  },
-                  {
-                    "x": 1906.94,
-                    "y": 246.97,
-                    "width": 48.0,
-                    "height": 44.0,
-                    "title": "1",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:7344",
-                    "textAlign": "center"
-                  },
-                  {
-                    "x": 1842.48,
-                    "y": 404.86,
-                    "width": 48.0,
-                    "height": 44.0,
-                    "title": "2",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:7350",
-                    "textAlign": "center"
-                  },
-                  {
-                    "x": 1826.44,
-                    "y": 497.91,
-                    "width": 48.0,
-                    "height": 44.0,
-                    "title": "3",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:7356",
-                    "textAlign": "center"
-                  }
-                ],
-                "mobileMinWidth": 950
-              }
+              "width": 1774,
+              "height": 1526,
+              "displayWidth": 380,
+              "alt": "SA Health map",
+              "sourceNode": "1918:616"
+            },
+            {
+              "src": "/assets/games-other-followup/ambulance-original-city-plan-paper-figure.png",
+              "width": 1240,
+              "height": 1145,
+              "displayWidth": 380,
+              "alt": "Original game city plan",
+              "sourceNode": "1918:583"
             }
           ],
           "highlights": [
@@ -3202,401 +2881,11 @@
           "figures": [
             {
               "src": "/assets/games-other-followup/ambulance-complete-gameplay-screen-new-user-screenshot.png",
-              "width": 2600,
-              "height": 930,
-              "displayWidth": 1240,
-              "alt": "Complete Ambulance Rush gameplay UI with the author’s six original callouts: hearts, triage, current patient, minimap, hospital capacity and vehicle controls.",
-              "caption": "A patient, a deadline and a hospital bed: the interface turns each rescue into a sequence of decisions.",
-              "sourceNode": "1577:7227–7245 / 1577:7357–7363 / 1577:7443–7456 / 1591:317–324",
-              "sourceOrigin": "Current author portfolio, section 03, native labels and original annotated image geometry.",
-              "sourceComposition": {
-                "viewBox": [
-                  1280,
-                  730,
-                  2600,
-                  950
-                ],
-                "background": "#fcfaf6",
-                "layers": [
-                  {
-                    "x": 2050.0,
-                    "y": 910.0,
-                    "width": 1180.0,
-                    "height": 737.845,
-                    "src": "/assets/games-other-followup/ambulance-complete-gameplay-screen-new-user-screenshot.png",
-                    "sourceNode": "1577:7227",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 1300.0,
-                    "y": 1352.0,
-                    "width": 18.0,
-                    "height": 18.0,
-                    "src": "/assets/games-other-followup/ambulance-ellipse.svg",
-                    "sourceNode": "1577:7232",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 1465.0,
-                    "y": 1352.0,
-                    "width": 18.0,
-                    "height": 18.0,
-                    "src": "/assets/games-other-followup/ambulance-ellipse1.svg",
-                    "sourceNode": "1577:7234",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 1695.0,
-                    "y": 1352.0,
-                    "width": 18.0,
-                    "height": 18.0,
-                    "src": "/assets/games-other-followup/ambulance-ellipse2.svg",
-                    "sourceNode": "1577:7236",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 1300.0,
-                    "y": 748.0,
-                    "width": 180.0,
-                    "height": 236.3,
-                    "src": "/assets/games-other-followup/ambulance-hospital-tab-all-three-names-and-capacity.png",
-                    "sourceNode": "1577:7243",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 2160.4193960000002,
-                    "y": 862.0,
-                    "width": 21.581207999999997,
-                    "height": 79.6,
-                    "src": "/assets/games-other-followup/ambulance-gameplay-balanced-hearts-annotation.svg",
-                    "sourceNode": "1577:7443",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2155.42,
-                    "y": 934.6,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/ambulance-gameplay-balanced-hearts-annotation-target.svg",
-                    "sourceNode": "1577:7444",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 1982.0,
-                    "y": 928.002555,
-                    "width": 209.39104,
-                    "height": 67.487445,
-                    "src": "/assets/games-other-followup/ambulance-gameplay-hospital-without-crossed-leaders.svg",
-                    "sourceNode": "1577:7455",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2182.4,
-                    "y": 988.49,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/ambulance-gameplay-balanced-hearts-annotation-target.svg",
-                    "sourceNode": "1577:7456",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 1940.0,
-                    "y": 989.94982,
-                    "width": 162.96,
-                    "height": 106.05036,
-                    "src": "/assets/games-other-followup/ambulance-v4-portrait-beside-patient-information.svg",
-                    "sourceNode": "1591:317",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2095.96,
-                    "y": 984.95,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/ambulance-v4-portrait-beside-patient-information-target.svg",
-                    "sourceNode": "1591:318",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 1940.0,
-                    "y": 1261.971667,
-                    "width": 199.19,
-                    "height": 184.026666,
-                    "src": "/assets/games-other-followup/ambulance-v4-current-patient-link.svg",
-                    "sourceNode": "1591:319",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2132.19,
-                    "y": 1256.97,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/ambulance-v4-portrait-beside-patient-information-target.svg",
-                    "sourceNode": "1591:320",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3101.14,
-                    "y": 857.001412,
-                    "width": 188.86,
-                    "height": 199.937176,
-                    "src": "/assets/games-other-followup/ambulance-v4-navigation-in-right-margin.svg",
-                    "sourceNode": "1591:321",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3094.14,
-                    "y": 1047.94,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/ambulance-v4-portrait-beside-patient-information-target.svg",
-                    "sourceNode": "1591:322",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2343.476466,
-                    "y": 1538.0058,
-                    "width": 946.5235339999999,
-                    "height": 121.9884,
-                    "src": "/assets/games-other-followup/ambulance-v4-dashboard-controls-on-main-image-only.svg",
-                    "sourceNode": "1591:323",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2338.46,
-                    "y": 1573.78,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/ambulance-v4-portrait-beside-patient-information-target.svg",
-                    "sourceNode": "1591:324",
-                    "kind": "leaders"
-                  }
-                ],
-                "labels": [
-                  {
-                    "x": 2050.0,
-                    "y": 740.0,
-                    "width": 320.0,
-                    "height": 112,
-                    "title": "3 Hearts",
-                    "body": "",
-                    "fontSize": 56.0,
-                    "lineHeight": 112.0,
-                    "fontWeight": 700,
-                    "color": "#fa4860",
-                    "sourceNode": "1577:7228"
-                  },
-                  {
-                    "x": 1300.0,
-                    "y": 1070.0,
-                    "width": 650.0,
-                    "height": 56.0,
-                    "title": "Tap the patient portrait",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7230"
-                  },
-                  {
-                    "x": 1327.0,
-                    "y": 1342.0,
-                    "width": 150.0,
-                    "height": 44.0,
-                    "title": "Low",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#438862",
-                    "sourceNode": "1577:7233"
-                  },
-                  {
-                    "x": 1492.0,
-                    "y": 1342.0,
-                    "width": 200.0,
-                    "height": 44.0,
-                    "title": "Medium",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#b58a16",
-                    "sourceNode": "1577:7235"
-                  },
-                  {
-                    "x": 1722.0,
-                    "y": 1342.0,
-                    "width": 150.0,
-                    "height": 44.0,
-                    "title": "High",
-                    "body": "",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 700,
-                    "color": "#fa4860",
-                    "sourceNode": "1577:7237"
-                  },
-                  {
-                    "x": 1300.0,
-                    "y": 1420.0,
-                    "width": 650.0,
-                    "height": 56.0,
-                    "title": "Current Patient",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7238"
-                  },
-                  {
-                    "x": 1300.0,
-                    "y": 1484.0,
-                    "width": 650.0,
-                    "height": 104.0,
-                    "title": "",
-                    "body": "The name of the patient aboard your ambulance.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#222a32",
-                    "sourceNode": "1577:7239"
-                  },
-                  {
-                    "x": 3310.0,
-                    "y": 835.0,
-                    "width": 552.0,
-                    "height": 56.0,
-                    "title": "Navigate",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7240"
-                  },
-                  {
-                    "x": 3310.0,
-                    "y": 899.0,
-                    "width": 552.0,
-                    "height": 104.0,
-                    "title": "",
-                    "body": "Use the minimap to locate calls and plan a route.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#222a32",
-                    "sourceNode": "1577:7241"
-                  },
-                  {
-                    "x": 1512.0,
-                    "y": 752.0,
-                    "width": 470.0,
-                    "height": 56.0,
-                    "title": "Check beds",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#fa4860",
-                    "sourceNode": "1577:7242"
-                  },
-                  {
-                    "x": 3310.0,
-                    "y": 1450.0,
-                    "width": 552.0,
-                    "height": 56.0,
-                    "title": "Speed + recovery",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#285fa4",
-                    "sourceNode": "1577:7245"
-                  },
-                  {
-                    "x": 2320.0,
-                    "y": 743.0,
-                    "width": 1055.0,
-                    "height": 110,
-                    "title": "",
-                    "body": "Miss a deadline: lose a heart. Three lost: game over.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#222a32",
-                    "sourceNode": "1577:7357"
-                  },
-                  {
-                    "x": 1300.0,
-                    "y": 1134.0,
-                    "width": 650.0,
-                    "height": 192,
-                    "title": "",
-                    "body": "See name + urgency. Common Australian first names make patients familiar to Adelaide students.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#222a32",
-                    "sourceNode": "1577:7358"
-                  },
-                  {
-                    "x": 1512.0,
-                    "y": 816.0,
-                    "width": 470.0,
-                    "height": 104.0,
-                    "title": "",
-                    "body": "Tap the hospital icon for names + available beds.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#222a32",
-                    "sourceNode": "1577:7359"
-                  },
-                  {
-                    "x": 3310.0,
-                    "y": 1090.0,
-                    "width": 552.0,
-                    "height": 56.0,
-                    "title": "Why the pressure rises",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#fa4860",
-                    "sourceNode": "1577:7361"
-                  },
-                  {
-                    "x": 3310.0,
-                    "y": 1154.0,
-                    "width": 552.0,
-                    "height": 280,
-                    "title": "",
-                    "body": "More calls arrive while beds stay scarce. Players can save individual patients, but cannot resolve the hospital shortage.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#222a32",
-                    "sourceNode": "1577:7362"
-                  },
-                  {
-                    "x": 3310.0,
-                    "y": 1514.0,
-                    "width": 552.0,
-                    "height": 152.0,
-                    "title": "",
-                    "body": "Watch speed · Use the rocket to boost · Tap rotate to flip upright",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#222a32",
-                    "sourceNode": "1577:7363"
-                  }
-                ],
-                "mobileMinWidth": 1180
-              }
+              "width": 3416,
+              "height": 2136,
+              "displayWidth": 620,
+              "alt": "Original Ambulance Rush gameplay interface",
+              "sourceNode": "1918:530"
             }
           ],
           "highlights": [
@@ -3624,35 +2913,23 @@
           "highlights": [
             "real ramping data connects the game’s frustration to the news"
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "sourceArtwork": {
+            "frame": "/assets/ambulance-editorial/postgame-frame-original.png",
+            "background": "/assets/ambulance-editorial/postgame-background-original.png",
+            "origin": "Extracted original Texture2D frame_1 (2048×1138) and background_1 (2048×1152) from the published Unity build at itch.io upload 11753425; HTML copy faithfully transcribed from portfolio node1918:515."
+          }
         },
         {
           "id": "publication",
-          "eyebrow": "RESEARCH THROUGH PLAY",
-          "title": "From a playable system to a published case study",
-          "body": "The project reached more than 2,000 Adelaide players and became a co-authored case study of journalism through play.",
-          "items": [
-            {
-              "title": "It’s all fun and games: Contemporary newsgames and journalism",
-              "body": "Australian Journalism Review · 47(2), 173–196 · 2025",
-              "url": "https://intellectdiscover.com/content/journals/10.1386/ajr_00184_1"
-            }
-          ],
-          "nav": "Paper",
-          "figures": [
-            {
-              "src": "/assets/ambulance-paper-first-page-7a711130.webp",
-              "width": 999,
-              "height": 1400,
-              "alt": "Published article, first page",
-              "caption": "Published article, first page",
-              "displayWidth": 240,
-              "sourceNode": "1577:7267",
-              "sourceOrigin": "Published article, first page"
-            }
-          ],
+          "eyebrow": "AUDIENCE",
+          "title": "Bringing the story to Adelaide",
+          "body": "The project reached more than 2,000 Adelaide players.",
+          "items": [],
+          "nav": "Audience",
+          "figures": [],
           "highlights": [
-            "One co-authored journal article"
+            "more than 2,000 Adelaide players"
           ],
           "layout": "editorial"
         }
@@ -3668,15 +2945,34 @@
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
       "outcome": "More than 2,000 Adelaide players, project coverage in InDaily, and one co-authored journal article.",
-      "sourceNotes": []
+      "sourceNotes": [
+        "Only source artwork; section 02 and 03 descriptions are HTML, no generated SVG.",
+        "Figma original Games page 168:3792, source frame 1918:374; older original development photos 1577:7262/7263.",
+        "ABC original photo is separately credited and linked through the preserved news preview."
+      ],
+      "tags": [
+        "Serious game",
+        "Resource management",
+        "Healthcare"
+      ],
+      "highlights": [
+        "serious journalism game",
+        "trade-offs of emergency care"
+      ],
+      "integration": {
+        "module": "/ambulance-editorial.js",
+        "css": "/ambulance-editorial.css",
+        "setup": "setupAmbulanceEditorial(root, project)",
+        "order": "after setupNewsEmbeds, before setupMotion; old games-motion map hook safely no-ops because there is no source-composition SVG"
+      }
     },
     {
       "id": "loofasoup",
       "title": "Loofa Soup",
       "subtitle": "Work, or family? Who gets your time?",
-      "description": "A dinner invitation opens two routes: work or family. Rotate the shared table, balance guests’ tastes and use item cards to navigate each meal.",
-      "kicker": "CHINESE DINING CULTURE / NARRATIVE PUZZLE",
-      "meta": "Programming & Team Coordination · Unity 2D, C# · 2025.09–2026.04",
+      "description": "A dinner invitation opens two routes: work or family. Rotate a shared table, balance guests’ tastes and use item cards to navigate each meal.",
+      "kicker": "NARRATIVE PUZZLE · CHINESE DINING CULTURE",
+      "meta": "Unity 2D · C# · 2025.09–2026.04",
       "stats": [
         {
           "value": "2",
@@ -3705,36 +3001,43 @@
       "category": "Games",
       "slug": "/games/loofasoup",
       "theme": {
-        "background": "#F2EEE5",
-        "ink": "#173B29",
-        "accent": "#244B35"
+        "background": "#EEF0D7",
+        "ink": "#234B36",
+        "accent": "#487B4C"
       },
       "preview": {
         "bg": "#191919",
         "ink": "#ededeb",
-        "cutout": "/cutouts/loofasoup.png"
+        "cutout": "/assets/games-motion/loofa-ensemble-cutout.png"
       },
       "hero": {
-        "src": "/assets/games-revision/loofa/lufa-reclining.png",
-        "width": 569,
-        "height": 399,
-        "alt": "Lufa, the reclining character illustration",
-        "caption": "Lufa sells Deliciousness Insurance in a world where good food is a luxury.",
-        "displayWidth": 430,
-        "sourceNode": "1577:8130",
-        "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained"
+        "src": "/assets/games-motion/loofa-ensemble-cutout.png",
+        "width": 1672,
+        "height": 941,
+        "alt": "The original Loofa Soup cast together",
+        "caption": "Eight personalities, one shared table",
+        "displayWidth": 780,
+        "sourceOrigin": "User supplied ensemble illustration, background removed"
       },
       "sections": [
         {
           "id": "abstract",
           "eyebrow": "THE SHARED TABLE",
           "title": "A meal is never just a meal",
-          "body": "Shared meals build business ties and bring loved ones together. A work dinner can also mean missing family time—a choice between earning a living and being there.",
+          "body": "In Chinese dining culture, a shared table brings people together. Business dinners build connections; family meals make time for loved ones. Loofa Soup turns this everyday tension into a choice between work and family.",
           "nav": "Abstract",
-          "figures": [],
+          "figures": [
+            {
+              "src": "/assets/games-motion/loofa-table-cutout.png",
+              "alt": "The Loofa Soup dining table with guests, dishes and chairs",
+              "caption": "One shared table, different expectations",
+              "displayWidth": 440,
+              "sourceOrigin": "Background removed from the original game dining-table artwork"
+            }
+          ],
           "highlights": [
-            "make a living",
-            "be there for loved ones"
+            "Chinese dining culture",
+            "work and family"
           ],
           "items": [],
           "layout": "editorial"
@@ -3746,474 +3049,7 @@
           "body": "Read guests’ tastes, rotate the shared table and use item cards. Serve before the round limit, with limited actions to satisfy everyone.",
           "items": [],
           "nav": "Gameplay",
-          "figures": [
-            {
-              "src": "/assets/games-other-followup/loofa-gameplay-centered-complete-ui.png",
-              "width": 2220,
-              "height": 1110,
-              "displayWidth": 1240,
-              "alt": "Loofa Soup gameplay and original portfolio callouts for likes, cards, rounds, action points, rotating and serving.",
-              "caption": "Read. Rotate. Serve. The original interface and its controls.",
-              "sourceNode": "1577:8189–8233 / 1577:8304–8308",
-              "sourceOrigin": "Current portfolio gameplay composition, original game captures with live labels.",
-              "sourceComposition": {
-                "viewBox": [
-                  1690,
-                  135,
-                  2230,
-                  1110
-                ],
-                "background": "#fcfaf6",
-                "layers": [
-                  {
-                    "x": 2200.0,
-                    "y": 310.0,
-                    "width": 1170.0,
-                    "height": 658.042,
-                    "src": "/assets/games-other-followup/loofa-gameplay-centered-complete-ui.png",
-                    "sourceNode": "1577:8189",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 2796.0,
-                    "y": 994.0,
-                    "width": 185.0,
-                    "height": 190.886,
-                    "src": "/assets/games-other-followup/loofa-hover-new-outstretched-hand-screenshot.png",
-                    "sourceNode": "1577:8215",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 3420.0,
-                    "y": 399.0,
-                    "width": 94.0,
-                    "height": 154.943,
-                    "src": "/assets/games-other-followup/loofa-use-item-cards-original-swap-plates-card.png",
-                    "sourceNode": "1577:8307",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 2158.0,
-                    "y": 475.002,
-                    "width": 92.0,
-                    "height": 48.996,
-                    "src": "/assets/games-other-followup/loofa-short-leader-score-panel.svg",
-                    "sourceNode": "1577:8219",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2243.0,
-                    "y": 515.0,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-score-panel-target.svg",
-                    "sourceNode": "1577:8220",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2997.0,
-                    "y": 281.0008,
-                    "width": 65.0,
-                    "height": 59.9984,
-                    "src": "/assets/games-other-followup/loofa-short-leader-satisfaction.svg",
-                    "sourceNode": "1577:8221",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3055.0,
-                    "y": 332.0,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-satisfaction-target.svg",
-                    "sourceNode": "1577:8222",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3320.0,
-                    "y": 418.0,
-                    "width": 90.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-item-card.svg",
-                    "sourceNode": "1577:8223",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3313.0,
-                    "y": 413.0,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-item-card-target.svg",
-                    "sourceNode": "1577:8224",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3192.0,
-                    "y": 663.0,
-                    "width": 218.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-current-steps.svg",
-                    "sourceNode": "1577:8225",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3185.0,
-                    "y": 668.0,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-item-card-target.svg",
-                    "sourceNode": "1577:8226",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3320.0,
-                    "y": 911.0,
-                    "width": 90.0,
-                    "height": 6.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-ap.svg",
-                    "sourceNode": "1577:8227",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3313.0,
-                    "y": 908.0,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-score-panel-target.svg",
-                    "sourceNode": "1577:8228",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2835.0008,
-                    "y": 847.0,
-                    "width": 54.9984,
-                    "height": 141.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-hand.svg",
-                    "sourceNode": "1577:8229",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 2830.0,
-                    "y": 840.0,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-score-panel-target.svg",
-                    "sourceNode": "1577:8230",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3160.0002,
-                    "y": 848.0,
-                    "width": 25.9996,
-                    "height": 191.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-eat.svg",
-                    "sourceNode": "1577:8231",
-                    "kind": "leaders"
-                  },
-                  {
-                    "x": 3177.0,
-                    "y": 841.0,
-                    "width": 14.0,
-                    "height": 14.0,
-                    "src": "/assets/games-other-followup/loofa-short-leader-satisfaction-target.svg",
-                    "sourceNode": "1577:8232",
-                    "kind": "leaders"
-                  },
-                  {
-                    "src": "/assets/games-other-followup/loofa-liked-author-crop.svg",
-                    "x": 2750,
-                    "y": 253,
-                    "width": 52,
-                    "height": 53,
-                    "sourceNode": "1577:8193 / 1577:8194"
-                  },
-                  {
-                    "src": "/assets/games-other-followup/loofa-disliked-author-crop.svg",
-                    "x": 3240,
-                    "y": 253,
-                    "width": 52,
-                    "height": 53,
-                    "sourceNode": "1577:8196 / 1577:8197"
-                  },
-                  {
-                    "x": 1701.0,
-                    "y": 678.0,
-                    "width": 423.0,
-                    "height": 266.0,
-                    "src": "/assets/1577-8305-raw-1-06b0c478.webp",
-                    "sourceNode": "1577:8305",
-                    "kind": "image"
-                  },
-                  {
-                    "x": 1701.0,
-                    "y": 964.0,
-                    "width": 422.0,
-                    "height": 264.0,
-                    "src": "/assets/1577-8306-raw-1-e13b7f64.webp",
-                    "sourceNode": "1577:8306",
-                    "kind": "image"
-                  }
-                ],
-                "labels": [
-                  {
-                    "x": 2750,
-                    "y": 143,
-                    "width": 185,
-                    "height": 58,
-                    "title": "READ",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:8191",
-                    "background": "#28543c",
-                    "paddingX": 14,
-                    "paddingY": 4
-                  },
-                  {
-                    "x": 2750.0,
-                    "y": 211.0,
-                    "width": 1112.0,
-                    "height": 56.0,
-                    "title": "",
-                    "body": "Read likes / dislikes. Top-right = current satisfaction.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8192"
-                  },
-                  {
-                    "x": 2815.0,
-                    "y": 268.0,
-                    "width": 350.0,
-                    "height": 44.0,
-                    "title": "",
-                    "body": "Liked: score +",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 400,
-                    "color": "#28543c",
-                    "sourceNode": "1577:8195"
-                  },
-                  {
-                    "x": 3305.0,
-                    "y": 268.0,
-                    "width": 550.0,
-                    "height": 44.0,
-                    "title": "",
-                    "body": "Disliked: score −",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8198"
-                  },
-                  {
-                    "x": 1700,
-                    "y": 320,
-                    "width": 444,
-                    "height": 58,
-                    "title": "PLAN FOR 3 STARS",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#28543c",
-                    "sourceNode": "1577:8200",
-                    "background": "#f2d76a",
-                    "paddingX": 14,
-                    "paddingY": 4
-                  },
-                  {
-                    "x": 1700.0,
-                    "y": 398.0,
-                    "width": 444.0,
-                    "height": 170,
-                    "title": "",
-                    "body": "This level: earn 2 stars, then trigger “everyone satisfied” at least once.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8201"
-                  },
-                  {
-                    "x": 3420,
-                    "y": 326,
-                    "width": 442,
-                    "height": 58,
-                    "title": "USE ITEM CARDS",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:8203",
-                    "background": "#62804a",
-                    "paddingX": 14,
-                    "paddingY": 4
-                  },
-                  {
-                    "x": 3420,
-                    "y": 571,
-                    "width": 442,
-                    "height": 58,
-                    "title": "TRACK THE ROUND",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#28543c",
-                    "sourceNode": "1577:8206",
-                    "background": "#deecd7",
-                    "paddingX": 14,
-                    "paddingY": 4
-                  },
-                  {
-                    "x": 3420.0,
-                    "y": 647.0,
-                    "width": 489.0,
-                    "height": 104.0,
-                    "title": "",
-                    "body": "Current Steps: 1/6 means round 1 of 6.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8207"
-                  },
-                  {
-                    "x": 3420,
-                    "y": 818,
-                    "width": 442,
-                    "height": 58,
-                    "title": "AP BUDGET",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#28543c",
-                    "sourceNode": "1577:8209",
-                    "background": "#f2d76a",
-                    "paddingX": 14,
-                    "paddingY": 4
-                  },
-                  {
-                    "x": 2200,
-                    "y": 994,
-                    "width": 497,
-                    "height": 58,
-                    "title": "HOVER → ROTATE",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#28543c",
-                    "sourceNode": "1577:8212",
-                    "background": "#f2d76a",
-                    "paddingX": 14,
-                    "paddingY": 4
-                  },
-                  {
-                    "x": 2200.0,
-                    "y": 1068.0,
-                    "width": 530.0,
-                    "height": 104.0,
-                    "title": "",
-                    "body": "Hover over Lufa’s hand. Click to rotate every dish.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8213"
-                  },
-                  {
-                    "x": 2200.0,
-                    "y": 1176.0,
-                    "width": 800.0,
-                    "height": 44.0,
-                    "title": "",
-                    "body": "Every guest is affected.",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 400,
-                    "color": "#28543c",
-                    "sourceNode": "1577:8214"
-                  },
-                  {
-                    "x": 3050,
-                    "y": 1047,
-                    "width": 225,
-                    "height": 58,
-                    "title": "SERVE",
-                    "body": "",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 700,
-                    "color": "#ffffff",
-                    "sourceNode": "1577:8217",
-                    "background": "#28543c",
-                    "paddingX": 14,
-                    "paddingY": 4
-                  },
-                  {
-                    "x": 3050.0,
-                    "y": 1120.0,
-                    "width": 812.0,
-                    "height": 104.0,
-                    "title": "",
-                    "body": "Click EAT. Meet each guest’s targets before the round limit.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8218"
-                  },
-                  {
-                    "x": 3420.0,
-                    "y": 894.0,
-                    "width": 442.0,
-                    "height": 152.0,
-                    "title": "",
-                    "body": "Limited rotations each round. Move once before serving.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8233"
-                  },
-                  {
-                    "x": 1700.0,
-                    "y": 589.0,
-                    "width": 444.0,
-                    "height": 80,
-                    "title": "",
-                    "body": "Before each chapter, Lufa talks with the guests.",
-                    "fontSize": 30.0,
-                    "lineHeight": 36.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8304"
-                  },
-                  {
-                    "x": 3540.0,
-                    "y": 402.0,
-                    "width": 322.0,
-                    "height": 150,
-                    "title": "",
-                    "body": "Swap Plates Swap any two dishes.",
-                    "fontSize": 40.0,
-                    "lineHeight": 48.0,
-                    "fontWeight": 400,
-                    "color": "#20392b",
-                    "sourceNode": "1577:8308"
-                  }
-                ],
-                "mobileMinWidth": 1080
-              }
-            }
-          ],
+          "figures": [],
           "highlights": [
             "Limited actions"
           ],
@@ -4235,11 +3071,29 @@
             }
           ],
           "nav": "Routes",
-          "figures": [],
+          "figures": [
+            {
+              "src": "/assets/recordings/loofa-level-select.png",
+              "width": 1280,
+              "height": 720,
+              "alt": "Original Loofa Soup level-selection screen",
+              "caption": "Choose a chapter on the original game’s level map",
+              "displayWidth": 590
+            },
+            {
+              "src": "/assets/recordings/loofa-level-3.png",
+              "width": 1280,
+              "height": 720,
+              "alt": "Original third level with Lufa, Ave and Kevin Lau at the table",
+              "caption": "Level 3 brings Lufa, Ave and Kevin Lau to the same table",
+              "displayWidth": 590
+            }
+          ],
           "highlights": [
             "two paths through his life"
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "figureLayout": "comparison"
         },
         {
           "id": "characters",
@@ -4255,7 +3109,7 @@
               "height": 636,
               "alt": "Lufa",
               "caption": "The player character, a luffa-person selling Deliciousness Insurance.",
-              "displayWidth": 160,
+              "displayWidth": 190,
               "sourceNode": "1577:8150",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained",
               "captionTitle": "Lufa"
@@ -4266,7 +3120,7 @@
               "height": 1633,
               "alt": "Onion Man",
               "caption": "Our stern professor cries over games he loves. We made him an unsmiling onion boss.",
-              "displayWidth": 160,
+              "displayWidth": 190,
               "sourceNode": "1577:8257",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained",
               "captionTitle": "Onion Man"
@@ -4277,7 +3131,7 @@
               "height": 348,
               "alt": "Ave",
               "caption": "Our level planner as a fiery chilli. Late nights leave heavy dark circles.",
-              "displayWidth": 160,
+              "displayWidth": 190,
               "sourceNode": "1577:8263",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained",
               "captionTitle": "Ave"
@@ -4288,7 +3142,7 @@
               "height": 379,
               "alt": "Lolo",
               "caption": "Our narrative writer loves climbing. Her character became a monkey officer.",
-              "displayWidth": 160,
+              "displayWidth": 190,
               "sourceNode": "1577:8267",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained",
               "captionTitle": "Lolo"
@@ -4299,7 +3153,7 @@
               "height": 271,
               "alt": "Hyber",
               "caption": "A neutral waiter, inspired by our seal-loving lead artist.",
-              "displayWidth": 160,
+              "displayWidth": 190,
               "sourceNode": "1577:8271",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained",
               "captionTitle": "Hyber"
@@ -4310,7 +3164,7 @@
               "height": 571,
               "alt": "Aunty",
               "caption": "Lufa’s aunt. A familiar face at the family table.",
-              "displayWidth": 160,
+              "displayWidth": 190,
               "sourceNode": "1577:8277",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained",
               "captionTitle": "Aunty"
@@ -4321,7 +3175,7 @@
               "height": 528,
               "alt": "Ekvin",
               "caption": "A chicken-loving weasel in a Hong Kong-inspired T-shirt and flip-flops.",
-              "displayWidth": 160,
+              "displayWidth": 190,
               "sourceNode": "1577:8281",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained",
               "captionTitle": "Ekvin"
@@ -4332,7 +3186,7 @@
               "height": 391,
               "alt": "Joma",
               "caption": "A purple-haired pelican carrying my dogs, Jojo and Yoyo. Joma means “Jojo’s mom”—that’s me.",
-              "displayWidth": 160,
+              "displayWidth": 190,
               "sourceNode": "1577:8285",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained",
               "captionTitle": "Joma"
@@ -4349,7 +3203,7 @@
           "id": "production",
           "eyebrow": "ART & TEAM COORDINATION",
           "title": "One table. Many hands",
-          "body": "We reimagined 26 Chinese dishes with alien ingredients. A shared board aligned dialogue, art and interface states.",
+          "body": "We reimagined 26 Chinese dishes with alien ingredients. A shared board kept dialogue, art and interface states aligned.",
           "items": [],
           "nav": "Production",
           "figures": [
@@ -4664,17 +3518,6 @@
               "sourceOrigin": "Original uploaded dish art in LOOFA SOUP DESIGN, Art and UI / Other Art asset in game, 1097:14",
               "sourceFile": "1v14DA9zcnHUyfiZZGNhQG",
               "figureRole": "dish"
-            },
-            {
-              "src": "/assets/1577-8145-raw-1-750f7882.webp",
-              "width": 1222,
-              "height": 1116,
-              "alt": "Team board / shared production reference",
-              "caption": "Dialogue, art and interface states stay aligned on one shared board.",
-              "displayWidth": 340,
-              "sourceNode": "1577:8145",
-              "sourceOrigin": "Original shared production board",
-              "figureRole": "production-board"
             }
           ],
           "highlights": [
@@ -4693,19 +3536,28 @@
         "sourceRefs": [
           "meta"
         ],
-        "details": "I contributed programming and team coordination."
+        "details": ""
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
       "outcome": "A playable narrative puzzle with two story routes, six levels, eight characters and 26 dishes.",
-      "sourceNotes": []
+      "sourceNotes": [],
+      "tags": [
+        "Narrative game",
+        "Tabletop strategy",
+        "Social connection"
+      ],
+      "highlights": [
+        "two routes: work or family",
+        "Rotate the shared table"
+      ]
     },
     {
       "id": "hersound",
       "title": "Her Sound Re-sound",
       "subtitle": "Who gets to tell her story?",
-      "description": "Waner was a poet and court official; Taiping shaped court politics. Later accounts reduced their lives to scandal and rivalry. Reconstruct their stories, watch them disappear, and reclaim the power to narrate.",
-      "kicker": "WOMEN’S HISTORY / NARRATIVE PUZZLE",
-      "meta": "Copywriting & Programming · HTML, CSS, JavaScript",
+      "description": "Rebuild Waner and Taiping’s shared memories, watch parts of their story disappear, then restore their political agency. A narrative puzzle about who gets to tell women’s history.",
+      "kicker": "HISTORICAL NARRATIVE · PUZZLE GAME",
+      "meta": "",
       "stats": [
         {
           "value": "6",
@@ -4767,7 +3619,26 @@
             }
           ],
           "nav": "Abstract",
-          "figures": [],
+          "figures": [
+            {
+              "src": "/assets/games-motion/her-waner-writing.png",
+              "width": 273,
+              "height": 354,
+              "displayWidth": 225,
+              "alt": "Young Waner writing in the original game artwork",
+              "caption": "Waner · Writing",
+              "sourceOrigin": "Original game source artwork, original transparent PNG bytes retained"
+            },
+            {
+              "src": "/assets/games-motion/her-taiping-reading.png",
+              "width": 273,
+              "height": 354,
+              "displayWidth": 225,
+              "alt": "Young Taiping reading in the original game artwork",
+              "caption": "Taiping · Reading",
+              "sourceOrigin": "Original game source artwork, original transparent PNG bytes retained"
+            }
+          ],
           "highlights": [
             "1,000-participant women’s hackathon",
             "questioning the record"
@@ -4778,7 +3649,7 @@
           "id": "assemble",
           "eyebrow": "ASSEMBLE",
           "title": "Build a shared memory",
-          "body": "Rebuild three scenes of their shared lives with five reusable icons. Follow the clues, then place people and events into each frame.",
+          "body": "The first scene shows the answer. Add Taiping to the banquet, then build the poetry scene yourself.",
           "items": [],
           "nav": "Assemble",
           "figures": [],
@@ -4842,51 +3713,23 @@
         {
           "id": "restore",
           "eyebrow": "RESTORE",
-          "title": "Give their agency back",
-          "body": "Place POWER in their hands. Restore political work, strategic judgment and companionship, so accusation is no longer the only way to read their lives.",
+          "title": "The final chapter: give their agency back",
+          "body": "",
           "nav": "Restore",
           "figures": [],
           "highlights": [
             "political work, strategic judgment, and companionship"
           ],
           "experience": "restore",
-          "items": [
-            {
-              "title": "Political agency",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1918:2375"
-                }
-              ]
-            },
-            {
-              "title": "Literary talent",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1918:2385"
-                }
-              ]
-            },
-            {
-              "title": "Companionship",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1918:2393"
-                }
-              ]
-            }
-          ],
-          "experiencePosition": "before-body",
+          "items": [],
+          "experiencePosition": "after-body",
           "layout": "editorial"
         },
         {
           "id": "evidence",
-          "eyebrow": "EVIDENCE RESURFACES",
-          "title": "1,303 years · 710 → 2013",
-          "body": "In 2013, Waner’s epitaph revealed Taiping’s mourning. After 1,303 years, new evidence challenged a story overshadowed by scandal.",
+          "eyebrow": "710 → 2013",
+          "title": "After 1,303 years, Waner’s epitaph revealed Taiping’s mourning—and challenged the inherited story",
+          "body": "",
           "nav": "Evidence",
           "figures": [
             {
@@ -4895,16 +3738,12 @@
               "height": 1024,
               "alt": "illustrated epitaph, uncovered from the earth",
               "caption": "New evidence challenges the inherited story.",
-              "displayWidth": 400,
+              "displayWidth": 280,
               "sourceNode": "1577:9068",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained"
             }
           ],
-          "highlights": [
-            "1,303 years",
-            "Taiping’s mourning",
-            "whose voices shape history"
-          ],
+          "highlights": [],
           "items": [],
           "layout": "editorial"
         },
@@ -4927,7 +3766,7 @@
               "height": 1537,
               "alt": "Taiping holding a candle in the artwork",
               "caption": "",
-              "displayWidth": 230,
+              "displayWidth": 390,
               "sourceNode": "1577:9116",
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained"
             }
@@ -4945,21 +3784,30 @@
         "sourceRefs": [
           "meta"
         ],
-        "details": "I contributed copywriting and programming."
+        "details": ""
       },
       "revision": "2026-10-13 · Guided Chapter 3, original 18-scene scroll erasure, restore before explanation",
       "sourceNotes": [
         "Follow-up checked against original game Figma zESmtcPKcAs7hQf7zKHfID, Page 1, chapter-three nodes 39:1425/1427/1429 and gallery 18 main chapter frames.",
         "Question illustration uses epilogue reader 40:1716, avoiding repeated static versions of the final-chapter before/after scenes."
       ],
-      "outcome": "Audience Choice Award at Beijing’s 1,000-participant women’s hackathon."
+      "outcome": "Audience Choice Award at Beijing’s 1,000-participant women’s hackathon.",
+      "tags": [
+        "Narrative puzzle",
+        "Women’s history",
+        "Reconstruction"
+      ],
+      "highlights": [
+        "Reconstruct their stories",
+        "reclaim the power to narrate"
+      ]
     },
     {
       "id": "ourworld",
       "title": "Our World",
       "subtitle": "Earth Is Not Humanity’s Alone",
-      "description": "I began after reading a report of animal cruelty. Our World documents animals harmed by human actions, so visitors can remember them and understand what happened.",
-      "kicker": "ANIMAL ETHICS / INTERACTIVE MEMORIAL",
+      "description": "An interactive memorial to animals harmed by human actions. Follow individual lives through the archive, read their sources and light a candle to remember.",
+      "kicker": "INTERACTIVE ARCHIVE · DIGITAL MEMORIAL",
       "meta": "Concept · Research · Interaction & Web Development · Next.js, React, TypeScript, Framer Motion",
       "stats": [
         {
@@ -4985,9 +3833,9 @@
       "category": "Games",
       "slug": "/games/our-world",
       "theme": {
-        "background": "#F2EEE5",
-        "ink": "#263A35",
-        "accent": "#557665"
+        "background": "#EEF2E5",
+        "ink": "#294638",
+        "accent": "#9B5B77"
       },
       "preview": {
         "bg": "#292929",
@@ -4999,8 +3847,8 @@
         "width": 1254,
         "height": 1254,
         "alt": "Chunee, transparent archive portrait",
-        "caption": "Chunee · 1826",
-        "displayWidth": 370,
+        "caption": "Lives from the archive",
+        "displayWidth": 620,
         "sourceNode": "1598:330",
         "sourceOrigin": "Author’s local source repository: public/animals/chunee-exeter-exchange.png"
       },
@@ -5011,7 +3859,17 @@
           "title": "How can we stop this happening to other animals?",
           "body": "Wars, laboratories, zoos and polluted habitats—two centuries of animal histories. Choose a case, learn what happened and follow the original sources.",
           "nav": "Abstract",
-          "figures": [],
+          "figures": [
+            {
+              "src": "/assets/games-revision/ourworld/honey-inubosaki-dolphin.png",
+              "width": 1254,
+              "height": 1254,
+              "displayWidth": 310,
+              "alt": "Honey, a dolphin from the original Our World archive",
+              "caption": "Honey · A portrait from the full archive",
+              "sourceOrigin": "Original game source artwork, original transparent PNG bytes retained"
+            }
+          ],
           "highlights": [
             "over two centuries",
             "follow the original sources"
@@ -5039,7 +3897,17 @@
             }
           ],
           "nav": "Portraits",
-          "figures": [],
+          "figures": [
+            {
+              "src": "/assets/games-revision/ourworld/freya-oslo-walrus.png",
+              "width": 1254,
+              "height": 1254,
+              "displayWidth": 380,
+              "alt": "Freya, the original transparent archive portrait",
+              "caption": "Freya · 2022",
+              "sourceOrigin": "Original game source artwork, original transparent PNG bytes retained"
+            }
+          ],
           "highlights": [
             "in life",
             "before visitors learn about their deaths"
@@ -5048,36 +3916,17 @@
         },
         {
           "id": "timeline",
-          "eyebrow": "EXPLORE THROUGH TIME",
-          "title": "Animal histories, from 1826 to 2026",
-          "body": "The full archive spans 1826–2026. Explore ten selected animals below, open a record and follow its sources.",
+          "eyebrow": "SELECTED CASES",
+          "title": "Ten lives across 1826–2016",
+          "body": "Choose one of ten lives from the larger 1826–2026 archive. Each record brings together what happened, what remains uncertain and the original sources.",
           "nav": "Timeline",
           "figures": [],
           "highlights": [
-            "1826 to 2026",
-            "story and sources"
+            "ten lives",
+            "original sources"
           ],
           "experience": "archive",
           "items": [],
-          "layout": "editorial"
-        },
-        {
-          "id": "laika",
-          "eyebrow": "LAIKA’S STORY",
-          "title": "What happened to Laika?",
-          "body": "Laika’s record brings together her life, the mission and what people later learned. Source links keep the evidence open to readers.",
-          "items": [
-            {
-              "title": "Keep uncertainty visible",
-              "body": "When sources disagree, the record says so."
-            }
-          ],
-          "nav": "Laika",
-          "figures": [],
-          "highlights": [
-            "as an individual",
-            "what people later learned"
-          ],
           "layout": "editorial"
         },
         {
@@ -5098,14 +3947,11 @@
         {
           "id": "reflection",
           "eyebrow": "WHAT CAN WE DO DIFFERENTLY?",
-          "title": "Care starts with how we learn",
-          "body": "How should we teach care for animals—and improve their protection?",
+          "title": "How should we teach care for animals—and improve their protection?",
+          "body": "",
           "nav": "Reflection",
           "figures": [],
-          "highlights": [
-            "teach children to treat animals",
-            "better protection"
-          ],
+          "highlights": [],
           "items": [],
           "layout": "editorial"
         }
@@ -5123,7 +3969,15 @@
       },
       "revision": "2026-10-13 · Figma-first concise games revision",
       "outcome": "An interactive memorial with 191 published events drawn from 286 researched records, spanning 1826–2026.",
-      "sourceNotes": []
+      "sourceNotes": [],
+      "tags": [
+        "Interactive archive",
+        "Animal ethics",
+        "Memorial"
+      ],
+      "highlights": [
+        "remember them and understand what happened"
+      ]
     }
   ]
 }

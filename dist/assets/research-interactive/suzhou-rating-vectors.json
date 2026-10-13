@@ -1,0 +1,268 @@
+[
+  {
+    "label": "Willing to use frequently",
+    "group": "usability",
+    "baseline": [
+      0.28,
+      0.4266667,
+      0.5733333
+    ],
+    "scrollverse": [
+      0.2933333,
+      0.4533333,
+      0.6133333
+    ]
+  },
+  {
+    "label": "Low perceived complexity",
+    "group": "usability",
+    "baseline": [
+      0.3466667,
+      0.48,
+      0.6133333
+    ],
+    "scrollverse": [
+      0.4,
+      0.56,
+      0.7066667
+    ]
+  },
+  {
+    "label": "Easy to use",
+    "group": "usability",
+    "baseline": [
+      0.48,
+      0.6,
+      0.72
+    ],
+    "scrollverse": [
+      0.4666667,
+      0.6133333,
+      0.7466667
+    ]
+  },
+  {
+    "label": "Low need for assistance",
+    "group": "usability",
+    "baseline": [
+      0.3333333,
+      0.5066667,
+      0.6666667
+    ],
+    "scrollverse": [
+      0.5733333,
+      0.6933333,
+      0.8133333
+    ]
+  },
+  {
+    "label": "Functions well integrated",
+    "group": "usability",
+    "baseline": [
+      0.4133333,
+      0.52,
+      0.6266667
+    ],
+    "scrollverse": [
+      0.44,
+      0.6,
+      0.7466667
+    ]
+  },
+  {
+    "label": "High system consistency",
+    "group": "usability",
+    "baseline": [
+      0.3066667,
+      0.4666667,
+      0.6133333
+    ],
+    "scrollverse": [
+      0.5066667,
+      0.6533333,
+      0.8
+    ]
+  },
+  {
+    "label": "Easy to learn",
+    "group": "usability",
+    "baseline": [
+      0.52,
+      0.64,
+      0.76
+    ],
+    "scrollverse": [
+      0.5066667,
+      0.64,
+      0.7733333
+    ]
+  },
+  {
+    "label": "Low perceived cumbersomeness",
+    "group": "usability",
+    "baseline": [
+      0.4666667,
+      0.5866667,
+      0.7066667
+    ],
+    "scrollverse": [
+      0.4533333,
+      0.6,
+      0.7333333
+    ]
+  },
+  {
+    "label": "Confident in use",
+    "group": "usability",
+    "baseline": [
+      0.4266667,
+      0.5466667,
+      0.6666667
+    ],
+    "scrollverse": [
+      0.5866667,
+      0.7066667,
+      0.8133333
+    ]
+  },
+  {
+    "label": "Low learning prerequisite",
+    "group": "usability",
+    "baseline": [
+      0.32,
+      0.48,
+      0.6266667
+    ],
+    "scrollverse": [
+      0.3733333,
+      0.5466667,
+      0.72
+    ]
+  },
+  {
+    "label": "Lower mental demand",
+    "group": "workload",
+    "baseline": [
+      0.0933333,
+      0.24,
+      0.3866667
+    ],
+    "scrollverse": [
+      0.1866667,
+      0.3466667,
+      0.5066667
+    ]
+  },
+  {
+    "label": "Lower time pressure",
+    "group": "workload",
+    "baseline": [
+      0.2133333,
+      0.3466667,
+      0.48
+    ],
+    "scrollverse": [
+      0.2933333,
+      0.4666667,
+      0.64
+    ]
+  },
+  {
+    "label": "Lower effort",
+    "group": "workload",
+    "baseline": [
+      0.2266667,
+      0.36,
+      0.5066667
+    ],
+    "scrollverse": [
+      0.28,
+      0.4533333,
+      0.6266667
+    ]
+  },
+  {
+    "label": "Lower frustration",
+    "group": "workload",
+    "baseline": [
+      0.4266667,
+      0.56,
+      0.6933333
+    ],
+    "scrollverse": [
+      0.4266667,
+      0.6,
+      0.76
+    ]
+  },
+  {
+    "label": "Sense of gradual unfolding",
+    "group": "understanding",
+    "baseline": [
+      0.5063333,
+      0.6266667,
+      0.7466667
+    ],
+    "scrollverse": [
+      0.64,
+      0.7466667,
+      0.8533333
+    ]
+  },
+  {
+    "label": "Viewing order and rhythm",
+    "group": "understanding",
+    "baseline": [
+      0.4533333,
+      0.6,
+      0.7333333
+    ],
+    "scrollverse": [
+      0.56,
+      0.7066667,
+      0.84
+    ]
+  },
+  {
+    "label": "Understanding spatial progression",
+    "group": "understanding",
+    "baseline": [
+      0.48,
+      0.6,
+      0.72
+    ],
+    "scrollverse": [
+      0.64,
+      0.76,
+      0.8533333
+    ]
+  },
+  {
+    "label": "Understanding historical value",
+    "group": "understanding",
+    "baseline": [
+      0.4933333,
+      0.6133333,
+      0.7333333
+    ],
+    "scrollverse": [
+      0.64,
+      0.76,
+      0.8666667
+    ]
+  },
+  {
+    "label": "Recommend / try similar experiences",
+    "group": "engagement",
+    "baseline": [
+      0.56,
+      0.6666667,
+      0.7733333
+    ],
+    "scrollverse": [
+      0.64,
+      0.76,
+      0.8666667
+    ]
+  }
+]

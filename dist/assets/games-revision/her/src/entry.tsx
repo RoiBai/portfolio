@@ -16,7 +16,7 @@ export function mountHerExperience(element: HTMLElement, part: string) {
   };
   root.render(<div className="player-level-section">
     {part === 'assemble'
-      ? <LevelThree initialConfig={config.levelThreeConfig} playOnly persistLocal={false} onCompletionChange={done}/>
+      ? <LevelThree initialConfig={config.levelThreeConfig} playOnly portfolioGuided persistLocal={false} onCompletionChange={done}/>
       : <FinalChapter initialConfig={config.finalChapterConfig} onCompletionChange={done}/>}
   </div>);
   return () => root.unmount();

@@ -1,0 +1,7 @@
+/* The paired design goals sit at the centre of each pilot's reasoning row. */
+body[data-project=glancemap] .glance-pilot .pilot-reasoning{align-items:center}
+body[data-project=glancemap] .glance-pilot .pilot-goals{align-self:center;padding-block:12px}
+@media(max-width:540px){
+ body[data-project=glancemap] .glance-pilot .pilot-goals{padding-block:0}
+ body[data-project=glancemap] .glance-pilot .pilot-goals .dg-pill{align-self:center}
+}
