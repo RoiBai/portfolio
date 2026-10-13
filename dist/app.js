@@ -52,7 +52,10 @@ function nextProject(p){
  const next=list[(list.findIndex(item=>item.id===p.id)+1)%list.length];
  if(!next)return '';
  const category=next.slug.startsWith('/games/')?'Games':next.slug.startsWith('/research/')?'Research':'Design';
- return `<footer class="project-next"><a href="${siteURL(next.slug)}" class="next-project-link"><span class="next-label">Next Project <span aria-hidden="true">→</span></span><span class="next-category">${category}</span><span class="next-project-name">${esc(next.title)}</span><span class="next-project-arrow" aria-hidden="true">↗</span></a></footer>`;
+ const covers={'glancemap':'/assets/design-revision/glance-918-247-source.png','traditional-color':'/website-assets/atlas-display.svg','icon-colors':'/website-assets/icon-comic-panel-1.svg','ambulance':'/website-assets/ambulance-display.svg','loofasoup':'/website-assets/lufa-display.svg','hersound':'/website-assets/waner-display.svg','ourworld':'/website-assets/freya-display.svg','personamail':'/website-assets/research-personamail@3x.png','beyond-the-gaze':'/website-assets/research-gaze@3x.png','suzhou-scrollverse':'/website-assets/research-suzhou@3x.png','versecolor':'/website-assets/research-versecolor-v2@3x.png'};
+ const palettes={'glancemap':['#101210','#f4f5f1'],'traditional-color':['#263a3d','#f2eee5'],'icon-colors':['#080b0d','#77fbfe'],'ambulance':['#394b5a','#f8f3ef'],'loofasoup':['#354e3b','#f4edcf'],'hersound':['#4c626b','#fff3ea'],'ourworld':['#445c51','#f4eee2'],'personamail':['#4c5b78','#f7f8fc'],'beyond-the-gaze':['#334e5c','#fbf6fa'],'suzhou-scrollverse':['#555d44','#fcfaf6'],'versecolor':['#365e53','#f8fbf6']};
+ const colors=palettes[next.id]||['#222','#fff'];
+ return `<footer class="project-next"><a href="${siteURL(next.slug)}" class="next-project-link" style="--next-bg:${colors[0]};--next-ink:${colors[1]}"><span class="next-project-copy"><span class="next-label">Next Project <span aria-hidden="true">→</span></span><span class="next-category">${category}</span><span class="next-project-name">${esc(next.title)}</span></span><img class="next-project-image" src="${esc(covers[next.id])}" alt="${esc(next.title)} — project artwork" loading="lazy" decoding="async"><span class="next-project-arrow" aria-hidden="true">↗</span></a></footer>`;
 }
 function renderProject(p) {
  experienceCleanup();verseCleanup();sourceCleanup();layeredCleanup();

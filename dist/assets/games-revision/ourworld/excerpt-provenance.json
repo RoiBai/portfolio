@@ -1,0 +1,97 @@
+{
+  "sourceRepository": "OurWorld",
+  "source": "data/events.ts and public/animals",
+  "selected": [
+    {
+      "id": "chunee-exeter-exchange",
+      "image": "/animals/chunee-exeter-exchange.png",
+      "usesOriginalEnglish": true,
+      "sources": [
+        "https://www.londonmuseum.org.uk/collections/v/object-99934/the-destruction-of-the-elephant-at-exeter-change-march-1st1826/",
+        "https://blog.library.si.edu/blog/2014/08/28/once-there-were-billions-100-year-anniversary-of-the-death-martha-the-last-passenger-pigeon/"
+      ]
+    },
+    {
+      "id": "eldey-last-great-auks",
+      "image": "/animals/eldey-last-great-auks.png",
+      "usesOriginalEnglish": true,
+      "sources": [
+        "https://www.si.edu/exhibitions/research-case-great-auk%3Aevent-exhib-4482",
+        "https://www.cincymuseum.org/press/great-auk-paper/"
+      ]
+    },
+    {
+      "id": "laika-1957",
+      "image": "/animals/laika-sputnik-2.png",
+      "usesOriginalEnglish": false,
+      "sources": [
+        "https://www.nasa.gov/history/60-years-ago-the-first-animal-in-orbit/",
+        "https://www.smithsonianmag.com/smithsonian-institution/sad-story-laika-space-dog-and-her-one-way-trip-orbit-1-180968728/"
+      ]
+    },
+    {
+      "id": "digit-gorilla-poaching",
+      "image": "/animals/digit-gorilla-poaching.png",
+      "usesOriginalEnglish": true,
+      "sources": [
+        "https://gorillafund.org/who-we-are/digit-fund/",
+        "https://www.nationalgeographic.com/magazine/article/mountain-gorillas-virunga-peril-dian-fossey"
+      ]
+    },
+    {
+      "id": "ming-ocean-quahog",
+      "image": "/animals/ming-ocean-quahog.png",
+      "usesOriginalEnglish": true,
+      "sources": [
+        "https://www.bangor.ac.uk/news/archive/clam-found-to-be-over-500-years-old-16781",
+        "https://blogs.nature.com/blog/a_clam_named_ming/"
+      ]
+    },
+    {
+      "id": "margaash-snow-leopard",
+      "image": "/animals/margaash-snow-leopard.png",
+      "usesOriginalEnglish": true,
+      "sources": [
+        "https://www.dudleyzoo.org.uk/wp-content/uploads/Spring-ZooNooz-2019.pdf",
+        "https://www.theguardian.com/world/2018/nov/30/snow-leopard-shot-dead-in-west-midlands-after-escaping-zoo-enclosure"
+      ]
+    },
+    {
+      "id": "spitfire-wolf-926f",
+      "image": "/animals/spitfire-wolf-926f.png",
+      "usesOriginalEnglish": true,
+      "sources": [
+        "https://home.nps.gov/yell/learn/science-publications-reports.htm",
+        "https://www.nytimes.com/2018/11/30/science/wolf-yellowstone-shot.html"
+      ]
+    },
+    {
+      "id": "honey-inubosaki-dolphin",
+      "image": "/animals/honey-inubosaki-dolphin.png",
+      "usesOriginalEnglish": true,
+      "sources": [
+        "https://arcj.org/en/issues-en/entertainment-en/zoo-en/honey-died/",
+        "https://www.japantimes.co.jp/news/2020/04/03/national/honey-dolphin-dies/"
+      ]
+    },
+    {
+      "id": "freya-2022",
+      "image": "/animals/freya-oslo-walrus.png",
+      "usesOriginalEnglish": false,
+      "sources": [
+        "https://kommunikasjon.ntb.no/pressemelding/17939937/obduksjonen-av-hvalrossen-freya-er-klar?publisherId=17848243",
+        "https://www.washingtonpost.com/world/2022/08/14/freya-walrus-norway-euthanized/",
+        "https://www.dyrsrettigheter.no/rettsvern/noah-klager-avlivingen-av-freya-inn-til-sivilombudet/"
+      ]
+    },
+    {
+      "id": "grizzly-399-vehicle",
+      "image": "/animals/grizzly-399-vehicle.png",
+      "usesOriginalEnglish": true,
+      "sources": [
+        "https://www.fws.gov/press-release/2024-10/grizzly-bear-399-fatally-struck-vehicle-snake-river-canyon",
+        "https://apnews.com/article/3e13c4b5234926cbd799dbb3db1ffac8"
+      ]
+    }
+  ]
+}

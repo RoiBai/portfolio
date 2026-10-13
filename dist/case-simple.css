@@ -277,3 +277,15 @@ body[data-project="glancemap"] .section-visuals .project-figure{max-width:min(80
 .next-project-link:focus-visible{outline:2px solid var(--accent);outline-offset:8px}
 @media(max-width:640px){.project-next{margin-top:60px}.next-project-link{padding:32px 0 46px;gap:12px}.next-project-arrow{font-size:32px}}
 @media(prefers-reduced-motion:reduce){.next-project-link *{transition:none!important;transform:none!important}}
+
+/* Shared case-page measure and a preview of the next project. */
+.case-study{width:100%;max-width:1280px;margin-inline:auto}
+.next-project-link{grid-template-columns:minmax(0,1fr) minmax(180px,32%) 36px;align-items:center;gap:36px;padding:44px 40px;min-height:280px;background:color-mix(in srgb,var(--ink) 5%,transparent);transition:background .45s,color .45s}
+.next-project-copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+.next-project-name{font-size:clamp(28px,3.6vw,54px)}
+.next-project-image{display:block;max-width:100%;width:100%;height:210px;object-fit:contain;filter:grayscale(1);transition:filter .45s,transform .45s}
+.next-project-arrow{grid-column:3;grid-row:1;font-size:32px}
+.next-project-link:is(:hover,:focus-visible){background:var(--next-bg);color:var(--next-ink)}
+.next-project-link:is(:hover,:focus-visible) .next-project-image{filter:grayscale(0);transform:translateY(-4px)}
+.next-project-link:is(:hover,:focus-visible) .next-category{color:inherit}
+@media(max-width:640px){.next-project-link{grid-template-columns:minmax(0,1fr) 96px 22px;padding:28px 20px;gap:16px;min-height:200px}.next-project-image{height:130px}.next-project-arrow{font-size:22px}.next-project-name{font-size:27px}}

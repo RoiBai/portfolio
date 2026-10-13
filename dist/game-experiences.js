@@ -6,16 +6,226 @@ const installed = new WeakMap();
 let herModule;
 
 const animals = [
-  {id:'laika',name:'Laika',year:'1957',date:'3 November 1957',image:'laika-sputnik-2.png',
-   title:'A journey without a return.',
-   body:'Laika was sent into Earth orbit aboard Sputnik 2. The spacecraft had no return design. Later mission accounts corrected the early claim that she survived for days: she died within hours from overheating and stress.',
-   note:'The change in the published account matters: visitors can compare the sources instead of treating the first report as final.',
-   sources:[{name:'NASA · The first animal in orbit',url:'https://www.nasa.gov/history/60-years-ago-the-first-animal-in-orbit/'},{name:'Smithsonian · Laika’s one-way trip',url:'https://www.smithsonianmag.com/smithsonian-institution/sad-story-laika-space-dog-and-her-one-way-trip-orbit-1-180968728/'}]},
-  {id:'freya',name:'Freya',year:'2022',date:'14 August 2022',image:'freya-oslo-walrus.png',
-   title:'People did not keep their distance.',
-   body:'Crowds repeatedly approached Freya in Oslofjord despite warnings. Authorities killed her, citing a continuing risk to people. A later examination confirmed that she had been healthy.',
-   note:'Authorities and animal-protection groups disagreed about whether relocation or stricter separation were viable alternatives. The archive preserves that uncertainty.',
-   sources:[{name:'Norwegian Veterinary Institute · Examination',url:'https://kommunikasjon.ntb.no/pressemelding/17939937/obduksjonen-av-hvalrossen-freya-er-klar?publisherId=17848243'},{name:'NOAH · Challenge to the decision',url:'https://www.dyrsrettigheter.no/rettsvern/noah-klager-avlivingen-av-freya-inn-til-sivilombudet/'}]},
+  {
+    "id": "chunee-exeter-exchange",
+    "name": "Chunee",
+    "year": "1826",
+    "date": "March 1, 1826",
+    "image": "chunee-exeter-exchange.png",
+    "title": "Chunee was shot inside a menagerie",
+    "body": "Chunee, Asian elephant, is the identified subject of this record. Years of menagerie confinement ended in a prolonged public killing at Exeter Exchange, London.",
+    "note": "Contemporary accounts disagree on the exact number of shots.",
+    "sources": [
+      {
+        "name": "London Museum · Chunee the elephant",
+        "url": "https://www.londonmuseum.org.uk/collections/v/object-99934/the-destruction-of-the-elephant-at-exeter-change-march-1st1826/"
+      },
+      {
+        "name": "Smithsonian Libraries and Archives · Once There Were Billions",
+        "url": "https://blog.library.si.edu/blog/2014/08/28/once-there-were-billions-100-year-anniversary-of-the-death-martha-the-last-passenger-pigeon/"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "eldey-last-great-auks",
+    "name": "The last confirmed great auk pair",
+    "year": "1844",
+    "date": "June 1844",
+    "image": "eldey-last-great-auks.png",
+    "title": "Collectors killed the last confirmed great auk pair",
+    "body": "The last confirmed great auk pair, Great auks, is the identified subject of this record. Fishermen killed a breeding pair to supply museum collectors at Eldey Island.",
+    "note": "Modern references differ between June 3 and July 3; the timeline uses month precision.",
+    "sources": [
+      {
+        "name": "Smithsonian Institution · Research Case: The Great Auk",
+        "url": "https://www.si.edu/exhibitions/research-case-great-auk%3Aevent-exhib-4482"
+      },
+      {
+        "name": "Cincinnati Museum Center · Cincinnati specimen helps solve 180-year extinction mystery",
+        "url": "https://www.cincymuseum.org/press/great-auk-paper/"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "laika",
+    "name": "Laika",
+    "year": "1957",
+    "date": "3 November 1957",
+    "image": "laika-sputnik-2.png",
+    "title": "A journey without a return.",
+    "body": "Laika was sent into Earth orbit aboard Sputnik 2. The spacecraft had no return design. Later mission accounts corrected the early claim that she survived for days: she died within hours from overheating and stress.",
+    "note": "The change in the published account matters: visitors can compare the sources instead of treating the first report as final.",
+    "sources": [
+      {
+        "name": "NASA · The first animal in orbit",
+        "url": "https://www.nasa.gov/history/60-years-ago-the-first-animal-in-orbit/"
+      },
+      {
+        "name": "Smithsonian · Laika’s one-way trip",
+        "url": "https://www.smithsonianmag.com/smithsonian-institution/sad-story-laika-space-dog-and-her-one-way-trip-orbit-1-180968728/"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "digit-gorilla-poaching",
+    "name": "Digit",
+    "year": "1977",
+    "date": "December 31, 1977",
+    "image": "digit-gorilla-poaching.png",
+    "title": "Digit was killed by poachers",
+    "body": "Digit, Mountain gorilla, is the identified subject of this record. Poachers killed a habituated mountain gorilla while targeting wildlife at Virunga Mountains.",
+    "note": "Digit was killed; his death helped catalyze anti-poaching work.",
+    "sources": [
+      {
+        "name": "Dian Fossey Gorilla Fund · Digit's legacy",
+        "url": "https://gorillafund.org/who-we-are/digit-fund/"
+      },
+      {
+        "name": "International Gorilla Conservation Programme · Mountain gorilla conservation history",
+        "url": "https://www.nationalgeographic.com/magazine/article/mountain-gorillas-virunga-peril-dian-fossey"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "ming-ocean-quahog",
+    "name": "Ming / Hafrún",
+    "year": "2006",
+    "date": "2006",
+    "image": "ming-ocean-quahog.png",
+    "title": "Ming died when researchers opened the shell",
+    "body": "Ming / Hafrún, Ocean quahog, is the identified subject of this record. Researchers collected a live clam and opened its shell before its exceptional age was known at Icelandic coastal waters.",
+    "note": "The team could not know the live animal's exact age before opening the shell; it was not deliberately killed after its age was known.",
+    "sources": [
+      {
+        "name": "Bangor University · Clam found to be over 500 years old",
+        "url": "https://www.bangor.ac.uk/news/archive/clam-found-to-be-over-500-years-old-16781"
+      },
+      {
+        "name": "Nature Portfolio blog · A clam named Ming",
+        "url": "https://blogs.nature.com/blog/a_clam_named_ming/"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "margaash-snow-leopard",
+    "name": "Margaash",
+    "year": "2018",
+    "date": "October 23, 2018",
+    "image": "margaash-snow-leopard.png",
+    "title": "Margaash was shot after a door was left open",
+    "body": "Margaash, Snow leopard, is the identified subject of this record. A keeper error left an enclosure door open and the escaped cat was shot at Dudley Zoo.",
+    "note": "Margaash was killed by a zoo marksman.",
+    "sources": [
+      {
+        "name": "Dudley Zoo · Spring ZooNooz 2019 — Margaash incident",
+        "url": "https://www.dudleyzoo.org.uk/wp-content/uploads/Spring-ZooNooz-2019.pdf"
+      },
+      {
+        "name": "The Guardian · Snow leopard shot dead after escaping zoo enclosure",
+        "url": "https://www.theguardian.com/world/2018/nov/30/snow-leopard-shot-dead-in-west-midlands-after-escaping-zoo-enclosure"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "spitfire-wolf-926f",
+    "name": "Spitfire (926F)",
+    "year": "2018",
+    "date": "November 24, 2018",
+    "image": "spitfire-wolf-926f.png",
+    "title": "Spitfire was legally shot outside Yellowstone",
+    "body": "Spitfire (926F), Gray wolf, is the identified subject of this record. A habituated wolf crossed an invisible park boundary into a hunting zone at Near Silver Gate, Montana.",
+    "note": "A hunter legally killed the wolf just outside the park.",
+    "sources": [
+      {
+        "name": "National Park Service · Yellowstone Wolf Project annual report 2018",
+        "url": "https://home.nps.gov/yell/learn/science-publications-reports.htm"
+      },
+      {
+        "name": "New York Times · Famous Yellowstone wolf shot",
+        "url": "https://www.nytimes.com/2018/11/30/science/wolf-yellowstone-shot.html"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "honey-inubosaki-dolphin",
+    "name": "Honey",
+    "year": "2020",
+    "date": "March 29, 2020",
+    "image": "honey-inubosaki-dolphin.png",
+    "title": "Honey died after the aquarium was abandoned",
+    "body": "Honey, Common bottlenose dolphin, is the identified subject of this record. A dolphin was left in a closed aquarium with minimal care at Inubosaki Marine Park.",
+    "note": "The facility did not release a complete veterinary report.",
+    "sources": [
+      {
+        "name": "Dolphin Project · Honey rescue campaign record",
+        "url": "https://arcj.org/en/issues-en/entertainment-en/zoo-en/honey-died/"
+      },
+      {
+        "name": "Japan Times · Honey the dolphin dies at abandoned aquarium",
+        "url": "https://www.japantimes.co.jp/news/2020/04/03/national/honey-dolphin-dies/"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "freya",
+    "name": "Freya",
+    "year": "2022",
+    "date": "14 August 2022",
+    "image": "freya-oslo-walrus.png",
+    "title": "People did not keep their distance.",
+    "body": "Crowds repeatedly approached Freya in Oslofjord despite warnings. Authorities killed her, citing a continuing risk to people. A later examination confirmed that she had been healthy.",
+    "note": "Authorities and animal-protection groups disagreed about whether relocation or stricter separation were viable alternatives. The archive preserves that uncertainty.",
+    "sources": [
+      {
+        "name": "Norwegian Veterinary Institute · Examination",
+        "url": "https://kommunikasjon.ntb.no/pressemelding/17939937/obduksjonen-av-hvalrossen-freya-er-klar?publisherId=17848243"
+      },
+      {
+        "name": "NOAH · Challenge to the decision",
+        "url": "https://www.dyrsrettigheter.no/rettsvern/noah-klager-avlivingen-av-freya-inn-til-sivilombudet/"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "id": "grizzly-399-vehicle",
+    "name": "Grizzly 399",
+    "year": "2024",
+    "date": "October 22, 2024",
+    "image": "grizzly-399-vehicle.png",
+    "title": "Grizzly 399 was killed by a vehicle",
+    "body": "Grizzly 399, Grizzly bear, is the identified subject of this record. Road traffic killed a repeatedly monitored wild bear at Snake River Canyon, Wyoming.",
+    "note": "The twenty-eight-year-old bear died in a vehicle collision.",
+    "sources": [
+      {
+        "name": "U.S. Fish and Wildlife Service · Grizzly bear 399 killed in vehicle collision",
+        "url": "https://www.fws.gov/press-release/2024-10/grizzly-bear-399-fatally-struck-vehicle-snake-river-canyon"
+      },
+      {
+        "name": "Associated Press · Grizzly 399 killed by vehicle",
+        "url": "https://apnews.com/article/3e13c4b5234926cbd799dbb3db1ffac8"
+      }
+    ],
+    "width": 1024,
+    "height": 1024
+  }
 ];
 
 export function renderGameExperience(projectId, part='all') {
@@ -40,8 +250,8 @@ export function renderGameExperience(projectId, part='all') {
   if(projectId==='ourworld') {
     if(part==='all')return ['archive','candles'].map(p=>renderGameExperience(projectId,p)).join('');
     if(part==='archive')return `<div class="game-experience gx-archive" data-experience="ourworld-archive">
-      <p class="gx-instruction">Choose an animal to read their story and original sources.</p>
-      <div class="gx-animal-choices" role="group" aria-label="Two lives from the archive">${animals.map((a,i)=>`<button type="button" class="gx-animal" data-animal="${a.id}" aria-pressed="${i===0}" aria-controls="gx-animal-record"><img src="${ASSETS}/ourworld/${a.image}" width="1254" height="1254" alt="${a.name}, archive portrait" loading="lazy"><span>${a.name}</span><small>${a.year}</small></button>`).join('')}</div>
+      <p class="gx-instruction">Ten animal stories from the archive. Choose an animal to read their story and original sources.</p>
+      <div class="gx-animal-choices" role="group" aria-label="Ten animal stories from the archive">${animals.map((a,i)=>`<button type="button" class="gx-animal" data-animal="${a.id}" aria-pressed="${i===0}" aria-controls="gx-animal-record"><img src="${ASSETS}/ourworld/${a.image}" width="${a.width}" height="${a.height}" alt="${a.name}, archive portrait" loading="lazy"><span>${a.name}</span><small>${a.year}</small></button>`).join('')}</div>
       <div class="gx-animal-record" id="gx-animal-record" aria-live="polite"></div>
     </div>`;
     if(part==='candles')return `<div class="game-experience gx-candles" data-experience="ourworld-candles">
