@@ -1,0 +1,13 @@
+/* Compact article previews remain readable even when a publisher blocks frames. */
+.news-preview{border-block:1px solid var(--line,#ffffff24);padding:24px 0;margin:26px 0;min-width:0;max-width:100%}
+.news-preview-meta{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:12px;line-height:1.5;letter-spacing:.02em;color:var(--muted,#afb6b3)}
+.news-preview-meta>span{color:var(--accent,#dfdbcf);font-weight:600}.news-preview-meta time{font-size:12px}
+.news-preview h4{font:500 clamp(21px,1.75vw,26px)/1.3 var(--font-body,Arial,sans-serif);margin:13px 0 20px;color:var(--ink,#f5f5ef);text-wrap:pretty}
+.news-preview-actions>a,.news-reader-content>a{display:inline-block;font-size:15px;line-height:1.5;border-bottom:1px solid currentColor;padding-bottom:3px;color:var(--ink,#f5f5ef);text-decoration:none}
+.news-inline-reader{margin-top:17px}.news-inline-reader summary{display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;list-style:none;padding:12px 0;border-top:1px solid var(--line,#ffffff24);font-size:15px;line-height:1.5;color:var(--ink,#f5f5ef)}
+.news-inline-reader summary::-webkit-details-marker{display:none}.news-inline-reader summary span:last-child{font-size:20px;color:var(--accent,#dfdbcf)}
+.news-reader-content>p{font-size:14px!important;line-height:1.5!important;color:var(--muted,#afb6b3);margin:8px 0 16px;text-wrap:pretty}
+.news-reader-frame{background:#fff;overflow:hidden;border-radius:2px}.news-reader-frame iframe{display:block;border:0;width:100%;height:560px;max-height:75vh;background:#fff}
+.news-reader-content>a{margin-top:15px}.news-source-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px!important;margin-top:20px}.news-source-list .news-preview{margin:0;width:100%}
+.news-preview-compact h4{font-size:20px;line-height:1.35}.news-preview a:focus-visible,.news-inline-reader summary:focus-visible{outline:2px solid var(--accent,currentColor);outline-offset:5px}
+@media(max-width:700px){.news-source-list{grid-template-columns:1fr}.news-preview h4{font-size:22px}.news-preview-compact h4{font-size:20px}.news-reader-frame iframe{height:440px}.news-preview{padding:20px 0}}

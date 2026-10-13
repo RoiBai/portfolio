@@ -24,7 +24,7 @@ export function rolePanel(role) {
 export function comicPanel(panel, hero = false) {
   return `<figure class="project-figure comic-panel ${hero?'hero-figure':''} reveal">
     <div class="figure-media"><img src="${esc(panel.src)}" alt="${esc(panel.alt)}" width="${Number(panel.width)||1024}" height="${Number(panel.height)||1024}" ${hero?'fetchpriority="high"':'loading="lazy"'} decoding="async"></div>
-    <figcaption><span class="comic-step">${esc(panel.step)}</span><div><strong>${esc(panel.title)}</strong><p>${emphasize(panel.caption,panel.highlights||[])}</p></div></figcaption>
+    <figcaption><span class="comic-step">${esc(panel.step)}</span><div><strong>${esc(panel.title)}</strong>${(panel.paragraphs?.length?panel.paragraphs:[panel.caption]).filter(Boolean).map(text=>`<p>${emphasize(text,panel.highlights||[])}</p>`).join('')}</div></figcaption>
   </figure>`;
 }
 

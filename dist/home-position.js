@@ -46,6 +46,12 @@ export function setupHomePosition() {
       document.dispatchEvent(new CustomEvent('portfolio:home-restored',{detail:{historyReturn:!!event?.persisted||navigation==='back_forward'}}));
     });
   };
+  window.PortfolioRestoreHome = () => {
+    const saved = read(sessionStorage, RETURN_KEY) || read(sessionStorage, HOME_KEY);
+    if (!valid(saved) || location.hash) return;
+    const row = [...document.querySelectorAll('.project-row,.group-row')].find(el => (el.id || el.getAttribute('href')) === saved.row);
+    scrollTo({top: row ? row.offsetTop + saved.offset : saved.y, left: 0, behavior: 'instant'});
+  };
   window.addEventListener('scroll', () => {
     cancelAnimationFrame(scrollFrame);
     scrollFrame = requestAnimationFrame(save);

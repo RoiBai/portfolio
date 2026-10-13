@@ -4,18 +4,20 @@ let instance = 0;
 export function renderVerseInteraction() {
   const id = `verse-reading-${++instance}`;
   return `<figure class="project-figure verse-interaction reveal" data-verse-interaction data-selection="color" aria-labelledby="${id}-title">
-    <div class="vi-heading"><span class="vi-kicker">An illustrative reading</span><h3 id="${id}-title">A color changes with its context.</h3><p>Drag “green” to a reading, or select one to trace its connection.</p></div>
+    <div class="vi-heading"><h3 id="${id}-title">Example</h3><p>Illustrative reading · Wang Wei’s farewell poem</p></div>
     <div class="vi-canvas">
-      <svg class="vi-connections" aria-hidden="true" focusable="false"><path data-vi-edge="rain" pathLength="1"/><path data-vi-edge="farewell" pathLength="1"/><path data-vi-edge="evidence" pathLength="1"/><path class="vi-live-connection"/><circle class="vi-live-point" r="3"/></svg>
-      <div class="vi-poem vi-block" data-source-node="1349:261"><span class="vi-source-label">Wang Wei · A farewell poem</span><p><span class="vi-poem-fragment">By the inn,</span><br><button type="button" class="vi-word" data-vi-select="color" data-vi-node="color" aria-pressed="true" aria-label="Drag green to a reading, or select to trace both readings">green</button> <span class="vi-poem-fragment">willows</span> <span class="vi-poem-fragment">look fresh again.</span></p></div>
-      <div class="vi-readings">
-        <button type="button" class="vi-reading vi-block" data-vi-select="rain" data-vi-node="rain" data-source-node="1462:264" aria-pressed="false"><span class="vi-number" aria-hidden="true">01</span><span class="vi-card-title">Rain &amp; fresh willows</span><span class="vi-card-copy">Rain refreshes the green willows.</span><span class="vi-card-action" aria-hidden="true">Trace this reading ↗</span></button>
-        <button type="button" class="vi-reading vi-block" data-vi-select="farewell" data-vi-node="farewell" data-source-node="1462:271" aria-pressed="false"><span class="vi-number" aria-hidden="true">02</span><span class="vi-card-title">Friends &amp; farewell</span><span class="vi-card-copy">The next lines turn this scene into a farewell between friends.</span><span class="vi-card-action" aria-hidden="true">Trace the next lines ↗</span></button>
+      <svg class="vi-connections" aria-hidden="true" focusable="false"><path data-vi-edge="rain"/><path data-vi-edge="farewell"/><path data-vi-edge="evidence"/><path class="vi-live-connection"/><circle class="vi-live-point" r="3"/></svg>
+      <div class="vi-example">
+        <div class="vi-poem vi-block" data-source-node="1835:6890"><p>By the inn,<br><button type="button" class="vi-word" data-vi-select="color" data-vi-node="color" aria-pressed="true" aria-label="Drag green to a reading, or select to trace both readings">green</button> willows look fresh again.</p></div>
+        <div class="vi-readings" aria-label="The color in context">
+          <button type="button" class="vi-reading vi-block" data-vi-select="rain" data-vi-node="rain" data-source-node="1835:6909" aria-pressed="false"><img src="/assets/research-readability/verse-rain.svg" alt="" width="56" height="56"><span>Rain refreshes the green willows.</span><span class="vi-trace" aria-hidden="true">↗</span></button>
+          <button type="button" class="vi-reading vi-block" data-vi-select="farewell" data-vi-node="farewell" data-source-node="1835:6916" aria-pressed="false"><img src="/assets/research-readability/verse-friends.svg" alt="" width="56" height="56"><span>The next lines turn this scene into a farewell between friends.</span><span class="vi-trace" aria-hidden="true">↗</span></button>
+        </div>
+        <p class="vi-instruction">Drag <strong>green</strong> to either reading, or select a row to trace the connection.</p>
       </div>
-      <blockquote class="vi-evidence vi-block" data-vi-node="evidence" data-source-node="1349:272"><span class="vi-source-label">The next lines supply the farewell context</span><p><span class="vi-verse-line">“I urge you to drink another cup;</span><span class="vi-verse-line">beyond Yang Pass, no old friends remain.”</span></p></blockquote>
+      <blockquote class="vi-evidence vi-block" data-vi-node="evidence" data-source-node="1835:6918"><span class="vi-source-label">The next lines supply the farewell context</span><p>“I urge you to drink another cup;<br>beyond Yang Pass, no old friends remain.”</p></blockquote>
     </div>
     <p class="vi-status" aria-live="polite" aria-atomic="true">Green connects to fresh willows. The following lines supply the farewell context.</p>
-    <figcaption>Read the color through its imagery and the lines that follow. Its meaning belongs to this poem.</figcaption>
   </figure>`;
 }
 export function setupVerseInteraction(root = document) {
@@ -35,14 +37,19 @@ export function setupVerseInteraction(root = document) {
       svg.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
       const anchor = (key, bottom) => {const b=node(key).getBoundingClientRect();return {x:b.left-box.left+b.width/2,y:(bottom?b.bottom:b.top)-box.top+(bottom?5:-7)}};
       const connect = (key, from, to) => {
-        const a=anchor(from,true),b=anchor(to,false),bend=Math.max(14,(b.y-a.y)*.55);
-        const path=svg.querySelector(`[data-vi-edge="${key}"]`);
-        const line=figure.querySelector('.vi-poem>p').getBoundingClientRect(),word=node('color').getBoundingClientRect();
-        if(from==='color'&&line.bottom>word.bottom+8){
-          // A wrapped poem must remain clear: route through its outside gutter.
-          const startX=word.left-box.left-3,startY=word.top-box.top+word.height/2,safeY=line.bottom-box.top+14;
-          path.setAttribute('d',`M ${startX} ${startY} L -10 ${startY} L -10 ${safeY} C -10 ${safeY+14}, ${b.x} ${b.y-18}, ${b.x} ${b.y}`);
-        }else path.setAttribute('d',`M ${a.x} ${a.y} C ${a.x} ${a.y+bend}, ${b.x} ${b.y-bend}, ${b.x} ${b.y}`);
+        const a=anchor(from,true),b=anchor(to,false),path=svg.querySelector(`[data-vi-edge="${key}"]`);
+        if(from==='color'){
+          const panel=figure.querySelector('.vi-readings').getBoundingClientRect(), word=node('color').getBoundingClientRect();
+          const x=panel.left-box.left-12, y=panel.top-box.top-22, target=node(to).getBoundingClientRect();
+          const startX=word.left-box.left+word.width/2, startY=word.bottom-box.top+8;
+          const poem=figure.querySelector('.vi-poem>p').getBoundingClientRect();
+          const route=poem.bottom>word.bottom+8 ? `M ${word.left-box.left-3} ${word.top-box.top+word.height/2} L ${x} ${word.top-box.top+word.height/2} L ${x} ${y}` : `M ${startX} ${startY} L ${startX} ${y} L ${x} ${y}`;
+          path.setAttribute('d',`${route} L ${x} ${target.top-box.top+target.height/2} L ${panel.left-box.left+8} ${target.top-box.top+target.height/2}`);
+        }else{
+          const start=node(from).getBoundingClientRect(),end=node(to).getBoundingClientRect();
+          if(end.left>start.right){const x1=start.right-box.left+8,y1=start.top-box.top+start.height/2,x2=end.left-box.left-16,y2=end.top-box.top+14;path.setAttribute('d',`M ${x1} ${y1} L ${(x1+x2)/2} ${y1} L ${(x1+x2)/2} ${y2} L ${x2} ${y2}`)}
+          else{const x=box.width-8;path.setAttribute('d',`M ${start.right-box.left+4} ${start.top-box.top+start.height/2} L ${x} ${start.top-box.top+start.height/2} L ${x} ${b.y-15} L ${b.x} ${b.y-15} L ${b.x} ${b.y}`)}
+        }
       };
       connect('rain','color','rain');connect('farewell','color','farewell');connect('evidence','farewell','evidence');
       const live=svg.querySelector('.vi-live-connection'),point=svg.querySelector('.vi-live-point');

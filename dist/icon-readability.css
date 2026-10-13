@@ -1,0 +1,56 @@
+/* Original comic artwork and its original words remain one reading unit. */
+body[data-project="icon-colors"] .comic-panel{width:100%!important;max-width:840px!important;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr);gap:44px;align-items:center;margin:12px auto 24px}
+body[data-project="icon-colors"] .comic-panel .figure-media{background:none!important;border:0;box-shadow:none;padding:0!important}
+body[data-project="icon-colors"] .comic-panel .figure-media img{display:block;width:100%;height:auto;max-height:360px;object-fit:contain}
+body[data-project="icon-colors"] .comic-panel figcaption{display:block;max-width:none;margin:0;padding:0;text-align:left}
+body[data-project="icon-colors"] .comic-panel .comic-step{display:block;font-size:12px;line-height:1.5;letter-spacing:.1em;color:var(--accent);margin-bottom:12px}
+body[data-project="icon-colors"] .comic-panel figcaption>div>strong{display:block;font-size:23px;font-weight:600;line-height:1.25;color:var(--ink);margin-bottom:15px;text-wrap:balance}
+body[data-project="icon-colors"] .comic-panel figcaption p{font-size:20px;line-height:1.55;color:var(--muted);margin:9px 0 0;text-wrap:pretty}
+body[data-project="icon-colors"] .comic-panel figcaption p strong{font-size:inherit;line-height:inherit;font-weight:600;color:var(--accent)}
+body[data-project="icon-colors"] .hero-figure.comic-panel{display:block;max-width:470px!important;align-self:center;margin:0;justify-self:center}
+body[data-project="icon-colors"] .hero-figure.comic-panel .figure-media img{max-height:350px}
+body[data-project="icon-colors"] .hero-figure.comic-panel figcaption{margin:24px auto 0;max-width:420px}
+body[data-project="icon-colors"] .hero-figure.comic-panel .comic-step{float:left;margin-right:15px;margin-top:4px}
+body[data-project="icon-colors"] .hero-figure.comic-panel figcaption>div{overflow:hidden}
+body[data-project="icon-colors"] .hero-figure.comic-panel figcaption>div>strong{font-size:20px;margin-bottom:10px}
+body[data-project="icon-colors"] .hero-figure.comic-panel figcaption p{font-size:18px}
+body[data-project="icon-colors"] #guidelines .section-visuals{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 40px}
+body[data-project="icon-colors"] #guidelines .comic-panel{grid-column:1/-1}
+body[data-project="icon-colors"] #guidelines .project-figure:not(.comic-panel){grid-column:auto;max-width:260px}
+body[data-project="icon-colors"] #guidelines .project-figure:not(.comic-panel) .figure-media img{max-height:115px}
+body[data-project="icon-colors"] #guidelines .project-figure:not(.comic-panel) figcaption{font-size:17px}
+body[data-project="icon-colors"] .section-visuals>.project-figure:not(.comic-panel){max-width:600px}
+body[data-project="icon-colors"] #setup .figure-media img{max-height:270px}
+body[data-project="icon-colors"] :is(#baseline,#meaning,#refinement) .figure-media img{max-height:330px}
+body[data-project="icon-colors"] :is(#gradients,#reflection) .section-visuals>.project-figure{max-width:430px}
+/* The homepage is a three-scene preview; complete narration appears in the case study. */
+.icon-row .comic-art{height:270px;align-items:center;gap:15px;background:none}
+.icon-row .comic-art figure{display:flex;flex-direction:column;align-items:stretch;translate:none!important;gap:14px}
+.icon-row .comic-art figure img{width:100%;height:180px;max-height:180px;object-fit:contain;object-position:center bottom;background:none}
+.icon-row .comic-art figcaption{font:400 14px/1.45 Inter,Arial,sans-serif;color:var(--rest-ink);opacity:.9;margin:0;min-height:42px;text-wrap:pretty}
+.icon-row .comic-art figcaption strong{font-weight:500}
+.icon-row:is(:hover,:focus-visible) .comic-art figcaption{color:#dedfdf}
+@media(max-width:899px){
+ body[data-project="icon-colors"] .comic-panel{gap:26px;grid-template-columns:minmax(0,1fr) minmax(200px,.85fr)}
+ body[data-project="icon-colors"] .comic-panel figcaption p{font-size:18px}
+ .icon-row .comic-art figure img{height:150px;max-height:150px}.icon-row .comic-art figcaption{font-size:13px}
+}
+@media(max-width:639px){
+ body[data-project="icon-colors"] .comic-panel{display:block;max-width:420px!important;margin:8px auto 20px}
+ body[data-project="icon-colors"] .comic-panel .figure-media{max-width:310px;margin:auto}
+ body[data-project="icon-colors"] .comic-panel .figure-media img{max-height:300px}
+ body[data-project="icon-colors"] .comic-panel figcaption{margin-top:24px}
+ body[data-project="icon-colors"] .comic-panel figcaption>div>strong{font-size:22px}
+ body[data-project="icon-colors"] .comic-panel figcaption p{font-size:18px}
+ body[data-project="icon-colors"] #guidelines .section-visuals{display:grid;grid-template-columns:1fr;gap:28px}
+ body[data-project="icon-colors"] #guidelines .project-figure:not(.comic-panel){display:grid;grid-template-columns:110px 1fr;align-items:center;gap:20px;max-width:none;width:100%}
+ body[data-project="icon-colors"] #guidelines .project-figure:not(.comic-panel) figcaption{padding:0;font-size:17px}
+ .icon-row .comic-art{height:180px;min-height:0;gap:10px}
+ .icon-row .comic-art figure{gap:10px}.icon-row .comic-art figure img{height:115px;max-height:115px}.icon-row .comic-art figcaption{font-size:12px;line-height:1.4;min-height:50px}
+}
+/* Override alternating-layout rules: full-width original compositions stay centered. */
+body[data-project="icon-colors"] .case-section.layout-editorial{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:7%}
+body[data-project="icon-colors"] .case-section.layout-editorial .section-heading{grid-column:1;grid-row:1}
+body[data-project="icon-colors"] .case-section.layout-editorial .section-body{grid-column:2;grid-row:1;align-self:center;position:static}
+body[data-project="icon-colors"] .case-section.layout-editorial .section-visuals{grid-column:1/-1;grid-row:2;position:static;width:min(100%,940px);justify-self:center}
+@media(max-width:700px){body[data-project="icon-colors"] .case-section.layout-editorial{display:block}body[data-project="icon-colors"] .case-section.layout-editorial .section-visuals{margin:28px auto 0}body[data-project="icon-colors"] .case-section.layout-editorial .section-body{margin-top:22px}}

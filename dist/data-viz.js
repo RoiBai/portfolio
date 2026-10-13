@@ -525,7 +525,7 @@ export function setupDataViz(root = document) {
     if (record.started || record.done || stopped) return;
     record.started = true;
     observer?.unobserve(record.target);
-    if (motion.matches || document.hidden) return finish(record);
+    if (motion.matches || document.hidden || (!record.chart && document.documentElement.classList.contains('project-opening'))) return finish(record);
     record.start = performance.now();
     paint(record, 0);
     active.add(record);
