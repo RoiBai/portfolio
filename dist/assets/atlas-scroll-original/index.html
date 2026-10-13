@@ -1,0 +1,2998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>華夏百色圖 · 自动导览</title>
+<meta name="theme-color" content="#F4EFE4">
+<link rel="preload" href="assets/cover/huaxia-color-atlas-art-plate.png" as="image" fetchpriority="high">
+<link rel="preload" href="assets/fonts/NaPecZTRCLxvwo41b4gvzkXaRMQ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SCqyWv.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{
+    font-family:"Ma Shan Zheng";
+    src:url("assets/fonts/NaPecZTRCLxvwo41b4gvzkXaRMQ.woff2") format("woff2");
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Noto Serif SC";
+    src:url("assets/fonts/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SCqyWv.woff2") format("woff2");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Noto Serif SC";
+    src:url("assets/fonts/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SwqyWv.woff2") format("woff2");
+    font-weight:600;
+    font-style:normal;
+    font-display:swap;
+  }
+</style>
+<script src="assets/d3.min.js"></script>
+<style>
+  :root{
+    --paper: #F4EFE4;
+    --paper-deep: #ECE4D2;
+    --ink: #1B1A17;
+    --ink-soft: #3A372F;
+    --ink-light: #6E6A5E;
+    --ink-whisper: #A8A294;
+    --line: #D7CFBD;
+    --accent: #7C1823;
+    --shadow: rgba(27,26,23,0.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.5), transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(236,228,210,0.9), transparent 55%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+    font-weight:400;
+    min-height:100vh;
+    overflow-x:hidden;
+    letter-spacing:0.02em;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(120,100,60,0.015) 0 2px, transparent 2px 5px),
+      repeating-linear-gradient(-45deg, rgba(120,100,60,0.012) 0 2px, transparent 2px 6px);
+    mix-blend-mode:multiply;
+    z-index:0;
+  }
+  header{
+    position:relative;
+    padding:48px 60px 16px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    z-index:2;
+  }
+  .brand{
+    display:flex;flex-direction:column;gap:4px;
+  }
+  .brand .seal{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;letter-spacing:0.4em;color:var(--ink-light);
+    text-transform:uppercase;
+  }
+  .brand .seal::before{
+    content:"";width:26px;height:1px;background:var(--ink-light);display:inline-block;
+  }
+  .brand h1{
+    font-family:'Ma Shan Zheng','Noto Serif SC',serif;
+    font-size:46px;font-weight:400;letter-spacing:0.15em;
+    color:var(--ink);
+    margin-top:8px;
+    display:flex;align-items:baseline;gap:18px;
+  }
+  .brand h1 .en{
+    font-family:'Noto Serif SC',serif;
+    font-size:14px;letter-spacing:0.3em;
+    color:var(--ink-light);
+    font-weight:300;
+    transform:translateY(-6px);
+  }
+  .brand p.sub{
+    margin-top:6px;font-size:13px;color:var(--ink-soft);
+    max-width:520px;line-height:1.8;font-weight:300;
+  }
+  .meta{
+    text-align:right;font-size:11px;letter-spacing:0.25em;color:var(--ink-whisper);
+    line-height:2;
+  }
+  .meta .stamp{
+    display:inline-block;padding:6px 10px;border:1px solid var(--accent);
+    color:var(--accent);font-family:'Ma Shan Zheng',serif;
+    font-size:16px;letter-spacing:0.1em;
+    margin-top:8px;
+  }
+
+  .legend{
+    padding:8px 60px 16px;
+    display:flex;align-items:center;gap:28px;
+    font-size:12px;color:var(--ink-soft);
+    letter-spacing:0.2em;
+    position:relative;z-index:2;
+    border-bottom:1px solid var(--line);
+  }
+  .legend .tag{
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+    padding:6px 14px;border:1px solid transparent;border-radius:999px;
+    transition:all .3s ease;
+  }
+  .legend .tag .dot{width:8px;height:8px;border-radius:50%;}
+  .legend .tag.active{
+    border-color:var(--ink);
+    background:rgba(27,26,23,0.04);
+  }
+  .legend .tag:hover{background:rgba(27,26,23,0.03);}
+  .legend .spacer{flex:1}
+  .legend .hint{font-size:11px;color:var(--ink-whisper);letter-spacing:0.3em}
+
+  main{
+    position:relative;
+    display:grid;
+    grid-template-columns: 1fr 420px;
+    gap:0;
+    min-height:calc(100vh - 210px);
+    z-index:1;
+  }
+
+  #graph-wrap{
+    position:relative;
+    border-right:1px solid var(--line);
+    overflow:hidden;
+  }
+  #graph{
+    width:100%;height:100%;
+    display:block;
+  }
+  .watermark{
+    position:absolute;
+    left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    font-family:'Ma Shan Zheng',serif;
+    color:rgba(27,26,23,0.04);
+    font-size:320px;
+    pointer-events:none;
+    user-select:none;
+    letter-spacing:0.3em;
+    white-space:nowrap;
+  }
+  .corner-mark{
+    position:absolute;
+    font-size:10px;color:var(--ink-whisper);
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+  }
+  .corner-mark.tl{top:18px;left:24px}
+  .corner-mark.tr{top:18px;right:24px;text-align:right}
+  .corner-mark.bl{bottom:18px;left:24px}
+  .corner-mark.br{bottom:18px;right:24px;text-align:right}
+
+  /* 知识图谱 · 4 类关系图例 */
+  .graph-key{
+    position:absolute;left:24px;bottom:54px;z-index:5;
+    background:rgba(244,239,228,0.78);backdrop-filter:blur(2px);
+    border:1px solid var(--line);
+    padding:12px 14px 11px;
+    font-family:'Noto Serif SC',serif;
+    pointer-events:none;
+    min-width:178px;
+  }
+  .gk-title{
+    font-size:10px;letter-spacing:0.3em;color:var(--ink-light);
+    padding-bottom:8px;margin-bottom:8px;
+    border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:baseline;
+  }
+  .gk-title .gk-en{font-size:8px;color:var(--ink-whisper);letter-spacing:0.32em}
+  .gk-row{
+    display:grid;grid-template-columns:14px 22px 1fr auto;
+    gap:8px;align-items:center;
+    padding:4px 0;
+  }
+  .gk-cn{font-size:11px;color:var(--ink-soft);letter-spacing:0.2em}
+  .gk-en{font-size:8px;color:var(--ink-whisper);letter-spacing:0.3em}
+  .gk-shape{display:inline-block;width:11px;height:11px;justify-self:center}
+  .gk-family{background:#9D2933;border-radius:50%}
+  .gk-period{background:transparent;border:1.2px solid #7C5A2E;transform:rotate(45deg);width:9px;height:9px}
+  .gk-region{background:transparent;border:1.2px solid #3F6B5B}
+  .gk-craft{
+    background:transparent;width:0;height:0;border:none;
+    border-left:6px solid transparent;border-right:6px solid transparent;
+    border-bottom:10px solid #3D567C;
+  }
+  .gk-line{height:1.2px;background:transparent;position:relative;justify-self:stretch}
+  .gk-line-family{background:#9D2933}
+  .gk-line-period{
+    background-image:linear-gradient(to right,#7C5A2E 60%,transparent 0%);
+    background-size:6px 1.2px;background-repeat:repeat-x;
+  }
+  .gk-line-region{
+    background-image:linear-gradient(to right,#3F6B5B 50%,transparent 0%);
+    background-size:3px 1.2px;background-repeat:repeat-x;
+  }
+  .gk-line-craft{
+    background-image:linear-gradient(to right,#3D567C 60%,transparent 0%);
+    background-size:8px 1.2px;background-repeat:repeat-x;
+    box-shadow:inset 0 0 0 0;
+  }
+
+  /* --- D3 styles --- */
+  .center-label{
+    font-family:'Ma Shan Zheng',serif;
+    fill:var(--ink);
+    text-anchor:middle;
+  }
+  .center-label.sub{
+    font-family:'Noto Serif SC',serif;
+    fill:var(--ink-light);
+    font-size:11px;letter-spacing:0.35em;
+  }
+  .cat-label{
+    font-family:'Noto Serif SC',serif;
+    font-weight:500;
+    fill:var(--ink);
+    text-anchor:middle;
+    letter-spacing:0.15em;
+    pointer-events:none;
+  }
+  .cat-label-en{
+    font-family:'Noto Serif SC',serif;
+    fill:var(--ink-whisper);
+    text-anchor:middle;
+    font-size:9px;letter-spacing:0.3em;
+    pointer-events:none;
+  }
+  /* 4 类圆点 — 可点击筛选 */
+  .cat-node .cat-circle{
+    transition:stroke-width .25s ease, stroke .25s ease, r .3s ease, fill .25s ease;
+  }
+  .cat-node:hover .cat-circle{
+    stroke-width:1.4;
+    stroke:var(--ink);
+  }
+  .cat-node:hover .cat-label{font-weight:600}
+  .cat-node.active .cat-circle{
+    stroke-width:1.8;
+    stroke:var(--ink);
+    fill:var(--ink);
+  }
+  .cat-node.active .cat-label{fill:var(--paper);font-weight:600}
+  .cat-node.active .cat-label-en{fill:rgba(244,239,228,0.62)}
+  .link{
+    fill:none;
+    stroke:var(--ink-whisper);
+    stroke-width:0.8;
+    stroke-opacity:0.35;
+    transition:stroke-opacity .35s ease;
+  }
+  .link.to-center{stroke-dasharray:2 3;stroke-opacity:0.25}
+  /* 当某色被选中时,底层径向链接淡出,让实体图谱成为视觉焦点 */
+  svg.focus-mode .link{stroke-opacity:0.08}
+  svg.focus-mode .link.to-center{stroke-opacity:0.05}
+  svg.focus-mode .cat-arc{stroke-opacity:0.12;transition:stroke-opacity .35s ease}
+  .color-node{cursor:pointer}
+  .color-node circle.main{
+    stroke:var(--ink);stroke-width:0.6;
+    filter:drop-shadow(0 1px 2px rgba(27,26,23,0.12));
+    transition:stroke-width .25s ease, r .35s cubic-bezier(.2,.6,.2,1),
+               fill .45s ease, filter .45s ease;
+  }
+  .color-node circle.halo{
+    fill:none;
+    stroke:var(--ink);
+    stroke-width:0.6;
+    opacity:0;
+    pointer-events:none;
+    transition:r .4s ease, opacity .3s ease, stroke-width .3s ease, stroke .3s ease;
+  }
+  .color-node text{
+    font-family:'Noto Serif SC',serif;
+    font-size:11px;
+    fill:var(--ink);
+    text-anchor:middle;
+    pointer-events:none;
+    letter-spacing:0.08em;
+    opacity:0;
+    transition:opacity .3s ease, font-weight .3s ease;
+  }
+  .color-node text.pinyin{
+    font-size:8px;fill:var(--ink-light);letter-spacing:0.2em;
+  }
+  /* Hover — light preview (disabled when a selection is locked) */
+  .color-node:hover circle.main{stroke-width:1.4}
+  .color-node:hover circle.halo{opacity:0.3;r:24}
+  .color-node:hover text{opacity:1}
+  /* 一律灰质 — 选中色之外的所有色都去色,仅靠卫星连线呈现关系 */
+  /* 浅灰:与 pivot 共享至少 1 类实体(网络中的相关节点) */
+  .color-node.semi-dim circle.main{
+    filter:grayscale(1) brightness(0.95);
+    fill:#B5B0A8 !important;
+    opacity:0.42;
+    transition:filter .4s ease, opacity .35s ease;
+  }
+  .color-node.semi-dim circle.halo{opacity:0;transition:opacity .35s ease}
+  .color-node.semi-dim text{opacity:0;transition:opacity .35s ease}
+  .color-node.semi-dim:hover circle.main{opacity:0.72}
+  .color-node.semi-dim:hover text{opacity:0.7}
+  /* 深灰:与 pivot 无任何实体共享 */
+  .color-node.dim circle.main{
+    filter:grayscale(1) brightness(0.92);
+    fill:#C8C2B6 !important;
+    opacity:0.22;
+    transition:filter .4s ease, opacity .35s ease;
+  }
+  .color-node.dim circle.halo{opacity:0;transition:opacity .35s ease}
+  .color-node.dim text{opacity:0;transition:opacity .35s ease}
+  .color-node.dim:hover circle.main{opacity:0.55}
+  .color-node.dim:hover text{opacity:0.5}
+  /* 相关色(通过某实体相连)— 保留颜色,微微发光 */
+  .color-node.related-highlight circle.main{stroke-width:1.3;r:19}
+  .color-node.related-highlight circle.halo{
+    opacity:0.55;r:26;stroke-width:1;
+  }
+  .color-node.related-highlight text{font-weight:500;opacity:0}
+  /* 选中色(pivot)— 全场最亮,脉动光晕 */
+  .color-node.selected{pointer-events:auto}
+  .color-node.selected circle.main{
+    stroke-width:2.2;r:24;
+    filter:drop-shadow(0 0 8px rgba(27,26,23,0.22)) drop-shadow(0 2px 5px rgba(27,26,23,0.22));
+  }
+  .color-node.selected circle.halo{
+    opacity:0.85;r:40;stroke-width:1.4;
+    animation:selPulse 2.8s infinite ease-in-out;
+  }
+  .color-node.selected text{font-weight:600;opacity:1}
+  .color-node.selected text.name{font-size:13px}
+  @keyframes selPulse{
+    0%,100%{r:40;stroke-opacity:0.78}
+    50%{r:54;stroke-opacity:0.12}
+  }
+
+  /* Expansion: curves from pivot to related colors (legacy, 保留兼容) */
+  .expansion-link{
+    fill:none;stroke-width:1.5;stroke-opacity:0.7;stroke-linecap:round;
+    filter:drop-shadow(0 0 2px rgba(255,255,255,0.5));pointer-events:none;
+  }
+  .expansion-dot{fill:var(--paper);stroke-width:1;pointer-events:none;}
+  .relation-label{
+    font-family:'Noto Serif SC',serif;fill:var(--ink-soft);font-size:10px;
+    text-anchor:middle;letter-spacing:0.2em;pointer-events:none;
+  }
+  .relation-label-bg{fill:var(--paper);opacity:0.9}
+
+  /* === 知识图谱 · 4 类典型关系视觉系统 === */
+  .entity-link{
+    fill:none;
+    stroke-width:1;
+    stroke-linecap:round;
+    pointer-events:none;
+  }
+  .entity-link-stem{
+    stroke-width:1.25;
+    stroke-opacity:0.85;
+  }
+  .entity-link-satellite{
+    stroke-width:0.7;
+    stroke-opacity:0.45;
+  }
+  .entity-node{ pointer-events:none; }
+  .entity-node .entity-mark{
+    filter:drop-shadow(0 1px 2px rgba(27,26,23,0.12));
+  }
+  .entity-node text{
+    font-family:'Noto Serif SC',serif;
+    text-anchor:middle;
+    pointer-events:none;
+  }
+  .entity-cn{
+    font-size:11.5px;
+    fill:var(--ink);
+    letter-spacing:0.18em;
+    font-weight:500;
+    paint-order:stroke;
+    stroke:rgba(244,239,228,0.95);
+    stroke-width:4px;
+    stroke-linejoin:round;
+  }
+  .entity-en{
+    font-size:7.5px;
+    fill:var(--ink-whisper);
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    paint-order:stroke;
+    stroke:rgba(244,239,228,0.95);
+    stroke-width:3px;
+    stroke-linejoin:round;
+  }
+  .entity-extra{
+    font-size:8.5px;
+    fill:var(--ink-light);
+    letter-spacing:0.2em;
+    paint-order:stroke;
+    stroke:rgba(244,239,228,0.95);
+    stroke-width:3px;
+    stroke-linejoin:round;
+  }
+  .entity-tip{
+    fill:var(--paper);
+    stroke-width:1;
+    pointer-events:none;
+  }
+  /* 色系节点专属:小色卡条 */
+  .family-backing{pointer-events:none}
+  .family-swatch{
+    pointer-events:auto;
+    cursor:pointer;
+    transition:stroke-width .15s ease, stroke .15s ease, filter .2s ease;
+  }
+  .family-swatch:not(.pivot):hover{
+    stroke:var(--ink) !important;
+    stroke-width:1.1 !important;
+    filter:drop-shadow(0 0 3px rgba(27,26,23,0.28));
+  }
+  .family-swatch.pivot{
+    filter:drop-shadow(0 0 4px rgba(27,26,23,0.35));
+    cursor:default;
+  }
+  .family-plus{
+    font-family:'Noto Serif SC',serif;
+    font-size:8.5px;
+    fill:var(--ink-light);
+    letter-spacing:0.1em;
+    pointer-events:none;
+    paint-order:stroke;
+    stroke:rgba(244,239,228,0.95);
+    stroke-width:2.5px;
+    stroke-linejoin:round;
+  }
+  .cat-arc{
+    fill:none;
+    stroke:var(--ink);
+    stroke-width:0.4;
+    stroke-opacity:0.35;
+  }
+
+  /* --- Side panel --- */
+  aside{
+    position:relative;
+    padding:40px 44px;
+    background:rgba(244,239,228,0.6);
+    backdrop-filter:blur(2px);
+    overflow-y:auto;
+    max-height:calc(100vh - 210px);
+  }
+  aside::before{
+    content:"";
+    position:absolute;top:40px;left:0;width:1px;height:calc(100% - 80px);
+    background:var(--line);
+  }
+  .panel-empty{
+    display:flex;flex-direction:column;gap:16px;
+    height:100%;justify-content:center;align-items:center;text-align:center;
+  }
+  .panel-empty .glyph{
+    font-family:'Ma Shan Zheng',serif;
+    font-size:120px;color:var(--ink-whisper);
+    opacity:0.5;line-height:1;
+  }
+  .panel-empty .t{font-size:14px;color:var(--ink-light);letter-spacing:0.3em}
+  .panel-empty .h{font-size:11px;color:var(--ink-whisper);letter-spacing:0.4em;text-transform:uppercase}
+
+  .detail{display:none;flex-direction:column;gap:20px;animation:fadeUp .5s ease}
+  .detail.active{display:flex}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:none}
+  }
+  .swatch{
+    width:100%;height:220px;border-radius:2px;
+    position:relative;
+    box-shadow:0 1px 0 rgba(27,26,23,0.06), 0 20px 40px -20px rgba(27,26,23,0.25);
+  }
+  .swatch::after{
+    content:attr(data-hex);
+    position:absolute;bottom:12px;right:14px;
+    font-family:'Noto Serif SC',monospace;
+    font-size:10px;letter-spacing:0.25em;
+    background:rgba(244,239,228,0.9);
+    padding:4px 10px;color:var(--ink);
+  }
+  .hanzi-header{
+    display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:18px;
+  }
+  .hanzi-header .name{
+    font-family:'Ma Shan Zheng',serif;
+    font-size:52px;color:var(--ink);letter-spacing:0.05em;line-height:1;
+  }
+  .hanzi-header .pinyin{
+    font-size:13px;color:var(--ink-light);letter-spacing:0.3em;
+    font-style:italic;
+  }
+  .hanzi-header .cat{
+    font-size:11px;letter-spacing:0.3em;color:var(--ink-whisper);
+    writing-mode:vertical-rl;text-orientation:upright;
+    padding-left:12px;border-left:1px solid var(--line);
+  }
+
+  .field{
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .field .k{
+    font-size:10px;letter-spacing:0.4em;color:var(--ink-whisper);
+    text-transform:uppercase;
+  }
+  .field .v{
+    font-size:14px;line-height:1.9;color:var(--ink-soft);
+    font-weight:300;
+  }
+  .field .v strong{color:var(--ink);font-weight:500}
+
+  .cites{
+    display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;
+  }
+  .cite{
+    font-size:11px;padding:4px 10px;
+    border:1px solid var(--line);color:var(--ink-soft);
+    letter-spacing:0.15em;
+  }
+
+  /* === 关联图谱 · 4 类语义关系 chip === */
+  .semantic-graph{margin-top:6px}
+  .sem-grid{
+    display:flex;flex-direction:column;gap:12px;margin-top:10px;
+    padding:14px 16px;border:1px solid var(--line);
+    background:rgba(255,253,247,0.55);
+  }
+  .sem-row{
+    display:grid;grid-template-columns:108px 1fr;gap:12px;align-items:flex-start;
+  }
+  .sem-key{
+    display:flex;align-items:center;gap:8px;
+    font-size:9.5px;letter-spacing:0.28em;color:var(--ink-light);
+    padding-top:5px;text-transform:uppercase;
+  }
+  .sem-mark{
+    display:inline-block;width:10px;height:10px;flex-shrink:0;
+  }
+  .sem-mark.m-family{background:#9D2933;border-radius:50%}
+  .sem-mark.m-period{background:transparent;border:1.2px solid #7C5A2E;transform:rotate(45deg)}
+  .sem-mark.m-region{background:transparent;border:1.2px solid #3F6B5B}
+  .sem-mark.m-craft{
+    background:transparent;width:0;height:0;border:none;
+    border-left:5px solid transparent;border-right:5px solid transparent;
+    border-bottom:9px solid #3D567C;
+  }
+  .sem-chips{
+    display:flex;flex-wrap:wrap;gap:6px;
+  }
+  .sem-chip{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:4px 10px 4px 8px;
+    border:1px solid var(--line);
+    font-size:11px;color:var(--ink-soft);
+    letter-spacing:0.15em;
+    background:var(--paper);
+    transition:border-color .2s ease;
+  }
+  .sem-chip .sem-glyph{width:8px;height:8px;flex-shrink:0;display:inline-block}
+  .sem-chip.sem-family .sem-glyph{background:#9D2933;border-radius:50%}
+  .sem-chip.sem-period .sem-glyph{background:transparent;border:1.2px solid #7C5A2E;transform:rotate(45deg)}
+  .sem-chip.sem-region .sem-glyph{background:transparent;border:1.2px solid #3F6B5B}
+  .sem-chip.sem-craft .sem-glyph{
+    width:0;height:0;background:transparent;border:none;
+    border-left:4px solid transparent;border-right:4px solid transparent;
+    border-bottom:7px solid #3D567C;
+  }
+  .sem-chip .sem-en{
+    font-size:8.5px;color:var(--ink-whisper);letter-spacing:0.32em;
+    padding-left:4px;border-left:1px solid var(--line);margin-left:2px;
+  }
+
+  .relations{margin-top:4px}
+  .relations .rel-list{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;
+  }
+
+  /* === 图谱关联色 · 按 4 类实体分组(与画布图谱完全一致) === */
+  .graph-related{margin-top:6px}
+  .gr-groups{
+    display:flex;flex-direction:column;gap:14px;margin-top:10px;
+    padding:14px 16px;border:1px solid var(--line);
+    background:rgba(255,253,247,0.55);
+  }
+  .gr-group{display:flex;flex-direction:column;gap:8px}
+  .gr-key{
+    display:flex;align-items:center;gap:8px;
+    font-size:10px;letter-spacing:0.28em;color:var(--ink-light);
+    text-transform:uppercase;
+  }
+  .gr-key span:not(.sem-mark){
+    color:var(--ink-soft);letter-spacing:0.18em;text-transform:none;
+    font-family:'Noto Serif SC',serif;font-size:11px;
+  }
+  .gr-list{
+    display:flex;flex-wrap:wrap;gap:6px;
+  }
+  .gr-list .gr-rel{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:4px 10px 4px 5px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    font-size:11.5px;color:var(--ink-soft);
+    cursor:pointer;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .gr-list .gr-rel:hover{
+    border-color:var(--ink);background:rgba(27,26,23,0.03);
+  }
+  .gr-list .gr-rel .d{
+    width:14px;height:14px;border-radius:50%;
+    border:1px solid rgba(27,26,23,0.2);flex-shrink:0;
+  }
+  .gr-list .gr-rel .py{
+    font-size:8.5px;color:var(--ink-whisper);letter-spacing:0.18em;
+    padding-left:4px;border-left:1px solid var(--line);margin-left:2px;
+  }
+  .gr-list .empty{
+    font-size:10px;color:var(--ink-whisper);letter-spacing:0.2em;font-style:italic;
+  }
+  .rel{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:5px 10px 5px 5px;
+    border:1px solid var(--line);border-radius:999px;
+    font-size:12px;cursor:pointer;color:var(--ink-soft);
+    transition:all .25s ease;
+  }
+  .rel:hover{border-color:var(--ink);background:rgba(27,26,23,0.03)}
+  .rel .d{width:16px;height:16px;border-radius:50%;border:1px solid rgba(27,26,23,0.2)}
+
+  footer{
+    padding:18px 60px;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:10px;color:var(--ink-whisper);letter-spacing:0.3em;
+    text-transform:uppercase;
+    position:relative;z-index:2;
+  }
+
+  /* Tooltip */
+  .tip{
+    position:fixed;pointer-events:none;
+    background:var(--ink);color:var(--paper);
+    padding:8px 12px;border-radius:2px;
+    font-size:12px;letter-spacing:0.15em;
+    opacity:0;transition:opacity .2s;
+    z-index:99;
+  }
+  .tip.show{opacity:0.95}
+  .tip .py{font-size:10px;color:var(--ink-whisper);letter-spacing:0.25em;margin-top:2px}
+
+  /* Scrollbar */
+  aside::-webkit-scrollbar{width:4px}
+  aside::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
+
+  /* --- 召色 · compose feature --- */
+  .compose-trigger{
+    background: linear-gradient(135deg, var(--ink) 0%, var(--accent) 100%) !important;
+    color: var(--paper) !important;
+    border:1px solid var(--ink) !important;
+    cursor:pointer;
+    font-family:'Noto Serif SC',serif;
+    font-size:12px;letter-spacing:0.25em;
+    transition:all .3s ease;
+  }
+  .compose-trigger .dot{background:var(--paper) !important}
+  .compose-trigger:hover{
+    transform:translateY(-1px);
+    box-shadow:0 6px 14px rgba(27,26,23,0.22);
+  }
+  /* 溯系 BROWSE 触发钮 — 与召色对称,色调更冷沉 */
+  .browse-trigger{
+    background: var(--paper) !important;
+    color: var(--ink) !important;
+    border:1px solid var(--ink) !important;
+    cursor:pointer;
+    font-family:'Noto Serif SC',serif;
+    font-size:12px;letter-spacing:0.25em;
+    transition:all .3s ease;
+  }
+  .browse-trigger .dot{
+    background:var(--ink) !important;
+    border:1px solid var(--ink) !important;
+  }
+  .browse-trigger:hover{
+    background:var(--ink) !important;color:var(--paper) !important;
+    transform:translateY(-1px);
+    box-shadow:0 6px 14px rgba(27,26,23,0.18);
+  }
+  .browse-trigger:hover .dot{background:var(--paper) !important}
+
+  /* === 溯系 BROWSE 模态 — 与召色对称设计 === */
+  .browse-overlay{
+    position:fixed;inset:0;
+    background:rgba(27,26,23,0.55);
+    backdrop-filter:blur(6px);
+    display:none;align-items:center;justify-content:center;
+    z-index:200;
+  }
+  .browse-overlay.active{display:flex}
+  .browse-frame{
+    width:min(960px, 92vw);
+    max-height:88vh;
+    background:var(--paper);
+    border:1px solid var(--ink);
+    box-shadow:0 30px 80px rgba(27,26,23,0.45);
+    position:relative;
+    padding:42px 52px 40px;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .browse-close{
+    position:absolute;top:18px;right:22px;
+    background:none;border:1px solid var(--line);
+    color:var(--ink-light);width:32px;height:32px;
+    border-radius:0;cursor:pointer;font-size:18px;line-height:1;
+    transition:all .25s ease;
+  }
+  .browse-close:hover{border-color:var(--ink);color:var(--ink)}
+  .browse-header{text-align:center;margin-bottom:22px;flex-shrink:0}
+  .browse-header .seal-en{
+    font-size:11px;letter-spacing:0.45em;color:var(--ink-whisper);
+    margin-bottom:10px;
+  }
+  .browse-header h2{
+    font-family:'Ma Shan Zheng',serif;
+    font-size:42px;font-weight:400;
+    color:var(--ink);letter-spacing:0.2em;margin:0 0 8px;
+  }
+  .browse-header .desc{
+    font-size:13px;color:var(--ink-soft);letter-spacing:0.12em;line-height:1.85;
+  }
+  .browse-body{
+    overflow-y:auto;flex:1;margin:0 -20px;padding:0 20px;
+  }
+  .browse-body::-webkit-scrollbar{width:5px}
+  .browse-body::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
+
+  .bf-section{
+    border-bottom:1px solid var(--line);
+  }
+  .bf-section:last-child{border-bottom:none}
+  .bf-head{
+    display:grid;grid-template-columns:auto 1fr auto auto;
+    gap:14px;align-items:center;
+    padding:18px 6px;
+    cursor:pointer;
+    transition:background .2s ease;
+  }
+  .bf-head:hover{background:rgba(27,26,23,0.03)}
+  .bf-arrow{
+    width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;
+    color:var(--ink-light);font-size:10px;
+    transition:transform .3s ease;
+  }
+  .bf-section.open .bf-arrow{transform:rotate(90deg)}
+  .bf-title{
+    display:flex;align-items:baseline;gap:14px;
+  }
+  .bf-cn{
+    font-family:'Ma Shan Zheng',serif;
+    font-size:24px;color:var(--ink);letter-spacing:0.15em;
+  }
+  .bf-en{
+    font-size:10px;color:var(--ink-whisper);letter-spacing:0.35em;
+  }
+  .bf-strip{
+    display:flex;gap:2px;align-items:center;
+  }
+  .bf-strip .sw{
+    width:18px;height:14px;
+    border:0.5px solid rgba(27,26,23,0.25);
+  }
+  .bf-count{
+    font-size:10px;color:var(--ink-whisper);letter-spacing:0.3em;
+    min-width:46px;text-align:right;
+  }
+  .bf-list{
+    max-height:0;overflow:hidden;
+    transition:max-height .45s cubic-bezier(.2,.6,.2,1);
+  }
+  .bf-section.open .bf-list{max-height:5000px}
+  .bf-grid{
+    display:grid;grid-template-columns:repeat(2, 1fr);
+    gap:14px;padding:10px 6px 24px;
+  }
+  .bf-item{
+    display:grid;grid-template-columns:54px 1fr;
+    gap:14px;
+    padding:12px;
+    border:1px solid var(--line);
+    cursor:pointer;
+    transition:border-color .25s ease, background .25s ease, transform .15s ease;
+  }
+  .bf-item:hover{
+    border-color:var(--ink);
+    background:rgba(27,26,23,0.02);
+    transform:translateY(-1px);
+  }
+  .bf-item .bf-swatch{
+    width:54px;height:54px;
+    border:0.5px solid rgba(27,26,23,0.18);
+    position:relative;
+  }
+  .bf-item .bf-swatch::after{
+    content:attr(data-hex);
+    position:absolute;left:0;right:0;bottom:-14px;
+    text-align:center;font-size:8px;color:var(--ink-whisper);
+    letter-spacing:0.15em;
+  }
+  .bf-item-meta{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .bf-item-name{
+    font-family:'Noto Serif SC',serif;
+    font-size:17px;color:var(--ink);font-weight:500;letter-spacing:0.1em;
+  }
+  .bf-item-py{
+    font-size:10px;color:var(--ink-whisper);letter-spacing:0.28em;
+    text-transform:uppercase;
+  }
+  .bf-item-era{
+    font-size:10px;color:var(--ink-soft);letter-spacing:0.25em;
+    margin-top:2px;
+  }
+  .bf-item-origin{
+    font-size:11.5px;color:var(--ink-soft);line-height:1.6;
+    margin-top:4px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .bf-item-cites{
+    display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;
+  }
+  .bf-item-cite{
+    font-size:9.5px;padding:1.5px 6px;
+    border:0.5px solid var(--line);color:var(--ink-light);
+    letter-spacing:0.1em;
+  }
+  @media (max-width: 760px){
+    .bf-grid{grid-template-columns:1fr}
+    .browse-frame{padding:32px 24px 28px}
+    .browse-header h2{font-size:34px}
+  }
+
+  .compose-overlay{
+    position:fixed;inset:0;
+    background:rgba(27,26,23,0.55);
+    backdrop-filter:blur(6px);
+    display:none;
+    align-items:center;justify-content:center;
+    z-index:100;padding:40px;
+    animation:fadeIn .4s ease;
+  }
+  .compose-overlay.active{display:flex}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  .compose-frame{
+    background:var(--paper);
+    position:relative;
+    width:min(960px,94vw);
+    max-height:92vh;overflow-y:auto;
+    padding:56px 64px 48px;
+    border:1px solid var(--line);
+    background-image:
+      repeating-linear-gradient(45deg, rgba(120,100,60,0.02) 0 2px, transparent 2px 5px),
+      repeating-linear-gradient(-45deg, rgba(120,100,60,0.015) 0 2px, transparent 2px 6px);
+    box-shadow:0 40px 80px rgba(0,0,0,0.3);
+    animation:slideUp .5s ease;
+  }
+  @keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .compose-frame::-webkit-scrollbar{width:4px}
+  .compose-frame::-webkit-scrollbar-thumb{background:var(--line)}
+
+  .compose-close{
+    position:absolute;top:20px;right:24px;
+    width:36px;height:36px;
+    border:1px solid var(--line);
+    background:transparent;color:var(--ink-soft);
+    cursor:pointer;font-size:18px;line-height:1;
+    font-family:'Noto Serif SC',serif;
+    transition:all .2s;
+  }
+  .compose-close:hover{border-color:var(--ink);color:var(--ink)}
+
+  .compose-header{
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    padding-bottom:22px;margin-bottom:28px;
+  }
+  .compose-header .seal-en{
+    font-size:11px;letter-spacing:0.45em;
+    color:var(--ink-light);text-transform:uppercase;
+  }
+  .compose-header h2{
+    font-family:'Ma Shan Zheng',serif;
+    font-size:44px;font-weight:400;
+    letter-spacing:0.2em;margin:8px 0 10px;
+    display:inline-flex;align-items:center;gap:20px;
+  }
+  .compose-header h2::before,.compose-header h2::after{
+    content:"";width:40px;height:1px;background:var(--ink);
+    display:inline-block;
+  }
+  .compose-header .desc{
+    font-size:13px;color:var(--ink-soft);
+    font-weight:300;letter-spacing:0.1em;line-height:1.8;
+  }
+
+  .compose-input-wrap{position:relative;margin-bottom:14px}
+  .compose-input{
+    width:100%;min-height:104px;
+    padding:18px 20px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,0.4);
+    font-family:'Noto Serif SC',serif;
+    font-size:15px;color:var(--ink);
+    resize:vertical;letter-spacing:0.05em;
+    line-height:1.9;outline:none;
+    transition:border-color .2s;
+  }
+  .compose-input:focus{border-color:var(--ink)}
+  .compose-input::placeholder{color:var(--ink-whisper);font-style:italic}
+  .compose-hint{
+    display:flex;justify-content:space-between;
+    font-size:10px;letter-spacing:0.3em;
+    color:var(--ink-whisper);margin-bottom:22px;
+    text-transform:uppercase;
+  }
+
+  .chips{
+    display:flex;flex-wrap:wrap;gap:8px;
+    margin-bottom:28px;align-items:center;
+  }
+  .chips .chip-label{
+    font-size:10px;letter-spacing:0.4em;
+    color:var(--ink-whisper);
+    padding-right:6px;text-transform:uppercase;
+  }
+  .chip{
+    font-size:12px;padding:6px 14px;
+    border:1px solid var(--line);
+    cursor:pointer;color:var(--ink-soft);
+    letter-spacing:0.12em;
+    transition:all .2s;
+    background:transparent;font-family:inherit;
+  }
+  .chip:hover{border-color:var(--ink);color:var(--ink);background:rgba(27,26,23,0.03)}
+
+  .compose-actions{
+    display:flex;justify-content:flex-end;margin-bottom:24px;
+  }
+  .compose-generate{
+    font-family:'Ma Shan Zheng',serif;
+    background:var(--ink);color:var(--paper);
+    border:none;padding:14px 40px;
+    font-size:17px;letter-spacing:0.4em;
+    cursor:pointer;transition:all .25s;
+    position:relative;
+  }
+  .compose-generate::before{
+    content:"";position:absolute;inset:-4px;
+    border:1px solid var(--ink);pointer-events:none;
+  }
+  .compose-generate:hover{background:var(--accent)}
+  .compose-generate:disabled{opacity:0.5;cursor:not-allowed}
+
+  .compose-result{
+    display:none;border-top:1px solid var(--line);
+    padding-top:28px;animation:fadeUp .6s ease;
+  }
+  .compose-result.active{display:block}
+
+  .loading-state{
+    display:flex;flex-direction:column;
+    align-items:center;gap:18px;padding:50px 0;
+    color:var(--ink-light);grid-column:1/-1;
+  }
+  .loading-state .dots{display:flex;gap:10px}
+  .loading-state .dot-ink{
+    width:10px;height:10px;
+    background:var(--ink);border-radius:50%;
+    animation:pulseDot 1.2s infinite ease-in-out;
+  }
+  .loading-state .dot-ink:nth-child(2){animation-delay:.2s;background:var(--accent)}
+  .loading-state .dot-ink:nth-child(3){animation-delay:.4s}
+  @keyframes pulseDot{
+    0%,100%{transform:scale(0.5);opacity:0.3}
+    50%{transform:scale(1);opacity:1}
+  }
+  .loading-state .label{
+    font-size:12px;letter-spacing:0.4em;
+    color:var(--ink-whisper);text-transform:uppercase;
+  }
+
+  .reasoning{
+    background:rgba(27,26,23,0.03);
+    border-left:2px solid var(--accent);
+    padding:18px 22px;margin-bottom:24px;
+    font-size:14px;line-height:1.95;
+    color:var(--ink-soft);font-weight:300;
+  }
+  .reasoning .lead{
+    font-family:'Ma Shan Zheng',serif;
+    color:var(--accent);font-size:18px;
+    margin-right:6px;letter-spacing:0.05em;
+  }
+  .reasoning .kw{
+    display:inline-block;padding:1px 8px;margin:1px 2px;
+    border:1px solid var(--line);background:var(--paper);
+    font-size:12px;color:var(--ink);letter-spacing:0.08em;
+  }
+
+  .palette{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;margin-bottom:24px;
+  }
+  @media (max-width:780px){
+    .palette{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  }
+  .palette-card{
+    border:1px solid var(--line);
+    background:rgba(255,255,255,0.4);
+    cursor:pointer;
+    transition:all .3s ease;
+    display:flex;flex-direction:column;
+    position:relative;
+  }
+  .palette-card::before{
+    content:attr(data-index);
+    position:absolute;top:8px;left:10px;
+    font-size:9px;letter-spacing:0.2em;
+    color:rgba(244,239,228,0.85);
+    font-family:'Noto Serif SC',serif;
+    z-index:2;
+  }
+  .palette-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 28px rgba(27,26,23,0.14);
+    border-color:var(--ink);
+  }
+  .palette-card .swatch-sm{
+    height:130px;position:relative;
+  }
+  .palette-card .swatch-sm::after{
+    content:attr(data-hex);
+    position:absolute;bottom:8px;right:10px;
+    font-size:9px;letter-spacing:0.2em;
+    background:rgba(244,239,228,0.9);
+    padding:3px 8px;color:var(--ink);
+  }
+  .palette-card .info{padding:12px 14px 14px}
+  .palette-card .nm{
+    font-family:'Ma Shan Zheng',serif;
+    font-size:22px;color:var(--ink);
+    letter-spacing:0.05em;margin-bottom:2px;line-height:1.1;
+  }
+  .palette-card .py{
+    font-size:10px;color:var(--ink-light);
+    letter-spacing:0.25em;margin-bottom:8px;
+  }
+  .palette-card .why{
+    margin-top:4px;padding:8px 0 10px;
+    border-top:1px dashed var(--line);
+  }
+  .palette-card .why-k{
+    display:block;font-size:9px;letter-spacing:0.35em;
+    color:var(--ink-whisper);margin-bottom:4px;
+  }
+  .palette-card .why-v{
+    display:block;font-size:11.5px;line-height:1.7;
+    color:var(--ink-soft);letter-spacing:0.04em;
+  }
+  .palette-card .why-v .hit{
+    color:var(--accent);font-weight:500;
+    padding:0 2px;border-bottom:1px dotted var(--accent);
+  }
+  .palette-card .why-v em{
+    font-style:normal;color:var(--ink);font-weight:500;
+  }
+  .palette-card .badges{
+    display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 8px;
+  }
+  .pc-badge{
+    display:inline-flex;align-items:center;gap:5px;
+    padding:2.5px 7px 2.5px 5px;
+    border:0.5px solid var(--line);
+    font-size:9.5px;color:var(--ink-soft);
+    letter-spacing:0.12em;
+    background:var(--paper);
+  }
+  .pc-badge .pc-glyph{display:inline-block;width:7px;height:7px;flex-shrink:0}
+  .pc-badge.pc-family .pc-glyph{background:#9D2933;border-radius:50%}
+  .pc-badge.pc-period .pc-glyph{background:transparent;border:1px solid #7C5A2E;transform:rotate(45deg);width:6px;height:6px}
+  .pc-badge.pc-region .pc-glyph{background:transparent;border:1px solid #3F6B5B}
+  .pc-badge.pc-craft .pc-glyph{
+    width:0;height:0;background:transparent;border:none;
+    border-left:3.5px solid transparent;border-right:3.5px solid transparent;
+    border-bottom:6px solid #3D567C;
+  }
+  .palette-card .card-cites{
+    display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px;
+  }
+  .pc-cite{
+    font-size:9px;padding:1.5px 6px;
+    border:0.5px solid var(--line);color:var(--ink-light);
+    letter-spacing:0.1em;
+  }
+  .palette-card .trace{
+    font-size:10.5px;color:var(--ink-whisper);
+    line-height:1.6;letter-spacing:0.03em;
+    border-top:1px solid var(--line);padding-top:8px;
+    display:-webkit-box;-webkit-line-clamp:3;
+    -webkit-box-orient:vertical;overflow:hidden;
+  }
+
+  /* === 组方之析 · Palette Composition (从知识图谱看配色结构) === */
+  .palette-composition{
+    margin:0 0 22px;
+    border:1px solid var(--line);
+    background:rgba(255,253,247,0.6);
+    padding:18px 22px;
+  }
+  .pc-head{
+    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+    padding-bottom:12px;margin-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .pc-title{
+    font-family:'Ma Shan Zheng',serif;
+    font-size:22px;color:var(--ink);letter-spacing:0.18em;
+  }
+  .pc-head .pc-en{
+    font-size:10px;letter-spacing:0.4em;color:var(--ink-whisper);
+  }
+  .pc-head .pc-sub{
+    font-size:11px;color:var(--ink-light);letter-spacing:0.1em;margin-left:auto;
+  }
+  .pc-body{display:flex;flex-direction:column;gap:10px}
+  .pc-row{
+    display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:flex-start;
+  }
+  .pc-key{
+    font-size:11px;letter-spacing:0.3em;color:var(--ink-light);
+    padding-top:5px;
+  }
+  .pc-vals{display:flex;flex-wrap:wrap;gap:5px}
+  .pc-chip{
+    display:inline-flex;align-items:center;gap:5px;
+    padding:3.5px 9px;
+    border:0.5px solid var(--line);
+    font-size:11px;color:var(--ink-soft);
+    letter-spacing:0.14em;
+    background:var(--paper);
+  }
+  .pc-chip em{
+    font-style:normal;font-size:9.5px;color:var(--ink-whisper);
+    padding-left:3px;border-left:1px solid var(--line);
+    letter-spacing:0.12em;
+  }
+  .pc-chip.pc-family{border-color:rgba(157,41,51,0.4)}
+  .pc-chip.pc-period{border-color:rgba(124,90,46,0.4)}
+  .pc-chip.pc-region{border-color:rgba(63,107,91,0.4)}
+  .pc-chip.pc-craft {border-color:rgba(61,86,124,0.4)}
+  .pc-vals .empty{color:var(--ink-whisper);font-size:10px;letter-spacing:0.2em}
+
+  .palette-actions{
+    display:flex;justify-content:space-between;
+    align-items:center;font-size:11px;
+    letter-spacing:0.25em;color:var(--ink-light);
+    border-top:1px solid var(--line);padding-top:16px;
+  }
+  .palette-actions button{
+    background:transparent;border:1px solid var(--line);
+    padding:8px 16px;font-family:inherit;
+    font-size:11px;letter-spacing:0.25em;
+    color:var(--ink-soft);cursor:pointer;transition:all .2s;
+    margin-left:8px;
+  }
+  .palette-actions button:hover{border-color:var(--ink);color:var(--ink)}
+
+  @media (max-width: 1100px){
+    main{grid-template-columns: 1fr}
+    aside{border-top:1px solid var(--line);max-height:none}
+    aside::before{display:none}
+  }
+  @media (max-width: 760px){
+    .compose-frame{padding:40px 28px 32px}
+    .compose-header h2{font-size:32px;letter-spacing:0.15em}
+    .compose-header h2::before,.compose-header h2::after{width:20px}
+  }
+</style>
+<link rel="stylesheet" href="assets/cinematic.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="seal">Chinese · Color · Atlas · 2026</span>
+    <h1>華夏百色圖 <span class="en">A KNOWLEDGE GRAPH OF TRADITIONAL CHINESE COLORS</span></h1>
+    <p class="sub">以华夏百色为纲，循矿物、草木、典籍、自然之本源，构一方可游可观之色谱。点击任一色，以见其名、其形、其源。</p>
+  </div>
+  <div class="meta">
+    卷 · 壹<br/>
+    甲辰年 · 春<br/>
+    <span class="stamp">溯</span>
+  </div>
+</header>
+
+<nav class="legend" id="legend">
+  <span class="tag active" data-cat="all"><span class="dot" style="background:var(--ink)"></span>全部 · ALL</span>
+  <span class="tag" data-cat="mineral"><span class="dot" style="background:#9C5333"></span>矿物 · Mineral</span>
+  <span class="tag" data-cat="plant"><span class="dot" style="background:#4D8A63"></span>草木 · Plant</span>
+  <span class="tag" data-cat="literary"><span class="dot" style="background:#7C1823"></span>典籍 · Literary</span>
+  <span class="tag" data-cat="nature"><span class="dot" style="background:#6E9CB3"></span>自然 · Nature</span>
+  <span class="spacer"></span>
+  <button class="tag browse-trigger" id="browseTrigger"><span class="dot"></span>溯 系 · BROWSE</button>
+  <button class="tag compose-trigger" id="composeTrigger"><span class="dot"></span>召 色 · COMPOSE</button>
+  <span class="hint">HOVER · TRACE</span>
+</nav>
+
+<main>
+  <div id="graph-wrap">
+    <span class="watermark">色</span>
+    <span class="corner-mark tl">北 · NORTH</span>
+    <span class="corner-mark tr">華夏百色 · C</span>
+    <span class="corner-mark bl">溯源 · ORIGIN</span>
+    <span class="corner-mark br">图谱 · GRAPH</span>
+    <svg id="graph"></svg>
+    <div class="graph-key" aria-hidden="true">
+      <div class="gk-title">关 · 系 · 图 例 <span class="gk-en">RELATION KEY</span></div>
+      <div class="gk-row"><span class="gk-shape gk-family"></span><span class="gk-line gk-line-family"></span><span class="gk-cn">色系</span><span class="gk-en">FAMILY</span></div>
+      <div class="gk-row"><span class="gk-shape gk-period"></span><span class="gk-line gk-line-period"></span><span class="gk-cn">时期</span><span class="gk-en">PERIOD</span></div>
+      <div class="gk-row"><span class="gk-shape gk-region"></span><span class="gk-line gk-line-region"></span><span class="gk-cn">地域</span><span class="gk-en">REGION</span></div>
+      <div class="gk-row"><span class="gk-shape gk-craft"></span><span class="gk-line gk-line-craft"></span><span class="gk-cn">工艺</span><span class="gk-en">CRAFT</span></div>
+    </div>
+  </div>
+  <aside id="panel">
+    <div class="panel-empty" id="empty">
+      <div class="glyph">色</div>
+      <div class="t">择一色而观其本</div>
+      <div class="h">SELECT · A · COLOR</div>
+    </div>
+    <div class="detail" id="detail">
+      <div class="swatch" id="swatch"></div>
+      <div class="hanzi-header">
+        <div>
+          <div class="name" id="d-name"></div>
+          <div class="pinyin" id="d-pinyin"></div>
+        </div>
+        <div class="cat" id="d-cat"></div>
+      </div>
+      <div class="field">
+        <span class="k">Origin · 溯 源</span>
+        <span class="v" id="d-origin"></span>
+      </div>
+      <div class="field">
+        <span class="k">Context · 典 故</span>
+        <span class="v" id="d-context"></span>
+      </div>
+      <div class="field">
+        <span class="k">Era · 沿 革</span>
+        <span class="v" id="d-era"></span>
+      </div>
+      <div class="field">
+        <span class="k">Citations · 典 籍</span>
+        <div class="cites" id="d-cites"></div>
+      </div>
+      <div class="field semantic-graph">
+        <span class="k">Semantic Graph · 关 联 图 谱</span>
+        <div class="sem-grid">
+          <div class="sem-row" data-type="family">
+            <span class="sem-key"><span class="sem-mark m-family"></span>色系 · FAMILY</span>
+            <div class="sem-chips" id="sem-family"></div>
+          </div>
+          <div class="sem-row" data-type="period">
+            <span class="sem-key"><span class="sem-mark m-period"></span>时期 · PERIOD</span>
+            <div class="sem-chips" id="sem-period"></div>
+          </div>
+          <div class="sem-row" data-type="region">
+            <span class="sem-key"><span class="sem-mark m-region"></span>地域 · REGION</span>
+            <div class="sem-chips" id="sem-region"></div>
+          </div>
+          <div class="sem-row" data-type="craft">
+            <span class="sem-key"><span class="sem-mark m-craft"></span>工艺 · CRAFT</span>
+            <div class="sem-chips" id="sem-craft"></div>
+          </div>
+        </div>
+      </div>
+      <div class="field graph-related">
+        <span class="k">Related Through Graph · 图 谱 关 联 色</span>
+        <div class="gr-groups">
+          <div class="gr-group" data-type="family">
+            <span class="gr-key"><span class="sem-mark m-family"></span>色 系 · <span id="gr-family-label"></span></span>
+            <div class="gr-list" id="gr-family"></div>
+          </div>
+          <div class="gr-group" data-type="period">
+            <span class="gr-key"><span class="sem-mark m-period"></span>时 期 · <span id="gr-period-label"></span></span>
+            <div class="gr-list" id="gr-period"></div>
+          </div>
+          <div class="gr-group" data-type="region">
+            <span class="gr-key"><span class="sem-mark m-region"></span>地 域 · <span id="gr-region-label"></span></span>
+            <div class="gr-list" id="gr-region"></div>
+          </div>
+          <div class="gr-group" data-type="craft">
+            <span class="gr-key"><span class="sem-mark m-craft"></span>工 艺 · <span id="gr-craft-label"></span></span>
+            <div class="gr-list" id="gr-craft"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- 溯系 · Browse by Color Family modal -->
+<div class="browse-overlay" id="browseOverlay" aria-hidden="true">
+  <div class="browse-frame" role="dialog" aria-labelledby="browseTitle">
+    <button class="browse-close" id="browseClose" aria-label="关闭">×</button>
+    <div class="browse-header">
+      <div class="seal-en">BROWSE · BY · COLOR FAMILY</div>
+      <h2 id="browseTitle">溯 · 色 · 系</h2>
+      <p class="desc">由色系入溯源 · 每一系皆可层层展开 · 一色一典 · 依次而观</p>
+    </div>
+    <div class="browse-body" id="browseBody"><!-- 渲染时填入 --></div>
+  </div>
+</div>
+
+<!-- 召色 · Compose a palette modal -->
+<div class="compose-overlay" id="composeOverlay" aria-hidden="true">
+  <div class="compose-frame" role="dialog" aria-labelledby="composeTitle">
+    <button class="compose-close" id="composeClose" aria-label="关闭">×</button>
+
+    <div class="compose-header">
+      <div class="seal-en">SUMMON · A · PALETTE</div>
+      <h2 id="composeTitle">召 色</h2>
+      <p class="desc">以语言描绘意图 · 令千年传统色应诺而来 · 每一色皆可溯其本</p>
+    </div>
+
+    <div class="compose-input-wrap">
+      <textarea class="compose-input" id="composeInput"
+        placeholder="请描述您的设计意图。例如:为一间江南茶室设计清雅温润的品牌视觉,希望有春日的婉约气质……"></textarea>
+    </div>
+    <div class="compose-hint">
+      <span>CMD / CTRL + ENTER · 即刻召色</span>
+      <span id="charCount">0 字</span>
+    </div>
+
+    <div class="chips">
+      <span class="chip-label">快 速 引 语 ·</span>
+      <button class="chip" data-prompt="为新年礼盒设计一套喜庆热烈又不失典雅的包装视觉">新 年 礼 盒</button>
+      <button class="chip" data-prompt="江南春雨,婉约清雅的茶席设计,素净又温润">江 南 春 雨</button>
+      <button class="chip" data-prompt="文人书房,沉静古朴的品牌视觉,要有深邃的历史感">文 人 书 房</button>
+      <button class="chip" data-prompt="敦煌国风海报设计,华贵而富有历史感,热烈中见沉稳">敦 煌 国 风</button>
+      <button class="chip" data-prompt="极简现代的新中式婚礼请柬,素净婉约,点缀一抹暖色">极 简 婚 礼</button>
+      <button class="chip" data-prompt="宋代汝窑瓷器感的品牌视觉,清雅禅意,天青月白的意境">宋 瓷 禅 意</button>
+    </div>
+
+    <div class="compose-actions">
+      <button class="compose-generate" id="generateBtn">召 · 色</button>
+    </div>
+
+    <div class="compose-result" id="composeResult">
+      <div class="reasoning" id="reasoning"></div>
+      <div class="palette" id="palette"></div>
+      <div class="palette-composition" id="paletteComposition" style="display:none"></div>
+      <div class="palette-actions">
+        <span id="paletteMeta"></span>
+        <div>
+          <button id="regenBtn">重 新 召 色</button>
+          <button id="copyBtn">复 制 色 卡</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>華夏百色圖 · CHINESE COLOR ATLAS</span>
+  <span>典籍为据 · 草木为本 · 矿石为始 · 时代为证</span>
+  <span>MMXXVI</span>
+</footer>
+
+<div class="tip" id="tip"></div>
+
+<script src="assets/colors-extended.js"></script>
+<script>
+/* ---------- 数据：华夏百色（原四十八色 + 经来源标注的扩展色） ---------- */
+const categories = {
+  mineral:  {cn:"矿物", en:"MINERAL", angle:[-Math.PI*0.9, -Math.PI*0.55]},
+  plant:    {cn:"草木", en:"PLANT",   angle:[-Math.PI*0.4, -Math.PI*0.05]},
+  literary: {cn:"典籍", en:"LITERARY",angle:[ Math.PI*0.55, Math.PI*0.9]},
+  nature:   {cn:"自然", en:"NATURE",  angle:[ Math.PI*0.1,  Math.PI*0.45]}
+};
+
+const colors = [
+  // ------------- 矿物 MINERAL -------------
+  {id:"zhusha", name:"朱砂", pinyin:"zhū shā", hex:"#8B1A1A", cat:"mineral",
+    origin:"汞之硫化物,自辰州所出者最佳,故又称辰砂、丹砂。",
+    context:"《神农本草经》列为上品。汉唐以降,宫廷批红、道家炼丹、壁画造像,皆以此为宗。",
+    era:"新石器时代 · 至 · 今",
+    cites:["《神农本草经》","《本草纲目》"],
+    related:["yanzhi","fei","jiang"]},
+  {id:"shiqing", name:"石青", pinyin:"shí qīng", hex:"#1661AB", cat:"mineral",
+    origin:"蓝铜矿研磨所得,色深沉如海。",
+    context:"敦煌壁画、青绿山水之魂。唐人李思训父子所作,必以石青石绿相衬。",
+    era:"魏晋 · 至 · 明清",
+    cites:["《历代名画记》","《芥子园画传》"],
+    related:["shilu","dianlan","tianqing"]},
+  {id:"shilu", name:"石绿", pinyin:"shí lǜ", hex:"#4D8A63", cat:"mineral",
+    origin:"孔雀石研磨而成,色如翠羽。",
+    context:"与石青并称画家双璧。《千里江山图》中王希孟以石绿铺山,历千年不褪。",
+    era:"魏晋 · 至 · 明清",
+    cites:["《千里江山图》","《画史》"],
+    related:["shiqing","cui","bi","kongqing"]},
+  {id:"zheshi", name:"赭石", pinyin:"zhě shí", hex:"#9C5333", cat:"mineral",
+    origin:"赤铁矿之属,中国最古老颜料之一。",
+    context:"新石器彩陶文化 — 仰韶、马家窑皆以此绘纹。山水画中染土坡、写秋木。",
+    era:"新石器时代 · 至 · 今",
+    cites:["《考工记》","《天工开物》"],
+    related:["jiang","xuan"]},
+  {id:"qianbai", name:"铅白", pinyin:"qiān bái", hex:"#F2ECDE", cat:"mineral",
+    origin:"铅经醋熏化为碱式碳酸铅,古称胡粉、铅华。",
+    context:"古人化妆之本。李白云「粉黛空颜色」,杜甫云「玉颜铅华落」,皆指此。",
+    era:"春秋战国 · 至 · 清",
+    cites:["《释名》","《齐民要术》"],
+    related:["dai","yuebai"]},
+
+  // ------------- 草木 PLANT -------------
+  {id:"yanzhi", name:"胭脂", pinyin:"yān zhī", hex:"#9D2933", cat:"plant",
+    origin:"红蓝花(红花)之花瓣捣汁浸绵,又出焉支山。",
+    context:"《史记》载匈奴失焉支山而悲歌。汉武帝伐匈奴,胭脂之名自此入华。",
+    era:"汉 · 至 · 今",
+    cites:["《史记》","《博物志》"],
+    related:["zhusha","qian","fei"]},
+  {id:"tenghuang", name:"藤黄", pinyin:"téng huáng", hex:"#E8A50F", cat:"plant",
+    origin:"海藤树之树脂,熬炼而成。色金灿如阳。",
+    context:"南朝始自林邑传入。工笔花鸟、佛教绘画之要色,梁楷、八大皆爱之。",
+    era:"南朝 · 至 · 明清",
+    cites:["《本草纲目》","《芥子园画传》"],
+    related:["xiang","zhizi","huang"]},
+  {id:"dianlan", name:"靛蓝", pinyin:"diàn lán", hex:"#065279", cat:"plant",
+    origin:"蓼蓝、菘蓝诸草发酵沉淀。",
+    context:"《荀子》「青取之于蓝而青于蓝」即此。自周秦已为染服之正色。",
+    era:"周 · 至 · 今",
+    cites:["《荀子·劝学》","《诗经·小雅》"],
+    related:["qing","gan","dai"]},
+  {id:"qian", name:"茜色", pinyin:"qiàn sè", hex:"#CB3A56", cat:"plant",
+    origin:"茜草之根,赤黄色素,煮染得鲜红。",
+    context:"《诗经》「茹藘在阪」即茜草。《汉官仪》载太官令掌茜染,供宫帏之用。",
+    era:"先秦 · 至 · 今",
+    cites:["《诗经·郑风》","《汉官仪》"],
+    related:["yanzhi","fei","jiang"]},
+  {id:"zhizi", name:"栀子", pinyin:"zhī zǐ", hex:"#ECD452", cat:"plant",
+    origin:"栀子果实所煮,得温润之黄。",
+    context:"汉代最通行之黄染。马王堆素纱禅衣、唐人黄罗裙皆染此色。",
+    era:"汉 · 至 · 唐",
+    cites:["《齐民要术》","《天工开物》"],
+    related:["xiang","tenghuang","huang"]},
+  {id:"dai", name:"黛", pinyin:"dài", hex:"#4A4266", cat:"plant",
+    origin:"靛青加石磨细,调以脂。",
+    context:"古女子画眉之物。屈原「粉白黛黑,施芳泽只」,《红楼梦》林黛玉之名亦出此。",
+    era:"战国 · 至 · 清",
+    cites:["《楚辞·大招》","《释名》"],
+    related:["dianlan","luodai","xuan"]},
+  {id:"zaose", name:"皂色", pinyin:"zào sè", hex:"#2C2520", cat:"plant",
+    origin:"皂斗(栎实)与五倍子含鞣质,染为玄黑。",
+    context:"平民之服色。隋唐以降,衙役、门吏皆服皂衣,故有「皂吏」之称。",
+    era:"周 · 至 · 清",
+    cites:["《周礼·天官》","《唐六典》"],
+    related:["zi","xuan","gan"]},
+
+  // ------------- 自然 NATURE -------------
+  {id:"luodai", name:"螺黛", pinyin:"luó dài", hex:"#425066", cat:"nature",
+    origin:"波斯进贡之青黑矿物,形如螺,碾以描眉。",
+    context:"《隋唐嘉话》载隋炀帝赐后宫螺子黛,每颗值十金,唯宫中得用。",
+    era:"隋唐",
+    cites:["《隋唐嘉话》","《开元天宝遗事》"],
+    related:["dai","xuan","gan"]},
+  {id:"tianqing", name:"天青", pinyin:"tiān qīng", hex:"#6E9CB3", cat:"nature",
+    origin:"雨后初霁、云破天青之际所见天色。",
+    context:"柴世宗批汝窑御札:「雨过天青云破处,这般颜色作将来。」汝瓷之魂。",
+    era:"五代 · 至 · 北宋",
+    cites:["《格古要论》","《清波杂志》"],
+    related:["yuebai","piao","qing"]},
+  {id:"yuebai", name:"月白", pinyin:"yuè bái", hex:"#CFE0E8", cat:"nature",
+    origin:"月华之色,淡青泛白,素而不寒。",
+    context:"《红楼梦》中最常出现之服色。宝玉「月白绫子箭袖」,黛玉「月白绣花小毛皮袄」皆是。",
+    era:"明 · 至 · 清",
+    cites:["《红楼梦》","《扬州画舫录》"],
+    related:["tianqing","piao","qianbai"]},
+
+  // ------------- 典籍 LITERARY -------------
+  {id:"piao", name:"缥色", pinyin:"piǎo sè", hex:"#7DB9DE", cat:"literary",
+    origin:"《说文解字》:「缥,帛青白色也。」",
+    context:"古书衣多以缥色绢帛为之,故称「缥缃」即指书卷。曹植《洛神赋》亦用此色。",
+    era:"汉 · 至 · 唐",
+    cites:["《说文解字》","《洛神赋》"],
+    related:["tianqing","yuebai","xiang"]},
+  {id:"xiang", name:"缃色", pinyin:"xiāng sè", hex:"#F0C239", cat:"literary",
+    origin:"《释名·释采帛》:「缃,桑也,如桑叶初生之色。」",
+    context:"浅黄色帛。与缥色并举为「缥缃」,代指典籍。古诗「缃帙流离,凤纸传音」。",
+    era:"汉 · 至 · 唐",
+    cites:["《释名》","《玉台新咏》"],
+    related:["zhizi","tenghuang","huang","piao"]},
+  {id:"gan", name:"绀色", pinyin:"gàn sè", hex:"#4C221B", cat:"literary",
+    origin:"《说文》:「绀,帛深青扬赤色。」青中透赤,深沉如夜。",
+    context:"《论语·乡党》:「君子不以绀緅饰。」孔子以为此色近于斋戒之服,不宜日常。",
+    era:"先秦",
+    cites:["《论语》","《说文解字》"],
+    related:["xuan","zi","dianlan"]},
+  {id:"zi", name:"缁色", pinyin:"zī sè", hex:"#161823", cat:"literary",
+    origin:"《说文》:「缁,帛黑色也。」以栎实、皂斗再三而染。",
+    context:"《诗经》「缁衣之宜兮」,为卿大夫听朝之服。后为僧服之称,故有「缁门」「缁流」。",
+    era:"先秦 · 至 · 今",
+    cites:["《诗经·郑风》","《说文解字》"],
+    related:["zaose","xuan","gan"]},
+  {id:"jiang", name:"绛色", pinyin:"jiàng sè", hex:"#7C1823", cat:"literary",
+    origin:"《说文》:「绛,大赤也。」以茜草三入、五入所得之深红。",
+    context:"绛州(今山西新绛)以染色闻名。汉官员绛衣大冠。《红楼梦》绛珠仙草、绛云轩皆取此。",
+    era:"汉 · 至 · 清",
+    cites:["《说文解字》","《汉官仪》"],
+    related:["zhusha","fei","qian","yanzhi"]},
+  {id:"fei", name:"绯色", pinyin:"fēi sè", hex:"#C83C23", cat:"literary",
+    origin:"浅赤而鲜,较绛为淡,较朱为柔。",
+    context:"唐制四品、五品官服绯。白居易「江州司马青衫湿」,青衫者八九品也,望绯而不及。",
+    era:"唐 · 至 · 宋",
+    cites:["《唐六典》","《琵琶行》"],
+    related:["zhusha","yanzhi","jiang","qian"]},
+  {id:"qing", name:"青", pinyin:"qīng", hex:"#0EB0C9", cat:"literary",
+    origin:"最古老之色彩概念,《说文》:「青,东方色也。」",
+    context:"可指蓝、指绿、指黑。「青天」之蓝、「青山」之绿、「青丝」之黑,一字而含三色。",
+    era:"上古 · 至 · 今",
+    cites:["《说文解字》","《荀子·劝学》"],
+    related:["dianlan","shiqing","xuan"]},
+  {id:"huang", name:"黄", pinyin:"huáng", hex:"#E8B84F", cat:"literary",
+    origin:"五行居中,土之正色。《说文》:「黄,地之色也。」",
+    context:"隋唐以后,黄为帝王专享。「黄袍加身」即赵匡胤陈桥兵变之典,自此黄为天子色。",
+    era:"上古 · 至 · 清",
+    cites:["《说文解字》","《宋史·太祖本纪》"],
+    related:["zhizi","tenghuang","xiang"]},
+  {id:"xuan", name:"玄", pinyin:"xuán", hex:"#3B2820", cat:"literary",
+    origin:"《说文》:「玄,幽远也。黑而有赤色者为玄。」",
+    context:"「天地玄黄」开《千字文》。周制玄衣纁裳,祭天地之服。道家以玄为众妙之门。",
+    era:"上古 · 至 · 今",
+    cites:["《周易》","《道德经》","《千字文》"],
+    related:["zi","gan","zaose","huang"]},
+
+  // ------------- 矿物 MINERAL (续) -------------
+  {id:"xionghuang", name:"雄黄", pinyin:"xióng huáng", hex:"#E55B3C", cat:"mineral",
+    origin:"砷之硫化物,又称鸡冠石。《本草纲目》载其色赤如鸡冠,能辟百邪。",
+    context:"端午以雄黄酒涂儿额角、书「王」字。道家外丹,雄黄为一味。",
+    era:"先秦 · 至 · 清",
+    cites:["《神农本草经》","《本草纲目》","《荆楚岁时记》"],
+    related:["zhusha","cihuang","tenghuang"]},
+  {id:"cihuang", name:"雌黄", pinyin:"cí huáng", hex:"#EEA62C", cat:"mineral",
+    origin:"三硫化二砷,与雄黄同矿而生,色如金屑。",
+    context:"《晋书·王衍传》:「口中雌黄。」王衍清谈每随口更改,成语「信口雌黄」本此。古人亦涂改简牍用之。",
+    era:"魏晋 · 至 · 清",
+    cites:["《晋书·王衍传》","《本草纲目》"],
+    related:["xionghuang","tenghuang","minghuang"]},
+  {id:"kongqing", name:"空青", pinyin:"kōng qīng", hex:"#3B8F99", cat:"mineral",
+    origin:"蓝铜矿中空心者,《神农本草经》列为上品,色青透如天色。",
+    context:"唐宋名画色料之一。《历代名画记》:「金陵所产空青,以镂龙蛇纹者为佳。」",
+    era:"汉 · 至 · 宋",
+    cites:["《神农本草经》","《历代名画记》"],
+    related:["shiqing","shilu","bi"]},
+  {id:"shanhu", name:"珊瑚", pinyin:"shān hú", hex:"#F04A4A", cat:"mineral",
+    origin:"海中珊瑚虫所结之骨,赤如朝霞。",
+    context:"《后汉书·西南夷传》载珊瑚入贡。清代冠顶以珊瑚珠分等级,红珊瑚为皇家专享。",
+    era:"汉 · 至 · 清",
+    cites:["《后汉书》","《西京杂记》"],
+    related:["zhusha","chi","fei"]},
+  {id:"bi", name:"碧", pinyin:"bì", hex:"#1BA784", cat:"mineral",
+    origin:"《说文解字》:「碧,石之青美者。」通指蓝绿美石。",
+    context:"王勃《滕王阁序》:「秋水共长天一色。」水即碧色。李白「碧玉妆成一树高」写柳色。",
+    era:"先秦 · 至 · 今",
+    cites:["《说文解字》","《滕王阁序》","《咏柳》"],
+    related:["shilu","kongqing","cui"]},
+
+  // ------------- 草木 PLANT (续) -------------
+  {id:"sufang", name:"苏芳", pinyin:"sū fāng", hex:"#A14F4F", cat:"plant",
+    origin:"苏木(苏枋木)之心材,南海传入,色如血赭。",
+    context:"《唐六典》载染织署以苏芳染绯。日本「襲の色目」亦有苏芳袭,可见东亚传播之广。",
+    era:"唐 · 至 · 明",
+    cites:["《唐六典》","《本草纲目》"],
+    related:["yanzhi","qian","jiang"]},
+  {id:"zhehuang", name:"柘黄", pinyin:"zhè huáng", hex:"#C9A845", cat:"plant",
+    origin:"柘木(柘桑)所染,赤黄带光。",
+    context:"《新唐书·舆服志》:「天子袍衫黄文,以柘黄染之。」自隋文帝始为帝王常服,禁庶民用。",
+    era:"隋唐 · 至 · 明",
+    cites:["《新唐书·舆服志》","《唐六典》"],
+    related:["minghuang","xinghuang","huang"]},
+  {id:"huaihuang", name:"槐黄", pinyin:"huái huáng", hex:"#D2B42C", cat:"plant",
+    origin:"槐花(槐米)所染之黄,亦称槐米黄,较栀子为明。",
+    context:"《齐民要术》《天工开物》皆载其法。明清科考时「槐花黄,举子忙」,考生多服槐黄长衫。",
+    era:"汉 · 至 · 清",
+    cites:["《齐民要术》","《天工开物》"],
+    related:["zhizi","xiang","tenghuang"]},
+  {id:"songhua", name:"松花", pinyin:"sōng huā", hex:"#BCE672", cat:"plant",
+    origin:"松树花粉之色,淡黄泛绿,润而不扬。",
+    context:"唐代薛涛制笺,染作松花色者最为士林所爱。《红楼梦》中鸳鸯亦有松花色汗巾。",
+    era:"唐 · 至 · 清",
+    cites:["《薛涛笺》","《红楼梦》"],
+    related:["shilu","congqing","xiang"]},
+  {id:"mo", name:"墨", pinyin:"mò", hex:"#1F2321", cat:"plant",
+    origin:"松烟、油烟合胶研制。《说文》:「墨,书墨也。」",
+    context:"徽墨、歙墨为贡品。苏轼谓「墨分五色」:焦浓重淡清——一墨可化千色。",
+    era:"先秦 · 至 · 今",
+    cites:["《说文解字》","《墨经》","《东坡题跋》"],
+    related:["xuan","zi","hei"]},
+  {id:"yujin", name:"郁金", pinyin:"yù jīn", hex:"#E1A85C", cat:"plant",
+    origin:"郁金(姜黄属)根茎磨粉,染黄且有浓香。",
+    context:"《汉官仪》:「尚书郎给女使二人,郁金裙。」佛家袈裟亦染郁金。李白「兰陵美酒郁金香」咏此。",
+    era:"汉 · 至 · 唐",
+    cites:["《汉官仪》","《本草纲目》","《客中作》"],
+    related:["tenghuang","xinghuang","xiang"]},
+  {id:"ouhe", name:"藕荷", pinyin:"ǒu hé", hex:"#E4B2C4", cat:"plant",
+    origin:"取藕与荷之间的浅粉紫色,温润如江南烟水。",
+    context:"《红楼梦》多处出此色:李纨藕合色交领、莺儿编藕合络子。江南闺阁最爱此色。",
+    era:"明 · 至 · 清",
+    cites:["《红楼梦》"],
+    related:["qianbai","yuebai","yanzhi"]},
+  {id:"congqing", name:"葱青", pinyin:"cōng qīng", hex:"#7BA23F", cat:"plant",
+    origin:"春葱之青,嫩而带黄,为初绿之属。",
+    context:"《本草纲目·菜部》记葱之用。《红楼梦》中袭人着「葱绿撒花绫裙」即此。",
+    era:"宋 · 至 · 清",
+    cites:["《本草纲目》","《红楼梦》"],
+    related:["shilu","cui","songhua"]},
+
+  // ------------- 自然 NATURE (续) -------------
+  {id:"tianshuibi", name:"天水碧", pinyin:"tiān shuǐ bì", hex:"#88ADA6", cat:"nature",
+    origin:"《十国春秋·南唐后妃传》:「后主宫人染碧,夕露之,色倍鲜,遂名天水碧。」",
+    context:"南唐后主李煜宫中偶得,一夜露水所成。后王禹偁咏:「阶前雨露成天水,花底烟霞入砚池。」",
+    era:"五代",
+    cites:["《十国春秋》","《梦溪笔谈》"],
+    related:["tianqing","yuebai","bi"]},
+  {id:"yaqing", name:"鸦青", pinyin:"yā qīng", hex:"#2B3648", cat:"nature",
+    origin:"取乌鸦羽毛之色,青中近黑,冷而深沉。",
+    context:"《宣和画谱》列鸦青为设色一种。元明妇女有鸦青缎袄。《红楼梦》黛玉亦有鸦青汗巾。",
+    era:"宋 · 至 · 清",
+    cites:["《宣和画谱》","《红楼梦》"],
+    related:["gan","dai","xuan"]},
+  {id:"cui", name:"翠", pinyin:"cuì", hex:"#00A86B", cat:"nature",
+    origin:"《说文》:「翠,青羽雀也。」本义翠鸟,引申为其羽之青绿。",
+    context:"唐代尚翠,贵族妇女簪翠翘、绣翠纹。白居易「金翠燃光照妃额」、李商隐「翠黛深」,皆此色。",
+    era:"上古 · 至 · 今",
+    cites:["《说文解字》","《长恨歌》"],
+    related:["shilu","bi","kongqing"]},
+  {id:"yuse", name:"玉色", pinyin:"yù sè", hex:"#C8E1D4", cat:"nature",
+    origin:"美玉之色,青白中透润,温如凝脂。",
+    context:"《礼记·玉藻》:「君子于玉比德焉。」玉色为君子衣服本色。《诗经》「言念君子,温其如玉」。",
+    era:"先秦 · 至 · 今",
+    cites:["《礼记·玉藻》","《诗经·秦风》"],
+    related:["yuebai","tianqing","qianbai"]},
+
+  // ------------- 典籍 LITERARY (续) -------------
+  {id:"zipurple", name:"紫", pinyin:"zǐ", hex:"#8D4BBB", cat:"literary",
+    origin:"青赤交染所得。《说文》:「紫,帛青赤色也。」",
+    context:"《论语·阳货》:「恶紫之夺朱也。」朱为正色而紫为间色,孔子恶其乱朱。然唐三品以上服紫,紫贵之始。",
+    era:"先秦 · 至 · 今",
+    cites:["《论语·阳货》","《说文解字》","《唐六典》"],
+    related:["gan","dai","ouhe"]},
+  {id:"chi", name:"赤", pinyin:"chì", hex:"#C3272B", cat:"literary",
+    origin:"《说文》:「赤,南方色也。」火之色,周人尚赤。",
+    context:"《诗经·七月》「我朱孔阳,为公子裳」。汉代赤帻、赤绶皆显礼制。《礼记》:「周人尚赤,大事敛用日出。」",
+    era:"上古 · 至 · 今",
+    cites:["《说文解字》","《诗经·豳风》","《礼记·檀弓》"],
+    related:["zhusha","jiang","fei","shanhu"]},
+  {id:"hei", name:"黑", pinyin:"hēi", hex:"#0C0C0C", cat:"literary",
+    origin:"《说文》:「黑,北方色也。火所熏之色也。」五行对应水、北、冬。",
+    context:"秦尚黑。秦始皇以水德代周,《史记·秦始皇本纪》:「衣服旄旌节旗皆尚黑。」",
+    era:"上古 · 至 · 今",
+    cites:["《说文解字》","《史记·秦始皇本纪》"],
+    related:["xuan","zi","mo"]},
+  {id:"xun", name:"纁", pinyin:"xūn", hex:"#B36A5E", cat:"literary",
+    origin:"《周礼·考工记》:「三入为纁。」茜草三次浸染所得暗红偏黄。",
+    context:"周制祭服:「玄衣纁裳」,玄为天、纁为地,取天地玄黄之意。《尚书》称帝王葬服为「玄纁」。",
+    era:"周 · 至 · 汉",
+    cites:["《周礼·考工记》","《尚书·禹贡》"],
+    related:["jiang","qian","huang"]},
+  {id:"chenxiang", name:"沉香", pinyin:"chén xiāng", hex:"#6A4E3D", cat:"literary",
+    origin:"沉香木之色,暗褐中沉稳,以树名色。",
+    context:"《红楼梦》中贾母着「沉香色弹墨花绵裙」。沉香色为老年贵妇常服,沉静而不张扬。",
+    era:"明 · 至 · 清",
+    cites:["《红楼梦》","《本草纲目》"],
+    related:["zheshi","xuan","gan"]},
+  {id:"xinghuang", name:"杏黄", pinyin:"xìng huáng", hex:"#EAB24D", cat:"literary",
+    origin:"杏子熟透之色,金黄中带微赤。",
+    context:"《红楼梦》探春着杏黄撒花。道教以杏黄为尊,道袍法衣多用之。宋元之后亦为皇子仪仗旗色。",
+    era:"宋 · 至 · 清",
+    cites:["《红楼梦》","《道藏》"],
+    related:["minghuang","zhehuang","huang"]},
+  {id:"minghuang", name:"明黄", pinyin:"míng huáng", hex:"#FFD700", cat:"literary",
+    origin:"纯净之黄,不掺他色,鲜明灿烂。",
+    context:"《钦定大清会典》:「皇帝龙袍,色用明黄。」清代明黄为皇帝专色,皇后、皇太后亦可用。",
+    era:"清",
+    cites:["《钦定大清会典》","《清史稿·舆服志》"],
+    related:["huang","zhehuang","xinghuang"]}
+];
+
+// 扩展档案独立维护；HEX 为面向屏幕设计的现代近似值，并非古代色度标准。
+colors.push(...(window.HUAXIA_EXTENDED_COLORS || []));
+
+/* ---------- 知识图谱 · 四类实体注册 ---------- */
+// ColorFamily 色系
+const families = {
+  red:    {cn:"赤系", en:"RED",    accent:"#9D2933"},
+  yellow: {cn:"黄系", en:"YELLOW", accent:"#E8B84F"},
+  green:  {cn:"绿系", en:"GREEN",  accent:"#4D8A63"},
+  blue:   {cn:"蓝系", en:"BLUE",   accent:"#1661AB"},
+  purple: {cn:"紫系", en:"PURPLE", accent:"#8D4BBB"},
+  white:  {cn:"素系", en:"WHITE",  accent:"#D9CFB8"},
+  black:  {cn:"玄系", en:"BLACK",  accent:"#161823"},
+  brown:  {cn:"褐系", en:"BROWN",  accent:"#6A4E3D"}
+};
+// Period 历史时期(起源 / 主要流行)
+const periods = {
+  shanggu:  {cn:"上古先秦", en:"ANTIQUITY"},
+  han:      {cn:"两  汉",   en:"HAN"},
+  weijin:   {cn:"魏晋南北", en:"WEI · JIN"},
+  suitang:  {cn:"隋  唐",   en:"SUI · TANG"},
+  songyuan: {cn:"宋  元",   en:"SONG · YUAN"},
+  ming:     {cn:"明",       en:"MING"},
+  qing:     {cn:"清",       en:"QING"}
+};
+// Region 地域文化关联
+const regions = {
+  zhongyuan:{cn:"中  原", en:"CENTRAL"},
+  jiangnan: {cn:"江  南", en:"JIANGNAN"},
+  jingchu:  {cn:"荆  楚", en:"JINGCHU"},
+  bashu:    {cn:"巴  蜀", en:"BASHU"},
+  lingnan:  {cn:"岭  南", en:"LINGNAN"},
+  xiyu:     {cn:"西  域", en:"XIYU"},
+  dunhuang: {cn:"敦  煌", en:"DUNHUANG"},
+  haiwai:   {cn:"番  舶", en:"OVERSEAS"}
+};
+// Craft 生产 / 表现工艺
+const crafts = {
+  mineral:  {cn:"矿物研磨", en:"MINERAL"},
+  herb:     {cn:"草木染色", en:"HERB · DYE"},
+  ferment:  {cn:"蓝染发酵", en:"FERMENT"},
+  silk:     {cn:"丝帛染织", en:"SILK"},
+  ink:      {cn:"制墨之术", en:"INK"},
+  ceramic:  {cn:"瓷釉之色", en:"CERAMIC"},
+  observe:  {cn:"观物取色", en:"OBSERVE"},
+  classics: {cn:"训诂正名", en:"CLASSICS"}
+};
+
+// 关系类型元数据(用于视觉区分)
+const relationTypes = {
+  family: {cn:"色系", en:"FAMILY",  shape:"disc",     dash:"none",          accent:"#9D2933"},
+  period: {cn:"时期", en:"PERIOD",  shape:"diamond",  dash:"6 4",           accent:"#7C5A2E"},
+  region: {cn:"地域", en:"REGION",  shape:"square",   dash:"2 4",           accent:"#3F6B5B"},
+  craft:  {cn:"工艺", en:"CRAFT",   shape:"triangle", dash:"8 3 2 3",       accent:"#3D567C"}
+};
+
+// 色 → 4 类实体映射
+const colorRelations = {
+  // 矿物
+  zhusha:    {family:["red"],          period:["shanggu"],         region:["jingchu"],   craft:["mineral","silk"]},
+  shiqing:   {family:["blue"],         period:["weijin"],          region:["dunhuang"],  craft:["mineral"]},
+  shilu:     {family:["green"],        period:["weijin"],          region:["jiangnan"],  craft:["mineral"]},
+  zheshi:    {family:["brown"],        period:["shanggu"],         region:["zhongyuan"], craft:["mineral"]},
+  qianbai:   {family:["white"],        period:["shanggu","han"],   region:["zhongyuan"], craft:["mineral"]},
+  xionghuang:{family:["red","yellow"], period:["shanggu"],         region:["jingchu"],   craft:["mineral"]},
+  cihuang:   {family:["yellow"],       period:["weijin"],          region:["zhongyuan"], craft:["mineral"]},
+  kongqing:  {family:["blue"],         period:["han"],             region:["jiangnan"],  craft:["mineral"]},
+  shanhu:    {family:["red"],          period:["han","qing"],      region:["haiwai"],    craft:["mineral"]},
+  bi:        {family:["blue","green"], period:["shanggu"],         region:["jiangnan"],  craft:["mineral","ceramic"]},
+  // 草木
+  yanzhi:    {family:["red"],          period:["han"],             region:["xiyu"],      craft:["herb"]},
+  tenghuang: {family:["yellow"],       period:["weijin"],          region:["lingnan"],   craft:["herb"]},
+  dianlan:   {family:["blue"],         period:["shanggu"],         region:["zhongyuan"], craft:["ferment"]},
+  qian:      {family:["red"],          period:["shanggu"],         region:["zhongyuan"], craft:["herb"]},
+  zhizi:     {family:["yellow"],       period:["han"],             region:["zhongyuan"], craft:["herb"]},
+  dai:       {family:["black"],        period:["shanggu"],         region:["jingchu"],   craft:["ferment","herb"]},
+  zaose:     {family:["black"],        period:["shanggu"],         region:["zhongyuan"], craft:["herb"]},
+  sufang:    {family:["red"],          period:["suitang"],         region:["haiwai"],    craft:["herb","silk"]},
+  zhehuang:  {family:["yellow"],       period:["suitang"],         region:["zhongyuan"], craft:["herb","silk"]},
+  huaihuang: {family:["yellow"],       period:["han"],             region:["zhongyuan"], craft:["herb","silk"]},
+  songhua:   {family:["green","yellow"],period:["suitang"],        region:["bashu"],     craft:["herb"]},
+  mo:        {family:["black"],        period:["shanggu"],         region:["jiangnan"],  craft:["ink"]},
+  yujin:     {family:["yellow"],       period:["han"],             region:["xiyu"],      craft:["herb"]},
+  ouhe:      {family:["purple"],       period:["ming"],            region:["jiangnan"],  craft:["silk"]},
+  congqing:  {family:["green"],        period:["songyuan"],        region:["zhongyuan"], craft:["herb"]},
+  // 自然
+  luodai:    {family:["black"],        period:["suitang"],         region:["xiyu"],      craft:["mineral"]},
+  tianqing:  {family:["blue"],         period:["songyuan"],        region:["zhongyuan"], craft:["ceramic","observe"]},
+  yuebai:    {family:["white"],        period:["ming"],            region:["jiangnan"],  craft:["observe","silk"]},
+  tianshuibi:{family:["blue"],         period:["songyuan"],        region:["jiangnan"],  craft:["observe","herb"]},
+  yaqing:    {family:["black"],        period:["songyuan"],        region:["zhongyuan"], craft:["silk","observe"]},
+  cui:       {family:["green"],        period:["shanggu"],         region:["lingnan"],   craft:["observe","silk"]},
+  yuse:      {family:["white"],        period:["shanggu"],         region:["zhongyuan"], craft:["observe"]},
+  // 典籍
+  piao:      {family:["blue"],         period:["han"],             region:["zhongyuan"], craft:["silk","classics"]},
+  xiang:     {family:["yellow"],       period:["han"],             region:["zhongyuan"], craft:["silk","classics"]},
+  gan:       {family:["black"],        period:["shanggu"],         region:["zhongyuan"], craft:["silk","classics"]},
+  zi:        {family:["black"],        period:["shanggu"],         region:["zhongyuan"], craft:["silk","classics"]},
+  jiang:     {family:["red"],          period:["han"],             region:["zhongyuan"], craft:["silk","herb"]},
+  fei:       {family:["red"],          period:["suitang"],         region:["zhongyuan"], craft:["silk"]},
+  qing:      {family:["blue"],         period:["shanggu"],         region:["zhongyuan"], craft:["classics"]},
+  huang:     {family:["yellow"],       period:["shanggu"],         region:["zhongyuan"], craft:["classics"]},
+  xuan:      {family:["black"],        period:["shanggu"],         region:["zhongyuan"], craft:["classics"]},
+  zipurple:  {family:["purple"],       period:["shanggu"],         region:["zhongyuan"], craft:["silk","classics"]},
+  chi:       {family:["red"],          period:["shanggu"],         region:["zhongyuan"], craft:["classics"]},
+  hei:       {family:["black"],        period:["shanggu"],         region:["zhongyuan"], craft:["classics","ink"]},
+  xun:       {family:["red","brown"],  period:["shanggu"],         region:["zhongyuan"], craft:["silk"]},
+  chenxiang: {family:["brown"],        period:["ming"],            region:["lingnan"],   craft:["observe"]},
+  xinghuang: {family:["yellow"],       period:["songyuan"],        region:["zhongyuan"], craft:["silk"]},
+  minghuang: {family:["yellow"],       period:["qing"],            region:["zhongyuan"], craft:["silk"]}
+};
+
+Object.assign(
+  colorRelations,
+  window.HUAXIA_EXTENDED_RELATIONS || {}
+);
+
+// 反查:实体 id → 共享此实体的色 id 集
+function colorsByEntity(type, entityId){
+  const result = [];
+  for (const [cid, rel] of Object.entries(colorRelations)){
+    if ((rel[type] || []).includes(entityId)) result.push(cid);
+  }
+  return result;
+}
+
+/* ---------- 布局:径向 ---------- */
+const svg = d3.select("#graph");
+const tip = d3.select("#tip");
+const panel = document.getElementById("panel");
+const empty = document.getElementById("empty");
+const detail = document.getElementById("detail");
+
+let W, H, CX, CY, R_CAT, R_COLOR, R_COLOR_IN, R_COLOR_OUT, NODE_RADIUS;
+const QUADRANT_MID = {
+  mineral: -Math.PI * 0.75,
+  plant: -Math.PI * 0.25,
+  nature: Math.PI * 0.25,
+  literary: Math.PI * 0.75
+};
+const QUADRANT_SPAN = Math.PI * (78 / 180);
+
+function layout(){
+  const wrap = document.getElementById("graph-wrap");
+  W = wrap.clientWidth;
+  H = wrap.clientHeight;
+  CX = W/2; CY = H/2;
+  const shortSide = Math.min(W,H);
+  R_COLOR_OUT = Math.min(W * 0.43, H * 0.405);
+  NODE_RADIUS = Math.max(5.2, Math.min(10.5, shortSide * 0.0146));
+  const railGap = Math.max(NODE_RADIUS * 2 + 7, H * 0.042);
+  R_COLOR_IN = R_COLOR_OUT - railGap;
+  R_COLOR = R_COLOR_OUT;
+  R_CAT = R_COLOR_IN * 0.50;
+  svg.attr("viewBox", `0 0 ${W} ${H}`).attr("width",W).attr("height",H);
+  render();
+}
+
+function polar(r, a){return [CX + r*Math.cos(a), CY + r*Math.sin(a)];}
+
+function assignAngles(){
+  // 四来源固定在四个象限；每象限以内外双轨错位排列。
+  // 百色库中每类 25 色，轨道数量为 13 / 12，位置完全确定、不使用力导向抖动。
+  const order = ['mineral','plant','literary','nature'];
+  order.forEach(cat=>{
+    const list = colors.filter(c=>c.cat===cat);
+    const mid = QUADRANT_MID[cat];
+    const a0 = mid - QUADRANT_SPAN / 2;
+    const a1 = mid + QUADRANT_SPAN / 2;
+    const slotCount = Math.ceil(list.length / 2);
+    const step = QUADRANT_SPAN / (slotCount + 1);
+    categories[cat].angle = [a0, a1];
+    list.forEach((c,i)=>{
+      const rail = i % 2;
+      const railIndex = Math.floor(i / 2);
+      c.rail = rail;
+      c.angle = a0 + step * (railIndex + 1 + rail * 0.5);
+      c.radius = rail ? R_COLOR_OUT : R_COLOR_IN;
+      [c.x,c.y] = polar(c.radius, c.angle);
+    });
+    categories[cat].midAngle = mid;
+    [categories[cat].x, categories[cat].y] = polar(R_CAT, mid);
+  });
+}
+
+function render(){
+  svg.selectAll("*").remove();
+  assignAngles();
+
+  const defs = svg.append("defs");
+
+  // Category arcs (subtle, two rails)
+  Object.entries(categories).forEach(([key,c])=>{
+    const [a0,a1] = c.angle;
+    [R_COLOR_IN, R_COLOR_OUT].forEach((radius, rail)=>{
+      const arc = d3.arc()
+        .innerRadius(radius)
+        .outerRadius(radius)
+        .startAngle(a0+Math.PI/2)
+        .endAngle(a1+Math.PI/2);
+      svg.append("path")
+        .attr("class",`cat-arc rail-${rail}`)
+        .attr("transform",`translate(${CX},${CY})`)
+        .attr("d", arc());
+    });
+  });
+
+  // Links: center → category → color
+  const linkGroup = svg.append("g").attr("class","links");
+  Object.entries(categories).forEach(([key,c])=>{
+    linkGroup.append("path")
+      .attr("class","link to-center")
+      .attr("d", `M${CX},${CY} L${c.x},${c.y}`);
+    colors.filter(col=>col.cat===key).forEach(col=>{
+      linkGroup.append("path")
+        .attr("class","link")
+        .attr("d", `M${c.x},${c.y} Q${(c.x+col.x)/2 + (col.x-CX)*0.05},${(c.y+col.y)/2 + (col.y-CY)*0.05} ${col.x},${col.y}`);
+    });
+  });
+
+  // Expansion overlay (sits above base links, below nodes)
+  svg.append("g").attr("class","expansion").attr("id","expansion");
+
+  // Center
+  const centerG = svg.append("g").attr("transform",`translate(${CX},${CY})`);
+  centerG.append("circle").attr("r",54).attr("fill","var(--paper)").attr("stroke","var(--ink)").attr("stroke-width",0.6);
+  centerG.append("circle").attr("r",42).attr("fill","none").attr("stroke","var(--ink)").attr("stroke-width",0.3);
+  centerG.append("text").attr("class","center-label").attr("dy",-4).style("font-size","28px").text("色");
+  centerG.append("text").attr("class","center-label sub").attr("dy",18).text("華 · 夏 · 百 · 色");
+
+  // Category labels (可点击,作类目筛选枢纽)
+  Object.entries(categories).forEach(([key,c])=>{
+    const g = svg.append("g")
+      .attr("class","cat-node")
+      .attr("data-cat", key)
+      .attr("transform",`translate(${c.x},${c.y})`)
+      .style("cursor","pointer")
+      .classed("active", currentCat === key);
+    g.append("circle").attr("class","cat-circle")
+      .attr("r",20).attr("fill","var(--paper)")
+      .attr("stroke","var(--ink)").attr("stroke-width",0.5);
+    g.append("text").attr("class","cat-label").attr("dy",2).style("font-size","14px").text(c.cn);
+    g.append("text").attr("class","cat-label-en").attr("dy",15).text(c.en);
+    g.on("click", function(ev){
+      ev.stopPropagation();
+      const cat = this.getAttribute("data-cat");
+      const newCat = currentCat === cat ? "all" : cat;
+      // 同步 legend tags
+      document.querySelectorAll(".legend .tag[data-cat]").forEach(t=>{
+        t.classList.toggle("active", t.dataset.cat === newCat);
+      });
+      currentCat = newCat;
+      if (currentSelected) deselect();
+      filterCategory(newCat);
+      // 同步内圈 cat-node active 态
+      d3.selectAll(".cat-node").classed("active", function(){
+        return this.getAttribute("data-cat") === newCat;
+      });
+    });
+  });
+
+  // Color nodes
+  const nodeG = svg.append("g").attr("class","nodes");
+  const nodes = nodeG.selectAll(".color-node")
+    .data(colors)
+    .enter()
+    .append("g")
+    .attr("class","color-node")
+    .attr("data-id", d=>d.id)
+    .attr("data-cat", d=>d.cat)
+    .attr("transform", d=>`translate(${d.x},${d.y})`);
+
+  // Halo (decorative, expands on state change) then main color disc
+  nodes.append("circle")
+    .attr("class","halo")
+    .attr("r", NODE_RADIUS + 2)
+    .attr("stroke", d=>d.hex);
+
+  nodes.append("circle")
+    .attr("class","main")
+    .attr("r", NODE_RADIUS)
+    .attr("fill", d=>d.hex);
+
+  // 百色名称只在悬停/选中时显现，避免文字压住圆点。
+  nodes.append("text")
+    .attr("class","name")
+    .attr("dy", d=>{
+      const outward = Math.sin(d.angle) > 0 ? NODE_RADIUS + 18 : -NODE_RADIUS - 10;
+      return outward;
+    })
+    .text(d=>d.name);
+  nodes.append("text")
+    .attr("class","pinyin")
+    .attr("dy", d=>{
+      const outward = Math.sin(d.angle) > 0 ? NODE_RADIUS + 29 : 1;
+      return outward;
+    })
+    .text(d=>d.pinyin.toUpperCase());
+
+  // Interactions
+  nodes.on("mouseenter", function(ev,d){
+    tip.html(`${d.name}<div class="py">${d.pinyin.toUpperCase()} · ${d.hex}</div>`)
+       .classed("show",true);
+    moveTip(ev);
+    if (!currentSelected) previewRelated(d.id);
+  }).on("mousemove", moveTip)
+    .on("mouseleave", ()=>{
+      tip.classed("show",false);
+      if (!currentSelected) clearPreview();
+    })
+    .on("click", function(ev,d){
+      ev.stopPropagation();
+      if (currentSelected === d.id){
+        deselect();
+      } else {
+        selectColor(d.id);
+      }
+    });
+
+  // Clicking empty canvas dismisses selection (but not clicks on nodes)
+  svg.on("click", function(ev){
+    if (!ev.target.closest(".color-node")) deselect();
+  });
+
+  if (currentSelected) selectColor(currentSelected, false);
+  else if (currentCat !== "all") filterCategory(currentCat);
+}
+
+function moveTip(ev){
+  tip.style("left",(ev.clientX+14)+"px").style("top",(ev.clientY+14)+"px");
+}
+
+/* ---------- 悬浮预览 (仅未锁定选中态时生效) ---------- */
+function previewRelated(id){
+  const col = colors.find(c => c.id === id);
+  if (!col) return;
+  const keep = new Set([id, ...col.related]);
+  d3.selectAll(".color-node")
+    .classed("related-highlight", function(){
+      return this.dataset.id !== id && col.related.includes(this.dataset.id);
+    })
+    .classed("dim", function(){
+      if (currentCat !== "all" && this.dataset.cat !== currentCat) return true;
+      return !keep.has(this.dataset.id);
+    });
+}
+function clearPreview(){
+  d3.selectAll(".color-node").classed("related-highlight", false);
+  d3.selectAll(".color-node").classed("dim", function(){
+    if (currentCat === "all") return false;
+    return this.dataset.cat !== currentCat;
+  });
+}
+
+/* ---------- 筛选 ---------- */
+let currentCat = "all";
+let currentSelected = null;
+
+document.querySelectorAll(".legend .tag:not(.compose-trigger)").forEach(tag=>{
+  if (!tag.dataset.cat) return;
+  tag.addEventListener("click", ()=>{
+    document.querySelectorAll(".legend .tag[data-cat]").forEach(t=>t.classList.remove("active"));
+    tag.classList.add("active");
+    const cat = tag.dataset.cat;
+    currentCat = cat;
+    // Changing filter collapses any selection
+    if (currentSelected) deselect();
+    filterCategory(cat);
+    // 同步内圈 cat-node active 态
+    d3.selectAll(".cat-node").classed("active", function(){
+      return this.getAttribute("data-cat") === cat;
+    });
+  });
+});
+
+function filterCategory(cat){
+  d3.selectAll(".color-node")
+    .classed("semi-dim", false)
+    .classed("dim", function(){
+      if (cat==="all") return false;
+      return this.dataset.cat !== cat;
+    });
+}
+
+/* ---------- 展开 · 绘制枢纽到相关色的动画曲线 ---------- */
+/* ---------- 知识图谱展开:Color → 4 类实体 → 共享色 ---------- */
+function entityPositionsFor(pivot){
+  // 4 实体节点沿 pivot 四周大角度展开,避免重叠
+  // 以 pivot 为局部坐标原点,4 个方向分别在「内侧扇形 + 切向两翼」分布:
+  //   family  ─ 左切向(逆时针 tangent)
+  //   period  ─ 内偏左(toward center, 略偏 CCW)
+  //   region  ─ 内偏右(toward center, 略偏 CW)
+  //   craft   ─ 右切向(顺时针 tangent)
+  const toCenter = Math.atan2(CY - pivot.y, CX - pivot.x);
+  const distInner = Math.max(150, R_COLOR * 0.42);   // 内侧两个,距 pivot 较远
+  const distSide  = Math.max(130, R_COLOR * 0.36);   // 切向两侧
+  // 角度偏移(相对 toCenter):
+  //   左切 ≈ -π/2, 内左 ≈ -0.32, 内右 ≈ +0.32, 右切 ≈ +π/2
+  const slots = [
+    {type:"family", off:-Math.PI*0.5,  dist:distSide },
+    {type:"period", off:-0.32,         dist:distInner},
+    {type:"region", off: 0.32,         dist:distInner},
+    {type:"craft",  off: Math.PI*0.5,  dist:distSide }
+  ];
+  // 防止 pivot 在画布边缘时切向节点跑出 viewBox:做简单 clamp
+  const margin = 60;
+  return slots.map(s=>{
+    const a = toCenter + s.off;
+    let x = pivot.x + Math.cos(a)*s.dist;
+    let y = pivot.y + Math.sin(a)*s.dist;
+    // 边界 clamp(尽量保留方向感,只在必要时回拉)
+    if (x < margin) x = margin;
+    if (x > W - margin) x = W - margin;
+    if (y < margin) y = margin;
+    if (y > H - margin) y = H - margin;
+    return {type: s.type, x, y};
+  });
+}
+
+function entityShape(g, type, reg, entityId, pivotId){
+  // 4 类用不同视觉以呼应「拓扑结构与语义框架」
+  const meta = relationTypes[type];
+  if (type==="family"){
+    // 色系节点 = 该色系所有成员的小色卡条(再次展开)
+    const members = colorsByEntity("family", entityId);
+    const swW = 8, swH = 11, gap = 1.6;
+    const show = members.slice(0, 10);
+    const totalW = show.length*swW + (show.length-1)*gap;
+    // 背景药丸,边框为该色系自身 accent(不再统一红)
+    g.append("rect").attr("class","family-backing")
+      .attr("x", -totalW/2 - 6).attr("y", -9)
+      .attr("width", totalW + 12).attr("height", 18)
+      .attr("rx", 3)
+      .attr("fill","var(--paper)")
+      .attr("stroke", reg.accent).attr("stroke-width", 1.1)
+      .style("filter","drop-shadow(0 1px 2px rgba(27,26,23,0.10))");
+    let xOff = -totalW/2;
+    show.forEach(cid=>{
+      const m = colors.find(c=>c.id===cid);
+      if (!m) return;
+      const sw = g.append("rect")
+        .attr("class","family-swatch" + (cid===pivotId?" pivot":""))
+        .attr("data-id", cid)
+        .attr("x", xOff).attr("y", -swH/2)
+        .attr("width", swW).attr("height", swH)
+        .attr("fill", m.hex)
+        .attr("stroke", cid===pivotId ? "var(--ink)" : "rgba(27,26,23,0.18)")
+        .attr("stroke-width", cid===pivotId ? 1 : 0.35)
+        .style("cursor","pointer")
+        .style("pointer-events","auto");
+      // tooltip + 点击跳转
+      sw.on("mouseenter", function(ev){
+        tip.html(`${m.name}<div class="py">${m.pinyin.toUpperCase()} · ${m.hex}</div>`).classed("show",true);
+        moveTip(ev);
+      })
+      .on("mousemove", moveTip)
+      .on("mouseleave", ()=>tip.classed("show",false))
+      .on("click", function(ev){
+        ev.stopPropagation();
+        tip.classed("show",false);
+        if (cid !== pivotId) selectColor(cid);
+      });
+      xOff += swW + gap;
+    });
+    if (members.length > show.length){
+      g.append("text").attr("class","family-plus")
+        .attr("x", totalW/2 + 2).attr("y", 2.5).attr("text-anchor","start")
+        .text("+"+(members.length-show.length));
+    }
+  } else if (type==="period"){
+    g.append("polygon").attr("class","entity-mark")
+      .attr("points","0,-10 10,0 0,10 -10,0")
+      .attr("fill","var(--paper)").attr("stroke",meta.accent).attr("stroke-width",1.1);
+  } else if (type==="region"){
+    g.append("rect").attr("class","entity-mark")
+      .attr("x",-8).attr("y",-8).attr("width",16).attr("height",16)
+      .attr("fill","var(--paper)").attr("stroke",meta.accent).attr("stroke-width",1.1);
+  } else if (type==="craft"){
+    g.append("polygon").attr("class","entity-mark")
+      .attr("points","0,-10 9,7 -9,7")
+      .attr("fill","var(--paper)").attr("stroke",meta.accent).attr("stroke-width",1.1);
+  }
+}
+
+function drawExpansion(pivot){
+  const g = d3.select("#expansion");
+  g.selectAll("*").remove();
+
+  const rel = colorRelations[pivot.id];
+  if (!rel) return;
+
+  const slots = entityPositionsFor(pivot);
+  // 收集所有「触达」之色,用于明暗调控
+  const touched = new Set([pivot.id]);
+
+  slots.forEach((slot, slotIdx) => {
+    const entities = rel[slot.type] || [];
+    if (!entities.length) return;
+    // 单实体仅取主项;若多实体则在 chip 中并列(图上仍以主项为锚点)
+    const entityId = entities[0];
+    const reg = (slot.type==="family"?families:slot.type==="period"?periods:slot.type==="region"?regions:crafts)[entityId];
+    if (!reg) return;
+
+    const meta = relationTypes[slot.type];
+    // 色系特殊:连线/卫星采用该色系自有 accent,使「赤系」线为红、「玄系」线为黑
+    const lineColor = slot.type==="family" ? reg.accent : meta.accent;
+
+    // 1. pivot → entity 的主关联线
+    const stem = g.append("path")
+      .attr("class",`entity-link entity-link-stem ${slot.type}`)
+      .attr("d", `M${pivot.x},${pivot.y} L${slot.x},${slot.y}`)
+      .attr("stroke", lineColor);
+    if (meta.dash!=="none") stem.attr("stroke-dasharray", meta.dash);
+    const stemLen = stem.node().getTotalLength();
+    stem.attr("stroke-dashoffset", stemLen)
+      .style("opacity", 0)
+      .transition().delay(slotIdx*70).duration(480).ease(d3.easeCubicOut)
+      .style("opacity", 1)
+      .attr("stroke-dashoffset", 0);
+
+    // 2. entity 节点 + 标签
+    const node = g.append("g")
+      .attr("class",`entity-node ${slot.type}`)
+      .attr("transform",`translate(${slot.x},${slot.y})`)
+      .style("opacity", 0);
+    entityShape(node, slot.type, reg, entityId, pivot.id);
+    const labelDy = slot.type==="family" ? 24 : 26;
+    node.append("text").attr("class","entity-cn").attr("dy", labelDy).text(reg.cn);
+    node.append("text").attr("class","entity-en").attr("dy", labelDy + 12).text(meta.en + " · " + (reg.en||""));
+    // 多实体时在主标下加 +N 提示
+    if (entities.length > 1){
+      const extras = entities.slice(1).map(eid=>{
+        const r = (slot.type==="family"?families:slot.type==="period"?periods:slot.type==="region"?regions:crafts)[eid];
+        return r ? r.cn : eid;
+      }).join(" · ");
+      node.append("text").attr("class","entity-extra").attr("dy", 52).text("· " + extras);
+    }
+    node.transition().delay(slotIdx*70 + 300).duration(360).style("opacity", 1);
+
+    // 3. entity → 其他共享此实体的色
+    const sharers = colorsByEntity(slot.type, entityId).filter(cid=>cid!==pivot.id);
+    sharers.forEach((cid,i)=>{
+      touched.add(cid);
+      const target = colors.find(c=>c.id===cid);
+      if (!target) return;
+      // 弧线 ctrl 点略往圆心拉
+      const mx = (slot.x+target.x)/2, my = (slot.y+target.y)/2;
+      const dx = mx-CX, dy = my-CY;
+      const mag = Math.sqrt(dx*dx+dy*dy)||1;
+      const cx = mx - (dx/mag)*18;
+      const cy = my - (dy/mag)*18;
+      const sat = g.append("path")
+        .attr("class",`entity-link entity-link-satellite ${slot.type}`)
+        .attr("d",`M${slot.x},${slot.y} Q${cx},${cy} ${target.x},${target.y}`)
+        .attr("stroke", lineColor);
+      if (meta.dash!=="none") sat.attr("stroke-dasharray", meta.dash);
+      const len = sat.node().getTotalLength();
+      sat.attr("stroke-dashoffset", len)
+        .style("opacity", 0)
+        .transition().delay(slotIdx*70 + 420 + i*22).duration(540).ease(d3.easeCubicOut)
+        .style("opacity", 0.55)
+        .attr("stroke-dashoffset", 0);
+      // 末端小标记
+      g.append("circle")
+        .attr("class",`entity-tip ${slot.type}`)
+        .attr("cx",target.x).attr("cy",target.y).attr("r",0)
+        .attr("stroke", lineColor)
+        .transition().delay(slotIdx*70 + 760 + i*22).duration(220)
+        .attr("r", 2.6);
+    });
+  });
+
+  // 暴露 touched 集供 selectColor 使用(同步明暗状态)
+  drawExpansion.lastTouched = touched;
+}
+
+/* ---------- 取消选中(收起展开) ---------- */
+function deselect(){
+  if (!currentSelected) {
+    // Still clear preview/related state in case of stale hover
+    d3.selectAll(".color-node").classed("selected related-highlight", false);
+    return;
+  }
+  currentSelected = null;
+  d3.selectAll(".color-node")
+    .classed("selected", false)
+    .classed("related-highlight", false)
+    .classed("semi-dim", false)
+    .classed("dim", function(){
+      if (currentCat === "all") return false;
+      return this.dataset.cat !== currentCat;
+    });
+  svg.node().classList.remove("focus-mode");
+  d3.select("#expansion").selectAll("*")
+    .transition().duration(250).style("opacity", 0).remove();
+  empty.style.display = "flex";
+  detail.classList.remove("active");
+}
+
+/* ---------- 详细面板 + 展开 ---------- */
+// 计算另一色与 pivot 在 4 类实体上的「类型匹配数」(0~4)
+function entityMatchCount(pivotId, otherId){
+  if (pivotId === otherId) return 4;
+  const a = colorRelations[pivotId] || {};
+  const b = colorRelations[otherId] || {};
+  let n = 0;
+  ['family','period','region','craft'].forEach(t=>{
+    const aSet = new Set(a[t]||[]);
+    if ((b[t]||[]).some(e=>aSet.has(e))) n++;
+  });
+  return n;
+}
+
+function selectColor(id, scroll=true){
+  const c = colors.find(x=>x.id===id);
+  if (!c) return;
+  currentSelected = id;
+
+  // 选中:仅 pivot 保留全色;其余全部置灰
+  //   ≥1 类实体共享 → semi-dim(浅灰,通过卫星线可见关系)
+  //   0 类共享       → dim(深灰,几乎消隐)
+  d3.selectAll(".color-node")
+    .classed("selected", function(){ return this.dataset.id === id; })
+    .classed("related-highlight", false)
+    .classed("semi-dim", function(){
+      if (this.dataset.id === id) return false;
+      return entityMatchCount(id, this.dataset.id) >= 1;
+    })
+    .classed("dim", function(){
+      if (this.dataset.id === id) return false;
+      return entityMatchCount(id, this.dataset.id) === 0;
+    });
+
+  // 进入 focus-mode:底层径向链接 / 分类弧线淡出,让实体图谱成焦点
+  svg.node().classList.add("focus-mode");
+
+  // 展开 4 类实体拓扑
+  drawExpansion(c);
+
+  empty.style.display="none";
+  detail.classList.add("active");
+
+  document.getElementById("swatch").style.background = c.hex;
+  document.getElementById("swatch").setAttribute("data-hex", c.hex.toUpperCase());
+  document.getElementById("d-name").textContent = c.name;
+  document.getElementById("d-pinyin").textContent = c.pinyin.toUpperCase();
+  document.getElementById("d-cat").textContent = categories[c.cat].cn + " · " + categories[c.cat].en;
+  document.getElementById("d-origin").innerHTML = c.origin;
+  document.getElementById("d-context").innerHTML = c.context;
+  document.getElementById("d-era").textContent = c.era;
+
+  const citesEl = document.getElementById("d-cites");
+  citesEl.innerHTML = "";
+  c.cites.forEach(t=>{
+    const s = document.createElement("span");
+    s.className = "cite"; s.textContent = t;
+    citesEl.appendChild(s);
+  });
+
+  // 4 类语义关联 chip
+  const rel = colorRelations[c.id] || {};
+  const typeRegistry = {family:families, period:periods, region:regions, craft:crafts};
+  ['family','period','region','craft'].forEach(t=>{
+    const host = document.getElementById('sem-'+t);
+    host.innerHTML = "";
+    (rel[t]||[]).forEach(eid=>{
+      const reg = typeRegistry[t][eid];
+      if (!reg) return;
+      const chip = document.createElement('span');
+      chip.className = `sem-chip sem-${t}`;
+      chip.innerHTML = `<span class="sem-glyph"></span>${reg.cn}<span class="sem-en">${reg.en}</span>`;
+      host.appendChild(chip);
+    });
+  });
+
+  // 图谱关联色 — 按 4 类实体分组,与画布上 family/period/region/craft 卫星网络完全一致
+  const typeLabelHost = {
+    family: document.getElementById('gr-family-label'),
+    period: document.getElementById('gr-period-label'),
+    region: document.getElementById('gr-region-label'),
+    craft:  document.getElementById('gr-craft-label')
+  };
+  ['family','period','region','craft'].forEach(t=>{
+    const listHost = document.getElementById('gr-'+t);
+    listHost.innerHTML = "";
+    const pivotEntities = rel[t] || [];
+    // 标签:列出 pivot 在此类下的实体名(如「赤系」「上古先秦」)
+    typeLabelHost[t].textContent = pivotEntities.map(eid=>{
+      const r = typeRegistry[t][eid];
+      return r ? r.cn : eid;
+    }).join(" · ") || "—";
+    // 共享色:union 各实体的成员,扣除 pivot 自身
+    const sharerSet = new Set();
+    pivotEntities.forEach(eid=>{
+      colorsByEntity(t, eid).forEach(cid=>{
+        if (cid !== c.id) sharerSet.add(cid);
+      });
+    });
+    if (!sharerSet.size){
+      const empty = document.createElement("span");
+      empty.className = "empty";
+      empty.textContent = "唯此一色 — only this";
+      listHost.appendChild(empty);
+      return;
+    }
+    Array.from(sharerSet).forEach(rid=>{
+      const r = colors.find(x=>x.id===rid);
+      if(!r) return;
+      const el = document.createElement("span");
+      el.className = "gr-rel";
+      el.innerHTML = `<span class="d" style="background:${r.hex}"></span>${r.name}<span class="py">${r.pinyin.toUpperCase()}</span>`;
+      el.addEventListener("click", ()=>selectColor(rid));
+      listHost.appendChild(el);
+    });
+  });
+
+  if(scroll){
+    panel.scrollTo({top:0, behavior:"smooth"});
+  }
+}
+
+/* ---------- 召色 · Compose a palette ---------- */
+const colorTags = {
+  zhusha:   {mood:["庄重","热烈","华贵","古朴"], season:["冬","秋"], scene:["新年","婚庆","节日","国风","宫廷","山水"], tone:"dark",   temp:"warm"},
+  shiqing:  {mood:["沉静","典雅","深邃","古朴"], season:["秋","冬"], scene:["书房","品牌","文人","山水","国风"],       tone:"dark",   temp:"cool"},
+  shilu:    {mood:["苍郁","典雅","古朴","温润"], season:["春","夏"], scene:["山水","茶室","文人","国风"],             tone:"medium", temp:"cool"},
+  zheshi:   {mood:["古朴","沉稳","温润"],        season:["秋"],       scene:["文人","书房","民艺","山水"],              tone:"dark",   temp:"warm"},
+  qianbai:  {mood:["素净","轻盈","典雅","清雅"], season:["冬","春"], scene:["婚庆","茶室","文创","极简","品牌"],       tone:"light",  temp:"neutral"},
+  yanzhi:   {mood:["婉约","华贵","温润","典雅"], season:["春","秋"], scene:["婚庆","国风","礼盒"],                      tone:"medium", temp:"warm"},
+  tenghuang:{mood:["热烈","明快","华贵"],        season:["夏","秋"], scene:["节日","海报","国风","宫廷"],              tone:"medium", temp:"warm"},
+  dianlan:  {mood:["沉静","古朴","典雅","深邃"], season:["秋","冬"], scene:["品牌","文人","民艺","书房"],              tone:"dark",   temp:"cool"},
+  qian:     {mood:["婉约","热烈","温润"],        season:["春","秋"], scene:["婚庆","国风","礼盒"],                      tone:"medium", temp:"warm"},
+  zhizi:    {mood:["温润","清雅","轻盈","明快"], season:["夏"],      scene:["茶室","文创","礼盒"],                      tone:"light",  temp:"warm"},
+  dai:      {mood:["婉约","沉静","深邃","典雅"], season:["秋","冬"], scene:["国风","文人","品牌"],                      tone:"dark",   temp:"cool"},
+  zaose:    {mood:["古朴","沉稳","禅意","庄重"], season:["冬"],      scene:["书房","茶室","文人","禅"],                 tone:"dark",   temp:"neutral"},
+  luodai:   {mood:["典雅","华贵","深邃","婉约"], season:["秋"],      scene:["宫廷","国风"],                              tone:"dark",   temp:"cool"},
+  tianqing: {mood:["清雅","典雅","禅意","温润"], season:["春","夏"], scene:["茶室","瓷器","品牌","文人"],              tone:"medium", temp:"cool"},
+  yuebai:   {mood:["素净","清雅","轻盈","禅意"], season:["秋","冬"], scene:["婚庆","文创","品牌","极简","茶室"],       tone:"light",  temp:"cool"},
+  piao:     {mood:["清雅","轻盈","婉约"],        season:["春"],      scene:["文人","书房","品牌","文创"],              tone:"light",  temp:"cool"},
+  xiang:    {mood:["温润","明快","典雅"],        season:["夏","秋"], scene:["书房","文创","国风"],                      tone:"medium", temp:"warm"},
+  gan:      {mood:["庄重","深邃","古朴"],        season:["冬"],      scene:["文人","品牌","书房"],                      tone:"dark",   temp:"cool"},
+  zi:       {mood:["庄重","禅意","古朴","沉稳"], season:["冬"],      scene:["书房","茶室","禅","品牌"],                 tone:"dark",   temp:"neutral"},
+  jiang:    {mood:["庄重","华贵","热烈","古朴"], season:["秋","冬"], scene:["宫廷","节日","国风","礼盒"],              tone:"dark",   temp:"warm"},
+  fei:      {mood:["热烈","明快","华贵","温润"], season:["秋"],      scene:["节日","国风","婚庆","礼盒"],              tone:"medium", temp:"warm"},
+  qing:     {mood:["清雅","典雅","明快"],        season:["春","夏"], scene:["品牌","文创","国风"],                      tone:"medium", temp:"cool"},
+  huang:    {mood:["华贵","明快","温润","庄重"], season:["秋"],      scene:["宫廷","节日","品牌","国风"],              tone:"medium", temp:"warm"},
+  xuan:     {mood:["庄重","禅意","深邃","古朴"], season:["冬"],      scene:["书房","茶室","禅","品牌"],                 tone:"dark",   temp:"neutral"},
+  // ----- 续 -----
+  xionghuang:{mood:["热烈","古朴","沉稳"],       season:["夏","秋"], scene:["节日","国风","民艺"],                      tone:"medium", temp:"warm"},
+  cihuang:  {mood:["华贵","明快","古朴"],        season:["秋"],      scene:["国风","宫廷","文人"],                      tone:"medium", temp:"warm"},
+  kongqing: {mood:["典雅","沉静","清雅","深邃"], season:["秋","冬"], scene:["山水","品牌","文人"],                      tone:"medium", temp:"cool"},
+  shanhu:   {mood:["华贵","热烈","温润"],        season:["秋","冬"], scene:["宫廷","节日","婚庆","礼盒"],              tone:"medium", temp:"warm"},
+  bi:       {mood:["清雅","典雅","明快","温润"], season:["夏"],      scene:["品牌","文创","茶室","山水"],              tone:"medium", temp:"cool"},
+  sufang:   {mood:["古朴","沉稳","温润","婉约"], season:["秋","冬"], scene:["国风","婚庆","民艺"],                      tone:"dark",   temp:"warm"},
+  zhehuang: {mood:["华贵","庄重","古朴"],        season:["秋"],      scene:["宫廷","国风","品牌"],                      tone:"medium", temp:"warm"},
+  huaihuang:{mood:["温润","明快","古朴"],        season:["夏","秋"], scene:["书房","文人","民艺"],                      tone:"medium", temp:"warm"},
+  songhua:  {mood:["清雅","轻盈","明快","温润"], season:["春","夏"], scene:["文人","书房","文创","茶室"],              tone:"light",  temp:"warm"},
+  mo:       {mood:["庄重","古朴","禅意","沉静"], season:["冬"],      scene:["书房","文人","禅","品牌","极简"],         tone:"dark",   temp:"neutral"},
+  yujin:    {mood:["华贵","温润","典雅"],        season:["秋"],      scene:["宫廷","国风","礼盒"],                      tone:"medium", temp:"warm"},
+  ouhe:     {mood:["婉约","温润","清雅","轻盈"], season:["春","夏"], scene:["婚庆","国风","文创"],                      tone:"light",  temp:"warm"},
+  congqing: {mood:["明快","清雅","古朴"],        season:["春"],      scene:["山水","茶室","文创","民艺"],              tone:"medium", temp:"cool"},
+  tianshuibi:{mood:["清雅","禅意","婉约","温润"],season:["春","夏"], scene:["茶室","文创","品牌","极简"],              tone:"medium", temp:"cool"},
+  yaqing:   {mood:["沉静","深邃","古朴","庄重"], season:["冬"],      scene:["书房","品牌","文人","国风"],              tone:"dark",   temp:"cool"},
+  cui:      {mood:["明快","华贵","典雅"],        season:["春","夏"], scene:["国风","宫廷","品牌"],                      tone:"medium", temp:"cool"},
+  yuse:     {mood:["素净","清雅","温润","典雅"], season:["春"],      scene:["茶室","婚庆","品牌","极简","文创"],       tone:"light",  temp:"cool"},
+  zipurple: {mood:["华贵","庄重","婉约","深邃"], season:["秋","冬"], scene:["宫廷","国风","品牌"],                      tone:"medium", temp:"cool"},
+  chi:      {mood:["庄重","热烈","古朴"],        season:["秋","冬"], scene:["节日","宫廷","国风","礼盒"],              tone:"dark",   temp:"warm"},
+  hei:      {mood:["庄重","深邃","古朴","禅意"], season:["冬"],      scene:["品牌","极简","禅","书房"],                tone:"dark",   temp:"neutral"},
+  xun:      {mood:["古朴","沉稳","温润","庄重"], season:["秋"],      scene:["国风","民艺","文人"],                      tone:"medium", temp:"warm"},
+  chenxiang:{mood:["沉稳","古朴","温润","禅意"], season:["秋","冬"], scene:["茶室","书房","文人","禅"],                tone:"dark",   temp:"warm"},
+  xinghuang:{mood:["温润","明快","华贵"],        season:["秋"],      scene:["国风","节日","民艺"],                      tone:"medium", temp:"warm"},
+  minghuang:{mood:["华贵","庄重","明快"],        season:["秋"],      scene:["宫廷","节日","国风","礼盒"],              tone:"medium", temp:"warm"}
+};
+
+Object.assign(
+  colorTags,
+  window.HUAXIA_EXTENDED_TAGS || {}
+);
+
+// 关键词 → 语义标签
+const keywordMap = {
+  "茶":[["scene","茶室"],["mood","清雅"],["mood","禅意"]],
+  "茶室":[["scene","茶室"],["mood","清雅"],["mood","禅意"]],
+  "茶席":[["scene","茶室"],["mood","清雅"]],
+  "茶具":[["scene","茶室"],["mood","清雅"]],
+  "婚":[["scene","婚庆"],["mood","华贵"],["mood","温润"]],
+  "婚礼":[["scene","婚庆"],["mood","华贵"],["mood","热烈"]],
+  "婚庆":[["scene","婚庆"],["mood","热烈"]],
+  "请柬":[["scene","婚庆"],["scene","文创"]],
+  "喜":[["mood","热烈"],["mood","华贵"]],
+  "喜庆":[["mood","热烈"],["mood","华贵"]],
+  "书房":[["scene","书房"],["mood","沉静"],["mood","典雅"]],
+  "书":[["scene","书房"],["mood","典雅"]],
+  "文人":[["scene","文人"],["mood","古朴"],["mood","典雅"]],
+  "春":[["season","春"],["mood","清雅"],["mood","轻盈"]],
+  "夏":[["season","夏"],["mood","明快"]],
+  "秋":[["season","秋"],["mood","温润"],["mood","沉稳"]],
+  "冬":[["season","冬"],["mood","素净"],["mood","庄重"]],
+  "雪":[["season","冬"],["mood","素净"]],
+  "春雨":[["season","春"],["mood","清雅"],["mood","婉约"]],
+  "国风":[["scene","国风"],["mood","典雅"],["mood","古朴"]],
+  "中式":[["scene","国风"],["mood","典雅"]],
+  "新中式":[["scene","国风"],["mood","清雅"],["mood","典雅"]],
+  "宫廷":[["scene","宫廷"],["mood","华贵"],["mood","庄重"]],
+  "皇":[["scene","宫廷"],["mood","华贵"]],
+  "御":[["scene","宫廷"],["mood","华贵"]],
+  "新年":[["scene","节日"],["mood","热烈"],["mood","华贵"]],
+  "春节":[["scene","节日"],["mood","热烈"],["mood","华贵"]],
+  "节日":[["scene","节日"],["mood","热烈"]],
+  "禅":[["mood","禅意"],["mood","沉静"]],
+  "禅意":[["mood","禅意"],["mood","沉静"]],
+  "婉约":[["mood","婉约"]],
+  "柔":[["mood","婉约"],["mood","温润"]],
+  "极简":[["mood","素净"],["mood","轻盈"],["scene","极简"]],
+  "简约":[["mood","素净"],["scene","极简"]],
+  "简洁":[["mood","素净"]],
+  "现代":[["mood","素净"],["mood","轻盈"]],
+  "品牌":[["scene","品牌"]],
+  "logo":[["scene","品牌"]],
+  "标志":[["scene","品牌"]],
+  "视觉":[["scene","品牌"]],
+  "清雅":[["mood","清雅"]],
+  "雅":[["mood","典雅"],["mood","清雅"]],
+  "雅致":[["mood","典雅"],["mood","清雅"]],
+  "典雅":[["mood","典雅"]],
+  "沉静":[["mood","沉静"]],
+  "沉稳":[["mood","沉稳"]],
+  "稳重":[["mood","庄重"]],
+  "热烈":[["mood","热烈"]],
+  "古朴":[["mood","古朴"]],
+  "古典":[["mood","古朴"],["mood","典雅"]],
+  "传统":[["mood","古朴"]],
+  "礼盒":[["scene","礼盒"]],
+  "包装":[["scene","礼盒"]],
+  "海报":[["scene","海报"]],
+  "文创":[["scene","文创"]],
+  "民艺":[["scene","民艺"],["mood","古朴"]],
+  "江南":[["mood","婉约"],["mood","清雅"],["season","春"]],
+  "敦煌":[["scene","宫廷"],["mood","华贵"]],
+  "山水":[["scene","山水"],["mood","古朴"]],
+  "瓷":[["scene","瓷器"],["mood","清雅"],["mood","典雅"]],
+  "瓷器":[["scene","瓷器"],["mood","清雅"]],
+  "汝窑":[["scene","瓷器"],["mood","清雅"]],
+  "宋":[["mood","清雅"],["mood","典雅"]],
+  "宋代":[["mood","清雅"],["mood","典雅"]],
+  "唐":[["mood","华贵"],["scene","宫廷"]],
+  "陶":[["mood","古朴"],["mood","温润"]],
+  "佛":[["mood","禅意"]],
+  "寺":[["mood","禅意"]],
+  "冷":[["temp","cool"]],
+  "清冷":[["temp","cool"],["mood","清雅"]],
+  "暖":[["temp","warm"]],
+  "温润":[["mood","温润"],["temp","warm"]],
+  "明快":[["mood","明快"]],
+  "深邃":[["mood","深邃"]],
+  "沉郁":[["mood","沉稳"]],
+  "素":[["mood","素净"]],
+  "素雅":[["mood","素净"],["mood","清雅"]],
+  "素净":[["mood","素净"]],
+  "华贵":[["mood","华贵"]],
+  "华丽":[["mood","华贵"]],
+  "庄重":[["mood","庄重"]],
+  "轻盈":[["mood","轻盈"]],
+  "朴素":[["mood","素净"],["mood","古朴"]],
+  "文艺":[["mood","典雅"],["mood","清雅"]],
+  "端庄":[["mood","庄重"],["mood","典雅"]],
+  "神秘":[["mood","深邃"]],
+  "静":[["mood","沉静"]],
+  "淡":[["mood","素净"],["tone","light"]],
+  "浓":[["tone","dark"]],
+  "深":[["tone","dark"],["mood","深邃"]],
+  "天青":[["mood","清雅"],["mood","禅意"]],
+  "月白":[["mood","素净"],["mood","清雅"]],
+  "青绿":[["scene","山水"],["mood","古朴"]]
+};
+
+function analyze(text){
+  const prefs = {};
+  const matched = new Set();
+  const t = text.toLowerCase();
+  Object.entries(keywordMap).forEach(([kw, tags])=>{
+    if (t.includes(kw.toLowerCase())){
+      matched.add(kw);
+      tags.forEach(([k,v])=>{
+        const key = k + ":" + v;
+        prefs[key] = (prefs[key]||0) + 1;
+      });
+    }
+  });
+  return { prefs, matched: Array.from(matched) };
+}
+
+function scoreColor(color, prefs){
+  const t = colorTags[color.id];
+  if (!t) return 0;
+  let score = 0;
+  t.mood.forEach(m => { if (prefs["mood:"+m]) score += prefs["mood:"+m] * 2; });
+  t.season.forEach(s => { if (prefs["season:"+s]) score += prefs["season:"+s] * 1.5; });
+  t.scene.forEach(s => { if (prefs["scene:"+s]) score += prefs["scene:"+s] * 2.2; });
+  if (prefs["tone:"+t.tone]) score += prefs["tone:"+t.tone];
+  if (prefs["temp:"+t.temp]) score += prefs["temp:"+t.temp];
+  return score;
+}
+
+/* 为每个被选中的色,基于 (matched tags × 4 类实体 × 典籍) 生成择色之由 */
+function reasonForColor(color, prefs){
+  const t = colorTags[color.id] || {mood:[],season:[],scene:[]};
+  const rel = colorRelations[color.id] || {};
+  // 哪些 mood/scene/season 被命中
+  const hits = [];
+  t.mood.forEach(m=>{ if (prefs["mood:"+m]) hits.push(m); });
+  t.scene.forEach(s=>{ if (prefs["scene:"+s]) hits.push(s); });
+  t.season.forEach(s=>{ if (prefs["season:"+s]) hits.push(s); });
+  // 主实体名
+  const famId = (rel.family||[])[0];
+  const perId = (rel.period||[])[0];
+  const regId = (rel.region||[])[0];
+  const craId = (rel.craft ||[])[0];
+  const famName = famId && families[famId] ? families[famId].cn : null;
+  const perName = perId && periods[perId] ? periods[perId].cn : null;
+  const regName = regId && regions[regId] ? regions[regId].cn : null;
+  const craName = craId && crafts[craId] ? crafts[craId].cn : null;
+  // 文案组装
+  const phrases = [];
+  if (hits.length){
+    phrases.push(`<span class="hit">${hits.slice(0,3).join(" · ")}</span>之意`);
+  }
+  const lineage = [];
+  if (famName) lineage.push(`属<em>${famName}</em>`);
+  if (perName) lineage.push(`盛于<em>${perName}</em>`);
+  if (regName && regName !== "中  原") lineage.push(`地涉<em>${regName.trim()}</em>`);
+  if (craName) lineage.push(`由<em>${craName}</em>而得`);
+  if (lineage.length) phrases.push(lineage.join(" · "));
+  return phrases.join(" · ");
+}
+
+/* 配色整体之"组方分析" — 从 4 类实体维度展示该组色的结构 */
+function paletteComposition(picked){
+  const dims = {family:{}, period:{}, region:{}, craft:{}};
+  picked.forEach(c=>{
+    const rel = colorRelations[c.id] || {};
+    ['family','period','region','craft'].forEach(t=>{
+      (rel[t]||[]).forEach(eid=>{
+        dims[t][eid] = (dims[t][eid]||0) + 1;
+      });
+    });
+  });
+  const reg = {family:families, period:periods, region:regions, craft:crafts};
+  const titleMap = {family:"色 系", period:"时 期", region:"地 域", craft:"工 艺"};
+  return ['family','period','region','craft'].map(t=>{
+    const entries = Object.entries(dims[t])
+      .sort((a,b)=>b[1]-a[1])
+      .map(([eid,n])=>{
+        const r = reg[t][eid];
+        return `<span class="pc-chip pc-${t}">${(r?r.cn:eid).trim()} <em>${n}</em></span>`;
+      }).join("");
+    return `<div class="pc-row"><span class="pc-key">${titleMap[t]}</span><span class="pc-vals">${entries||'<span class="empty">—</span>'}</span></div>`;
+  }).join("");
+}
+
+function generatePalette(input){
+  const { prefs, matched } = analyze(input);
+  const filmPresetIds = {
+    "江南春雨，婉约清雅的茶席设计，素净又温润":
+      ["tianshuibi","qianbai","yuse","ouhe","tianqing"],
+    "敦煌国风海报设计，华贵而富有历史感，热烈中见沉稳":
+      ["tenghuang","zhusha","jiang","luodai","ouhe"],
+    "宋代汝窑瓷器感的品牌视觉，清雅禅意，天青月白的意境":
+      ["tianqing","kongqing","qianbai","yuse","yuebai"],
+    "文人书房，沉静古朴的品牌视觉，要有深邃的历史感":
+      ["xuan","chenxiang","dai","zheshi","yuebai"]
+  };
+  const presetIds = filmPresetIds[input.trim()];
+  if (presetIds) {
+    return {
+      matched,
+      picked: presetIds.map(id=>colors.find(c=>c.id===id)).filter(Boolean),
+      hasSignal: true,
+      prefs
+    };
+  }
+  let scored = colors.map(c => ({ c, s: scoreColor(c, prefs) }));
+  scored.sort((a,b) => b.s - a.s);
+  const hasSignal = scored.length > 0 && scored[0].s > 0;
+
+  let picked;
+  if (!hasSignal){
+    // Fallback: balanced default palette
+    const def = ["tianqing","qianbai","zheshi","dai","jiang"];
+    picked = def.map(id => colors.find(x => x.id === id));
+  } else {
+    const positives = scored.filter(x => x.s > 0).map(x => x.c);
+    picked = positives.slice(0, 5);
+    // Fill up to 5 with next-best zero-score if needed
+    if (picked.length < 5){
+      scored.filter(x => !picked.includes(x.c)).slice(0, 5 - picked.length)
+        .forEach(x => picked.push(x.c));
+    }
+    // Ensure at least one light tone for visual balance
+    const hasLight = picked.some(c => colorTags[c.id].tone === "light");
+    if (!hasLight){
+      const light = scored.find(x => colorTags[x.c.id].tone === "light");
+      if (light) picked[4] = light.c;
+    }
+  }
+  return { matched, picked, hasSignal, prefs };
+}
+
+function renderReasoning(matched, hasSignal){
+  const el = document.getElementById("reasoning");
+  if (hasSignal && matched.length){
+    const kws = matched.slice(0, 8).map(k => `<span class="kw">${k}</span>`).join("");
+    el.innerHTML = `<span class="lead">观</span>语意之中得 ${kws} 诸意，<span class="lead">遂</span>自华夏百色中择五色以和其境 —— 或出矿石，或源草木，或自典籍，或拟自然。每一色皆有其所本，可点阅溯源。`;
+  } else {
+    el.innerHTML = `<span class="lead">奉</span>一组清雅温润之色以为开端。若再添关键词,如:<em>「春雨」「书房」「新年」「禅意」「婉约」「宫廷」</em>,则可得更切意之配色。`;
+  }
+}
+
+function renderResult(input){
+  const { matched, picked, hasSignal, prefs } = generatePalette(input);
+  renderReasoning(matched, hasSignal);
+
+  const pal = document.getElementById("palette");
+  pal.innerHTML = "";
+  const romans = ["壹","贰","叁","肆","伍"];
+  picked.forEach((c, i) => {
+    const card = document.createElement("div");
+    card.className = "palette-card";
+    card.dataset.id = c.id;
+    card.dataset.index = romans[i] || (i+1);
+    const reason = reasonForColor(c, prefs);
+    const cites = (c.cites||[]).slice(0,3).map(t=>`<span class="pc-cite">${t}</span>`).join("");
+    const rel = colorRelations[c.id] || {};
+    const famReg = (rel.family||[])[0]; const perReg = (rel.period||[])[0];
+    const regReg = (rel.region||[])[0]; const craReg = (rel.craft||[])[0];
+    const tagBadges = [
+      famReg && families[famReg] ? `<span class="pc-badge pc-family"><span class="pc-glyph"></span>${families[famReg].cn}</span>` : '',
+      perReg && periods[perReg]  ? `<span class="pc-badge pc-period"><span class="pc-glyph"></span>${periods[perReg].cn.trim()}</span>` : '',
+      regReg && regions[regReg]  ? `<span class="pc-badge pc-region"><span class="pc-glyph"></span>${regions[regReg].cn.trim()}</span>` : '',
+      craReg && crafts[craReg]   ? `<span class="pc-badge pc-craft"><span class="pc-glyph"></span>${crafts[craReg].cn}</span>` : ''
+    ].filter(Boolean).join("");
+    card.innerHTML = `
+      <div class="swatch-sm" style="background:${c.hex}" data-hex="${c.hex.toUpperCase()}"></div>
+      <div class="info">
+        <div class="nm">${c.name}</div>
+        <div class="py">${c.pinyin.toUpperCase()}</div>
+        ${reason ? `<div class="why"><span class="why-k">何 以 此 色</span><span class="why-v">${reason}</span></div>` : ''}
+        <div class="badges">${tagBadges}</div>
+        ${cites ? `<div class="card-cites">${cites}</div>` : ''}
+        <div class="trace">${c.origin}</div>
+      </div>`;
+    card.addEventListener("click", () => {
+      closeCompose();
+      setTimeout(() => selectColor(c.id), 320);
+    });
+    pal.appendChild(card);
+  });
+
+  // 组方分析:从知识图谱 4 维角度展示这组色的结构
+  const compEl = document.getElementById("paletteComposition");
+  if (compEl){
+    compEl.innerHTML = `
+      <div class="pc-head">
+        <span class="pc-title">组 方 之 析</span>
+        <span class="pc-en">PALETTE · COMPOSITION</span>
+        <span class="pc-sub">从知识图谱观此组色之结构</span>
+      </div>
+      <div class="pc-body">${paletteComposition(picked)}</div>
+    `;
+    compEl.style.display = "block";
+  }
+
+  document.getElementById("paletteMeta").textContent = `共 ${picked.length} 色 · 点击任一色可跳转溯源`;
+  document.getElementById("composeResult").classList.add("active");
+}
+
+/* ---------- UI wiring ---------- */
+const overlay   = document.getElementById("composeOverlay");
+const trigger   = document.getElementById("composeTrigger");
+const closeBtn  = document.getElementById("composeClose");
+const genBtn    = document.getElementById("generateBtn");
+const ciInput   = document.getElementById("composeInput");
+const cResult   = document.getElementById("composeResult");
+const regenBtn  = document.getElementById("regenBtn");
+const copyBtn   = document.getElementById("copyBtn");
+const charCount = document.getElementById("charCount");
+
+function openCompose(){
+  overlay.classList.add("active");
+  overlay.setAttribute("aria-hidden","false");
+  setTimeout(() => ciInput.focus(), 200);
+}
+function closeCompose(){
+  overlay.classList.remove("active");
+  overlay.setAttribute("aria-hidden","true");
+}
+
+trigger.addEventListener("click", openCompose);
+closeBtn.addEventListener("click", closeCompose);
+overlay.addEventListener("click", e => { if (e.target === overlay) closeCompose(); });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && overlay.classList.contains("active")) closeCompose();
+});
+
+document.querySelectorAll(".chip[data-prompt]").forEach(chip => {
+  chip.addEventListener("click", () => {
+    ciInput.value = chip.dataset.prompt;
+    charCount.textContent = ciInput.value.length + " 字";
+    ciInput.focus();
+  });
+});
+
+ciInput.addEventListener("input", () => {
+  charCount.textContent = ciInput.value.length + " 字";
+});
+
+function runGenerate(){
+  const input = ciInput.value.trim();
+  if (!input){
+    ciInput.focus();
+    ciInput.classList.add("shake");
+    setTimeout(() => ciInput.classList.remove("shake"), 400);
+    return;
+  }
+  // Loading simulation
+  cResult.classList.add("active");
+  document.getElementById("reasoning").innerHTML = "";
+  document.getElementById("palette").innerHTML = `
+    <div class="loading-state">
+      <div class="dots"><div class="dot-ink"></div><div class="dot-ink"></div><div class="dot-ink"></div></div>
+      <div class="label">思 · 索 · 之 · 间  ·  Composing</div>
+    </div>`;
+  genBtn.disabled = true;
+  const delay = 900 + Math.random() * 700;
+  setTimeout(() => {
+    renderResult(input);
+    genBtn.disabled = false;
+    cResult.scrollIntoView({behavior:"smooth", block:"nearest"});
+  }, delay);
+}
+
+genBtn.addEventListener("click", runGenerate);
+regenBtn.addEventListener("click", runGenerate);
+ciInput.addEventListener("keydown", e => {
+  if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) runGenerate();
+});
+
+copyBtn.addEventListener("click", () => {
+  const cards = document.querySelectorAll(".palette-card");
+  if (!cards.length) return;
+  const lines = [];
+  cards.forEach(card => {
+    const id = card.dataset.id;
+    const c = colors.find(x => x.id === id);
+    if (c) lines.push(`${c.name} (${c.pinyin})  ${c.hex.toUpperCase()}  — ${c.origin}`);
+  });
+  const text = "華夏百色圖 · 配色方案\n" + "——————————\n" + lines.join("\n");
+  const fallback = () => {
+    const ta = document.createElement("textarea");
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand("copy"); ta.remove();
+  };
+  (navigator.clipboard && navigator.clipboard.writeText
+    ? navigator.clipboard.writeText(text) : Promise.reject())
+    .catch(fallback)
+    .finally(() => {
+      copyBtn.textContent = "已 复 制 ✓";
+      setTimeout(() => copyBtn.textContent = "复 制 色 卡", 2000);
+    });
+});
+
+/* ---------- 溯系 BROWSE 漫游 ---------- */
+const browseOverlay = document.getElementById("browseOverlay");
+const browseTriggerBtn = document.getElementById("browseTrigger");
+const browseCloseBtn = document.getElementById("browseClose");
+const browseBody = document.getElementById("browseBody");
+
+function renderBrowse(){
+  // 按色系 ID 顺序 + 该系成员色,生成手风琴(accordion)
+  browseBody.innerHTML = "";
+  Object.entries(families).forEach(([fid, fam], idx)=>{
+    const members = colors.filter(c=>
+      (colorRelations[c.id]?.family || [])[0] === fid
+    );
+    if (!members.length) return;
+    const sec = document.createElement("div");
+    sec.className = "bf-section" + (idx===0 ? " open" : "");
+    sec.setAttribute("data-family", fid);
+
+    // 头:箭头 + 中英名 + 小色卡条 + 数量
+    const head = document.createElement("div");
+    head.className = "bf-head";
+    const strip = members.slice(0,10).map(m=>
+      `<span class="sw" style="background:${m.hex}"></span>`
+    ).join("");
+    const more = members.length > 10 ? `<span class="bf-en" style="margin-left:4px">+${members.length-10}</span>` : "";
+    head.innerHTML = `
+      <span class="bf-arrow">▶</span>
+      <span class="bf-title">
+        <span class="bf-cn" style="color:${fam.accent}">${fam.cn}</span>
+        <span class="bf-en">${fam.en} · FAMILY</span>
+      </span>
+      <span class="bf-strip">${strip}${more}</span>
+      <span class="bf-count">${members.length} 色</span>
+    `;
+    head.addEventListener("click", ()=>{
+      sec.classList.toggle("open");
+    });
+    sec.appendChild(head);
+
+    // 列:每色一卡,含色块/名/拼音/era/origin/cites
+    const list = document.createElement("div");
+    list.className = "bf-list";
+    const grid = document.createElement("div");
+    grid.className = "bf-grid";
+    members.forEach(m=>{
+      const item = document.createElement("div");
+      item.className = "bf-item";
+      item.setAttribute("data-id", m.id);
+      const cites = (m.cites||[]).map(t=>`<span class="bf-item-cite">${t}</span>`).join("");
+      item.innerHTML = `
+        <div class="bf-swatch" style="background:${m.hex}" data-hex="${m.hex.toUpperCase()}"></div>
+        <div class="bf-item-meta">
+          <span class="bf-item-name">${m.name}</span>
+          <span class="bf-item-py">${m.pinyin.toUpperCase()}</span>
+          <span class="bf-item-era">${m.era}</span>
+          <span class="bf-item-origin">${m.origin}</span>
+          <span class="bf-item-cites">${cites}</span>
+        </div>
+      `;
+      item.addEventListener("click", ()=>{
+        closeBrowse();
+        // 关闭后跳转到主画布的该色详情
+        setTimeout(()=>selectColor(m.id), 280);
+      });
+      grid.appendChild(item);
+    });
+    list.appendChild(grid);
+    sec.appendChild(list);
+    browseBody.appendChild(sec);
+  });
+}
+
+function openBrowse(){
+  renderBrowse();
+  browseOverlay.classList.add("active");
+  browseOverlay.setAttribute("aria-hidden","false");
+}
+function closeBrowse(){
+  browseOverlay.classList.remove("active");
+  browseOverlay.setAttribute("aria-hidden","true");
+}
+
+browseTriggerBtn.addEventListener("click", openBrowse);
+browseCloseBtn.addEventListener("click", closeBrowse);
+browseOverlay.addEventListener("click", e=>{
+  if (e.target === browseOverlay) closeBrowse();
+});
+document.addEventListener("keydown", e=>{
+  if (e.key==="Escape" && browseOverlay.classList.contains("active")) closeBrowse();
+});
+
+/* ---------- 初始化 ---------- */
+window.addEventListener("resize", layout);
+layout();
+// 自动导览结束后由 cinematic.js 选中代表色；开场保持图谱面板留白。
+</script>
+<script src="assets/cinematic.js"></script>
+</body>
+</html>

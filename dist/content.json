@@ -1564,7 +1564,6 @@
             }
           ],
           "highlights": [
-            "48 colors",
             "shared family, period, region and craft relationships"
           ],
           "colorAtlasChapters": [
@@ -1572,17 +1571,21 @@
               "id": "connections",
               "title": "From origins to color families",
               "body": [
-                "48 colors, grouped by mineral, plant, nature and literary origins, then by color family."
+                "Follow 100 colors from four kinds of origins into eight color families. Scroll down to unfold the atlas."
               ],
               "figures": [],
               "highlights": [
-                "48 colors",
-                "shared family, period, region and craft relationships"
+                "100 colors",
+                "four kinds of origins",
+                "eight color families"
               ],
               "demo": {
-                "src": "/assets/color-atlas-demo/atlas-origins.mp4",
-                "poster": "/assets/color-atlas-demo/atlas-origins-poster.jpg",
-                "originalRange": "00:05.3–01:02.0"
+                "kind": "scroll",
+                "source": "chinese-colors-atlas-cinematic",
+                "range": [
+                  8,
+                  38
+                ]
               }
             },
             {
