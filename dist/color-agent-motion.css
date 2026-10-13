@@ -1,0 +1,28 @@
+/* The source dialogue stays in view while each research need reaches it. */
+.case-section.with-visual:has(.scroll-layered-source){display:block}
+.case-section.with-visual:has(.scroll-layered-source)>.section-body{position:static;max-width:900px;margin:28px 0 44px;padding:0}
+.case-section.with-visual:has(.scroll-layered-source)>.section-visuals{display:block;position:static}
+.scroll-layered-source.layered-source{grid-template-columns:minmax(0,1.8fr) minmax(250px,.8fr);gap:clamp(24px,4vw,64px);max-width:1280px!important;align-items:start}
+.scroll-layered-source .layered-art{position:sticky;top:100px;align-self:start;overflow:visible}
+.scroll-layered-source .layered-base{opacity:1;transform:none;transition:none}
+.scroll-layered-source .layered-step-art{opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease;animation:none!important}
+.scroll-layered-source .layered-step-art.is-step-visible{opacity:1;transform:none}
+.scroll-layered-source .layered-explanations{gap:0}
+.scroll-layered-source .layered-explanations li{grid-template-columns:32px minmax(0,1fr);gap:14px;min-height:clamp(152px,24vh,224px);padding:24px 0;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent);opacity:.25;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease;animation:none!important}
+.scroll-layered-source .layered-explanations li.is-step-visible{opacity:.65;transform:none}
+.scroll-layered-source .layered-explanations li.is-current-step{opacity:1}
+.scroll-layered-source .layered-explanations h3{font-size:19px;line-height:1.3;margin:0 0 10px}
+.scroll-layered-source .layered-explanations p{font-size:15px;line-height:1.65}
+.scroll-layered-source .layered-number{font-size:13px;line-height:1.9}
+.scroll-layered-source .layered-scroll-hint{display:block;grid-column:1/-1;font-size:12px;margin:0;opacity:.65}
+@media(max-width:700px){
+ .scroll-layered-source.layered-source{display:block}
+ .scroll-layered-source .layered-art{top:66px;background:var(--paper,var(--background,#f4f0e7));z-index:2;margin-bottom:20px;max-height:42vh}
+ .scroll-layered-source .layered-art img{width:100%;min-width:0;max-height:42vh!important;object-fit:contain}
+ .scroll-layered-source .layered-explanations{display:block}
+ .scroll-layered-source .layered-explanations li{min-height:185px;padding:30px 0}
+ .scroll-layered-source .layered-scroll-hint{margin-top:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ .scroll-layered-source .layered-step-art,.scroll-layered-source .layered-explanations li{opacity:1!important;transform:none!important;transition:none!important}
+}

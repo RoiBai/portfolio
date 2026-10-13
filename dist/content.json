@@ -9,7 +9,7 @@
       "meta": [
         {
           "label": "My role",
-          "value": "Co-conception · materials · interviews"
+          "value": "Study materials · Interviews · Analysis · Paper writing"
         },
         {
           "label": "Research",
@@ -17,7 +17,7 @@
         },
         {
           "label": "Project record",
-          "value": "July 2025–present · Second author · CHI 2027 submission in progress"
+          "value": "July 2025–September 2026 · Second author · CHI 2027 under review"
         }
       ],
       "stats": [
@@ -35,7 +35,7 @@
         },
         {
           "value": "14",
-          "label": "Formative rounds"
+          "label": "Pilot rounds"
         }
       ],
       "links": [],
@@ -52,9 +52,9 @@
         "cutout": "/cutouts/glancemap.png"
       },
       "hero": {
-        "src": "/assets/design-revision/glance-918-247-source.png",
-        "width": 2010,
-        "height": 782,
+        "src": "/assets/editorial-20261014/glance-371@4x.png",
+        "width": 8192,
+        "height": 3188,
         "alt": "GlanceMap pairs a growing mind map with illustrations while the listener walks.",
         "caption": "GlanceMap in use. The lesson shown is example study material.",
         "displayWidth": 960,
@@ -71,8 +71,8 @@
           "eyebrow": "OVERVIEW",
           "title": "A mind map that grows with the audio.",
           "body": [
-            "While walking, learners look away to check the path. The audio keeps playing, and they can lose the connection between ideas.",
-            "GlanceMap pairs illustrations with a growing mind map. Earlier ideas stay visible, so listeners can find their place again. In a study with 16 people, it improved recall immediately and seven days later."
+            "While walking, learners look away to check the path. The audio continues—and the connection between ideas can be lost.",
+            "GlanceMap pairs illustrations with a mind map that grows with the audio. Earlier ideas stay visible, so listeners can find their place again."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -197,36 +197,36 @@
           "eyebrow": "ROUND 1",
           "title": "Could fewer words help?",
           "body": [
-            "I refined 14 pilots across three rounds. The first round covered pilots 1–3 and 13 cumulative participants.",
-            "We tried full captions and isolated keywords. Less text still needed context and the right timing. One learner relied on listening when the keywords did not explain the connections."
+            "Pilots 1–3 · 13 cumulative participants",
+            "Less text still needed context and the right timing. Isolated keywords left one learner relying on listening."
           ],
           "nav": "Pilots 1–3",
           "figures": [
             {
-              "src": "/assets/design-revision/glance-918-380-source.png",
-              "width": 665,
-              "height": 278,
-              "alt": "full-caption prototype.",
-              "caption": "Full captions preserve the wording, but require reading.",
-              "displayWidth": 480,
+              "src": "/assets/editorial-20261014/glance-532@4x.png",
+              "width": 2572,
+              "height": 896,
+              "displayWidth": 650,
+              "alt": "Full captions",
+              "caption": "Full captions",
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:380"
+                  "nodeId": "1827:532"
                 }
               ]
             },
             {
-              "src": "/assets/design-revision/glance-918-383-source.png",
-              "width": 665,
-              "height": 278,
-              "alt": "naïve-keyword prototype.",
-              "caption": "Naïve keywords reduce text but can lose the links between ideas.",
-              "displayWidth": 480,
+              "src": "/assets/editorial-20261014/glance-535@4x.png",
+              "width": 2572,
+              "height": 896,
+              "displayWidth": 650,
+              "alt": "Naïve keywords",
+              "caption": "Naïve keywords",
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:383"
+                  "nodeId": "1827:535"
                 }
               ]
             }
@@ -238,33 +238,52 @@
             }
           ],
           "quote": {
-            "text": "no need to show full transcription",
+            "text": "“No need to show full transcription.”",
             "attribution": "Pilot 1 · summarized study notes"
           },
           "figureLayout": "comparison",
-          "items": []
+          "items": [
+            {
+              "title": "Insight → short, connected phrases",
+              "body": "Keep text brief. Keep relationships visible."
+            }
+          ]
         },
         {
           "id": "process-visuals",
           "eyebrow": "ROUND 2",
           "title": "Could visuals help?",
           "body": [
-            "Round 2 covered pilots 4–9 and 27 cumulative participants. We tried structured keywords and an Illustration Only interface.",
-            "Pictures were quick to grasp. Words still needed clear connections. We kept familiar parent–child structure instead of asking learners to decode a new visual code."
+            "Pilots 4–9 · 27 cumulative participants",
+            "Pictures were quick to grasp; words needed clear connections."
           ],
           "nav": "Pilots 4–9",
           "figures": [
             {
-              "src": "/assets/design-revision/glance-918-390-source.png",
-              "width": 665,
-              "height": 278,
-              "alt": "structured-keyword prototype.",
-              "caption": "Structured keywords tested spatial hierarchy and color.",
-              "displayWidth": 600,
+              "src": "/assets/editorial-20261014/glance-542@4x.png",
+              "width": 2572,
+              "height": 896,
+              "displayWidth": 650,
+              "alt": "Structured keywords",
+              "caption": "Structured keywords",
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:390"
+                  "nodeId": "1827:542"
+                }
+              ]
+            },
+            {
+              "src": "/assets/editorial-20261014/glance-545@4x.png",
+              "width": 2572,
+              "height": 896,
+              "displayWidth": 650,
+              "alt": "Illustration Only",
+              "caption": "Illustration Only",
+              "sourceRefs": [
+                {
+                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                  "nodeId": "1827:545"
                 }
               ]
             }
@@ -277,62 +296,51 @@
           ],
           "items": [
             {
-              "title": "Words need relationships",
-              "body": "“I know each word, but not what they mean together.” — Pilot 8 participant · translated",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
-            },
-            {
-              "title": "Pictures need a brief look",
-              "body": "“I only need a glance or two.” — Pilot 8 participant · translated",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
+              "title": "Insight → familiar structure",
+              "body": "Use parent–child links and pictures for objects and scenes."
             }
-          ]
+          ],
+          "figureLayout": "comparison",
+          "quote": {
+            "text": "“I know each word, but not what they mean together.”\n“I only need a glance or two.”",
+            "attribution": "Pilot 8 participant · translated"
+          }
         },
         {
           "id": "process-history",
           "eyebrow": "ROUND 3",
           "title": "How much should stay?",
           "body": [
-            "Round 3 covered pilots 10–14 and 24 cumulative participants. We compared a full logic map with a partial map.",
-            "Showing everything created clutter. Removing earlier branches took away the route back. We kept completed branches readable while revealing new ideas with the audio."
+            "Pilots 10–14 · 24 cumulative participants",
+            "Earlier branches gave learners a way back into the explanation."
           ],
           "nav": "Pilots 10–14",
           "figures": [
             {
-              "src": "/assets/design-revision/glance-918-400-source.png",
-              "width": 665,
-              "height": 277,
-              "alt": "full logic-map prototype.",
-              "caption": "Full logic map: more context, but more to search.",
-              "displayWidth": 480,
+              "src": "/assets/editorial-20261014/glance-552@4x.png",
+              "width": 2572,
+              "height": 896,
+              "displayWidth": 650,
+              "alt": "Full logic map",
+              "caption": "Full logic map",
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:400"
+                  "nodeId": "1827:552"
                 }
               ]
             },
             {
-              "src": "/assets/design-revision/glance-918-403-source.png",
-              "width": 665,
-              "height": 277,
-              "alt": "partial logic-map prototype.",
-              "caption": "Partial logic map: less clutter, but earlier context disappears.",
-              "displayWidth": 480,
+              "src": "/assets/editorial-20261014/glance-555@4x.png",
+              "width": 2572,
+              "height": 896,
+              "displayWidth": 650,
+              "alt": "Partial logic map",
+              "caption": "Partial logic map",
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:403"
+                  "nodeId": "1827:555"
                 }
               ]
             }
@@ -346,25 +354,22 @@
           "figureLayout": "comparison",
           "items": [
             {
-              "title": "Recovering an earlier idea",
-              "body": "“I forgot what it had said.” “I used the mind map to help me recall what I had heard.” — Pilot 10 · Participant 2 · translated",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
+              "title": "Insight → reveal, then retain",
+              "body": "Add nodes with the narration. Keep past branches readable."
             }
-          ]
+          ],
+          "quote": {
+            "text": "“I forgot what it had said.”\n“I used the mind map to help me recall what I had heard.”",
+            "attribution": "Pilot 10 · Participant 2 · translated"
+          }
         },
         {
           "id": "goals",
           "eyebrow": "FINAL DESIGN",
           "title": "Six goals, one final design.",
           "body": [
-            "New ideas appear with the audio. Earlier branches stay readable for a returning glance. Brief labels and familiar branches make relationships easy to read.",
-            "The map explains relationships. Illustrations ground concrete ideas. The comparison kept the narration, illustrations and timing the same; the integrated interface added the persistent map.",
-            "The three pilot rounds led to six design goals. Their participant counts are cumulative within each round, not a count of unique people across all pilots."
+            "New ideas appear with the audio; earlier branches stay readable. Brief labels and familiar links make relationships easy to follow.",
+            "The map explains relationships. Illustrations ground concrete ideas."
           ],
           "nav": "Final design",
           "figures": [
@@ -402,68 +407,7 @@
               "nodeId": "918:441"
             }
           ],
-          "items": [
-            {
-              "title": "01 · Keep text brief",
-              "body": "Use short phrases, not full sentences.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
-            },
-            {
-              "title": "02 · Keep ideas connected",
-              "body": "Keep relationships visible.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
-            },
-            {
-              "title": "03 · Use familiar structure",
-              "body": "Use parent–child links, with no new code to learn.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
-            },
-            {
-              "title": "04 · Ground concrete ideas",
-              "body": "Use pictures for objects and scenes.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
-            },
-            {
-              "title": "05 · Reveal with the audio",
-              "body": "Add nodes as the narration unfolds.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
-            },
-            {
-              "title": "06 · Help learners return",
-              "body": "Keep past branches readable.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:364"
-                }
-              ]
-            }
-          ],
+          "items": [],
           "figureLayout": "final-design"
         },
         {
@@ -471,8 +415,8 @@
           "eyebrow": "THE COMPARISON",
           "title": "Building on illustration-based audio learning.",
           "body": [
-            "Our Illustration Only prototype used audio-synchronized pictures, informed by the AudioXtend approach. An AudioXtend co-author joined the GlanceMap project.",
-            "In the earlier AudioXtend study, 12 participants learned while walking and folding laundry. Audio plus illustrations improved immediate free recall by 33.3% and seven-day free recall by 32.7% over audio alone. These are results from prior work, not GlanceMap."
+            "Both prototypes used the same narration, illustrations and timing. GlanceMap added a persistent mind map.",
+            "Illustration Only builds on AudioXtend (CHI 2024), whose co-author joined this project. Its earlier 12-person study found +33.3% immediate and +32.7% seven-day recall over audio alone. These are prior-work results."
           ],
           "nav": "Baseline",
           "figures": [
@@ -497,28 +441,14 @@
               "nodeId": "918:441"
             }
           ],
-          "items": [
-            {
-              "title": "Prior work",
-              "body": "Tan et al. · AudioXtend · CHI 2024.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:441"
-                }
-              ]
-            }
-          ]
+          "items": []
         },
         {
           "id": "study",
           "eyebrow": "FORMAL STUDY",
           "title": "The study, on one shared route.",
           "body": [
-            "Sixteen participants tried both prototypes. Each heard four lessons, with two lessons per format, in counterbalanced trials. Each lesson lasted 4:55 minutes on average.",
-            "Participants completed immediate recall, image recognition and experience measures after each lesson. A remote follow-up repeated recall seven days later.",
-            "Meta Quest Pro provided color passthrough and eye tracking. Participants wore earbuds and a right-ankle IMU. A researcher shadowed each trial. The indoor setting limited lighting changes while turns and level changes still demanded attention.",
-            "The route created real shifts between learning and navigation. Participants described using earlier branches to recover the explanation, while pictures clarified unfamiliar concepts."
+            "Sixteen participants tried both formats on the same indoor route. Each heard four lessons, then returned for a recall test seven days later."
           ],
           "nav": "Study in practice",
           "figures": [
@@ -598,78 +528,7 @@
               "nodeId": "918:496"
             }
           ],
-          "items": [
-            {
-              "title": "Movement",
-              "body": "Right-ankle IMU recorded walking motion.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "920:336"
-                }
-              ]
-            },
-            {
-              "title": "Attention",
-              "body": "Eye-tracking logs recorded viewing behavior.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "920:342"
-                }
-              ]
-            },
-            {
-              "title": "What this comparison tests",
-              "body": "It evaluates the complete interface. It does not isolate the effects of maps, persistence or timing.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:441"
-                }
-              ]
-            },
-            {
-              "title": "Earlier ideas stayed available",
-              "body": "“the earlier part doesn’t disappear; it is one complete thing” — Participant 15 · interview. Earlier branches linked past ideas to the ongoing narration.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:546"
-                }
-              ]
-            },
-            {
-              "title": "Pictures clarified unfamiliar concepts",
-              "body": "“when it got to a concept I didn’t understand, or some obscure term.” — Participant 08 · interview.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:550"
-                }
-              ]
-            },
-            {
-              "title": "A returning glance became a review",
-              "body": "“a bit like reviewing.” — Participant 08 · interview. P08 returned to earlier nodes after navigating the route.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:554"
-                }
-              ]
-            },
-            {
-              "title": "Text helped recover context",
-              "body": "“reading the text is quicker and easier than listening.” — Participant 04 · interview.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:558"
-                }
-              ]
-            }
-          ],
+          "items": [],
           "figureLayout": "study-route"
         },
         {
@@ -677,16 +536,11 @@
           "eyebrow": "FINDINGS",
           "title": "Better recall, with attention redistributed.",
           "body": [
-            "Immediate free recall rose from 48.3% to 57.9%. Seven-day recall rose from 45.0% to 52.0%. These material-adjusted gains were 9.6 and 7.0 percentage points.",
-            "Picture recognition fell from 83.0% to 75.9%, a loss of 7.1 percentage points. Listeners spent less time on illustrations. They rated the lesson structure 1.59 points higher on a seven-point scale.",
-            "Workload showed a modest increase that depended on the model. We found no detectable format effect on gait; this does not prove equivalence. Gaze measures supported returning to the interface, but did not measure recovery time for individual nodes."
+            "Free recall improved immediately and seven days later. Participants also found the lesson structure clearer (+1.59 on a seven-point scale).",
+            "Picture recognition fell by 7.1 percentage points. Better memory for the lesson came with poorer picture memory.",
+            "No detectable gait difference was found; workload showed a modest, model-dependent increase."
           ],
-          "items": [
-            {
-              "title": "What remains open",
-              "body": "Test individual features, recovery after interruption, outdoor conditions and broader participant groups."
-            }
-          ],
+          "items": [],
           "nav": "Findings",
           "figures": [
             {
@@ -720,14 +574,15 @@
               "nodeId": "1113:258"
             }
           ],
-          "figureLayout": "comparison"
+          "figureLayout": "comparison",
+          "layout": "editorial"
         },
         {
           "id": "next",
           "eyebrow": "DESIGN IMPLICATIONS",
           "title": "Remember the structure. Give pictures enough room.",
           "body": [
-            "The recall benefit lasted beyond the walk. Better memory for the lesson came with poorer picture memory. The next design step is to balance these two kinds of information."
+            "Keep relationships visible, retain earlier context, and give important pictures enough room."
           ],
           "nav": "Implications",
           "figures": [],
@@ -737,51 +592,24 @@
               "nodeId": "918:585"
             }
           ],
-          "items": [
-            {
-              "title": "Keep relationships visible",
-              "body": "Use short labels and explicit links.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:585"
-                }
-              ]
-            },
-            {
-              "title": "Reveal, then retain",
-              "body": "Add ideas with the audio. Keep earlier branches accessible.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:585"
-                }
-              ]
-            },
-            {
-              "title": "Test visual balance",
-              "body": "Give key images room and adapt detail to the walk.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:585"
-                }
-              ]
-            }
-          ]
+          "items": []
         }
       ],
       "role": {
         "label": "My role",
-        "value": "Co-conception · Study materials · Interviews",
+        "value": "Study materials · Interviews · Analysis",
         "status": "explicit",
         "sourceRefs": [
           "meta[0]",
-          "sections.abstract.items[0].body"
+          "sections.abstract.items[0].body",
+          "User-confirmed CV responsibilities"
         ],
         "boundary": "My collaborator ran the experiments; we developed the iterations together.",
-        "details": "I co-developed the idea with an AR PhD researcher. I created and refined study materials across 14 pilot rounds, then led interviews after the final study. My collaborator ran the experiments; we developed the iterations together."
-      }
+        "details": "I prepared materials across 14 pilot rounds, analyzed five pilots and the formal study, conducted two interviews per participant, and contributed to the paper."
+      },
+      "sourceNotes": [
+        "Responsibilities confirmed from the author’s CV record, 14 October 2026."
+      ]
     },
     {
       "id": "icon-colors",
@@ -874,8 +702,8 @@
           "eyebrow": "ABSTRACT",
           "title": "Clear. Comfortable. Meaningful.",
           "body": [
-            "We tested 12 representative colors. The clearest pairings were not always the most comfortable. We then added icons, and some clear color pairs suggested the wrong meaning.",
-            "The guide helps designers choose shadows, outlines or gray backgrounds for alerts, everyday controls and status updates."
+            "Twelve colors tested: the clearest pairings were not always the most comfortable. Adding icons showed that a clear color pair could still suggest the wrong meaning.",
+            "The guide helps designers choose shadows, outlines or gray backplates for attention cues, everyday controls and persistent status."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -885,15 +713,16 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "1699:285"
             }
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "problem",
           "eyebrow": "THE PROBLEM",
           "title": "Screen contrast alone cannot predict AR clarity.",
           "body": [
-            "On a screen, colors sit on a solid background. AR glasses add the real-world scene. Black becomes transparent, and white can glare.",
-            "A color pairing must be checked through the glasses: can people see it, is it comfortable to look at, and does its color fit the icon’s meaning?"
+            "Alex starts with screen color rules. Through AR glasses, glare, visibility and meaning change.",
+            "The design needs to be clear, comfortable and meaningful against the real scene."
           ],
           "nav": "Problem",
           "figures": [
@@ -950,15 +779,16 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "1699:289"
             }
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "setup",
           "eyebrow": "SHARED EXPERIMENT CONTEXT",
           "title": "The same people. Two lighting conditions.",
           "body": [
-            "The same 20 people completed all three studies. XREAL Air 2 Pro was used for the main experiments. HoloLens 2 provided a check with different display optics.",
-            "Indoor tests used 250–300 lux; outdoor tests used 1,500–2,000 lux. Lux measures light falling on the surroundings. Participants took a 15-minute break between settings, with two weeks between studies. We collected ratings and explanations."
+            "The same 20 people completed Studies 1–3. We used XREAL Air 2 Pro for the main tests, with a HoloLens 2 check.",
+            "Indoor: 250–300 lux. Outdoor: 1,500–2,000 lux. Participants viewed randomized pairs, rated them and explained their choices."
           ],
           "nav": "Study setup",
           "figures": [
@@ -998,16 +828,16 @@
             }
           ],
           "figureLayout": "comparison",
-          "items": []
+          "items": [],
+          "layout": "editorial"
         },
         {
           "id": "baseline",
           "eyebrow": "STUDY 1",
           "title": "Study 1 · Compare colors.",
           "body": [
-            "We used 12 representative hues from prior work: 30°, 45°, 60°, 75°, 135°, 180°, 195°, 240°, 270°, 285°, 315° and 345°. These mark positions on the color wheel, not equally spaced steps.",
-            "Each background had black, white and opposite-color letters, giving 36 pairs. The letter, size and stroke stayed fixed. Only the colors changed.",
-            "Opposite colors often looked clear. White often felt more comfortable. Clarity and comfort could favor different pairs."
+            "Study 1 tested 12 selected hues with black, white and opposite-color letters: 36 pairs. Letter, size and stroke stayed fixed.",
+            "Clarity and comfort could favor different pairs."
           ],
           "nav": "Study 1",
           "figures": [
@@ -1044,17 +874,16 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "1792:338"
             }
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "meaning",
           "eyebrow": "STUDY 2",
           "title": "Study 2 · Add meaning.",
           "body": [
-            "Eight designers proposed icons independently, then agreed on one for each color. This workshop was separate from the 20-person study group.",
-            "The twelve functions were dining, finance, light bulb, cycling, video, weather, files, parking, yoga, bar, music and alert.",
-            "We retested the same 36 pairs with meaningful icons. Clear color pairs could still suggest the wrong meaning.",
-            "Opposite-color icons averaged 4.39/5 for clarity and 2.75/5 for color meaning across all 12 colors. Being easy to see did not guarantee that the color fitted the icon."
+            "In a separate workshop, eight designers agreed on one icon for each selected color. We retested the 36 pairs as meaningful icons.",
+            "High clarity could still mean low semantic scores. A color must fit the icon’s meaning, not just be easy to see."
           ],
           "nav": "Study 2",
           "figures": [
@@ -1085,18 +914,7 @@
               "displayWidth": 650
             }
           ],
-          "items": [
-            {
-              "title": "Check meaning as well as visibility",
-              "body": "A color choice can draw attention while sending the wrong message.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1751:314"
-                }
-              ]
-            }
-          ],
+          "items": [],
           "sourceRefs": [
             {
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -1122,17 +940,16 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "1792:343"
             }
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "refinement",
           "eyebrow": "STUDY 3",
           "title": "Study 3 · Refine and retest.",
           "body": [
-            "We tested workshop ideas for the icon edge and background. We rated clarity, comfort and meaning again, and also asked how strongly each icon stood out.",
-            "White icons with a shadow were easiest to notice. Clarity rose by 0.88–1.62 points on a 1–5 scale across four tested colors.",
-            "Colored icons with an outline improved the color-meaning rating from 3.71 to 4.13 out of 5, compared with the original black-symbol designs.",
-            "A gray background at 30% brightness was least distracting and had the most consistent comfort. This means brightness, not transparency."
+            "Study 3 tested workshop ideas: shadows, gradients, outlines and gray backplates. We rated clarity, comfort, meaning and visual prominence.",
+            "Shadows raised clarity by 0.88–1.62 points across four hues. Outlines raised the semantic rating from 3.71 to 4.13 / 5. Gray backplates were least intrusive."
           ],
           "nav": "Study 3",
           "figures": [
@@ -1169,14 +986,15 @@
               "nodeId": "1792:348"
             }
           ],
-          "items": []
+          "items": [],
+          "layout": "editorial"
         },
         {
           "id": "guidelines",
           "eyebrow": "DESIGN GUIDELINES",
           "title": "Match the design to urgency.",
           "body": [
-            "Choose how urgently the icon needs to get noticed. Keep the intended meaning while adjusting the edge, outline and background."
+            "Match the treatment to the icon’s role: draw attention, distinguish functions or keep status visible."
           ],
           "nav": "Guidelines",
           "figures": [
@@ -1253,16 +1071,16 @@
           ],
           "items": [
             {
-              "title": "Urgent alerts · White icon + shadow",
-              "body": "Use a strong edge for information that needs attention now."
+              "title": "Attention · White icon + shadow",
+              "body": "For time-sensitive information."
             },
             {
-              "title": "Everyday controls · Colored icon + outline",
-              "body": "Keep functions easy to recognize, while revealing more of the scene."
+              "title": "Functions · Colored icon + outline",
+              "body": "For distinct controls, while more of the scene shows through."
             },
             {
-              "title": "Status updates · Colored icon + gray background",
-              "body": "Keep information available on screen with less distraction, using a gray background at 30% brightness."
+              "title": "Status · Colored icon + gray backplate",
+              "body": "For persistent information with less distraction. Backplate brightness: 30%."
             }
           ],
           "sourceRefs": [
@@ -1270,16 +1088,16 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "1699:293"
             }
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "gradients",
           "eyebrow": "COLOR BLENDS",
           "title": "A gradient can change the message.",
           "body": [
-            "The symbol can stay the same while a blend looks like a new color. A brighter end can dominate and change what the color suggests.",
-            "In the tested cyan comparison, cyan + green was less clear than plain cyan, while cyan + blue was clearer. These examples used ±30° shifts on the color wheel; the stated clarity comparison applies to cyan.",
-            "Keep both ends similarly bright, then check through the glasses that the blended color still fits the icon’s meaning."
+            "The workshop explored hues ±30° apart. In the cyan comparison, blending toward green reduced clarity; blending toward blue raised it.",
+            "A brighter end can dominate. Keep both ends similarly bright, then retest clarity, comfort and meaning in AR."
           ],
           "nav": "Gradients",
           "figures": [
@@ -1304,15 +1122,16 @@
               "nodeId": "1699:293"
             }
           ],
-          "items": []
+          "items": [],
+          "layout": "editorial"
         },
         {
           "id": "reflection",
           "eyebrow": "REFLECTION",
           "title": "Meaning depends on the audience.",
           "body": [
-            "Some participants read the bar and music colors as youthful and stylish. Would other audiences read them the same way?",
-            "The current evidence covers 20 adults and static 2D icons, with East and Southeast Asian design input. Next steps are to test across cultures, ages and visual abilities, explore moving and 3D icons, and use eye tracking to check attention."
+            "Bar and music colors evoked electronic clubs, mystery and cyberpunk. Blue–yellow parking recalled IKEA, competing with the parking meaning.",
+            "These guidelines cover 20 participants and static 2D icons. Test with the intended audience: culture, genre and context can change the reading."
           ],
           "nav": "Reflection",
           "figures": [
@@ -1337,7 +1156,8 @@
               "nodeId": "1699:293"
             }
           ],
-          "items": []
+          "items": [],
+          "layout": "editorial"
         }
       ],
       "role": {
@@ -1350,7 +1170,9 @@
           "sections.abstract.items[0].body"
         ],
         "boundary": "I am second author; my advisor is first author."
-      }
+      },
+      "outcome": "A practical guide to AR icon colors, shadows, outlines and gray backplates. Journal manuscript under review; SSRN preprint available.",
+      "sourceNotes": []
     },
     {
       "id": "traditional-color",
@@ -1427,51 +1249,24 @@
         {
           "id": "abstract",
           "eyebrow": "ABSTRACT",
-          "title": "From a beautiful swatch to a defensible choice.",
+          "title": "A color carries a story.",
           "body": [
-            "A color carries more than a value. It can signal status and symbolism, record a pigment or material source, and refer to a particular time and place.",
-            "We co-designed a website with practicing designers. ColoGene put context beside each color. Interviews and design trials then shaped Color Atlas, which connects 48 colors and recommends five-color palettes. A future Color Agent explores applying and refining those palettes through dialogue."
+            "Color can signal status and symbolism, record a material source, and belong to a particular time and place."
           ],
           "nav": "Abstract",
           "figures": [],
           "items": [
             {
-              "title": "Version 1 · ColoGene",
-              "body": "12 formative interviews and a 10-person pilot. CHI 2026 Poster accepted.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "658:264"
-                },
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "658:266"
-                }
-              ]
+              "title": "ColoGene",
+              "body": "Context beside every color. Co-designed with practicing designers; CHI 2026 Poster accepted."
             },
             {
-              "title": "Version 2 · Color Atlas",
-              "body": "48 colors, four origin categories, and 25 designers interviewed. Ongoing research.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "658:264"
-                },
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "658:267"
-                }
-              ]
+              "title": "Color Atlas",
+              "body": "48 connected colors and recommendations shaped by a design brief. 25 designers explored the new workflow."
             },
             {
-              "title": "Version 3 · Color Agent",
-              "body": "A future design mockup for applying, comparing and refining a palette.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "658:268"
-                }
-              ]
+              "title": "Color Agent",
+              "body": "A future direction: apply a palette to artwork, then refine it through dialogue."
             }
           ],
           "sourceRefs": [
@@ -1486,45 +1281,23 @@
           "eyebrow": "DESIGNER RESEARCH",
           "title": "What makes a color belong?",
           "body": [
-            "Debate over museum merchandise colors raised a question: how do designers judge cultural fit? Traditional Chinese colors have material origins, histories and meanings, but the information is scattered.",
-            "We interviewed 12 Chinese designers of museum products and historical websites. The semi-structured interviews lasted 30–45 minutes. We asked how they found references, compared palettes and explained their choices."
+            "A museum souvenir sparked a color debate: how do designers judge cultural fit? We interviewed 12 Chinese designers of museum products and historical websites for 30–45 minutes each."
           ],
           "items": [
             {
               "title": "Does it fit my historical brief?",
-              "body": "Designers often sample appealing colors from images. The references rarely explain historical use, symbolism or material origins. “A color may represent different things in different cultures.” “…whether this color existed in that historical context.” Show meaning, origin and period beside the color value.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "658:265"
-                }
-              ]
+              "body": "“A color may represent different things in different cultures.” “…whether this color existed in that historical context.” Show meaning, origin and period beside the value."
             },
             {
               "title": "Which reference can I trust?",
-              "body": "“But the colors people share are not really consistent.” “But I rarely look up where those names come from.” Two websites list Zhu sha as #CA3433 and #9D2933. Connect names and values to traceable historical sources.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "658:265"
-                }
-              ]
+              "body": "“But the colors people share are not really consistent.” Two websites list Zhu sha as #CA3433 and #9D2933. Connect names and values to historical sources."
             },
             {
               "title": "How do I build a whole palette?",
-              "body": "“I’m torn over which colors to use.” “I usually make several versions and then pick the one that looks best.” Designers need complete palettes with a clear cultural rationale.",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "658:265"
-                }
-              ]
+              "body": "“I’m torn over which colors to use.” Designers need complete palettes with a clear cultural rationale."
             }
           ],
-          "quote": {
-            "text": "I usually make several versions and then pick the one that looks best.",
-            "attribution": "Formative interview · source paper"
-          },
+          "quote": null,
           "nav": "Research",
           "figures": [
             {
@@ -1569,23 +1342,9 @@
           "eyebrow": "VERSION 1 · COLOGENE",
           "title": "Five ways into color knowledge.",
           "body": [
-            "Three interview insights shaped five ways to explore color knowledge: name origins, hue, color family, dynasty and scene palettes.",
-            "Designers knew color names but rarely checked their origins. They used reference images before explaining their choices, and compared palettes mostly by appearance. ColoGene brings the missing context into each step."
+            "Three interview insights shaped five ways to explore color knowledge: name origins, hue, color family, dynasty and scene palettes."
           ],
-          "items": [
-            {
-              "title": "Make meaning visible",
-              "body": "Name origins connect colors to materials, meanings and naming stories."
-            },
-            {
-              "title": "Browse with context",
-              "body": "Hue, family and dynasty provide different entry points for narrowing a design direction."
-            },
-            {
-              "title": "Compare whole palettes",
-              "body": "Scene-based collections offer three- or five-color combinations."
-            }
-          ],
+          "items": [],
           "nav": "ColoGene",
           "figures": [
             {
@@ -1642,20 +1401,15 @@
         {
           "id": "pilot",
           "eyebrow": "EARLY EVIDENCE",
-          "title": "Promising signals from a small pilot.",
+          "title": "Early signals from a ten-designer pilot.",
           "body": [
-            "Ten designers worked on matched Jiangnan and Tang templates. Five used ColoGene; five used their usual workflow. We compared their written reasoning and questionnaire scores.",
-            "All five ColoGene users finished within 15 minutes. One of five baseline users did not. Mean questionnaire gains were 8.66 points with ColoGene and 1.21 with the usual workflow, a difference of 7.45 points.",
-            "These are early descriptive results from five people per group. Designers reported more confidence in their choices and cultural explanations. They also wanted fuller sources and palettes tailored to their own brief."
+            "Five designers used ColoGene; five used their usual workflow. Both groups colored the same Jiangnan and Tang templates.",
+            "All five ColoGene users finished within 15 minutes; one baseline user did not. Questionnaire gains were 8.66 versus 1.21 points—early descriptive results from five people per group."
           ],
           "items": [
             {
-              "title": "What changed",
-              "body": "Participants could connect color selection to explicit cultural explanations."
-            },
-            {
-              "title": "What was still missing",
-              "body": "Fixed palettes and short stories did not cover the complexity of every design task."
+              "title": "Next iteration",
+              "body": "Designers wanted fuller sources and palettes tailored to their own brief."
             }
           ],
           "quote": {
@@ -1691,10 +1445,9 @@
         {
           "id": "atlas",
           "eyebrow": "VERSION 2 · COLOR ATLAS",
-          "title": "A connected route from brief to palette.",
+          "title": "Follow the connections.",
           "body": [
-            "Color Atlas organizes 48 colors by origin: mineral, plant, nature and literary. These categories include pigments, dyes, natural imagery and written records.",
-            "Hovering a color reveals shared family, period, region and craft relationships. Designers can compare colors through these connections as well as hue."
+            "Color Atlas connects 48 colors through mineral, plant, nature and literary origins. Hovering a color reveals shared family, period, region and craft relationships."
           ],
           "items": [],
           "nav": "Atlas",
@@ -1724,11 +1477,10 @@
         {
           "id": "sources",
           "eyebrow": "TRACE THE SOURCE",
-          "title": "Read the color’s complete record.",
+          "title": "Read the color’s record.",
           "body": [
-            "Click a color to open its information card. The record connects a name and value with its origin, cultural context, historical era and classical references.",
-            "Tianqing · #6E9CB3. Its origin describes the sky clearing after rain. The card associates it with Ru-ware glaze and the Five Dynasties to Northern Song period.",
-            "The listed classical references are Guide to the Study of Antiquities and Miscellaneous Records of Qingbo. Check the source record before choosing a color."
+            "Tianqing · #6E9CB3 describes the sky clearing after rain. Its record links Ru-ware glaze, historical era and classical references.",
+            "The listed sources are Guide to the Study of Antiquities and Miscellaneous Records of Qingbo."
           ],
           "nav": "Sources",
           "figures": [
@@ -1783,8 +1535,8 @@
           "eyebrow": "COLOR COMPOSE",
           "title": "From a brief to five colors.",
           "body": [
-            "Describe the brief, then compare the recommendation. Preset instructions match the brief against the color database. Each record describes a color’s meaning, history and relationships.",
-            "For “Serene Song-ceramic branding,” the example combines sky blue, teal and pale neutrals for a calm ceramic mood. Check the rationale, values and source texts before choosing."
+            "Describe a brief, then compare five suggested colors. The recommendation matches the brief to color records and their relationships.",
+            "For “Serene Song-ceramic branding,” check the rationale, values and source texts before choosing."
           ],
           "nav": "Compose",
           "figures": [
@@ -1836,11 +1588,10 @@
         {
           "id": "outcomes",
           "eyebrow": "DESIGN TRIALS",
-          "title": "Different choices, with context to discuss.",
+          "title": "The same artwork, a different color direction.",
           "body": [
-            "Twenty-five designers explored Version 2. They worked on three artworks with their usual workflow and three with the atlas. The design artifacts show how their color direction changed.",
-            "The session included a 10-minute pre-interview, 45 minutes with the baseline, 45 minutes with Atlas, a 20-minute post-interview and a 10-minute questionnaire.",
-            "Post-interviews asked for more palette directions, fuller sources and selection reasons, support for every object in a complex brief, and more freedom to refine suggestions."
+            "25 designers created three artworks with their usual workflow and three with Color Atlas. The paired artifacts show how their choices changed.",
+            "Designers wanted more palette directions, fuller sources, support for every object in a complex brief, and freedom to refine suggestions."
           ],
           "nav": "Outcomes",
           "figures": [
@@ -1900,15 +1651,15 @@
               "nodeId": "658:267"
             }
           ],
-          "items": []
+          "items": [],
+          "studyTimeline": "10 min pre-interview → 45 min usual workflow → 45 min Atlas → 20 min post-interview → 10 min questionnaire"
         },
         {
           "id": "future",
           "eyebrow": "VERSION 3 · FUTURE DESIGN",
-          "title": "A Color Agent that keeps the designer in control.",
+          "title": "Six needs, one conversation.",
           "body": [
-            "Version 3 is a future design mockup. It has not been implemented or evaluated as a Color Agent. Six implications from Version 2 feedback shape an iterative conversation.",
-            "In the palace-magnet scenario, the designer asks for a calm, contemporary Qing-era Beijing palette. The agent compares a warmer direction with a blue-led direction, explains the sources, previews the whole drawing and waits for the designer to refine or accept."
+            "A future design concept: apply a palette to artwork, then refine it through dialogue. Six needs from the designer interviews guide the interaction."
           ],
           "items": [],
           "nav": "Future",
@@ -2072,7 +1823,8 @@
               "nodeId": "658:268"
             }
           ],
-          "figureLayout": "layered-source"
+          "figureLayout": "layered-source",
+          "status": "Future design concept · not yet implemented or evaluated."
         }
       ],
       "role": {
@@ -2083,13 +1835,15 @@
           "User-confirmed latest turn: 网页设计，用户采访+分析"
         ],
         "details": "I designed the website and conducted and analyzed user interviews."
-      }
+      },
+      "outcome": "ColoGene: CHI 2026 Poster accepted. Color Atlas: ongoing research. Color Agent: a future design concept.",
+      "sourceNotes": []
     },
     {
       "id": "personamail",
       "title": "PersonaMail",
       "subtitle": "Making communication intent editable.",
-      "description": "People repeat their relationship, tone, and wording preferences for similar emails. PersonaMail remembers useful context and lets writers change one section at a time.",
+      "description": "An AI email editor that remembers useful context and lets writers change one section at a time.",
       "kicker": "Research / AI co-writing",
       "meta": "IUI Companion ’26 · March 2026 · Published demo · 2nd author",
       "stats": [
@@ -2130,194 +1884,92 @@
         "ink": "#ededeb",
         "cutout": "/cutouts/personamail.png"
       },
-      "hero": null,
+      "hero": {
+        "src": "/assets/research-editorial/persona-intent-editor.png",
+        "width": 1052,
+        "height": 892,
+        "displayWidth": 740,
+        "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
+        "alt": "Edit the intent of one section without rewriting the whole email.",
+        "caption": "Edit the intent of one section without rewriting the whole email."
+      },
       "sections": [
         {
           "id": "challenge",
           "nav": "Challenge",
           "eyebrow": "Challenge",
-          "title": "When a similar request returns.",
+          "title": "A similar request should not mean starting over.",
           "body": [
-            "You decline a senior colleague’s dinner invitation. You work out a respectful, concise reply. Weeks later, a similar request arrives."
+            "You decline a senior colleague’s dinner invitation and work out a respectful, concise reply. Weeks later, a similar request arrives."
           ],
           "items": [
             {
               "title": "With general AI",
-              "body": "You explain the relationship and your writing preferences all over again."
+              "body": "Explain the relationship and writing preferences again."
             },
             {
               "title": "With PersonaMail",
-              "body": "Saved context and wording preferences provide a starting point. You add the new request, tone, and desired length."
+              "body": "Reuse saved context; add the new request, tone, and length."
             }
           ],
           "figures": [],
-          "sourceNodes": [
-            "1345:262"
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
           ]
         },
         {
           "id": "research",
           "nav": "Research",
           "eyebrow": "Research",
-          "title": "Evidence informed the prototype.",
+          "title": "Three barriers shaped the design.",
           "body": [
-            "Eight participants tried MailMaestro, Friday Email, and Textoshop. The formative sessions revealed three recurring barriers.",
-            "A review of 97 social-psychology papers informed the communication-factor taxonomy."
+            "Eight participants tried three writing tools. A review of 97 social-psychology papers informed the communication factors."
           ],
           "items": [
             {
-              "title": "Explain the social goal",
-              "body": "Writers found nuanced relationship and situation needs hard to put into a prompt."
+              "title": "Explain social goals",
+              "body": "Make sensitive relationship and situation needs explicit."
             },
             {
               "title": "Control one section",
-              "body": "Writers needed an option between rewriting the whole draft and changing individual words."
+              "body": "Revise a section’s purpose while keeping the rest."
             },
             {
               "title": "Reuse what worked",
-              "body": "Successful strategies had to be recreated when similar situations returned."
-            }
-          ],
-          "figures": [],
-          "sourceNodes": [
-            "1345:276",
-            "1345:308",
-            "1345:312",
-            "1345:316"
-          ]
-        },
-        {
-          "id": "design",
-          "nav": "Design",
-          "eyebrow": "Design",
-          "title": "Remember preferences. Keep the writer in control.",
-          "body": [
-            "How can AI remember useful writing preferences while keeping each new email under the writer’s control?",
-            "Saved context is a starting point. Writers can change the situation, tone, length, and intent of each section."
-          ],
-          "items": [
-            {
-              "title": "Make social context explicit",
-              "body": "Choose the relationship and situation. Add details that preset choices miss."
-            },
-            {
-              "title": "Keep edits local",
-              "body": "Change the purpose of one section while keeping the rest of the email."
-            },
-            {
-              "title": "Carry useful choices forward",
-              "body": "Saved anchors reuse context in similar emails. Edits and optional explanations refine the personal stylebook."
+              "body": "Carry successful strategies into similar emails."
             }
           ],
           "figures": [
             {
-              "src": "/assets/research-revision/personamail-annotated-design-4x.webp",
-              "zoomSrc": "/assets/research-revision/personamail-annotated-design-4x.png",
-              "width": 12160,
-              "height": 2712,
-              "displayWidth": 1280,
-              "alt": "From social context to section-level editing and reusable communication strategies.",
-              "caption": "From social context to section-level editing and reusable communication strategies.",
-              "sourceNode": "1345:304",
-              "sourceOrigin": "Current visible Figma portfolio; 4× export, 13 October 2026",
-              "exportScale": 4,
-              "sourceComposition": {
-                "viewBox": [
-                  0,
-                  0,
-                  3040,
-                  678
-                ],
-                "background": "#fcfaf6",
-                "sourceNode": "1345:304",
-                "layers": [
-                  {
-                    "src": "/assets/research-revision/personamail-findings-left-4x.webp",
-                    "x": 0,
-                    "y": 28,
-                    "width": 780,
-                    "height": 528,
-                    "sourceNode": "1345:305",
-                    "alt": "Findings 01 and 03: explain social goals and reuse successful strategies."
-                  },
-                  {
-                    "src": "/assets/research-revision/personamail-source-gallery-4x.webp",
-                    "x": 820,
-                    "y": 28,
-                    "width": 1400,
-                    "height": 621.5384521484375,
-                    "sourceNode": "1358:258",
-                    "alt": "Original PersonaMail context, saved-anchor, and intent-editor interface panels."
-                  },
-                  {
-                    "src": "/assets/research-revision/personamail-findings-right-4x.webp",
-                    "x": 2260,
-                    "y": 28,
-                    "width": 780,
-                    "height": 628,
-                    "sourceNode": "1345:307",
-                    "alt": "Finding 02: edit one section, keep the reason private, and carry preferences into a future personal writing agent."
-                  }
-                ],
-                "leaders": [
-                  {
-                    "d": "M 0 0 L 22 0 L 22 78 L 96 78",
-                    "transform": "translate(778 126)",
-                    "stroke": "#44518a",
-                    "strokeWidth": 3,
-                    "underlayStroke": "#fcfaf6",
-                    "underlayWidth": 9,
-                    "sourceNode": "1358:272"
-                  },
-                  {
-                    "d": "M 0 0 L 22 0 L 22 86 L 68 86",
-                    "transform": "translate(778 455)",
-                    "stroke": "#44518a",
-                    "strokeWidth": 3,
-                    "underlayStroke": "#fcfaf6",
-                    "underlayWidth": 9,
-                    "sourceNode": "1358:273"
-                  },
-                  {
-                    "d": "M 122 0 L 100 0 L 100 53 L 0 53",
-                    "transform": "translate(2140 124)",
-                    "stroke": "#44518a",
-                    "strokeWidth": 3,
-                    "underlayStroke": "#fcfaf6",
-                    "underlayWidth": 9,
-                    "sourceNode": "1358:274"
-                  }
-                ],
-                "dots": [
-                  {
-                    "cx": 874,
-                    "cy": 204,
-                    "r": 5,
-                    "fill": "#44518a",
-                    "sourceNode": "1358:276"
-                  },
-                  {
-                    "cx": 846,
-                    "cy": 541,
-                    "r": 5,
-                    "fill": "#44518a",
-                    "sourceNode": "1358:277"
-                  },
-                  {
-                    "cx": 2140,
-                    "cy": 177,
-                    "r": 5,
-                    "fill": "#44518a",
-                    "sourceNode": "1358:278"
-                  }
-                ]
-              }
+              "src": "/assets/research-editorial/persona-context-panel.png",
+              "width": 971,
+              "height": 602,
+              "displayWidth": 760,
+              "sourceOrigin": "Discrete original interface panel extracted from the paper figure; native pixels.",
+              "alt": "Choose relationship and situation factors, then add details that preset choices miss.",
+              "caption": "Choose relationship and situation factors, then add details that preset choices miss."
             }
           ],
-          "sourceNodes": [
-            "1345:297",
-            "1345:304"
-          ]
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
+          ],
+          "layout": "editorial"
         },
         {
           "id": "interaction",
@@ -2325,70 +1977,153 @@
           "eyebrow": "Interaction",
           "title": "Keep the reason private.",
           "body": [
-            "In the paper’s demonstration, a writer withdraws from a previously accepted dinner invitation from a senior colleague.",
-            "They select the justification and change a detailed explanation to a vague or private reason. Only that section changes. The rest of the email stays in place.",
-            "The writer can save the successful strategy as an anchor for a future email."
+            "In the demonstration, the writer withdraws from a dinner invitation. They change only the justification from a detailed explanation to a private reason."
           ],
           "items": [],
-          "figures": [],
-          "sourceNodes": [
-            "1345:337"
+          "figures": [
+            {
+              "alt": "The published demonstration, from context to a reusable strategy.",
+              "caption": "The published demonstration, from context to a reusable strategy.",
+              "displayWidth": 1200,
+              "width": 1200,
+              "height": 210,
+              "sourceOrigin": "Editable web reconstruction of the original paper workflow; no paper screenshot.",
+              "sourceComposition": {
+                "viewBox": [
+                  0,
+                  0,
+                  1200,
+                  210
+                ],
+                "layers": [],
+                "labels": [
+                  {
+                    "x": 0,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "01 / Set context",
+                    "body": [
+                      "Senior colleague; respectful tone."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  },
+                  {
+                    "x": 400,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "02 / Revise intent",
+                    "body": [
+                      "Keep the personal reason private."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  },
+                  {
+                    "x": 800,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "03 / Save an anchor",
+                    "body": [
+                      "Reuse the strategy next time."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  }
+                ],
+                "leaders": [
+                  {
+                    "d": "M 350 80 L 386 80 L 379 73 M 386 80 L 379 87",
+                    "stroke": "#737c77",
+                    "strokeWidth": 2
+                  },
+                  {
+                    "d": "M 750 80 L 786 80 L 779 73 M 786 80 L 779 87",
+                    "stroke": "#737c77",
+                    "strokeWidth": 2
+                  }
+                ],
+                "mobileMinWidth": 860
+              }
+            }
           ],
-          "sourceOrigin": "Visible portfolio example, supplemented by the published demonstration paper."
-        },
-        {
-          "id": "application",
-          "nav": "Application",
-          "eyebrow": "Application",
-          "title": "A personal writing agent.",
-          "body": [
-            "A future personal agent could remember your wording, tone, and recurring context. You would add new details, review the draft, and send it.",
-            "This is a potential application. The portfolio demonstrates reusable context and section-level intent editing."
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
           ],
-          "items": [],
-          "figures": [],
-          "sourceNodes": [
-            "1483:258"
-          ]
+          "layout": "editorial"
         },
         {
           "id": "reflection",
-          "nav": "Reflection",
-          "eyebrow": "Reflection",
-          "title": "Communication preferences that carry forward.",
+          "nav": "Takeaway",
+          "eyebrow": "Takeaway",
+          "title": "Carry useful choices into the next email.",
           "body": [
-            "Reusable context and a personal stylebook bring communication preferences into future emails. Section-level intent controls keep edits local. Explanations help the assistant learn from those edits.",
-            "This published demonstration reports formative findings and a working prototype. It does not report comparative effectiveness results."
+            "Saved anchors carry recurring context forward. Edits and optional explanations refine the personal stylebook. A future personal writing agent could use these preferences to prepare a draft for review.",
+            "This demonstration reports formative findings and a working prototype, not comparative effectiveness results."
           ],
           "items": [],
-          "figures": [],
-          "sourceNodes": [
-            "1345:355"
-          ]
+          "figures": [
+            {
+              "src": "/assets/research-editorial/persona-saved-anchors.png",
+              "width": 1046,
+              "height": 275,
+              "displayWidth": 1060,
+              "sourceOrigin": "Discrete original interface panel extracted from the paper figure; native pixels.",
+              "alt": "Original saved persona and situation anchors.",
+              "caption": "Original saved persona and situation anchors."
+            }
+          ],
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
+          ],
+          "layout": "editorial"
         }
       ],
       "role": {
         "label": "My role",
-        "value": "Second author",
-        "status": "authorship-only",
+        "value": "Materials · System development",
+        "status": "explicit",
+        "details": "Second author. I organized project materials and contributed to system development.",
         "sourceRefs": [
-          "meta",
-          "sections.reflection.body"
-        ],
-        "boundary": "Specific individual responsibilities are not stated in the current case study.",
-        "details": "Second author on the published IUI Companion ’26 demonstration."
+          "User-confirmed CV responsibilities"
+        ]
       },
       "sourceNotes": [
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
-        "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio."
+        "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
+        "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
+        "Responsibilities confirmed from the author’s CV record, 14 October 2026."
       ],
-      "contentRevision": "2026-10-13-portfolio-first"
+      "contentRevision": "2026-10-14-editorial-research",
+      "outcome": "Published IUI Companion ’26 demonstration: reusable context, local intent editing, and a personal stylebook."
     },
     {
       "id": "beyond-the-gaze",
       "title": "Beyond the Gaze",
       "subtitle": "Looking is only part of the story.",
-      "description": "A long look does not tell us what a detail means to a viewer. We compare gaze with the regions people later select and explain.",
+      "description": "A long look does not tell us what a detail means. We compare gaze with the regions viewers later select and explain.",
       "kicker": "Research / Eye tracking",
       "meta": "ACM Multimedia Asia 2026 · Accepted · 15–18 Dec 2026 · Co-first author",
       "stats": [
@@ -2421,112 +2156,164 @@
         "ink": "#ededeb",
         "cutout": "/cutouts/beyond-the-gaze.png"
       },
-      "hero": null,
+      "hero": {
+        "src": "/assets/research-revision/gaze-matched-evidence-4x.webp",
+        "zoomSrc": "/assets/research-revision/gaze-matched-evidence-4x.png",
+        "width": 7360,
+        "height": 2936,
+        "displayWidth": 1120,
+        "alt": "Three views of The Stonemason’s Yard connect gaze, recalled regions, and interpretation.",
+        "caption": "Three views of The Stonemason’s Yard connect gaze, recalled regions, and interpretation.",
+        "sourceNode": "1465:258",
+        "sourceOrigin": "Current visible Figma portfolio; 4× export, 13 October 2026",
+        "exportScale": 4
+      },
       "sections": [
         {
           "id": "framework",
-          "nav": "Framework",
-          "eyebrow": "Framework",
-          "title": "Three signals. The same region.",
+          "nav": "Method",
+          "eyebrow": "Method",
+          "title": "Look. Recall. Explain.",
           "body": [
-            "Gaze–Selection–Language compares what a viewer looks at, later selects, and uses to explain a painting.",
-            "HLL means High Gaze, Low Selection, and Low Language within the same region. Attention is high, but that region is not later selected or used in the coded interpretation."
+            "Gaze–Selection–Language compares three signals within the same region. HLL means high gaze, low later selection, and no coded interpretive claim."
           ],
-          "items": [
-            {
-              "title": "01 / Region map",
-              "body": "Compare the same semantic region across gaze, later selection, and spoken explanations."
-            },
-            {
-              "title": "02 / Gaze heatmap",
-              "body": "See where gaze accumulated. The heatmap alone cannot explain what a detail means to the viewer."
-            },
-            {
-              "title": "03 / HLL example",
-              "body": "For some viewers, the outlined A5 region drew gaze but was not selected or used to explain the painting."
-            }
-          ],
+          "items": [],
           "figures": [
             {
-              "src": "/assets/research-revision/gaze-matched-evidence-4x.webp",
-              "zoomSrc": "/assets/research-revision/gaze-matched-evidence-4x.png",
-              "width": 7360,
-              "height": 2936,
-              "displayWidth": 1120,
-              "alt": "Three views of The Stonemason’s Yard connect gaze, recalled regions, and interpretation.",
-              "caption": "Three views of The Stonemason’s Yard connect gaze, recalled regions, and interpretation.",
-              "sourceNode": "1465:258",
-              "sourceOrigin": "Current visible Figma portfolio; 4× export, 13 October 2026",
-              "exportScale": 4,
-              "panoramaMin": 1000
+              "alt": "The original study sequence; questionnaires and interviews followed.",
+              "caption": "The original study sequence; questionnaires and interviews followed.",
+              "displayWidth": 1200,
+              "width": 1200,
+              "height": 210,
+              "sourceOrigin": "Editable web reconstruction of the original paper workflow; no paper screenshot.",
+              "sourceComposition": {
+                "viewBox": [
+                  0,
+                  0,
+                  1200,
+                  210
+                ],
+                "layers": [],
+                "labels": [
+                  {
+                    "x": 0,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "01 / Look freely",
+                    "body": [
+                      "View each painting at your own pace."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  },
+                  {
+                    "x": 400,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "02 / Recall regions",
+                    "body": [
+                      "Select meaningful details with the painting hidden."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  },
+                  {
+                    "x": 800,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "03 / Explain",
+                    "body": [
+                      "Describe what those details mean."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  }
+                ],
+                "leaders": [
+                  {
+                    "d": "M 350 80 L 386 80 L 379 73 M 386 80 L 379 87",
+                    "stroke": "#737c77",
+                    "strokeWidth": 2
+                  },
+                  {
+                    "d": "M 750 80 L 786 80 L 779 73 M 786 80 L 779 87",
+                    "stroke": "#737c77",
+                    "strokeWidth": 2
+                  }
+                ],
+                "mobileMinWidth": 860
+              }
             }
           ],
-          "sourceNodes": [
-            "1226:351",
-            "1465:258"
-          ]
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
+          ],
+          "layout": "editorial"
         },
         {
           "id": "study",
           "nav": "Study",
           "eyebrow": "Study",
-          "title": "View freely. Recall. Explain.",
+          "title": "The mismatch was not limited to one painting.",
           "body": [
-            "We enrolled 15 participants and analyzed 12 after gaze-quality checks. They viewed 24 Western oil paintings, with five to seven semantic regions in each.",
-            "After free viewing, the artwork was hidden. Participants recalled meaningful regions and explained the painting. Questionnaires and interviews followed."
-          ],
-          "items": [],
-          "figures": [
-            {
-              "src": "/assets/study-procedure-bfd88956.webp",
-              "width": 3298,
-              "height": 600,
-              "alt": "Figure 2 · Twenty-four self-paced viewing, recall, and interpretation trials.",
-              "caption": "Figure 2 · Twenty-four self-paced viewing, recall, and interpretation trials.",
-              "sourceOrigin": "Original project paper figure; retained native pixels and source composition.",
-              "displayWidth": 1050
-            }
-          ],
-          "sourceNodes": [
-            "1424:306"
-          ]
-        },
-        {
-          "id": "findings",
-          "nav": "Findings",
-          "eyebrow": "Findings",
-          "title": "A recurring mismatch.",
-          "body": [
-            "HLL appeared in 156 of 1,651 cleaned participant–painting–region records: 9.4%. All 12 analyzed viewers and all 24 paintings had at least one HLL record."
+            "12 of 15 enrolled participants passed gaze-quality checks. They viewed 24 paintings, each divided into 5–7 semantic regions.",
+            "156 of 1,651 cleaned region records showed HLL. It appeared in all 12 analyzed viewers and all 24 paintings."
           ],
           "items": [
             {
-              "title": "RQ1 / How common is HLL?",
-              "body": "It appeared across every analyzed viewer and painting."
+              "title": "What characterizes these regions?",
+              "body": "Some occupied connective positions in the composition."
             },
             {
-              "title": "RQ2 / What characterizes these regions?",
-              "body": "In selected examples, they linked foreground and background or sat at transitions in depth."
-            },
-            {
-              "title": "RQ3 / How does attention accumulate?",
-              "body": "Selected records showed repeated visits without uniformly long fixations."
+              "title": "How does attention accumulate?",
+              "body": "Selected cases showed repeated visits without uniformly long fixations."
             }
           ],
-          "figures": [],
-          "sourceNodes": [
-            "1226:355",
-            "1351:274"
-          ]
+          "figures": [
+            {
+              "src": "/assets/research-editorial/gaze-selected-cases.png",
+              "width": 3178,
+              "height": 1210,
+              "displayWidth": 1200,
+              "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
+              "alt": "Selected examples: regions linking foreground, background, and changes in depth.",
+              "caption": "Selected examples: regions linking foreground, background, and changes in depth."
+            }
+          ],
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
+          ],
+          "layout": "editorial"
         },
         {
           "id": "example",
-          "nav": "Example",
-          "eyebrow": "Example",
-          "title": "More returns. Shorter fixations.",
+          "nav": "One example",
+          "eyebrow": "One example",
+          "title": "Many returns. Shorter fixations.",
           "body": [
-            "One participant’s viewing of The Hay Wain provides a concrete example. Region A3 received 38 visits, compared with a trial mean of 20.33.",
-            "Mean fixation duration was 0.051 seconds, compared with a trial mean of 0.17 seconds. These values describe one participant, painting, and region."
+            "For one viewer of The Hay Wain, region A3 received 38 visits versus a trial mean of 20.33. Mean fixation duration was 0.051 s versus 0.17 s. These are single-case measurements."
           ],
           "items": [],
           "figures": [
@@ -2540,22 +2327,40 @@
               "displayWidth": 1050
             }
           ],
-          "sourceOrigin": "Original paper Figure 5; exact native data-visual replacement retained."
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
+          ],
+          "layout": "editorial"
         },
         {
           "id": "reflection",
-          "nav": "Reflection",
-          "eyebrow": "Reflection",
+          "nav": "Takeaway",
+          "eyebrow": "Takeaway",
           "title": "Attention is one part of interpretation.",
           "body": [
-            "We compare what viewers look at with what they use to explain a painting. Attention alone cannot tell us which details support their interpretation.",
-            "Museum guides could combine gaze and visitor feedback to suggest details worth exploring. This is a potential application, not an evaluated museum intervention.",
-            "The study is exploratory. Recall depends on memory and expression. HLL does not prove that a viewer made no interpretation, and the selected examples do not establish a general spatial rule."
+            "Combine gaze with viewers’ selections and explanations before adapting a cultural guide. HLL shows a mismatch between recorded signals; it does not prove an absence of understanding.",
+            "The selected examples are exploratory, not a general rule about composition."
           ],
           "items": [],
           "figures": [],
-          "sourceNodes": [
-            "1226:396"
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
           ]
         }
       ],
@@ -2571,15 +2376,17 @@
       },
       "sourceNotes": [
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
-        "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio."
+        "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
+        "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots."
       ],
-      "contentRevision": "2026-10-13-portfolio-first"
+      "contentRevision": "2026-10-14-editorial-research",
+      "outcome": "HLL appeared in 9.4% of cleaned region records, across every analyzed viewer and painting."
     },
     {
       "id": "suzhou-scrollverse",
       "title": "Suzhou ScrollVerse",
       "subtitle": "An unfolding city. A connected story.",
-      "description": "People can zoom into a handscroll but struggle to connect its details to the city and the lives shown there. ScrollVerse links scenes, social roles, and cultural explanations.",
+      "description": "A guided handscroll viewer that connects painted scenes with the people, places, and cultural meanings behind them.",
       "kicker": "Research / Digital heritage",
       "meta": "iConference · Under review · Sep 2026 · corresponding author",
       "stats": [
@@ -2611,76 +2418,72 @@
         "ink": "#ededeb",
         "cutout": "/cutouts/suzhou-scrollverse.png"
       },
-      "hero": null,
+      "hero": {
+        "src": "/assets/research-editorial/suzhou-scroll.png",
+        "width": 755,
+        "height": 1196,
+        "displayWidth": 420,
+        "alt": "Continuous handscroll exploration through eight core scenes and twelve contextual videos.",
+        "caption": "Follow the handscroll through 8 core scenes and 12 contextual videos.",
+        "sourceOrigin": "Original paper Figure 2, center module; native pixels."
+      },
       "sections": [
-        {
-          "id": "research",
-          "nav": "Research",
-          "eyebrow": "Research",
-          "title": "Connect details to a historical city.",
-          "body": [
-            "191 survey responses and 30 interviews shaped the design. People could see local details but struggled to locate them within the whole scroll and explain their cultural meaning."
-          ],
-          "items": [
-            {
-              "title": "RQ1 / What blocks understanding?",
-              "body": "A detail can be visible without its place or cultural meaning being clear."
-            },
-            {
-              "title": "RQ2 / How can details reconnect?",
-              "body": "Follow the scroll, change perspective, and trace explanations back to scenes."
-            },
-            {
-              "title": "RQ3 / What changes with ScrollVerse?",
-              "body": "Understanding ratings were higher. Usability and workload differences were not significant."
-            }
-          ],
-          "figures": [],
-          "sourceNodes": [
-            "1226:413"
-          ]
-        },
         {
           "id": "experience",
           "nav": "Experience",
           "eyebrow": "Experience",
           "title": "Follow the sequence. Choose a perspective.",
           "body": [
+            "191 survey responses and 30 interviews shaped the design. People could see local details but struggled to locate them within the scroll and explain their cultural meaning.",
             "ScrollVerse connects sequential unfolding, social perspectives, and painted evidence."
           ],
           "items": [
             {
               "title": "Follow the sequence",
-              "body": "Scroll down to explore the painting. The progress bar shows your place in the full scroll."
-            },
-            {
-              "title": "Return to the evidence",
-              "body": "Find details in the painting. Use the clues to learn what they meant at the time."
+              "body": "Scroll through the painting with a visible progress marker."
             },
             {
               "title": "Choose a perspective",
-              "body": "Explore the lives of commoners, scholars, and merchants in the city shown here."
+              "body": "Explore as a commoner, scholar, or merchant."
+            },
+            {
+              "title": "Return to the evidence",
+              "body": "Find a detail and follow its cultural clues."
             }
           ],
           "figures": [
             {
-              "src": "/assets/research-revision/suzhou-annotated-method-4x.webp",
-              "zoomSrc": "/assets/research-revision/suzhou-annotated-method-4x.png",
-              "width": 7360,
-              "height": 2728,
-              "displayWidth": 1200,
-              "alt": "Follow the scroll, switch social perspective, and return to the painted evidence.",
-              "caption": "Follow the scroll, switch social perspective, and return to the painted evidence.",
-              "sourceNode": "1226:417",
-              "sourceOrigin": "Current visible Figma portfolio; 4× export, 13 October 2026",
-              "exportScale": 4,
-              "panoramaMin": 1000
+              "src": "/assets/research-editorial/suzhou-perspectives.png",
+              "width": 618,
+              "height": 1196,
+              "displayWidth": 540,
+              "alt": "Choose a scholar, merchant, or commoner’s perspective.",
+              "caption": "Choose a scholar, merchant, or commoner’s perspective.",
+              "sourceOrigin": "Original paper Figure 2, separate native module; no duplicated full figure."
+            },
+            {
+              "src": "/assets/research-editorial/suzhou-cultural-clues.png",
+              "width": 744,
+              "height": 1196,
+              "displayWidth": 540,
+              "alt": "Observe a detail, locate a clue, and uncover its historical context.",
+              "caption": "Observe a detail, locate a clue, and uncover its historical context.",
+              "sourceOrigin": "Original paper Figure 2, separate native module; no duplicated full figure."
             }
           ],
-          "sourceNodes": [
-            "1226:414",
-            "1226:417"
-          ]
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
+          ],
+          "layout": "editorial",
+          "figureLayout": "comparison"
         },
         {
           "id": "study",
@@ -2688,9 +2491,10 @@
           "eyebrow": "Study",
           "title": "Compare two ways of viewing.",
           "body": [
-            "We randomly assigned 60 participants to ScrollVerse or an annotation viewer, with 30 in each group. Questionnaires and interviews followed.",
-            "25 of 30 ScrollVerse participants said everyday life in Qing-dynasty Suzhou was easier to understand. This was reported understanding, not a knowledge test.",
-            "26 of 30 would recommend ScrollVerse or try similar digital heritage experiences. This describes their intentions after the experience."
+            "60 participants were randomly assigned to ScrollVerse or an annotation viewer, with 30 per group. Questionnaires and interviews followed.",
+            "25 of 30 ScrollVerse participants reported clearer understanding; 26 of 30 would recommend it or try a similar experience. Usability and workload differences were not significant.",
+            "Taking a historical character’s perspective made the scene more memorable for P14 and encouraged further exploration.",
+            "These results describe perceived understanding, not a historical knowledge test. The next step is to separate the contribution of each feature."
           ],
           "items": [],
           "figures": [
@@ -2704,63 +2508,47 @@
               "displayWidth": 1050
             }
           ],
-          "sourceOrigin": "Visible portfolio results; native numerical chart retains verified paper values."
-        },
-        {
-          "id": "perspective",
-          "nav": "Perspective",
-          "eyebrow": "Perspective",
-          "title": "“From the perspective of people at the time.”",
-          "body": [
-            "Taking a historical character’s perspective made the scene more memorable for P14 and encouraged further exploration."
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
           ],
-          "items": [],
-          "figures": [],
           "quote": {
             "text": "from the perspective of people at the time",
-            "attribution": "P14"
+            "attribution": "P14 · Post-study interview"
           },
-          "sourceNodes": [
-            "1486:275"
-          ]
-        },
-        {
-          "id": "reflection",
-          "nav": "Reflection",
-          "eyebrow": "Reflection",
-          "title": "Keep cultural explanations tied to the painting.",
-          "body": [
-            "ScrollVerse brings scenes, social roles, and cultural explanations into one guided viewer. The comparison suggests it helps visitors feel they understand the painting’s historical setting.",
-            "Usability and workload differences were not significant. The results concern perceived understanding, not measured learning. The study tested the features together, so it cannot separate each feature’s effect."
-          ],
-          "items": [],
-          "figures": [],
-          "sourceNodes": [
-            "1226:461"
-          ]
+          "layout": "editorial"
         }
       ],
       "role": {
         "label": "My role",
-        "value": "Corresponding author",
-        "status": "authorship-only",
+        "value": "Programming guidance · Manuscript revision",
+        "status": "explicit",
+        "details": "Corresponding author. I guided programming during project development and revised and polished the manuscript.",
         "sourceRefs": [
-          "meta"
-        ],
-        "boundary": "Specific individual responsibilities are not stated in the current case study.",
-        "details": "Corresponding author on the iConference manuscript under review."
+          "User-confirmed CV responsibilities"
+        ]
       },
       "sourceNotes": [
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
-        "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio."
+        "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
+        "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
+        "Responsibilities confirmed from the author’s CV record, 14 October 2026."
       ],
-      "contentRevision": "2026-10-13-portfolio-first"
+      "contentRevision": "2026-10-14-editorial-research",
+      "outcome": "25 of 30 ScrollVerse participants reported a clearer understanding of everyday life in Qing-dynasty Suzhou."
     },
     {
       "id": "versecolor",
       "title": "VerseColor",
       "subtitle": "Follow a color into a poem.",
-      "description": "A search for “green” finds poems. VerseColor connects colors with imagery, emotions, and original lines so readers can explore what the color means in context.",
+      "description": "A poetry explorer that links colors with imagery, emotion, and original lines, so readers can interpret a color in context.",
       "kicker": "Research / Chinese poetry",
       "meta": "iConference · Under review · Sep 2026 · corresponding author",
       "stats": [
@@ -2791,65 +2579,79 @@
         "ink": "#ededeb",
         "cutout": "/cutouts/versecolor.png"
       },
-      "hero": null,
+      "hero": {
+        "src": "/assets/research-editorial/verse-meaning-in-context.png",
+        "width": 2754,
+        "height": 850,
+        "displayWidth": 1100,
+        "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
+        "alt": "Move from a color keyword to imagery, feeling, and source lines.",
+        "caption": "Move from a color keyword to imagery, feeling, and source lines."
+      },
       "sections": [
         {
           "id": "research",
-          "nav": "Research",
-          "eyebrow": "Research",
-          "title": "Follow a connection back to its source.",
+          "nav": "The design",
+          "eyebrow": "The design",
+          "title": "Follow each connection back to a poem.",
           "body": [
-            "An expert-reviewed graph connects colors, imagery, emotions, and source poems. Readers can follow a color–imagery link back to the poem, then compare how another poet uses that color."
+            "An expert-reviewed graph connects colors, imagery, emotions, and source poems. Readers can trace a connection, then compare how another poet uses the same color."
           ],
           "items": [
             {
-              "title": "RQ1 / How do readers construct meaning?",
-              "body": "Readers need the poem’s context, but supporting evidence is scattered across sources."
+              "title": "Ground the meaning",
+              "body": "Domain reviewers checked the poems and revised uncertain associations."
             },
             {
-              "title": "RQ2 / How can a graph help?",
-              "body": "Bring color, imagery, emotion, and source lines together. Support comparison across poems and poets."
-            },
-            {
-              "title": "RQ3 / Does it help readers interpret poems?",
-              "body": "Readers rated VerseColor more helpful for interpretation. The widely used poetry website was easier to use."
+              "title": "Compare across poems",
+              "body": "P7 described recurring links between greens and nature in Li Bai’s poetry."
             }
           ],
           "figures": [
             {
-              "src": "/assets/research-revision/versecolor-source-interface-4x.webp",
-              "zoomSrc": "/assets/research-revision/versecolor-source-interface-4x.png",
-              "width": 3760,
-              "height": 2805,
-              "displayWidth": 800,
-              "alt": "Colors, imagery, emotions, and poetic lines are linked in the VerseColor interface.",
-              "caption": "Colors, imagery, emotions, and poetic lines are linked in the VerseColor interface.",
-              "sourceNode": "1226:502",
-              "sourceOrigin": "Current visible Figma portfolio; 4× export, 13 October 2026",
-              "exportScale": 4
+              "src": "/assets/research-editorial/verse-interface.jpg",
+              "width": 5314,
+              "height": 1749,
+              "displayWidth": 1280,
+              "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
+              "alt": "Filter by poet or dynasty, explore relationships, and return to the original lines.",
+              "caption": "Filter by poet or dynasty, explore relationships, and return to the original lines."
             }
           ],
-          "sourceNodes": [
-            "1226:483",
-            "1226:487"
-          ]
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
+          ],
+          "layout": "editorial"
         },
         {
           "id": "experience",
-          "nav": "Experience",
-          "eyebrow": "Experience",
-          "title": "Read the color in context.",
+          "nav": "Try a reading",
+          "eyebrow": "Try a reading",
+          "title": "Green willows. A farewell between friends.",
           "body": [
-            "This example uses Wang Wei’s farewell poem. “Green” describes fresh willows. The following lines supply the farewell between friends.",
-            "Select a reading below to trace the connection back to the line."
+            "In Wang Wei’s poem, green describes willows refreshed by rain. The next lines supply the farewell context. Select a reading below to trace it to the original line."
           ],
           "items": [],
           "figures": [],
           "interaction": "verse",
-          "sourceNodes": [
-            "1349:258",
-            "1462:258",
-            "1462:265"
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
           ]
         },
         {
@@ -2858,35 +2660,103 @@
           "eyebrow": "Study",
           "title": "Compare interpretation experiences.",
           "body": [
-            "Eight reader interviews informed the design. A separate group of eight experts reviewed the graph.",
-            "In a 30-participant study, we compared VerseColor with Souyun, a widely used Chinese poetry website. Participants completed interpretation tasks, questionnaires, and interviews."
+            "Eight reader interviews informed the design; eight experts reviewed the graph. Thirty participants compared VerseColor with Souyun through interpretation tasks, questionnaires, and interviews."
           ],
           "items": [],
           "figures": [
             {
-              "src": "/assets/procedure-cf9f668d.webp",
-              "width": 2166,
-              "height": 726,
-              "alt": "Study procedure for the comparative interpretation tasks.",
-              "caption": "Study procedure for the comparative interpretation tasks.",
-              "sourceOrigin": "Original project paper figure; retained native pixels and source composition.",
-              "displayWidth": 1050
+              "alt": "The original comparative study sequence.",
+              "caption": "The original comparative study sequence.",
+              "displayWidth": 1200,
+              "width": 1200,
+              "height": 210,
+              "sourceOrigin": "Editable web reconstruction of the original paper workflow; no paper screenshot.",
+              "sourceComposition": {
+                "viewBox": [
+                  0,
+                  0,
+                  1200,
+                  210
+                ],
+                "layers": [],
+                "labels": [
+                  {
+                    "x": 0,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "01 / Read a task",
+                    "body": [
+                      "Explore color imagery in a poem."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  },
+                  {
+                    "x": 400,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "02 / Use one tool",
+                    "body": [
+                      "VerseColor or Souyun."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  },
+                  {
+                    "x": 800,
+                    "y": 22,
+                    "width": 345,
+                    "height": 155,
+                    "title": "03 / Reflect",
+                    "body": [
+                      "Questionnaire and interview."
+                    ],
+                    "fontSize": 22,
+                    "lineHeight": 1.35,
+                    "color": "#252a2d"
+                  }
+                ],
+                "leaders": [
+                  {
+                    "d": "M 350 80 L 386 80 L 379 73 M 386 80 L 379 87",
+                    "stroke": "#737c77",
+                    "strokeWidth": 2
+                  },
+                  {
+                    "d": "M 750 80 L 786 80 L 779 73 M 786 80 L 779 87",
+                    "stroke": "#737c77",
+                    "strokeWidth": 2
+                  }
+                ],
+                "mobileMinWidth": 860
+              }
             }
           ],
-          "sourceNodes": [
-            "1226:499",
-            "1226:500"
-          ]
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
+          ],
+          "layout": "editorial"
         },
         {
           "id": "findings",
           "nav": "Findings",
           "eyebrow": "Findings",
-          "title": "Connecting ideas. Interpreting imagery.",
+          "title": "Connections became easier to see.",
           "body": [
-            "Readers rated VerseColor more helpful for connecting colors with imagery and emotion, with Cohen’s d = 2.29. They also rated it more helpful for understanding imagery associated with a color, with d = 1.91.",
-            "Cohen’s d describes the size of the rating gap. A larger value means a bigger difference between the tools.",
-            "Souyun was easier to use. Ratings for finding relevant poems were similar."
+            "VerseColor received higher relational-support ratings (Cohen’s d = 2.29) and imagery-support ratings (d = 1.91). Souyun was easier to use; ratings for finding relevant poems were similar.",
+            "These are questionnaire effect sizes, not measured learning gains. The next step is simpler navigation."
           ],
           "items": [],
           "figures": [
@@ -2930,41 +2800,41 @@
               "displayWidth": 1050
             }
           ],
-          "sourceNodes": [
-            "1462:272"
-          ]
-        },
-        {
-          "id": "reflection",
-          "nav": "Reflection",
-          "eyebrow": "Reflection",
-          "title": "Traceable interpretation. Easier navigation next.",
-          "body": [
-            "VerseColor links colors, imagery, emotions, and source poems in one place. Users rated it helpful for interpreting poems. The next step is to make navigation easier.",
-            "The results describe short-term questionnaire ratings. They do not show objective or lasting learning gains. Expert-reviewed associations do not mean that a color has one universal meaning."
+          "quote": {
+            "text": "The system made it easier to see how colors are connected with images and emotions, instead of only finding poems that contain the word.",
+            "attribution": "P13 · Post-task interview"
+          },
+          "highlights": [
+            "section",
+            "reusable",
+            "context",
+            "9.4%",
+            "12",
+            "24",
+            "25 of 30",
+            "Cohen’s d = 2.29",
+            "d = 1.91"
           ],
-          "items": [],
-          "figures": [],
-          "sourceNodes": [
-            "1226:530"
-          ]
+          "layout": "editorial"
         }
       ],
       "role": {
         "label": "My role",
-        "value": "Corresponding author",
-        "status": "authorship-only",
+        "value": "Programming guidance · Manuscript revision",
+        "status": "explicit",
+        "details": "Corresponding author. I guided programming during project development and revised and polished the manuscript.",
         "sourceRefs": [
-          "meta"
-        ],
-        "boundary": "Specific individual responsibilities are not stated in the current case study.",
-        "details": "Corresponding author on the iConference manuscript under review."
+          "User-confirmed CV responsibilities"
+        ]
       },
       "sourceNotes": [
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
-        "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio."
+        "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
+        "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
+        "Responsibilities confirmed from the author’s CV record, 14 October 2026."
       ],
-      "contentRevision": "2026-10-13-portfolio-first"
+      "contentRevision": "2026-10-14-editorial-research",
+      "outcome": "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery; Souyun was easier to use."
     },
     {
       "id": "ambulance",
@@ -3031,7 +2901,7 @@
           "id": "abstract",
           "eyebrow": "THE PROBLEM",
           "title": "Rising demand. Scarce beds.",
-          "body": "Ramping means ambulance crews wait to hand patients over to hospital staff. Rising demand and scarce beds put the system under pressure.\n\nWe turned local reporting into decisions younger students could experience.",
+          "body": "Ramping means ambulance crews wait to hand patients over to hospital staff. We turned reporting on scarce beds and rising demand into decisions younger students could experience.",
           "items": [
             {
               "title": "From local reporting",
@@ -3056,13 +2926,14 @@
           "highlights": [
             "wait to hand patients over",
             "decisions younger students could experience"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "city",
           "eyebrow": "LOCAL NEWS, FAMILIAR PLACES",
           "title": "A city people recognize.",
-          "body": "Real hospital names and approximate locations connect the Adelaide map to the game. Low-poly geometry keeps the streets clear and rendering efficient.",
+          "body": "Real hospital names and approximate locations connect Adelaide to the game. Low-poly geometry keeps streets clear and rendering efficient.",
           "items": [],
           "nav": "Context",
           "figures": [
@@ -3463,13 +3334,14 @@
           "highlights": [
             "Real hospital names and approximate locations",
             "Low-poly geometry"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "gameplay",
           "eyebrow": "DRIVE → TRIAGE → CHECK CAPACITY",
           "title": "Every rescue is a decision under pressure.",
-          "body": "Drive, triage and check hospital capacity. The controls make each rescue a decision under pressure.",
+          "body": "Drive, triage and check capacity. Calls rise as beds stay scarce: save patients, while the shortage remains.",
           "items": [],
           "nav": "Gameplay",
           "figures": [
@@ -3874,13 +3746,14 @@
           ],
           "highlights": [
             "Drive, triage and check hospital capacity"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "reflection",
           "eyebrow": "PLAY → READ → REFLECT",
           "title": "Play first. Read the news next.",
-          "body": "After the run, real ramping data connects the game’s frustration to the news behind it.",
+          "body": "After the run, real ramping data connects the game’s frustration to the news.",
           "items": [
             {
               "title": "Student feedback",
@@ -3889,23 +3762,20 @@
             {
               "title": "External testing",
               "body": "289 beta tests refined driving and UI clarity."
-            },
-            {
-              "title": "Reach",
-              "body": "More than 2,000 Adelaide players."
             }
           ],
           "nav": "Reflection",
           "figures": [],
           "highlights": [
             "real ramping data connects the game’s frustration to the news"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "publication",
           "eyebrow": "RESEARCH THROUGH PLAY",
           "title": "From a playable system to a published case study.",
-          "body": "One co-authored journal article documents the game’s production and journalism through play.",
+          "body": "The project reached more than 2,000 Adelaide players and became a co-authored case study of journalism through play.",
           "items": [
             {
               "title": "It’s all fun and games: Contemporary newsgames and journalism",
@@ -3928,7 +3798,8 @@
           ],
           "highlights": [
             "One co-authored journal article"
-          ]
+          ],
+          "layout": "editorial"
         }
       ],
       "role": {
@@ -3940,7 +3811,9 @@
         ],
         "details": "I contributed programming and team coordination, and am the third co-author of the paper."
       },
-      "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks"
+      "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
+      "outcome": "More than 2,000 Adelaide players, project coverage in InDaily, and one co-authored journal article.",
+      "sourceNotes": []
     },
     {
       "id": "loofasoup",
@@ -4001,20 +3874,21 @@
           "id": "abstract",
           "eyebrow": "THE SHARED TABLE",
           "title": "A meal is never just a meal.",
-          "body": "Shared meals build business relationships and keep family and friends close. A work dinner can also mean missing a family gathering.\n\nLufa’s choice asks: make a living, or be there for loved ones?",
+          "body": "Shared meals build business ties and bring loved ones together. A work dinner can also mean missing family time—a choice between earning a living and being there.",
           "nav": "Abstract",
           "figures": [],
           "highlights": [
             "make a living",
             "be there for loved ones"
           ],
-          "items": []
+          "items": [],
+          "layout": "editorial"
         },
         {
           "id": "gameplay",
           "eyebrow": "READ. ROTATE. SERVE.",
           "title": "A shared table. Limited actions.",
-          "body": "Read each guest’s tastes. Rotate the shared table, use cards, then serve. Limited actions make every move matter.",
+          "body": "Read guests’ tastes, rotate the shared table and use item cards. Serve before the round limit, with limited actions to satisfy everyone.",
           "items": [],
           "nav": "Gameplay",
           "figures": [
@@ -4487,13 +4361,14 @@
           ],
           "highlights": [
             "Limited actions"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "routes",
           "eyebrow": "STORY ROUTES",
           "title": "Choose work or family.",
-          "body": "Before each chapter, Lufa talks with the guests. A dinner invitation opens two paths through his life.",
+          "body": "Before each chapter, Lufa talks with the guests. A dinner invitation opens two paths: work or family.",
           "items": [
             {
               "title": "Work / Business dinner",
@@ -4508,7 +4383,8 @@
           "figures": [],
           "highlights": [
             "two paths through his life"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "characters",
@@ -4611,13 +4487,14 @@
             "chosen animals and plants",
             "expressions for different moods"
           ],
-          "figureLayout": "character-row"
+          "figureLayout": "character-row",
+          "layout": "editorial"
         },
         {
           "id": "production",
           "eyebrow": "ART & TEAM COORDINATION",
           "title": "One table. Many hands.",
-          "body": "We reimagined 26 Chinese dishes with alien ingredients. Distinct colors make the dishes easy to tell apart at the table.\n\nOne shared board kept dialogue, artwork and interface states aligned.",
+          "body": "We reimagined 26 Chinese dishes with alien ingredients. A shared board aligned dialogue, art and interface states.",
           "items": [],
           "nav": "Production",
           "figures": [
@@ -4950,7 +4827,8 @@
             "Distinct colors",
             "One shared board"
           ],
-          "figureLayout": "dish-grid"
+          "figureLayout": "dish-grid",
+          "layout": "editorial"
         }
       ],
       "role": {
@@ -4962,7 +4840,9 @@
         ],
         "details": "I contributed programming and team coordination."
       },
-      "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks"
+      "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
+      "outcome": "A playable narrative puzzle with two story routes, six levels, eight characters and 26 dishes.",
+      "sourceNotes": []
     },
     {
       "id": "hersound",
@@ -5018,19 +4898,17 @@
           "id": "abstract",
           "eyebrow": "RECLAIM THEIR PAST",
           "title": "Imagine our future.",
-          "body": "Created at Beijing’s 1,000-participant women’s hackathon, the game encourages more women to enter STEM and become developers.\n\nExperience the story before questioning the record.",
+          "body": "Waner drafted imperial edicts; Taiping shaped court politics. Later accounts reduced their lives to scandal and rivalry. Play first, then question whose voices shape history.",
           "items": [
             {
-              "title": "Two political lives",
-              "body": "Waner drafted imperial edicts. Taiping, daughter of China’s first female emperor, shaped court politics."
-            },
-            {
-              "title": "Audience Choice Award",
-              "body": "Awarded at the hackathon."
-            },
-            {
-              "title": "Audience feedback",
-              "quote": "We felt the strength of women here. We saw such thoughtful ideas, and wanted to make games of our own."
+              "title": "Hackathon audience feedback",
+              "quote": "We felt the strength of women here … and wanted to make games of our own.",
+              "sourceRefs": [
+                {
+                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                  "nodeId": "1918:3108"
+                }
+              ]
             }
           ],
           "nav": "Abstract",
@@ -5038,26 +4916,28 @@
           "highlights": [
             "1,000-participant women’s hackathon",
             "questioning the record"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "assemble",
           "eyebrow": "ASSEMBLE",
           "title": "Build a shared memory.",
-          "body": "Waner and Taiping travel, share a banquet, and remember their time together in poetry. Rebuild these three scenes with five reusable icons.",
+          "body": "Rebuild three scenes of their shared lives with five reusable icons. Follow the clues, then place people and events into each frame.",
           "items": [],
           "nav": "Assemble",
           "figures": [],
           "highlights": [
             "five reusable icons"
           ],
-          "experience": "assemble"
+          "experience": "assemble",
+          "layout": "editorial"
         },
         {
           "id": "erase",
           "eyebrow": "ERASE",
           "title": "Scroll to watch history disappear.",
-          "body": "Six chapters become eighteen scenes. As you scroll, eight scenes dissolve while ten remain. The gaps make the loss of their stories visible.",
+          "body": "Six chapters become eighteen scenes. As you scroll, eight scenes dissolve. The gaps make the loss of their stories visible.",
           "nav": "Erase",
           "figures": [],
           "highlights": [
@@ -5065,13 +4945,14 @@
             "eight scenes dissolve"
           ],
           "experience": "erase",
-          "items": []
+          "items": [],
+          "layout": "editorial"
         },
         {
           "id": "question",
           "eyebrow": "QUESTION",
           "title": "Their lives become accusations.",
-          "body": "The Old and New Books of Tang tied Waner’s influence to sexual misconduct. The court-commissioned Comprehensive Mirror accused Taiping of acting “to prolong her power.” Later retellings made them romantic rivals.\n\nThe game questions history written by victors and men in power.",
+          "body": "Official histories tied Waner’s influence to sexual misconduct and accused Taiping of prolonging power. Later retellings made them romantic rivals. The game questions these inherited portrayals.",
           "items": [
             {
               "title": "Old Book of Tang · vol. 51",
@@ -5100,13 +4981,14 @@
             "sexual misconduct",
             "“to prolong her power.”",
             "history written by victors and men in power"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "restore",
           "eyebrow": "RESTORE",
           "title": "Give their agency back.",
-          "body": "The restored pictures show political work, strategic judgment, and companionship. An accusation is no longer the only way to read their lives.",
+          "body": "Place POWER in their hands. Restore political work, strategic judgment and companionship, so accusation is no longer the only way to read their lives.",
           "nav": "Restore",
           "figures": [],
           "highlights": [
@@ -5115,25 +4997,41 @@
           "experience": "restore",
           "items": [
             {
-              "title": "Waner · Political work",
-              "body": "She drafts imperial edicts and takes part in affairs of state."
+              "title": "Political agency",
+              "sourceRefs": [
+                {
+                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                  "nodeId": "1918:2375"
+                }
+              ]
             },
             {
-              "title": "Taiping · Strategic judgment",
-              "body": "She makes decisions in a changing court."
+              "title": "Literary talent",
+              "sourceRefs": [
+                {
+                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                  "nodeId": "1918:2385"
+                }
+              ]
             },
             {
-              "title": "Together · Trust and companionship",
-              "body": "The game presents them as companions and political allies."
+              "title": "Companionship",
+              "sourceRefs": [
+                {
+                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                  "nodeId": "1918:2393"
+                }
+              ]
             }
           ],
-          "experiencePosition": "before-body"
+          "experiencePosition": "before-body",
+          "layout": "editorial"
         },
         {
           "id": "evidence",
           "eyebrow": "EVIDENCE RESURFACES",
           "title": "1,303 years · 710 → 2013",
-          "body": "710 → 2013: 1,303 years. In 2013, Waner’s epitaph revealed Taiping’s mourning. New evidence challenged a story long overshadowed by scandal.\n\nPlayers question whose voices shape history.",
+          "body": "In 2013, Waner’s epitaph revealed Taiping’s mourning. After 1,303 years, new evidence challenged a story overshadowed by scandal.",
           "nav": "Evidence",
           "figures": [
             {
@@ -5152,13 +5050,14 @@
             "Taiping’s mourning",
             "whose voices shape history"
           ],
-          "items": []
+          "items": [],
+          "layout": "editorial"
         },
         {
           "id": "wish",
           "eyebrow": "AN ENDURING WISH",
           "title": "千年万岁，椒花颂声",
-          "body": "In our game, the final line of Waner’s epitaph becomes Taiping’s farewell to her.",
+          "body": "In the game, the epitaph’s final line becomes Taiping’s farewell to Waner.",
           "items": [
             {
               "title": "The game’s retelling",
@@ -5180,7 +5079,8 @@
           ],
           "highlights": [
             "Taiping’s farewell"
-          ]
+          ],
+          "layout": "editorial"
         }
       ],
       "role": {
@@ -5196,7 +5096,8 @@
       "sourceNotes": [
         "Follow-up checked against original game Figma zESmtcPKcAs7hQf7zKHfID, Page 1, chapter-three nodes 39:1425/1427/1429 and gallery 18 main chapter frames.",
         "Question illustration uses epilogue reader 40:1716, avoiding repeated static versions of the final-chapter before/after scenes."
-      ]
+      ],
+      "outcome": "Audience Choice Award at Beijing’s 1,000-participant women’s hackathon."
     },
     {
       "id": "ourworld",
@@ -5253,24 +5154,25 @@
           "id": "abstract",
           "eyebrow": "ANIMAL ETHICS",
           "title": "How can we stop this happening to other animals?",
-          "body": "Animals have died in wars, laboratories, zoos and polluted habitats. A dated archive shows how people have treated animals over two centuries.\n\nChoose an animal, read their story, and follow the original sources.",
+          "body": "Wars, laboratories, zoos and polluted habitats—two centuries of animal histories. Choose a case, learn what happened and follow the original sources.",
           "nav": "Abstract",
           "figures": [],
           "highlights": [
             "over two centuries",
             "follow the original sources"
           ],
-          "items": []
+          "items": [],
+          "layout": "editorial"
         },
         {
           "id": "portraits",
           "eyebrow": "MAKING THE ANIMAL PORTRAITS",
           "title": "Remember them as they were in life.",
-          "body": "I used AI and species references to create the portraits, then removed their backgrounds. They show the animals in life, before visitors learn about their deaths.",
+          "body": "I used AI and species references to create portraits of the animals in life, before visitors encounter their deaths.",
           "items": [
             {
               "title": "Chunee · 1826",
-              "body": "Shot dead after years on display in a London menagerie. His portrait opens this page."
+              "body": "Shot dead after years on display in a London menagerie."
             },
             {
               "title": "Laika · 1957",
@@ -5286,13 +5188,14 @@
           "highlights": [
             "in life",
             "before visitors learn about their deaths"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "timeline",
           "eyebrow": "EXPLORE THROUGH TIME",
           "title": "Animal histories, from 1826 to 2026.",
-          "body": "The full archive runs from 1826 to 2026. Scroll through time, hover for context, and select an animal to read their story and sources.\n\nTry two records below.",
+          "body": "The full archive spans 1826–2026. Explore ten selected animals below, open a record and follow its sources.",
           "nav": "Timeline",
           "figures": [],
           "highlights": [
@@ -5300,18 +5203,15 @@
             "story and sources"
           ],
           "experience": "archive",
-          "items": []
+          "items": [],
+          "layout": "editorial"
         },
         {
           "id": "laika",
           "eyebrow": "LAIKA’S STORY",
           "title": "What happened to Laika?",
-          "body": "A name, portrait and launch date introduce Laika as an individual. Her record explains the mission, how she died and what people later learned.",
+          "body": "Laika’s record brings together her life, the mission and what people later learned. Source links keep the evidence open to readers.",
           "items": [
-            {
-              "title": "Follow the evidence",
-              "body": "Original source links let visitors check the accounts themselves."
-            },
             {
               "title": "Keep uncertainty visible",
               "body": "When sources disagree, the record says so."
@@ -5322,13 +5222,14 @@
           "highlights": [
             "as an individual",
             "what people later learned"
-          ]
+          ],
+          "layout": "editorial"
         },
         {
           "id": "remember",
           "eyebrow": "PAUSE AND REMEMBER",
           "title": "Light a candle for them.",
-          "body": "One candle stays lit for the collected cases. The other nine can be lit or put out. They also stand for animals whose stories I have not found.\n\nThe archive can only tell part of what has happened.",
+          "body": "One candle marks the recorded cases; nine can be lit or put out. They also honour animals whose stories remain unknown.",
           "items": [],
           "nav": "Remember",
           "figures": [],
@@ -5336,20 +5237,22 @@
             "other nine can be lit or put out",
             "only tell part"
           ],
-          "experience": "candles"
+          "experience": "candles",
+          "layout": "editorial"
         },
         {
           "id": "reflection",
           "eyebrow": "WHAT CAN WE DO DIFFERENTLY?",
           "title": "Care starts with how we learn.",
-          "body": "I want people to think about how we teach children to treat animals, and what better protection would look like.",
+          "body": "How should we teach care for animals—and improve their protection?",
           "nav": "Reflection",
           "figures": [],
           "highlights": [
             "teach children to treat animals",
             "better protection"
           ],
-          "items": []
+          "items": [],
+          "layout": "editorial"
         }
       ],
       "role": {
@@ -5363,7 +5266,9 @@
         ],
         "details": "My role covers concept, research, interaction and web development."
       },
-      "revision": "2026-10-13 · Figma-first concise games revision"
+      "revision": "2026-10-13 · Figma-first concise games revision",
+      "outcome": "An interactive memorial with 191 published events drawn from 286 researched records, spanning 1826–2026.",
+      "sourceNotes": []
     }
   ]
 }

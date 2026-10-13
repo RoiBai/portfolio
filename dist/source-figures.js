@@ -10,7 +10,11 @@ export function setupSourceFigures(root=document) {
    const doc=new DOMParser().parseFromString(text,'image/svg+xml');
    const svg=doc.documentElement;if(svg.localName!=='svg'||doc.querySelector('parsererror'))return;
    svg.querySelectorAll('script,foreignObject').forEach(node=>node.remove());
-   const paths=[...svg.querySelectorAll('path[stroke][id]')].filter(p=>/route|implication to creative step/i.test(p.id));
+   const paths=[...svg.querySelectorAll('path[stroke][id]')].filter(p=>{
+    if(/route|implication to creative step|leader/i.test(p.id))return true;
+    for(let parent=p.parentElement;parent&&parent!==svg;parent=parent.parentElement){if(/precise dashed connections|leader to actual illustration/i.test(parent.id))return true;}
+    return false;
+   });
    const prefix='source-figure-'+(++serial)+'-', ids=new Map([...svg.querySelectorAll('[id]')].map(el=>[el.id,prefix+el.id]));
    for(const el of [svg,...svg.querySelectorAll('*')])for(const attr of [...el.attributes]){
     if(/^on/i.test(attr.name)){el.removeAttribute(attr.name);continue;}

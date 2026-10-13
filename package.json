@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.mjs",
     "start": "node server.mjs",
-    "check": "node --check dist/app.js && node --check dist/code-flow.js && node --check dist/homepage.js && node --check dist/hero-intro.js && node --check dist/home-position.js && node --check dist/case-editorial.js && node --check dist/data-viz.js && node --check dist/name-hero.js && node --check dist/game-embeds.js && node --check dist/game-experiences.js && node --check dist/verse-interaction.js && node --check dist/source-figures.js && node --check server.mjs && node --check dist/site-paths.js && node --check scripts/build-static.mjs && node --check dist/case-compositions.js",
+    "check": "node --check dist/app.js && node --check dist/code-flow.js && node --check dist/homepage.js && node --check dist/hero-intro.js && node --check dist/home-position.js && node --check dist/case-editorial.js && node --check dist/data-viz.js && node --check dist/name-hero.js && node --check dist/game-embeds.js && node --check dist/game-experiences.js && node --check dist/verse-interaction.js && node --check dist/source-figures.js && node --check server.mjs && node --check dist/site-paths.js && node --check scripts/build-static.mjs && node --check dist/case-compositions.js && node --check dist/glance-editorial.js",
     "build": "node scripts/build-static.mjs"
   }
 }
