@@ -2028,9 +2028,9 @@
       "category": "Research",
       "slug": "/research/personamail",
       "theme": {
-        "background": "#F7F8FC",
-        "ink": "#252A2D",
-        "accent": "#44518A"
+        "background": "#F5F5F0",
+        "ink": "#243330",
+        "accent": "#35665E"
       },
       "preview": {
         "bg": "#303030",
@@ -2090,6 +2090,8 @@
             }
           ],
           "highlights": [
+            "Eight participants",
+            "explaining social goals",
             "changing one part",
             "reusing what worked",
             "97 social-psychology papers"
@@ -2102,13 +2104,13 @@
           "eyebrow": "Interaction",
           "title": "A few settings, a more fitting email",
           "body": [
-            "Change the relationship, length or appreciation setting. Then reuse the same choices for a missed morning meeting."
+            "Choose how you speak to your supervisor. Adjust relationship, tone and length, then save those choices for your next email."
           ],
           "items": [],
           "figures": [],
           "highlights": [
-            "relationship, length or appreciation",
-            "reuse the same choices"
+            "relationship, tone and length",
+            "save those choices"
           ],
           "layout": "editorial",
           "interaction": "persona-intent"
@@ -2142,7 +2144,8 @@
           ],
           "highlights": [
             "Saved context anchors",
-            "personal stylebook"
+            "personal stylebook",
+            "writer stays in control"
           ],
           "layout": "editorial"
         }
@@ -2163,7 +2166,7 @@
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
         "Current website scenario is authored by Ruiyuan Bai: lab leave and a later missed morning meeting. Interactive settings select authored examples locally; no AI API is presented as connected. Original section editor is preserved in an expandable source view."
       ],
-      "contentRevision": "2026-10-14-research-story-settings",
+      "contentRevision": "2026-10-14-persona-reuse-story",
       "outcome": "Published IUI Companion ’26 demonstration: reusable context, local intent editing, and a personal stylebook.",
       "tags": [
         "Human–AI interaction",
@@ -2172,7 +2175,8 @@
       ],
       "highlights": [
         "relationship context",
-        "writing preferences"
+        "writing preferences",
+        "next message"
       ]
     },
     {
@@ -2181,7 +2185,7 @@
       "subtitle": "Looking is only part of the story",
       "description": "When someone looks at a painting, do they also remember and explain that detail? We compare those three signals to understand what gaze alone can miss.",
       "kicker": "Research / Eye tracking",
-      "meta": "ACM Multimedia Asia 2026 · Accepted poster / special session · Co-first author",
+      "meta": "ACM Multimedia Asia 2026 · Accepted special-session poster · Co-first author",
       "stats": [
         {
           "value": "12 / 15",
@@ -2203,9 +2207,9 @@
       "category": "Research",
       "slug": "/research/beyond-the-gaze",
       "theme": {
-        "background": "#FBF6FA",
-        "ink": "#252A2D",
-        "accent": "#713D70"
+        "background": "#F3F5F3",
+        "ink": "#263538",
+        "accent": "#3E6570"
       },
       "preview": {
         "bg": "#191919",
@@ -2245,22 +2249,16 @@
           "eyebrow": "Problem",
           "title": "What should a guide explain next?",
           "body": [
-            "A guide may treat where someone looks as a sign of interest and use it to generate a personal explanation. Our observation raised a question: what if a frequently viewed detail never appears in what the viewer selects or says?"
+            "A gaze-based guide may read a long look as interest. But looking longer does not always mean a detail matters to the viewer.",
+            "Our question: does that detail also appear in what the viewer selects or explains?"
           ],
-          "items": [
-            {
-              "title": "The assumption",
-              "body": "More looking means this detail deserves more explanation."
-            },
-            {
-              "title": "The question",
-              "body": "Does the viewer also identify it as important and use it to interpret the painting?"
-            }
-          ],
+          "items": [],
           "figures": [],
           "highlights": [
-            "a sign of interest",
-            "what the viewer selects or says"
+            "a long look as interest",
+            "looking longer does not always mean",
+            "Our question:",
+            "selects or explains"
           ]
         },
         {
@@ -2300,7 +2298,7 @@
               "researchFigure": {
                 "kind": "gaze-signals"
               },
-              "alt": "Original Gaze, Selection and Language evidence, with the HLL definition",
+              "alt": "High and Low definitions for Gaze, Selection and Language. High Gaze, Low Selection and Low Language are highlighted as HLL.",
               "sourceOrigin": "Original paper section 3.3: each signal is independently coded High or Low, yielding eight combinations. Web definitions retain the paper’s coding rule."
             }
           ],
@@ -2470,7 +2468,7 @@
           "meta"
         ],
         "boundary": "Specific individual responsibilities are not stated in the current case study.",
-        "details": "Co-first author on the accepted ACM Multimedia Asia 2026 poster / special-session paper."
+        "details": "Co-first author on the accepted ACM Multimedia Asia 2026 special-session poster."
       },
       "sourceNotes": [
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
@@ -2478,7 +2476,7 @@
         "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
         "14 October interactive revision: original embedded images from Figures 1, 3, 4 and 5 supplement the original portfolio. Each visual crop has native dimensions and provenance in assets/research-interactive/sources.json. No simulated eye-tracking data."
       ],
-      "contentRevision": "2026-10-14-research-story-settings",
+      "contentRevision": "2026-10-14-hll-direct-comparison",
       "outcome": "9.4% of cleaned region records showed sustained looking without later selection or interpretive mention.",
       "tags": [
         "Eye tracking",

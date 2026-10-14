@@ -1,0 +1,20 @@
+/* Shared page refinements for the two research stories, 14 October. */
+body:is([data-project=personamail],[data-project=beyond-the-gaze]) .case-study :is(.section-body,.hero-bottom)>p strong{color:var(--accent);font-weight:650}
+body[data-project=personamail] .rf-persona-scenes p{margin:0 0 8px}
+body[data-project=personamail] .rf-persona-scenes .persona-hero-quote{margin:10px 0;padding-left:10px;border-left:2px solid var(--accent);color:var(--accent);font-weight:600}
+body[data-project=personamail] .rf-persona-scenes .persona-hero-quote.is-generic{border-color:#a18471;color:#756b60;font-weight:400;text-decoration:line-through;text-decoration-color:#b59a88}
+body[data-project=personamail] .persona-hero-try{display:inline-block;margin-top:8px;color:var(--accent);font-size:16px;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+@media(min-width:761px){body[data-project=personamail] .rf-persona-opening>.rf-persona-comic{max-height:250px!important}}
+body[data-project=beyond-the-gaze] .case-study .stats{grid-template-columns:1.25fr 1fr 1fr}
+body[data-project=beyond-the-gaze] .case-study .stats small{max-width:none}
+body[data-project=beyond-the-gaze] .case-study .stats>div:first-child small{white-space:nowrap}
+body[data-project=beyond-the-gaze] #problem{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px 7%;align-items:center}
+body[data-project=beyond-the-gaze] #problem>.section-heading{grid-column:1;grid-row:1}
+body[data-project=beyond-the-gaze] #problem>.section-body{grid-column:2;grid-row:1;padding:0;max-width:none}
+body[data-project=beyond-the-gaze] #problem .section-body>p:last-child{margin:20px 0 0;padding:16px 20px;border-left:3px solid var(--accent);background:#e4ece9;color:var(--ink)}
+@media(max-width:760px){
+ body[data-project=beyond-the-gaze] .case-study .stats{grid-template-columns:1fr 1fr}
+ body[data-project=beyond-the-gaze] .case-study .stats>div:first-child{grid-column:1/-1}
+ body[data-project=beyond-the-gaze] #problem{display:flex;flex-direction:column;align-items:stretch;gap:24px}
+ body[data-project=beyond-the-gaze] #problem .section-body>p:last-child{padding:15px 17px}
+}

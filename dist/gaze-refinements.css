@@ -1,0 +1,35 @@
+.rf-gaze-signals .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* Gaze evidence: the three selected cells spell H–L–L directly. */
+.rf-gaze-signals{--gsl-ink:#283e45;--gsl-muted:#52636a;--gsl-rule:#b8c6c9;--gsl-fill:#d8e6e6;--gsl-active:#245e68;max-width:1160px}
+.rf-gaze-signals .rf-signal-columns{gap:20px}
+.rf-gaze-signals .rf-signal-columns>section{min-width:0;display:grid;grid-template-rows:auto 1fr}
+.rf-gaze-signals .rf-signal-columns h4{color:var(--gsl-ink);margin:0 0 13px}
+.rf-gaze-signals .rf-signal-columns dl{grid-template-columns:minmax(0,1fr);grid-template-rows:1fr 1fr;gap:8px}
+.rf-gaze-signals .rf-signal-cell{padding:18px 20px;min-height:145px;border:1px solid var(--gsl-rule);background:transparent;color:var(--gsl-muted)}
+.rf-gaze-signals .rf-signal-cell.is-hll-component{background:var(--gsl-fill);border-color:#8ba9ae;color:var(--gsl-ink)}
+.rf-gaze-signals .rf-signal-cell dt{display:flex;align-items:baseline;gap:8px;font-size:15px;line-height:1.1;letter-spacing:.02em;color:inherit;margin:0 0 12px}
+.rf-gaze-signals .rf-signal-cell dt b{font-size:24px;line-height:1;font-weight:650;color:inherit}
+.rf-gaze-signals .rf-signal-cell.is-hll-component dt b{color:var(--gsl-active)}
+.rf-gaze-signals .rf-signal-cell dd{font-size:18px;line-height:1.45;color:inherit;text-wrap:pretty}
+.rf-gaze-signals .rf-gsl-hll{background:transparent;color:var(--gsl-ink);border-top:1px solid var(--gsl-rule);grid-template-columns:112px minmax(0,1fr);gap:22px;margin-top:26px!important;padding:23px 0 0!important;align-items:start}
+.rf-gaze-signals .rf-gsl-hll>strong{color:var(--gsl-active);font-size:48px;line-height:1.12}
+.rf-gaze-signals .rf-gsl-hll h4{color:var(--gsl-ink);font-size:23px;margin:0 0 8px}
+.rf-gaze-signals .rf-gsl-hll p{color:var(--gsl-ink);font-size:19px!important;line-height:1.5!important;max-width:74ch}
+.rf-gaze-signals .rf-gsl-hll small{color:var(--gsl-muted);font-size:16px;line-height:1.45;margin-top:10px;max-width:77ch}
+.rf-gaze-signals .rf-gaze-coding{color:var(--gsl-muted);margin-top:17px;font-size:15px}
+.rf-gaze-signals .rf-gaze-coding summary{padding:2px 0;min-height:28px}
+.rf-gaze-signals .rf-gaze-coding p{color:var(--gsl-muted);font-size:16px!important;padding-top:10px}
+@media(max-width:760px){
+ .rf-gaze-signals .rf-signal-columns{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .rf-gaze-signals .rf-signal-columns h4{font-size:17px;margin-bottom:10px;letter-spacing:-.02em}
+ .rf-gaze-signals .rf-signal-columns dl{gap:8px;grid-template-rows:1fr 1fr}
+ .rf-gaze-signals .rf-signal-cell{padding:12px 10px;min-height:191px}
+ .rf-gaze-signals .rf-signal-cell dt{font-size:12px;gap:5px;margin-bottom:10px;flex-wrap:wrap}
+ .rf-gaze-signals .rf-signal-cell dt b{font-size:22px}
+ .rf-gaze-signals .rf-signal-cell dd{font-size:15px;line-height:1.4;overflow-wrap:normal;word-break:normal}
+ .rf-gaze-signals .rf-gsl-hll{grid-template-columns:1fr;gap:9px;margin-top:21px!important;padding-top:18px!important}
+ .rf-gaze-signals .rf-gsl-hll>strong{font-size:34px}
+ .rf-gaze-signals .rf-gsl-hll h4{font-size:22px;line-height:1.25}
+ .rf-gaze-signals .rf-gsl-hll p{font-size:18px!important}
+ .rf-gaze-signals .rf-gsl-hll small{font-size:15px}
+}
