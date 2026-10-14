@@ -1,0 +1,370 @@
+{
+  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+  "method": "Original Figma layers exported independently at 4x PNG; unchanged PNGs positioned in HTML using original absolute render bounds. No screenshot crop, recoloring or new drawing.",
+  "cases": [
+    {
+      "key": "outline",
+      "caption": "Selected outline",
+      "icon": "Parking",
+      "backgroundId": "1577:6613",
+      "foregroundId": "1577:6616"
+    },
+    {
+      "key": "shadow",
+      "caption": "Shadow only",
+      "icon": "Weather",
+      "backgroundId": "1577:6289",
+      "foregroundId": "1577:6290"
+    },
+    {
+      "key": "gray20",
+      "caption": "Gray backplate 20% brightness",
+      "icon": "Parking",
+      "backgroundId": "1577:6599",
+      "foregroundId": "1577:6617"
+    },
+    {
+      "key": "gray30",
+      "caption": "Gray backplate 30% brightness",
+      "icon": "Parking",
+      "backgroundId": "1577:6600",
+      "foregroundId": "1577:6618"
+    },
+    {
+      "key": "gray40",
+      "caption": "Gray backplate 40% brightness",
+      "icon": "Parking",
+      "backgroundId": "1577:6601",
+      "foregroundId": "1577:6619"
+    },
+    {
+      "key": "minus",
+      "caption": "Gradient −30°",
+      "icon": "Weather",
+      "backgroundId": "1577:6299",
+      "foregroundId": "1577:6300"
+    },
+    {
+      "key": "plus",
+      "caption": "Gradient +30°",
+      "icon": "Weather",
+      "backgroundId": "1577:6301",
+      "foregroundId": "1577:6302"
+    },
+    {
+      "key": "minus-shadow",
+      "caption": "Gradient −30° + shadow",
+      "icon": "Weather",
+      "backgroundId": "1577:6291",
+      "foregroundId": "1577:6292"
+    },
+    {
+      "key": "plus-shadow",
+      "caption": "Gradient +30° + shadow",
+      "icon": "Weather",
+      "backgroundId": "1577:6293",
+      "foregroundId": "1577:6294"
+    }
+  ],
+  "bounds": {
+    "1577:6289": {
+      "id": "1577:6289",
+      "name": "Ellipse 562",
+      "type": "ELLIPSE",
+      "bounds": {
+        "x": 21304.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 21304.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6290": {
+      "id": "1577:6290",
+      "name": "Vector",
+      "type": "VECTOR",
+      "bounds": {
+        "x": 21316.5,
+        "y": 32159,
+        "width": 52.9563102722168,
+        "height": 46
+      },
+      "render": {
+        "x": 21312.5,
+        "y": 32159,
+        "width": 60.95703125,
+        "height": 54
+      }
+    },
+    "1577:6301": {
+      "id": "1577:6301",
+      "name": "Ellipse 574",
+      "type": "ELLIPSE",
+      "bounds": {
+        "x": 21441.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 21441.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6302": {
+      "id": "1577:6302",
+      "name": "Vector",
+      "type": "VECTOR",
+      "bounds": {
+        "x": 21453.5,
+        "y": 32159,
+        "width": 52.9563102722168,
+        "height": 46
+      },
+      "render": {
+        "x": 21453.5,
+        "y": 32159,
+        "width": 52.95703125,
+        "height": 46
+      }
+    },
+    "1577:6299": {
+      "id": "1577:6299",
+      "name": "Ellipse 573",
+      "type": "ELLIPSE",
+      "bounds": {
+        "x": 21562.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 21562.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6300": {
+      "id": "1577:6300",
+      "name": "Vector",
+      "type": "VECTOR",
+      "bounds": {
+        "x": 21576.5,
+        "y": 32160,
+        "width": 52.9563102722168,
+        "height": 46
+      },
+      "render": {
+        "x": 21576.5,
+        "y": 32160,
+        "width": 52.95703125,
+        "height": 46
+      }
+    },
+    "1577:6293": {
+      "id": "1577:6293",
+      "name": "Ellipse 564",
+      "type": "ELLIPSE",
+      "bounds": {
+        "x": 21694.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 21694.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6294": {
+      "id": "1577:6294",
+      "name": "Vector",
+      "type": "VECTOR",
+      "bounds": {
+        "x": 21708.5,
+        "y": 32159,
+        "width": 52.9563102722168,
+        "height": 46
+      },
+      "render": {
+        "x": 21704.5,
+        "y": 32159,
+        "width": 60.95703125,
+        "height": 54
+      }
+    },
+    "1577:6291": {
+      "id": "1577:6291",
+      "name": "Ellipse 563",
+      "type": "ELLIPSE",
+      "bounds": {
+        "x": 21815.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 21815.5,
+        "y": 32142,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6292": {
+      "id": "1577:6292",
+      "name": "Vector",
+      "type": "VECTOR",
+      "bounds": {
+        "x": 21828.5,
+        "y": 32159,
+        "width": 52.9563102722168,
+        "height": 46
+      },
+      "render": {
+        "x": 21824.5,
+        "y": 32159,
+        "width": 60.95703125,
+        "height": 54
+      }
+    },
+    "1577:6613": {
+      "id": "1577:6613",
+      "name": "Ellipse 633",
+      "bounds": {
+        "x": 25001.5,
+        "y": 29758,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 25001.5,
+        "y": 29758,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6616": {
+      "id": "1577:6616",
+      "name": "Vector",
+      "bounds": {
+        "x": 25030.5,
+        "y": 29778,
+        "width": 26.15625,
+        "height": 40.6875
+      },
+      "render": {
+        "x": 25030.5,
+        "y": 29778,
+        "width": 26.15625,
+        "height": 40.6875
+      }
+    },
+    "1577:6599": {
+      "id": "1577:6599",
+      "name": "Ellipse 635",
+      "bounds": {
+        "x": 25145.5,
+        "y": 29758,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 25145.5,
+        "y": 29758,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6617": {
+      "id": "1577:6617",
+      "name": "Vector",
+      "bounds": {
+        "x": 25172.5,
+        "y": 29778,
+        "width": 26.15625,
+        "height": 40.6875
+      },
+      "render": {
+        "x": 25172.5,
+        "y": 29778,
+        "width": 26.15625,
+        "height": 40.6875
+      }
+    },
+    "1577:6600": {
+      "id": "1577:6600",
+      "name": "Ellipse 637",
+      "bounds": {
+        "x": 25279.5,
+        "y": 29758,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 25279.5,
+        "y": 29758,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6618": {
+      "id": "1577:6618",
+      "name": "Vector",
+      "bounds": {
+        "x": 25306.5,
+        "y": 29778,
+        "width": 26.15625,
+        "height": 40.6875
+      },
+      "render": {
+        "x": 25306.5,
+        "y": 29778,
+        "width": 26.15625,
+        "height": 40.6875
+      }
+    },
+    "1577:6601": {
+      "id": "1577:6601",
+      "name": "Ellipse 639",
+      "bounds": {
+        "x": 25420.5,
+        "y": 29758,
+        "width": 80,
+        "height": 80
+      },
+      "render": {
+        "x": 25420.5,
+        "y": 29758,
+        "width": 80,
+        "height": 80
+      }
+    },
+    "1577:6619": {
+      "id": "1577:6619",
+      "name": "Vector",
+      "bounds": {
+        "x": 25447.5,
+        "y": 29778,
+        "width": 26.15625,
+        "height": 40.6875
+      },
+      "render": {
+        "x": 25447.5,
+        "y": 29778,
+        "width": 26.15625,
+        "height": 40.6875
+      }
+    }
+  },
+  "exportMethod": "Figma Plugin API native PNG export, contentsOnly true, scale 4; exact source layers composited using original render bounds"
+}

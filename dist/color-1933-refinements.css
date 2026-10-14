@@ -66,3 +66,28 @@ body[data-project="traditional-color"] .color-artwork-row .color-atlas-figure fi
 }
 
 @media(max-width:700px){.color-artwork-row-label strong{position:sticky;left:0;z-index:1;background:var(--bg,#f4f0e7);padding-right:12px}.color-artwork-row-with .color-artwork-row-label strong{background:#e1e6d8}.color-artwork-row-label>span{display:none}}
+
+/* Tianqing: three readable notes, with stronger leaders into the original record. */
+body[data-project="traditional-color"] .color-record-board{grid-template-columns:minmax(0,1fr) 220px;gap:100px;max-width:1020px;--record-line-color:#477187}
+body[data-project="traditional-color"] .color-record-callouts{gap:16px}
+body[data-project="traditional-color"] .color-record-callouts>article{padding:18px 22px 19px;background:#e5ecee;border:1px solid #b8cbd2;border-radius:4px;box-sizing:border-box}
+body[data-project="traditional-color"] .color-record-callouts article>span{display:flex;align-items:center;gap:9px;color:#426879;font-size:13px;line-height:1.3}
+.color-record-number{display:inline-flex;align-items:center;justify-content:center;width:27px;height:25px;border-radius:3px;background:#456d80;color:#fff;font:600 12px/1 var(--font-body);letter-spacing:.02em}
+body[data-project="traditional-color"] .color-record-callouts h4{font-size:23px!important;line-height:1.2!important;margin:10px 0 8px!important;color:#2e5365}
+body[data-project="traditional-color"] .color-record-callouts p{font-size:18px!important;line-height:1.45!important;color:#2f3c40}
+body[data-project="traditional-color"] .color-record-original{width:220px!important}
+body[data-project="traditional-color"] .color-record-connectors{display:block;z-index:2}
+.color-record-connectors i[data-axis="x"]{border-top:3px dashed var(--record-line-color)}
+.color-record-connectors i[data-axis="y"]{border-left:3px dashed var(--record-line-color)}
+body[data-project="traditional-color"] .color-record-connectors b{width:8px;height:8px;translate:-50% -50%;background:var(--record-line-color);box-shadow:0 0 0 2px var(--bg,#f4f0e7)}
+@media(min-width:701px) and (max-width:1000px){body[data-project="traditional-color"] .color-record-board{grid-template-columns:minmax(0,1fr) 210px;gap:60px}body[data-project="traditional-color"] .color-record-original{width:210px!important}body[data-project="traditional-color"] .color-record-callouts>article{padding:17px 18px}}
+@media(max-width:700px){
+ body[data-project="traditional-color"] .color-record-board{grid-template-columns:32px minmax(0,1fr);gap:22px 0}
+ body[data-project="traditional-color"] .color-record-callouts>article{grid-column:2;padding:16px;background:#e5ecee;border:1px solid #b8cbd2}
+ body[data-project="traditional-color"] .color-record-callouts h4{font-size:22px!important}
+ body[data-project="traditional-color"] .color-record-original img{grid-column:2}
+ body[data-project="traditional-color"] .color-record-original img:first-child{width:210px}
+ body[data-project="traditional-color"] .color-record-original img:last-child{width:280px}
+ .color-record-connectors i[data-axis="x"]{border-top-width:2px}.color-record-connectors i[data-axis="y"]{border-left-width:2px}
+ body[data-project="traditional-color"] .color-record-connectors b{width:7px;height:7px}
+}

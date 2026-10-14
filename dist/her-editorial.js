@@ -6,6 +6,8 @@ const image=(src,alt,width,height)=>`<img src="${siteURL(src)}" alt="${esc(alt)}
 export function setupHerEditorial(root,project){
  if(project.id!=='hersound')return()=>{};
  const sections=Object.fromEntries(project.sections.map(s=>[s.id,s]));
+ const awardStat=[...root.querySelectorAll('.case-hero .stats>div')].find(stat=>stat.querySelector('strong')?.textContent.trim()==='Audience Choice'&&stat.querySelector(':scope>span')?.textContent.trim()==='Award');
+ awardStat?.classList.add('her-audience-award');
  const award=root.querySelector('.hero-outcome'),hero=root.querySelector('.case-hero');
  if(award&&hero){award.classList.add('her-award');hero.insertBefore(award,hero.querySelector('.stats'));}
  const abstract=root.querySelector('#abstract');

@@ -3,6 +3,11 @@ body[data-project=hersound]{background-color:#f2eee5;background-image:url('/asse
 body[data-project=hersound] .chapter-bar{background:#eee7d9;background-image:url('/assets/her-1915/paper-background-original.png');background-size:850px auto}
 body[data-project=hersound] .case-study .her-award{display:flex;align-items:baseline;gap:14px;margin:18px 0 0;padding:0;max-width:none}
 body[data-project=hersound] .case-study .her-award>p{margin:0;font-size:18px;text-wrap:initial}
+/* Keep the award name on one line and its label directly beneath it. */
+body[data-project=hersound] .case-study .stats>.her-audience-award{display:grid;align-content:start}
+body[data-project=hersound] .case-study .stats>.her-audience-award>strong{display:block;white-space:nowrap}
+body[data-project=hersound] .case-study .stats>.her-audience-award>span{display:block;max-width:none}
+@media(max-width:640px){body[data-project=hersound] .case-study .stats>.her-audience-award{grid-column:1/-1}}
 body[data-project=hersound] .her-abstract{display:block!important;padding-block:45px!important}
 .her-abstract-story{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:5%;align-items:center;margin-top:25px}
 .her-abstract-copy>p{font-size:var(--case-copy);line-height:1.55;margin:0 0 18px;text-wrap:pretty}
