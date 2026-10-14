@@ -357,7 +357,7 @@ function setupCandles(section) {
 }
 
 function setupHerArticle(root) {
-  const containers=root.querySelectorAll('.case-study .hero-bottom>p,.case-study .section-body,.case-study #abstract figcaption,.gx-play-guide');
+  const containers=root.querySelectorAll('.case-study .hero-bottom>p,.case-study .section-body,.case-study #abstract figcaption,.her-abstract-copy,.her-accusations,.her-wish-words,.gx-play-guide');
   const labels=[];
   for(const container of containers){
     const walker=document.createTreeWalker(container,NodeFilter.SHOW_TEXT);const nodes=[];

@@ -1,0 +1,71 @@
+/* Original game paper and artwork, arranged as one readable story. */
+body[data-project=hersound]{background-color:#f2eee5;background-image:url('/assets/her-1915/paper-background-original.png');background-repeat:repeat;background-size:850px auto}
+body[data-project=hersound] .chapter-bar{background:#eee7d9;background-image:url('/assets/her-1915/paper-background-original.png');background-size:850px auto}
+body[data-project=hersound] .case-study .her-award{display:flex;align-items:baseline;gap:14px;margin:18px 0 0;padding:0;max-width:none}
+body[data-project=hersound] .case-study .her-award>p{margin:0;font-size:18px;text-wrap:initial}
+body[data-project=hersound] .her-abstract{display:block!important;padding-block:45px!important}
+.her-abstract-story{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:5%;align-items:center;margin-top:25px}
+.her-abstract-copy>p{font-size:var(--case-copy);line-height:1.55;margin:0 0 18px;text-wrap:pretty}
+.her-abstract-copy strong{color:var(--accent)}
+.her-abstract-copy blockquote{border-left:3px solid #9e6853;margin:24px 0 0;padding:5px 0 5px 18px}
+.her-abstract-copy blockquote p{font-size:21px;line-height:1.45;margin:0 0 8px}
+.her-abstract-copy cite{font-size:15px;font-style:normal;color:#655d53}
+.her-abstract-portraits{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end}
+.her-abstract-portraits figure{margin:0;text-align:center;min-width:0}
+.her-abstract-portraits img{max-height:260px;width:100%;height:auto;object-fit:contain}
+.her-abstract-portraits figcaption{margin-top:12px!important;padding:0!important}
+body[data-project=hersound] .her-erase{display:block!important;padding-top:30px!important;row-gap:0!important}
+body[data-project=hersound] .her-erase>.section-experience{margin:0!important;padding:0!important}
+body[data-project=hersound] .her-erase .gx-wind{margin:0!important;padding:0!important;border:0!important}
+body[data-project=hersound] .her-erase .gx-wind-panel{top:68px;padding:14px 0;background:transparent}
+body[data-project=hersound] .her-erase .section-heading{margin:0 0 14px!important;padding:0!important}
+body[data-project=hersound] .her-erase .section-heading .eyebrow{margin-bottom:8px}
+body[data-project=hersound] .her-erase .section-heading h2{margin:0!important;font-size:clamp(28px,3.2vw,44px)!important}
+body[data-project=hersound] .her-erase .gx-wind-panel>.gx-instruction{max-width:1140px!important;font-size:19px!important;line-height:1.4!important;margin:0 0 16px!important}
+body[data-project=hersound] .her-erase .gx-wind-art{width:min(100%,calc((100svh - 300px)*2.65));margin-inline:auto;gap:12px 16px}
+body[data-project=hersound] .her-erase .gx-inline-status{margin:14px 0 0;font-size:16px}
+body[data-project=hersound] .her-question{display:block!important;padding-block:40px!important}
+.her-question-deck{max-width:1000px;font-size:var(--case-copy);line-height:1.5;margin:20px 0 28px}
+.her-question-deck strong{color:#9a564a}
+.her-accusation-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;max-width:1000px;margin:auto}
+.her-accusation{margin:0;min-width:0}
+.her-accusation img{width:100%;max-height:270px;object-fit:contain;display:block}
+body[data-project=hersound] .her-accusation figcaption{display:block;margin:18px 0 0;padding:0;border:0}
+.her-accusation figcaption>span{font-size:15px;color:#6e5b50;font-weight:600}
+.her-accusation figcaption>p{font-size:20px;line-height:1.45;margin:8px 0 0}
+.her-accusation figcaption strong{background:#e2c8b7;color:#674135;padding:0 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.her-question-transition{font-size:24px;font-weight:600;line-height:1.4;text-align:center;margin:30px 0 0;color:var(--accent)}
+body[data-project=hersound] #wish.her-wish{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)!important;gap:35px!important;align-items:center!important;min-height:0!important;padding-block:55px!important}
+body[data-project=hersound] #wish.her-wish>.section-heading{grid-column:1!important;grid-row:1!important;align-self:center!important}
+.her-wish-words{margin-top:20px}
+.her-farewell{font-family:Georgia,'Times New Roman',serif;font-size:clamp(23px,2.3vw,31px);line-height:1.4;margin:0 0 18px}
+.her-farewell-context{font-family:var(--font-body);font-size:17px;font-weight:400;line-height:1.5;max-width:480px;margin:0}
+.her-farewell-art{margin:0;grid-column:2;grid-row:1;align-self:center}
+body[data-project=hersound] #wish.her-wish .her-farewell-art img{width:100%;height:auto!important;max-height:400px!important;object-fit:contain}
+@media(min-width:1000px){body[data-project=hersound] .her-award>p{white-space:nowrap}}
+@media(max-width:760px){
+ body[data-project=hersound] .case-study .her-award{display:block;margin-top:18px}
+ body[data-project=hersound] .case-study .her-award>p{margin-top:6px;font-size:16px}
+ .her-abstract-story{grid-template-columns:1fr;gap:24px}.her-abstract-portraits{max-width:350px;justify-self:center}.her-abstract-copy blockquote p{font-size:19px}
+ body[data-project=hersound] .her-erase .gx-wind-panel{top:62px;padding-top:10px}
+ body[data-project=hersound] .her-erase .section-heading h2{font-size:28px!important}
+ body[data-project=hersound] .her-erase .gx-wind-panel>.gx-instruction{font-size:16px!important;line-height:1.4!important;margin-bottom:14px!important}
+ body[data-project=hersound] .her-erase .gx-wind-art{width:100%;gap:7px}
+ body[data-project=hersound] .her-erase .gx-wind-art figcaption{font-size:10px!important;margin-top:2px}
+ body[data-project=hersound] .her-erase .gx-inline-status{font-size:13px;margin-top:10px}
+ .her-accusation-pair{gap:28px;grid-template-columns:1fr;max-width:420px}.her-accusation img{max-height:220px}.her-accusation figcaption>p{font-size:18px}.her-question-transition{font-size:21px}
+ body[data-project=hersound] #wish.her-wish{grid-template-columns:1fr!important;gap:28px!important;padding-block:40px!important}
+ body[data-project=hersound] #wish.her-wish>.section-heading,.her-farewell-art{grid-column:1!important;grid-row:auto!important}
+}
+@media(max-height:650px){body[data-project=hersound] .her-erase .gx-wind-panel{top:52px}body[data-project=hersound] .her-erase .section-heading h2{font-size:28px!important}body[data-project=hersound] .her-erase .section-heading .eyebrow{font-size:13px;margin-bottom:4px}body[data-project=hersound] .her-erase .gx-wind-panel>.gx-instruction{font-size:16px!important;margin-bottom:10px!important}}
+/* Keep the abstract full-width instead of inheriting the old two-column section shell. */
+body[data-project=hersound] .case-study #abstract.her-abstract{display:block!important}
+body[data-project=hersound] .case-study #abstract.her-abstract>.section-heading{max-width:none;margin:0!important}
+@media(max-width:760px){body[data-project=hersound] .her-erase .gx-wind-art{width:min(100%,calc((100svh - 340px)*.56))}}
+/* A quiet wash keeps the original paper fibres behind, rather than competing with, the story. */
+body[data-project=hersound],body[data-project=hersound] .chapter-bar{background-image:linear-gradient(rgba(242,238,229,.62),rgba(242,238,229,.62)),url('/assets/her-1915/paper-background-original.png')}
+/* Reveal the original lakeside scene without its rectangular paper frame. */
+body[data-project=hersound] #wish.her-wish .her-farewell-art{position:relative;overflow:hidden;aspect-ratio:1.8;mask-image:radial-gradient(ellipse at 50% 52%,#000 58%,rgba(0,0,0,.92) 65%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 52%,#000 58%,rgba(0,0,0,.92) 65%,transparent 75%)}
+body[data-project=hersound] #wish.her-wish .her-farewell-art img{position:absolute;top:-3%;left:-1.5%;width:103%;height:auto!important;max-height:none!important}
+body[data-project=hersound] #wish.her-wish .her-farewell-art img{top:-4.5%}
+.her-farewell{font-weight:400}

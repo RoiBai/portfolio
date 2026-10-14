@@ -1,0 +1,57 @@
+/* Six explanations live with one original playing video. */
+body[data-project=loofasoup] .loofa-gameplay-on-film .loofa-recording-annotated{width:min(1160px,100%);margin:28px auto 0;max-width:none}
+.loofa-annotated-player{position:relative;width:100%}
+.loofa-video-stage{position:relative;width:100%;line-height:0}
+body[data-project=loofasoup] .loofa-video-stage video{display:block;width:100%;height:auto!important;aspect-ratio:16/9;object-fit:contain;background:#e7edb5}
+.loofa-video-hotspots{position:absolute;inset:0;pointer-events:none}
+.loofa-video-hotspot{position:absolute;translate:-50% -50%;width:37px;height:37px;border:2px solid #faffdd;border-radius:50%;background:#274d34;color:#f7fae9;font:650 14px/1 var(--font-body);display:grid;place-items:center;box-shadow:0 2px 8px #173b4477;pointer-events:auto;z-index:5;cursor:pointer;padding:0;transition:scale .15s,background .15s}
+.loofa-video-hotspot:hover,.loofa-video-hotspot:focus-visible{scale:1.12;outline:2px solid #274d34;outline-offset:3px}
+.loofa-video-hotspot[aria-pressed=true]{background:#f5e58d;color:#294b35;border-color:#294b35;box-shadow:0 0 0 3px #fff9}
+.loofa-video-target{position:absolute;pointer-events:none;border:2px dashed #234b36;box-shadow:0 0 0 1px #ffffffaa;z-index:2;border-radius:8px;transition:inset .2s,width .2s,height .2s}
+.loofa-video-note{position:absolute;left:35%;top:29%;width:29%;box-sizing:border-box;padding:17px 20px 19px;background:#f4f4d8f2;color:#24412e;box-shadow:0 6px 22px #29402b20;border:1px solid #6b875c77;border-radius:5px;z-index:4;line-height:normal;backdrop-filter:blur(7px)}
+.loofa-video-note-top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:9px}
+.loofa-video-note-top>span{font:650 12px/1 var(--font-body);letter-spacing:.07em;color:#3e633b}
+.loofa-video-note-top>div{display:flex;gap:5px}
+.loofa-video-note-top button{width:30px;height:28px;border:0;border-radius:3px;background:#e0e5ba;color:#294b35;font:500 20px/1 var(--font-body);cursor:pointer;padding:0}
+.loofa-video-note-top button:hover,.loofa-video-note-top button:focus-visible{background:#325d3b;color:white}
+body[data-project=loofasoup] .loofa-video-note h3{font:600 clamp(19px,1.8vw,24px)/1.2 var(--font-body)!important;margin:0 0 9px!important;color:#294b35;text-wrap:balance}
+body[data-project=loofasoup] .loofa-video-note p{font:400 clamp(16px,1.35vw,18px)/1.45 var(--font-body)!important;margin:0!important;color:#294b35;text-wrap:pretty}
+body[data-project=loofasoup] .loofa-recording-annotated>figcaption{display:flex!important;align-items:baseline;justify-content:space-between;gap:25px;border:0;padding:14px 0 0!important;margin:0!important}
+body[data-project=loofasoup] .loofa-recording-annotated>figcaption>span{font:500 15px/1.4 var(--font-body)!important;color:#476044;letter-spacing:0;text-transform:none;white-space:nowrap}
+body[data-project=loofasoup] .loofa-recording-annotated>figcaption>p{font:400 17px/1.4 var(--font-body)!important;margin:0!important;color:#294b35}
+/* The original route map and its two meanings are read together. */
+.loofa-routes-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:48px;align-items:center;margin-top:28px}
+.loofa-route-map{margin:0!important;min-width:0;padding:0;max-width:740px}
+.loofa-route-map>img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+body[data-project=loofasoup] #routes .loofa-route-map>figcaption{font:400 16px/1.45 var(--font-body)!important;margin-top:12px;padding:0!important;color:#4d6345}
+.loofa-route-copy>p{font:400 20px/1.5 var(--font-body)!important;max-width:470px;margin:0 0 27px!important}
+.loofa-route-copy article{display:grid;grid-template-columns:25px minmax(0,1fr);gap:15px;padding:21px 0;border-top:1px solid #a8b28b}
+.loofa-route-number{font:600 14px/1.5 var(--font-body);color:#64774e;padding-top:3px}
+body[data-project=loofasoup] .loofa-route-copy article h3{font:600 26px/1.2 var(--font-body)!important;color:#2e5939;margin:0 0 9px!important}
+body[data-project=loofasoup] .loofa-route-copy article p{font:400 19px/1.5 var(--font-body)!important;margin:0!important;max-width:420px}
+.loofa-dialogue-intro{display:grid;grid-template-columns:.65fr 1.35fr;gap:14px 35px;margin-top:40px;align-items:baseline}
+body[data-project=loofasoup] .loofa-dialogue-intro>h3{font:600 30px/1.2 var(--font-body)!important;margin:0!important;color:#3e6a40}
+body[data-project=loofasoup] .loofa-dialogue-intro>p{font:400 20px/1.5 var(--font-body)!important;margin:0!important}
+.loofa-original-dialogues{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:9px;max-width:1100px}
+.loofa-original-dialogues figure{margin:0;min-width:0;max-width:535px}.loofa-original-dialogues img{display:block;width:100%;height:auto;object-fit:contain}
+body[data-project=loofasoup] #routes .loofa-original-dialogues figcaption{font:400 16px/1.4 var(--font-body)!important;margin-top:12px;padding:0!important;color:#4d6345}
+@media(max-width:900px){.loofa-video-note{left:33%;top:23%;width:36%;padding:13px 15px}.loofa-video-note h3{font-size:20px!important}.loofa-video-note p{font-size:16px!important}.loofa-routes-layout{grid-template-columns:1.1fr 1fr;gap:30px}.loofa-route-copy>p{font-size:18px!important}.loofa-route-copy article h3{font-size:23px!important}.loofa-route-copy article p{font-size:18px!important}}
+@media(max-width:650px){
+ .loofa-video-note{position:relative;left:auto;top:auto;width:100%;padding:17px 19px 20px;box-shadow:none;border-radius:0;border:1px solid #9baa79;border-top:0;background:#e4e9c5;backdrop-filter:none;min-height:153px}
+ body[data-project=loofasoup] .loofa-video-note h3{font-size:23px!important;text-wrap:pretty;margin-bottom:9px!important}
+ body[data-project=loofasoup] .loofa-video-note p{font-size:18px!important;line-height:1.45!important}
+ .loofa-video-note-top{margin-bottom:10px}.loofa-video-note-top button{width:37px;height:32px}
+ .loofa-video-hotspot{width:27px;height:27px;font-size:11px;border-width:1.5px}.loofa-video-hotspot[data-video-step="1"]{left:5%!important}.loofa-video-hotspot[data-video-step="2"]{left:94%!important;top:10%!important}.loofa-video-hotspot[data-video-step="0"]{top:65%!important}.loofa-video-target{border-width:1.5px;border-radius:4px}
+ body[data-project=loofasoup] .loofa-recording-annotated>figcaption{display:block!important;padding-top:15px!important}
+ body[data-project=loofasoup] .loofa-recording-annotated>figcaption>span{display:block;margin-bottom:6px}
+ body[data-project=loofasoup] .loofa-recording-annotated>figcaption>p{font-size:16px!important}
+ .loofa-routes-layout{grid-template-columns:1fr;gap:26px}.loofa-route-copy>p{font-size:18px!important;margin-bottom:20px!important}.loofa-route-copy article{padding:18px 0}.loofa-route-copy article h3{font-size:24px!important}
+ .loofa-dialogue-intro{grid-template-columns:1fr;gap:15px;margin-top:25px}.loofa-dialogue-intro>h3{font-size:27px!important}.loofa-dialogue-intro>p{font-size:18px!important}
+ .loofa-original-dialogues{grid-column:auto;grid-template-columns:1fr;gap:25px;margin:0}.loofa-original-dialogues figure{max-width:none}
+}
+@media(prefers-reduced-motion:reduce){.loofa-video-target,.loofa-video-hotspot{transition:none}}
+
+/* Explanations can be dismissed without interrupting the original footage. */
+.loofa-video-note[hidden]{display:none!important}
+.loofa-video-note-top button[data-note-hide]{margin-left:5px;font-size:25px;border-left:1px solid #b2bd8a;border-radius:0 3px 3px 0}
+@media(max-width:650px){.loofa-video-note-top button{width:44px;height:40px}.loofa-video-note-top button[data-note-hide]{margin-left:3px}}

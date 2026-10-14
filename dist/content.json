@@ -3025,10 +3025,10 @@
         {
           "id": "city",
           "eyebrow": "LOCAL NEWS, FAMILIAR PLACES",
-          "title": "A city people recognize",
+          "title": "Adelaide Problem",
           "body": "Real hospital names and approximate locations connect Adelaide to the game. Low-poly geometry keeps streets clear and rendering efficient.",
           "items": [],
-          "nav": "Context",
+          "nav": "Adelaide Map",
           "figures": [
             {
               "src": "/assets/games-other-followup/ambulance-original-sa-health-map-context-kept.png",
@@ -3249,7 +3249,7 @@
           "id": "routes",
           "eyebrow": "STORY ROUTES",
           "title": "Choose work or family",
-          "body": "Before each chapter, Lufa talks with the guests. A dinner invitation opens two paths: work or family.",
+          "body": "A dinner invitation opens two paths: work or family.",
           "items": [
             {
               "title": "Work / Business dinner",
@@ -3269,21 +3269,34 @@
               "alt": "Original Loofa Soup level-selection screen",
               "caption": "Choose a chapter on the original game’s level map",
               "displayWidth": 590
-            },
-            {
-              "src": "/assets/recordings/loofa-level-3.png",
-              "width": 1280,
-              "height": 720,
-              "alt": "Original third level with Lufa, Ave and Kevin Lau at the table",
-              "caption": "Level 3 brings Lufa, Ave and Kevin Lau to the same table",
-              "displayWidth": 590
             }
           ],
           "highlights": [
             "two paths through his life"
           ],
           "layout": "editorial",
-          "figureLayout": "comparison"
+          "figureLayout": "default",
+          "dialogueIntro": "Before each chapter, Lufa talks with the guests.",
+          "dialogueFigures": [
+            {
+              "src": "/assets/1577-8305-raw-1-06b0c478.webp",
+              "width": 3406,
+              "height": 2140,
+              "alt": "Original dialogue: Lufa and Onion Man",
+              "caption": "Lufa and Onion Man",
+              "sourceNode": "1577:8305",
+              "sourceOrigin": "Author’s original dialogue interface artwork exported from portfolio"
+            },
+            {
+              "src": "/assets/1577-8306-raw-1-e13b7f64.webp",
+              "width": 3420,
+              "height": 2142,
+              "alt": "Original dialogue: Lufa and Ekvin",
+              "caption": "Lufa and Ekvin",
+              "sourceNode": "1577:8306",
+              "sourceOrigin": "Author’s original dialogue interface artwork exported from portfolio"
+            }
+          ]
         },
         {
           "id": "characters",
@@ -3795,7 +3808,10 @@
           "id": "abstract",
           "eyebrow": "RECLAIM THEIR PAST",
           "title": "Imagine our future",
-          "body": "Waner drafted imperial edicts; Taiping shaped court politics. Later accounts reduced their lives to scandal and rivalry. Play first, then question whose voices shape history.",
+          "body": [
+            "Her Sound Re-sound is a narrative puzzle about how women are remembered—and who gets to tell their stories. Waner wrote imperial edicts; Taiping took part in court politics. Yet later accounts often framed them through scandal and rivalry.",
+            "You assemble their work and shared memories, watch scenes disappear, then use POWER to restore their agency. The missing scenes make that loss tangible: whose voices survive in history, and whose are left out?"
+          ],
           "items": [
             {
               "title": "Hackathon audience feedback",
@@ -3830,8 +3846,12 @@
             }
           ],
           "highlights": [
-            "1,000-participant women’s hackathon",
-            "questioning the record"
+            "how women are remembered",
+            "who gets to tell their stories",
+            "scandal and rivalry",
+            "assemble",
+            "watch scenes disappear",
+            "restore their agency"
           ],
           "layout": "editorial"
         },
@@ -3868,35 +3888,42 @@
           "id": "question",
           "eyebrow": "QUESTION",
           "title": "Their lives become accusations",
-          "body": "Official histories tied Waner’s influence to sexual misconduct and accused Taiping of prolonging power. Later retellings made them romantic rivals. The game questions these inherited portrayals.",
+          "body": "The surviving accounts turn political influence into scandal. The game pairs these accusations with the images they produce, before asking you to give Waner and Taiping their agency back.",
           "items": [
             {
-              "title": "Old Book of Tang · vol. 51",
-              "body": "Waner was accused of an “illicit affair with Wu Sansi.”"
+              "title": "Waner · Old Book of Tang, vol. 51",
+              "body": "Her influence becomes an accusation of an “illicit affair with Wu Sansi.”"
             },
             {
-              "title": "Comprehensive Mirror · vol. 210",
-              "body": "Taiping was accused of acting “to prolong her power.”"
+              "title": "Taiping · Comprehensive Mirror, vol. 210",
+              "body": "Her political work becomes a charge of acting “to prolong her power.”"
             }
           ],
           "nav": "Question",
           "figures": [
             {
-              "src": "/assets/games-revision/her/epilogue-reader.png",
-              "width": 219,
-              "height": 177,
-              "displayWidth": 180,
-              "alt": "A reader examining a book in the story illustration",
-              "caption": "Reading the inherited story again.",
-              "sourceNode": "40:1716",
-              "sourceFile": "zESmtcPKcAs7hQf7zKHfID",
-              "sourceOrigin": "Author source public/assets/game/final-chapter/epilogue-reader.png; matches original Figma epilogue illustration."
+              "src": "/assets/her-1915/accusation-waner-original.png",
+              "width": 1537,
+              "height": 1023,
+              "alt": "The game’s accusation scene for Waner",
+              "sourceNode": "2005:807",
+              "sourceFile": "fxEaTzMakzZPfG2dzSPHOR",
+              "sourceOrigin": "Original Figma image bytes, Website · Editable case studies"
+            },
+            {
+              "src": "/assets/her-1915/accusation-taiping-original.png",
+              "width": 1445,
+              "height": 1088,
+              "alt": "The game’s accusation scene for Taiping",
+              "sourceNode": "2005:809",
+              "sourceFile": "fxEaTzMakzZPfG2dzSPHOR",
+              "sourceOrigin": "Original Figma image bytes, Website · Editable case studies"
             }
           ],
           "highlights": [
-            "sexual misconduct",
-            "“to prolong her power.”",
-            "history written by victors and men in power"
+            "scandal",
+            "“illicit affair with Wu Sansi.”",
+            "“to prolong her power.”"
           ],
           "layout": "editorial"
         },
@@ -3941,30 +3968,26 @@
           "id": "wish",
           "eyebrow": "AN ENDURING WISH",
           "title": "千年万岁，椒花颂声",
-          "body": "In the game, the epitaph’s final line becomes Taiping’s farewell to Waner.",
-          "items": [
-            {
-              "title": "The game’s retelling",
-              "quote": "May your brilliance, Waner, endure for a thousand years—and ten thousand more."
-            }
-          ],
+          "body": "May your brilliance, Waner, endure for a thousand years—and ten thousand more.",
+          "items": [],
           "nav": "Wish",
           "figures": [
             {
-              "src": "/assets/games-revision/her/figma-9116.png",
-              "width": 1023,
-              "height": 1537,
-              "alt": "Taiping holding a candle in the artwork",
+              "src": "/assets/her-1915/waner-taiping-lakeside-original.png",
+              "width": 2016,
+              "height": 1344,
+              "alt": "Waner and Taiping look out across a lake toward a palace and bridge",
               "caption": "",
-              "displayWidth": 390,
-              "sourceNode": "1577:9116",
-              "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained"
+              "sourceNode": "2005:597",
+              "sourceFile": "fxEaTzMakzZPfG2dzSPHOR",
+              "sourceOrigin": "Original image172 in Website · Editable case studies; original image bytes, displayed with a soft edge mask"
             }
           ],
           "highlights": [
             "Taiping’s farewell"
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "context": "In the game, the epitaph’s final line becomes Taiping’s farewell to Waner."
         }
       ],
       "role": {
