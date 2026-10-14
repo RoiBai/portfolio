@@ -659,6 +659,28 @@ export default function LevelThreeEditor({
 
   const complete = useMemo(() => isWinning(slots), [slots]);
 
+  // Keep the portfolio's adjacent guide tied to the same scene state as the puzzle.
+  useEffect(() => {
+    if (!portfolioGuided || !boardRef.current) return;
+    const answers: ItemId[][] = [
+      ['lake', 'waner', 'taiping'],
+      ['banquet', 'waner', 'taiping'],
+      ['poem', 'waner', 'taiping'],
+    ];
+    const completedSteps = answers.map((answer, index) =>
+      slots[index].items.length === answer.length && answer.every(item => slots[index].items.includes(item)),
+    );
+    const board = boardRef.current;
+    const reportProgress = () => board.dispatchEvent(new CustomEvent('portfolio:her-progress', {
+      bubbles: true,
+      detail: { completedSteps, scenes: slots.map(slot => [...slot.items]) },
+    }));
+    reportProgress();
+    const resizeObserver = new ResizeObserver(reportProgress);
+    resizeObserver.observe(board);
+    return () => resizeObserver.disconnect();
+  }, [slots, portfolioGuided]);
+
   useEffect(() => {
     latestConfigRef.current = { layout, layerOverrides };
     onConfigChangeRef.current = onConfigChange;

@@ -55,3 +55,47 @@ body[data-project=loofasoup] #routes .loofa-original-dialogues figcaption{font:4
 .loofa-video-note[hidden]{display:none!important}
 .loofa-video-note-top button[data-note-hide]{margin-left:5px;font-size:25px;border-left:1px solid #b2bd8a;border-radius:0 3px 3px 0}
 @media(max-width:650px){.loofa-video-note-top button{width:44px;height:40px}.loofa-video-note-top button[data-note-hide]{margin-left:3px}}
+/* The original portfolio's fixed annotation board, now with the real film at its centre. */
+body[data-project=loofasoup] .loofa-recording-fixed{width:100%;max-width:none;margin:27px 0 0}
+.loofa-linked-board{display:grid;grid-template-columns:minmax(180px,.65fr) minmax(0,2.65fr) minmax(185px,.7fr);grid-template-rows:auto auto auto;gap:26px 35px;position:relative;align-items:start}
+.loofa-fixed-note{position:relative;z-index:3;display:grid;grid-template-columns:25px minmax(0,1fr);gap:9px;background:var(--bg,#eef0d6);padding:0;min-width:0}
+.loofa-fixed-number{font:600 13px/1.3 var(--font-body);color:#66824f;padding-top:5px}
+body[data-project=loofasoup] .loofa-fixed-note h3{font:600 23px/1.18 var(--font-body)!important;color:#2b5739;margin:0 0 10px!important;text-wrap:pretty}
+body[data-project=loofasoup] .loofa-fixed-note p{font:400 18px/1.5 var(--font-body)!important;color:#2b4530;margin:0!important;text-wrap:pretty}
+.loofa-fixed-note-0{grid-column:2;grid-row:1;grid-template-columns:25px minmax(0,1fr) auto;align-items:center;padding-bottom:7px}
+.loofa-fixed-note-0 .loofa-fixed-number{align-self:start}
+.loofa-taste-key{display:flex;gap:23px;align-items:center;padding-left:20px}
+.loofa-taste-key>span{display:flex;gap:8px;align-items:center;font:400 13px/1.4 var(--font-body);color:#42633d;white-space:nowrap}
+.loofa-taste-key img{width:33px;height:31px;object-fit:contain}.loofa-taste-key strong{font-weight:600}
+.loofa-fixed-note-1{grid-column:1;grid-row:2;margin-top:27px}
+.loofa-linked-film{grid-column:2;grid-row:2;position:relative;min-width:0}
+.loofa-fixed-film-stage{position:relative;z-index:1;line-height:0}
+body[data-project=loofasoup] .loofa-fixed-film-stage video{display:block;width:100%;height:auto!important;max-height:none!important;aspect-ratio:16/9;object-fit:contain;background:#e9efb1;border:1px solid #a6b681}
+.loofa-fixed-right{grid-column:3;grid-row:2;display:flex;flex-direction:column;justify-content:space-between;gap:30px;align-self:stretch;padding-top:4px}
+.loofa-card-key{grid-column:2;display:flex;align-items:center;gap:12px;margin-top:7px}.loofa-card-key img{width:50px;height:82px;object-fit:contain}.loofa-card-key>span{font:400 15px/1.4 var(--font-body);color:#40583c}.loofa-card-key strong{font-weight:600}
+.loofa-fixed-bottom{grid-column:2;grid-row:3;display:grid;grid-template-columns:1.15fr 1fr;gap:38px;padding-top:8px}
+.loofa-fixed-note-4{grid-template-columns:25px minmax(0,1fr) 78px;gap:9px}.loofa-fixed-note-4 .loofa-hand-key{width:78px;height:81px;object-fit:contain;border:1px solid #adc08a;align-self:center}
+.loofa-fixed-connectors{position:absolute;inset:0;z-index:2;pointer-events:none}
+.loofa-fixed-connectors i{position:absolute;height:0;border-top:1.5px dashed #4f7754;transform-origin:0 0;box-sizing:content-box;opacity:.88}
+.loofa-fixed-connectors b{position:absolute;width:6px;height:6px;translate:-50% -50%;border-radius:50%;background:#2b663c;box-shadow:0 0 0 2px #f4f7e9}
+.loofa-mobile-anchors{display:none}
+body[data-project=loofasoup] .loofa-recording-fixed>figcaption{display:flex!important;justify-content:center;align-items:baseline;gap:23px;padding:0!important;margin:23px 0 0!important;border:0}
+body[data-project=loofasoup] .loofa-recording-fixed>figcaption>span{font:500 15px/1.4 var(--font-body)!important;color:#4b6540;text-transform:none;letter-spacing:0;white-space:nowrap}
+body[data-project=loofasoup] .loofa-recording-fixed>figcaption>p{font:400 16px/1.4 var(--font-body)!important;margin:0!important;color:#3e5f37}
+/* Two dialogue examples share a centred band: their centres sit at one and two thirds. */
+.loofa-original-dialogues{width:calc(66.6667% - 30px);max-width:none;margin:9px auto 0;gap:30px;grid-template-columns:1fr 1fr;justify-self:center}
+.loofa-original-dialogues figure{width:100%;max-width:none}.loofa-original-dialogues figcaption{text-align:center}
+@media(min-width:761px) and (max-width:1100px){.loofa-linked-board{grid-template-columns:165px minmax(0,1fr) 175px;gap:24px}.loofa-fixed-note-0{grid-template-columns:25px minmax(0,1fr)}.loofa-taste-key{grid-column:2;padding:6px 0 0}.loofa-fixed-right{gap:25px;grid-row:2/4;align-self:start}body[data-project=loofasoup] .loofa-fixed-note h3{font-size:21px!important}body[data-project=loofasoup] .loofa-fixed-note p{font-size:16px!important}.loofa-fixed-note-4{grid-template-columns:25px minmax(0,1fr)}.loofa-fixed-note-4 .loofa-hand-key{grid-column:2;width:70px;height:72px}.loofa-fixed-bottom{gap:25px}.loofa-original-dialogues{width:calc(66.6667% - 30px)}}
+@media(max-width:760px){
+ .loofa-linked-board{display:flex;flex-direction:column;gap:25px}
+ .loofa-fixed-note{width:100%;grid-template-columns:26px minmax(0,1fr);gap:10px}
+ .loofa-fixed-note-0{order:0;grid-template-columns:26px minmax(0,1fr);padding:0}.loofa-taste-key{grid-column:2;padding:4px 0 0;gap:25px}.loofa-taste-key img{width:32px;height:30px}
+ .loofa-linked-film{order:1;width:calc(100% - 40px);margin:17px 20px 20px}
+ .loofa-fixed-note-1{order:2;margin:0}.loofa-fixed-right{order:3;display:flex;gap:25px;padding:0;width:100%}.loofa-fixed-bottom{order:4;display:flex;flex-direction:column;gap:25px;padding:0;width:100%}
+ body[data-project=loofasoup] .loofa-fixed-note h3{font-size:23px!important}body[data-project=loofasoup] .loofa-fixed-note p{font-size:18px!important;line-height:1.45!important}
+ .loofa-fixed-note-4{grid-template-columns:26px minmax(0,1fr) 78px}.loofa-card-key img{width:47px;height:77px}.loofa-card-key>span{font-size:16px}
+ .loofa-mobile-anchors{display:block;position:absolute;inset:0;z-index:4;pointer-events:none}.loofa-mobile-anchors>span{position:absolute;font:600 10px/1 var(--font-body);color:#f5f7e6;background:#3f6844;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;translate:-50% -50%}
+ .loofa-mobile-anchors [data-loofa-mobile-anchor="0"]{left:73.5%;top:-16px}.loofa-mobile-anchors [data-loofa-mobile-anchor="1"]{left:-14px;top:33%}.loofa-mobile-anchors [data-loofa-mobile-anchor="2"]{right:-36px;top:12%}.loofa-mobile-anchors [data-loofa-mobile-anchor="3"]{right:-36px;top:52%}.loofa-mobile-anchors [data-loofa-mobile-anchor="4"]{left:49%;top:calc(100% + 16px)}.loofa-mobile-anchors [data-loofa-mobile-anchor="5"]{left:86%;top:calc(100% + 16px)}
+ .loofa-fixed-connectors i{border-width:1px}.loofa-fixed-connectors b{width:4px;height:4px;box-shadow:0 0 0 1px #fff}
+ .loofa-original-dialogues{width:100%;grid-template-columns:1fr;gap:26px;margin:0}.loofa-original-dialogues figure{width:100%;max-width:520px;margin-inline:auto}
+}

@@ -69,3 +69,22 @@ body[data-project=hersound] #wish.her-wish .her-farewell-art{position:relative;o
 body[data-project=hersound] #wish.her-wish .her-farewell-art img{position:absolute;top:-3%;left:-1.5%;width:103%;height:auto!important;max-height:none!important}
 body[data-project=hersound] #wish.her-wish .her-farewell-art img{top:-4.5%}
 .her-farewell{font-weight:400}
+/* One backplate follows the current step; the other steps stay quiet. */
+body[data-project=hersound] .her-abstract-copy blockquote p{text-wrap:balance}
+.her-quote-ending{white-space:nowrap}
+body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide{position:relative;isolation:isolate}
+body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide::before{content:'';position:absolute;z-index:0;pointer-events:none;left:0;right:0;top:0;height:var(--guide-current-height,0px);transform:translateY(var(--guide-current-y,0px));background:#d8bc94;border-left:2px solid #9c7040;opacity:0;transition:transform .34s ease,height .34s ease,opacity .2s ease}
+body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide[data-has-current=true]::before{opacity:1}
+body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide li{position:relative;z-index:1;border:0;border-left:1px solid #baac96;padding:12px 14px;background:transparent;color:#655c52}
+body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide li[data-step-state=current]{color:#352b23;border-left-color:transparent}
+body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide li[data-step-state=complete]{color:#424b3a}
+body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide span{opacity:1}
+.her-step-check{display:inline-block;font:600 13px/1 var(--font-body);margin-left:8px;color:#60714e}
+.her-step-check[hidden]{display:none}
+body[data-project=hersound] [data-experience=hersound-assemble].is-done .gx-play-guide .gx-her-guide{display:grid}
+body[data-project=hersound] [data-experience=hersound-assemble].is-done .gx-play-guide .gx-instruction{display:block}
+@media(prefers-reduced-motion:reduce){body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide::before{transition:none}}
+/* Natural ratios are preserved; neither accusation is stretched to a common box. */
+body[data-project=hersound] .her-accusation img{width:auto!important;height:auto!important;max-width:100%;max-height:270px;aspect-ratio:auto;object-fit:contain;object-position:center;margin-inline:auto}
+.her-accusation-pair{align-items:start}
+@media(max-width:760px){body[data-project=hersound] .her-accusation img{max-height:260px}}

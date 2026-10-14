@@ -1,0 +1,4 @@
+Original Loofa Soup UI PNGs copied without image alteration from author game source:
+Assets/Art/game/UI_general/like.png
+Assets/Art/game/UI_general/dislike.png
+The hand inset is the existing original portfolio asset loofa-hover-new-outstretched-hand-screenshot.png.

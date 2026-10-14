@@ -1,6 +1,7 @@
 import {siteURL} from './site-paths.js';
 import {emphasize} from './case-editorial.js';
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const keepQuoteEnding=value=>esc(value).replace(/games of our own\./,'<span class="her-quote-ending">games of our own.</span>');
 const image=(src,alt,width,height)=>`<img src="${siteURL(src)}" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async">`;
 export function setupHerEditorial(root,project){
  if(project.id!=='hersound')return()=>{};
@@ -14,7 +15,7 @@ export function setupHerEditorial(root,project){
   abstract.replaceChildren(heading);
   const story=document.createElement('div');story.className='her-abstract-story';
   const s=sections.abstract;
-  story.innerHTML=`<div class="her-abstract-copy">${[].concat(s.body).map(p=>`<p>${emphasize(p,s.highlights)}</p>`).join('')}<blockquote><p>“${esc(s.items[0].quote)}”</p><cite>Hackathon audience feedback</cite></blockquote></div><div class="her-abstract-portraits">${s.figures.map(f=>`<figure>${image(f.src,f.alt,f.width,f.height)}<figcaption>${esc(f.caption)}</figcaption></figure>`).join('')}</div>`;
+  story.innerHTML=`<div class="her-abstract-copy">${[].concat(s.body).map(p=>`<p>${emphasize(p,s.highlights)}</p>`).join('')}<blockquote><p>“${keepQuoteEnding(s.items[0].quote)}”</p><cite>Hackathon audience feedback</cite></blockquote></div><div class="her-abstract-portraits">${s.figures.map(f=>`<figure>${image(f.src,f.alt,f.width,f.height)}<figcaption>${esc(f.caption)}</figcaption></figure>`).join('')}</div>`;
   abstract.append(story);
  }
  // The chapter heading belongs to the sticky canvas: it remains visible throughout erasure.
@@ -38,5 +39,40 @@ export function setupHerEditorial(root,project){
   heading.append(words);
   const art=document.createElement('figure');art.className='her-farewell-art';const f=s.figures[0];art.innerHTML=image(f.src,f.alt,f.width,f.height);wish.append(art);
  }
- return()=>{};
+ const assemble=root.querySelector('[data-experience="hersound-assemble"]');
+ const host=assemble?.querySelector('[data-her-part="assemble"]');
+ const guide=assemble?.querySelector('.gx-her-guide');
+ const steps=guide?[...guide.children]:[];
+ let measureFrame=0;
+ const updateGuide=event=>{
+  const completed=event?.detail?.completedSteps||[true,false,false];
+  const current=completed.every(Boolean)?-1:completed[1]?2:1;
+  steps.forEach((step,index)=>{
+   step.dataset.stepState=completed[index]?'complete':index===current?'current':'upcoming';
+   if(index===current)step.setAttribute('aria-current','step');else step.removeAttribute('aria-current');
+   step.querySelector('.her-step-status')?.remove();
+   const title=step.querySelector('strong');
+   let mark=title?.querySelector('.her-step-check');
+   if(!mark&&title){mark=document.createElement('i');mark.className='her-step-check';mark.setAttribute('aria-hidden','true');mark.textContent='✓';title.append(mark);}
+   if(mark)mark.hidden=!completed[index];
+   step.setAttribute('aria-label',`${title?.textContent.replace('✓','').trim()}: ${completed[index]?'completed':index===current?'current step':'upcoming'}`);
+  });
+  if(guide){
+   guide.dataset.hasCurrent=String(current>=0);
+   cancelAnimationFrame(measureFrame);
+   measureFrame=requestAnimationFrame(()=>{
+    if(current<0)return;
+    guide.style.setProperty('--guide-current-y',`${steps[current].offsetTop}px`);
+    guide.style.setProperty('--guide-current-height',`${steps[current].offsetHeight}px`);
+   });
+  }
+  const instruction=assemble?.querySelector('.gx-play-guide>.gx-instruction');
+  if(instruction){
+   const second=event?.detail?.scenes?.[1]||['banquet','waner'];
+   instruction.textContent=current<0?'All three scenes are complete. Select a frame to clear it and try again.':current===2?'Choose Poetry, Waner and Taiping, then place each in the last frame.':second.includes('banquet')&&second.includes('waner')?'The first frame is complete. Choose Taiping and place her in the second frame.':'Rebuild the second frame with Banquet, Waner and Taiping.';
+  }
+ };
+ host?.addEventListener('portfolio:her-progress',updateGuide);
+ updateGuide();
+ return()=>{cancelAnimationFrame(measureFrame);host?.removeEventListener('portfolio:her-progress',updateGuide);};
 }

@@ -8019,7 +8019,7 @@ function b(e, t, n, r = y) {
 	};
 }
 //#endregion
-//#region ../../OurWorld/node_modules/react/cjs/react-jsx-runtime.production.js
+//#region ../../SheNicest hackthon/wanping-level-editor/node_modules/react/cjs/react-jsx-runtime.production.js
 var x = /* @__PURE__ */ o(((e) => {
 	var t = Symbol.for("react.transitional.element"), n = Symbol.for("react.fragment");
 	function r(e, n, r) {
@@ -8219,7 +8219,7 @@ function ae({ hints: e, slotLayouts: t, complete: n = !1, completionCaptions: r,
 	] });
 }
 //#endregion
-//#region portfolio-web/dist/assets/games-revision/her/src/components/level-three-editor.tsx
+//#region dist/assets/games-revision/her/src/components/level-three-editor.tsx
 var oe = [
 	"The two women talk together beside the lake.",
 	"The two women share a banquet.",
@@ -8749,6 +8749,34 @@ function Le({ onBack: e, onComplete: t, onCompletionChange: n, onConfigChange: r
 		layerOverrides: ie
 	}), ze = (0, _.useRef)(r), Be = (0, _.useMemo)(() => De(O), [O]);
 	(0, _.useEffect)(() => {
+		if (!u || !d.current) return;
+		let e = [
+			[
+				"lake",
+				"waner",
+				"taiping"
+			],
+			[
+				"banquet",
+				"waner",
+				"taiping"
+			],
+			[
+				"poem",
+				"waner",
+				"taiping"
+			]
+		].map((e, t) => O[t].items.length === e.length && e.every((e) => O[t].items.includes(e))), t = d.current, n = () => t.dispatchEvent(new CustomEvent("portfolio:her-progress", {
+			bubbles: !0,
+			detail: {
+				completedSteps: e,
+				scenes: O.map((e) => [...e.items])
+			}
+		}));
+		n();
+		let r = new ResizeObserver(n);
+		return r.observe(t), () => r.disconnect();
+	}, [O, u]), (0, _.useEffect)(() => {
 		Re.current = {
 			layout: E,
 			layerOverrides: ie
@@ -9706,7 +9734,7 @@ function Le({ onBack: e, onComplete: t, onCompletionChange: n, onConfigChange: r
 	});
 }
 //#endregion
-//#region portfolio-web/dist/assets/games-revision/her/src/components/final-chapter.tsx
+//#region dist/assets/games-revision/her/src/components/final-chapter.tsx
 var Re = [
 	"heading",
 	"prompt",
@@ -10423,7 +10451,7 @@ var Ge = {
 	}
 };
 //#endregion
-//#region portfolio-web/dist/assets/games-revision/her/src/entry.tsx
+//#region dist/assets/games-revision/her/src/entry.tsx
 function Ke(e, t) {
 	let n = (0, v.createRoot)(e), r = (n) => {
 		e.dataset.complete = String(n), e.dispatchEvent(new CustomEvent("portfolio:game-experience", {
