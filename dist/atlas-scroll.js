@@ -5,12 +5,61 @@ const BASE='/assets/atlas-scroll-original/';
 const SOURCES=[['mineral','矿物','Mineral','mineral-azurite.jpg'],['plant','草木','Plant','plant-indigo.jpg'],['literary','典籍','Literary','literary-book.png'],['nature','自然','Nature','nature-huangshan.jpg']];
 let dataPromise;
 const loadData=()=>dataPromise||(dataPromise=fetch(siteURL(BASE+'native-data.json')).then(r=>{if(!r.ok)throw Error('Color archive unavailable');return r.json()}));
+// English summaries preserve the original color IDs, values, origins and cited records.
+const ENGLISH={
+ zhusha:['Cinnabar','A red pigment from mercury sulfide, also called chensha or dansha.'],
+ shiqing:['Azurite blue','Ground azurite gives this deep mineral blue.'],
+ shilu:['Malachite green','Ground malachite produces a green compared with kingfisher feathers.'],
+ zheshi:['Red ochre','An iron-oxide pigment among the oldest pigments used in China.'],
+ qianbai:['Lead white','Lead treated with vinegar forms the white pigment once called hufen.'],
+ yanzhi:['Rouge','A red color obtained from safflower petals.'],
+ tenghuang:['Gamboge','A golden yellow made from tree resin.'],
+ dianlan:['Indigo','Blue dye produced by fermenting and settling indigo-bearing plants.'],
+ qian:['Madder red','Boiled madder roots yield a vivid red dye.'],
+ zhizi:['Gardenia yellow','Gardenia fruit produces a warm yellow dye.'],
+ dai:['Eyebrow blue-black','Indigo was finely ground with stone and mixed with fat for eyebrow pigment.'],
+ luodai:['Luodai blue-black','A blue-black mineral pigment shaped like a spiral, ground for the eyebrows.'],
+ tianqing:['Sky blue','The color of the sky clearing after rain.'],
+ yuebai:['Moon white','Pale blue with a white cast, named after moonlight.'],
+ piao:['Pale silk blue','Shuowen Jiezi describes piao as the blue-white color of silk.'],
+ jiang:['Deep crimson','A deep red associated with repeated madder dyeing.'],
+ xuan:['Reddish black','Shuowen Jiezi describes xuan as black with a reddish cast.'],
+ kongqing:['Kongqing blue','A translucent blue associated with hollow azurite formations.'],
+ songhua:['Pine-pollen yellow-green','A gentle yellow-green named after pine pollen.'],
+ mo:['Ink black','Pine soot or oil soot combined with glue to make writing ink.'],
+ ouhe:['Lotus pink-purple','A soft pink-purple named for lotus roots and flowers.'],
+ tianshuibi:['Sky-and-water turquoise','An account of Southern Tang dyeing names this blue-green after fabric exposed to evening dew.'],
+ cui:['Kingfisher green','Named for the blue-green feathers of the kingfisher.'],
+ yuse:['Jade white-green','A warm, translucent pale green-white named after jade.'],
+ chenxiang:['Agarwood brown','A quiet dark brown named after agarwood.']
+};
+const SOURCE_TITLES={
+ '《神农本草经》':'Divine Farmer’s Materia Medica','《本草纲目》':'Compendium of Materia Medica',
+ '《历代名画记》':'Records of Famous Paintings Through the Ages','《芥子园画传》':'Mustard Seed Garden Painting Manual',
+ '《千里江山图》':'A Thousand Li of Rivers and Mountains','《画史》':'History of Painting',
+ '《考工记》':'Record of Crafts','《天工开物》':'Exploitation of the Works of Nature',
+ '《释名》':'Explanation of Names','《齐民要术》':'Essential Techniques for the People',
+ '《史记》':'Records of the Grand Historian','《博物志》':'Records of Diverse Matters',
+ '《荀子·劝学》':'Xunzi · Encouraging Learning','《诗经·小雅》':'Book of Songs · Lesser Odes',
+ '《诗经·郑风》':'Book of Songs · Airs of Zheng','《汉官仪》':'Institutions of Han Officials',
+ '《楚辞·大招》':'Songs of Chu · The Great Summons','《隋唐嘉话》':'Anecdotes of the Sui and Tang',
+ '《开元天宝遗事》':'Anecdotes of the Kaiyuan and Tianbao Eras','《格古要论》':'Guide to the Study of Antiquities',
+ '《清波杂志》':'Miscellaneous Records of Qingbo','《红楼梦》':'Dream of the Red Chamber',
+ '《扬州画舫录》':'Record of Yangzhou Pleasure Boats','《说文解字》':'Shuowen Jiezi · Explaining Written Characters',
+ '《洛神赋》':'Rhapsody on the Luo River Goddess','《周易》':'Book of Changes','《道德经》':'Dao De Jing',
+ '《千字文》':'Thousand Character Classic','《薛涛笺》':'Xue Tao’s Colored Paper',
+ '《墨经》':'Treatise on Ink','《东坡题跋》':'Dongpo’s Inscriptions and Colophons',
+ '《十国春秋》':'Spring and Autumn Annals of the Ten Kingdoms','《梦溪笔谈》':'Dream Pool Essays',
+ '《长恨歌》':'Song of Everlasting Sorrow','《礼记·玉藻》':'Book of Rites · Jade Beads','《诗经·秦风》':'Book of Songs · Airs of Qin'
+};
+const translated=c=>ENGLISH[c.id]||[c.pinyin,c.origin];
 const chip=c=>`<span class="atlas-color-token" data-color="${c.id}" style="--color:${c.hex}"><i aria-hidden="true"></i><span>${esc(c.name)}<small>${c.hex}</small></span></span>`;
-export function renderAtlasScroll(){return `<div class="atlas-native" data-atlas-scroll><div class="atlas-native-sticky"><div class="atlas-native-label"><strong data-atlas-phase>Four origins</strong><span>100 colors · Scroll to follow their connections ↓</span></div><div class="atlas-native-field" data-atlas-field></div><div class="atlas-native-record" data-atlas-record></div></div><div class="atlas-native-mobile" data-atlas-mobile></div></div>`;}
+const chapterHeading=c=>`<div class="atlas-native-heading"><h3>${esc(c?.title||'From origins to color families')}</h3><p>${esc(c?.body?.[0]||'Trace 100 colors from four origins into eight color families. English notes explain the selected Chinese color record.')}</p></div>`;
+export function renderAtlasScroll(chapter){return `<div class="atlas-native" data-atlas-scroll><div class="atlas-native-sticky">${chapterHeading(chapter)}<div class="atlas-native-label"><strong data-atlas-phase>Four origins</strong><span>Scroll to follow the connections ↓</span></div><div class="atlas-native-field" data-atlas-field></div><div class="atlas-native-record" data-atlas-record></div></div><div class="atlas-native-mobile" data-atlas-mobile></div></div>`;}
 export function renderAtlasCompose(){return `<div class="atlas-compose" data-atlas-compose><p>Opening the original design briefs…</p></div>`;}
 function sourceHeader(s){return `<img src="${siteURL(BASE+'assets/source-photos/'+s[3])}" alt="${s[2]} color origins"><h4>${s[1]}<span>${s[2]}</span></h4>`;}
-function mobileGroups(data){return `<div class="atlas-mobile-origins">${SOURCES.map(s=>`<section class="atlas-native-mobile-group" data-atlas-reveal><header>${sourceHeader(s)}</header><div class="atlas-native-token-grid">${data.colors.filter(c=>c.cat===s[0]).map(chip).join('')}</div></section>`).join('')}</div><h4 class="atlas-native-mobile-title">The same colors, eight families</h4><div class="atlas-mobile-families">${Object.entries(data.families).map(([id,f])=>`<section class="atlas-native-mobile-group" data-atlas-reveal><h4 style="--family:${id==='white'?'#766c57':id==='yellow'?'#98721d':f.accent}">${f.cn}<span>${f.en}</span></h4><div class="atlas-native-token-grid">${data.colors.filter(c=>data.relations[c.id]?.family?.[0]===id).map(chip).join('')}</div></section>`).join('')}</div>`;}
-function record(c){return `<i style="background:${c.hex}" aria-hidden="true"></i><div><h4>${esc(c.name)} <small>${c.hex}</small></h4><span>${esc(c.pinyin)} · ${esc(c.era)}</span></div><p>${esc(c.origin)}</p><span class="atlas-native-citation">${esc(c.cites.join(' · '))}</span>`;}
+function mobileGroups(data){const focus=['shiqing','yanzhi','piao','tianshuibi'];return `<div class="atlas-mobile-origins">${SOURCES.map((s,i)=>`<section class="atlas-native-mobile-group" data-atlas-reveal><header>${sourceHeader(s)}</header><div class="atlas-native-token-grid">${data.colors.filter(c=>c.cat===s[0]).map(chip).join('')}</div><div class="atlas-native-record atlas-mobile-record">${record(data.colors.find(c=>c.id===focus[i]))}</div></section>`).join('')}</div><h4 class="atlas-native-mobile-title">The same colors, eight families</h4><div class="atlas-mobile-families">${Object.entries(data.families).map(([id,f])=>`<section class="atlas-native-mobile-group" data-atlas-reveal><h4 style="--family:${id==='white'?'#766c57':id==='yellow'?'#98721d':f.accent}">${f.cn}<span>${f.en}</span></h4><div class="atlas-native-token-grid">${data.colors.filter(c=>data.relations[c.id]?.family?.[0]===id).map(chip).join('')}</div></section>`).join('')}</div>`;}
+function record(c){if(!c)return '';const [name,origin]=translated(c);return `<div class="atlas-record-name"><i style="background:${c.hex}" aria-hidden="true"></i><div><h4>${esc(c.name)}</h4><strong>${esc(name)}</strong><small>${c.hex} · ${esc(c.pinyin)}</small></div></div><div class="atlas-record-origin"><span>Origin</span><p>${esc(origin)}</p></div><div class="atlas-native-citation"><span>Source record</span><p>${c.cites.map(v=>`<span title="${esc(v)}">${esc(SOURCE_TITLES[v]||v)}</span>`).join(' · ')}</p></div>`;}
 export function setupAtlasScroll(host){
  const wrap=host?.matches?.('[data-atlas-scroll]')?host:host?.querySelector?.('[data-atlas-scroll]');if(!wrap)return()=>{};
  const abort=new AbortController();let disposed=false,frame=0,data=null,tokens=[],lastRecord='',sizes=[];const field=wrap.querySelector('[data-atlas-field]'),sticky=wrap.querySelector('.atlas-native-sticky'),mobile=wrap.querySelector('[data-atlas-mobile]'),recordBox=wrap.querySelector('[data-atlas-record]'),phase=wrap.querySelector('[data-atlas-phase]'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
@@ -34,7 +83,7 @@ export function setupAtlasScroll(host){
  addEventListener('scroll',queue,{passive:true,signal:abort.signal});addEventListener('resize',measure,{passive:true,signal:abort.signal});reduce.addEventListener('change',queue,{signal:abort.signal});
  return()=>{disposed=true;abort.abort();observer.disconnect();cancelAnimationFrame(frame)};
 }
-function paletteCard(c){return `<article class="atlas-preset-color" style="--color:${c.hex}"><div class="atlas-preset-swatch"></div><h5>${esc(c.name)}</h5><p class="atlas-preset-value">${c.hex}</p><p class="atlas-preset-pinyin">${esc(c.pinyin)}</p><p class="atlas-preset-origin">${esc(c.origin)}</p></article>`;}
+function paletteCard(c){const [name,origin]=translated(c);return `<article class="atlas-preset-color" style="--color:${c.hex}"><div class="atlas-preset-swatch"></div><h5>${esc(c.name)}</h5><p class="atlas-preset-english">${esc(name)}</p><p class="atlas-preset-value">${c.hex}</p><p class="atlas-preset-pinyin">${esc(c.pinyin)}</p><p class="atlas-preset-origin">${esc(origin)}</p><p class="atlas-preset-origin-cn" lang="zh">${esc(c.origin)}</p></article>`;}
 export function setupAtlasCompose(host){
  const wrap=host?.querySelector?.('[data-atlas-compose]');if(!wrap)return()=>{};const abort=new AbortController(),reduce=matchMedia('(prefers-reduced-motion: reduce)');let disposed=false,frame=0;
  function update(){frame=0;if(disposed)return;wrap.querySelectorAll('.atlas-preset').forEach(el=>{const p=reduce.matches?1:clamp((innerHeight*.82-el.getBoundingClientRect().top)/(innerHeight*.6));el.dataset.progress=p.toFixed(4);const text=el.querySelector('[data-preset-typed]');text.textContent=text.dataset.prompt.slice(0,Math.ceil(text.dataset.prompt.length*clamp(p/.38)));el.querySelectorAll('.atlas-preset-color').forEach((card,i)=>{const enter=reduce.matches?1:ease(clamp((p-.24-i*.075)/.27));card.style.setProperty('--enter',enter)});});}

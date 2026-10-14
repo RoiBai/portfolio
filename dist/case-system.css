@@ -77,3 +77,20 @@ body[data-project=glancemap] .goal-callout h3{font-size:var(--case-copy)!importa
 body[data-project=glancemap] :is(.baseline-gains strong,.route-study-facts dt,.gr-evidence-stat strong){font-size:var(--case-deck)!important}
 
 body[data-project=glancemap] :is(.goal-callout p,.pilot-goals p){text-wrap:balance}
+
+/* Optional structured contribution/outcome data uses the same compact hero hierarchy. */
+body[data-view=project] .case-study .role-contributions{margin:12px 0 0;padding:0;display:grid;gap:10px}
+body[data-view=project] .case-study .role-contributions>div{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px;border-top:1px solid color-mix(in srgb,var(--accent) 20%,transparent);padding-top:10px}
+body[data-view=project] .case-study .role-contributions dt{font-family:var(--font-body);font-size:16px;line-height:1.4;font-weight:650;color:var(--accent)}
+body[data-view=project] .case-study .role-contributions dd{margin:0;min-width:0}
+body[data-view=project] .case-study .role-contributions dd>p{font-family:var(--font-body);font-size:16px;line-height:1.45;margin:0;text-wrap:pretty}
+body[data-view=project] .case-study .role-contributions dd>.role-contribution-detail{font-size:var(--case-caption);line-height:1.45;margin-top:5px;opacity:.85}
+body[data-view=project] .case-study .outcome-lines{list-style:none;display:grid;gap:5px;margin:5px 0 0;padding:0}
+body[data-view=project] .case-study .outcome-lines>li{font-family:var(--font-body);font-size:var(--case-note);line-height:1.45;text-wrap:pretty}
+body[data-project=traditional-color] .case-study .stats>div,body[data-project=icon-colors] .case-study .stats>div{text-align:center}
+body[data-project=traditional-color] .case-study .stats>div>span,body[data-project=icon-colors] .case-study .stats>div>span,body[data-project=traditional-color] .case-study .stats>div>small,body[data-project=icon-colors] .case-study .stats>div>small{margin-inline:auto;max-width:100%}
+@media(max-width:600px){body[data-view=project] .case-study .role-contributions>div{grid-template-columns:75px minmax(0,1fr);gap:10px}body[data-view=project] .case-study .role-contributions dd>p{font-size:16px}body[data-view=project] .case-study .role-contributions dd>.role-contribution-detail{font-size:15px}}
+body[data-view=project] .case-study .project-role.has-contributions{padding-block:12px}
+body[data-view=project] .case-study .role-contributions{margin-top:9px;gap:8px}
+body[data-view=project] .case-study .role-contributions>div{padding-top:8px}
+body[data-view=project] .case-study .hero-outcome.has-outcome-lines{margin-top:14px;padding-bottom:0}

@@ -16,8 +16,15 @@ export function emphasize(text, phrases = []) {
 }
 
 export function rolePanel(role) {
-  if (!role?.value) return '';
-  return `<aside class="project-role" aria-label="My role"><h2>My role</h2><p class="role-value">${esc(role.value)}</p>${role.details?`<p class="role-detail">${esc(role.details)}</p>`:''}</aside>`;
+  const contributions = Array.isArray(role?.contributions) ? role.contributions.filter(item => item?.label && item?.value) : [];
+  if (!role?.value && !contributions.length) return '';
+  return `<aside class="project-role${contributions.length?' has-contributions':''}" aria-label="My role"><h2>My role</h2>${role.value?`<p class="role-value">${esc(role.value)}</p>`:''}${role.details?`<p class="role-detail">${esc(role.details)}</p>`:''}${contributions.length?`<dl class="role-contributions">${contributions.map(item=>`<div><dt>${esc(item.label)}</dt><dd><p>${esc(item.value)}</p>${item.details?`<p class="role-contribution-detail">${esc(item.details)}</p>`:''}</dd></div>`).join('')}</dl>`:''}</aside>`;
+}
+
+export function outcomePanel(outcome) {
+  const lines = (Array.isArray(outcome) ? outcome : [outcome]).filter(value => typeof value === 'string' && value.trim());
+  if (!lines.length) return '';
+  return `<div class="hero-outcome${Array.isArray(outcome)?' has-outcome-lines':''}"><span>Outcome</span>${Array.isArray(outcome)?`<ul class="outcome-lines">${lines.map(line=>`<li>${esc(line)}</li>`).join('')}</ul>`:`<p>${esc(lines[0])}</p>`}</div>`;
 }
 
 // A story panel is original artwork plus live, reflowable copy, never an exported page.

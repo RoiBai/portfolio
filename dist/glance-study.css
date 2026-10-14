@@ -56,3 +56,15 @@ body[data-project="glancemap"] #study .section-heading h2{max-width:none;font-si
 /* Keep the chapter divider; the scene itself reads without stacked horizontal rules. */
 #study .route-person figcaption,#study .study-voices{border-top:0}
 #study .study-deck dl>div{text-align:center;min-width:90px}#study .study-deck dd{margin-left:0}
+
+/* Three aligned observations: measurement, context, and returning after a glance away. */
+#study .study-observations{display:grid;grid-template-columns:.85fr 1.15fr 1fr;gap:34px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line);align-items:start}
+#study .study-observations h3{color:var(--accent);font:600 var(--case-copy)/1.3 var(--font-body);margin:0 0 12px}
+#study .study-observations p{font:400 var(--case-note)/1.5 var(--font-body);color:var(--ink);margin:0;text-wrap:pretty}
+#study .study-observations blockquote{font:500 var(--case-copy)/1.4 var(--font-body);border:0;padding:0;margin:0;color:var(--ink);text-wrap:pretty}
+#study .study-observations cite{display:block;font:400 var(--case-caption)/1.4 var(--font-body);color:var(--muted);margin:10px 0 0}
+#study .study-observation>p{margin-top:18px}
+#study .study-observations strong{color:var(--accent);font-weight:600}
+@media(max-width:800px){#study .study-observations{grid-template-columns:1fr 1fr;gap:24px}#study .study-method-note{grid-column:1/-1;display:grid;grid-template-columns:1fr 2fr;gap:24px}#study .study-method-note h3{margin:0}}
+@media(max-width:540px){#study .study-observations{grid-template-columns:1fr;gap:26px}#study .study-method-note{display:block}#study .study-method-note h3{margin-bottom:10px}#study .study-observation>p{margin-top:12px}}
+@media(min-width:801px){#study .study-observation{display:grid;grid-template-rows:90px auto;align-content:start}#study .study-observation>p{margin-top:18px}}

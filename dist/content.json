@@ -659,8 +659,8 @@
       "kicker": "AR UI · COLOR PERCEPTION · DESIGN GUIDELINES",
       "meta": [
         {
-          "label": "Methods",
-          "value": "Three linked studies with the same 20 participants"
+          "label": "Timeline",
+          "value": "June–September 2025"
         },
         {
           "label": "Publication",
@@ -674,7 +674,7 @@
       "stats": [
         {
           "value": "20",
-          "label": "Same people in all three studies"
+          "label": "Study participants"
         },
         {
           "value": "12",
@@ -686,7 +686,7 @@
         },
         {
           "value": "8",
-          "label": "Designers in a separate workshop"
+          "label": "Workshop designers"
         }
       ],
       "links": [
@@ -742,30 +742,11 @@
           "eyebrow": "ABSTRACT",
           "title": "Clear, comfortable, meaningful icons",
           "body": [
-            "We tested 12 colors across three studies. A pair that is easy to see can still feel uncomfortable—or suggest the wrong meaning.",
-            "The result: guidance on shadows, outlines and gray backplates for different kinds of AR information."
+            "Color helps us notice an icon and understand what it means. Through AR glasses, real-world light and detail change how those colors appear, so screen-based color rules are not enough.",
+            "Across three studies, we compared black, white and opposite-color symbols on 12 hues, then tested meaningful icons and design refinements. The result is guidance for balancing clarity, comfort and meaning with shadows, outlines and gray backplates."
           ],
           "nav": "Abstract",
-          "figures": [
-            {
-              "src": "/website-assets/icon-before.svg",
-              "width": 180,
-              "height": 180,
-              "displayWidth": 180,
-              "alt": "Original yellow bulb before adding a shadow",
-              "caption": "Before · White symbol",
-              "className": "icon-bulb-original"
-            },
-            {
-              "src": "/website-assets/icon-after.svg",
-              "width": 180,
-              "height": 180,
-              "displayWidth": 180,
-              "alt": "Original yellow bulb with the shadow refinement",
-              "caption": "After · With shadow",
-              "className": "icon-bulb-original"
-            }
-          ],
+          "figures": [],
           "items": [],
           "sourceRefs": [
             {
@@ -775,18 +756,16 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "not always the most comfortable",
-            "wrong meaning"
+            "screen-based color rules are not enough",
+            "clarity, comfort and meaning"
           ],
-          "figureLayout": "comparison"
+          "figureLayout": null
         },
         {
           "id": "problem",
           "eyebrow": "THE PROBLEM",
           "title": "Screen contrast alone cannot predict AR clarity",
-          "body": [
-            "On a screen, a white parking symbol stands out against blue. In AR, the real scene also shines through; screen contrast cannot tell us how clear the icon will look."
-          ],
+          "body": [],
           "nav": "Problem",
           "figures": [
             {
@@ -846,18 +825,14 @@
             }
           ],
           "layout": "editorial",
-          "highlights": [
-            "real scene also shines through",
-            "screen contrast"
-          ]
+          "highlights": []
         },
         {
           "id": "setup",
           "eyebrow": "SHARED EXPERIMENT CONTEXT",
           "title": "Two lighting conditions",
           "body": [
-            "The same 20 people completed Studies 1–3. We used XREAL Air 2 Pro for the main tests, with a HoloLens 2 check.",
-            "Participants viewed randomized pairs, rated them and explained their choices."
+            "Participants viewed randomized color pairs, rated them and explained their choices. We used XREAL Air 2 Pro for the main tests, with a HoloLens 2 check."
           ],
           "nav": "Study setup",
           "figures": [
@@ -900,9 +875,27 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "same 20 people",
             "XREAL Air 2 Pro",
             "HoloLens 2"
+          ]
+        },
+        {
+          "id": "workshop",
+          "nav": "Research plan",
+          "eyebrow": "DESIGNER WORKSHOP",
+          "title": "From design practice to three linked studies",
+          "body": [
+            "Eight professional designers described their usual color choices and proposed a meaning for each hue. Their shared choices gave us the color strategies for Study 1 and the twelve-icon library used in Studies 2 and 3."
+          ],
+          "highlights": [
+            "Eight professional designers",
+            "twelve-icon library"
+          ],
+          "figures": [],
+          "items": [],
+          "layout": "editorial",
+          "sourceNotes": [
+            "Icon Color Design paper §3.6, §4 and §5.1; eight designers were separate from the 20 study participants."
           ]
         },
         {
@@ -910,8 +903,8 @@
           "eyebrow": "STUDY 1",
           "title": "Study 1 · Compare colors",
           "body": [
-            "Study 1 tested 12 selected hues with black, white and opposite-color letters: 36 pairs. Letter, size and stroke stayed fixed.",
-            "Clarity and comfort could favor different pairs."
+            "Designers described black, white and opposite colors as familiar ways to build contrast. Study 1 tested these three choices across 12 hues: 36 pairs, with the same letter, size and stroke.",
+            "Participants rated clarity and comfort indoors and outdoors. A pair that was easy to see was not always the most comfortable."
           ],
           "nav": "Study 1",
           "figures": [
@@ -952,7 +945,7 @@
           "layout": "editorial",
           "highlights": [
             "36 pairs",
-            "Clarity and comfort"
+            "not always the most comfortable"
           ]
         },
         {
@@ -960,8 +953,8 @@
           "eyebrow": "STUDY 2",
           "title": "Study 2 · Add meaning",
           "body": [
-            "Eight designers agreed on one icon per color. Study 2 retested the same 36 pairs with these meaningful symbols.",
-            "A clear color pair can still suggest the wrong meaning. Color needs to fit the symbol."
+            "The workshop gave each hue a shared meaning: dining, parking, music and nine other functions. Study 2 replaced the letter with these icons and retested the same 36 color pairs outdoors.",
+            "Participants rated clarity, comfort and how well the colors fit the meaning. Being easy to see did not guarantee that an icon made sense."
           ],
           "nav": "Study 2",
           "figures": [
@@ -1013,9 +1006,9 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "Eight designers",
-            "36 pairs",
-            "wrong meaning"
+            "shared meaning",
+            "same 36 color pairs",
+            "how well the colors fit the meaning"
           ]
         },
         {
@@ -1023,7 +1016,8 @@
           "eyebrow": "STUDY 3",
           "title": "Study 3 · Refine and retest",
           "body": [
-            "Designers proposed shadows, gradients, outlines and gray backplates. We retested clarity, comfort, meaning and visual prominence."
+            "We asked designers to improve clarity, comfort and meaning. Their proposals explored shadows, nearby-hue gradients, outlines and gray backplates, using the workshop’s icon library and feedback from Studies 1 and 2.",
+            "Study 3 retested the refinements and asked how strongly each one drew attention. That helped distinguish alerts from everyday controls and persistent status."
           ],
           "nav": "Study 3",
           "figures": [
@@ -1062,7 +1056,14 @@
           ],
           "items": [],
           "layout": "editorial",
-          "highlights": []
+          "highlights": [
+            "asked designers",
+            "clarity, comfort and meaning",
+            "how strongly each one drew attention"
+          ],
+          "sourceNotes": [
+            "Designer agency is documented in the current portfolio: node1704:562 “Ideas from the designer workshop”, followed by original shadow/gradient and outline/gray refinements; the user explicitly confirmed the design task. The paper §6 reports the refinement study without identifying all eight pilot designers as participants in that later iteration."
+          ]
         },
         {
           "id": "analysis",
@@ -1070,11 +1071,11 @@
           "eyebrow": "FROM EVIDENCE TO GUIDELINES",
           "title": "How the results became design guidance",
           "body": [
-            "We compared each treatment with the original icon within the same hue, then read participants’ explanations alongside their ratings."
+            "We compared each refinement with its original icon, within the same hue. Participants’ explanations helped us turn the ratings into guidance for different interface roles."
           ],
           "highlights": [
-            "compared each treatment",
-            "participants’ explanations"
+            "within the same hue",
+            "different interface roles"
           ],
           "layout": "editorial",
           "figures": []
@@ -1244,6 +1245,38 @@
           "highlights": [
             "youthful and stylish"
           ]
+        },
+        {
+          "id": "future",
+          "nav": "Future work",
+          "eyebrow": "FUTURE WORK",
+          "title": "Bring the guidance into real AR interfaces",
+          "body": [
+            "AR UI designers can use these findings as a starting point: make urgent alerts noticeable, keep controls easy to interpret, and let persistent status remain quiet. Test those choices in the intended glasses and environment."
+          ],
+          "highlights": [
+            "starting point",
+            "intended glasses and environment"
+          ],
+          "items": [
+            {
+              "title": "Beyond static icons",
+              "body": "Test whether the same guidance holds for moving and 3D icons."
+            },
+            {
+              "title": "More users and devices",
+              "body": "Include different visual abilities, age groups and cultural contexts, and a wider range of AR displays."
+            },
+            {
+              "title": "Measure visual effort",
+              "body": "Add eye tracking and pupil measures to complement the subjective ratings."
+            }
+          ],
+          "figures": [],
+          "layout": "editorial",
+          "sourceNotes": [
+            "Icon Color Design paper §7.1, §8 and §9; proposed future work, not validated applications."
+          ]
         }
       ],
       "role": {
@@ -1257,7 +1290,11 @@
         ],
         "boundary": "I am second author; my advisor is first author."
       },
-      "outcome": "A practical guide to AR icon colors, shadows, outlines and gray backplates. Journal manuscript under review; SSRN preprint available.",
+      "outcome": [
+        "Guidelines for AR icon clarity, comfort and meaning",
+        "Three treatments for different levels of urgency",
+        "Journal manuscript under review · SSRN preprint available"
+      ],
       "sourceNotes": [],
       "tags": [
         "AR",
@@ -1274,23 +1311,22 @@
       "subtitle": "A color carries a story",
       "description": "A research-led website for choosing traditional Chinese colors through their origins, cultural meanings and historical context.",
       "kicker": "CULTURAL HERITAGE · INFORMATION DESIGN",
-      "meta": [],
+      "meta": [
+        "ColoGene · Oct 2025–Jan 2026",
+        "Color Atlas · Apr 2026–present"
+      ],
       "stats": [
         {
           "value": "12",
-          "label": "Formative interviews"
+          "label": "Formative interviewees"
         },
         {
           "value": "10",
           "label": "ColoGene pilot participants"
         },
         {
-          "value": "100",
-          "label": "Colors in this atlas demonstration"
-        },
-        {
-          "value": "4",
-          "label": "Origin categories"
+          "value": "25",
+          "label": "Atlas study participants"
         }
       ],
       "links": [
@@ -1335,9 +1371,9 @@
         {
           "id": "abstract",
           "eyebrow": "ABSTRACT",
-          "title": "A color carries a story",
+          "title": "From interviews to three versions",
           "body": [
-            "From historical color records to palettes grounded in a design brief."
+            "Designer interviews shaped ColoGene. Its pilot led to Color Atlas; the Atlas study now guides a future Color Agent."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -1346,13 +1382,13 @@
               "title": "ColoGene",
               "version": "Version 1.0",
               "status": "CHI Poster 2026",
-              "body": "Historical context beside each color, co-designed with practicing designers."
+              "body": "12 formative interviews → ColoGene → a separate 5 + 5 pilot."
             },
             {
               "title": "Color Atlas",
               "version": "Version 2.0",
               "status": "In progress",
-              "body": "Connected color records and brief-based palettes. The study with 25 designers is complete."
+              "body": "Connected records and brief-based palettes, followed by a completed study with 25 designers."
             },
             {
               "title": "Color Agent",
@@ -1375,57 +1411,28 @@
         {
           "id": "research",
           "eyebrow": "DESIGNER RESEARCH",
-          "title": "What makes a color belong?",
+          "title": "How designers choose a color",
           "body": [
-            "We interviewed 12 Chinese designers for 30–45 minutes each about choosing colors for museum products and historical websites."
+            "We began with 12 participants with humanities and design backgrounds. In 30–45-minute interviews, we asked how they found, compared and explained traditional colors."
           ],
           "items": [
             {
-              "title": "Does it fit the brief?",
-              "body": "Show a color’s meaning, origin and period so designers can judge its historical fit."
+              "title": "References come first",
+              "body": "Designers sampled websites, social media and relevant images, then refined the colors."
             },
             {
-              "title": "Which reference can I trust?",
-              "body": "Two websites list Zhu Sha as #CA3433 and #9D2933. Link names and values to their sources."
+              "title": "Appearance leads the choice",
+              "body": "“I usually make several versions and then pick the one that looks best.” — P6"
             },
             {
-              "title": "How do I build a whole palette?",
-              "body": "Offer complete palettes with a clear cultural rationale."
+              "title": "A name needs context",
+              "body": "“But I rarely look up where those names come from.” — P7. A name such as Zhu Sha needs its origin and evidence beside the swatch."
             }
           ],
           "quote": null,
           "nav": "Research",
-          "figures": [
-            {
-              "src": "/assets/design-revision/color-research-period.png",
-              "width": 980,
-              "height": 992,
-              "alt": "P13 period storyboard, made using the usual workflow.",
-              "caption": "P13 · usual workflow. The storyboard shows why a color reference needs a historical context.",
-              "displayWidth": 430,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "937:304"
-                }
-              ]
-            },
-            {
-              "src": "/assets/design-revision/color-research-package.png",
-              "width": 1440,
-              "height": 951,
-              "alt": "curated packaging artifact shown in the Figma research section.",
-              "caption": "P17 · packaging with Atlas. Colors connect the visual direction to cultural references.",
-              "displayWidth": 520,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "937:317"
-                }
-              ]
-            }
-          ],
-          "figureLayout": "comparison",
+          "figures": [],
+          "figureLayout": "default",
           "sourceRefs": [
             {
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -1433,8 +1440,16 @@
             }
           ],
           "highlights": [
-            "12 Chinese designers",
-            "30–45 minutes"
+            "12 participants",
+            "30–45-minute",
+            "Zhu Sha"
+          ],
+          "colorSwatches": [
+            {
+              "label": "Zhu Sha · 朱砂",
+              "hex": "#8B1A1A",
+              "note": "Cinnabar · a mineral-origin color"
+            }
           ]
         },
         {
@@ -1442,7 +1457,8 @@
           "eyebrow": "VERSION 1 · COLOGENE",
           "title": "ColoGene",
           "body": [
-            "Five ways into color knowledge: name origins, hue, color family, dynasty and scene palettes. Each answers a need from the designer interviews."
+            "The interviews showed a gap between finding an attractive color and explaining why it belongs. We built ColoGene to bring those decisions together.",
+            "Five entry points connect names and origins, hue, color family, dynasty, and scene palettes."
           ],
           "items": [],
           "nav": "ColoGene",
@@ -1501,8 +1517,10 @@
             }
           ],
           "highlights": [
-            "Five ways",
-            "name origins",
+            "finding an attractive color",
+            "explaining why it belongs",
+            "Five entry points",
+            "names and origins",
             "hue",
             "color family",
             "dynasty",
@@ -1563,7 +1581,9 @@
           "id": "atlas",
           "eyebrow": "VERSION 2 · COLOR ATLAS",
           "title": "Color Atlas",
-          "body": [],
+          "body": [
+            "Pilot feedback called for fuller sources and palettes tied to a designer’s brief. Color Atlas connects the records and introduces intent-based palette recommendations."
+          ],
           "items": [],
           "nav": "Atlas",
           "figures": [],
@@ -1581,7 +1601,7 @@
               "id": "connections",
               "title": "From origins to color families",
               "body": [
-                "Scroll to trace 100 colors from four kinds of origins into eight color families."
+                "Follow the original 100-color demonstration: four origins connect to eight color families. English notes explain the selected Chinese color record."
               ],
               "figures": [],
               "highlights": [
@@ -1643,7 +1663,7 @@
               "id": "brief",
               "title": "From a brief to five colors",
               "body": [
-                "Four original design briefs unfold into their five-color palettes as you scroll."
+                "Four original design briefs unfold into five-color palettes. Scroll to reveal each color and its origin in Chinese and English."
               ],
               "figures": [],
               "highlights": [
@@ -1659,69 +1679,106 @@
                 ],
                 "presetCount": 4
               }
+            }
+          ]
+        },
+        {
+          "id": "atlas-study",
+          "nav": "Atlas study",
+          "eyebrow": "VERSION 2 · DESIGNER STUDY",
+          "title": "25 designers, three briefs revisited",
+          "body": [
+            "Each designer made three artworks with their usual workflow, explored Color Atlas, and revisited the same three briefs with the system. Interviews and questionnaires captured their choices and feedback."
+          ],
+          "items": [],
+          "figures": [
+            {
+              "src": "/assets/p16-storyboard-without-e74ddf81.webp",
+              "width": 1554,
+              "height": 1080,
+              "alt": "Participant 16 Tang-themed storyboard using the usual workflow",
+              "caption": "P16 · usual workflow.",
+              "displayWidth": 850
             },
             {
-              "id": "artworks",
-              "title": "The same artwork, a different color direction",
-              "body": [
-                "The study is complete: 25 designers each created three artworks with their usual workflow and three with Color Atlas. The paired artifacts show how their choices changed.",
-                "Designers wanted more palette directions, fuller sources, support for every object in a complex brief, and freedom to refine suggestions."
-              ],
-              "figures": [
-                {
-                  "src": "/assets/p16-storyboard-without-e74ddf81.webp",
-                  "width": 1554,
-                  "height": 1080,
-                  "alt": "Participant 16 Tang-themed storyboard using the usual workflow",
-                  "caption": "P16 · usual workflow.",
-                  "displayWidth": 850
-                },
-                {
-                  "src": "/assets/p16-storyboard-with-c713a84c.webp",
-                  "width": 1554,
-                  "height": 1080,
-                  "alt": "Participant 16 Tang-themed storyboard using the atlas",
-                  "caption": "P16 · with the atlas.",
-                  "displayWidth": 850
-                },
-                {
-                  "src": "/assets/p17-street-without-425d9ad0.webp",
-                  "width": 1724,
-                  "height": 1293,
-                  "alt": "Participant 17 canal-street illustration using the usual workflow",
-                  "caption": "P17 · usual workflow.",
-                  "displayWidth": 850
-                },
-                {
-                  "src": "/assets/p17-street-with-9dd2defc.webp",
-                  "width": 1649,
-                  "height": 1237,
-                  "alt": "Participant 17 canal-street illustration using the atlas",
-                  "caption": "P17 · with the atlas.",
-                  "displayWidth": 850
-                },
-                {
-                  "src": "/assets/p19-tape-without-6a70447f.webp",
-                  "width": 1280,
-                  "height": 1811,
-                  "alt": "Participant 19 ornamental tape with the usual workflow",
-                  "caption": "P19 · usual workflow.",
-                  "displayWidth": 850
-                },
-                {
-                  "src": "/assets/p19-tape-with-a01b6794.webp",
-                  "width": 1280,
-                  "height": 1811,
-                  "alt": "Participant 19 ornamental tape with the atlas",
-                  "caption": "P19 · with the atlas.",
-                  "displayWidth": 850
-                }
-              ],
-              "highlights": [
-                "25 designers",
-                "how their choices changed"
-              ]
+              "src": "/assets/p16-storyboard-with-c713a84c.webp",
+              "width": 1554,
+              "height": 1080,
+              "alt": "Participant 16 Tang-themed storyboard using the atlas",
+              "caption": "P16 · with the atlas.",
+              "displayWidth": 850
+            },
+            {
+              "src": "/assets/p17-street-without-425d9ad0.webp",
+              "width": 1724,
+              "height": 1293,
+              "alt": "Participant 17 canal-street illustration using the usual workflow",
+              "caption": "P17 · usual workflow.",
+              "displayWidth": 850
+            },
+            {
+              "src": "/assets/p17-street-with-9dd2defc.webp",
+              "width": 1649,
+              "height": 1237,
+              "alt": "Participant 17 canal-street illustration using the atlas",
+              "caption": "P17 · with the atlas.",
+              "displayWidth": 850
+            },
+            {
+              "src": "/assets/p19-tape-without-6a70447f.webp",
+              "width": 1280,
+              "height": 1811,
+              "alt": "Participant 19 ornamental tape with the usual workflow",
+              "caption": "P19 · usual workflow.",
+              "displayWidth": 850
+            },
+            {
+              "src": "/assets/p19-tape-with-a01b6794.webp",
+              "width": 1280,
+              "height": 1811,
+              "alt": "Participant 19 ornamental tape with the atlas",
+              "caption": "P19 · with the atlas.",
+              "displayWidth": 850
             }
+          ],
+          "figureLayout": "comparison",
+          "highlights": [
+            "25 designers",
+            "three artworks",
+            "the same three briefs",
+            "choices and feedback"
+          ],
+          "colorStudyFeedback": [
+            {
+              "title": "A new direction",
+              "text": "It lets me move beyond the palette in my original, fixed impression.",
+              "participant": "P25",
+              "next": "Keep alternatives open."
+            },
+            {
+              "title": "More than one palette",
+              "text": "It could give me a few more palettes to refer to, so I have more choices.",
+              "participant": "P16",
+              "next": "Offer distinct directions to compare."
+            },
+            {
+              "title": "Consider every object",
+              "text": "It may give five colors for one element and ignore some of the others.",
+              "participant": "P25",
+              "next": "Support the whole composition."
+            },
+            {
+              "title": "Keep the evidence visible",
+              "text": "For the stories and sources, I suggest adding a citation.",
+              "participant": "P14",
+              "next": "Connect suggestions to their sources."
+            }
+          ],
+          "colorStudyNote": "Participant quotations translated from Chinese. Changes in the paired artworks show different directions, not a ranking of quality.",
+          "sourceRefs": [
+            "output/color-portfolio/condensed-interview-evidence.md",
+            "output/color-portfolio/interview-evidence.md",
+            "User-confirmed25designers;three usual-workflow plus three Atlas artworks"
           ]
         },
         {
@@ -1729,7 +1786,7 @@
           "eyebrow": "VERSION 3 · FUTURE DESIGN",
           "title": "Six needs, one conversation",
           "body": [
-            "A future design concept: apply a palette to artwork, then refine it through dialogue. Six needs from the designer interviews guide the interaction."
+            "Feedback from the Atlas study points beyond a single palette: inspect evidence, compare directions, cover each object, and refine the designer’s choices. The future Color Agent demonstrates these needs in one conversation."
           ],
           "items": [],
           "nav": "Future",
@@ -1896,20 +1953,39 @@
           "figureLayout": "layered-source",
           "status": "Future design concept · not yet implemented or evaluated.",
           "highlights": [
-            "Six needs from the designer interviews"
+            "Feedback from the Atlas study",
+            "inspect evidence",
+            "compare directions",
+            "cover each object",
+            "refine the designer’s choices"
           ]
         }
       ],
       "role": {
         "label": "My role",
-        "value": "Web design · User interviews & analysis",
+        "value": "",
         "status": "user-confirmed",
-        "sourceRefs": [
-          "User-confirmed latest turn: 网页设计，用户采访+分析"
+        "details": "",
+        "contributions": [
+          {
+            "label": "ColoGene",
+            "value": "Organized designer workshops · Data analysis · Web development"
+          },
+          {
+            "label": "Color Atlas",
+            "value": "Web development · Interviews · Data analysis",
+            "details": "I interviewed 15 of the 25 designers (60%), for approximately three hours each."
+          }
         ],
-        "details": "I designed the website and conducted and analyzed user interviews."
+        "sourceRefs": [
+          "User-confirmed 2026-10-14 18:52: ColoGene workshops/data/website; Atlas website/15 of25 interviews (~3h each)/data analysis"
+        ]
       },
-      "outcome": "ColoGene: CHI 2026 Poster accepted. Color Atlas: ongoing research. Color Agent: a future design concept.",
+      "outcome": [
+        "ColoGene: CHI 2026 Poster accepted.",
+        "Color Atlas: ongoing research.",
+        "Color Agent: a future design concept."
+      ],
       "sourceNotes": [],
       "tags": [
         "Information Design",
