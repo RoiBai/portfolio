@@ -8,7 +8,7 @@ export function setupIconEditorial(root){
   abstract.querySelector('.section-visuals')?.remove();
   abstract.classList.add('icon-prose-abstract');
   abstract.insertAdjacentHTML('beforeend',`<div class="icon-abstract-pairs">
-   <figure><div class="icon-abstract-pair-art"><span class="icon-abstract-t-pair">${img('/assets/design-revision/icon-baseline.svg','Original cyan letter T with black and white foregrounds')}</span></div><figcaption><h3>Compare foregrounds</h3><p>Same color, different contrast</p></figcaption></figure>
+   <figure><div class="icon-abstract-pair-art"><span class="icon-abstract-t-pair">${img('/assets/icon-original-explorations/abstract-cyan-foregrounds-original.svg','Original cyan letter T with black and white foregrounds')}</span></div><figcaption><h3>Compare foregrounds</h3><p>Same color, different contrast</p></figcaption></figure>
    <figure><div class="icon-abstract-pair-art">${img('/website-assets/icon-before.svg','Original yellow bulb without shadow')}${img('/website-assets/icon-after.svg','Original yellow bulb with shadow')}</div><figcaption><h3>Sharpen the edge</h3><p>White symbol, with and without shadow</p></figcaption></figure>
    <figure><div class="icon-abstract-pair-art">${img('/website-assets/icon-comic-panel-2-icon-2.svg','Original white files icon on blue')}${img('/website-assets/icon-comic-panel-3-icon-6.svg','Original blue files icon with an outline')}</div><figcaption><h3>Clarify the symbol</h3><p>Solid background or colored outline</p></figcaption></figure>
   </div>`);
@@ -28,9 +28,14 @@ export function setupIconEditorial(root){
  if(problem){
   problem.querySelector('.section-visuals')?.remove();
   problem.insertAdjacentHTML('beforeend',`<div class="icon-context-comparison">
-   <figure><div class="icon-desktop-context"><div class="icon-monitor"><span class="icon-screen-parking" aria-label="White parking symbol on blue">P</span></div><div class="icon-monitor-foot"></div></div><figcaption><h3>On a screen <span class="icon-result-check">✓</span></h3><p>A white parking symbol stands out against an opaque blue background. The screen controls both colors.</p><small><strong>9.06 : 1</strong> calculated screen contrast · #0000F5 / #FFFFFF</small></figcaption></figure>
-   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span></div><figcaption><h3>Through AR glasses <span class="icon-result-cross">×</span></h3><p><strong>The background is no longer controlled.</strong> Real-world light and detail show through, changing the icon’s appearance.</p><small>Screen contrast alone cannot predict how clear it will look in AR</small></figcaption></figure>
+   <figure><div class="icon-desktop-context"><div class="icon-monitor"><span class="icon-screen-parking" aria-label="White parking symbol on blue">P</span></div><div class="icon-monitor-foot"></div></div><figcaption><h3>On a screen <span class="icon-result-check">✓</span></h3><small><strong>9.06 : 1</strong> calculated screen contrast · #0000F5 / #FFFFFF</small></figcaption></figure>
+   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span></div><figcaption><h3>Through AR glasses <span class="icon-result-cross">×</span></h3><small>The real scene shows through the icon</small></figcaption></figure>
+   <p class="icon-context-explanation">On a screen, a white parking symbol stands out against an opaque blue background. Through AR glasses, <strong>the real scene also shines through</strong>, changing its appearance. <strong>Screen contrast alone cannot predict AR clarity.</strong></p>
   </div>`);
+ }
+ const meaning=root.querySelector('#meaning');
+ if(meaning){
+  meaning.querySelector('.icon-color-lab')?.insertAdjacentHTML('beforebegin',`<div class="icon-designer-consensus"><div class="icon-designer-count"><strong>8</strong><span>designers</span></div><p>Agreed on <strong>one icon per color</strong><span>The twelve shared meanings became the icon library for this study.</span></p></div>`);
  }
  const analysis=root.querySelector('#analysis');
  if(analysis){

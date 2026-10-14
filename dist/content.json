@@ -201,7 +201,6 @@
           "eyebrow": "ROUND 1",
           "title": "Could fewer words help?",
           "body": [
-            "Pilots 1–3 · 13 cumulative participants",
             "Less text still needed context and the right timing. Isolated keywords left one learner relying on listening."
           ],
           "nav": "Pilots 1–3",
@@ -254,14 +253,14 @@
           ],
           "highlights": [
             "context and the right timing"
-          ]
+          ],
+          "pilotParticipants": 13
         },
         {
           "id": "process-visuals",
           "eyebrow": "ROUND 2",
           "title": "Could visuals help?",
           "body": [
-            "Pilots 4–9 · 27 cumulative participants",
             "Pictures were quick to grasp; words needed clear connections."
           ],
           "nav": "Pilots 4–9",
@@ -314,14 +313,14 @@
           },
           "highlights": [
             "clear connections"
-          ]
+          ],
+          "pilotParticipants": 27
         },
         {
           "id": "process-history",
           "eyebrow": "ROUND 3",
           "title": "How much should stay?",
           "body": [
-            "Pilots 10–14 · 24 cumulative participants",
             "Earlier branches gave learners a way back into the explanation."
           ],
           "nav": "Pilots 10–14",
@@ -374,7 +373,8 @@
           },
           "highlights": [
             "a way back into the explanation"
-          ]
+          ],
+          "pilotParticipants": 24
         },
         {
           "id": "goals",

@@ -17,11 +17,10 @@ function matrix(kind){return `<div class="icon-color-lab" data-icon-lab="${kind}
 
 const variantNames=['White outline','Opposite-color outline','Gradient A','Gradient B','Gradient A + white outline','Gradient B + white outline','Gradient A + opposite outline','Gradient B + opposite outline'];
 const explorationNames=['Parking','Yoga','Bar','Files'];
-function refinement(){return `<div class="icon-refinement-lab"><details class="icon-design-gallery" data-icon-alternatives>
- <summary><span><strong>Original design alternatives</strong><small>Hover or open to compare all 32 designs</small></span><span class="icon-gallery-toggle" aria-hidden="true">+</span>
- <div class="icon-alternatives-cover" aria-hidden="true">${explorationNames.map((name,r)=>`<figure><img src="${siteURL('/assets/icon-original-explorations/variant-'+(r+1)+'-1.png')}" width="174" height="174" alt=""><figcaption>${name}</figcaption></figure>`).join('')}</div></summary>
+function refinement(){return `<div class="icon-refinement-lab"><div class="icon-design-gallery" data-icon-alternatives>
+ <h3 class="icon-gallery-heading">Original design alternatives</h3>
  <div class="icon-alternatives-all">${explorationNames.map((name,r)=>`<section class="icon-alternative-family"><h4>${name}</h4><div>${variantNames.map((variant,c)=>`<figure><img src="${siteURL('/assets/icon-original-explorations/variant-'+(r+1)+'-'+(c+1)+'.png')}" width="174" height="174" loading="lazy" alt="${name}: ${variant}"><figcaption>${variant}</figcaption></figure>`).join('')}</div></section>`).join('')}</div>
- </details></div>`;}
+ </div></div>`;}
 const gradientData=[{name:'Cyan + green',end:'#65f4a1',result:'Less clear in the cyan comparison',shift:'−30°'},{name:'Plain cyan',end:'#77fbfe',result:'Baseline',shift:'0°'},{name:'Cyan + blue',end:'#559cff',result:'Clearer in the cyan comparison',shift:'+30°'}];
 function gradients(){return `<div class="icon-gradient-lab"><div class="icon-gradient-specimens">${gradientData.map((g,i)=>`<button class="icon-gradient-option" type="button" data-gradient="${i}" aria-pressed="${i===1}"><span class="icon-gradient-disc" style="--gradient-end:${g.end}"><svg viewBox="0 0 96 96" aria-hidden="true">${ICONS[5].art}</svg></span><strong>${g.name}</strong><span>${g.shift}</span></button>`).join('')}</div><p class="icon-gradient-result" aria-live="polite">Baseline</p><p class="icon-lab-note">The motion illustrates the color blend. The original observation compared static icons in AR, with hue shifts of ±30°.</p></div>`;}
 export function renderIconInteraction(kind){return kind==='study3'?refinement():kind==='gradients'?gradients():matrix(kind);}
@@ -43,13 +42,10 @@ export function setupIconInteractions(root=document,p){
  const replacements=[['baseline','icon-study-1.svg','study1'],['meaning','icon-study-2.svg','study2'],['refinement','icon-study-3.svg','study3'],['gradients','icon-gradients.svg','gradients']];
  for(const[id,path,kind]of replacements){const fig=[...root.querySelectorAll(`#${id} .project-figure`)].find(f=>f.querySelector(`img[src*="${path}"]`));if(fig){const div=document.createElement('div');div.className='icon-interactive-figure';div.innerHTML=renderIconInteraction(kind);fig.replaceWith(div);}}
  setupIconEditorial(root);
- const alternatives=root.querySelector('[data-icon-alternatives]');
- function openAlternatives(event){if(event.pointerType==='mouse'&&matchMedia('(hover:hover) and (pointer:fine)').matches)alternatives.open=true;}
- alternatives?.addEventListener('pointerenter',openAlternatives);
  function interact(event){
   const hue=event.target.closest('.icon-hue');
   if(hue){const lab=hue.closest('[data-icon-lab]'),i=Number(hue.dataset.hue),panel=lab.querySelector('.icon-hue-comparison');if(event.type==='click'&&lab.dataset.pinned==='true'&&lab.dataset.selected===String(i)){hideLab(lab);return;}lab.dataset.selected=i;if(event.type==='click')lab.dataset.pinned='true';lab.querySelectorAll('.icon-hue').forEach(b=>b.setAttribute('aria-expanded',String(b===hue)));panel.innerHTML=comparison(i,lab.dataset.iconLab);panel.hidden=false;}
-  if(event.target.closest('[data-icon-close]'))hideLab(event.target.closest('[data-icon-lab]'));
+  if(event.type==='click'&&event.target.closest('[data-icon-close]'))hideLab(event.target.closest('[data-icon-lab]'));
 
   const gradient=event.target.closest('[data-gradient]');if(gradient){const lab=gradient.closest('.icon-gradient-lab');lab.querySelectorAll('[data-gradient]').forEach(b=>b.setAttribute('aria-pressed',String(b===gradient)));lab.querySelector('.icon-gradient-result').textContent=gradientData[Number(gradient.dataset.gradient)].result;}
  }
@@ -57,5 +53,5 @@ export function setupIconInteractions(root=document,p){
  function leave(event){const lab=event.target.closest('[data-icon-lab]');if(lab&&!lab.contains(event.relatedTarget)&&lab.dataset.pinned!=='true'){queueMicrotask(()=>{if(!lab.contains(document.activeElement))hideLab(lab);});}}
  function key(event){if(event.key==='Escape'){const lab=event.target.closest('[data-icon-lab]');if(lab){hideLab(lab);event.preventDefault();}}}
  ['pointerover','focusin','click'].forEach(name=>root.addEventListener(name,interact));root.addEventListener('pointerout',leave);root.addEventListener('focusout',leave);root.addEventListener('keydown',key);
- return()=>{alternatives?.removeEventListener('pointerenter',openAlternatives);['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('pointerout',leave);root.removeEventListener('focusout',leave);root.removeEventListener('keydown',key);};
+ return()=>{['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('pointerout',leave);root.removeEventListener('focusout',leave);root.removeEventListener('keydown',key);};
 }
