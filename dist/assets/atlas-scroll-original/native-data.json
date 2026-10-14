@@ -1,0 +1,3541 @@
+{
+  "colors": [
+    {
+      "id": "zhusha",
+      "name": "朱砂",
+      "pinyin": "zhū shā",
+      "hex": "#8B1A1A",
+      "cat": "mineral",
+      "origin": "汞之硫化物,自辰州所出者最佳,故又称辰砂、丹砂。",
+      "context": "《神农本草经》列为上品。汉唐以降,宫廷批红、道家炼丹、壁画造像,皆以此为宗。",
+      "era": "新石器时代 · 至 · 今",
+      "cites": [
+        "《神农本草经》",
+        "《本草纲目》"
+      ],
+      "related": [
+        "yanzhi",
+        "fei",
+        "jiang"
+      ]
+    },
+    {
+      "id": "shiqing",
+      "name": "石青",
+      "pinyin": "shí qīng",
+      "hex": "#1661AB",
+      "cat": "mineral",
+      "origin": "蓝铜矿研磨所得,色深沉如海。",
+      "context": "敦煌壁画、青绿山水之魂。唐人李思训父子所作,必以石青石绿相衬。",
+      "era": "魏晋 · 至 · 明清",
+      "cites": [
+        "《历代名画记》",
+        "《芥子园画传》"
+      ],
+      "related": [
+        "shilu",
+        "dianlan",
+        "tianqing"
+      ]
+    },
+    {
+      "id": "shilu",
+      "name": "石绿",
+      "pinyin": "shí lǜ",
+      "hex": "#4D8A63",
+      "cat": "mineral",
+      "origin": "孔雀石研磨而成,色如翠羽。",
+      "context": "与石青并称画家双璧。《千里江山图》中王希孟以石绿铺山,历千年不褪。",
+      "era": "魏晋 · 至 · 明清",
+      "cites": [
+        "《千里江山图》",
+        "《画史》"
+      ],
+      "related": [
+        "shiqing",
+        "cui",
+        "bi",
+        "kongqing"
+      ]
+    },
+    {
+      "id": "zheshi",
+      "name": "赭石",
+      "pinyin": "zhě shí",
+      "hex": "#9C5333",
+      "cat": "mineral",
+      "origin": "赤铁矿之属,中国最古老颜料之一。",
+      "context": "新石器彩陶文化 — 仰韶、马家窑皆以此绘纹。山水画中染土坡、写秋木。",
+      "era": "新石器时代 · 至 · 今",
+      "cites": [
+        "《考工记》",
+        "《天工开物》"
+      ],
+      "related": [
+        "jiang",
+        "xuan"
+      ]
+    },
+    {
+      "id": "qianbai",
+      "name": "铅白",
+      "pinyin": "qiān bái",
+      "hex": "#F2ECDE",
+      "cat": "mineral",
+      "origin": "铅经醋熏化为碱式碳酸铅,古称胡粉、铅华。",
+      "context": "古人化妆之本。李白云「粉黛空颜色」,杜甫云「玉颜铅华落」,皆指此。",
+      "era": "春秋战国 · 至 · 清",
+      "cites": [
+        "《释名》",
+        "《齐民要术》"
+      ],
+      "related": [
+        "dai",
+        "yuebai"
+      ]
+    },
+    {
+      "id": "yanzhi",
+      "name": "胭脂",
+      "pinyin": "yān zhī",
+      "hex": "#9D2933",
+      "cat": "plant",
+      "origin": "红蓝花(红花)之花瓣捣汁浸绵,又出焉支山。",
+      "context": "《史记》载匈奴失焉支山而悲歌。汉武帝伐匈奴,胭脂之名自此入华。",
+      "era": "汉 · 至 · 今",
+      "cites": [
+        "《史记》",
+        "《博物志》"
+      ],
+      "related": [
+        "zhusha",
+        "qian",
+        "fei"
+      ]
+    },
+    {
+      "id": "tenghuang",
+      "name": "藤黄",
+      "pinyin": "téng huáng",
+      "hex": "#E8A50F",
+      "cat": "plant",
+      "origin": "海藤树之树脂,熬炼而成。色金灿如阳。",
+      "context": "南朝始自林邑传入。工笔花鸟、佛教绘画之要色,梁楷、八大皆爱之。",
+      "era": "南朝 · 至 · 明清",
+      "cites": [
+        "《本草纲目》",
+        "《芥子园画传》"
+      ],
+      "related": [
+        "xiang",
+        "zhizi",
+        "huang"
+      ]
+    },
+    {
+      "id": "dianlan",
+      "name": "靛蓝",
+      "pinyin": "diàn lán",
+      "hex": "#065279",
+      "cat": "plant",
+      "origin": "蓼蓝、菘蓝诸草发酵沉淀。",
+      "context": "《荀子》「青取之于蓝而青于蓝」即此。自周秦已为染服之正色。",
+      "era": "周 · 至 · 今",
+      "cites": [
+        "《荀子·劝学》",
+        "《诗经·小雅》"
+      ],
+      "related": [
+        "qing",
+        "gan",
+        "dai"
+      ]
+    },
+    {
+      "id": "qian",
+      "name": "茜色",
+      "pinyin": "qiàn sè",
+      "hex": "#CB3A56",
+      "cat": "plant",
+      "origin": "茜草之根,赤黄色素,煮染得鲜红。",
+      "context": "《诗经》「茹藘在阪」即茜草。《汉官仪》载太官令掌茜染,供宫帏之用。",
+      "era": "先秦 · 至 · 今",
+      "cites": [
+        "《诗经·郑风》",
+        "《汉官仪》"
+      ],
+      "related": [
+        "yanzhi",
+        "fei",
+        "jiang"
+      ]
+    },
+    {
+      "id": "zhizi",
+      "name": "栀子",
+      "pinyin": "zhī zǐ",
+      "hex": "#ECD452",
+      "cat": "plant",
+      "origin": "栀子果实所煮,得温润之黄。",
+      "context": "汉代最通行之黄染。马王堆素纱禅衣、唐人黄罗裙皆染此色。",
+      "era": "汉 · 至 · 唐",
+      "cites": [
+        "《齐民要术》",
+        "《天工开物》"
+      ],
+      "related": [
+        "xiang",
+        "tenghuang",
+        "huang"
+      ]
+    },
+    {
+      "id": "dai",
+      "name": "黛",
+      "pinyin": "dài",
+      "hex": "#4A4266",
+      "cat": "plant",
+      "origin": "靛青加石磨细,调以脂。",
+      "context": "古女子画眉之物。屈原「粉白黛黑,施芳泽只」,《红楼梦》林黛玉之名亦出此。",
+      "era": "战国 · 至 · 清",
+      "cites": [
+        "《楚辞·大招》",
+        "《释名》"
+      ],
+      "related": [
+        "dianlan",
+        "luodai",
+        "xuan"
+      ]
+    },
+    {
+      "id": "zaose",
+      "name": "皂色",
+      "pinyin": "zào sè",
+      "hex": "#2C2520",
+      "cat": "plant",
+      "origin": "皂斗(栎实)与五倍子含鞣质,染为玄黑。",
+      "context": "平民之服色。隋唐以降,衙役、门吏皆服皂衣,故有「皂吏」之称。",
+      "era": "周 · 至 · 清",
+      "cites": [
+        "《周礼·天官》",
+        "《唐六典》"
+      ],
+      "related": [
+        "zi",
+        "xuan",
+        "gan"
+      ]
+    },
+    {
+      "id": "luodai",
+      "name": "螺黛",
+      "pinyin": "luó dài",
+      "hex": "#425066",
+      "cat": "nature",
+      "origin": "波斯进贡之青黑矿物,形如螺,碾以描眉。",
+      "context": "《隋唐嘉话》载隋炀帝赐后宫螺子黛,每颗值十金,唯宫中得用。",
+      "era": "隋唐",
+      "cites": [
+        "《隋唐嘉话》",
+        "《开元天宝遗事》"
+      ],
+      "related": [
+        "dai",
+        "xuan",
+        "gan"
+      ]
+    },
+    {
+      "id": "tianqing",
+      "name": "天青",
+      "pinyin": "tiān qīng",
+      "hex": "#6E9CB3",
+      "cat": "nature",
+      "origin": "雨后初霁、云破天青之际所见天色。",
+      "context": "柴世宗批汝窑御札:「雨过天青云破处,这般颜色作将来。」汝瓷之魂。",
+      "era": "五代 · 至 · 北宋",
+      "cites": [
+        "《格古要论》",
+        "《清波杂志》"
+      ],
+      "related": [
+        "yuebai",
+        "piao",
+        "qing"
+      ]
+    },
+    {
+      "id": "yuebai",
+      "name": "月白",
+      "pinyin": "yuè bái",
+      "hex": "#CFE0E8",
+      "cat": "nature",
+      "origin": "月华之色,淡青泛白,素而不寒。",
+      "context": "《红楼梦》中最常出现之服色。宝玉「月白绫子箭袖」,黛玉「月白绣花小毛皮袄」皆是。",
+      "era": "明 · 至 · 清",
+      "cites": [
+        "《红楼梦》",
+        "《扬州画舫录》"
+      ],
+      "related": [
+        "tianqing",
+        "piao",
+        "qianbai"
+      ]
+    },
+    {
+      "id": "piao",
+      "name": "缥色",
+      "pinyin": "piǎo sè",
+      "hex": "#7DB9DE",
+      "cat": "literary",
+      "origin": "《说文解字》:「缥,帛青白色也。」",
+      "context": "古书衣多以缥色绢帛为之,故称「缥缃」即指书卷。曹植《洛神赋》亦用此色。",
+      "era": "汉 · 至 · 唐",
+      "cites": [
+        "《说文解字》",
+        "《洛神赋》"
+      ],
+      "related": [
+        "tianqing",
+        "yuebai",
+        "xiang"
+      ]
+    },
+    {
+      "id": "xiang",
+      "name": "缃色",
+      "pinyin": "xiāng sè",
+      "hex": "#F0C239",
+      "cat": "literary",
+      "origin": "《释名·释采帛》:「缃,桑也,如桑叶初生之色。」",
+      "context": "浅黄色帛。与缥色并举为「缥缃」,代指典籍。古诗「缃帙流离,凤纸传音」。",
+      "era": "汉 · 至 · 唐",
+      "cites": [
+        "《释名》",
+        "《玉台新咏》"
+      ],
+      "related": [
+        "zhizi",
+        "tenghuang",
+        "huang",
+        "piao"
+      ]
+    },
+    {
+      "id": "gan",
+      "name": "绀色",
+      "pinyin": "gàn sè",
+      "hex": "#4C221B",
+      "cat": "literary",
+      "origin": "《说文》:「绀,帛深青扬赤色。」青中透赤,深沉如夜。",
+      "context": "《论语·乡党》:「君子不以绀緅饰。」孔子以为此色近于斋戒之服,不宜日常。",
+      "era": "先秦",
+      "cites": [
+        "《论语》",
+        "《说文解字》"
+      ],
+      "related": [
+        "xuan",
+        "zi",
+        "dianlan"
+      ]
+    },
+    {
+      "id": "zi",
+      "name": "缁色",
+      "pinyin": "zī sè",
+      "hex": "#161823",
+      "cat": "literary",
+      "origin": "《说文》:「缁,帛黑色也。」以栎实、皂斗再三而染。",
+      "context": "《诗经》「缁衣之宜兮」,为卿大夫听朝之服。后为僧服之称,故有「缁门」「缁流」。",
+      "era": "先秦 · 至 · 今",
+      "cites": [
+        "《诗经·郑风》",
+        "《说文解字》"
+      ],
+      "related": [
+        "zaose",
+        "xuan",
+        "gan"
+      ]
+    },
+    {
+      "id": "jiang",
+      "name": "绛色",
+      "pinyin": "jiàng sè",
+      "hex": "#7C1823",
+      "cat": "literary",
+      "origin": "《说文》:「绛,大赤也。」以茜草三入、五入所得之深红。",
+      "context": "绛州(今山西新绛)以染色闻名。汉官员绛衣大冠。《红楼梦》绛珠仙草、绛云轩皆取此。",
+      "era": "汉 · 至 · 清",
+      "cites": [
+        "《说文解字》",
+        "《汉官仪》"
+      ],
+      "related": [
+        "zhusha",
+        "fei",
+        "qian",
+        "yanzhi"
+      ]
+    },
+    {
+      "id": "fei",
+      "name": "绯色",
+      "pinyin": "fēi sè",
+      "hex": "#C83C23",
+      "cat": "literary",
+      "origin": "浅赤而鲜,较绛为淡,较朱为柔。",
+      "context": "唐制四品、五品官服绯。白居易「江州司马青衫湿」,青衫者八九品也,望绯而不及。",
+      "era": "唐 · 至 · 宋",
+      "cites": [
+        "《唐六典》",
+        "《琵琶行》"
+      ],
+      "related": [
+        "zhusha",
+        "yanzhi",
+        "jiang",
+        "qian"
+      ]
+    },
+    {
+      "id": "qing",
+      "name": "青",
+      "pinyin": "qīng",
+      "hex": "#0EB0C9",
+      "cat": "literary",
+      "origin": "最古老之色彩概念,《说文》:「青,东方色也。」",
+      "context": "可指蓝、指绿、指黑。「青天」之蓝、「青山」之绿、「青丝」之黑,一字而含三色。",
+      "era": "上古 · 至 · 今",
+      "cites": [
+        "《说文解字》",
+        "《荀子·劝学》"
+      ],
+      "related": [
+        "dianlan",
+        "shiqing",
+        "xuan"
+      ]
+    },
+    {
+      "id": "huang",
+      "name": "黄",
+      "pinyin": "huáng",
+      "hex": "#E8B84F",
+      "cat": "literary",
+      "origin": "五行居中,土之正色。《说文》:「黄,地之色也。」",
+      "context": "隋唐以后,黄为帝王专享。「黄袍加身」即赵匡胤陈桥兵变之典,自此黄为天子色。",
+      "era": "上古 · 至 · 清",
+      "cites": [
+        "《说文解字》",
+        "《宋史·太祖本纪》"
+      ],
+      "related": [
+        "zhizi",
+        "tenghuang",
+        "xiang"
+      ]
+    },
+    {
+      "id": "xuan",
+      "name": "玄",
+      "pinyin": "xuán",
+      "hex": "#3B2820",
+      "cat": "literary",
+      "origin": "《说文》:「玄,幽远也。黑而有赤色者为玄。」",
+      "context": "「天地玄黄」开《千字文》。周制玄衣纁裳,祭天地之服。道家以玄为众妙之门。",
+      "era": "上古 · 至 · 今",
+      "cites": [
+        "《周易》",
+        "《道德经》",
+        "《千字文》"
+      ],
+      "related": [
+        "zi",
+        "gan",
+        "zaose",
+        "huang"
+      ]
+    },
+    {
+      "id": "xionghuang",
+      "name": "雄黄",
+      "pinyin": "xióng huáng",
+      "hex": "#E55B3C",
+      "cat": "mineral",
+      "origin": "砷之硫化物,又称鸡冠石。《本草纲目》载其色赤如鸡冠,能辟百邪。",
+      "context": "端午以雄黄酒涂儿额角、书「王」字。道家外丹,雄黄为一味。",
+      "era": "先秦 · 至 · 清",
+      "cites": [
+        "《神农本草经》",
+        "《本草纲目》",
+        "《荆楚岁时记》"
+      ],
+      "related": [
+        "zhusha",
+        "cihuang",
+        "tenghuang"
+      ]
+    },
+    {
+      "id": "cihuang",
+      "name": "雌黄",
+      "pinyin": "cí huáng",
+      "hex": "#EEA62C",
+      "cat": "mineral",
+      "origin": "三硫化二砷,与雄黄同矿而生,色如金屑。",
+      "context": "《晋书·王衍传》:「口中雌黄。」王衍清谈每随口更改,成语「信口雌黄」本此。古人亦涂改简牍用之。",
+      "era": "魏晋 · 至 · 清",
+      "cites": [
+        "《晋书·王衍传》",
+        "《本草纲目》"
+      ],
+      "related": [
+        "xionghuang",
+        "tenghuang",
+        "minghuang"
+      ]
+    },
+    {
+      "id": "kongqing",
+      "name": "空青",
+      "pinyin": "kōng qīng",
+      "hex": "#3B8F99",
+      "cat": "mineral",
+      "origin": "蓝铜矿中空心者,《神农本草经》列为上品,色青透如天色。",
+      "context": "唐宋名画色料之一。《历代名画记》:「金陵所产空青,以镂龙蛇纹者为佳。」",
+      "era": "汉 · 至 · 宋",
+      "cites": [
+        "《神农本草经》",
+        "《历代名画记》"
+      ],
+      "related": [
+        "shiqing",
+        "shilu",
+        "bi"
+      ]
+    },
+    {
+      "id": "shanhu",
+      "name": "珊瑚",
+      "pinyin": "shān hú",
+      "hex": "#F04A4A",
+      "cat": "mineral",
+      "origin": "海中珊瑚虫所结之骨,赤如朝霞。",
+      "context": "《后汉书·西南夷传》载珊瑚入贡。清代冠顶以珊瑚珠分等级,红珊瑚为皇家专享。",
+      "era": "汉 · 至 · 清",
+      "cites": [
+        "《后汉书》",
+        "《西京杂记》"
+      ],
+      "related": [
+        "zhusha",
+        "chi",
+        "fei"
+      ]
+    },
+    {
+      "id": "bi",
+      "name": "碧",
+      "pinyin": "bì",
+      "hex": "#1BA784",
+      "cat": "mineral",
+      "origin": "《说文解字》:「碧,石之青美者。」通指蓝绿美石。",
+      "context": "王勃《滕王阁序》:「秋水共长天一色。」水即碧色。李白「碧玉妆成一树高」写柳色。",
+      "era": "先秦 · 至 · 今",
+      "cites": [
+        "《说文解字》",
+        "《滕王阁序》",
+        "《咏柳》"
+      ],
+      "related": [
+        "shilu",
+        "kongqing",
+        "cui"
+      ]
+    },
+    {
+      "id": "sufang",
+      "name": "苏芳",
+      "pinyin": "sū fāng",
+      "hex": "#A14F4F",
+      "cat": "plant",
+      "origin": "苏木(苏枋木)之心材,南海传入,色如血赭。",
+      "context": "《唐六典》载染织署以苏芳染绯。日本「襲の色目」亦有苏芳袭,可见东亚传播之广。",
+      "era": "唐 · 至 · 明",
+      "cites": [
+        "《唐六典》",
+        "《本草纲目》"
+      ],
+      "related": [
+        "yanzhi",
+        "qian",
+        "jiang"
+      ]
+    },
+    {
+      "id": "zhehuang",
+      "name": "柘黄",
+      "pinyin": "zhè huáng",
+      "hex": "#C9A845",
+      "cat": "plant",
+      "origin": "柘木(柘桑)所染,赤黄带光。",
+      "context": "《新唐书·舆服志》:「天子袍衫黄文,以柘黄染之。」自隋文帝始为帝王常服,禁庶民用。",
+      "era": "隋唐 · 至 · 明",
+      "cites": [
+        "《新唐书·舆服志》",
+        "《唐六典》"
+      ],
+      "related": [
+        "minghuang",
+        "xinghuang",
+        "huang"
+      ]
+    },
+    {
+      "id": "huaihuang",
+      "name": "槐黄",
+      "pinyin": "huái huáng",
+      "hex": "#D2B42C",
+      "cat": "plant",
+      "origin": "槐花(槐米)所染之黄,亦称槐米黄,较栀子为明。",
+      "context": "《齐民要术》《天工开物》皆载其法。明清科考时「槐花黄,举子忙」,考生多服槐黄长衫。",
+      "era": "汉 · 至 · 清",
+      "cites": [
+        "《齐民要术》",
+        "《天工开物》"
+      ],
+      "related": [
+        "zhizi",
+        "xiang",
+        "tenghuang"
+      ]
+    },
+    {
+      "id": "songhua",
+      "name": "松花",
+      "pinyin": "sōng huā",
+      "hex": "#BCE672",
+      "cat": "plant",
+      "origin": "松树花粉之色,淡黄泛绿,润而不扬。",
+      "context": "唐代薛涛制笺,染作松花色者最为士林所爱。《红楼梦》中鸳鸯亦有松花色汗巾。",
+      "era": "唐 · 至 · 清",
+      "cites": [
+        "《薛涛笺》",
+        "《红楼梦》"
+      ],
+      "related": [
+        "shilu",
+        "congqing",
+        "xiang"
+      ]
+    },
+    {
+      "id": "mo",
+      "name": "墨",
+      "pinyin": "mò",
+      "hex": "#1F2321",
+      "cat": "plant",
+      "origin": "松烟、油烟合胶研制。《说文》:「墨,书墨也。」",
+      "context": "徽墨、歙墨为贡品。苏轼谓「墨分五色」:焦浓重淡清——一墨可化千色。",
+      "era": "先秦 · 至 · 今",
+      "cites": [
+        "《说文解字》",
+        "《墨经》",
+        "《东坡题跋》"
+      ],
+      "related": [
+        "xuan",
+        "zi",
+        "hei"
+      ]
+    },
+    {
+      "id": "yujin",
+      "name": "郁金",
+      "pinyin": "yù jīn",
+      "hex": "#E1A85C",
+      "cat": "plant",
+      "origin": "郁金(姜黄属)根茎磨粉,染黄且有浓香。",
+      "context": "《汉官仪》:「尚书郎给女使二人,郁金裙。」佛家袈裟亦染郁金。李白「兰陵美酒郁金香」咏此。",
+      "era": "汉 · 至 · 唐",
+      "cites": [
+        "《汉官仪》",
+        "《本草纲目》",
+        "《客中作》"
+      ],
+      "related": [
+        "tenghuang",
+        "xinghuang",
+        "xiang"
+      ]
+    },
+    {
+      "id": "ouhe",
+      "name": "藕荷",
+      "pinyin": "ǒu hé",
+      "hex": "#E4B2C4",
+      "cat": "plant",
+      "origin": "取藕与荷之间的浅粉紫色,温润如江南烟水。",
+      "context": "《红楼梦》多处出此色:李纨藕合色交领、莺儿编藕合络子。江南闺阁最爱此色。",
+      "era": "明 · 至 · 清",
+      "cites": [
+        "《红楼梦》"
+      ],
+      "related": [
+        "qianbai",
+        "yuebai",
+        "yanzhi"
+      ]
+    },
+    {
+      "id": "congqing",
+      "name": "葱青",
+      "pinyin": "cōng qīng",
+      "hex": "#7BA23F",
+      "cat": "plant",
+      "origin": "春葱之青,嫩而带黄,为初绿之属。",
+      "context": "《本草纲目·菜部》记葱之用。《红楼梦》中袭人着「葱绿撒花绫裙」即此。",
+      "era": "宋 · 至 · 清",
+      "cites": [
+        "《本草纲目》",
+        "《红楼梦》"
+      ],
+      "related": [
+        "shilu",
+        "cui",
+        "songhua"
+      ]
+    },
+    {
+      "id": "tianshuibi",
+      "name": "天水碧",
+      "pinyin": "tiān shuǐ bì",
+      "hex": "#88ADA6",
+      "cat": "nature",
+      "origin": "《十国春秋·南唐后妃传》:「后主宫人染碧,夕露之,色倍鲜,遂名天水碧。」",
+      "context": "南唐后主李煜宫中偶得,一夜露水所成。后王禹偁咏:「阶前雨露成天水,花底烟霞入砚池。」",
+      "era": "五代",
+      "cites": [
+        "《十国春秋》",
+        "《梦溪笔谈》"
+      ],
+      "related": [
+        "tianqing",
+        "yuebai",
+        "bi"
+      ]
+    },
+    {
+      "id": "yaqing",
+      "name": "鸦青",
+      "pinyin": "yā qīng",
+      "hex": "#2B3648",
+      "cat": "nature",
+      "origin": "取乌鸦羽毛之色,青中近黑,冷而深沉。",
+      "context": "《宣和画谱》列鸦青为设色一种。元明妇女有鸦青缎袄。《红楼梦》黛玉亦有鸦青汗巾。",
+      "era": "宋 · 至 · 清",
+      "cites": [
+        "《宣和画谱》",
+        "《红楼梦》"
+      ],
+      "related": [
+        "gan",
+        "dai",
+        "xuan"
+      ]
+    },
+    {
+      "id": "cui",
+      "name": "翠",
+      "pinyin": "cuì",
+      "hex": "#00A86B",
+      "cat": "nature",
+      "origin": "《说文》:「翠,青羽雀也。」本义翠鸟,引申为其羽之青绿。",
+      "context": "唐代尚翠,贵族妇女簪翠翘、绣翠纹。白居易「金翠燃光照妃额」、李商隐「翠黛深」,皆此色。",
+      "era": "上古 · 至 · 今",
+      "cites": [
+        "《说文解字》",
+        "《长恨歌》"
+      ],
+      "related": [
+        "shilu",
+        "bi",
+        "kongqing"
+      ]
+    },
+    {
+      "id": "yuse",
+      "name": "玉色",
+      "pinyin": "yù sè",
+      "hex": "#C8E1D4",
+      "cat": "nature",
+      "origin": "美玉之色,青白中透润,温如凝脂。",
+      "context": "《礼记·玉藻》:「君子于玉比德焉。」玉色为君子衣服本色。《诗经》「言念君子,温其如玉」。",
+      "era": "先秦 · 至 · 今",
+      "cites": [
+        "《礼记·玉藻》",
+        "《诗经·秦风》"
+      ],
+      "related": [
+        "yuebai",
+        "tianqing",
+        "qianbai"
+      ]
+    },
+    {
+      "id": "zipurple",
+      "name": "紫",
+      "pinyin": "zǐ",
+      "hex": "#8D4BBB",
+      "cat": "literary",
+      "origin": "青赤交染所得。《说文》:「紫,帛青赤色也。」",
+      "context": "《论语·阳货》:「恶紫之夺朱也。」朱为正色而紫为间色,孔子恶其乱朱。然唐三品以上服紫,紫贵之始。",
+      "era": "先秦 · 至 · 今",
+      "cites": [
+        "《论语·阳货》",
+        "《说文解字》",
+        "《唐六典》"
+      ],
+      "related": [
+        "gan",
+        "dai",
+        "ouhe"
+      ]
+    },
+    {
+      "id": "chi",
+      "name": "赤",
+      "pinyin": "chì",
+      "hex": "#C3272B",
+      "cat": "literary",
+      "origin": "《说文》:「赤,南方色也。」火之色,周人尚赤。",
+      "context": "《诗经·七月》「我朱孔阳,为公子裳」。汉代赤帻、赤绶皆显礼制。《礼记》:「周人尚赤,大事敛用日出。」",
+      "era": "上古 · 至 · 今",
+      "cites": [
+        "《说文解字》",
+        "《诗经·豳风》",
+        "《礼记·檀弓》"
+      ],
+      "related": [
+        "zhusha",
+        "jiang",
+        "fei",
+        "shanhu"
+      ]
+    },
+    {
+      "id": "hei",
+      "name": "黑",
+      "pinyin": "hēi",
+      "hex": "#0C0C0C",
+      "cat": "literary",
+      "origin": "《说文》:「黑,北方色也。火所熏之色也。」五行对应水、北、冬。",
+      "context": "秦尚黑。秦始皇以水德代周,《史记·秦始皇本纪》:「衣服旄旌节旗皆尚黑。」",
+      "era": "上古 · 至 · 今",
+      "cites": [
+        "《说文解字》",
+        "《史记·秦始皇本纪》"
+      ],
+      "related": [
+        "xuan",
+        "zi",
+        "mo"
+      ]
+    },
+    {
+      "id": "xun",
+      "name": "纁",
+      "pinyin": "xūn",
+      "hex": "#B36A5E",
+      "cat": "literary",
+      "origin": "《周礼·考工记》:「三入为纁。」茜草三次浸染所得暗红偏黄。",
+      "context": "周制祭服:「玄衣纁裳」,玄为天、纁为地,取天地玄黄之意。《尚书》称帝王葬服为「玄纁」。",
+      "era": "周 · 至 · 汉",
+      "cites": [
+        "《周礼·考工记》",
+        "《尚书·禹贡》"
+      ],
+      "related": [
+        "jiang",
+        "qian",
+        "huang"
+      ]
+    },
+    {
+      "id": "chenxiang",
+      "name": "沉香",
+      "pinyin": "chén xiāng",
+      "hex": "#6A4E3D",
+      "cat": "literary",
+      "origin": "沉香木之色,暗褐中沉稳,以树名色。",
+      "context": "《红楼梦》中贾母着「沉香色弹墨花绵裙」。沉香色为老年贵妇常服,沉静而不张扬。",
+      "era": "明 · 至 · 清",
+      "cites": [
+        "《红楼梦》",
+        "《本草纲目》"
+      ],
+      "related": [
+        "zheshi",
+        "xuan",
+        "gan"
+      ]
+    },
+    {
+      "id": "xinghuang",
+      "name": "杏黄",
+      "pinyin": "xìng huáng",
+      "hex": "#EAB24D",
+      "cat": "literary",
+      "origin": "杏子熟透之色,金黄中带微赤。",
+      "context": "《红楼梦》探春着杏黄撒花。道教以杏黄为尊,道袍法衣多用之。宋元之后亦为皇子仪仗旗色。",
+      "era": "宋 · 至 · 清",
+      "cites": [
+        "《红楼梦》",
+        "《道藏》"
+      ],
+      "related": [
+        "minghuang",
+        "zhehuang",
+        "huang"
+      ]
+    },
+    {
+      "id": "minghuang",
+      "name": "明黄",
+      "pinyin": "míng huáng",
+      "hex": "#FFD700",
+      "cat": "literary",
+      "origin": "纯净之黄,不掺他色,鲜明灿烂。",
+      "context": "《钦定大清会典》:「皇帝龙袍,色用明黄。」清代明黄为皇帝专色,皇后、皇太后亦可用。",
+      "era": "清",
+      "cites": [
+        "《钦定大清会典》",
+        "《清史稿·舆服志》"
+      ],
+      "related": [
+        "huang",
+        "zhehuang",
+        "xinghuang"
+      ]
+    },
+    {
+      "id": "yinzhu",
+      "name": "银朱",
+      "pinyin": "yín zhū",
+      "hex": "#F05654",
+      "cat": "mineral",
+      "origin": "水银与石亭脂同研升炼所得的朱色颜料，古籍将其与朱砂、水银的转化关系分辨清楚。",
+      "context": "银朱与天然朱砂并非同一制备路径；颗粒、胶结剂会改变红相，HEX 只作屏幕索引。",
+      "era": "宋代已有贡用记录 · 明代工艺文献详载",
+      "cites": [
+        "《天工开物·丹青·朱》",
+        "《宋朝事实·卷七》"
+      ],
+      "related": [
+        "zhusha",
+        "huangdan",
+        "danhuo"
+      ]
+    },
+    {
+      "id": "huangdan",
+      "name": "黄丹",
+      "pinyin": "huáng dān",
+      "hex": "#EA5514",
+      "cat": "mineral",
+      "origin": "由铅烧炼而成的橙赤色颜料，古籍亦称铅丹、丹粉、朱粉。",
+      "context": "“黄丹”并非现代纯黄，历史上用于绘饰、医药等；色相会随烧炼状态改变。",
+      "era": "汉以前本草传统 · 宋明采色与工艺文献",
+      "cites": [
+        "《本草纲目·金石之一·铅丹》",
+        "《宋朝事实·卷七》"
+      ],
+      "related": [
+        "yinzhu",
+        "xionghuang",
+        "cihuang"
+      ]
+    },
+    {
+      "id": "danhuo",
+      "name": "丹雘",
+      "pinyin": "dān huò",
+      "hex": "#C8161D",
+      "cat": "mineral",
+      "origin": "“雘”为可作颜料的赤色石脂；“丹雘”见于先秦涂饰语境。",
+      "context": "《尚书》证明的是红色矿物涂饰材料，并非单一现代化学品或固定 HEX。",
+      "era": "先秦",
+      "cites": [
+        "《尚书·梓材》",
+        "《说文解字注·雘》"
+      ],
+      "related": [
+        "zhusha",
+        "yinzhu",
+        "chi"
+      ]
+    },
+    {
+      "id": "ehuang",
+      "name": "鹅黄",
+      "pinyin": "é huáng",
+      "hex": "#FFF143",
+      "cat": "nature",
+      "origin": "古人以鹅雏嫩羽及鹅黄色酒液比色，杜甫有“鹅儿黄似酒”。",
+      "context": "唐宋语境中可指鹅雏、嫩柳或酒色；HEX 仅为明快浅黄的现代近似。",
+      "era": "唐宋诗文 · 历代沿用",
+      "cites": [
+        "杜甫《舟前小鹅儿》",
+        "《示儿编·鸭绿鹅黄》"
+      ],
+      "related": [
+        "juyi",
+        "songhua",
+        "xiang"
+      ]
+    },
+    {
+      "id": "huanglu",
+      "name": "黄栌",
+      "pinyin": "huáng lú",
+      "hex": "#E29C45",
+      "cat": "plant",
+      "origin": "黄栌木可煮取黄色染液，古本草明确记载其“堪染黄色”。",
+      "context": "《多能鄙事》还记录用黄栌染明茶褐；实际染色会随媒染和织物变化。",
+      "era": "唐宋本草传统 · 明代染色配方",
+      "cites": [
+        "《图经衍义本草·黄栌》",
+        "《多能鄙事·染明茶褐》"
+      ],
+      "related": [
+        "yujin",
+        "zhehuang",
+        "juyi"
+      ]
+    },
+    {
+      "id": "juyi",
+      "name": "鞠衣",
+      "pinyin": "jū yī",
+      "hex": "#D3A237",
+      "cat": "literary",
+      "origin": "鞠衣为王后六服之一，郑注释作黄桑服，色义取桑叶初生之黄。",
+      "context": "它是礼制服名，不是单一染料；HEX 仅作黄桑服色的现代索引。",
+      "era": "周礼传统 · 汉代经注",
+      "cites": [
+        "《周礼·天官·内司服》",
+        "郑玄《周礼注》"
+      ],
+      "related": [
+        "ehuang",
+        "xiang",
+        "huang"
+      ]
+    },
+    {
+      "id": "qunqing",
+      "name": "群青",
+      "pinyin": "qún qīng",
+      "hex": "#4C8DAE",
+      "cat": "mineral",
+      "origin": "汉语传统颜料语境中的群青通常指由青金石制得的蓝色颜料。",
+      "context": "近代人工群青与历史天然群青材料不同；本档案只取天然矿物蓝的历史语义。",
+      "era": "古代天然矿物颜料传统",
+      "cites": [
+        "故宫博物院《文物建筑色彩面层的视觉性质与材料做法初探》",
+        "故宫博物院《慈宁宫花园临溪亭天花彩画》"
+      ],
+      "related": [
+        "shiqing",
+        "kongqing",
+        "jilan"
+      ]
+    },
+    {
+      "id": "jilan",
+      "name": "祭蓝",
+      "pinyin": "jì lán",
+      "hex": "#2B5F8A",
+      "cat": "mineral",
+      "origin": "以钴料呈色的高温深蓝釉，故宫藏宣德祭蓝釉盘又称“宝石蓝釉”。",
+      "context": "明代御窑实物与“大明宣德年制”款可直接确证；色差仍受配方、窑温影响。",
+      "era": "明宣德 · 后世沿烧",
+      "cites": [
+        "故宫博物院《祭蓝釉盘》"
+      ],
+      "related": [
+        "tianqing",
+        "qunqing",
+        "dianlan"
+      ]
+    },
+    {
+      "id": "huaqing",
+      "name": "花青",
+      "pinyin": "huā qīng",
+      "hex": "#2376B7",
+      "cat": "plant",
+      "origin": "明清画谱所见透明蓝色颜料；画论将花青列入常用色，并详述由靛花类原料淘取、澄制的过程。",
+      "context": "花青适合罩染；历史制法、原料会变化，不对应单一现代成分。",
+      "era": "明清绘画材料传统",
+      "cites": [
+        "《绘事琐言·合色》",
+        "《芥舟学画编·设色》"
+      ],
+      "related": [
+        "dianlan",
+        "piao",
+        "qunqing"
+      ]
+    },
+    {
+      "id": "biluo",
+      "name": "碧落",
+      "pinyin": "bì luò",
+      "hex": "#88ABDA",
+      "cat": "nature",
+      "origin": "“碧落”原指碧空、天界，颜色取澄澈高远的天空蓝意象。",
+      "context": "它首先是空间与光色意象，不是古代标准色样；此处转译为清浅天空蓝。",
+      "era": "唐代诗文 · 当代色值映射",
+      "cites": [
+        "白居易《长恨歌》"
+      ],
+      "related": [
+        "tianqing",
+        "piao",
+        "kongquelan"
+      ]
+    },
+    {
+      "id": "kongquelan",
+      "name": "沧浪",
+      "pinyin": "cāng láng",
+      "hex": "#4994C4",
+      "cat": "nature",
+      "origin": "“沧浪之水清兮”是先秦水色意象。",
+      "context": "以古文确有出处的水色词替换现代“孔雀蓝”；HEX 取清水映天的中蓝。",
+      "era": "先秦歌辞 · 历代水色意象",
+      "cites": [
+        "《孟子·离娄上》沧浪歌",
+        "《楚辞·渔父》"
+      ],
+      "related": [
+        "cui",
+        "biluo",
+        "qunqing"
+      ]
+    },
+    {
+      "id": "tonglv",
+      "name": "铜绿",
+      "pinyin": "tóng lǜ",
+      "hex": "#549688",
+      "cat": "mineral",
+      "origin": "铜表面生成的绿色腐蚀物，古籍以“铜青”“铜绿”著录，也进入颜料、药物体系。",
+      "context": "成分和环境不同会形成不同青绿色，不能对应唯一色度。",
+      "era": "唐代本草已有 · 明代汇录",
+      "cites": [
+        "《本草纲目·金石之一·铜青》"
+      ],
+      "related": [
+        "shilu",
+        "kongqing",
+        "doulv"
+      ]
+    },
+    {
+      "id": "doulv",
+      "name": "豆青",
+      "pinyin": "dòu qīng",
+      "hex": "#9ED048",
+      "cat": "mineral",
+      "origin": "清代青釉品种，豆青釉呈柔和青绿色。",
+      "context": "国家博物馆藏乾隆豆青釉器可作为实物档案；图谱仍保持绿系、矿物与陶瓷分类。",
+      "era": "清雍正 · 乾隆",
+      "cites": [
+        "中国国家博物馆《豆青釉地开光粉彩山水纹海棠式瓶》",
+        "故宫博物院《越窑系青釉印纹豆》"
+      ],
+      "related": [
+        "guanlv",
+        "ailv",
+        "songhua"
+      ]
+    },
+    {
+      "id": "ailv",
+      "name": "浅碧",
+      "pinyin": "qiǎn bì",
+      "hex": "#A4E2C6",
+      "cat": "plant",
+      "origin": "明代《留青日札》辨蓝草，记“大蓝如芥，染浅碧”。",
+      "context": "这是有文献支持的植物染青绿色；现有 HEX 只作屏幕近似。",
+      "era": "明代",
+      "cites": [
+        "《留青日札·蓝》"
+      ],
+      "related": [
+        "doulv",
+        "yuse",
+        "zhuqing"
+      ]
+    },
+    {
+      "id": "zhuqing",
+      "name": "竹青",
+      "pinyin": "zhú qīng",
+      "hex": "#789262",
+      "cat": "nature",
+      "origin": "取竹叶与竹表的青绿色，《诗经·卫风·淇奥》有“绿竹青青”。",
+      "context": "古文支持竹之青青意象，但不对应单一色度；本值取沉静中绿。",
+      "era": "先秦物象 · 历代沿用",
+      "cites": [
+        "《诗经·卫风·淇奥》"
+      ],
+      "related": [
+        "ailv",
+        "cuiwei",
+        "songbailv"
+      ]
+    },
+    {
+      "id": "liulv",
+      "name": "柳绿",
+      "pinyin": "liǔ lǜ",
+      "hex": "#AFDD22",
+      "cat": "plant",
+      "origin": "古代合色法中的柳绿，由枝条绿与槐花黄色调合。",
+      "context": "色名既有新柳物象，也有实际合色记录；它并非仅把柳叶照片换算为 HEX。",
+      "era": "元明清合色传统",
+      "cites": [
+        "《绘事琐言·合色》"
+      ],
+      "related": [
+        "congqing",
+        "ehuang",
+        "songbailv"
+      ]
+    },
+    {
+      "id": "songbailv",
+      "name": "松柏青",
+      "pinyin": "sōng bǎi qīng",
+      "hex": "#21A675",
+      "cat": "nature",
+      "origin": "苏辙《巫山赋》有“览松柏之青青兮”。",
+      "context": "古籍强调松柏经冬常青；HEX 为中深绿色现代近似。",
+      "era": "宋代赋文所见 · 历代物象",
+      "cites": [
+        "苏辙《巫山赋》",
+        "《古今图书集成·草木典·松柏部》"
+      ],
+      "related": [
+        "zhuqing",
+        "cuiwei",
+        "shilu"
+      ]
+    },
+    {
+      "id": "cuiwei",
+      "name": "翠微",
+      "pinyin": "cuì wēi",
+      "hex": "#4C8045",
+      "cat": "nature",
+      "origin": "“翠微”指山腰青翠幽微之处，颜色取远山林气的中深绿色。",
+      "context": "古注又释作轻缥山气；它描述远山层位与综合色，不是单一颜料。",
+      "era": "古代训诂与山水诗文 · 当代映射",
+      "cites": [
+        "《尔雅·释山》",
+        "杨慎《丹铅总录·翠微》"
+      ],
+      "related": [
+        "cui",
+        "zhuqing",
+        "songbailv"
+      ]
+    },
+    {
+      "id": "guanlv",
+      "name": "官绿",
+      "pinyin": "guān lǜ",
+      "hex": "#6A6B29",
+      "cat": "plant",
+      "origin": "古代合色文献记“官绿即枝条绿”；宋代官服语境亦见官绿袍。",
+      "context": "史料支持它是历史色名，但不证明它必由单一植物染成；草木分类属于图谱叙事入口。",
+      "era": "宋代服色 · 元明清合色传统",
+      "cites": [
+        "《绘事琐言·合色》",
+        "《通雅·颜色》"
+      ],
+      "related": [
+        "doulv",
+        "lvchen",
+        "congqing"
+      ]
+    },
+    {
+      "id": "lvchen",
+      "name": "绿沈",
+      "pinyin": "lǜ chén",
+      "hex": "#0C8918",
+      "cat": "literary",
+      "origin": "绿沈是古代名物色词，可用于漆饰弓枪、笔管、屏风和服饰，并非某一种固定材料。",
+      "context": "宋人吴曾详考多种绿沈用例；本值取浓深绿色。",
+      "era": "六朝名物 · 唐宋诗文考释",
+      "cites": [
+        "吴曾《能改斋漫录·绿沈》",
+        "杜甫《重过何氏五首》"
+      ],
+      "related": [
+        "guanlv",
+        "shilu",
+        "songbailv"
+      ]
+    },
+    {
+      "id": "qiepizi",
+      "name": "茄皮紫",
+      "pinyin": "qié pí zǐ",
+      "hex": "#5D3F51",
+      "cat": "nature",
+      "origin": "以茄皮深紫比色，《玉纪补》明确列“茄皮紫”为古玉斑色名，清宫器物亦见茄皮紫釉。",
+      "context": "这是物象比色与器物命名，不表示从茄子提取染料；色相可在紫红至紫黑间变化。",
+      "era": "清代名物记录 · 清宫器物",
+      "cites": [
+        "刘心瑶《玉纪补》",
+        "故宫博物院《茄皮紫釉暗刻云龙纹盘》"
+      ],
+      "related": [
+        "zipurple",
+        "zitang",
+        "jiang"
+      ]
+    },
+    {
+      "id": "hanzi",
+      "name": "紫石英",
+      "pinyin": "zǐ shí yīng",
+      "hex": "#6045A8",
+      "cat": "mineral",
+      "origin": "古籍著录的紫色石英类矿物；《太平御览》引魏代取白石英、紫石英用于宫殿雕饰。",
+      "context": "紫石英是古代真实矿物名和紫色硬质材料，不宣称其必作绘画颜料。",
+      "era": "汉魏以前本草传统 · 魏代宫殿材料记录",
+      "cites": [
+        "《吴普本草·玉石类·紫石英》",
+        "《太平御览·药部四》",
+        "《本草纲目·金石之二》"
+      ],
+      "related": [
+        "shiqing",
+        "qunqing",
+        "zipurple"
+      ]
+    },
+    {
+      "id": "zicao",
+      "name": "紫草",
+      "pinyin": "zǐ cǎo",
+      "hex": "#71384B",
+      "cat": "plant",
+      "origin": "紫草根为传统紫染材料，《齐民要术》专载种植、收获与保色方法。",
+      "context": "古籍称陇西紫草为染紫上品；产地、保存、媒染会影响深浅。",
+      "era": "汉以前已有染用记载 · 北魏农书详载",
+      "cites": [
+        "《齐民要术·种紫草》",
+        "《太平御览·百卉部·紫草》"
+      ],
+      "related": [
+        "qian",
+        "zipurple",
+        "qiepizi"
+      ]
+    },
+    {
+      "id": "dingxiang",
+      "name": "丁香",
+      "pinyin": "dīng xiāng",
+      "hex": "#CCA4E3",
+      "cat": "nature",
+      "origin": "取丁香花的浅紫色；地方志明确记丁香有紫、白二色。",
+      "context": "不同品种可为白或紫，本档案只取浅紫一支。",
+      "era": "宋元方志 · 清代花木记录",
+      "cites": [
+        "《赤城志·卷三十六》",
+        "《钦定日下旧闻考·卷一百四十九》"
+      ],
+      "related": [
+        "ouhe",
+        "mujin",
+        "qinglian"
+      ]
+    },
+    {
+      "id": "mujin",
+      "name": "木槿",
+      "pinyin": "mù jǐn",
+      "hex": "#BA79B1",
+      "cat": "nature",
+      "origin": "《诗经》“颜如舜华”，毛传以舜为木槿；后世本草、花谱记有淡红及红紫花色。",
+      "context": "木槿一名舜华，朝开暮落；本值取红紫花相，不宣称唯一色度。",
+      "era": "先秦诗义 · 历代本草花谱",
+      "cites": [
+        "《诗经·郑风·有女同车》",
+        "《本草衍义·木槿》"
+      ],
+      "related": [
+        "dingxiang",
+        "zitang",
+        "ouhe"
+      ]
+    },
+    {
+      "id": "xiangluziyan",
+      "name": "香炉紫烟",
+      "pinyin": "xiāng lú zǐ yān",
+      "hex": "#D3CCD6",
+      "cat": "literary",
+      "origin": "由“日照香炉生紫烟”的诗句取名，表达山气受日光照映后的淡紫灰。",
+      "context": "这是日光、山气与诗意共同形成的综合色，不是古代颜料配方。",
+      "era": "盛唐诗文 · 当代色值映射",
+      "cites": [
+        "李白《望庐山瀑布》"
+      ],
+      "related": [
+        "shuangse",
+        "biluo",
+        "dingxiang"
+      ]
+    },
+    {
+      "id": "zitang",
+      "name": "紫棠",
+      "pinyin": "zǐ táng",
+      "hex": "#56004F",
+      "cat": "nature",
+      "origin": "紫棠是古代人物肤色与综合色词，《水浒传》第四十八回写“紫棠色面皮”。",
+      "context": "它更接近黑中带红紫的综合色，而非海棠花固定色；HEX 取深紫红。",
+      "era": "宋元明文学色词 · 历代沿用",
+      "cites": [
+        "《水浒传》第四十八回"
+      ],
+      "related": [
+        "qiepizi",
+        "qinglian",
+        "ouhe"
+      ]
+    },
+    {
+      "id": "qinglian",
+      "name": "青莲",
+      "pinyin": "qīng lián",
+      "hex": "#801DAE",
+      "cat": "nature",
+      "origin": "清代《凤仙谱》以“青莲”名凤仙花品种，并记单叶青莲为“紫翠色”。",
+      "context": "采用古花谱中的青莲品种义，取偏冷紫翠色层。",
+      "era": "清代花谱",
+      "cites": [
+        "《凤仙谱·各种青莲》"
+      ],
+      "related": [
+        "zipurple",
+        "zitang",
+        "weizi"
+      ]
+    },
+    {
+      "id": "weizi",
+      "name": "魏紫",
+      "pinyin": "wèi zǐ",
+      "hex": "#7E2065",
+      "cat": "nature",
+      "origin": "魏紫是牡丹名品，色名取其深紫红花色；花色会随栽培与观赏条件变化。",
+      "context": "花谱支持品名与文化地位；真实花色仍随品种、花期和光线变化。",
+      "era": "北宋牡丹谱 · 历代沿用",
+      "cites": [
+        "欧阳修《洛阳牡丹记》",
+        "《广群芳谱·牡丹谱》"
+      ],
+      "related": [
+        "qinglian",
+        "qizi",
+        "qiepizi"
+      ]
+    },
+    {
+      "id": "qizi",
+      "name": "齐紫",
+      "pinyin": "qí zǐ",
+      "hex": "#6E4B87",
+      "cat": "literary",
+      "origin": "齐桓公好服紫、一国争相效仿的故事使“齐紫”成为服色风尚与制度传播的历史索引。",
+      "context": "典故说明紫服的社会传播与价值，不提供可直接换算的历史色度。",
+      "era": "春秋故事 · 战国文献",
+      "cites": [
+        "《韩非子·外储说左上》"
+      ],
+      "related": [
+        "zipurple",
+        "weizi",
+        "gan"
+      ]
+    },
+    {
+      "id": "hafen",
+      "name": "蛤粉",
+      "pinyin": "gé fěn",
+      "hex": "#F2E6CE",
+      "cat": "mineral",
+      "origin": "蛤壳烧制、研磨所得的白色粉料，古画和墙壁粉饰均有使用。",
+      "context": "《大明会典》还记录蛤粉与苏木制紫粉，说明它既可作白料也可作合色基底。",
+      "era": "古代粉饰传统 · 明代制度文献详载",
+      "cites": [
+        "《绘事琐言·粉》",
+        "《大明会典·颜料》"
+      ],
+      "related": [
+        "qianbai",
+        "baie",
+        "tianbai"
+      ]
+    },
+    {
+      "id": "baie",
+      "name": "白垩",
+      "pinyin": "bái è",
+      "hex": "#E8E0D0",
+      "cat": "mineral",
+      "origin": "白色土质材料，古籍载其产于山谷并用于涂饰。",
+      "context": "宋代采色清单明确列卫州白垩；白度随产地成分而异。",
+      "era": "上古材料名 · 宋代宫廷采色有记录",
+      "cites": [
+        "《本草纲目·土部·白垩》",
+        "《宋朝事实·卷七》"
+      ],
+      "related": [
+        "hafen",
+        "qianbai",
+        "gao"
+      ]
+    },
+    {
+      "id": "tianbai",
+      "name": "甜白",
+      "pinyin": "tián bái",
+      "hex": "#F6F2E9",
+      "cat": "mineral",
+      "origin": "明永乐景德镇御窑创烧的白釉品种，白如凝脂、素若积雪。",
+      "context": "“甜”是对温润白釉的视觉感受，并非糖质材料。",
+      "era": "明永乐",
+      "cites": [
+        "故宫博物院《甜白釉》"
+      ],
+      "related": [
+        "qianbai",
+        "hafen",
+        "gao"
+      ]
+    },
+    {
+      "id": "tubai",
+      "name": "荼",
+      "pinyin": "tú",
+      "hex": "#F3F9F1",
+      "cat": "plant",
+      "origin": "《诗经》有“有女如荼”；毛诗训诂将此“荼”释作白色茅秀。",
+      "context": "这是先秦植物白色意象，不是染料或标准色样；使用“荼”避免把现代复合名倒置成古称。",
+      "era": "先秦诗歌 · 历代训诂",
+      "cites": [
+        "《诗经·郑风·出其东门》",
+        "《毛诗多识·有女如荼》"
+      ],
+      "related": [
+        "su",
+        "xuebai",
+        "songhua"
+      ]
+    },
+    {
+      "id": "xuebai",
+      "name": "雪白",
+      "pinyin": "xuě bái",
+      "hex": "#F2FDFF",
+      "cat": "nature",
+      "origin": "以雪之高明洁白比色，魏晋赋文已经使用“雪白”。",
+      "context": "雪色随阴影与天光呈冷暖变化；本值取冷白。",
+      "era": "魏晋赋文 · 历代沿用",
+      "cites": [
+        "郭璞《盐池赋》"
+      ],
+      "related": [
+        "shuangse",
+        "yuebai",
+        "tubai"
+      ]
+    },
+    {
+      "id": "shuangse",
+      "name": "皑",
+      "pinyin": "ái",
+      "hex": "#E9F1F6",
+      "cat": "nature",
+      "origin": "《说文解字》释“皑”为“霜雪之白”。",
+      "context": "以明确的古代白色字义替代含义不稳定的“霜色”；HEX 取微冷霜雪白。",
+      "era": "汉代字书 · 魏晋赋文",
+      "cites": [
+        "《说文解字·白部》",
+        "左贵嫔《离思赋》"
+      ],
+      "related": [
+        "xuebai",
+        "yudubai",
+        "xiangluziyan"
+      ]
+    },
+    {
+      "id": "yudubai",
+      "name": "鱼肚白",
+      "pinyin": "yú dù bái",
+      "hex": "#FCEFE8",
+      "cat": "nature",
+      "origin": "鱼肚白是清代金陵染色俗名，也用于描写日出前将明未明的天光。",
+      "context": "兼有染名与黎明物象；本值取微暖白。",
+      "era": "明清文学与染色俗名",
+      "cites": [
+        "康祺《郎潜纪闻初笔》",
+        "《西游补》第七回"
+      ],
+      "related": [
+        "shuangse",
+        "yuebai",
+        "xuebai"
+      ]
+    },
+    {
+      "id": "su",
+      "name": "素",
+      "pinyin": "sù",
+      "hex": "#E0F0E9",
+      "cat": "literary",
+      "origin": "《说文解字》释“素”为白色细缯，首先是未经彩饰的白帛与本色概念。",
+      "context": "应以白帛、本色为核心，不把偏青 HEX 反说成古代定色。",
+      "era": "汉代字书 · 上古名物传统",
+      "cites": [
+        "《说文解字·素部》"
+      ],
+      "related": [
+        "gao",
+        "qianbai",
+        "tubai"
+      ]
+    },
+    {
+      "id": "gao",
+      "name": "缟",
+      "pinyin": "gǎo",
+      "hex": "#EFECE3",
+      "cat": "literary",
+      "origin": "“缟”是细白绢及其白色的古代名物，首先是织物与文字概念。",
+      "context": "《毛诗正义》明释缟衣为白色；HEX 取略暖绢白，用来区别雪白与矿物白。",
+      "era": "先秦名物 · 汉唐经注",
+      "cites": [
+        "《诗经·郑风·出其东门》",
+        "《毛诗正义》"
+      ],
+      "related": [
+        "su",
+        "baie",
+        "xiang"
+      ]
+    },
+    {
+      "id": "wujinyou",
+      "name": "乌金釉",
+      "pinyin": "wū jīn yòu",
+      "hex": "#1C1A17",
+      "cat": "mineral",
+      "origin": "景德镇黑色釉品种，故宫康熙乌金釉笔筒实物釉面“漆黑明亮”。",
+      "context": "名称中的“金”描述黑釉光泽，不表示含金；真实反射不能由单一 HEX 表达。",
+      "era": "清康熙",
+      "cites": [
+        "故宫博物院《乌金釉描金山水纹笔筒》"
+      ],
+      "related": [
+        "hei",
+        "zaose",
+        "jiangyou"
+      ]
+    },
+    {
+      "id": "qihei",
+      "name": "漆黑",
+      "pinyin": "qī hēi",
+      "hex": "#191310",
+      "cat": "plant",
+      "origin": "天然漆髹涂形成深黑而有光的表面；“漆黑”一词在唐代文献中已形容极黑。",
+      "context": "《宋史》又有“黑漆棒”“黑漆弩柄”等器物记录，能直接连接颜色与漆艺。",
+      "era": "唐宋文字与器用记录 · 漆器传统更早",
+      "cites": [
+        "孙樵《祭梓潼帝君文》",
+        "《宋史·仪卫志》"
+      ],
+      "related": [
+        "hei",
+        "mo",
+        "wujinyou"
+      ]
+    },
+    {
+      "id": "li",
+      "name": "黧",
+      "pinyin": "lí",
+      "hex": "#5D513C",
+      "cat": "literary",
+      "origin": "黧的古义为黑中带黄，《广韵》直释“黧：黑而黄也”。",
+      "context": "常形容人面或物色黯深枯黄；没有唯一材料配方。",
+      "era": "先秦两汉用例 · 宋代韵书定释",
+      "cites": [
+        "《广韵》黧字条",
+        "《尔雅注疏》"
+      ],
+      "related": [
+        "xuan",
+        "chenxiang",
+        "meige"
+      ]
+    },
+    {
+      "id": "jiangyou",
+      "name": "酱釉",
+      "pinyin": "jiàng yòu",
+      "hex": "#4B2F2A",
+      "cat": "mineral",
+      "origin": "以铁为主要呈色元素的高温褐色釉，因色近芝麻酱而名。",
+      "context": "故宫说明宋代北方窑场已多见，明宣德官窑有代表器。",
+      "era": "宋代 · 至 · 明清",
+      "cites": [
+        "故宫博物院《酱釉盘》"
+      ],
+      "related": [
+        "chamoyou",
+        "wujinyou",
+        "chenxiang"
+      ]
+    },
+    {
+      "id": "chamoyou",
+      "name": "茶叶末釉",
+      "pinyin": "chá yè mò yòu",
+      "hex": "#6E6B3A",
+      "cat": "mineral",
+      "origin": "铁、镁结晶釉形成黄绿相杂、近似茶叶细末的综合色。",
+      "context": "唐代耀州窑已有相似釉色实物；清代官窑成熟，“茶叶末釉”一名据故宫研究始见清末《陶雅》。",
+      "era": "唐代已有实物 · 清代官窑成熟并定名",
+      "cites": [
+        "故宫博物院《耀州窑茶叶末釉执壶》",
+        "故宫博物院《茶叶末釉铺首耳炉》",
+        "《陶雅》"
+      ],
+      "related": [
+        "jiangyou",
+        "chase",
+        "huangliu"
+      ]
+    },
+    {
+      "id": "chase",
+      "name": "明茶褐",
+      "pinyin": "míng chá hè",
+      "hex": "#B35C44",
+      "cat": "plant",
+      "origin": "《多能鄙事》载明茶褐染法，以黄栌木、白矾、绿矾处理帛。",
+      "context": "这是有古代配方和色名双重证据的草木褐色，比笼统“茶色”更为可靠。",
+      "era": "明代染色文献",
+      "cites": [
+        "《多能鄙事·染明茶褐》",
+        "《长物志·衣饰》"
+      ],
+      "related": [
+        "chamoyou",
+        "tanhe",
+        "qiuse"
+      ]
+    },
+    {
+      "id": "tanhe",
+      "name": "檀褐",
+      "pinyin": "tán hè",
+      "hex": "#765548",
+      "cat": "plant",
+      "origin": "古代合色谱所载褐色名，以土黄与紫花等色料调合。",
+      "context": "“檀褐”不能直接解释成檀木本色；应依据合色文献描述为暖灰褐。",
+      "era": "元明清合色传统",
+      "cites": [
+        "《绘事琐言·合色》"
+      ],
+      "related": [
+        "chenxiang",
+        "chase",
+        "like"
+      ]
+    },
+    {
+      "id": "like",
+      "name": "栗壳",
+      "pinyin": "lì ké",
+      "hex": "#60281E",
+      "cat": "nature",
+      "origin": "古代以栗壳作褐色比照，元代工艺记录有“如栗壳色”。",
+      "context": "栗壳随干湿与光泽而变；HEX 概括其深红褐。",
+      "era": "元代工艺记录 · 明清沿用",
+      "cites": [
+        "陶宗仪《辍耕录·卷三十》",
+        "《痘疹心法要诀》"
+      ],
+      "related": [
+        "tanhe",
+        "zheshi",
+        "tuose"
+      ]
+    },
+    {
+      "id": "tuose",
+      "name": "驼褐",
+      "pinyin": "tuó hè",
+      "hex": "#A88462",
+      "cat": "nature",
+      "origin": "驼褐原指以驼毛织成的衣料或衣服，《唐六典》记会州出驼褐。",
+      "context": "《本草纲目》记驼毛有苍、褐、黄、紫数色；本值只取其中浅褐综合色。",
+      "era": "唐代贡物 · 宋代服饰语境",
+      "cites": [
+        "《唐六典》驼褐条",
+        "《本草纲目·兽之一·驼》"
+      ],
+      "related": [
+        "like",
+        "qiuse",
+        "chenxiang"
+      ]
+    },
+    {
+      "id": "hupo",
+      "name": "琥珀",
+      "pinyin": "hǔ pò",
+      "hex": "#CA6924",
+      "cat": "mineral",
+      "origin": "古籍记载松、枫木脂长期埋藏形成琥珀，并区分浅黄、红黄、深红等色相。",
+      "context": "归矿物象限仅沿用“硬质天然材料”的图谱口径；不把它称为矿石。",
+      "era": "汉晋本草传统 · 明代汇录",
+      "cites": [
+        "《本草纲目·木之四·琥珀》"
+      ],
+      "related": [
+        "yujin",
+        "huanglu",
+        "huangliu"
+      ]
+    },
+    {
+      "id": "qiuse",
+      "name": "秋色",
+      "pinyin": "qiū sè",
+      "hex": "#896C39",
+      "cat": "nature",
+      "origin": "古诗以“秋色”概括林木、山野与落晖，王绩有“树树皆秋色”。",
+      "context": "它不是固定染色名；本值取低饱和黄褐作为诗意转译。",
+      "era": "唐代山水诗意 · 历代沿用",
+      "cites": [
+        "王绩《野望》"
+      ],
+      "related": [
+        "chase",
+        "tuose",
+        "huangliu"
+      ]
+    },
+    {
+      "id": "meige",
+      "name": "韎韐",
+      "pinyin": "mèi gé",
+      "hex": "#A45A52",
+      "cat": "literary",
+      "origin": "韎韐为染赤的皮制服饰，《诗经》有“韎韐有奭”，古注释“奭”为赤而鲜明。",
+      "context": "这是戎服名物与赤褐皮色，不宜简化为纯红色卡。",
+      "era": "先秦名物 · 汉唐经注",
+      "cites": [
+        "《诗经·小雅·瞻彼洛矣》",
+        "《毛诗正义》"
+      ],
+      "related": [
+        "xun",
+        "li",
+        "jiang"
+      ]
+    },
+    {
+      "id": "huangliu",
+      "name": "黄流",
+      "pinyin": "huáng liú",
+      "hex": "#D09B3A",
+      "cat": "literary",
+      "origin": "《诗经》有“瑟彼玉瓒，黄流在中”；后世一说指郁鬯黄酒，一说指玉瓒的黄金流口。",
+      "context": "保留两种古注分歧，作为礼酒金黄流光的典籍色意，不断言唯一染材或色样。",
+      "era": "先秦礼酒语境 · 历代经注",
+      "cites": [
+        "《诗经·大雅·旱麓》",
+        "《毛诗正义》"
+      ],
+      "related": [
+        "yujin",
+        "hupo",
+        "chamoyou"
+      ]
+    }
+  ],
+  "families": {
+    "red": {
+      "cn": "赤系",
+      "en": "RED",
+      "accent": "#9D2933"
+    },
+    "yellow": {
+      "cn": "黄系",
+      "en": "YELLOW",
+      "accent": "#E8B84F"
+    },
+    "green": {
+      "cn": "绿系",
+      "en": "GREEN",
+      "accent": "#4D8A63"
+    },
+    "blue": {
+      "cn": "蓝系",
+      "en": "BLUE",
+      "accent": "#1661AB"
+    },
+    "purple": {
+      "cn": "紫系",
+      "en": "PURPLE",
+      "accent": "#8D4BBB"
+    },
+    "white": {
+      "cn": "素系",
+      "en": "WHITE",
+      "accent": "#D9CFB8"
+    },
+    "black": {
+      "cn": "玄系",
+      "en": "BLACK",
+      "accent": "#161823"
+    },
+    "brown": {
+      "cn": "褐系",
+      "en": "BROWN",
+      "accent": "#6A4E3D"
+    }
+  },
+  "periods": {
+    "shanggu": {
+      "cn": "上古先秦",
+      "en": "ANTIQUITY"
+    },
+    "han": {
+      "cn": "两  汉",
+      "en": "HAN"
+    },
+    "weijin": {
+      "cn": "魏晋南北",
+      "en": "WEI · JIN"
+    },
+    "suitang": {
+      "cn": "隋  唐",
+      "en": "SUI · TANG"
+    },
+    "songyuan": {
+      "cn": "宋  元",
+      "en": "SONG · YUAN"
+    },
+    "ming": {
+      "cn": "明",
+      "en": "MING"
+    },
+    "qing": {
+      "cn": "清",
+      "en": "QING"
+    }
+  },
+  "regions": {
+    "zhongyuan": {
+      "cn": "中  原",
+      "en": "CENTRAL"
+    },
+    "jiangnan": {
+      "cn": "江  南",
+      "en": "JIANGNAN"
+    },
+    "jingchu": {
+      "cn": "荆  楚",
+      "en": "JINGCHU"
+    },
+    "bashu": {
+      "cn": "巴  蜀",
+      "en": "BASHU"
+    },
+    "lingnan": {
+      "cn": "岭  南",
+      "en": "LINGNAN"
+    },
+    "xiyu": {
+      "cn": "西  域",
+      "en": "XIYU"
+    },
+    "dunhuang": {
+      "cn": "敦  煌",
+      "en": "DUNHUANG"
+    },
+    "haiwai": {
+      "cn": "番  舶",
+      "en": "OVERSEAS"
+    }
+  },
+  "crafts": {
+    "mineral": {
+      "cn": "矿物研磨",
+      "en": "MINERAL"
+    },
+    "herb": {
+      "cn": "草木染色",
+      "en": "HERB · DYE"
+    },
+    "ferment": {
+      "cn": "蓝染发酵",
+      "en": "FERMENT"
+    },
+    "silk": {
+      "cn": "丝帛染织",
+      "en": "SILK"
+    },
+    "ink": {
+      "cn": "制墨之术",
+      "en": "INK"
+    },
+    "ceramic": {
+      "cn": "瓷釉之色",
+      "en": "CERAMIC"
+    },
+    "observe": {
+      "cn": "观物取色",
+      "en": "OBSERVE"
+    },
+    "classics": {
+      "cn": "训诂正名",
+      "en": "CLASSICS"
+    }
+  },
+  "relations": {
+    "zhusha": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "jingchu"
+      ],
+      "craft": [
+        "mineral",
+        "silk"
+      ]
+    },
+    "shiqing": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "weijin"
+      ],
+      "region": [
+        "dunhuang"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "shilu": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "weijin"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "zheshi": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "qianbai": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "shanggu",
+        "han"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "xionghuang": {
+      "family": [
+        "red",
+        "yellow"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "jingchu"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "cihuang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "weijin"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "kongqing": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "shanhu": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "han",
+        "qing"
+      ],
+      "region": [
+        "haiwai"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "bi": {
+      "family": [
+        "blue",
+        "green"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "mineral",
+        "ceramic"
+      ]
+    },
+    "yanzhi": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "xiyu"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "tenghuang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "weijin"
+      ],
+      "region": [
+        "lingnan"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "dianlan": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "ferment"
+      ]
+    },
+    "qian": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "zhizi": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "dai": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "jingchu"
+      ],
+      "craft": [
+        "ferment",
+        "herb"
+      ]
+    },
+    "zaose": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "sufang": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "haiwai"
+      ],
+      "craft": [
+        "herb",
+        "silk"
+      ]
+    },
+    "zhehuang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb",
+        "silk"
+      ]
+    },
+    "huaihuang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb",
+        "silk"
+      ]
+    },
+    "songhua": {
+      "family": [
+        "green",
+        "yellow"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "bashu"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "mo": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "ink"
+      ]
+    },
+    "yujin": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "xiyu"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "ouhe": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "silk"
+      ]
+    },
+    "congqing": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "luodai": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "xiyu"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "tianqing": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "ceramic",
+        "observe"
+      ]
+    },
+    "yuebai": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe",
+        "silk"
+      ]
+    },
+    "tianshuibi": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe",
+        "herb"
+      ]
+    },
+    "yaqing": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "observe"
+      ]
+    },
+    "cui": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "lingnan"
+      ],
+      "craft": [
+        "observe",
+        "silk"
+      ]
+    },
+    "yuse": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "piao": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "xiang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "gan": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "zi": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "jiang": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "herb"
+      ]
+    },
+    "fei": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk"
+      ]
+    },
+    "qing": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics"
+      ]
+    },
+    "huang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics"
+      ]
+    },
+    "xuan": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics"
+      ]
+    },
+    "zipurple": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "chi": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics"
+      ]
+    },
+    "hei": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics",
+        "ink"
+      ]
+    },
+    "xun": {
+      "family": [
+        "red",
+        "brown"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk"
+      ]
+    },
+    "chenxiang": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "lingnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "xinghuang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk"
+      ]
+    },
+    "minghuang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "qing"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk"
+      ]
+    },
+    "yinzhu": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "ming",
+        "qing"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "huangdan": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "han",
+        "ming"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "danhuo": {
+      "family": [
+        "red"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral",
+        "classics"
+      ]
+    },
+    "ehuang": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "huanglu": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb",
+        "silk"
+      ]
+    },
+    "juyi": {
+      "family": [
+        "yellow"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "qunqing": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "weijin"
+      ],
+      "region": [
+        "dunhuang"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "jilan": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "ming",
+        "qing"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "ceramic"
+      ]
+    },
+    "huaqing": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "herb"
+      ]
+    },
+    "biluo": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe",
+        "classics"
+      ]
+    },
+    "kongquelan": {
+      "family": [
+        "blue"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "tonglv": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "doulv": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "ming",
+        "qing"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "ceramic"
+      ]
+    },
+    "ailv": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb",
+        "observe"
+      ]
+    },
+    "zhuqing": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "liulv": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "herb",
+        "observe"
+      ]
+    },
+    "songbailv": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "cuiwei": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe",
+        "classics"
+      ]
+    },
+    "guanlv": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "qing"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "herb",
+        "silk"
+      ]
+    },
+    "lvchen": {
+      "family": [
+        "green"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics"
+      ]
+    },
+    "qiepizi": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "qing"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "hanzi": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "shanggu",
+        "han"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "zicao": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb",
+        "silk"
+      ]
+    },
+    "dingxiang": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "mujin": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "xiangluziyan": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics",
+        "observe"
+      ]
+    },
+    "zitang": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "qinglian": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "qing"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "weizi": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "qizi": {
+      "family": [
+        "purple"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "hafen": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "weijin"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "baie": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "mineral"
+      ]
+    },
+    "tianbai": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "ceramic"
+      ]
+    },
+    "tubai": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "herb",
+        "observe"
+      ]
+    },
+    "xuebai": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "weijin"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "shuangse": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "han",
+        "weijin"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "yudubai": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "qing"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "su": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "gao": {
+      "family": [
+        "white"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "wujinyou": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "qing"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "ceramic"
+      ]
+    },
+    "qihei": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "herb",
+        "ink"
+      ]
+    },
+    "li": {
+      "family": [
+        "black"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics"
+      ]
+    },
+    "jiangyou": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "ceramic"
+      ]
+    },
+    "chamoyou": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "qing"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "ceramic"
+      ]
+    },
+    "chase": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "herb",
+        "observe"
+      ]
+    },
+    "tanhe": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "ming"
+      ],
+      "region": [
+        "lingnan"
+      ],
+      "craft": [
+        "herb",
+        "observe"
+      ]
+    },
+    "like": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "songyuan"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "tuose": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "xiyu"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "hupo": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "han"
+      ],
+      "region": [
+        "xiyu"
+      ],
+      "craft": [
+        "mineral",
+        "observe"
+      ]
+    },
+    "qiuse": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "suitang"
+      ],
+      "region": [
+        "jiangnan"
+      ],
+      "craft": [
+        "observe"
+      ]
+    },
+    "meige": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "silk",
+        "classics"
+      ]
+    },
+    "huangliu": {
+      "family": [
+        "brown"
+      ],
+      "period": [
+        "shanggu"
+      ],
+      "region": [
+        "zhongyuan"
+      ],
+      "craft": [
+        "classics",
+        "observe"
+      ]
+    }
+  },
+  "presets": [
+    {
+      "prompt": "江南春雨，婉约清雅的茶席设计，素净又温润",
+      "title": "A quiet tea setting",
+      "translation": "Spring rain in Jiangnan: a graceful tea setting, simple and warm.",
+      "ids": [
+        "tianshuibi",
+        "qianbai",
+        "yuse",
+        "ouhe",
+        "tianqing"
+      ]
+    },
+    {
+      "prompt": "敦煌国风海报设计，华贵而富有历史感，热烈中见沉稳",
+      "title": "A Dunhuang poster",
+      "translation": "A Dunhuang-inspired poster: rich in history, warm yet grounded.",
+      "ids": [
+        "tenghuang",
+        "zhusha",
+        "jiang",
+        "luodai",
+        "ouhe"
+      ]
+    },
+    {
+      "prompt": "宋代汝窑瓷器感的品牌视觉，清雅禅意，天青月白的意境",
+      "title": "A Song-ceramic identity",
+      "translation": "A calm brand identity inspired by Song Ru ware, sky blue and moon white.",
+      "ids": [
+        "tianqing",
+        "kongqing",
+        "qianbai",
+        "yuse",
+        "yuebai"
+      ]
+    },
+    {
+      "prompt": "文人书房，沉静古朴的品牌视觉，要有深邃的历史感",
+      "title": "A scholar’s studio",
+      "translation": "A quiet, timeworn brand identity for a scholar’s study.",
+      "ids": [
+        "xuan",
+        "chenxiang",
+        "dai",
+        "zheshi",
+        "yuebai"
+      ]
+    }
+  ],
+  "source": "chinese-colors-atlas-cinematic: 100-color original archive and the four original fixed compose prompts/palettes; only English brief translations added."
+}

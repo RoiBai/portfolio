@@ -55,3 +55,4 @@ body[data-project="glancemap"] #study .section-heading h2{max-width:none;font-si
 @media(prefers-reduced-motion:reduce){#study .route-person-art img{opacity:1;transform:none;animation:none!important}#study .route-leaders-css span{opacity:.8}#study .route-leaders-css i{scale:1 1;transition:none}}
 /* Keep the chapter divider; the scene itself reads without stacked horizontal rules. */
 #study .route-person figcaption,#study .study-voices{border-top:0}
+#study .study-deck dl>div{text-align:center;min-width:90px}#study .study-deck dd{margin-left:0}

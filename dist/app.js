@@ -1,3 +1,5 @@
+import {imageVariant} from './image-variants.js';
+import {startAssetLoading, warmProject} from './asset-loading.js';
 import { renderGlanceResults, setupGlanceResults } from './glance-results.js';
 import { setupAmbulanceEditorial } from './ambulance-editorial.js';
 import { setupAmbulanceRecording } from './ambulance-recording.js';
@@ -27,13 +29,13 @@ let experienceCleanup = () => {}, verseCleanup = () => {}, sourceCleanup = () =>
 const main = document.querySelector('main');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const heading = s => esc(s).replace(/\b(?:illustration-based|Re-sound)\b/g,word=>`<span class="keep-word">${word}</span>`);
+const heading = s => esc(String(s||'').replace(/[.!。]+$/, '')).replace(/\b(?:illustration-based|Re-sound)\b/g,word=>`<span class="keep-word">${word}</span>`);
 let projects = [], observer, sectionObserver, layoutObserver, pairedColumns = [], layoutFrame = 0, renderVersion = 0;
 const arrow = '<span aria-hidden="true">↗</span>';
 const aliases = {'/gglancemap':'/glancemap','/icon-color':'/icon-colors','/iconcolor':'/icon-colors','/traditional-color':'/color-in-context','/traditionalcolor':'/color-in-context','/games/loofa-soup':'/games/loofasoup','/research/gaze':'/research/beyond-the-gaze'};
 const path = () => aliases[sitePath()] || sitePath();
 const normalizedList = v => !v ? [] : Array.isArray(v) ? v : [v];
-function imageSrc(v) { return typeof v === 'string' ? v : v?.src || v?.path; }
+function imageSrc(v) { return imageVariant(typeof v === 'string' ? v : v?.src || v?.path); }
 function paragraph(body,highlights=[]) { return normalizedList(body).map(t => `<p>${emphasize(typeof t === 'string' ? t : t.text || t.body || '',highlights)}</p>`).join(''); }
 function figure(f, i=0, hero=false) {
  if(f?.researchFigure)return renderResearchFigure(f.researchFigure);
@@ -76,14 +78,27 @@ function nextProject(p){
  const colors=palettes[next.id]||['#222','#fff'];
  return `<footer class="project-next"><a href="${siteURL(next.slug)}" class="next-project-link" style="--next-bg:${colors[0]};--next-ink:${colors[1]}"><span class="next-project-copy"><span class="next-label">Next Project <span aria-hidden="true">→</span></span><span class="next-category">${category}</span><span class="next-project-name">${esc(next.title)}</span></span><img class="next-project-image" src="${esc(covers[next.id])}" alt="${esc(next.title)} — project artwork" loading="lazy" decoding="async"><span class="next-project-arrow" aria-hidden="true">↗</span></a></footer>`;
 }
+function cleanProjectHeadings(){
+ main.querySelectorAll('h1,h2,h3,h4').forEach(el=>{if(el.matches('.section-heading h2'))el.style.setProperty('font-size','var(--case-heading)','important');const walk=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n,last;while(n=walk.nextNode())if(n.textContent.trim())last=n;if(last)last.textContent=last.textContent.replace(/[.。]+(\s*)$/,'$1')});
+}
+function projectMetadata(p){
+ const entries=p.id==='glancemap'?[
+  {kind:'date',text:'July 2025–September 2026'},
+  {kind:'paper',text:'CHI 2027 · Under review'},
+  {kind:'author',text:'Second author'}
+ ]:(typeof p.meta==='string'?p.meta.split(' · '):normalizedList(p.meta).filter(m=>typeof m==='string'||!/^my role$|^research$/i.test(m.label)).map(m=>typeof m==='string'?m:m.value||m.text||'')).filter(Boolean).map(text=>({kind:/20[0-9]{2}|present/i.test(text)&&! /CHI|IUI|ACM|paper/i.test(text)?'date':/CHI|IUI|ACM|paper|poster|published|review|conference|journal|preprint|session/i.test(text)?'paper':'detail',text}));
+ return entries.length?`<div class="project-meta" aria-label="Project dates and publication">${entries.map(e=>`<span class="meta-badge meta-${e.kind}">${esc(e.text)}</span>`).join('')}</div>`:'';
+}
 function renderProject(p) {
  ambulanceRecordingCleanup();ambulanceCleanup();loofaCleanup();glanceResultsCleanup();gamesCleanup();researchFiguresCleanup();colorCleanup();iconCleanup();gamesMotionCleanup();glanceScrollCleanup();newsCleanup();experienceCleanup();verseCleanup();sourceCleanup();layeredCleanup();glanceCleanup();
  setTheme(p);document.body.dataset.view='project';document.title=`${p.title} — Ruiyuan Bai`;
- const meta=typeof p.meta==='string'?p.meta:normalizedList(p.meta).filter(m=>typeof m==='string'||!/^my role$/i.test(m.label)).map(m=>typeof m==='string'?m:(m.label?m.label+': ':'')+(m.value||m.text||'')).join(' · ');
- main.innerHTML=`<div class="chapter-bar"><a class="back-link" href="${siteURL('/')}">← All projects</a><nav class="chapter-nav" aria-label="On this page"><a href="#overview" class="active">Overview</a>${games[p.id]&&!['hersound','ourworld'].includes(p.id)?'<a href="#play">Play</a>':''}${p.sections.map(s=>`<a href="#${esc(s.id)}">${esc(s.nav||s.id.replaceAll('-',' '))}</a>`).join('')}</nav></div><article class="case-study"><section class="case-hero" id="overview"><div class="eyebrow">${esc(p.kicker||p.category)}</div><div class="project-title-row"><h1>${heading(p.title)}</h1><div class="project-pills" aria-label="Project themes">${(p.tags||[]).map(tag=>`<span class="project-pill">${esc(tag)}</span>`).join('')}</div></div><p class="hero-subtitle">${esc(p.subtitle)}</p><div class="hero-overview" data-reveal-group><div class="hero-bottom reveal"><p>${emphasize(p.description,p.highlights||[])}</p>${rolePanel(p.role)}${p.outcome?`<div class="hero-outcome"><span>Outcome</span><p>${esc(p.outcome)}</p></div>`:''}<div class="hero-links">${links(p)}</div>${meta?`<div class="project-meta">${esc(meta)}</div>`:''}</div>${figure(p.hero,0,true)}</div>${p.stats?.length?`<div class="stats">${p.stats.map(s=>`<div><strong class="${String(s.value).length>8?'stat-long':''}">${esc(s.value)}</strong><span>${esc(s.label)}</span>${s.detail?`<small>${esc(s.detail)}</small>`:''}</div>`).join('')}</div>`:''}</section>${['hersound','ourworld'].includes(p.id)?'':gameSection(p.id)}${p.sections.map((s,i)=>section(s,i,false,p.id)).join('')}${nextProject(p)}</article>`;
+ const meta=projectMetadata(p);
+ main.innerHTML=`<div class="chapter-bar"><a class="back-link" href="${siteURL('/')}">← All projects</a><nav class="chapter-nav" aria-label="On this page"><a href="#overview" class="active">Overview</a>${games[p.id]&&!['hersound','ourworld'].includes(p.id)?'<a href="#play">Play</a>':''}${p.sections.map(s=>`<a href="#${esc(s.id)}">${esc(s.nav||s.id.replaceAll('-',' '))}</a>`).join('')}</nav></div><article class="case-study"><section class="case-hero" id="overview"><div class="project-title-row"><h1>${heading(p.title)}</h1><div class="project-pills" aria-label="Project themes">${(p.tags||[]).map(tag=>`<span class="project-pill">${esc(tag)}</span>`).join('')}</div></div><p class="hero-subtitle">${esc(String(p.subtitle||'').replace(/[.。]+$/,''))}</p><div class="hero-overview" data-reveal-group><div class="hero-bottom reveal"><p>${emphasize(p.description,p.highlights||[])}</p>${rolePanel(p.role)}${p.outcome?`<div class="hero-outcome"><span>Outcome</span><p>${esc(p.outcome)}</p></div>`:''}<div class="hero-links">${links(p)}</div>${meta}</div>${figure(p.hero,0,true)}</div>${p.stats?.length?`<div class="stats">${p.stats.map(s=>`<div><strong class="${String(s.value).length>8?'stat-long':''}">${esc(s.value)}</strong><span>${esc(s.label)}</span>${s.detail?`<small>${esc(s.detail)}</small>`:''}</div>`).join('')}</div>`:''}</section>${['hersound','ourworld'].includes(p.id)?'':gameSection(p.id)}${p.sections.map((s,i)=>section(s,i,false,p.id)).join('')}${nextProject(p)}</article>`;
  glanceResultsCleanup=setupGlanceResults(main);glanceScrollCleanup=setupGlanceScroll(main);glanceCleanup=setupGlanceEditorial(main);gamesCleanup=setupGames(main);setupDataViz(main);experienceCleanup=setupGameExperiences(main);newsCleanup=setupNewsEmbeds(main);sourceCleanup=setupSourceFigures(main);colorCleanup=setupColorInteractions(main,p);iconCleanup=setupIconInteractions(main,p);layeredCleanup=setupLayeredFigures(main);researchFiguresCleanup=setupResearchFigures(main);gamesMotionCleanup=setupGamesMotion(main);
  ambulanceCleanup=setupAmbulanceEditorial(main,p);ambulanceRecordingCleanup=setupAmbulanceRecording(main,p);loofaCleanup=setupLoofaEditorial(main,p);
  if(p.id==='versecolor')verseCleanup=setupVerseInteraction(main);
+ cleanProjectHeadings();
+ warmProject(p.id);
 }
 // A chapter is one reveal unit: its text and all corresponding figures enter together.
 function setupMotion(){
@@ -126,7 +141,7 @@ function render(){
  else{setTheme();main.innerHTML=`<section class="not-found"><h1>Project not found.</h1><a class="text-link" href="${siteURL('/')}">Return to all projects ↗</a></section>`;}
  resetScroll();setupMotion();
 }
-async function settleHero(){const im=main.querySelector('.hero-figure img');await Promise.all([document.fonts.ready,im?im.decode().catch(()=>{}):Promise.resolve()]);}
+async function settleHero(){await Promise.race([document.fonts.ready,new Promise(resolve=>setTimeout(resolve,80))]);}
 async function navigate(url,push=true,sourceElement=null){
  if(sitePath(new URL(url,location.href).pathname)==='/'){prepareHomeReturn(homeOrigin);const detail={phase:'before',to:url,kind:'native',sourceElement,commit:()=>location.assign(url)};if(document.dispatchEvent(new CustomEvent('portfolio-transition',{cancelable:true,detail})))detail.commit();return;}
  const version=++renderVersion;
@@ -139,6 +154,6 @@ document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a||e.met
 history.scrollRestoration='manual';window.addEventListener('popstate',()=>navigate(location.pathname,false));window.addEventListener('pageshow',()=>resetScroll());
 try{
  const response=await fetch(siteURL('/content.json'));if(!response.ok)throw Error('Content unavailable');
- projects=(await response.json()).projects;render();await settleHero();if(!location.hash)resetScroll();
+ const content=await response.json();projects=content.projects;startAssetLoading(content);render();await settleHero();if(!location.hash)resetScroll();
  document.dispatchEvent(new CustomEvent('portfolio-transition',{detail:{phase:'ready',to:location.pathname,source:'project-app'}}));
 }catch(error){main.innerHTML='<section class="not-found"><h1>A brief intermission.</h1><p>The portfolio could not load. Please refresh the page.</p><button onclick="location.reload()">Try again</button></section>';console.error(error);}

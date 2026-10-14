@@ -1,14 +1,5 @@
+/* Browser-native transition pattern from https://view-transitions.chrome.dev/ */
 @view-transition{navigation:auto}
-:root{--aperture-top:40vh;--aperture-bottom:40vh;--opening-duration:720ms;--opening-ease:cubic-bezier(.22,.72,.22,1)}
-.code-seam{position:fixed;left:0;width:100vw;height:26px;display:flex;align-items:center;justify-content:space-around;overflow:hidden;pointer-events:none;z-index:2147483000;color:#b8bcb7;font:10px/1.1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:2px;background:linear-gradient(0deg,transparent,#101210d9,transparent);border-top:1px solid #d7ded633;contain:layout paint}
-.code-seam span:nth-child(3n){opacity:.35}.code-seam span:nth-child(2n){opacity:.6}.code-seam[hidden]{display:none}
-::view-transition-group(root){animation-duration:var(--opening-duration);animation-timing-function:var(--opening-ease)}
-::view-transition-old(root){animation:none;opacity:1;mix-blend-mode:normal}
-::view-transition-new(root){animation:project-unfold var(--opening-duration) var(--opening-ease) both;mix-blend-mode:normal}
-::view-transition-group(code-top),::view-transition-group(code-bottom){z-index:2;animation-duration:var(--opening-duration);animation-timing-function:var(--opening-ease)}
-::view-transition-old(code-top),::view-transition-old(code-bottom){display:none}
-::view-transition-new(code-top),::view-transition-new(code-bottom){animation:seam-fade var(--opening-duration) ease both;height:100%}
-@keyframes project-unfold{from{clip-path:inset(var(--aperture-top) 0 var(--aperture-bottom) 0)}to{clip-path:inset(0)}}
-@keyframes seam-fade{0%,55%{opacity:.8}100%{opacity:0}}
-.project-opening .case-hero .reveal{opacity:1!important;transform:none!important;transition:none!important}
-@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}.code-seam{display:none!important}::view-transition-group(*){animation-duration:0s!important}}
+::view-transition-group(root){animation-duration:180ms;animation-timing-function:ease-out}
+::view-transition-old(root),::view-transition-new(root){animation-duration:180ms}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}::view-transition-group(*){animation-duration:0s!important}}

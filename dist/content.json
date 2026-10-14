@@ -659,16 +659,16 @@
       "kicker": "AR UI · COLOR PERCEPTION · DESIGN GUIDELINES",
       "meta": [
         {
-          "label": "My role",
-          "value": "Second author · designer workshop · study design · icon colors · testing"
-        },
-        {
           "label": "Methods",
           "value": "Three linked studies with the same 20 participants"
         },
         {
           "label": "Publication",
           "value": "Journal manuscript under review · SSRN preprint"
+        },
+        {
+          "label": "Authorship",
+          "value": "Second author"
         }
       ],
       "stats": [
@@ -742,8 +742,8 @@
           "eyebrow": "ABSTRACT",
           "title": "Clear, comfortable, meaningful icons",
           "body": [
-            "Twelve colors tested: the clearest pairings were not always the most comfortable. Adding icons showed that a clear color pair could still suggest the wrong meaning.",
-            "The guide helps designers choose shadows, outlines or gray backplates for attention cues, everyday controls and persistent status."
+            "We tested 12 colors across three studies. A pair that is easy to see can still feel uncomfortable—or suggest the wrong meaning.",
+            "The result: guidance on shadows, outlines and gray backplates for different kinds of AR information."
           ],
           "nav": "Abstract",
           "figures": [
@@ -785,8 +785,7 @@
           "eyebrow": "THE PROBLEM",
           "title": "Screen contrast alone cannot predict AR clarity",
           "body": [
-            "Alex starts with screen color rules. Through AR glasses, glare, visibility and meaning change.",
-            "The design needs to be clear (easy to see), comfortable (easy on the eyes), and meaningful (a color that fits the icon)."
+            "On a screen, a white parking symbol stands out against blue. In AR, the real scene also shines through; screen contrast cannot tell us how clear the icon will look."
           ],
           "nav": "Problem",
           "figures": [
@@ -848,15 +847,14 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "clear",
-            "comfortable",
-            "meaningful"
+            "real scene also shines through",
+            "screen contrast"
           ]
         },
         {
           "id": "setup",
           "eyebrow": "SHARED EXPERIMENT CONTEXT",
-          "title": "The same people. Two lighting conditions",
+          "title": "Two lighting conditions",
           "body": [
             "The same 20 people completed Studies 1–3. We used XREAL Air 2 Pro for the main tests, with a HoloLens 2 check.",
             "Participants viewed randomized pairs, rated them and explained their choices."
@@ -903,7 +901,8 @@
           "layout": "editorial",
           "highlights": [
             "same 20 people",
-            "randomized pairs"
+            "XREAL Air 2 Pro",
+            "HoloLens 2"
           ]
         },
         {
@@ -1024,8 +1023,7 @@
           "eyebrow": "STUDY 3",
           "title": "Study 3 · Refine and retest",
           "body": [
-            "Designers proposed shadows, gradients, outlines and gray backplates. We retested clarity, comfort, meaning and visual prominence.",
-            "Shadows improved clarity (+0.88–1.62); outlines improved meaning (3.71 → 4.13 / 5); gray backplates were least intrusive."
+            "Designers proposed shadows, gradients, outlines and gray backplates. We retested clarity, comfort, meaning and visual prominence."
           ],
           "nav": "Study 3",
           "figures": [
@@ -1064,19 +1062,28 @@
           ],
           "items": [],
           "layout": "editorial",
+          "highlights": []
+        },
+        {
+          "id": "analysis",
+          "nav": "Data analysis",
+          "eyebrow": "FROM EVIDENCE TO GUIDELINES",
+          "title": "How the results became design guidance",
+          "body": [
+            "We compared each treatment with the original icon within the same hue, then read participants’ explanations alongside their ratings."
+          ],
           "highlights": [
-            "+0.88–1.62",
-            "3.71 → 4.13 / 5",
-            "least intrusive"
-          ]
+            "compared each treatment",
+            "participants’ explanations"
+          ],
+          "layout": "editorial",
+          "figures": []
         },
         {
           "id": "guidelines",
           "eyebrow": "DESIGN GUIDELINES",
           "title": "Match the design to urgency",
-          "body": [
-            "Match the treatment to the icon’s role: draw attention, distinguish functions or keep status visible."
-          ],
+          "body": [],
           "nav": "Guidelines",
           "figures": [
             {
@@ -1112,7 +1119,7 @@
               "width": 400.0,
               "height": 124.0,
               "alt": "white icons with shadows.",
-              "caption": "White icon + shadow. For information that needs attention now.",
+              "caption": "White symbol + shadow. Make important information noticeable.",
               "displayWidth": 300,
               "sourceRefs": [
                 {
@@ -1127,7 +1134,7 @@
               "width": 400.0,
               "height": 124.0,
               "alt": "colored outline icon examples.",
-              "caption": "Colored icon + outline. Distinguish functions while more of the scene shows through.",
+              "caption": "Colored symbol + outline. Separate functions without filling the view.",
               "displayWidth": 300,
               "sourceRefs": [
                 {
@@ -1142,7 +1149,7 @@
               "width": 400.0,
               "height": 124.0,
               "alt": "colored icons on gray backgrounds.",
-              "caption": "Colored icon + gray backplate. Stay visible with less distraction. Backplate brightness: 30%.",
+              "caption": "Colored symbol + gray backplate at 30% brightness. Keep status visible with less intrusion.",
               "displayWidth": 300,
               "sourceRefs": [
                 {
@@ -1170,8 +1177,7 @@
           "eyebrow": "COLOR BLENDS",
           "title": "A gradient can change the message",
           "body": [
-            "The workshop explored hues ±30° apart. In the cyan comparison, blending toward green reduced clarity; blending toward blue raised it.",
-            "A brighter end can dominate. Keep both ends similarly bright, then retest clarity, comfort and meaning in AR."
+            "For cyan, a blue blend improved clarity; a green blend reduced it. Keep the two ends similarly bright and test the blend in AR."
           ],
           "nav": "Gradients",
           "figures": [
@@ -1199,8 +1205,8 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "±30° apart",
-            "ret​est clarity, comfort and meaning"
+            "blue blend improved clarity",
+            "green blend reduced it"
           ]
         },
         {
@@ -1208,8 +1214,7 @@
           "eyebrow": "REFLECTION",
           "title": "Meaning depends on the audience",
           "body": [
-            "Bar and music colors evoked electronic clubs, mystery and cyberpunk. Blue–yellow parking recalled IKEA, competing with the parking meaning.",
-            "These guidelines cover 20 participants and static 2D icons. Test with the intended audience: culture, genre and context can change the reading."
+            "Together, these bar and music colors evoked electronic clubs, mystery and cyberpunk. Participants could read the unusual pairs as youthful and stylish."
           ],
           "nav": "Reflection",
           "figures": [
@@ -1237,15 +1242,14 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "20 participants and static 2D icons",
-            "culture, genre and context"
+            "youthful and stylish"
           ]
         }
       ],
       "role": {
         "label": "My role",
-        "value": "Second author · Designer workshop · Study design · Icon colors · Testing",
-        "details": "I organized the first designer workshop, shaped three studies from my advisor’s prior work, designed icon colors, ran approximately 80% of participant testing, and co-wrote the paper. I am second author; my advisor is first author.",
+        "value": "Designer workshop · Study design · Testing",
+        "details": "I organized the designer workshop, designed icon colors and three studies, ran approximately 80% of testing, and co-wrote the paper with my advisor (first author).",
         "status": "explicit",
         "sourceRefs": [
           "meta[0]",
@@ -1281,8 +1285,8 @@
           "label": "ColoGene pilot participants"
         },
         {
-          "value": "48",
-          "label": "Colors in the connected atlas"
+          "value": "100",
+          "label": "Colors in this atlas demonstration"
         },
         {
           "value": "4",
@@ -1348,7 +1352,7 @@
               "title": "Color Atlas",
               "version": "Version 2.0",
               "status": "In progress",
-              "body": "48 connected colors and brief-based palettes. The study with 25 designers is complete."
+              "body": "Connected color records and brief-based palettes. The study with 25 designers is complete."
             },
             {
               "title": "Color Agent",
@@ -1436,9 +1440,9 @@
         {
           "id": "colorgene",
           "eyebrow": "VERSION 1 · COLOGENE",
-          "title": "Five ways into color knowledge",
+          "title": "ColoGene",
           "body": [
-            "Three interview insights shaped five ways to explore color knowledge: name origins, hue, color family, dynasty and scene palettes."
+            "Five ways into color knowledge: name origins, hue, color family, dynasty and scene palettes. Each answers a need from the designer interviews."
           ],
           "items": [],
           "nav": "ColoGene",
@@ -1497,7 +1501,12 @@
             }
           ],
           "highlights": [
-            "five ways to explore color knowledge"
+            "Five ways",
+            "name origins",
+            "hue",
+            "color family",
+            "dynasty",
+            "scene palettes"
           ]
         },
         {
@@ -1505,8 +1514,8 @@
           "eyebrow": "EARLY EVIDENCE",
           "title": "Early signals from a ten-designer pilot",
           "body": [
-            "Five designers used ColoGene and five used their usual workflow on the same Jiangnan and Tang templates.",
-            "All five ColoGene users finished within 15 minutes (usual workflow: four of five), with questionnaire gains of 8.66 versus 1.21 points—descriptive results from this small pilot."
+            "Ten designers used the same Jiangnan and Tang templates: five with ColoGene and five with their usual workflow.",
+            "All five ColoGene users finished within 15 minutes, versus four of five using their usual workflow. Questionnaire gains were 8.66 versus 1.21 points—descriptive results from a small pilot."
           ],
           "items": [
             {
@@ -1544,9 +1553,10 @@
             }
           ],
           "highlights": [
+            "five with ColoGene",
             "within 15 minutes",
             "8.66 versus 1.21 points",
-            "early descriptive results"
+            "small pilot"
           ]
         },
         {
@@ -1571,7 +1581,7 @@
               "id": "connections",
               "title": "From origins to color families",
               "body": [
-                "Follow 100 colors from four kinds of origins into eight color families. Scroll down to unfold the atlas."
+                "Scroll to trace 100 colors from four kinds of origins into eight color families."
               ],
               "figures": [],
               "highlights": [
@@ -1633,17 +1643,21 @@
               "id": "brief",
               "title": "From a brief to five colors",
               "body": [
-                "Six original briefs reveal six five-color palettes—from a New Year gift box to Song-ceramic branding."
+                "Four original design briefs unfold into their five-color palettes as you scroll."
               ],
               "figures": [],
               "highlights": [
-                "compare five suggested colors",
-                "check the rationale, values and source texts"
+                "Four original design briefs",
+                "five-color palettes"
               ],
               "demo": {
-                "src": "/assets/color-atlas-demo/preset-palettes.mp4",
-                "poster": "/assets/color-atlas-demo/preset-palettes-poster.jpg",
-                "originalRange": "01:04.2–01:55.6"
+                "kind": "native-scroll",
+                "source": "chinese-colors-atlas-cinematic",
+                "range": [
+                  40,
+                  85.85
+                ],
+                "presetCount": 4
               }
             },
             {
@@ -1897,7 +1911,12 @@
       },
       "outcome": "ColoGene: CHI 2026 Poster accepted. Color Atlas: ongoing research. Color Agent: a future design concept.",
       "sourceNotes": [],
-      "tags": [],
+      "tags": [
+        "Information Design",
+        "Cultural Heritage",
+        "Co-design",
+        "AI Assistance"
+      ],
       "highlights": [
         "origins, cultural meanings and historical context"
       ]
@@ -1906,7 +1925,7 @@
       "id": "personamail",
       "title": "PersonaMail",
       "subtitle": "A short email that sounds like you",
-      "description": "An AI email editor that remembers your relationship context and writing preferences, so a familiar request does not start from scratch.",
+      "description": "An AI email editor that makes relationship context and writing preferences editable—and carries them into the next message.",
       "kicker": "Research / AI co-writing",
       "meta": "IUI Companion ’26 · March 2026 · Published demo · 2nd author",
       "stats": [
@@ -1952,7 +1971,7 @@
         "caption": "",
         "researchFigure": {
           "kind": "persona-opening",
-          "image": "/assets/research-interactive/persona-phd-story.png"
+          "image": "/assets/fast/persona-story.webp"
         }
       },
       "sections": [
@@ -1960,48 +1979,27 @@
           "id": "challenge",
           "nav": "Challenge",
           "eyebrow": "Challenge",
-          "title": "You need a short note, not another long rewrite",
+          "title": "The problem is context, not another rewrite",
           "body": [
-            "You’re a PhD student taking a day off from the lab. You ask a general AI for an email, but repeated revisions still feel too long and unlike you."
+            "A PhD student needs a day off. A general AI keeps producing long, formal emails, even after several edits. The supervisor already knows the student well; the message only needs to be polite, appreciative and brief."
           ],
-          "items": [
-            {
-              "title": "The missing context",
-              "body": "You and your supervisor already know each other. A long explanation is unnecessary."
-            },
-            {
-              "title": "The writing goal",
-              "body": "Keep it polite, appreciative, and brief."
-            }
-          ],
+          "items": [],
           "figures": [],
           "highlights": [
-            "too long and unlike you",
-            "polite, appreciative, and brief"
+            "long, formal emails",
+            "polite, appreciative and brief"
           ]
         },
         {
           "id": "research",
           "nav": "Research",
           "eyebrow": "Research",
-          "title": "Tell the editor who you’re writing to",
+          "title": "Turn social context into something editable",
           "body": [
-            "Eight participants tried three writing tools. A review of 97 social-psychology papers informed the relationship and situation controls."
+            "Eight participants tried three writing tools. Their recurring difficulties were explaining social goals, changing one part of an email, and reusing what worked.",
+            "A review of 97 social-psychology papers informed the relationship and situation controls."
           ],
-          "items": [
-            {
-              "title": "Relationship",
-              "body": "A PhD student writing to a familiar supervisor."
-            },
-            {
-              "title": "Tone",
-              "body": "Polite and appreciative, without distant formality."
-            },
-            {
-              "title": "Local edits",
-              "body": "Shorten the explanation while keeping the rest of the email."
-            }
-          ],
+          "items": [],
           "figures": [
             {
               "src": "/assets/research-editorial/persona-context-panel.png",
@@ -2016,7 +2014,8 @@
             }
           ],
           "highlights": [
-            "Eight participants",
+            "changing one part",
+            "reusing what worked",
             "97 social-psychology papers"
           ],
           "layout": "editorial"
@@ -2025,26 +2024,15 @@
           "id": "interaction",
           "nav": "Interaction",
           "eyebrow": "Interaction",
-          "title": "Polite, appreciative, and brief",
+          "title": "A few settings, a more fitting email",
           "body": [
-            "Define the relationship and writing goal, then refine the part that needs changing. The short example below shows the intended tone."
+            "Change the relationship, length or appreciation setting. Then reuse the same choices for a missed morning meeting."
           ],
           "items": [],
-          "figures": [
-            {
-              "src": "/assets/research-editorial/persona-intent-editor.png",
-              "width": 1052,
-              "height": 892,
-              "displayWidth": 570,
-              "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
-              "alt": "Edit the intent of one section without rewriting the whole email.",
-              "caption": "The prototype lets writers revise one communication unit while keeping the rest of the email.",
-              "captionTitle": "The original section editor"
-            }
-          ],
+          "figures": [],
           "highlights": [
-            "relationship and writing goal",
-            "refine the part"
+            "relationship, length or appreciation",
+            "reuse the same choices"
           ],
           "layout": "editorial",
           "interaction": "persona-intent"
@@ -2053,15 +2041,14 @@
           "id": "reflection",
           "nav": "Takeaway",
           "eyebrow": "Takeaway",
-          "title": "Next time, change the message",
+          "title": "Keep what worked for the next request",
           "body": [
-            "Now you need to miss a morning meeting. Reuse the supervisor context and the polite, appreciative style; update what you need to say.",
-            "Saved anchors preserve recurring context. Edits and optional explanations refine a personal stylebook for later drafts. The writer still reviews the email."
+            "Saved context anchors carry a familiar relationship into later emails. A personal stylebook learns from edits and optional explanations, while the writer stays in control of the final message."
           ],
           "items": [
             {
-              "title": "Published prototype",
-              "body": "The IUI Companion ’26 demo reports formative findings and a working system, not a comparative effectiveness test."
+              "title": "What this project demonstrates",
+              "body": "A working prototype for context, local revision and reuse. The published demo reports formative research, not a controlled effectiveness test."
             }
           ],
           "figures": [
@@ -2078,7 +2065,7 @@
             }
           ],
           "highlights": [
-            "Reuse the supervisor context",
+            "Saved context anchors",
             "personal stylebook"
           ],
           "layout": "editorial"
@@ -2098,10 +2085,9 @@
         "Hidden earlier Figma revisions and older manuscript participant counts do not override the current portfolio.",
         "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
-        "Readability: the original intent crop is only 290×171px; its four labels are now live HTML, sourced from Figma 1835:637. Selection-only demo, no simulated AI rewriting. Native 2058×1216 and 988×808 image sources verified against both published paper and 01 PersonaMail.pdf; no artificial enlargement presented as new detail.",
-        "14 October interactive revision: GitHub link removed at the author’s request. Original four-option intent selector is HTML at a readable native UI size; source scans were not upscaled."
+        "Current website scenario is authored by Ruiyuan Bai: lab leave and a later missed morning meeting. Interactive settings select authored examples locally; no AI API is presented as connected. Original section editor is preserved in an expandable source view."
       ],
-      "contentRevision": "2026-10-14-research-interactive",
+      "contentRevision": "2026-10-14-research-story-settings",
       "outcome": "Published IUI Companion ’26 demonstration: reusable context, local intent editing, and a personal stylebook.",
       "tags": [
         "Human–AI interaction",
@@ -2117,9 +2103,9 @@
       "id": "beyond-the-gaze",
       "title": "Beyond the Gaze",
       "subtitle": "Looking is only part of the story",
-      "description": "A long look does not tell us what a detail means. We compare gaze with the regions viewers later select and explain.",
+      "description": "When someone looks at a painting, do they also remember and explain that detail? We compare those three signals to understand what gaze alone can miss.",
       "kicker": "Research / Eye tracking",
-      "meta": "ACM Multimedia Asia 2026 · Accepted · 15–18 Dec 2026 · Co-first author",
+      "meta": "ACM Multimedia Asia 2026 · Accepted poster / special session · Co-first author",
       "stats": [
         {
           "value": "12 / 15",
@@ -2163,12 +2149,51 @@
       },
       "sections": [
         {
+          "id": "abstract",
+          "nav": "Abstract",
+          "eyebrow": "Abstract",
+          "title": "Looking is not the same as interpreting",
+          "body": [
+            "Gaze can help a museum guide decide what to explain, but a long look does not always mean a detail mattered to the viewer. We compared eye movements with later selection and explanation across 24 paintings. Some details drew attention without appearing in either response—the HLL pattern."
+          ],
+          "items": [],
+          "figures": [],
+          "highlights": [
+            "a long look does not always mean",
+            "selection and explanation"
+          ]
+        },
+        {
+          "id": "problem",
+          "nav": "Problem",
+          "eyebrow": "Problem",
+          "title": "What should a guide explain next?",
+          "body": [
+            "A guide may treat where someone looks as a sign of interest and use it to generate a personal explanation. Our observation raised a question: what if a frequently viewed detail never appears in what the viewer selects or says?"
+          ],
+          "items": [
+            {
+              "title": "The assumption",
+              "body": "More looking means this detail deserves more explanation."
+            },
+            {
+              "title": "The question",
+              "body": "Does the viewer also identify it as important and use it to interpret the painting?"
+            }
+          ],
+          "figures": [],
+          "highlights": [
+            "a sign of interest",
+            "what the viewer selects or says"
+          ]
+        },
+        {
           "id": "framework",
           "nav": "Method",
           "eyebrow": "Method",
-          "title": "Look. Recall. Explain",
+          "title": "Look, recall, explain",
           "body": [
-            "After calibration, viewers completed 24 self-paced painting trials. Each trial separated looking, recall and explanation."
+            "After calibration, viewers explored 24 paintings at their own pace. We collected what they looked at, what they later selected, and what they said it meant."
           ],
           "items": [],
           "figures": [
@@ -2181,7 +2206,9 @@
             }
           ],
           "highlights": [
-            "24 self-paced painting trials"
+            "24 paintings",
+            "looked at",
+            "said it meant"
           ],
           "layout": "editorial"
         },
@@ -2189,7 +2216,7 @@
           "id": "signals",
           "nav": "GSL & HLL",
           "eyebrow": "Gaze–Selection–Language",
-          "title": "How the three signals agree—or diverge",
+          "title": "Compare three signals, not gaze alone",
           "body": [],
           "items": [],
           "figures": [
@@ -2198,7 +2225,7 @@
                 "kind": "gaze-signals"
               },
               "alt": "Original Gaze, Selection and Language evidence, with the HLL definition",
-              "sourceOrigin": "Gaze paper section 3.3 and Figure 3: three original source panels at native resolution."
+              "sourceOrigin": "Original paper section 3.3: each signal is independently coded High or Low, yielding eight combinations. Web definitions retain the paper’s coding rule."
             }
           ],
           "layout": "editorial",
@@ -2208,9 +2235,9 @@
           "id": "evidence",
           "nav": "Evidence",
           "eyebrow": "Evidence",
-          "title": "Three views of the same painting",
+          "title": "Where the eyes went",
           "body": [
-            "Heatmaps show where looks accumulated. Scanpaths show the order of eye movements. Semantic regions let us compare gaze with what viewers select and explain."
+            "A heatmap shows where looking accumulated; an eye path shows the viewing order. Dividing a painting into meaningful regions lets us compare these traces with the viewer’s later answers."
           ],
           "figures": [
             {
@@ -2224,18 +2251,18 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "where looks accumulated",
-            "what viewers select and explain"
+            "where looking accumulated",
+            "later answers"
           ]
         },
         {
           "id": "study",
           "nav": "Study",
           "eyebrow": "Study",
-          "title": "The mismatch appeared across the study",
+          "title": "The mismatch was not a single case",
           "body": [
-            "12 of 15 enrolled participants passed gaze-quality checks. They viewed 24 paintings, each divided into 5–7 semantic regions.",
-            "HLL appeared in 156 of 1,651 cleaned region records (9.4%), across every analyzed viewer and painting."
+            "We analyzed 12 of the 15 enrolled viewers after gaze-quality checks. Across 24 paintings, HLL appeared in 156 of 1,651 region records (9.4%).",
+            "Every analyzed viewer and painting had at least one HLL record. The examples below show where some of these regions sat in the composition."
           ],
           "items": [],
           "figures": [
@@ -2248,8 +2275,8 @@
             }
           ],
           "highlights": [
-            "12 of 15",
-            "24 paintings",
+            "12 of the 15",
+            "156 of 1,651",
             "9.4%"
           ],
           "layout": "editorial"
@@ -2258,9 +2285,9 @@
           "id": "example",
           "nav": "One example",
           "eyebrow": "One example",
-          "title": "Many returns. Shorter fixations",
+          "title": "More visits, shorter looks",
           "body": [
-            "For one viewer, a region in The Hay Wain drew many returns but shorter fixations than the average region in that trial."
+            "One viewer returned to region A3 more often than to the average region in the same trial, but each fixation was shorter. These are two views of the same individual case."
           ],
           "items": [],
           "figures": [
@@ -2271,7 +2298,7 @@
               "displayWidth": 440,
               "className": "research-source-figure",
               "captionTitle": "A3: a focal region",
-              "caption": "The original region overlay places this single-case result in the painting. It is not a group average.",
+              "caption": "The highlighted A3 region in The Hay Wain. Results on the right describe one viewer, not the whole group.",
               "alt": "The Hay Wain with focal region A3 emphasized in the original eye-tracking figure",
               "sourceOrigin": "Gaze paper Figure 5, page 6: native crop retaining the original region boundaries."
             },
@@ -2282,12 +2309,63 @@
               "alt": "Figure 5 · One participant–painting–region example, with the original comparison table.",
               "caption": "Single-case measurements, compared with the same trial’s region mean",
               "sourceOrigin": "Original project paper figure; retained native pixels and source composition.",
-              "displayWidth": 1050
+              "displayWidth": 1050,
+              "dataVisual": {
+                "id": "gaze-single-case-readable",
+                "type": "bars",
+                "title": "More visits, shorter looks",
+                "description": "One viewer · The Hay Wain · Region A3",
+                "panels": [
+                  {
+                    "title": "How often the eyes returned",
+                    "unit": "Visits",
+                    "min": 0,
+                    "max": 40,
+                    "rows": [
+                      {
+                        "label": "Trial average",
+                        "value": 20.33,
+                        "display": "20.33",
+                        "series": "comparison"
+                      },
+                      {
+                        "label": "Region A3",
+                        "value": 38,
+                        "display": "38",
+                        "series": "primary"
+                      }
+                    ],
+                    "note": ""
+                  },
+                  {
+                    "title": "How long each fixation lasted",
+                    "unit": "Seconds",
+                    "min": 0,
+                    "max": 0.2,
+                    "rows": [
+                      {
+                        "label": "Trial average",
+                        "value": 0.17,
+                        "display": "0.170 s",
+                        "series": "comparison"
+                      },
+                      {
+                        "label": "Region A3",
+                        "value": 0.051,
+                        "display": "0.051 s",
+                        "series": "primary"
+                      }
+                    ],
+                    "note": ""
+                  }
+                ],
+                "scope": "One viewer and one painting. The two measures have separate scales; they do not establish why the viewer looked this way."
+              }
             }
           ],
           "highlights": [
-            "one viewer",
-            "many returns but shorter fixations"
+            "returned to region A3 more often",
+            "each fixation was shorter"
           ],
           "layout": "editorial"
         },
@@ -2295,16 +2373,16 @@
           "id": "reflection",
           "nav": "Takeaway",
           "eyebrow": "Takeaway",
-          "title": "Attention is one part of interpretation",
+          "title": "A more careful starting point for museum guides",
           "body": [
-            "Combine gaze with viewers’ selections and explanations before adapting a cultural guide. HLL shows a mismatch between recorded signals; it does not prove an absence of understanding.",
-            "The selected examples are exploratory, not a general rule about composition."
+            "A future guide could combine gaze with a short question about what the visitor noticed or thought it meant, before choosing the next explanation.",
+            "HLL is a mismatch between recorded signals, not proof that someone failed to understand. This work offers a framework for designing and testing that next step."
           ],
           "items": [],
           "figures": [],
           "highlights": [
-            "viewers’ selections and explanations",
-            "does not prove an absence of understanding"
+            "combine gaze with a short question",
+            "not proof that someone failed to understand"
           ]
         }
       ],
@@ -2316,7 +2394,7 @@
           "meta"
         ],
         "boundary": "Specific individual responsibilities are not stated in the current case study.",
-        "details": "Co-first author on the accepted ACM Multimedia Asia 2026 paper."
+        "details": "Co-first author on the accepted ACM Multimedia Asia 2026 poster / special-session paper."
       },
       "sourceNotes": [
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
@@ -2324,22 +2402,23 @@
         "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
         "14 October interactive revision: original embedded images from Figures 1, 3, 4 and 5 supplement the original portfolio. Each visual crop has native dimensions and provenance in assets/research-interactive/sources.json. No simulated eye-tracking data."
       ],
-      "contentRevision": "2026-10-14-research-interactive",
-      "outcome": "HLL appeared in 9.4% of cleaned region records, across every analyzed viewer and painting.",
+      "contentRevision": "2026-10-14-research-story-settings",
+      "outcome": "9.4% of cleaned region records showed sustained looking without later selection or interpretive mention.",
       "tags": [
         "Eye tracking",
         "Art appreciation",
         "Mixed methods"
       ],
       "highlights": [
-        "regions viewers later select and explain"
+        "remember and explain",
+        "gaze alone can miss"
       ]
     },
     {
       "id": "suzhou-scrollverse",
       "title": "Suzhou ScrollVerse",
-      "subtitle": "An unfolding city. A connected story",
-      "description": "A guided handscroll viewer that connects painted scenes with the people, places, and cultural meanings behind them.",
+      "subtitle": "Unfold the city, connect its stories",
+      "description": "An interactive handscroll that connects painted details with their place in the city, the people who lived there, and the stories behind them.",
       "kicker": "Research / Digital heritage",
       "meta": "iConference · Under review · Sep 2026 · corresponding author",
       "stats": [
@@ -2382,12 +2461,28 @@
       },
       "sections": [
         {
-          "id": "needs",
-          "nav": "Reader needs",
-          "eyebrow": "Reader needs",
-          "title": "A long painting needs more than zoom",
+          "id": "abstract",
+          "nav": "Abstract",
+          "eyebrow": "Abstract",
+          "title": "Make a long painting easier to follow",
           "body": [
-            "191 survey responses and 30 interviews informed the design. Viewers wanted help locating details, following the story, and understanding cultural context."
+            "Zooming into a handscroll can reveal a shop or a street while losing how it fits into the city. ScrollVerse combines continuous unfolding, three social perspectives and cultural clues to reconnect those details. Research with 191 survey respondents and 30 interviewees informed the design; 60 participants compared it with a standard annotation viewer."
+          ],
+          "items": [],
+          "figures": [],
+          "highlights": [
+            "how it fits into the city",
+            "three social perspectives",
+            "60 participants"
+          ]
+        },
+        {
+          "id": "needs",
+          "nav": "Problem",
+          "eyebrow": "Problem",
+          "title": "Seeing the detail is only the start",
+          "body": [
+            "Viewers wanted to locate details, follow the unfolding scene and understand the cultural context. The survey shows why a larger image or more zoom alone was not enough."
           ],
           "figures": [
             {
@@ -2401,15 +2496,15 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "191 survey responses",
-            "30 interviews"
+            "locate details",
+            "cultural context"
           ]
         },
         {
           "id": "experience",
-          "nav": "Experience",
-          "eyebrow": "Experience",
-          "title": "Follow the sequence. Choose a perspective",
+          "nav": "The solution",
+          "eyebrow": "The solution",
+          "title": "Follow the scroll through different lives",
           "body": [],
           "items": [],
           "figures": [
@@ -2432,9 +2527,9 @@
           "id": "runtime",
           "nav": "How it works",
           "eyebrow": "How it works",
-          "title": "Keep the scene and its story together",
+          "title": "Keep each detail connected to its story",
           "body": [
-            "The viewer’s position and chosen role determine which scene and story appear. Original painting tiles stay connected to scene records, hotspots, and contextual videos."
+            "As the viewer moves along the scroll, their position and chosen role bring up the matching scene, clues and videos."
           ],
           "figures": [
             {
@@ -2449,7 +2544,7 @@
           "layout": "editorial",
           "highlights": [
             "position and chosen role",
-            "Original painting tiles"
+            "matching scene"
           ]
         },
         {
@@ -2458,7 +2553,7 @@
           "eyebrow": "Study",
           "title": "Compare two ways of viewing",
           "body": [
-            "60 participants were randomly assigned to ScrollVerse or an annotation viewer, with 30 per group. Questionnaires and interviews followed."
+            "60 participants were randomly assigned to ScrollVerse or a standard annotation viewer, with 30 per group. They then completed questionnaires and interviews."
           ],
           "items": [],
           "figures": [
@@ -2480,9 +2575,9 @@
           "id": "ratings",
           "nav": "Experience ratings",
           "eyebrow": "Experience ratings",
-          "title": "Where the experience differed",
+          "title": "A clearer sense of place and context",
           "body": [
-            "Participants described a clearer sense of unfolding, position, and historical context. Usability and workload differences were not statistically significant."
+            "Participants rated the experience across context, usability, workload and engagement. They described a clearer sense of the unfolding city and its historical setting."
           ],
           "figures": [
             {
@@ -2496,13 +2591,28 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "unfolding, position, and historical context",
-            "not statistically significant"
+            "unfolding city",
+            "historical setting"
           ],
           "quote": {
             "text": "from the perspective of people at the time",
             "attribution": "P14 · Post-study interview"
           }
+        },
+        {
+          "id": "reflection",
+          "nav": "Takeaway",
+          "eyebrow": "Takeaway",
+          "title": "Help viewers connect the details",
+          "body": [
+            "The next step is to test what visitors learn and retain, and which features help most. This study tested the combined experience; its reports of clearer understanding do not yet show longer-term learning."
+          ],
+          "items": [],
+          "figures": [],
+          "highlights": [
+            "learn and retain",
+            "which features help most"
+          ]
         }
       ],
       "role": {
@@ -2521,7 +2631,7 @@
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
         "14 October interactive revision: Figure 1 reported percentages rebuilt as HTML/CSS; Figure 3 original image excerpts with native HTML explanation; all 19 Figure 4 intervals and means recreated using exact native PDF coordinates. Coordinates are plotted evidence, not participant-level raw data. No new claim of objective learning or equivalence."
       ],
-      "contentRevision": "2026-10-14-research-interactive",
+      "contentRevision": "2026-10-14-research-story-settings",
       "outcome": "25 of 30 ScrollVerse participants reported a clearer understanding of everyday life in Qing-dynasty Suzhou.",
       "tags": [
         "Cultural heritage",
@@ -2529,14 +2639,15 @@
         "Visualization"
       ],
       "highlights": [
-        "people, places, and cultural meanings"
+        "their place in the city",
+        "the people who lived there"
       ]
     },
     {
       "id": "versecolor",
       "title": "VerseColor",
       "subtitle": "Follow a color into a poem",
-      "description": "A poetry explorer that links colors with imagery, emotion, and original lines, so readers can interpret a color in context.",
+      "description": "A poetry explorer that connects color words with images, feelings and source lines—helping readers see what a color means in a particular poem.",
       "kicker": "Research / Chinese poetry",
       "meta": "iConference · Under review · Sep 2026 · corresponding author",
       "stats": [
@@ -2550,8 +2661,8 @@
         },
         {
           "value": "2.29",
-          "label": "Cohen’s d · relational support",
-          "detail": "Manuscript-reported questionnaire effect size"
+          "label": "Support for linking ideas",
+          "detail": "Questionnaire effect size · Cohen’s d; not a learning score"
         }
       ],
       "links": [
@@ -2589,18 +2700,9 @@
           "eyebrow": "The design",
           "title": "Follow each connection back to a poem",
           "body": [
-            "An expert-reviewed graph connects colors, imagery, emotions, and source poems. Readers can trace a connection, then compare how another poet uses the same color."
+            "A map of color, image and emotion links lets readers trace a connection back to the source poem, then compare it with another poet’s use of the same color. Experts reviewed the links and revised uncertain associations."
           ],
-          "items": [
-            {
-              "title": "Ground the meaning",
-              "body": "Domain reviewers checked the poems and revised uncertain associations."
-            },
-            {
-              "title": "Compare across poems",
-              "body": "Trace recurring color links across source poems."
-            }
-          ],
+          "items": [],
           "figures": [
             {
               "src": "/assets/research-editorial/verse-interface.jpg",
@@ -2613,8 +2715,8 @@
             }
           ],
           "highlights": [
-            "expert-reviewed graph",
-            "source poems"
+            "back to the source poem",
+            "Experts reviewed the links"
           ],
           "layout": "editorial"
         },
@@ -2641,7 +2743,7 @@
           "eyebrow": "Study",
           "title": "Reading with VerseColor and Souyun",
           "body": [
-            "Eight reader interviews informed the design; eight experts reviewed the graph. Thirty participants compared VerseColor with Souyun through interpretation tasks, questionnaires, and interviews."
+            "Eight reader interviews informed the design, and eight experts reviewed the connections. Thirty participants used VerseColor and Souyun for reading tasks, then discussed and rated their experience."
           ],
           "items": [],
           "figures": [
@@ -2666,8 +2768,8 @@
           "eyebrow": "Findings",
           "title": "Connections became easier to see",
           "body": [
-            "VerseColor received higher relational-support ratings (Cohen’s d = 2.29) and imagery-support ratings (d = 1.91). Souyun was easier to use; ratings for finding relevant poems were similar.",
-            "These are questionnaire effect sizes, not measured learning gains. The next step is simpler navigation."
+            "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery. Souyun was easier to use, while the two tools were rated similarly for finding relevant poems.",
+            "The chart shows the size of the reported questionnaire differences—not improvement in learning. Simpler navigation is the next design priority."
           ],
           "items": [],
           "figures": [
@@ -2681,22 +2783,22 @@
                 "id": "verse-effect-sizes",
                 "type": "bars",
                 "title": "Stronger support for making connections",
-                "description": "Two reported standardized differences between VerseColor and Souyun.",
+                "description": "How strongly questionnaire ratings differed between the two tools",
                 "panels": [
                   {
-                    "title": "Questionnaire effects favoring VerseColor",
+                    "title": "Ratings favoring VerseColor",
                     "unit": "Cohen’s d (standardized difference)",
                     "min": 0,
                     "max": 2.5,
                     "rows": [
                       {
-                        "label": "Relational support",
+                        "label": "Connecting ideas",
                         "value": 2.29,
                         "display": "2.29",
                         "series": "primary"
                       },
                       {
-                        "label": "Imagery support",
+                        "label": "Interpreting imagery",
                         "value": 1.91,
                         "display": "1.91",
                         "series": "primary"
@@ -2705,7 +2807,7 @@
                     "note": ""
                   }
                 ],
-                "scope": "Cohen’s d is an effect size, not a percentage, multiplier, or learning score. Souyun received higher usability ratings; retrieval-precision ratings were broadly comparable. Short-term questionnaire ratings do not establish durable learning gains."
+                "scope": "Cohen’s d describes the size of a rating difference. It is not a percentage or a learning gain. Souyun was rated easier to use."
               },
               "sourceOrigin": "Original project paper figure; retained native pixels and source composition.",
               "displayWidth": 1050
@@ -2716,9 +2818,9 @@
             "attribution": "P13 · Post-task interview"
           },
           "highlights": [
-            "relational-support ratings",
-            "imagery-support ratings",
-            "not measured learning gains"
+            "connecting ideas and interpreting imagery",
+            "Souyun was easier to use",
+            "not improvement in learning"
           ],
           "layout": "editorial"
         }
@@ -2740,7 +2842,7 @@
         "Poem example follows current original portfolio frame 1835:6887: green highlighted in the poem, dashed connection, shared two-row context panel and the following two lines. Original vector symbols 1835:6904 and 1835:6911 retained.",
         "14 October interactive revision: original poem interaction retained; study sequence is responsive HTML/CSS with current portfolio counts. Souyun linked as the comparison platform, not as a VerseColor demo."
       ],
-      "contentRevision": "2026-10-14-research-interactive",
+      "contentRevision": "2026-10-14-research-story-settings",
       "outcome": "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery; Souyun was easier to use.",
       "tags": [
         "Chinese poetry",
@@ -2748,7 +2850,8 @@
         "Visual exploration"
       ],
       "highlights": [
-        "imagery, emotion, and original lines"
+        "images, feelings and source lines",
+        "in a particular poem"
       ]
     },
     {
@@ -2757,7 +2860,7 @@
       "subtitle": "A faster driver cannot create a hospital bed",
       "description": "A 3D journalism game about Adelaide’s ambulance-ramping crisis. Drive emergency calls, check hospital capacity and face the limits that faster driving cannot solve.",
       "kicker": "JOURNALISM GAME · DRIVING SIMULATION",
-      "meta": "Programming · Team Coordination · Paper Co-author (3rd) · Unity 3D, C#, WebGL · 2024",
+      "meta": "Unity 3D · C# · WebGL · 2024",
       "stats": [
         {
           "value": "3",
@@ -2944,7 +3047,7 @@
         "sourceRefs": [
           "meta"
         ],
-        "details": "I contributed programming and team coordination, and am the third co-author of the paper."
+        "details": ""
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
       "outcome": "More than 2,000 Adelaide players, project coverage in InDaily, and one co-authored journal article.",
@@ -2967,6 +3070,14 @@
         "css": "/ambulance-editorial.css",
         "setup": "setupAmbulanceEditorial(root, project)",
         "order": "after setupNewsEmbeds, before setupMotion; old games-motion map hook safely no-ops because there is no source-composition SVG"
+      },
+      "publication": {
+        "title": "It’s all fun and games: Contemporary newsgames and journalism",
+        "venue": "Australian Journalism Review",
+        "year": "2025",
+        "status": "Published paper",
+        "role": "Third author",
+        "url": "https://intellectdiscover.com/content/journals/10.1386/ajr_00184_1"
       }
     },
     {
@@ -3049,7 +3160,7 @@
           "id": "gameplay",
           "eyebrow": "READ. ROTATE. SERVE.",
           "title": "A shared table. Limited actions",
-          "body": "Read guests’ tastes, rotate the shared table and use item cards. Serve before the round limit, with limited actions to satisfy everyone.",
+          "body": "",
           "items": [],
           "nav": "Gameplay",
           "figures": [],
@@ -3666,7 +3777,7 @@
           "id": "erase",
           "eyebrow": "ERASE",
           "title": "Scroll to watch history disappear",
-          "body": "Six chapters become eighteen scenes. As you scroll, eight scenes dissolve. The gaps make the loss of their stories visible.",
+          "body": "",
           "nav": "Erase",
           "figures": [],
           "highlights": [
@@ -3811,7 +3922,7 @@
       "subtitle": "Earth Is Not Humanity’s Alone",
       "description": "An interactive memorial to animals harmed by human actions. Follow individual lives through the archive, read their sources and light a candle to remember.",
       "kicker": "INTERACTIVE ARCHIVE · DIGITAL MEMORIAL",
-      "meta": "Concept · Research · Interaction & Web Development · Next.js, React, TypeScript, Framer Motion",
+      "meta": "Next.js · React · TypeScript · Framer Motion",
       "stats": [
         {
           "value": "286",
@@ -3968,7 +4079,7 @@
           "description",
           "sections.portraits.body"
         ],
-        "details": "My role covers concept, research, interaction and web development."
+        "details": ""
       },
       "revision": "2026-10-13 · Figma-first concise games revision",
       "outcome": "An interactive memorial with 191 published events drawn from 286 researched records, spanning 1826–2026.",

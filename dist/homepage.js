@@ -1,3 +1,4 @@
+import {startAssetLoading} from './asset-loading.js';
 import { setupHomePosition } from './home-position.js';
 import { setupHeroIntro } from './hero-intro.js';
 const groups = [...document.querySelectorAll('.group-row')];
@@ -64,3 +65,5 @@ groups.forEach(group => {
 setupHeroIntro();
 setupHomePosition();
 window.addEventListener('pageshow', () => { groups.forEach(group => setProject(group, null)); });
+
+startAssetLoading();

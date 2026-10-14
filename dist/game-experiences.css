@@ -174,3 +174,8 @@ body[data-project=ourworld] #abstract .section-visuals{max-width:220px!important
 body[data-project=ourworld] #abstract .project-figure{max-width:220px!important;margin:0!important}
 body[data-project=ourworld] #abstract .figure-media img{height:200px!important;max-height:200px!important;object-fit:contain}
 @media(max-width:760px){body[data-project=hersound] #evidence{grid-template-columns:minmax(0,1fr) 130px!important;gap:18px!important;padding-block:30px!important}body[data-project=hersound] #evidence .project-figure{width:130px!important;max-width:130px!important}body[data-project=hersound] #evidence .section-heading h2{font-size:20px!important}body[data-project=hersound] #wish{min-height:0;padding-block:40px}body[data-project=hersound] #wish .project-figure{max-width:270px!important}body[data-project=hersound] #wish .figure-media img{height:350px!important;max-height:350px!important}.gx-her-island .final-chapter-instruction{font-size:18px!important}body[data-project=ourworld] #abstract{padding-block:35px!important}}
+
+/* Keep the context attached to the scroll-driven erasure; center the final guide beside play. */
+body[data-project=hersound] .gx-wind-panel>.gx-instruction{font-size:20px!important;line-height:1.45!important;max-width:1000px!important;margin:0 0 20px!important}
+@media(min-width:901px){body[data-project=hersound] [data-experience=hersound-restore] .gx-play-guide{align-self:center;padding-top:0}body[data-project=hersound] .case-study #restore>.section-heading h2{white-space:nowrap!important;font-size:clamp(30px,3.05vw,44px)!important}}
+@media(max-width:600px){body[data-project=hersound] .gx-wind-panel>.gx-instruction{font-size:17px!important;line-height:1.4!important;margin-bottom:16px!important}}

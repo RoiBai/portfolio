@@ -250,7 +250,7 @@ export function renderGameExperience(projectId, part='all') {
     </div>`;
     if(part==='erase')return `<div class="game-experience gx-her gx-wind" data-experience="hersound-erase">
       <div class="gx-wind-track"><div class="gx-wind-panel">
-        <p class="gx-instruction"><strong>Keep scrolling.</strong> Eighteen scenes hold their lives together. As you move down, parts of that history turn to dust. Scroll back to recover them.</p>
+        <p class="gx-instruction"><strong>Six chapters become eighteen scenes.</strong> As you scroll, eight scenes dissolve. The gaps make the loss of their stories visible. Scroll back to recover them.</p>
         <div class="gx-wind-art" aria-label="Eighteen scenes across six chapters">
           ${Array.from({length:18},(_,i)=>{const id=String(i+1).padStart(2,'0'),label=`Chapter ${Math.floor(i/3)+1}, scene ${i%3+1}`;return `<figure>${windProfiles[i]?`<canvas data-wind-src="${ASSETS}/her/wind/${id}.webp" data-wind-profile="${i}" role="img" aria-label="${label}; fragments disperse as you scroll"></canvas>`:`<img src="${ASSETS}/her/wind/${id}.webp" width="536" height="360" alt="${label}; a surviving record" decoding="async">`}<figcaption>${Math.floor(i/3)+1}.${i%3+1}</figcaption></figure>`;}).join('')}
         </div>
