@@ -128,7 +128,7 @@ export const DATA_VISUAL_REPLACEMENTS = [
               "series": "primary"
             }
           ],
-          "note": "ColoGene mean total score: 18.91 before → 27.57 after."
+          "note": ""
         },
         {
           "title": "Finished within 15 minutes",

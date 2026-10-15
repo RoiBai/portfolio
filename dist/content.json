@@ -73,7 +73,7 @@
           "body": [
             "We see AR glasses as a future everyday companion. Learning on the go could turn a walk or commute into time for learning, with hands free and attention still available for the surroundings.",
             "But learning podcasts demand concentration. Listeners look away to check the path, then return to an explanation that has already moved on. They may remember individual words but lose how the ideas connect.",
-            "Across 14 pilot rounds and a designer workshop, we developed GlanceMap: illustrations paired with a mind map that grows with the audio and keeps earlier ideas visible. In a 16-person study, it improved free recall by 9.6 percentage points immediately and 7.0 points after seven days over an AudioXtend-inspired Illustration Only baseline. The design insight: reveal ideas in time with the audio, while preserving a readable path back through their relationships."
+            "Across 14 pilot rounds and a designer workshop, we developed GlanceMap: a mind map that grows with the audio, keeps earlier ideas visible, and pairs them with illustrations. In a 16-person study, free recall improved by 9.6 percentage points immediately and 7.0 points after seven days over an AudioXtend-inspired Illustration Only baseline."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -92,14 +92,13 @@
             "16-person study",
             "9.6 percentage points",
             "7.0 points",
-            "reveal ideas in time with the audio",
-            "preserving a readable path back"
+            "keeps earlier ideas visible"
           ]
         },
         {
           "id": "problem",
           "eyebrow": "THE PROBLEM",
-          "title": "Learning on the go means looking away",
+          "title": "The podcast moves on when attention shifts",
           "body": [
             "AR glasses, a walking route, and a podcast that keeps playing. Causes, conditions and comparisons are hard to recover once the explanation has moved on.",
             "Full captions preserve the words, but reading competes with watching the path. How can an AR interface help people attend to their surroundings and follow the explanation when they glance back?"
@@ -273,7 +272,7 @@
               "pilotParticipants": 13,
               "figureNotes": [
                 "We started with the full-caption baseline: every spoken word stayed available as text.",
-                "We kept the key words and removed unnecessary connectors and adverbs. Less text helped people pick out information, but not its overall meaning."
+                "Keywords were easier to catch, but their relationships remained unclear."
               ]
             },
             {
@@ -399,7 +398,7 @@
               ],
               "pilotParticipants": 24,
               "figureNotes": [
-                "A full logic map restored the big picture, but learners struggled to trace which part the audio was explaining now.",
+                "A full logic map restored the big picture, but learners struggled to follow the current explanation.",
                 "Removing earlier nodes clarified the current topic, but left nothing to return to during the podcast’s wrap-up."
               ],
               "historyNote": "We also tried gray past nodes and different map colors. Faded history was harder to read; earlier branches needed to remain legible."
@@ -695,11 +694,7 @@
         },
         {
           "label": "Publication",
-          "value": "Journal manuscript under review · SSRN preprint"
-        },
-        {
-          "label": "Authorship",
-          "value": "Second author"
+          "value": "Journal manuscript under review · SSRN preprint · Second author"
         }
       ],
       "stats": [
@@ -708,16 +703,16 @@
           "label": "Study participants"
         },
         {
-          "value": "12",
-          "label": "Representative colors"
+          "value": "8",
+          "label": "Workshop designers"
         },
         {
           "value": "36",
           "label": "Color pairings"
         },
         {
-          "value": "8",
-          "label": "Workshop designers"
+          "value": "12",
+          "label": "Representative colors"
         }
       ],
       "links": [
@@ -748,6 +743,7 @@
           "title": "Starting with screen color rules",
           "caption": "Alex designs AR UIs. She uses color rules made for screens.",
           "highlights": [
+            "Alex",
             "made for screens"
           ],
           "alt": "Alex at a desk, designing colored icons on a desktop screen",
@@ -773,8 +769,9 @@
           "eyebrow": "ABSTRACT",
           "title": "Clear, comfortable, meaningful icons",
           "body": [
-            "Color helps us notice an icon and understand what it means. Through AR glasses, real-world light and detail change how those colors appear, so screen-based color rules are not enough.",
-            "Across three studies, we compared black, white and opposite-color symbols on 12 hues, then tested meaningful icons and design refinements. The result is guidance for balancing clarity, comfort and meaning with shadows, outlines and gray backplates."
+            "Imagine checking directions or a message through your glasses while walking. Icons would need to stay readable against streets, trees and changing light. Yet color guidance for these everyday AR interfaces is still limited.",
+            "Some glasses, such as Even G1, use a green-only MicroLED waveguide display. Full-color optical see-through displays allow more choices, but borrowing phone-screen color rules is not enough: real-world light shows through and changes how colors look.",
+            "We worked with 8 professional designers and ran three linked studies with 20 participants. We studied clarity, comfort and meaning, then tested refinements to guide visual prominence—from noticeable alerts to quiet status icons."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -787,10 +784,17 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "screen-based color rules are not enough",
+            "color guidance",
+            "optical see-through displays",
             "clarity, comfort and meaning"
           ],
-          "figureLayout": null
+          "figureLayout": null,
+          "textLayout": "full-width",
+          "sourceNotes": [
+            "Research framing and scope: output/icon-colors/paper-extracted.txt, Introduction pp.2–5; methods §3.6 and Studies1–3. The everyday scenario is a design vision, not a claim about adoption rates.",
+            "Even G1 official specifications https://www.evenrealities.com/g1 checked 2026-10-15: optics=Waveguides; display=Micro LED; display color=Green. This is a device-specific monochrome display example, not a claim that waveguides or all AR glasses are monochrome.",
+            "Eight designers are the formative workshop group, distinct from the same 20 participants completing the three studies. See paper §3.6 and §3.3."
+          ]
         },
         {
           "id": "problem",
@@ -809,7 +813,8 @@
                 "caption": "Then she tries the UI through AR glasses. “Too much glare.” “Hard to see.” “The color feels wrong.”",
                 "highlights": [
                   "glare",
-                  "Hard to see"
+                  "see",
+                  "wrong"
                 ],
                 "alt": "Alex wears AR glasses outdoors. The light-bulb, file and bar icons show glare, poor visibility and a misleading color",
                 "paragraphs": [
@@ -912,7 +917,7 @@
         },
         {
           "id": "workshop",
-          "nav": "Research plan",
+          "nav": "Designer workshop",
           "eyebrow": "DESIGNER WORKSHOP",
           "title": "From design practice to three linked studies",
           "body": [
@@ -920,6 +925,7 @@
           ],
           "highlights": [
             "Eight professional designers",
+            "color strategies for Study 1",
             "twelve-icon library"
           ],
           "figures": [],
@@ -927,17 +933,18 @@
           "layout": "editorial",
           "sourceNotes": [
             "Icon Color Design paper §3.6, §4 and §5.1; eight designers were separate from the 20 study participants."
-          ]
+          ],
+          "textLayout": "full-width"
         },
         {
           "id": "baseline",
-          "eyebrow": "STUDY 1",
-          "title": "Study 1 · Compare colors",
+          "eyebrow": "STAGE 1",
+          "title": "Stage 1 · Compare colors",
           "body": [
             "Designers described black, white and opposite colors as familiar ways to build contrast. Study 1 tested these three choices across 12 hues: 36 pairs, with the same letter, size and stroke.",
             "Participants rated clarity and comfort indoors and outdoors. A pair that was easy to see was not always the most comfortable."
           ],
-          "nav": "Study 1",
+          "nav": "Stage 1",
           "figures": [
             {
               "src": "/assets/design-followup/icon-study-1.svg",
@@ -975,17 +982,19 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "36 pairs",
-            "not always the most comfortable"
-          ]
+            "black, white and opposite colors",
+            "12 hues: 36 pairs",
+            "clarity and comfort"
+          ],
+          "textLayout": "full-width"
         },
         {
           "id": "meaning",
           "eyebrow": "STUDY 2",
           "title": "Study 2 · Add meaning",
           "body": [
-            "The workshop gave each hue a shared meaning: dining, parking, music and nine other functions. Study 2 replaced the letter with these icons and retested the same 36 color pairs outdoors.",
-            "Participants rated clarity, comfort and how well the colors fit the meaning. Being easy to see did not guarantee that an icon made sense."
+            "The designer workshop gave us twelve icon–color pairings, including dining, parking and music. Study 2 replaced the letter with these icons and tested the same 36 color pairs outdoors, where Study 1 showed that clarity was harder to maintain.",
+            "Participants rated clarity, comfort and how well the colors fit each icon’s meaning. An icon could be easy to see without communicating the intended idea."
           ],
           "nav": "Study 2",
           "figures": [
@@ -1037,10 +1046,11 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "shared meaning",
-            "same 36 color pairs",
-            "how well the colors fit the meaning"
-          ]
+            "designer workshop",
+            "same 36 color pairs outdoors",
+            "how well the colors fit each icon’s meaning"
+          ],
+          "textLayout": "full-width"
         },
         {
           "id": "refinement",
@@ -1088,34 +1098,22 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "asked designers",
             "clarity, comfort and meaning",
+            "shadows, nearby-hue gradients, outlines and gray backplates",
             "how strongly each one drew attention"
           ],
           "sourceNotes": [
             "Designer agency is documented in the current portfolio: node1704:562 “Ideas from the designer workshop”, followed by original shadow/gradient and outline/gray refinements; the user explicitly confirmed the design task. The paper §6 reports the refinement study without identifying all eight pilot designers as participants in that later iteration."
-          ]
-        },
-        {
-          "id": "analysis",
-          "nav": "Data analysis",
-          "eyebrow": "FROM EVIDENCE TO GUIDELINES",
-          "title": "How the results became design guidance",
-          "body": [
-            "We compared each refinement with its original icon, within the same hue. Participants’ explanations helped us turn the ratings into guidance for different interface roles."
           ],
-          "highlights": [
-            "within the same hue",
-            "different interface roles"
-          ],
-          "layout": "editorial",
-          "figures": []
+          "textLayout": "full-width"
         },
         {
           "id": "guidelines",
           "eyebrow": "DESIGN GUIDELINES",
-          "title": "Match the design to urgency",
-          "body": [],
+          "title": "Choose color for the job the icon needs to do",
+          "body": [
+            "Match visual prominence to the icon’s role, then check clarity, comfort and meaning in the intended AR setting."
+          ],
           "nav": "Guidelines",
           "figures": [
             {
@@ -1192,7 +1190,32 @@
               "captionTitle": "Persistent status"
             }
           ],
-          "items": [],
+          "items": [
+            {
+              "title": "Make urgent information noticeable",
+              "priority": "High",
+              "body": "Use a white symbol with a shadow on a colored background for time-sensitive cues.",
+              "evidence": "Adding a shadow improved clarity by 0.88–1.62 points on the 1–5 scale across four tested hues.",
+              "takeaway": "Reserve this stronger presence for information that needs attention now.",
+              "src": "/assets/design-revision/icon-alerts.svg"
+            },
+            {
+              "title": "Keep different functions easy to read",
+              "priority": "Medium",
+              "body": "Use an outlined theme plate to distinguish controls and categories without excessive visual intensity.",
+              "evidence": "Participants reported clear meaning with less prominence than the white-and-shadow treatment.",
+              "takeaway": "Make an icon’s function clear before making it more attention-grabbing.",
+              "src": "/assets/design-revision/icon-controls.svg"
+            },
+            {
+              "title": "Let persistent status stay quiet",
+              "priority": "Low",
+              "body": "Use a gray backplate at B30 for status that needs to remain visible without demanding attention.",
+              "evidence": "The tested B30 treatment combined stable comfort with low visual intrusion. B30 means 30% HSB brightness, not 30% opacity.",
+              "takeaway": "Give persistent information enough presence to be found when needed.",
+              "src": "/assets/design-revision/icon-status.svg"
+            }
+          ],
           "sourceRefs": [
             {
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -1201,80 +1224,63 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "icon’s role"
-          ]
-        },
-        {
-          "id": "gradients",
-          "eyebrow": "COLOR BLENDS",
-          "title": "A gradient can change the message",
-          "body": [
-            "For cyan, a blue blend improved clarity; a green blend reduced it. Keep the two ends similarly bright and test the blend in AR."
+            "visual prominence",
+            "clarity, comfort and meaning"
           ],
-          "nav": "Gradients",
-          "figures": [
+          "findings": [
             {
+              "title": "Maximum screen contrast is not the goal",
+              "metric": "4.75 / 5",
+              "body": "The blue–yellow pair scored 4.75/5 for outdoor clarity. Several participants found it clear and comfortable, while blue–white could feel glaring despite its higher screen contrast.",
+              "sourceNotes": [
+                "Paper §4.5–4.6, pp.18–21. Hue240 complementary outdoor clarity4.75, indoor5.00; contrast white>9:1 versus complementary8.4:1. No universal comfort score inferred."
+              ]
+            },
+            {
+              "title": "Keep gradient endpoints similarly bright",
+              "metric": "±30°",
+              "body": "For cyan, blending toward blue improved clarity; blending toward green reduced it. Similar endpoint brightness helps preserve the intended color and meaning.",
               "src": "/assets/design-revision/icon-gradients.svg",
-              "width": 700.0,
-              "height": 248.0,
               "alt": "cyan-green, plain cyan and cyan-blue examples with their observed clarity labels.",
-              "caption": "For cyan: cyan + green was less clear; plain cyan was the baseline; cyan + blue was clearer. Tested hue shifts were ±30°.",
-              "displayWidth": 420,
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                   "nodeId": "1792:288"
                 }
+              ],
+              "sourceNotes": [
+                "Paper §6.2, p.31: hue180 +30° clarity increases, −30° decreases. The same rule did not generalize identically to every hue."
               ]
             }
           ],
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "1699:293"
-            }
-          ],
-          "items": [],
-          "layout": "editorial",
-          "highlights": [
-            "blue blend improved clarity",
-            "green blend reduced it"
-          ]
-        },
-        {
-          "id": "reflection",
-          "eyebrow": "REFLECTION",
-          "title": "Meaning depends on the audience",
-          "body": [
-            "Together, these bar and music colors evoked electronic clubs, mystery and cyberpunk. Participants could read the unusual pairs as youthful and stylish."
-          ],
-          "nav": "Reflection",
-          "figures": [
-            {
-              "src": "/assets/design-revision/icon-audience.svg",
-              "width": 352.0,
-              "height": 202.0,
-              "alt": "opposite-color bar and music icons.",
-              "caption": "Some participants found these bar and music colors youthful and stylish. Opposite colors were not always a poor fit.",
-              "displayWidth": 280,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1792:319"
-                }
-              ]
-            }
-          ],
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "1699:293"
-            }
-          ],
-          "items": [],
-          "layout": "editorial",
-          "highlights": [
-            "youthful and stylish"
+          "audience": {
+            "title": "Leave room for unexpected color pairings",
+            "body": "Unusual pairings, including green and purple, can open new design directions. For bar and music icons, some participants found complementary colors clear, youthful and stylish. Explore beyond familiar palettes, then test whether the intended audience finds the result comfortable and meaningful.",
+            "figures": [
+              {
+                "src": "/assets/design-revision/icon-audience.svg",
+                "width": 352.0,
+                "height": 202.0,
+                "alt": "opposite-color bar and music icons.",
+                "caption": "Some participants found these bar and music colors youthful and stylish. Opposite colors were not always a poor fit.",
+                "displayWidth": 280,
+                "sourceRefs": [
+                  {
+                    "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                    "nodeId": "1792:319"
+                  }
+                ]
+              }
+            ],
+            "sourceNotes": [
+              "Paper §5.3, pp.27–28: complementary bar(hue285) and music(hue315) can be clear and semantically fitting, with youthful and stylish associations. This is not a finding that all green–purple pairs score highly on both clarity and comfort. Paper §4.5 also includes a participant who found purple–green clear but too strong."
+            ]
+          },
+          "sourceNotes": [
+            "Merged the previous Data analysis, Guidelines, Gradients and Reflection sections; preserves the practical conclusions and original non-repeated images without four separate headings.",
+            "Priority forms: paper §7.1, pp.35–36. Shadow clarity gain: §6.2, pp.30–31. B30 is HSB brightness, not opacity.",
+            "The manuscript prose gives an outline score3.708→4.125, but Figure14 differs; this page deliberately uses the source-supported qualitative conclusion instead of displaying disputed numbers.",
+            "Guidelines are bounded to tested static2D icons and optical see-through conditions; future moving3D, broader populations and devices remain future work."
           ]
         },
         {
@@ -1307,7 +1313,8 @@
           "layout": "editorial",
           "sourceNotes": [
             "Icon Color Design paper §7.1, §8 and §9; proposed future work, not validated applications."
-          ]
+          ],
+          "textLayout": "full-width"
         }
       ],
       "role": {
@@ -1323,8 +1330,7 @@
       },
       "outcome": [
         "Guidelines for AR icon clarity, comfort and meaning",
-        "Three treatments for different levels of urgency",
-        "Journal manuscript under review · SSRN preprint available"
+        "Three treatments for different levels of urgency"
       ],
       "sourceNotes": [],
       "tags": [
@@ -1339,8 +1345,8 @@
     {
       "id": "traditional-color",
       "title": "Color in Context",
-      "subtitle": "A color carries a story",
-      "description": "A research-led website for choosing traditional Chinese colors through their origins, cultural meanings and historical context.",
+      "subtitle": "",
+      "description": "A research-led website for Chinese product designers to choose traditional Chinese colors through their origins, cultural meanings and historical context.",
       "kicker": "CULTURAL HERITAGE · INFORMATION DESIGN",
       "meta": [
         "ColoGene · Oct 2025–Jan 2026",
@@ -1349,15 +1355,18 @@
       "stats": [
         {
           "value": "12",
-          "label": "Formative interviewees"
+          "label": "Formative interviewees",
+          "group": "ColoGene"
         },
         {
           "value": "10",
-          "label": "ColoGene pilot participants"
+          "label": "Pilot participants",
+          "group": "ColoGene"
         },
         {
           "value": "25",
-          "label": "Atlas study participants"
+          "label": "Study participants",
+          "group": "Color Atlas"
         }
       ],
       "links": [
@@ -1413,7 +1422,7 @@
               "title": "ColoGene",
               "version": "Version 1.0",
               "status": "CHI Poster 2026",
-              "body": "12 formative interviews → ColoGene → a separate 5 + 5 pilot."
+              "body": "Twelve interviews informed ColoGene’s design. A separate group of ten designers tested it: five used ColoGene and five used their usual workflow."
             },
             {
               "title": "Color Atlas",
@@ -1444,7 +1453,7 @@
           "eyebrow": "DESIGNER RESEARCH",
           "title": "How designers choose a color",
           "body": [
-            "We began with 12 participants with humanities and design backgrounds. In 30–45-minute interviews, we asked how they found, compared and explained traditional colors."
+            "We interviewed 12 participants with humanities and design backgrounds for 30 to 45 minutes each, asking how they found, compared and explained traditional colors."
           ],
           "items": [
             {
@@ -1461,7 +1470,7 @@
             }
           ],
           "quote": null,
-          "nav": "Research",
+          "nav": "Problem statement",
           "figures": [],
           "figureLayout": "default",
           "sourceRefs": [
@@ -1472,7 +1481,7 @@
           ],
           "highlights": [
             "12 participants",
-            "30–45-minute",
+            "30 to 45 minutes",
             "Zhu Sha"
           ],
           "colorSwatches": [
@@ -1488,7 +1497,7 @@
           "eyebrow": "VERSION 1 · COLOGENE",
           "title": "ColoGene",
           "body": [
-            "The interviews showed a gap between finding an attractive color and explaining why it belongs. We built ColoGene to bring those decisions together.",
+            "Our interviews with 12 participants revealed a gap between finding an attractive color and explaining why it belongs. We built ColoGene to bring those decisions together.",
             "Five entry points connect names and origins, hue, color family, dynasty, and scene palettes."
           ],
           "items": [],
@@ -1548,6 +1557,7 @@
             }
           ],
           "highlights": [
+            "12 participants",
             "finding an attractive color",
             "explaining why it belongs",
             "Five entry points",
@@ -1606,15 +1616,14 @@
             "within 15 minutes",
             "8.66 versus 1.21 points",
             "small pilot"
-          ]
+          ],
+          "navParent": "colorgene"
         },
         {
           "id": "atlas",
           "eyebrow": "VERSION 2 · COLOR ATLAS",
           "title": "Color Atlas",
-          "body": [
-            "Pilot feedback called for fuller sources and palettes tied to a designer’s brief. Color Atlas connects the records and introduces intent-based palette recommendations."
-          ],
+          "body": [],
           "items": [],
           "nav": "Atlas",
           "figures": [],
@@ -1631,9 +1640,7 @@
             {
               "id": "connections",
               "title": "From origins to color families",
-              "body": [
-                "Follow the original 100-color demonstration: four origins connect to eight color families. English notes explain the selected Chinese color record."
-              ],
+              "body": [],
               "figures": [],
               "highlights": [
                 "100 colors",
@@ -1694,12 +1701,14 @@
               "id": "brief",
               "title": "From a brief to five colors",
               "body": [
-                "Four original design briefs unfold into five-color palettes. Scroll to reveal each color and its origin in Chinese and English."
+                "ColoGene users asked for ready-made color combinations and palettes tailored to specific scenes. We added Zhao Se (召色, “summon colors”) to Color Atlas: designers enter a brief, and AI draws on color records and palette knowledge to suggest combinations that fit the historical era and the design. The examples below show how it works."
               ],
               "figures": [],
               "highlights": [
-                "Four original design briefs",
-                "five-color palettes"
+                "ready-made color combinations",
+                "palettes tailored to specific scenes",
+                "Zhao Se",
+                "historical era"
               ],
               "demo": {
                 "kind": "native-scroll",
@@ -1810,7 +1819,8 @@
             "output/color-portfolio/condensed-interview-evidence.md",
             "output/color-portfolio/interview-evidence.md",
             "User-confirmed25designers;three usual-workflow plus three Atlas artworks"
-          ]
+          ],
+          "navParent": "atlas"
         },
         {
           "id": "future",
@@ -2025,6 +2035,7 @@
         "AI Assistance"
       ],
       "highlights": [
+        "Chinese product designers",
         "origins, cultural meanings and historical context"
       ]
     },

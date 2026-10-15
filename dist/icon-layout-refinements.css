@@ -1,0 +1,128 @@
+/* Keep the portfolio's comic sequence and wording as original artwork + live text. */
+body[data-project=icon-colors] .icon-comic-overview{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto auto;gap:14px 20px;align-items:start;max-width:660px;width:100%;margin:0 auto;padding:0;border:0;
+}
+body[data-project=icon-colors] .icon-overview-scene{display:block;margin:0;min-width:0}
+body[data-project=icon-colors] .icon-overview-scene[data-comic-step="01"]{grid-column:1;grid-row:1}
+body[data-project=icon-colors] .icon-overview-scene[data-comic-step="02"]{grid-column:2;grid-row:1/3}
+body[data-project=icon-colors] .icon-overview-scene>img{display:block;width:100%;height:155px;max-height:none;object-fit:contain;object-position:center bottom}
+body[data-project=icon-colors] .icon-overview-scene[data-comic-step="02"]>img{height:205px}
+body[data-project=icon-colors] .icon-overview-scene figcaption{display:block!important;padding:0!important;margin:8px 0 0!important;border:0}
+body[data-project=icon-colors] .icon-overview-scene figcaption>span{display:none}
+body[data-project=icon-colors] .icon-comic-copy,body[data-project=icon-colors] .icon-comic-reactions{background:#77fbfe;color:#071719;padding:11px 13px}
+body[data-project=icon-colors] .icon-comic-reactions{margin-top:8px}
+body[data-project=icon-colors] .icon-overview-scene p{font:400 17px/1.38 var(--font-body);letter-spacing:0;color:#071719;margin:0;text-wrap:pretty}
+body[data-project=icon-colors] .icon-overview-scene p+p{margin-top:3px}
+body[data-project=icon-colors] .case-study .icon-overview-scene p strong{color:#071719!important;font-weight:700}
+body[data-project=icon-colors] .icon-overview-scene[data-comic-step="03"]{display:contents}
+body[data-project=icon-colors] .icon-overview-scene[data-comic-step="03"]>img{grid-column:1;grid-row:2;height:137px}
+body[data-project=icon-colors] .icon-overview-scene[data-comic-step="03"]>figcaption{grid-column:1/-1;grid-row:3;margin:0!important}
+body[data-project=icon-colors] .icon-overview-scene[data-comic-step="03"] .icon-comic-copy{padding:12px 15px}
+
+/* Highlights share the project's blue-cyan accent; captions remain readable prose. */
+body[data-project=icon-colors] .case-study :is(p,blockquote,li) strong{color:var(--accent)}
+body[data-project=icon-colors] .case-study .text-emphasis{color:var(--accent)!important}
+body[data-project=icon-colors] .case-study :is(#abstract,#workshop,#refinement,#future){display:block!important}
+body[data-project=icon-colors] .case-study :is(#abstract,#workshop,#refinement,#future)>.section-heading{max-width:none;margin:0!important}
+body[data-project=icon-colors] .case-study :is(#abstract,#workshop,#refinement,#future)>.section-body{position:static!important;display:block!important;width:100%;max-width:none!important;margin:22px 0 0!important;padding:0;grid-column:1/-1;grid-row:auto}
+body[data-project=icon-colors] .case-study :is(#abstract,#workshop,#refinement,#future)>.section-body>p{max-width:none!important;width:100%;text-wrap:pretty}
+body[data-project=icon-colors] .case-study #refinement>.section-visuals{position:static!important;display:block!important;grid-column:1/-1;grid-row:auto;margin:30px 0 0;width:100%;max-width:none}
+body[data-project=icon-colors] .case-study #refinement>.section-body{order:1}
+body[data-project=icon-colors] .case-study #refinement>.section-visuals{order:2}
+body[data-project=icon-colors] #abstract .icon-abstract-pairs{display:none}
+
+/* Screen rules and AR light are compared together, then the original design levers. */
+body[data-project=icon-colors] .icon-context-explanation{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:35px;margin-top:-30px}
+body[data-project=icon-colors] .icon-context-explanation p{margin:0;font-size:20px;line-height:1.5}
+body[data-project=icon-colors] #problem .icon-abstract-pairs{padding-top:30px;margin-top:34px;border-top:1px solid var(--line);gap:35px}
+body[data-project=icon-colors] .icon-abstract-pair-art{height:94px;gap:16px}
+body[data-project=icon-colors] .icon-abstract-t-pair{position:static;overflow:visible;width:185px;height:82px;flex:none}
+body[data-project=icon-colors] .icon-abstract-t-pair img{position:static;width:185px!important;height:82px!important;object-fit:contain}
+body[data-project=icon-colors] .icon-abstract-opposite{display:block;width:76px;flex:none}
+body[data-project=icon-colors] .icon-abstract-opposite .icon-specimen-disc{width:76px}
+body[data-project=icon-colors] .icon-abstract-pairs figcaption{margin-top:17px!important}
+body[data-project=icon-colors] .icon-abstract-pairs h3{font-size:22px}
+body[data-project=icon-colors] .icon-abstract-pairs p{font-size:17px}
+
+/* Parking is the shared worked example: all twelve original alternatives stay visible. */
+body[data-project=icon-colors] .icon-gallery-heading{font:600 27px/1.25 var(--font-body);margin:0 0 26px}
+body[data-project=icon-colors] .icon-parking-example h4,body[data-project=icon-colors] .icon-weather-treatments h4{font:600 20px/1.3 var(--font-body);color:var(--accent);margin:0 0 23px}
+body[data-project=icon-colors] .icon-parking-alternatives{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:28px 28px}
+body[data-project=icon-colors] .icon-parking-alternatives figure{margin:0;min-width:0;text-align:center}
+body[data-project=icon-colors] .icon-parking-alternatives figure>img{display:block;width:80px;height:80px;object-fit:contain;margin:0 auto;border-radius:50%}
+body[data-project=icon-colors] .icon-parking-alternatives .icon-tested-art{width:80px}
+body[data-project=icon-colors] .icon-parking-alternatives figcaption{display:block!important;font:400 16px/1.4 var(--font-body);color:var(--ink);text-align:center;margin:0;padding:13px 0 0!important;max-width:160px;margin-inline:auto}
+body[data-project=icon-colors] .icon-weather-treatments{margin-top:40px}
+body[data-project=icon-colors] .icon-weather-treatments .icon-tested-row{grid-template-columns:repeat(5,minmax(0,1fr));max-width:900px;gap:28px}
+body[data-project=icon-colors] .icon-weather-treatments .icon-tested-art{width:76px}
+body[data-project=icon-colors] .icon-weather-treatments figcaption{font-size:16px;line-height:1.4;color:var(--ink)}
+body[data-project=icon-colors] .icon-alternatives-all{gap:30px;margin-top:42px}
+body[data-project=icon-colors] .icon-alternative-family h4{font-size:20px;color:var(--accent);margin-bottom:20px}
+body[data-project=icon-colors] .icon-alternative-family>div{gap:20px}
+body[data-project=icon-colors] .icon-alternative-family img{width:72px;max-width:100%;height:72px;object-fit:contain}
+body[data-project=icon-colors] .icon-alternative-family figcaption{font-size:15px;line-height:1.4;color:var(--ink)}
+
+/* A single conclusion: urgency, evidence, then the less conventional color pairings. */
+body[data-project=icon-colors] #guidelines.icon-guidelines-combined{display:block!important}
+body[data-project=icon-colors] .icon-guidance-content{margin-top:22px}
+body[data-project=icon-colors] .icon-guidance-intro p{font:400 20px/1.55 var(--font-body);margin:0 0 24px;max-width:100%;text-wrap:pretty}
+body[data-project=icon-colors] .icon-priority-guidance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px;margin-top:32px}
+body[data-project=icon-colors] .icon-priority-label{display:block;color:var(--accent);font:600 15px/1.4 var(--font-body);letter-spacing:.04em;margin-bottom:17px}
+body[data-project=icon-colors] .icon-priority-guidance figure{height:100px;display:flex;align-items:center;margin:0 0 22px}
+body[data-project=icon-colors] .icon-priority-guidance figure img{width:100%;max-width:320px;height:100px;object-fit:contain;object-position:left center}
+body[data-project=icon-colors] .icon-guidance-content h3{font:600 24px/1.25 var(--font-body);margin:0 0 14px;text-wrap:pretty}
+body[data-project=icon-colors] .icon-guidance-content p{font:400 18px/1.5 var(--font-body);margin:0;text-wrap:pretty}
+body[data-project=icon-colors] .icon-priority-guidance .icon-guidance-evidence{color:var(--muted);margin-top:14px;font-size:17px}
+body[data-project=icon-colors] .icon-priority-guidance .icon-guidance-takeaway{margin-top:16px;padding-left:14px;border-left:2px solid var(--accent);color:var(--accent);font-size:18px}
+body[data-project=icon-colors] .icon-guidance-findings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px;margin-top:42px;padding-top:34px;border-top:1px solid var(--line)}
+body[data-project=icon-colors] .icon-guidance-findings article{min-width:0;display:flex;flex-direction:column}
+body[data-project=icon-colors] .icon-guidance-findings figure{order:1;margin:24px 0 0;height:110px;display:flex;align-items:center}
+body[data-project=icon-colors] .icon-guidance-findings img{max-width:360px;width:100%;height:110px;object-fit:contain;object-position:left center}
+body[data-project=icon-colors] .icon-guidance-metric{display:block;font:600 30px/1.2 var(--font-display);color:var(--accent);margin:0 0 14px}
+body[data-project=icon-colors] .icon-guidance-audience{display:grid;grid-template-columns:220px minmax(0,1fr);gap:38px;align-items:center;margin-top:38px;padding-top:30px;border-top:1px solid var(--line)}
+body[data-project=icon-colors] .icon-guidance-audience-art img{display:block;max-width:220px;width:100%;height:auto;object-fit:contain}
+body[data-project=icon-colors] .icon-guidance-audience h3{margin-bottom:12px}
+
+@media(max-width:1100px){
+ body[data-project=icon-colors] .icon-comic-overview{max-width:780px;margin-top:24px}
+ body[data-project=icon-colors] .icon-overview-scene>img{height:210px}
+ body[data-project=icon-colors] .icon-overview-scene[data-comic-step="02"]>img{height:255px}
+ body[data-project=icon-colors] .icon-overview-scene[data-comic-step="03"]>img{height:170px}
+ body[data-project=icon-colors] .icon-context-explanation{margin-top:0}
+ body[data-project=icon-colors] .icon-priority-guidance{gap:26px}
+}
+@media(max-width:760px){
+ body[data-project=icon-colors] .icon-comic-overview{gap:12px 16px}
+ body[data-project=icon-colors] .icon-overview-scene>img{height:155px}
+ body[data-project=icon-colors] .icon-overview-scene[data-comic-step="02"]>img{height:190px}
+ body[data-project=icon-colors] .icon-overview-scene[data-comic-step="03"]>img{height:140px}
+ body[data-project=icon-colors] .icon-overview-scene p{font-size:17px}
+ body[data-project=icon-colors] .icon-comic-copy,body[data-project=icon-colors] .icon-comic-reactions{padding:10px}
+ body[data-project=icon-colors] .icon-context-explanation{grid-template-columns:1fr;gap:18px}
+ body[data-project=icon-colors] #problem .icon-abstract-pairs{grid-template-columns:1fr;gap:30px}
+ body[data-project=icon-colors] .icon-abstract-pairs figure{display:block}
+ body[data-project=icon-colors] .icon-parking-alternatives{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 16px}
+ body[data-project=icon-colors] .icon-parking-alternatives figcaption{font-size:15px}
+ body[data-project=icon-colors] .icon-weather-treatments .icon-tested-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 18px}
+ body[data-project=icon-colors] .icon-alternative-family>div{grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 15px}
+ body[data-project=icon-colors] .icon-priority-guidance{grid-template-columns:1fr;gap:35px}
+ body[data-project=icon-colors] .icon-priority-guidance figure{margin-bottom:18px;max-width:320px}
+ body[data-project=icon-colors] .icon-guidance-findings{grid-template-columns:1fr;gap:34px}
+ body[data-project=icon-colors] .icon-guidance-audience{grid-template-columns:150px minmax(0,1fr);gap:24px;align-items:start}
+ body[data-project=icon-colors] .icon-guidance-content h3{font-size:23px}
+}
+@media(max-width:540px){
+ body[data-project=icon-colors] .icon-comic-overview{gap:12px}
+ body[data-project=icon-colors] .icon-overview-scene>img{height:120px}
+ body[data-project=icon-colors] .icon-overview-scene[data-comic-step="02"]>img{height:150px}
+ body[data-project=icon-colors] .icon-overview-scene[data-comic-step="03"]>img{height:120px}
+ body[data-project=icon-colors] .icon-overview-scene p{font-size:16px;line-height:1.4}
+ body[data-project=icon-colors] .icon-overview-scene[data-comic-step="03"] .icon-comic-copy{padding:11px 12px}
+ body[data-project=icon-colors] .icon-parking-alternatives{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+ body[data-project=icon-colors] .icon-parking-alternatives figcaption{font-size:16px}
+ body[data-project=icon-colors] .icon-alternative-family>div{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+ body[data-project=icon-colors] .icon-alternative-family img{width:80px;height:80px}
+ body[data-project=icon-colors] .icon-alternative-family figcaption{font-size:16px}
+ body[data-project=icon-colors] .icon-guidance-audience{grid-template-columns:1fr;gap:23px}
+ body[data-project=icon-colors] .icon-guidance-audience-art img{max-width:200px}
+}

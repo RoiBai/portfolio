@@ -1,0 +1,61 @@
+/* Version labels belong to the image they name. */
+body[data-project="traditional-color"] .color-version-image {
+  align-items:flex-end;
+  margin-bottom:14px;
+}
+body[data-project="traditional-color"] .color-version-image img {
+  object-position:center bottom;
+}
+body[data-project="traditional-color"] .color-version-caption {
+  width:100%;
+  text-align:center;
+  margin:0 0 12px;
+}
+body[data-project="traditional-color"] .color-version-meta {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:center;
+  column-gap:14px;
+  row-gap:3px;
+  margin-bottom:8px;
+}
+body[data-project="traditional-color"] .color-version-meta .color-version-number,
+body[data-project="traditional-color"] .color-version-status {
+  display:inline;
+  margin:0;
+  color:#795137;
+  font:500 15px/1.5 var(--font-body);
+  letter-spacing:.02em;
+}
+body[data-project="traditional-color"] .color-version-caption h3 {
+  margin:0!important;
+  text-align:center;
+}
+/* Keep matched artwork and testimony left, study explanation and evidence right. */
+body[data-project="traditional-color"] .color-pilot-results-copy {
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:24px;
+  min-width:0;
+}
+body[data-project="traditional-color"] .color-pilot-results-copy>.section-body {
+  display:block;
+  width:100%;
+  max-width:none!important;
+  margin:0;
+}
+body[data-project="traditional-color"] .color-pilot-results-copy>.section-body>p {
+  width:100%;
+  max-width:none!important;
+  font-size:20px!important;
+  line-height:1.5!important;
+  margin:0 0 16px!important;
+}
+body[data-project="traditional-color"] .color-pilot-results-copy>.section-body>p:last-child {margin-bottom:0!important}
+body[data-project="traditional-color"] .color-pilot-results-copy>.data-visual {margin:0}
+@media(max-width:700px) {
+  body[data-project="traditional-color"] .color-version-caption {grid-column:1}
+  body[data-project="traditional-color"] .color-pilot-results-copy {gap:22px}
+  body[data-project="traditional-color"] .color-pilot-results-copy>.section-body>p {font-size:18px!important}
+}

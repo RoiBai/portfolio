@@ -1,8 +1,9 @@
 /* One connected pilot chapter; evidence sits directly beneath its interface. */
 body[data-project=glancemap] #abstract{display:block!important}
-body[data-project=glancemap] #abstract>.section-body{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:20px 5%;margin-top:25px}
+body[data-project=glancemap] #abstract>.section-body{max-width:1120px;display:block;margin-top:25px}
 body[data-project=glancemap] #abstract>.section-body p{max-width:none!important;margin:0;font-size:var(--case-copy);line-height:1.55;text-wrap:pretty}
-body[data-project=glancemap] #abstract>.section-body p:last-child{grid-column:1/-1;padding-top:22px;border-top:1px solid var(--line)}
+body[data-project=glancemap] #abstract>.section-body p+p{margin-top:20px}
+body[data-project=glancemap] #abstract>.section-body p:last-child{padding-top:0;border-top:0}
 body[data-project=glancemap] #process.glance-pilot-collection{display:block;padding-block:40px}
 .glance-pilot-collection>.section-heading{max-width:none;margin:0!important}
 .glance-pilot-collection .pilot-introduction{padding:20px 0 30px;border:0;color:var(--ink)}
@@ -43,3 +44,42 @@ body[data-project=glancemap] .pilot-round .pilot-insight p{margin:12px 0 0}
 
 /* Match the two condition panels without changing either source image ratio. */
 @media(min-width:701px){body[data-project=glancemap] #pilot-round-2 .pilot-example>img{aspect-ratio:1910/897;object-fit:contain;background:#000}}
+
+/* Chapter rules mark the main story; internal groups use headings and spacing. */
+body[data-project=glancemap] #process .pilot-round,
+body[data-project=glancemap] #process .pilot-workshop,
+body[data-project=glancemap] #process .pilot-reasoning {
+ border-top:0;
+}
+body[data-project=glancemap] #process .pilot-workshop {padding-top:12px;padding-bottom:0}
+body[data-project=glancemap] #process .pilot-reasoning {padding-top:0}
+body[data-project=glancemap] #process .pilot-goals {
+ border-left:0;
+ padding-left:0;
+}
+body[data-project=glancemap] #process .pilot-feedback {
+ border-left:0!important;
+ padding-left:0!important;
+}
+body[data-project=glancemap] #process .pilot-history-note {
+ border-left:0;
+ padding-left:0;
+}
+body[data-project=glancemap] .walk-scene aside {
+ border-top:0;
+ padding-top:0;
+}
+body[data-project=glancemap] .glance-design-question {border-left:0}
+body[data-project=glancemap] #study .study-facts>div {border-bottom:0}
+body[data-project=glancemap] #study .study-measures {border-top:0;padding-top:0}
+body[data-project=glancemap] #findings .gr-result-pair {
+ border-top:0;
+ border-bottom:0;
+}
+body[data-project=glancemap] #findings .gr-secondary>div {border-bottom:0}
+body[data-project=glancemap] #findings .gr-study-note {border-top:0}
+body[data-project=glancemap] #next .gr-next-list>li {border-top:0}
+body[data-project=glancemap] #next .gr-next-list>li>div:last-child {
+ border-left:0;
+ padding-left:0;
+}

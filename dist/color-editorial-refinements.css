@@ -1,0 +1,44 @@
+/* Distinguish the two ColoGene research rounds from the later Atlas study. */
+body[data-project="traditional-color"] .case-study .stats-grouped {
+  display:grid;grid-template-columns:2fr 1fr;gap:18px;
+  border:0;padding:0;margin-top:24px;
+}
+body[data-project="traditional-color"] .stats-grouped .stat-group {
+  padding:16px 22px 20px;background:#e2e9e8;border-radius:4px;min-width:0;
+}
+body[data-project="traditional-color"] .stats-grouped .stat-group:last-child {background:#e6e9d9}
+body[data-project="traditional-color"] .stats-grouped h3 {
+  margin:0 0 10px;font:600 17px/1.3 var(--font-body);color:#3f6578;text-align:center;
+}
+body[data-project="traditional-color"] .stat-group-values {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;
+}
+body[data-project="traditional-color"] .stat-group:last-child .stat-group-values {grid-template-columns:1fr}
+body[data-project="traditional-color"] .stat-item {text-align:center;min-width:0}
+body[data-project="traditional-color"] .stat-item>span {max-width:none;margin-inline:auto;text-wrap:balance}
+body[data-project="traditional-color"] .case-study :is(p,li,figcaption) {text-wrap:pretty}
+body[data-project="traditional-color"] .case-study :is(h2,h3,h4) {text-wrap:balance}
+body[data-project="traditional-color"] #atlas-study>.section-body {
+  grid-column:1/-1;grid-row:auto;width:100%;max-width:none;padding-top:0;
+}
+body[data-project="traditional-color"] #atlas-study>.section-body>p {width:100%;max-width:none!important}
+body[data-project="traditional-color"] .color-artwork-row-label {border-bottom:0;padding-bottom:0}
+body[data-project="traditional-color"] .color-artwork-row-subtitle {
+  display:inline-block;background:#dce6e7;color:#315565;padding:9px 15px;border-radius:3px;
+  font-weight:500;text-wrap:balance;
+}
+body[data-project="traditional-color"] .color-artwork-row-with .color-artwork-row-subtitle {
+  background:#cad9b8;color:#354b32;
+}
+body[data-project="traditional-color"] .atlas-native-sticky>.color-atlas-introduction:empty {display:none}
+body[data-project="traditional-color"] .atlas-native-sticky {grid-template-rows:auto auto auto minmax(0,1fr) auto}
+body[data-project="traditional-color"] #atlas-brief .color-atlas-copy {display:block;max-width:none}
+body[data-project="traditional-color"] #atlas-brief .color-atlas-copy>h3 {margin-bottom:20px}
+body[data-project="traditional-color"] #atlas-brief .color-atlas-copy>ul {list-style:none;padding:0;max-width:none;font-size:20px;line-height:1.5}
+@media(max-width:700px) {
+ body[data-project="traditional-color"] .case-study .stats-grouped {grid-template-columns:1fr;gap:12px}
+ body[data-project="traditional-color"] .stats-grouped .stat-group {padding:15px 17px 18px}
+ body[data-project="traditional-color"] .color-artwork-row-label {align-items:center;gap:12px}
+ body[data-project="traditional-color"] .color-artwork-row-subtitle {font-size:14px;padding:7px 10px}
+ body[data-project="traditional-color"] #atlas-brief .color-atlas-copy>ul {font-size:18px!important}
+}
