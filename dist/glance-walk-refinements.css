@@ -1,0 +1,48 @@
+/* The three walking states share rows, so their text and divider never jump. */
+@media(prefers-reduced-motion:no-preference){
+ body[data-project=glancemap] .walk-narration{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:auto auto auto auto auto minmax(16px,1fr) auto;
+  padding-top:33px;
+  padding-bottom:6px;
+ }
+ body[data-project=glancemap] .walk-scene{
+  position:static;
+  inset:auto;
+  grid-column:1;
+  grid-row:1/6;
+  display:grid;
+  grid-template-rows:subgrid;
+  align-content:start;
+  justify-content:normal;
+  padding:0;
+  margin:0;
+  transform:none;
+  transition:opacity .3s;
+ }
+ body[data-project=glancemap] .walk-scene>*{min-width:0;align-self:start}
+ body[data-project=glancemap] .walk-navigation{
+  position:static;
+  grid-column:1;
+  grid-row:7;
+  align-self:end;
+  min-height:37px;
+ }
+ body[data-project=glancemap] .walk-scene aside{margin-bottom:0}
+ body[data-project=glancemap] .walk-traveller .walk-listening{transition:opacity .12s linear}
+ body[data-project=glancemap] .podcast-wave i{animation-name:glance-walk-wave-pulse;opacity:1}
+ @media(max-width:800px){body[data-project=glancemap] .walk-narration{padding-top:17px}}
+ @media(max-width:540px){
+  body[data-project=glancemap] .walk-sticky{grid-template-rows:auto 26% minmax(0,1fr)}
+  body[data-project=glancemap] .walk-narration{padding-top:0;padding-bottom:0;grid-template-rows:auto auto auto auto auto minmax(10px,1fr) auto}
+  body[data-project=glancemap] .walk-navigation{min-height:29px}
+ }
+ /* The existing landscape fallback remains a readable three-part article. */
+ @media(min-width:701px) and (max-height:650px){
+  body[data-project=glancemap] .walk-narration{display:block;padding:0}
+  body[data-project=glancemap] .walk-scene{display:flex;margin-bottom:45px;padding-top:16px}
+  body[data-project=glancemap] .walk-navigation{display:none}
+ }
+}
+@keyframes glance-walk-wave-pulse{to{transform:scaleY(.3)}}

@@ -1,0 +1,45 @@
+/* One connected pilot chapter; evidence sits directly beneath its interface. */
+body[data-project=glancemap] #abstract{display:block!important}
+body[data-project=glancemap] #abstract>.section-body{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:20px 5%;margin-top:25px}
+body[data-project=glancemap] #abstract>.section-body p{max-width:none!important;margin:0;font-size:var(--case-copy);line-height:1.55;text-wrap:pretty}
+body[data-project=glancemap] #abstract>.section-body p:last-child{grid-column:1/-1;padding-top:22px;border-top:1px solid var(--line)}
+body[data-project=glancemap] #process.glance-pilot-collection{display:block;padding-block:40px}
+.glance-pilot-collection>.section-heading{max-width:none;margin:0!important}
+.glance-pilot-collection .pilot-introduction{padding:20px 0 30px;border:0;color:var(--ink)}
+.glance-pilot-collection .pilot-introduction p{font:400 clamp(21px,2vw,28px)/1.45 var(--font-body);max-width:none;margin:0;color:var(--ink)}
+.glance-pilot-collection .pilot-introduction strong{font-weight:700;color:var(--accent)}
+.pilot-round{padding:34px 0 38px;border-top:1px solid var(--line)}
+.pilot-round:last-child{padding-bottom:0}
+.pilot-round-heading h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px 24px;font:600 clamp(25px,2.4vw,34px)/1.25 var(--font-body);margin:0}
+body[data-project=glancemap] .pilot-round-heading .pilot-count{font:650 clamp(21px,1.9vw,27px)/1.25 var(--font-body);color:var(--accent);white-space:nowrap;margin:0}
+.pilot-round-heading>p{font:400 20px/1.4 var(--font-body);margin:10px 0 0;color:var(--muted)}
+body[data-project=glancemap] .pilot-round .pilot-gallery{margin:25px 0 0;gap:6%;align-items:start}
+body[data-project=glancemap] .pilot-round .pilot-example{max-width:560px;width:100%;margin:0 auto}
+body[data-project=glancemap] .pilot-round .pilot-example>img{width:100%;height:auto;max-height:none;object-fit:contain}
+body[data-project=glancemap] .pilot-round .pilot-example figcaption{justify-content:flex-start;padding-top:14px!important;font-size:23px!important}
+.pilot-example-note{font:400 18px/1.5 var(--font-body);margin:12px 0 0;color:var(--muted);text-wrap:pretty}
+.pilot-source-link{color:var(--accent);white-space:nowrap;text-decoration:underline;text-underline-offset:4px}
+body[data-project=glancemap] .pilot-round .pilot-feedback{font:500 21px/1.45 var(--font-body);margin:26px 0 0;padding:5px 0 5px 22px!important;border:0!important;border-left:3px solid var(--accent)!important;max-width:1040px;text-wrap:pretty;color:var(--ink)}
+.pilot-feedback cite{display:block;font:400 14px/1.4 var(--font-body);color:var(--muted);margin-top:10px}
+.pilot-workshop{display:grid;grid-template-columns:1fr 1fr;gap:6%;align-items:center;margin-top:28px;padding:25px 0;border-top:1px solid var(--line)}
+.pilot-workshop h4{font:600 24px/1.3 var(--font-body);margin:10px 0 12px}
+.pilot-workshop p,.pilot-history-note{font:400 19px/1.5 var(--font-body);color:var(--muted);margin:0;text-wrap:pretty}
+body[data-project=glancemap] .pilot-workshop .pilot-feedback{margin:0;font-size:21px}
+.pilot-history-note{max-width:1040px;margin:25px 0 0;border-left:3px solid var(--accent);padding-left:22px}
+body[data-project=glancemap] .pilot-round .pilot-reasoning{margin-top:25px;padding-top:24px}
+body[data-project=glancemap] .pilot-round .pilot-insight p{margin:12px 0 0}
+@media(max-width:700px){
+ body[data-project=glancemap] #abstract>.section-body{display:block}
+ body[data-project=glancemap] #abstract>.section-body p+p{margin-top:20px}
+ .pilot-workshop{grid-template-columns:1fr;gap:22px}
+ .pilot-round-heading h3{font-size:26px;gap:8px 15px}
+ .pilot-round-heading>p{font-size:19px}
+ .pilot-round{padding-block:27px}
+ .pilot-example-note{font-size:18px}
+ body[data-project=glancemap] .pilot-round .pilot-gallery{grid-template-columns:1fr;gap:25px}
+ body[data-project=glancemap] .pilot-round .pilot-reasoning{grid-template-columns:1fr;gap:22px}
+ body[data-project=glancemap] .pilot-round .pilot-goals{padding-left:0;border-left:0}
+}
+
+/* Match the two condition panels without changing either source image ratio. */
+@media(min-width:701px){body[data-project=glancemap] #pilot-round-2 .pilot-example>img{aspect-ratio:1910/897;object-fit:contain;background:#000}}

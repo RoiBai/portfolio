@@ -1,0 +1,77 @@
+/* Keep the six design goals and the original interface inside one desktop scene. */
+@media (min-width: 801px) and (min-height: 701px) {
+  body[data-project=glancemap] .goals-sticky {
+    display:flex;
+    flex-direction:column;
+    height:calc(100svh - 100px);
+    max-height:860px;
+    min-height:0;
+    gap:12px;
+  }
+  body[data-project=glancemap] .goals-story-heading {
+    flex:0 0 auto;
+    margin-bottom:0;
+  }
+  body[data-project=glancemap] .goals-composition {
+    flex:1 1 0;
+    height:auto;
+    min-height:0;
+    grid-template-rows:max-content minmax(0,1fr) max-content;
+    row-gap:34px;
+    padding-bottom:8px;
+  }
+  body[data-project=glancemap] .goals-composition>.goal-interface {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%!important;
+    min-height:0;
+    overflow:visible;
+  }
+  body[data-project=glancemap] .goal-interface img {
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+    flex:0 1 auto;
+    object-fit:contain;
+  }
+  body[data-project=glancemap] .goals-composition>.goal-callout {
+    max-width:260px;
+    min-width:0;
+  }
+  body[data-project=glancemap] .goal-callout :is(h3,p) {
+    overflow:visible;
+    height:auto;
+    max-height:none;
+  }
+}
+@media (min-width: 801px) and (min-height: 701px) and (prefers-reduced-motion:reduce) {
+  body[data-project=glancemap] .goal-leaders {display:block}
+  body[data-project=glancemap] .goal-callout,
+  body[data-project=glancemap] .goal-leader,
+  body[data-project=glancemap] .goal-leader i {
+    opacity:1!important;
+    transform:none;
+    transition:none;
+  }
+  body[data-project=glancemap] .goal-leader i {scale:1 1}
+}
+@media (min-width: 801px) and (max-height: 700px) {
+  body[data-project=glancemap] .goals-scroll-track {height:auto}
+  body[data-project=glancemap] .goals-sticky {
+    position:static;
+    display:block;
+    height:auto;
+    min-height:0;
+    max-height:none;
+  }
+  body[data-project=glancemap] .goals-composition {
+    height:auto;
+    min-height:0;
+    grid-template-rows:auto auto auto;
+    row-gap:30px;
+  }
+  body[data-project=glancemap] .goals-composition>.goal-interface {height:auto!important}
+  body[data-project=glancemap] .goal-callout {opacity:1!important;transform:none}
+}

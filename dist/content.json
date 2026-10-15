@@ -52,9 +52,9 @@
         "cutout": "/cutouts/glancemap.png"
       },
       "hero": {
-        "src": "/assets/editorial-20261014/glance-371@4x.png",
-        "width": 8192,
-        "height": 3188,
+        "src": "/assets/glance-clarity/teaser-native-lossless.png",
+        "width": 2010,
+        "height": 782,
         "alt": "GlanceMap pairs a growing mind map with illustrations while the listener walks.",
         "caption": "GlanceMap in use. The lesson shown is example study material.",
         "displayWidth": 960,
@@ -71,8 +71,9 @@
           "eyebrow": "OVERVIEW",
           "title": "A mind map that grows with the audio",
           "body": [
-            "While walking, learners look away to check the path. The audio continues—and the connection between ideas can be lost.",
-            "GlanceMap pairs illustrations with a mind map that grows with the audio. Earlier ideas stay visible, so listeners can find their place again."
+            "We see AR glasses as a future everyday companion. Learning on the go could turn a walk or commute into time for learning, with hands free and attention still available for the surroundings.",
+            "But learning podcasts demand concentration. Listeners look away to check the path, then return to an explanation that has already moved on. They may remember individual words but lose how the ideas connect.",
+            "Across 14 pilot rounds and a designer workshop, we developed GlanceMap: illustrations paired with a mind map that grows with the audio and keeps earlier ideas visible. In a 16-person study, it improved free recall by 9.6 percentage points immediately and 7.0 points after seven days over an AudioXtend-inspired Illustration Only baseline. The design insight: reveal ideas in time with the audio, while preserving a readable path back through their relationships."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -84,8 +85,15 @@
           ],
           "items": [],
           "highlights": [
+            "Learning on the go",
             "look away to check the path",
-            "Earlier ideas stay visible"
+            "lose how the ideas connect",
+            "14 pilot rounds",
+            "16-person study",
+            "9.6 percentage points",
+            "7.0 points",
+            "reveal ideas in time with the audio",
+            "preserving a readable path back"
           ]
         },
         {
@@ -198,183 +206,209 @@
         },
         {
           "id": "process",
-          "eyebrow": "ROUND 1",
-          "title": "Could fewer words help?",
-          "body": [
-            "Less text still needed context and the right timing. Isolated keywords left one learner relying on listening."
-          ],
-          "nav": "Pilots 1–3",
-          "figures": [
+          "nav": "Pilot study insights",
+          "title": "14 rounds, one evolving design",
+          "body": [],
+          "figures": [],
+          "rounds": [
             {
-              "src": "/assets/editorial-20261014/glance-532@4x.png",
-              "width": 2572,
-              "height": 896,
-              "displayWidth": 650,
-              "alt": "Full captions",
-              "caption": "Full captions",
+              "id": "process",
+              "eyebrow": "ROUND 1",
+              "title": "From full captions to keywords",
+              "body": [
+                "Selecting the key words removed unnecessary connectors and adverbs. Learners captured more keyword information, but still missed the big picture."
+              ],
+              "nav": "Pilots 1–3",
+              "figures": [
+                {
+                  "src": "/assets/glance-clarity/full-captions-original.png",
+                  "width": 2350,
+                  "height": 802,
+                  "displayWidth": 650,
+                  "alt": "Full captions",
+                  "caption": "Full captions",
+                  "sourceRefs": [
+                    {
+                      "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                      "nodeId": "1827:532"
+                    }
+                  ]
+                },
+                {
+                  "src": "/assets/glance-clarity/naive-keywords-original.png",
+                  "width": 2350,
+                  "height": 802,
+                  "displayWidth": 650,
+                  "alt": "Naïve keywords",
+                  "caption": "Naïve keywords",
+                  "sourceRefs": [
+                    {
+                      "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                      "nodeId": "1827:535"
+                    }
+                  ]
+                }
+              ],
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1827:532"
+                  "nodeId": "918:364"
                 }
+              ],
+              "quote": {
+                "text": "“I don’t have time to read such long passages, so I keep missing content. The text blocks my view of the path and traffic lights—it could be unsafe.”",
+                "attribution": "Participant 4 · translated from project feedback"
+              },
+              "figureLayout": "comparison",
+              "items": [
+                {
+                  "title": "Insight → short, connected phrases",
+                  "body": "Keep text brief. Keep relationships visible."
+                }
+              ],
+              "highlights": [
+                "more keyword information",
+                "missed the big picture"
+              ],
+              "pilotParticipants": 13,
+              "figureNotes": [
+                "We started with the full-caption baseline: every spoken word stayed available as text.",
+                "We kept the key words and removed unnecessary connectors and adverbs. Less text helped people pick out information, but not its overall meaning."
               ]
             },
             {
-              "src": "/assets/editorial-20261014/glance-535@4x.png",
-              "width": 2572,
-              "height": 896,
-              "displayWidth": 650,
-              "alt": "Naïve keywords",
-              "caption": "Naïve keywords",
+              "id": "process-visuals",
+              "eyebrow": "ROUND 2",
+              "title": "Test visual shortcuts, then keep familiar meaning",
+              "body": [
+                "Symbols introduced another decoding task. Familiar relationships and concrete illustrations offered a clearer direction."
+              ],
+              "nav": "Pilots 4–9",
+              "figures": [
+                {
+                  "src": "/assets/glance-clarity/structured-keywords-original.png",
+                  "width": 2350,
+                  "height": 802,
+                  "displayWidth": 650,
+                  "alt": "Structured keywords",
+                  "caption": "Structured keywords",
+                  "sourceRefs": [
+                    {
+                      "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                      "nodeId": "1827:542"
+                    }
+                  ]
+                },
+                {
+                  "src": "/assets/glance-clarity/illustration-only-original.png",
+                  "width": 1910,
+                  "height": 897,
+                  "displayWidth": 650,
+                  "alt": "Illustration Only",
+                  "caption": "Illustration Only",
+                  "sourceRefs": [
+                    {
+                      "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                      "nodeId": "1827:545"
+                    }
+                  ]
+                }
+              ],
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1827:535"
+                  "nodeId": "918:364"
                 }
-              ]
-            }
-          ],
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "918:364"
-            }
-          ],
-          "quote": {
-            "text": "“No need to show full transcription.”",
-            "attribution": "Pilot 1 · summarized study notes"
-          },
-          "figureLayout": "comparison",
-          "items": [
-            {
-              "title": "Insight → short, connected phrases",
-              "body": "Keep text brief. Keep relationships visible."
-            }
-          ],
-          "highlights": [
-            "context and the right timing"
-          ],
-          "pilotParticipants": 13
-        },
-        {
-          "id": "process-visuals",
-          "eyebrow": "ROUND 2",
-          "title": "Could visuals help?",
-          "body": [
-            "Pictures were quick to grasp; words needed clear connections."
-          ],
-          "nav": "Pilots 4–9",
-          "figures": [
-            {
-              "src": "/assets/editorial-20261014/glance-542@4x.png",
-              "width": 2572,
-              "height": 896,
-              "displayWidth": 650,
-              "alt": "Structured keywords",
-              "caption": "Structured keywords",
-              "sourceRefs": [
+              ],
+              "items": [
                 {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1827:542"
+                  "title": "Insight → familiar structure",
+                  "body": "Use parent–child links and pictures for objects and scenes."
                 }
-              ]
-            },
-            {
-              "src": "/assets/editorial-20261014/glance-545@4x.png",
-              "width": 2572,
-              "height": 896,
-              "displayWidth": 650,
-              "alt": "Illustration Only",
-              "caption": "Illustration Only",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1827:545"
-                }
-              ]
-            }
-          ],
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "918:364"
-            }
-          ],
-          "items": [
-            {
-              "title": "Insight → familiar structure",
-              "body": "Use parent–child links and pictures for objects and scenes."
-            }
-          ],
-          "figureLayout": "comparison",
-          "quote": {
-            "text": "“I know each word, but not what they mean together.”\n“I only need a glance or two.”",
-            "attribution": "Pilot 8 participant · translated"
-          },
-          "highlights": [
-            "clear connections"
-          ],
-          "pilotParticipants": 27
-        },
-        {
-          "id": "process-history",
-          "eyebrow": "ROUND 3",
-          "title": "How much should stay?",
-          "body": [
-            "Earlier branches gave learners a way back into the explanation."
-          ],
-          "nav": "Pilots 10–14",
-          "figures": [
-            {
-              "src": "/assets/editorial-20261014/glance-552@4x.png",
-              "width": 2572,
-              "height": 896,
-              "displayWidth": 650,
-              "alt": "Full logic map",
-              "caption": "Full logic map",
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1827:552"
-                }
+              ],
+              "figureLayout": "comparison",
+              "quote": {
+                "text": "“I don’t know what the designer means. I would rather read the words—understanding these symbols takes time.”",
+                "attribution": "Participant 3 · translated from project feedback"
+              },
+              "highlights": [
+                "another decoding task",
+                "Familiar relationships",
+                "concrete illustrations"
+              ],
+              "pilotParticipants": 27,
+              "figureNotes": [
+                "We organized keywords and tested visual ways to show their relationships.",
+                "Illustration Only follows the audio + illustration approach established by AudioXtend (CHI 2024)."
               ]
             },
             {
-              "src": "/assets/editorial-20261014/glance-555@4x.png",
-              "width": 2572,
-              "height": 896,
-              "displayWidth": 650,
-              "alt": "Partial logic map",
-              "caption": "Partial logic map",
+              "id": "process-history",
+              "eyebrow": "ROUND 3",
+              "title": "Keep the big picture, show the current idea",
+              "body": [
+                "The map needed both a clear current focus and readable history. Revealing ideas progressively only works if learners can return to earlier relationships."
+              ],
+              "nav": "Pilots 10–14",
+              "figures": [
+                {
+                  "src": "/assets/glance-clarity/full-logic-map-original.png",
+                  "width": 2350,
+                  "height": 802,
+                  "displayWidth": 650,
+                  "alt": "Full logic map",
+                  "caption": "Full logic map",
+                  "sourceRefs": [
+                    {
+                      "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                      "nodeId": "1827:552"
+                    }
+                  ]
+                },
+                {
+                  "src": "/assets/glance-clarity/partial-logic-map-original.png",
+                  "width": 2350,
+                  "height": 802,
+                  "displayWidth": 650,
+                  "alt": "Partial logic map",
+                  "caption": "Partial logic map",
+                  "sourceRefs": [
+                    {
+                      "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                      "nodeId": "1827:555"
+                    }
+                  ]
+                }
+              ],
               "sourceRefs": [
                 {
                   "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "1827:555"
+                  "nodeId": "918:364"
                 }
-              ]
+              ],
+              "figureLayout": "comparison",
+              "items": [
+                {
+                  "title": "Insight → reveal, then retain",
+                  "body": "Add nodes with the narration. Keep past branches readable."
+                }
+              ],
+              "highlights": [
+                "clear current focus",
+                "readable history"
+              ],
+              "pilotParticipants": 24,
+              "figureNotes": [
+                "A full logic map restored the big picture, but learners struggled to trace which part the audio was explaining now.",
+                "Removing earlier nodes clarified the current topic, but left nothing to return to during the podcast’s wrap-up."
+              ],
+              "historyNote": "We also tried gray past nodes and different map colors. Faded history was harder to read; earlier branches needed to remain legible."
             }
           ],
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "918:364"
-            }
-          ],
-          "figureLayout": "comparison",
-          "items": [
-            {
-              "title": "Insight → reveal, then retain",
-              "body": "Add nodes with the narration. Keep past branches readable."
-            }
-          ],
-          "quote": {
-            "text": "“I forgot what it had said.”\n“I used the mind map to help me recall what I had heard.”",
-            "attribution": "Pilot 10 · Participant 2 · translated"
-          },
-          "highlights": [
-            "a way back into the explanation"
-          ],
-          "pilotParticipants": 24
+          "sourceNotes": [
+            "Grouped participant counts 13 / 27 / 24 confirmed as actual counts by the project author, 15 October 2026. Participants differ by round.",
+            "Workshop: five UI/UX and HMD researchers, final manuscript section 3."
+          ]
         },
         {
           "id": "goals",
@@ -384,7 +418,7 @@
             "New ideas appear with the audio; earlier branches stay readable. Brief labels and familiar links make relationships easy to follow.",
             "The map explains relationships. Illustrations ground concrete ideas."
           ],
-          "nav": "Final design",
+          "nav": "GlanceMap design",
           "figures": [
             {
               "src": "/assets/design-followup/glance-final-design.svg",
@@ -421,23 +455,23 @@
             }
           ],
           "items": [],
-          "figureLayout": "final-design"
+          "figureLayout": "final-design",
+          "deck": "We brought the insights from 14 pilot rounds together in GlanceMap"
         },
         {
           "id": "baseline",
           "eyebrow": "THE COMPARISON",
           "title": "An illustrated baseline for audio learning",
           "body": [
-            "Both prototypes used the same narration, illustrations and timing. GlanceMap added a persistent mind map.",
-            "Illustration Only builds on AudioXtend (CHI 2024). One of AudioXtend’s co-authors joined this project.",
-            "In AudioXtend’s earlier study with 12 people, adding illustrations improved recall by 33.3% immediately and 32.7% after seven days, compared with audio alone. These are prior-work results, not GlanceMap’s results."
+            "We chose Illustration Only, developed during our pilots, as the comparison instead of full captions. It follows AudioXtend’s state-of-art approach to audio learning with illustrations.",
+            "Both interfaces used the same narration, illustrations and timing. GlanceMap added a persistent mind map to test what visible relationships contribute."
           ],
           "nav": "Baseline",
           "figures": [
             {
-              "src": "/assets/design-revision/glance-918-454-source.png",
-              "width": 849,
-              "height": 356,
+              "src": "/assets/glance-clarity/illustration-only-original.png",
+              "width": 1910,
+              "height": 897,
               "alt": "The Illustration Only study interface.",
               "caption": "Our AudioXtend-inspired baseline. This is not a direct test of the AudioXtend system.",
               "displayWidth": 600,
@@ -457,23 +491,19 @@
           ],
           "items": [],
           "highlights": [
-            "same narration, illustrations and timing",
-            "persistent mind map",
-            "AudioXtend (CHI 2024)",
-            "12 people",
-            "33.3% immediately",
-            "32.7% after seven days",
-            "prior-work results"
+            "Illustration Only",
+            "instead of full captions",
+            "AudioXtend",
+            "state-of-art",
+            "persistent mind map"
           ]
         },
         {
           "id": "study",
-          "eyebrow": "FORMAL STUDY",
+          "eyebrow": "WITHIN-PARTICIPANT COMPARISON",
           "title": "The study, on one shared route",
-          "body": [
-            "Sixteen participants tried both formats on the same indoor route. Each heard four lessons, then returned for a recall test seven days later."
-          ],
-          "nav": "Study in practice",
+          "body": [],
+          "nav": "Formative study",
           "figures": [
             {
               "src": "/assets/design-revision/glance-route.svg",
@@ -564,7 +594,7 @@
             "No detectable gait difference was found; workload showed a modest, model-dependent increase."
           ],
           "items": [],
-          "nav": "Findings",
+          "nav": "Results and findings",
           "figures": [
             {
               "src": "/assets/1113-254-3x-575d03ab.webp",
@@ -640,7 +670,8 @@
         "details": "I prepared materials across 14 pilot rounds, analyzed five pilots and the formal study, conducted two interviews per participant, and contributed to the paper."
       },
       "sourceNotes": [
-        "Responsibilities confirmed from the author’s CV record, 14 October 2026."
+        "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
+        "15 October 2026: author clarified the 14-round iteration narrative and pilot feedback; final within-subject study details checked against submission-ready manuscript. Website chapter label “Formative study” follows the author’s requested navigation wording."
       ],
       "tags": [
         "AR",
