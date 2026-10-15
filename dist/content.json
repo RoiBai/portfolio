@@ -3066,7 +3066,10 @@
           "id": "city",
           "eyebrow": "LOCAL NEWS, FAMILIAR PLACES",
           "title": "Adelaide Problem, Adelaide Map",
-          "body": "Real hospital names and approximate locations connect Adelaide to the game. Low-poly geometry keeps streets clear and rendering efficient.",
+          "body": [
+            "Real hospital names and approximate locations in Adelaide shape the game map.",
+            "Low-poly geometry keeps streets clear and rendering efficient."
+          ],
           "items": [],
           "nav": "Adelaide Map",
           "figures": [
@@ -3198,9 +3201,9 @@
     },
     {
       "id": "loofasoup",
-      "title": "Loofa Soup",
+      "title": "Taste of Connection",
       "subtitle": "Work, or family? Who gets your time?",
-      "description": "A dinner invitation opens two routes: work or family. Rotate a shared table, balance guests’ tastes and use item cards to navigate each meal.",
+      "description": "In a world where good food is a luxury, Lufa sells Deliciousness Insurance. Play as Lufa and choose between business dinners and family meals, trying to earn a living without losing touch with the people he loves.",
       "kicker": "NARRATIVE PUZZLE · CHINESE DINING CULTURE",
       "meta": "Unity 2D · C# · 2025.09–2026.04",
       "stats": [
@@ -3254,7 +3257,10 @@
           "id": "abstract",
           "eyebrow": "THE SHARED TABLE",
           "title": "A meal is never just a meal",
-          "body": "In Chinese dining culture, a shared table brings people together. Business dinners build connections; family meals make time for loved ones. Loofa Soup turns this everyday tension into a choice between work and family.",
+          "body": [
+            "Lufa sells Deliciousness Insurance in a world where good food is a luxury. A dinner invitation sends him toward work or family. You play as Lufa: rotate the shared table, balance everyone’s tastes and use item cards to get through each meal with limited moves.",
+            "Through Chinese dining culture, we explore the tension between making a living and being there for loved ones. Business dinners can open doors, but they also take time away from family. Each meal asks whose needs you prioritize—and what it means to stay connected."
+          ],
           "nav": "Abstract",
           "figures": [
             {
@@ -3266,8 +3272,11 @@
             }
           ],
           "highlights": [
+            "Lufa sells Deliciousness Insurance",
+            "work or family",
             "Chinese dining culture",
-            "work and family"
+            "making a living",
+            "being there for loved ones"
           ],
           "items": [],
           "layout": "editorial"
@@ -3791,7 +3800,9 @@
       ],
       "highlights": [
         "two routes: work or family",
-        "Rotate the shared table"
+        "Rotate the shared table",
+        "Lufa sells Deliciousness Insurance",
+        "business dinners and family meals"
       ]
     },
     {
@@ -3899,12 +3910,14 @@
           "id": "assemble",
           "eyebrow": "ASSEMBLE",
           "title": "Build a shared memory",
-          "body": "The first scene shows the answer. Add Taiping to the banquet, then build the poetry scene yourself.",
+          "body": "We chose Chapter 3, Journeys Together, to introduce Waner and Taiping’s friendship through three shared moments: a lakeside visit, a banquet and poetry.",
           "items": [],
           "nav": "Assemble",
           "figures": [],
           "highlights": [
-            "five reusable icons"
+            "Chapter 3",
+            "friendship",
+            "three shared moments"
           ],
           "experience": "assemble",
           "layout": "editorial"
@@ -3986,7 +3999,11 @@
           "id": "evidence",
           "eyebrow": "710 → 2013",
           "title": "After 1,303 years, Waner’s epitaph revealed Taiping’s mourning—and challenged the inherited story",
-          "body": "",
+          "body": [
+            "In 2013, archaeologists uncovered Waner’s epitaph. It records Taiping’s grief and her support for Waner’s funeral—evidence of a bond long overshadowed by stories of scandal and rivalry.",
+            "We grew up with those versions of their lives. If the care between two of China’s best-known historical women could remain buried for 1,303 years, how much of other women’s lives has been lost across centuries of history?",
+            "This discovery became our reason to make the game: to let players encounter their work and companionship, then question who controls the record. Remembering women means making room for their voices, choices and relationships."
+          ],
           "nav": "Evidence",
           "figures": [
             {
@@ -4000,9 +4017,20 @@
               "sourceOrigin": "Author’s original Figma artwork; original pixel bytes retained"
             }
           ],
-          "highlights": [],
+          "highlights": [
+            "In 2013",
+            "Taiping’s grief",
+            "We grew up",
+            "1,303 years",
+            "their work and companionship",
+            "voices, choices and relationships"
+          ],
           "items": [],
-          "layout": "editorial"
+          "layout": "editorial",
+          "source": {
+            "label": "Read the epitaph report",
+            "url": "https://news.cntv.cn/2014/01/07/ARTI1389083533945776.shtml"
+          }
         },
         {
           "id": "wish",
@@ -4039,7 +4067,7 @@
         ],
         "details": ""
       },
-      "revision": "2026-10-13 · Guided Chapter 3, original 18-scene scroll erasure, restore before explanation",
+      "revision": "2026-10-16 · Chapter 3 context and the epitaph discovery behind the game",
       "sourceNotes": [
         "Follow-up checked against original game Figma zESmtcPKcAs7hQf7zKHfID, Page 1, chapter-three nodes 39:1425/1427/1429 and gallery 18 main chapter frames.",
         "Question illustration uses epilogue reader 40:1716, avoiding repeated static versions of the final-chapter before/after scenes."
@@ -4108,63 +4136,40 @@
       "sections": [
         {
           "id": "abstract",
-          "eyebrow": "ANIMAL ETHICS",
-          "title": "How can we stop this happening to other animals?",
-          "body": "Wars, laboratories, zoos and polluted habitats—two centuries of animal histories. Choose a case, learn what happened and follow the original sources.",
+          "eyebrow": "AN INTERACTIVE ANIMAL MEMORIAL",
+          "title": "Their lives belong in our history",
+          "body": [
+            "Human history is extensively recorded. Our World asks whose lives it leaves out. I built an interactive memorial to animals harmed by human actions, gathering 191 documented cases from 1826 to 2026 with traceable identities, stories and sources. They span war, captivity, hunting, scientific experiments and environmental pollution. The actual scale of harm is far larger than this archive.",
+            "Visitors scroll a timeline and hover over or select an animal to reveal its story and linked news or historical sources. The portraits show the animals alive: each case begins with a life to remember, not only a death to count."
+          ],
           "nav": "Abstract",
           "figures": [
             {
               "src": "/assets/games-revision/ourworld/honey-inubosaki-dolphin.png",
               "width": 1254,
               "height": 1254,
-              "displayWidth": 310,
+              "displayWidth": 220,
               "alt": "Honey, a dolphin from the original Our World archive",
-              "caption": "Honey · A portrait from the full archive",
+              "caption": "Honey · AI-assisted archive portrait",
               "sourceOrigin": "Original game source artwork, original transparent PNG bytes retained"
-            }
-          ],
-          "highlights": [
-            "over two centuries",
-            "follow the original sources"
-          ],
-          "items": [],
-          "layout": "editorial"
-        },
-        {
-          "id": "portraits",
-          "eyebrow": "MAKING THE ANIMAL PORTRAITS",
-          "title": "Remember them as they were in life",
-          "body": "I used AI and species references to create portraits of the animals in life, before visitors encounter their deaths.",
-          "items": [
-            {
-              "title": "Chunee · 1826",
-              "body": "Shot dead after years on display in a London menagerie."
             },
-            {
-              "title": "Laika · 1957",
-              "body": "Sent aboard Sputnik 2 with no return journey."
-            },
-            {
-              "title": "Freya · 2022",
-              "body": "Killed after crowds ignored warnings to keep their distance."
-            }
-          ],
-          "nav": "Portraits",
-          "figures": [
             {
               "src": "/assets/games-revision/ourworld/freya-oslo-walrus.png",
               "width": 1254,
               "height": 1254,
-              "displayWidth": 380,
+              "displayWidth": 220,
               "alt": "Freya, the original transparent archive portrait",
-              "caption": "Freya · 2022",
+              "caption": "Freya · AI-assisted archive portrait",
               "sourceOrigin": "Original game source artwork, original transparent PNG bytes retained"
             }
           ],
           "highlights": [
-            "in life",
-            "before visitors learn about their deaths"
+            "191 documented cases",
+            "1826 to 2026",
+            "war, captivity, hunting, scientific experiments and environmental pollution",
+            "a life to remember"
           ],
+          "items": [],
           "layout": "editorial"
         },
         {
@@ -4186,13 +4191,16 @@
           "id": "remember",
           "eyebrow": "PAUSE AND REMEMBER",
           "title": "Light a candle for them",
-          "body": "One candle marks the recorded cases; nine can be lit or put out. They also honour animals whose stories remain unknown.",
+          "body": [
+            "These 191 cases are only a small selection of the stories that could be recovered. Many lives never become news, and many names are lost.",
+            "Light a candle, follow the sources, and carry that attention beyond this page. Notice whose lives our decisions affect, and support care and protection for animals still living."
+          ],
           "items": [],
           "nav": "Remember",
           "figures": [],
           "highlights": [
-            "other nine can be lit or put out",
-            "only tell part"
+            "only a small selection",
+            "animals still living"
           ],
           "experience": "candles",
           "layout": "editorial"
@@ -4211,18 +4219,19 @@
       ],
       "role": {
         "label": "My role",
-        "value": "Concept · Research · Interaction & web development",
+        "value": "Solo project · Concept, research & web development",
         "status": "explicit",
         "sourceRefs": [
-          "meta",
-          "description",
-          "sections.portraits.body"
+          "user-confirmed solo project",
+          "sections.abstract.body"
         ],
-        "details": ""
+        "details": "I researched the cases, created the archive and portraits, and designed and built the complete web experience."
       },
-      "revision": "2026-10-13 · Figma-first concise games revision",
+      "revision": "2026-10-16 · Unified archive abstract, solo authorship and remembrance invitation",
       "outcome": "An interactive memorial with 191 published events drawn from 286 researched records, spanning 1826–2026.",
-      "sourceNotes": [],
+      "sourceNotes": [
+        "2026-10-16: Author confirmed solo project, 191 documented cases and full archive range 1826–2026. Selected timeline remains ten cases spanning 1826–2016. Archive categories are grounded in the existing case records. Portraits retain the project’s AI-assisted provenance disclosure."
+      ],
       "tags": [
         "Interactive archive",
         "Animal ethics",

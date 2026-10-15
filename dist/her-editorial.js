@@ -17,9 +17,11 @@ export function setupHerEditorial(root,project){
   abstract.replaceChildren(heading);
   const story=document.createElement('div');story.className='her-abstract-story';
   const s=sections.abstract;
-  story.innerHTML=`<div class="her-abstract-copy">${[].concat(s.body).map(p=>`<p>${emphasize(p,s.highlights)}</p>`).join('')}<blockquote><p>“${keepQuoteEnding(s.items[0].quote)}”</p><cite>Hackathon audience feedback</cite></blockquote></div><div class="her-abstract-portraits">${s.figures.map(f=>`<figure>${image(f.src,f.alt,f.width,f.height)}<figcaption>${esc(f.caption)}</figcaption></figure>`).join('')}</div>`;
+  story.innerHTML=`<div class="her-abstract-copy">${[].concat(s.body).map(p=>`<p>${emphasize(p,s.highlights)}</p>`).join('')}</div><div class="her-abstract-portraits">${s.figures.map(f=>`<figure>${image(f.src,f.alt,f.width,f.height)}<figcaption>${esc(f.caption)}</figcaption></figure>`).join('')}</div><blockquote class="her-audience-quote"><p>“${keepQuoteEnding(s.items[0].quote)}”</p><cite>Hackathon audience feedback</cite></blockquote>`;
   abstract.append(story);
  }
+ const assembleSection=root.querySelector('#assemble');
+ assembleSection?.classList.add('her-assemble');
  // The chapter heading belongs to the sticky canvas: it remains visible throughout erasure.
  const erase=root.querySelector('#erase'),panel=erase?.querySelector('.gx-wind-panel'),eraseHeading=erase?.querySelector(':scope>.section-heading');
  if(panel&&eraseHeading){erase.classList.add('her-erase');eraseHeading.classList.remove('reveal');panel.prepend(eraseHeading);erase.querySelector(':scope>.section-body')?.remove();}
@@ -30,6 +32,17 @@ export function setupHerEditorial(root,project){
   const s=sections.question,body=document.createElement('div');body.className='her-accusations';
   body.innerHTML=`<p class="her-question-deck">${emphasize(s.body,s.highlights)}</p><div class="her-accusation-pair">${s.items.map((item,i)=>`<figure class="her-accusation">${image(s.figures[i].src,s.figures[i].alt,s.figures[i].width,s.figures[i].height)}<figcaption><span>${esc(item.title)}</span><p>${emphasize(item.body,s.highlights)}</p></figcaption></figure>`).join('')}</div><p class="her-question-transition">What changes when they hold the power to tell their own stories?</p>`;
   question.append(body);
+ }
+ const evidence=root.querySelector('#evidence');
+ if(evidence){
+  evidence.className='case-section her-evidence';
+  const heading=evidence.querySelector('.section-heading'),s=sections.evidence;
+  heading?.querySelector('h2')?.remove();
+  evidence.replaceChildren(heading);
+  const story=document.createElement('div');story.className='her-evidence-story';
+  const f=s.figures[0];
+  story.innerHTML=`<div class="her-evidence-copy"><h2 class="her-evidence-subtitle">${esc(s.title)}</h2>${[].concat(s.body).filter(Boolean).map(p=>`<p>${emphasize(p,s.highlights)}</p>`).join('')}${s.source?`<a class="her-evidence-source" href="${esc(s.source.url)}" target="_blank" rel="noopener noreferrer">${esc(s.source.label)} ↗</a>`:''}</div><figure class="her-evidence-art">${image(f.src,f.alt,f.width,f.height)}</figure>`;
+  evidence.append(story);
  }
  const wish=root.querySelector('#wish');
  if(wish){

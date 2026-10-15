@@ -46,3 +46,14 @@
  }
 }
 @keyframes glance-walk-wave-pulse{to{transform:scaleY(.3)}}
+
+/* An always-readable cue makes the pinned walk's scroll interaction explicit. */
+body[data-project=glancemap] .walk-navigation{align-items:center;gap:10px}
+body[data-project=glancemap] .walk-scroll-cue{display:flex;align-items:center;gap:12px;margin-left:auto;color:var(--accent);pointer-events:none;white-space:nowrap}
+body[data-project=glancemap] .walk-scroll-cue>span:first-child{display:inline;font:600 16px/1.3 var(--font-body);color:var(--accent)}
+body[data-project=glancemap] .walk-scroll-particles{display:block;position:relative;width:35px;height:44px;flex:0 0 35px}
+.walk-scroll-particles i{position:absolute;left:50%;top:50%;width:3px;height:3px;border-radius:50%;background:currentColor;translate:var(--particle-x) var(--particle-y);opacity:.45;animation:walk-cue-fall 1.65s ease-in-out var(--particle-delay) infinite;animation-play-state:paused}
+.walk-is-visible .walk-scroll-particles i{animation-play-state:running}
+@keyframes walk-cue-fall{0%,100%{transform:translateY(-3px);opacity:.28}45%{opacity:1}70%{transform:translateY(5px);opacity:.8}}
+@media(max-width:700px){body[data-project=glancemap] .walk-navigation{gap:7px}body[data-project=glancemap] .walk-scroll-cue{gap:5px}body[data-project=glancemap] .walk-scroll-cue>span:first-child{font-size:14px}.walk-scroll-particles i{width:3px;height:3px}}
+@media(prefers-reduced-motion:reduce){.walk-scroll-particles i{animation:none}}

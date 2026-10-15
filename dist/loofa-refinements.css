@@ -99,3 +99,18 @@ body[data-project=loofasoup] .loofa-recording-fixed>figcaption>p{font:400 16px/1
  .loofa-fixed-connectors i{border-width:1px}.loofa-fixed-connectors b{width:4px;height:4px;box-shadow:0 0 0 1px #fff}
  .loofa-original-dialogues{width:100%;grid-template-columns:1fr;gap:26px;margin:0}.loofa-original-dialogues figure{width:100%;max-width:520px;margin-inline:auto}
 }
+
+/* The project name and reclining Lufa stay together as one readable lockup. */
+body[data-project=loofasoup] .loofa-name-lockup{display:block;min-width:0;max-width:100%}
+body[data-project=loofasoup] .loofa-name-lockup h1{max-width:none;line-height:1.05;text-wrap:pretty}
+.loofa-title-ending{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;vertical-align:middle}
+body[data-project=loofasoup] .loofa-title-ending .loofa-title-character{width:118px;height:83px;margin:0;transform:rotate(-5deg);align-self:center}
+body[data-project=loofasoup] .loofa-fixed-connectors i{border-top:2.5px dashed #365f3c;opacity:1;filter:drop-shadow(0 1px 0 #f7f6d4)}
+body[data-project=loofasoup] .loofa-fixed-connectors b{width:7px;height:7px;background:#264f30;box-shadow:0 0 0 2px #f6f7e6}
+body[data-project=loofasoup] #abstract>.section-body p{text-wrap:pretty}
+@media(max-width:600px){
+ body[data-project=loofasoup] .loofa-name-lockup h1{font-size:clamp(34px,9.1vw,48px)!important}
+ body[data-project=loofasoup] .loofa-title-ending .loofa-title-character{width:76px;height:54px}
+ body[data-project=loofasoup] .loofa-fixed-connectors i{border-top-width:2px}
+ body[data-project=loofasoup] .loofa-fixed-connectors b{width:5px;height:5px}
+}

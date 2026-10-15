@@ -57,3 +57,28 @@ body[data-project=ambulance] #publication .ar-audience-result>p{font-size:var(--
  body[data-project=ambulance] #publication .ar-audience-result>strong{font-size:52px}
  body[data-project=ambulance] #publication .ar-audience-result>p{font-size:var(--case-copy);margin:0}
 }
+
+/* Give the two left annotations separate approaches to the original controls. */
+body[data-project=ambulance] #city .ar-map-intro{max-width:none}
+body[data-project=ambulance] #city .ar-section-deck>span{display:block;text-wrap:pretty}
+body[data-project=ambulance] #publication.ambulance-chapter{grid-template-columns:max-content minmax(0,1fr);gap:35px}
+body[data-project=ambulance] #publication>.section-heading h2{--case-heading:clamp(28px,3.05vw,44px);max-width:none;white-space:nowrap;font-size:var(--case-heading)!important}
+body[data-project=ambulance] #publication .ar-audience-result{justify-content:flex-start;gap:20px}
+body[data-project=ambulance] #publication .ar-audience-result>p{max-width:none;white-space:nowrap;font-size:var(--case-copy)}
+@media(min-width:1000px){
+ body[data-project=ambulance] #gameplay .ar-game-notes-left{align-self:start}
+ body[data-project=ambulance] #gameplay .ar-game-note>div:has(.ar-hospital-panel){grid-template-columns:minmax(0,1fr) 92px;gap:6px 12px}
+ body[data-project=ambulance] #gameplay .ar-game-note .ar-hospital-panel{width:92px;margin:0;align-self:start}
+}
+@media(max-width:999px){
+ body[data-project=ambulance] #publication.ambulance-chapter{grid-template-columns:1fr;gap:24px}
+ body[data-project=ambulance] #publication .ar-audience-result{flex-wrap:nowrap}
+}
+@media(max-width:600px){
+ body[data-project=ambulance] #publication>.section-heading h2{--case-heading:clamp(18px,5.4vw,28px);font-size:var(--case-heading)!important}
+ body[data-project=ambulance] #publication .ar-audience-result{gap:18px}
+ body[data-project=ambulance] #publication .ar-audience-result>strong{font-size:42px}
+ body[data-project=ambulance] #publication .ar-audience-result>p{font-size:16px}
+ body[data-project=ambulance] #gameplay .ar-game-note>div:has(.ar-hospital-panel){grid-template-columns:minmax(0,1fr) 96px;column-gap:16px}
+ body[data-project=ambulance] #gameplay .ar-game-note .ar-hospital-panel{width:96px!important}
+}

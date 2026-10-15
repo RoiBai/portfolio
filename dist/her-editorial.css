@@ -93,3 +93,41 @@ body[data-project=hersound] [data-experience=hersound-assemble].is-done .gx-play
 body[data-project=hersound] .her-accusation img{width:auto!important;height:auto!important;max-width:100%;max-height:270px;aspect-ratio:auto;object-fit:contain;object-position:center;margin-inline:auto}
 .her-accusation-pair{align-items:start}
 @media(max-width:760px){body[data-project=hersound] .her-accusation img{max-height:260px}}
+
+/* Give the audience response a full line rather than squeezing it beside portraits. */
+.her-audience-quote{grid-column:1/-1;margin:0;padding:10px 0 0;border:0}
+body[data-project=hersound] .her-audience-quote p{font-size:clamp(18px,1.7vw,24px);line-height:1.5;margin:0 0 8px;text-wrap:pretty}
+.her-audience-quote cite{font-size:15px;font-style:normal;color:#655d53}
+@media(min-width:1100px){body[data-project=hersound] .her-audience-quote p{white-space:nowrap}}
+
+/* Chapter context sits beside its title; the playable board retains its own guide. */
+body[data-project=hersound] .case-study #assemble.her-assemble{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:26px 5%!important;align-items:center!important}
+body[data-project=hersound] #assemble.her-assemble>.section-heading{grid-column:1!important;grid-row:1!important;margin:0!important}
+body[data-project=hersound] #assemble.her-assemble>.section-body{grid-column:2!important;grid-row:1!important;max-width:none!important;align-self:center!important}
+body[data-project=hersound] #assemble.her-assemble>.section-body p{font-size:var(--case-copy)!important;max-width:none!important;line-height:1.5;text-wrap:pretty;margin:0}
+body[data-project=hersound] #assemble.her-assemble>.section-experience{grid-column:1/-1!important;grid-row:2!important;margin:0!important}
+
+body[data-project=hersound] .her-question-deck{width:100%;max-width:none;text-wrap:pretty}
+body[data-project=hersound] .her-accusation figcaption{text-align:center}
+body[data-project=hersound] .her-accusation figcaption>p{max-width:37ch;margin:8px auto 0;text-wrap:pretty}
+
+/* A modest evidence heading leaves room for why the discovery changed our perspective. */
+body[data-project=hersound] .case-study #evidence.her-evidence{display:block!important;padding-block:38px!important}
+body[data-project=hersound] #evidence.her-evidence>.section-heading{max-width:none;margin:0 0 20px!important}
+.her-evidence-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.42fr);gap:5%;align-items:center}
+body[data-project=hersound] .her-evidence-subtitle{font-size:clamp(24px,2vw,29px)!important;line-height:1.35;font-weight:600;letter-spacing:-.025em;margin:0 0 22px;max-width:none;text-wrap:pretty}
+.her-evidence-copy>p{font-size:var(--case-copy);line-height:1.55;margin:0 0 15px;text-wrap:pretty}
+.her-evidence-copy>p strong{font-weight:650;color:#47636f}
+.her-evidence-art{margin:0;min-width:0}
+.her-evidence-art img{display:block;width:100%;height:auto;object-fit:contain}
+.her-evidence-source{display:inline-block;font-size:15px;line-height:1.5;color:#47636f;text-decoration:underline;text-underline-offset:4px;margin-top:2px}
+@media(max-width:760px){
+ body[data-project=hersound] .case-study #assemble.her-assemble{grid-template-columns:1fr!important;gap:18px!important}
+ body[data-project=hersound] #assemble.her-assemble>.section-body{grid-column:1!important;grid-row:2!important}
+ body[data-project=hersound] #assemble.her-assemble>.section-experience{grid-row:3!important}
+ .her-audience-quote{padding-top:0}.her-audience-quote p{white-space:normal}
+ .her-evidence-story{grid-template-columns:1fr;gap:18px}
+ .her-evidence-art{max-width:260px;justify-self:center;grid-row:1}
+ body[data-project=hersound] .her-evidence-subtitle{font-size:23px!important;margin-bottom:18px}
+ body[data-project=hersound] .case-study #evidence.her-evidence{padding-block:30px!important}
+}
