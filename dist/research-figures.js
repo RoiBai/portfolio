@@ -7,11 +7,6 @@ const ASSET = '/assets/research-interactive/';
 let sequence = 0;
 const esc = (s='') => String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const picture=(src,alt,extra='')=>`<img src="${siteURL(ASSET+src)}" alt="${esc(alt)}" loading="lazy" decoding="async" ${extra}>`;
-const art = [
- {name:'The Stonemason’s Yard',type:'Cityscape',file:1},
- {name:'Paris Street, Rainy Day',type:'Everyday life',file:2},
- {name:'Liberty Leading the People',type:'Historical scene',file:3}
-];
 const paintings=['Paris Street, Rainy Day','The Stonemason’s Yard','The Wedding at Cana','The Peasant Wedding','The Hay Wain'];
 const groups=[['understanding','Context'],['usability','Usability'],['workload','Workload'],['engagement','Engagement']];
 const survey = {
@@ -22,8 +17,32 @@ function tabs(id, items, selected) {
  return `<div class="rf-tabs" role="tablist" aria-label="Choose a view">${items.map(([key,label])=>`<button type="button" role="tab" id="${id}-${key}" aria-controls="${id}-panel" aria-selected="${String(key)===String(selected)}" tabindex="${String(key)===String(selected)?0:-1}" data-rf-tab="${key}">${esc(label)}</button>`).join('')}</div>`;
 }
 function note(title,body){return `<figcaption class="rf-caption"><strong>${esc(title)}</strong><p>${esc(body)}</p></figcaption>`;}
-function artworkPanel(selected=0, mode='original'){
- const a=art[selected];return `<div class="rf-art-stage">${picture(`gaze-art-${a.file}-${mode}.${mode==='original'?'jpg':'png'}`,`${a.name}${mode==='regions'?' with the study’s semantic regions':''}`)}</div><div class="rf-art-meta"><p><strong>${a.name}</strong><span>${a.type} · One of 24 study paintings</span></p><button type="button" class="rf-toggle" data-rf-regions aria-pressed="${mode==='regions'}">${mode==='regions'?'Hide regions':'Show study regions'} <span aria-hidden="true">${mode==='regions'?'−':'+'}</span></button></div>`;
+function gazeOverview(){
+ const views=[
+  ['gaze-art-2-original.jpg','Artwork','The original painting'],
+  ['gaze-1-heatmap.webp','Gaze','Where looking accumulated'],
+  ['gaze-1-scanpath.webp','Eye path','The order of eye movements'],
+  ['gaze-1-regions.webp','Region map','Meaningful areas for comparison']
+ ];
+ return `<figure class="project-figure rf-figure rf-gaze-overview" data-research-figure="gaze-artwork"><div class="rf-gaze-overview-grid">${views.map(([file,label,detail],i)=>`<figure><img src="${siteURL(ASSET+file)}" alt="Paris Street, Rainy Day — ${detail.toLowerCase()}" loading="eager" decoding="async"${i===0?' fetchpriority="high"':''}><figcaption><strong>${label}</strong><span>${detail}</span></figcaption></figure>`).join('')}</div><figcaption class="rf-gaze-overview-note"><em>Paris Street, Rainy Day</em> · One of 24 study paintings</figcaption></figure>`;
+}
+function setupGazeHierarchy(root){
+ if(document.body.dataset.project!=='beyond-the-gaze')return;
+ let chapter=0;
+ const labels={signals:'Method · GSL & HLL',example:'Analysis · One example'};
+ root.querySelectorAll('.case-study>.case-section').forEach(section=>{
+  const eyebrow=section.querySelector(':scope>.section-heading>.eyebrow');
+  if(!eyebrow)return;
+  if(section.dataset.navParent!==section.id){
+   section.classList.add('gaze-subsection');
+   eyebrow.textContent=labels[section.id]||eyebrow.textContent;
+   root.querySelector('#'+section.dataset.navParent)?.classList.add('gaze-has-subsection');
+  }else{
+   chapter++;
+   const number=eyebrow.querySelector('span');
+   if(number)number.textContent=String(chapter).padStart(2,'0');
+  }
+ });
 }
 function evidencePanel(selected=0){
  const terms=[['heatmap','Gaze density'],['scanpath','Eye path'],['regions','Region map']];
@@ -59,7 +78,7 @@ function personaOpening(image){
   ['Set the relationship','Familiar supervisor. Polite, appreciative and brief.','“Could I take today off? Thank you for understanding.”',''],
   ['Keep your style','Next request: miss a morning meeting.','','Change the facts; keep the relationship and tone.']
  ];
- return `<figure class="project-figure rf-figure rf-persona-opening" data-research-figure="persona-opening"><img class="rf-persona-comic" src="${siteURL(image||'/assets/research-interactive/persona-example-comic.png')}" width="1881" height="836" alt="A PhD student struggles with formal AI emails, defines a familiar supervisor relationship, then reuses the same writing style"><figcaption class="rf-persona-scenes">${scenes.map(([title,body,quote,after],i)=>`<div><span>0${i+1}</span><h4>${title}</h4><p>${body}</p>${quote?`<p class="persona-hero-quote ${i===0?'is-generic':'is-personal'}">${quote}</p>`:''}${after?`<p>${after}</p>`:''}${i===2?'<a class="persona-hero-try" href="#interaction">Try the example ↓</a>':''}</div>`).join('')}</figcaption></figure>`;
+ return `<figure class="project-figure rf-figure rf-persona-opening" data-research-figure="persona-opening"><img class="rf-persona-comic" src="${siteURL(image||'/assets/research-interactive/persona-example-comic.png')}" width="2172" height="724" alt="A PhD student struggles with formal AI emails, defines a familiar supervisor relationship, then reuses the same writing style"><figcaption class="rf-persona-scenes">${scenes.map(([title,body,quote,after],i)=>`<div><span>0${i+1}</span><h4>${title}</h4><p>${body}</p>${quote?`<p class="persona-hero-quote ${i===0?'is-generic':'is-personal'}">${quote}</p>`:''}${after?`<p>${after}</p>`:''}${i===2?'<a class="persona-hero-try" href="#interaction">Try the example ↓</a>':''}</div>`).join('')}</figcaption></figure>`;
 }
 function compactSuzhouStudy(kind){
  const data=replacementFor('suzhou-scrollverse','study','/assets/fig4-study-results-bc437b38.webp');
@@ -69,7 +88,7 @@ export function renderResearchFigure(spec={}){
  const id=`research-figure-${++sequence}`;
  switch(spec.kind){
  case 'persona-opening': return personaOpening(spec.image);
- case 'gaze-artwork': return tabFigure(spec.kind,id,'The same painting, three sources of evidence','Eye movements, selected regions, and explanations are compared within the same painted detail.',art.map((a,i)=>[i,a.type]),0,artworkPanel());
+ case 'gaze-artwork': return gazeOverview();
  case 'gaze-evidence': return tabFigure(spec.kind,id,'Compare the evidence','Choose a painting to compare heatmaps, eye movement paths, and the regions used in the analysis.',paintings.map((a,i)=>[i,a]),0,evidencePanel(),`<label class="rf-mobile-choice" for="${id}-select">Choose a painting<select id="${id}-select" data-rf-select>${paintings.map((name,i)=>`<option value="${i}">${name}</option>`).join('')}</select></label>`);
  case 'gaze-procedure': return `<figure class="project-figure rf-figure rf-method-source" data-research-figure="${spec.kind}"><p class="rf-method-context">Nine-point calibration → 24 self-paced painting trials</p><ol class="rf-method-source-steps">${[
  ['Look','View the painting freely. Click when an initial interpretation has formed.'],
@@ -84,11 +103,11 @@ export function renderResearchFigure(spec={}){
  ].map(([name,label,body],i)=>`<div>${picture(`gaze-composition-${i+1}.webp`,`${name}: highlighted HLL region and compositional lines`)}<h4>${label}</h4><p>${body}</p></div>`).join('')}</div>${note('Three selected composition examples','Red outlines identify the focal HLL regions. These selected examples suggest where mismatches can appear; they are not a rule for every painting.')}</figure>`;
  case 'suzhou-survey': return tabFigure(spec.kind,id,'What viewers wanted','Selected needs and barriers, alongside all seven preferred functions reported in the formative survey.',[['needs','Needs & barriers'],['functions','Preferred functions']],'needs',surveyPanel());
  case 'suzhou-ratings': return tabFigure(spec.kind,id,'Four dimensions of the experience','Compare average ratings in four areas. Each line shows the range of uncertainty around an average.',groups,'understanding',ratingsPanel(),'<div class="rf-legend"><span class="rf-key-baseline">Baseline</span><span class="rf-key-scrollverse">ScrollVerse</span></div>');
- case 'suzhou-experience': return `<figure class="project-figure rf-figure rf-suzhou-experience" data-research-figure="${spec.kind}"><div class="rf-suzhou-three">${[
- ['suzhou-scroll.png','Follow the handscroll','Eight core scenes and twelve contextual videos keep the painting continuous.'],
- ['suzhou-perspectives.png','Choose a perspective','Read the city through a commoner, scholar or merchant.'],
- ['suzhou-cultural-clues.png','Find a cultural clue','Observe details, locate them in the scroll, then uncover their context.']
- ].map(([file,title,caption])=>`<figure><img src="${siteURL('/assets/research-editorial/'+file)}" alt="${title}: original system module" loading="lazy"><figcaption><strong>${title}</strong><p>${caption}</p></figcaption></figure>`).join('')}</div><p class="rf-suzhou-summary">ScrollVerse brings <strong>sequential unfolding, social perspectives and painted evidence</strong> into one experience. Each reading returns to a detail in the original scroll.</p></figure>`;
+ case 'suzhou-experience': return `<figure class="project-figure rf-figure rf-suzhou-experience" data-research-figure="${spec.kind}"><div class="rf-suzhou-three rf-suzhou-native">${[
+ {title:'Follow the handscroll',caption:'Eight scenes and twelve videos connect details to the unfolding city.',images:[['/assets/research-clarity/suzhou-original-scroll-view.webp','Original handscroll player at Shantang Street',1897,823],['/assets/research-clarity/suzhou-original-scene-context.webp','Original scene explanation and contextual video',1719,691]]},
+ {title:'Choose a perspective',caption:'A different role reveals a different side of the city.',roles:[['/assets/research-clarity/suzhou-role-scholar-native.webp','Scholar','Cultural life'],['/assets/research-clarity/suzhou-role-merchant-native.webp','Merchant','Trade and commerce'],['/assets/research-clarity/suzhou-role-commoner-native.webp','Commoner','Everyday life']]},
+ {title:'Find a cultural clue',caption:'Match a clue to the painting, then explore its context.',images:[['/assets/research-clarity/suzhou-original-cultural-clue.webp','Original cultural-clue location interface',1896,826],['/assets/research-clarity/suzhou-original-quiz.webp','Original cultural knowledge question',956,426]]}
+ ].map(({title,caption,images,roles})=>`<figure><div class="rf-suzhou-native-media${roles?' rf-suzhou-roles':''}"${roles?' data-no-detail':''}>${roles?roles.map(([src,name,detail])=>`<div class="rf-suzhou-role"><img src="${siteURL(src)}" alt="${name} character" width="228" height="229" loading="lazy" decoding="async"><div><strong>${name}</strong><span>${detail}</span></div></div>`).join(''):images.map(([src,alt,w,h])=>`<img src="${siteURL(src)}" alt="${alt}" width="${w}" height="${h}" loading="lazy" decoding="async">`).join('')}</div><figcaption><strong>${title}</strong><p>${caption}</p></figcaption></figure>`).join('')}</div><p class="rf-suzhou-summary"><strong>Unfolding scenes, social perspectives and cultural clues</strong> all lead back to the original scroll.</p></figure>`;
  case 'suzhou-study': return compactSuzhouStudy(spec.kind);
  case 'suzhou-runtime': return `<figure class="project-figure rf-figure rf-runtime" data-research-figure="${spec.kind}"><ol class="rf-runtime-flow"><li><span>01</span><h4>Load the visible area</h4>${picture('suzhou-tiles.webp','Visible and prefetched scroll tiles from the original pipeline figure')}<p>The scroll position determines which tiles load, with nearby sections kept ready.</p></li><li><span>02</span><h4>Find the scene and role</h4>${picture('suzhou-scene.webp','An indexed scene in the scroll')}<p>The visible scene and selected role retrieve the matching story records.</p></li><li><span>03</span><h4>Update the view</h4>${picture('suzhou-renderer.webp','The actual composite renderer interface')}<p>The painting, hotspots, progress marker and media stay aligned.</p></li></ol><p class="rf-method-context">Ten image tiles · scene coordinates · role records · linked videos</p></figure>`;
  case 'verse-procedure': return `<figure class="project-figure rf-figure rf-verse-procedure" data-research-figure="${spec.kind}"><div class="rf-verse-phases"><div class="rf-verse-formative"><span class="rf-phase-label">Formative study</span><h4>Reader interviews</h4><strong class="rf-phase-count">8 readers</strong><p>Identify interpretive needs and shape the research questions.</p></div><div class="rf-verse-comparison"><span class="rf-phase-label">Comparative evaluation · 30 participants</span><ol><li><span>01</span><h4>Before reading</h4><p>Background and pre-test questionnaire</p></li><li><span>02</span><h4>Interpret color imagery</h4><div class="rf-tool-branches"><span>VerseColor</span><span>Souyun</span></div><p>Same tasks · 15 minutes</p></li><li><span>03</span><h4>Rate the experience</h4><p>Usability questionnaire</p></li><li><span>04</span><h4>Explain the experience</h4><p>Follow-up interview</p></li></ol></div></div><p class="rf-chart-note">The original two-phase study flow, rebuilt for the web. Participant count follows the current portfolio.</p></figure>`;
@@ -96,6 +115,7 @@ export function renderResearchFigure(spec={}){
  }
 }
 export function setupResearchFigures(root=document){
+ setupGazeHierarchy(root);
  const personaCleanup=setupPersonaIntent(root);
  const figures=[...root.querySelectorAll('[data-research-figure]')];
  const frames=new Set(), reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -109,13 +129,12 @@ export function setupResearchFigures(root=document){
   el.dataset.rfSelected=value;const select=el.querySelector('[data-rf-select]');if(select)select.value=String(value);
   el.querySelectorAll('[data-rf-tab]').forEach(b=>{const active=b.dataset.rfTab===String(value);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});
   panel.setAttribute('aria-labelledby',`${el.dataset.rfId}-${value}`);
-  if(kind==='gaze-artwork')panel.innerHTML=artworkPanel(Number(value),el.dataset.rfMode);
   if(kind==='gaze-evidence')panel.innerHTML=evidencePanel(Number(value));
   if(kind==='suzhou-survey')panel.innerHTML=surveyPanel(value);
   if(kind==='suzhou-ratings')panel.innerHTML=ratingsPanel(value);
   if(el.classList.contains('rf-visible'))animateNumbers(el);
  }
- function click(e){const tab=e.target.closest('[data-rf-tab]');if(tab&&root.contains(tab)){update(tab.closest('[data-research-figure]'),tab.dataset.rfTab);return;}const button=e.target.closest('[data-rf-regions]');if(button&&root.contains(button)){const el=button.closest('[data-research-figure]');el.dataset.rfMode=el.dataset.rfMode==='regions'?'original':'regions';update(el,el.dataset.rfSelected);el.querySelector('[data-rf-regions]').focus({preventScroll:true});}}
+ function click(e){const tab=e.target.closest('[data-rf-tab]');if(tab&&root.contains(tab)){update(tab.closest('[data-research-figure]'),tab.dataset.rfTab);}}
  function keydown(e){const tab=e.target.closest('[data-rf-tab]');if(!tab||!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;const buttons=[...tab.parentElement.querySelectorAll('[data-rf-tab]')],i=buttons.indexOf(tab);const next=e.key==='Home'?0:e.key==='End'?buttons.length-1:(i+(e.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;e.preventDefault();buttons[next].focus();update(tab.closest('[data-research-figure]'),buttons[next].dataset.rfTab);}
  function change(e){if(e.target.matches('[data-rf-select]'))update(e.target.closest('[data-research-figure]'),e.target.value);}
  root.addEventListener('click',click);root.addEventListener('keydown',keydown);root.addEventListener('change',change);

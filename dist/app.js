@@ -6,6 +6,7 @@ import { setupAmbulanceEditorial } from './ambulance-editorial.js';
 import { setupAmbulanceRecording } from './ambulance-recording.js';
 import { setupLoofaEditorial } from './loofa-editorial.js';
 import { renderResearchFigure, setupResearchFigures } from './research-figures.js';
+import { setupResearchImageDetails } from './research-image-detail.js';
 import { setupColorInteractions } from './color-interactions.js';
 import { setupIconInteractions } from './icon-interactions.js';
 import { setupGamesMotion } from './games-motion.js';
@@ -24,6 +25,7 @@ import { emphasize, rolePanel, outcomePanel, comicPanel, publicLink } from './ca
 import { replacementFor, renderDataVisual, setupDataViz, DATA_VISUAL_ADDITIONS } from './data-viz.js';
 const homeOrigin = projectHomeOrigin();
 let glanceResultsCleanup=()=>{};
+let researchImageCleanup=()=>{};
 let researchFiguresCleanup=()=>{}, colorCleanup=()=>{}, iconCleanup=()=>{}, gamesMotionCleanup=()=>{}, gamesCleanup=()=>{}, ambulanceRecordingCleanup=()=>{}, ambulanceCleanup=()=>{}, loofaCleanup=()=>{};
 let glanceCleanup = () => {}, glanceScrollCleanup = () => {}, newsCleanup = () => {};
 let experienceCleanup = () => {}, verseCleanup = () => {}, sourceCleanup = () => {}, layeredCleanup = () => {};
@@ -53,7 +55,7 @@ function figure(f, i=0, hero=false) {
  const width=Math.min(Number(f.displayWidth)||Number(f.width)||1000,1200);
  const notes=normalizedList(f.annotations);
  const overlay=notes.length?`<svg class="source-connectors" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${notes.map(n=>`<path pathLength="1" d="M ${Number(n.x)} ${Number(n.y)} L ${Number(n.targetX)} ${Number(n.targetY)}"/><circle cx="${Number(n.targetX)}" cy="${Number(n.targetY)}" r=".45"/>`).join('')}</svg>${notes.map(n=>`<span class="source-callout" style="left:${Number(n.x)}%;top:${Number(n.y)}%">${esc(n.text)}</span>`).join('')}`:'';
- return `<figure style="--source-width:${width}px" data-figure-role="${esc(f.figureRole||'')}" class="project-figure ${hero?'hero-figure':''} ${f.className||''} ${notes.length?'annotated-figure':''} reveal"><div class="figure-media" ${f.panoramaMin?`data-panorama="${Number(f.panoramaMin)}" style="--panorama-width:${Number(f.panoramaMin)}px" tabindex="0" role="region" aria-label="Annotated project diagram"`:''} ${f.animateLines?`data-source-svg="${esc(imageSrc(f))}" ${f.width/f.height>2?'tabindex="0" role="region" aria-label="Annotated project diagram"':''}`:''}><img src="${esc(imageSrc(f))}" alt="${esc(alt)}" width="${f.width||1200}" height="${f.height||800}" ${hero?'fetchpriority="high"':'loading="lazy"'} decoding="async">${overlay}</div>${f.panoramaMin||f.animateLines&&f.width/f.height>2?'<span class="figure-scroll-hint" aria-hidden="true">Scroll across the diagram →</span>':''}${f.caption?`<figcaption><span>FIG. ${String(i+1).padStart(2,'0')}</span>${f.captionTitle?`<div><strong class="figure-caption-title">${esc(f.captionTitle)}</strong><p>${esc(f.caption)}</p></div>`:esc(f.caption)}</figcaption>`:''}</figure>`;
+ return `<figure style="--source-width:${width}px" data-figure-role="${esc(f.figureRole||'')}" class="project-figure ${hero?'hero-figure':''} ${f.className||''} ${notes.length?'annotated-figure':''} reveal"><div class="figure-media" ${f.panoramaMin?`data-panorama="${Number(f.panoramaMin)}" style="--panorama-width:${Number(f.panoramaMin)}px" tabindex="0" role="region" aria-label="Annotated project diagram"`:''} ${f.animateLines?`data-source-svg="${esc(imageSrc(f))}" ${f.width/f.height>2?'tabindex="0" role="region" aria-label="Annotated project diagram"':''}`:''}><img src="${esc(imageSrc(f))}"${f.fullSrc?` data-full-src="${esc(f.fullSrc)}"`:""} alt="${esc(alt)}" width="${f.width||1200}" height="${f.height||800}" ${hero?'fetchpriority="high"':'loading="lazy"'} decoding="async">${overlay}</div>${f.panoramaMin||f.animateLines&&f.width/f.height>2?'<span class="figure-scroll-hint" aria-hidden="true">Scroll across the diagram →</span>':''}${f.caption?`<figcaption><span>FIG. ${String(i+1).padStart(2,'0')}</span>${f.captionTitle?`<div><strong class="figure-caption-title">${esc(f.captionTitle)}</strong><p>${esc(f.caption)}</p></div>`:esc(f.caption)}</figcaption>`:''}</figure>`;
 }
 function links(p) {const list=[...normalizedList(p.links)];if(games[p.id]&&!list.some(l=>(l.url||l.href||'').replace(/\/$/,'')===games[p.id].source.replace(/\/$/,'')))list.unshift({label:'Play original',url:games[p.id].source});return list.filter(l=>publicLink(l.url||l.href)).map(l=>`<a class="text-link" href="${esc(l.url||l.href)}" target="_blank" rel="noopener noreferrer">${esc(l.label)} ${arrow}</a>`).join('');}
 function setTheme(p) { const t=p?.theme||{}; document.documentElement.style.setProperty('--bg',t.background||t.bg||'#050505'); document.documentElement.style.setProperty('--ink',t.ink||'#f4f4f4');document.documentElement.style.setProperty('--accent',t.accent||'#f4f4f4');document.body.dataset.project=p?.id||'';document.body.classList.toggle('serif',p?.id==='color-in-context'||p?.id==='traditional-color'); }
@@ -98,7 +100,7 @@ function renderStats(p) {
  return `<div class="stats stats-grouped">${groups.map(group=>`<div class="stat-group"><h3>${esc(group)}</h3><div class="stat-group-values">${p.stats.filter(s=>(s.group||'')===group).map(item).join('')}</div></div>`).join('')}</div>`;
 }
 function renderProject(p) {
- ambulanceRecordingCleanup();ambulanceCleanup();loofaCleanup();glanceResultsCleanup();gamesCleanup();researchFiguresCleanup();colorCleanup();iconCleanup();gamesMotionCleanup();glanceScrollCleanup();newsCleanup();experienceCleanup();verseCleanup();sourceCleanup();layeredCleanup();glanceCleanup();
+ researchImageCleanup();ambulanceRecordingCleanup();ambulanceCleanup();loofaCleanup();glanceResultsCleanup();gamesCleanup();researchFiguresCleanup();colorCleanup();iconCleanup();gamesMotionCleanup();glanceScrollCleanup();newsCleanup();experienceCleanup();verseCleanup();sourceCleanup();layeredCleanup();glanceCleanup();
  setTheme(p);document.body.dataset.view='project';document.title=`${p.title} — Ruiyuan Bai`;
  const meta=projectMetadata(p);
  main.innerHTML=`<div class="chapter-bar"><a class="back-link" href="${siteURL('/')}">← All projects</a><nav class="chapter-nav" aria-label="On this page"><a href="#overview" class="active">Overview</a>${games[p.id]&&!['hersound','ourworld'].includes(p.id)?'<a href="#play">Play</a>':''}${p.sections.filter(s=>!s.navParent).map(s=>`<a href="#${esc(s.id)}">${esc(s.nav||s.id.replaceAll('-',' '))}</a>`).join('')}</nav></div><article class="case-study"><section class="case-hero" id="overview"><div class="project-title-row"><h1>${heading(p.title)}</h1><div class="project-pills" aria-label="Project themes">${(p.tags||[]).map(tag=>`<span class="project-pill">${esc(tag)}</span>`).join('')}</div></div>${p.subtitle?`<p class="hero-subtitle">${esc(String(p.subtitle||'').replace(/[.。]+$/,''))}</p>`:''}<div class="hero-overview" data-reveal-group><div class="hero-bottom reveal"><p>${emphasize(p.description,p.highlights||[])}</p>${rolePanel(p.role)}${outcomePanel(p.outcome)}<div class="hero-links">${links(p)}</div>${meta}</div>${figure(p.hero,0,true)}</div>${renderStats(p)}</section>${['hersound','ourworld'].includes(p.id)?'':gameSection(p.id)}${p.sections.map((s,i)=>section(s,i,false,p.id)).join('')}${nextProject(p)}</article>`;
@@ -106,6 +108,7 @@ function renderProject(p) {
  ambulanceCleanup=setupAmbulanceEditorial(main,p);ambulanceRecordingCleanup=setupAmbulanceRecording(main,p);loofaCleanup=setupLoofaEditorial(main,p);
  if(p.id==='versecolor')verseCleanup=setupVerseInteraction(main);
  cleanProjectHeadings();
+ researchImageCleanup=setupResearchImageDetails(main,p);
  warmProject(p.id);
 }
 // A chapter is one reveal unit: its text and all corresponding figures enter together.

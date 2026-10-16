@@ -37,3 +37,16 @@ body[data-project=personamail] .persona-refined>.persona-demo-note{font-size:14p
 @media(prefers-reduced-motion:reduce){.persona-refined .persona-draft.is-updated{animation:none}}
 
 @media(max-width:760px){.persona-refined .persona-settings>label:first-child{grid-column:1/-1}.persona-refined .persona-settings .persona-appreciation{grid-column:1/-1;min-height:32px}}
+
+/* Align the research explanation with the actual image; let its caption use the row. */
+@media(min-width:800px){
+ body[data-project=personamail] #research.editorial-pair{row-gap:20px}
+ body[data-project=personamail] #research.editorial-pair>.section-body{align-self:center!important}
+ body[data-project=personamail] #research.editorial-pair>.section-visuals,
+ body[data-project=personamail] #research.editorial-pair>.section-visuals>.project-figure{display:contents!important}
+ body[data-project=personamail] #research.editorial-pair .figure-media{grid-column:1;grid-row:2;align-self:center;width:100%;max-width:none;margin:0}
+ body[data-project=personamail] #research.editorial-pair .research-source-figure>figcaption{grid-column:1/-1;grid-row:3;padding:0!important;max-width:none;width:100%}
+ body[data-project=personamail] #research.editorial-pair .research-source-figure>figcaption .figure-caption-title{font-size:20px!important;margin-bottom:6px}
+ body[data-project=personamail] #research.editorial-pair .research-source-figure>figcaption p{max-width:none;text-wrap:pretty}
+}
+.persona-refined .persona-email-request{font-weight:650}

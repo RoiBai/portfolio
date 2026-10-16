@@ -1,0 +1,104 @@
+[
+  {
+    "source": "function-original-image11.png",
+    "dimensions": [
+      1897,
+      823
+    ],
+    "bytes": 1804210,
+    "method": "Lossless re-encoding only; identical decoded RGBA pixels; no resize, enhancement, generated detail, or recoloring",
+    "notes": "Original complete handscroll player; source image placed inside current Panoramic Scroll Exploration module, with much lower raster density there. Native source preserves actual interface.",
+    "asset": "suzhou-original-scroll-view.webp"
+  },
+  {
+    "source": "function-original-image12.png",
+    "dimensions": [
+      1719,
+      691
+    ],
+    "bytes": 957406,
+    "method": "Lossless re-encoding only; identical decoded RGBA pixels; no resize, enhancement, generated detail, or recoloring",
+    "notes": "Original contextual scene video/explanation screen; source image placed inside current scroll module, substantially reduced there.",
+    "asset": "suzhou-original-scene-context.webp"
+  },
+  {
+    "source": "function-original-image9.png",
+    "dimensions": [
+      1896,
+      826
+    ],
+    "bytes": 1701548,
+    "method": "Lossless re-encoding only; identical decoded RGBA pixels; no resize, enhancement, generated detail, or recoloring",
+    "notes": "Original handscroll with clue-position matching interface; full viewport gives context, current module includes only small crop of it.",
+    "asset": "suzhou-original-cultural-clue.webp"
+  },
+  {
+    "source": "function-original-image10.png",
+    "dimensions": [
+      956,
+      426
+    ],
+    "bytes": 225574,
+    "method": "Lossless re-encoding only; identical decoded RGBA pixels; no resize, enhancement, generated detail, or recoloring",
+    "notes": "Original quiz screen used by cultural clue module; current figure reduces it substantially.",
+    "asset": "suzhou-original-quiz.webp"
+  },
+  {
+    "source": "verse-meaning-in-context.png",
+    "dimensions": [
+      2754,
+      850
+    ],
+    "bytes": 880422,
+    "method": "Lossless re-encoding only; identical decoded RGBA pixels; no resize, enhancement, generated detail, or recoloring",
+    "notes": "Existing chosen hero composition; preserves original 2754×850 pixels without additional lossy WebP compression. Current fast/verse-hero.webp uses same dimensions but lossy encoding.",
+    "asset": "verse-hero-lossless.webp"
+  },
+  {
+    "source": "verse-interface.jpg",
+    "dimensions": [
+      5314,
+      1749
+    ],
+    "bytes": 2110852,
+    "method": "Lossless re-encoding only; identical decoded RGBA pixels; no resize, enhancement, generated detail, or recoloring",
+    "notes": "Existing paper interface figure, 5314×1749. Its size already exceeds 2× the rendered width. Lossless WebP does not add source detail; use a zoomable original or separate native panels to improve readability.",
+    "asset": "verse-interface-lossless.webp"
+  },
+  {
+    "asset": "persona-story-lossless.webp",
+    "source": "persona-phd-story.png",
+    "dimensions": [
+      2172,
+      724
+    ],
+    "method": "Lossless re-encoding of original source pixels"
+  },
+  {
+    "asset": "suzhou-role-scholar-native.webp",
+    "source": "function-original-image3.png",
+    "dimensions": [
+      228,
+      229
+    ],
+    "method": "Native-pixel crop of the original character strip, encoded losslessly"
+  },
+  {
+    "asset": "suzhou-role-merchant-native.webp",
+    "source": "function-original-image3.png",
+    "dimensions": [
+      228,
+      229
+    ],
+    "method": "Native-pixel crop of the original character strip, encoded losslessly"
+  },
+  {
+    "asset": "suzhou-role-commoner-native.webp",
+    "source": "function-original-image3.png",
+    "dimensions": [
+      228,
+      229
+    ],
+    "method": "Native-pixel crop of the original character strip, encoded losslessly"
+  }
+]

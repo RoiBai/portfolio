@@ -11,14 +11,104 @@ export function renderPersonaIntent() {
  <div class="persona-reuse"><span class="persona-step">03 / Keep the style</span><p data-persona-reuse-caption>Next request: <strong>miss a morning meeting</strong>. Reuse the relationship and style instead of explaining them again.</p><button type="button" data-persona-reuse>Save style & write the next email <span aria-hidden="true">→</span></button></div></div>
  <details class="persona-original"><summary>See the original section editor</summary><div><img src="${siteURL('/assets/research-editorial/persona-intent-editor.png')}" width="1052" height="892" alt="The original PersonaMail interface for changing the intent of one email section" loading="lazy"><p>The prototype exposes the intent behind each communication unit, so a writer can change one section without regenerating the entire email.</p></div></details><figcaption class="persona-demo-note">An authored interactive example; settings select local drafts. The original prototype also saves context anchors and learns from editing feedback.</figcaption></figure>`;
 }
+// Each task has all eight authored combinations. Relationship changes the request's
+// social assumptions and handover, not only its greeting; no private reason is invented.
+const personaDrafts = {
+ leave: {
+  'familiar|polite|brief': {
+   request: 'Could I take today off? I won’t be in the lab.',
+   context: 'I’ll send you a short progress update, so we can pick up from the same point when I’m back.',
+   thanks: 'Thanks for understanding.'
+  },
+  'familiar|polite|detail': {
+   request: 'Could I take today off? I won’t be in the lab.',
+   context: 'I wanted to let you know before the day gets going. I’ll send you a short note on what I’ve finished and what I’m working on next, so you have the context without needing a meeting. If there’s anything you need from me before I’m away, please let me know.',
+   thanks: 'Thanks for understanding and for your support.'
+  },
+  'familiar|formal|brief': {
+   request: 'I would like to take leave from the laboratory today.',
+   context: 'I will send a brief progress update so that our next discussion can continue from the current work. Please let me know if you need any additional information.',
+   thanks: 'Thank you for your understanding.'
+  },
+  'familiar|formal|detail': {
+   request: 'I would like to take leave from the laboratory today.',
+   context: 'To keep you informed, I will send a concise summary of my current progress and next steps. This should allow us to resume our discussion when I return without repeating the background. Please let me know whether there is anything you would like me to hand over before my absence.',
+   thanks: 'Thank you for your understanding and continued guidance.'
+  },
+  'new|polite|brief': {
+   request: 'Could I take today off from the lab?',
+   context: 'I’m still getting familiar with how you prefer to handle absences. Please let me know if I should record the leave or send anyone else an update.',
+   thanks: 'Thank you for considering my request.'
+  },
+  'new|polite|detail': {
+   request: 'Could I take today off from the lab?',
+   context: 'As I’m new to the group, I don’t want to assume that an email is the only step needed. Please let me know how you prefer leave to be recorded and whether I should notify anyone else. I can also send a short progress update if that would help you plan around my absence.',
+   thanks: 'Thank you for considering this and helping me understand the process.'
+  },
+  'new|formal|brief': {
+   request: 'I would like to request one day of leave from the laboratory today.',
+   context: 'As I am new to your supervision, please let me know the appropriate approval and notification process. I will follow any arrangements required by the group.',
+   thanks: 'Thank you for your consideration.'
+  },
+  'new|formal|detail': {
+   request: 'I would like to request one day of leave from the laboratory today.',
+   context: 'As I have recently joined the group, I would appreciate clarification of your expectations for reporting an absence. Please let me know whether a formal leave record or notification to another team member is required. I can provide a brief update on my work to support any scheduling decisions.',
+   thanks: 'Thank you for considering my request and advising me on the appropriate arrangements.'
+  }
+ },
+ meeting: {
+  'familiar|polite|brief': {
+   request: 'I’m sorry, I won’t be able to join tomorrow’s morning meeting.',
+   context: 'I’ll send my update beforehand and catch up on the notes afterward. Please flag anything you’d like me to follow up on.',
+   thanks: 'Thanks for understanding.'
+  },
+  'familiar|polite|detail': {
+   request: 'I’m sorry, I won’t be able to join tomorrow’s morning meeting.',
+   context: 'I’ll send you a short update beforehand, including my progress and the questions I’d hoped to discuss. Afterward, I’ll catch up on the notes and any decisions that affect my work. If one of my questions needs a conversation, we can find another time rather than hold up the group.',
+   thanks: 'Thanks for understanding and keeping me in the loop.'
+  },
+  'familiar|formal|brief': {
+   request: 'I will be unable to attend tomorrow’s morning meeting.',
+   context: 'I will circulate my progress update in advance and review the meeting notes afterward. Please let me know if there are any particular actions I should follow up on.',
+   thanks: 'Thank you for your understanding.'
+  },
+  'familiar|formal|detail': {
+   request: 'I will be unable to attend tomorrow’s morning meeting.',
+   context: 'I will send a concise progress update and any questions in advance, so that my absence does not interrupt the discussion. After the meeting, I will review the notes and follow up on decisions relevant to my work. If further discussion is needed, I would be happy to arrange a separate time.',
+   thanks: 'Thank you for your understanding and continued guidance.'
+  },
+  'new|polite|brief': {
+   request: 'I’m sorry, I won’t be able to attend tomorrow’s morning meeting.',
+   context: 'As I’m still learning the group’s routine, would you prefer a written update beforehand or a separate check-in? Please also let me know how best to catch up.',
+   thanks: 'Thank you for your guidance.'
+  },
+  'new|polite|detail': {
+   request: 'I’m sorry, I won’t be able to attend tomorrow’s morning meeting.',
+   context: 'I’m still getting familiar with how the group shares updates, so I wanted to check what would work best. I can send my progress and questions in advance, or arrange a brief check-in if you prefer. Please let me know where I should find the meeting notes and whether anyone else needs to know I’ll be absent.',
+   thanks: 'Thank you for helping me stay involved while I learn the group’s routine.'
+  },
+  'new|formal|brief': {
+   request: 'I regret that I will be unable to attend tomorrow’s morning meeting.',
+   context: 'As I have recently joined the group, please advise whether you would prefer a written update or an alternative check-in, and how I should obtain any decisions or follow-up tasks.',
+   thanks: 'Thank you for your guidance and understanding.'
+  },
+  'new|formal|detail': {
+   request: 'I regret that I will be unable to attend tomorrow’s morning meeting.',
+   context: 'As I am still becoming familiar with the group’s reporting arrangements, I would appreciate your advice on an appropriate alternative. I can provide a written progress update in advance or arrange a brief check-in. Please let me know how I should access the meeting record and whether I need to notify any other colleagues.',
+   thanks: 'Thank you for your consideration and guidance on the group’s expectations.'
+  }
+ }
+};
 function settings(el){return {relationship:el.querySelector('[data-persona-relationship]').value,tone:el.querySelector('[data-persona-tone]').value,length:el.querySelector('[data-persona-length]').value,appreciation:el.querySelector('[data-persona-appreciation]').checked};}
 export function setupPersonaIntent(root=document){
  const demos=[...root.querySelectorAll('[data-persona-demo]')];
  function update(el){
   const s=settings(el),familiar=s.relationship==='familiar',brief=s.length==='brief',polite=s.tone==='polite',meeting=el.dataset.personaTask==='meeting';
-  const request=meeting?(polite?'I’m sorry, I won’t be able to join tomorrow’s morning meeting.':'I would like to inform you that I will be unable to attend tomorrow’s morning meeting.'):(polite?'Could I take today off? I won’t be in the lab.':'I would like to request leave from the laboratory today.');
-  const context=brief?'':meeting?' I wanted to let you know in advance so you can plan the meeting.':' I wanted to let you know so you’re aware of my schedule.';
-  const message=el.querySelector('[data-persona-message]');message.replaceChildren();const requestSpan=document.createElement('span');requestSpan.className='persona-email-request';requestSpan.textContent=request;message.append(requestSpan,document.createTextNode(context));if(s.appreciation){const thanks=document.createElement('mark');thanks.textContent='Thank you for understanding.';message.append(document.createTextNode(' '),thanks);}
+  const draft=personaDrafts[meeting?'meeting':'leave'][`${s.relationship}|${s.tone}|${s.length}`];
+  const message=el.querySelector('[data-persona-message]');message.replaceChildren();
+  const requestSpan=document.createElement('span');requestSpan.className='persona-email-request';requestSpan.textContent=draft.request;
+  message.append(requestSpan,document.createTextNode(` ${draft.context}`));
+  if(s.appreciation){const thanks=document.createElement('mark');thanks.textContent=draft.thanks;message.append(document.createTextNode(' '),thanks);}
   el.querySelector('[data-persona-subject]').textContent=meeting?'Tomorrow’s morning meeting':'Away from the lab today';
   el.querySelector('[data-persona-greeting]').textContent=familiar?'Hi Professor,':'Dear Professor,';
   el.querySelector('[data-persona-signoff]').textContent=(familiar&&polite?'Best,':'Kind regards,')+'\n[Your name]';
