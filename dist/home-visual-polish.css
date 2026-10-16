@@ -1,0 +1,45 @@
+/* Selected-work typography only. The name scene and its four role faces are untouched. */
+#selected-work{--work-title:52px;--work-heading:36px;--work-copy:22px;--work-note:20px;--work-caption:18px;--work-label:14px}
+#selected-work :is(.row-copy h2,.group-heading h2){font-family:var(--font-body);font-weight:600;letter-spacing:-.015em;line-height:1.12;text-wrap:pretty}
+#selected-work .row-copy h2{font-size:var(--work-title);margin-bottom:16px}
+#selected-work .group-heading h2{font-size:var(--work-heading)}
+#selected-work :is(.row-description,.group-description){font-family:var(--font-body);font-size:var(--work-copy);line-height:1.45;font-weight:400;color:inherit;opacity:.88;max-width:100%;text-wrap:pretty}
+#selected-work .row-description{margin-bottom:22px}
+#selected-work :is(.pills span,.group-keywords span,.category-tag){font-family:var(--font-body);font-size:var(--work-label);font-weight:500;line-height:1.3;letter-spacing:0;padding:5px 10px}
+#selected-work .pills{gap:7px}
+#selected-work .pills span{border-color:#ffffff2c}
+#selected-work :is(.choice-label,.group-open){font-family:var(--font-body);font-size:var(--work-caption);font-weight:400;line-height:1.3}
+#selected-work .choice-label{align-items:baseline;gap:8px;min-height:46px;text-wrap:pretty}
+#selected-work .choice-label>span{font-size:var(--work-label)}
+#selected-work .group-title-line{min-height:42px}
+#selected-work .group-row{--group-header-size:190px}
+#selected-work .group-heading{gap:10px;padding-top:28px}
+#selected-work .group-keywords{gap:6px}
+#selected-work .comic-art{gap:18px;align-items:start;height:auto}
+#selected-work .comic-art figure{align-self:start;translate:none}
+#selected-work .comic-art figure img{height:170px;object-fit:contain;object-position:center bottom}
+#selected-work .comic-art figcaption{font-family:var(--font-body);font-size:var(--work-caption);line-height:1.35;margin-top:12px;opacity:.88;text-wrap:pretty}
+#selected-work .project-row:focus-visible,#selected-work .project-choice:focus-visible{outline:2px solid currentColor;outline-offset:-5px}
+@media(max-width:1000px) and (min-width:700px){
+ #selected-work .row-copy h2{font-size:var(--work-heading)}
+ #selected-work .comic-art{gap:12px}
+ #selected-work .comic-art figure img{height:145px}
+}
+@media(max-width:699px){
+ #selected-work{--work-title:38px;--work-heading:30px;--work-copy:20px;--work-note:18px;--work-caption:16px;--work-label:14px}
+ #selected-work .project-row{height:auto;min-height:520px;padding-block:38px 46px;gap:28px}
+ #selected-work .row-copy h2{margin-bottom:14px}
+ #selected-work .row-description{margin-bottom:20px}
+ #selected-work .group-row{--group-header-size:260px;height:auto;min-height:650px;grid-template-rows:var(--group-header-size) auto}
+ #selected-work .group-heading{gap:10px;padding-top:28px}
+ #selected-work .group-title-line{min-height:36px}
+ #selected-work .group-description{line-height:1.4}
+ #selected-work .group-open{bottom:16px}
+ #selected-work .project-choices{height:auto;grid-template-rows:repeat(2,minmax(190px,auto))}
+ #selected-work .project-choice{padding:10px 16px 18px;justify-content:flex-end}
+ #selected-work .object-hit{height:135px}
+ #selected-work .choice-label{min-height:44px;margin-top:12px;gap:5px}
+ #selected-work .comic-art{min-height:0;gap:12px}
+ #selected-work .comic-art figure img{height:112px}
+ #selected-work .comic-art figcaption{margin-top:10px}
+}

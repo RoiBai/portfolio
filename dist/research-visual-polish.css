@@ -1,0 +1,127 @@
+/* Research-page layout polish. Type sizes come from the shared eight tokens. */
+
+/* Icon Colors: keep the comparison and its evidence visually connected. */
+body[data-project=icon-colors] .icon-context-comparison{gap:40px;margin-top:24px}
+body[data-project=icon-colors] .icon-context-comparison figcaption{margin-top:18px}
+body[data-project=icon-colors] .icon-abstract-pairs{gap:36px;margin-top:30px;padding-top:24px;border-top-color:color-mix(in srgb,var(--ink) 12%,transparent)}
+body[data-project=icon-colors] .icon-lab-instruction{gap:16px 28px;align-items:center;margin-bottom:18px}
+body[data-project=icon-colors] .icon-lab-instruction>span{padding:8px 12px;border-radius:3px}
+body[data-project=icon-colors] .icon-designer-consensus{margin-block:22px 28px;gap:22px;align-items:center}
+body[data-project=icon-colors] .icon-refinement-reasoning{gap:28px}
+body[data-project=icon-colors] .icon-refinement-reasoning article{padding:20px 22px;background:color-mix(in srgb,var(--accent) 3%,transparent);border-radius:4px}
+body[data-project=icon-colors] .icon-rating-table th{padding-bottom:16px}
+body[data-project=icon-colors] .icon-rating-source-note{margin-top:18px}
+body[data-project=icon-colors] .icon-parking-alternatives{background:color-mix(in srgb,var(--ink) 4%,var(--bg));border-radius:4px}
+
+/* Color in Context: preserve the grouped counts and quiet the study framing. */
+body[data-project=traditional-color] .case-study .stats-grouped>.stat-group{display:block;padding:16px 22px 18px;background:#e6eceb;border-radius:4px}
+body[data-project=traditional-color] .case-study .stats-grouped>.stat-group:last-child{background:#e9ebdf}
+body[data-project=traditional-color] .stats-grouped .stat-group-values{align-items:start}
+body[data-project=traditional-color] .stats-grouped .stat-item{display:flex;flex-direction:column;align-items:center;gap:6px}
+body[data-project=traditional-color] #pilot .dv-panels{gap:26px;align-items:start}
+body[data-project=traditional-color] #pilot .dv-panel-title{min-height:2.4em;margin-bottom:10px}
+body[data-project=traditional-color] #pilot .dv-unit{margin-top:0}
+body[data-project=traditional-color] .color-pilot-next{padding-top:22px;margin-top:28px;gap:30px;border-top-color:color-mix(in srgb,var(--ink) 14%,transparent)}
+body[data-project=traditional-color] .color-artwork-row{padding:20px 24px 24px;gap:18px 28px}
+body[data-project=traditional-color] .color-artwork-row-label{align-items:center;gap:20px}
+body[data-project=traditional-color] .color-artwork-row-subtitle{padding:7px 12px}
+body[data-project=traditional-color] .color-artwork-row-with{background:#e5eada;border-radius:4px}
+body[data-project=traditional-color] .color-artwork-row .color-atlas-figure img{height:200px;max-height:200px}
+body[data-project=traditional-color] .color-record-callouts>article{background:#e8eeee;border-color:#c9d5d9;border-radius:4px}
+
+/* PersonaMail: align the interactive example with the chapter, not an inset frame. */
+body[data-project=personamail] #interaction>.section-experience{max-width:none;justify-self:stretch}
+body[data-project=personamail] #interaction .section-experience>.persona-flow{max-width:none;padding-inline:0;gap:44px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+body[data-project=personamail] .persona-after{border-left:0;padding-left:0}
+body[data-project=personamail] .persona-settings{gap:16px 20px}
+body[data-project=personamail] .persona-settings select{min-height:48px;border-color:color-mix(in srgb,var(--accent) 30%,transparent);border-radius:4px}
+body[data-project=personamail] .persona-draft{border-color:color-mix(in srgb,var(--accent) 28%,transparent);border-top-color:var(--accent);box-shadow:none}
+body[data-project=personamail] .persona-reuse button{padding:14px 18px;border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-radius:4px;background:#2c6458;color:#fffdf3;box-shadow:none}
+body[data-project=personamail] :is(#research,#reflection) .research-source-figure>figcaption{padding-top:16px!important}
+body[data-project=personamail] :is(#research,#reflection)>.section-body{padding-left:10px!important}
+
+/* Gaze: the six definitions stay together; charts have a readable reading edge. */
+body[data-project=beyond-the-gaze] #signals>.section-visuals{width:100%;max-width:1180px!important;margin-inline:auto}
+body[data-project=beyond-the-gaze] #signals .rf-gaze-signals{width:100%;max-width:none}
+body[data-project=beyond-the-gaze] .rf-gaze-signals .rf-signal-columns{gap:22px}
+body[data-project=beyond-the-gaze] .rf-gaze-signals .rf-signal-cell{min-height:136px;border-color:#c7d2d5;border-radius:3px;padding:18px 20px}
+body[data-project=beyond-the-gaze] .rf-gaze-signals .rf-signal-cell.is-hll-component{background:#dce9e9;border-color:#a9c1c5}
+body[data-project=beyond-the-gaze] .rf-gaze-signals .rf-gsl-hll{margin-top:22px!important;padding-top:22px!important}
+body[data-project=beyond-the-gaze] #example>.section-heading{margin-bottom:12px}
+body[data-project=beyond-the-gaze] .case-study #example .data-visual{max-width:1180px!important;margin-inline:auto}
+body[data-project=beyond-the-gaze] #example .dv-panel-title{min-height:0;margin-bottom:18px}
+body[data-project=beyond-the-gaze] #example .dv-row-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+body[data-project=beyond-the-gaze] #example .dv-value{margin-top:0}
+body[data-project=beyond-the-gaze] #example .dv-panels{margin-top:6px}
+body[data-project=beyond-the-gaze] .rf-record-codes>section{background:color-mix(in srgb,var(--accent) 6%,transparent)}
+
+/* Suzhou: one full-width study introduction, followed by aligned comparisons. */
+body[data-project=suzhou-scrollverse] #study>.section-heading{grid-column:1/-1!important;grid-row:1!important}
+body[data-project=suzhou-scrollverse] #study>.section-body{grid-column:1/-1!important;grid-row:2!important;width:100%;max-width:none;padding:0!important}
+body[data-project=suzhou-scrollverse] #study>.section-body>p{max-width:none}
+body[data-project=suzhou-scrollverse] #study>.section-visuals{grid-column:1/-1!important;grid-row:3!important}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lenses{align-self:start;gap:18px;padding-top:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-place{gap:24px 40px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-context{background:color-mix(in srgb,var(--accent) 5%,transparent);border-radius:4px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-conditions{gap:28px;margin-bottom:28px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-conditions section{padding:20px 24px;background:color-mix(in srgb,var(--accent) 4%,transparent);border-left:2px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:0 4px 4px 0}
+body[data-project=suzhou-scrollverse] .rf-study-comparisons{gap:40px}
+body[data-project=suzhou-scrollverse] .rf-study-reports{gap:32px;padding-top:22px;margin-top:26px}
+body[data-project=suzhou-scrollverse] .rf-study-reports>div{grid-template-columns:100px minmax(0,1fr);gap:18px;align-items:center}
+
+/* VerseColor: preserve the three-step reading path and remove nested chart frames. */
+body[data-project=versecolor] .vi-workflow{column-gap:30px;margin-bottom:34px}
+body[data-project=versecolor] .vi-interface-excerpt{border-color:#d4ded3;border-radius:4px}
+body[data-project=versecolor] .vi-workflow>li:not(:last-child)::after{right:-24px}
+body[data-project=versecolor] .vi-heading{margin-top:28px}
+body[data-project=versecolor] .vi-readings{border-radius:5px;background:#ecf1e9;border-color:#c0d2c4}
+body[data-project=versecolor] #findings>.section-body{align-self:start;padding-top:18px!important}
+body[data-project=versecolor] #findings .dv-shell{border:0;background:color-mix(in srgb,var(--accent) 4%,var(--bg));padding:26px 28px;border-radius:4px;box-shadow:none}
+body[data-project=versecolor] #findings .dv-description{margin-bottom:22px}
+body[data-project=versecolor] #findings .dv-panel{padding-top:0}
+body[data-project=versecolor] #findings .section-body blockquote{margin-top:26px;padding-left:22px}
+
+@media(max-width:800px){
+ body[data-project=icon-colors] .icon-context-comparison{gap:28px;margin-top:18px}
+ body[data-project=icon-colors] .icon-abstract-pairs{gap:28px;padding-top:22px}
+ body[data-project=icon-colors] .icon-designer-consensus{gap:18px;margin-block:22px}
+ body[data-project=icon-colors] .icon-lab-instruction>span{display:inline-block;max-width:100%;padding:8px 10px}
+ body[data-project=icon-colors] .icon-refinement-reasoning{gap:18px}
+ body[data-project=icon-colors] .icon-refinement-reasoning article{padding:18px}
+ body[data-project=traditional-color] .case-study .stats-grouped>.stat-group{padding:14px 16px 18px}
+ body[data-project=traditional-color] #pilot .dv-panel-title{min-height:0}
+ body[data-project=traditional-color] .color-pilot-next{gap:16px}
+ body[data-project=traditional-color] .color-artwork-row{padding:18px 16px;gap:20px}
+ body[data-project=traditional-color] .color-artwork-row-label{align-items:flex-start;gap:12px}
+ body[data-project=traditional-color] .color-artwork-row .color-atlas-figure img{height:175px;max-height:175px}
+ body[data-project=personamail] #interaction .section-experience>.persona-flow{grid-template-columns:minmax(0,1fr);gap:28px}
+ body[data-project=personamail] .persona-after{padding-top:24px;border-top:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
+ body[data-project=personamail] :is(#research,#reflection)>.section-body{padding-left:0!important}
+ body[data-project=personamail] .persona-settings{gap:16px 12px}
+ body[data-project=beyond-the-gaze] #signals .rf-signal-columns{grid-template-columns:1fr;gap:24px}
+ body[data-project=beyond-the-gaze] #signals .rf-signal-columns dl{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:10px}
+ body[data-project=beyond-the-gaze] #signals .rf-signal-cell{min-height:0;padding:14px 12px}
+ body[data-project=beyond-the-gaze] #signals .rf-signal-columns h4{margin-bottom:12px}
+ body[data-project=beyond-the-gaze] #example>.section-heading{margin-bottom:18px}
+ body[data-project=beyond-the-gaze] #example .dv-row-head{display:block}
+ body[data-project=beyond-the-gaze] #example .dv-value{margin-top:8px}
+ body[data-project=beyond-the-gaze] #example .dv-panel-title{min-height:3.6em;margin-bottom:12px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-place{gap:24px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-conditions{gap:20px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-conditions section{padding:18px 20px}
+ body[data-project=suzhou-scrollverse] .rf-study-comparisons{gap:26px}
+ body[data-project=suzhou-scrollverse] .rf-study-reports{gap:22px}
+ body[data-project=versecolor] .vi-workflow{row-gap:30px}
+ body[data-project=versecolor] .vi-workflow>li{grid-template-columns:24px minmax(0,1fr);column-gap:10px}
+ body[data-project=versecolor] #findings>.section-body{padding-top:0!important}
+ body[data-project=versecolor] #findings .dv-shell{padding:22px 18px}
+}
+
+/* Make room for complete first-screen evidence without shrinking the type. */
+@media(min-width:1100px){
+ body:is([data-project=traditional-color],[data-project=icon-colors],[data-project=personamail],[data-project=beyond-the-gaze]) .case-hero{padding-block:18px 16px!important}
+ body:is([data-project=traditional-color],[data-project=icon-colors],[data-project=personamail],[data-project=beyond-the-gaze]) .case-hero>.project-title-row{margin-bottom:10px}
+ body:is([data-project=traditional-color],[data-project=icon-colors],[data-project=personamail],[data-project=beyond-the-gaze]) .case-hero>.hero-overview{margin-top:16px}
+ body:is([data-project=traditional-color],[data-project=icon-colors],[data-project=personamail],[data-project=beyond-the-gaze]) .case-study .case-hero>.stats{margin-top:16px;padding-block:14px}
+ body[data-project=traditional-color] .case-study .stats-grouped>.stat-group{padding-block:12px}
+}

@@ -1,0 +1,28 @@
+/* Shared page rhythm. Type sizes remain defined only by the eight case tokens. */
+body[data-view=project] .case-study{--section-space:64px}
+body[data-view=project] .case-study>.case-section{padding-block:var(--section-space);row-gap:28px;border-bottom-color:color-mix(in srgb,var(--ink) 15%,transparent)}
+body[data-view=project] .case-study .section-heading h2{margin-top:0;margin-bottom:0}
+body[data-view=project] .case-study .section-body>p:last-child{margin-bottom:0}
+body[data-view=project] .case-study .project-title-row{gap:14px 22px;margin-bottom:12px}
+body[data-view=project] .case-study .project-pill{padding:6px 10px;min-height:0;border-radius:5px;letter-spacing:.015em}
+body[data-view=project] .case-study .project-role{border-left-width:2px;background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 5%,var(--bg)),transparent 85%);padding:12px 16px}
+body[data-view=project] .case-study .project-meta{gap:6px 10px}
+body[data-view=project] .case-study .meta-badge{border-radius:4px;padding:5px 9px}
+body[data-view=project] .case-study .stats{gap:20px;margin-top:24px;padding-block:20px;border-color:color-mix(in srgb,var(--ink) 18%,transparent)}
+body[data-view=project] .case-study .stats>div{min-width:0;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px}
+body[data-view=project] .case-study .stats :is(span,small){margin:0;max-width:none;text-wrap:pretty}
+body[data-view=project] .case-study :is(.stats strong,.dv-value,.gr-difference,.rf-bar-row strong,.icon-rating-table td){font-variant-numeric:tabular-nums}
+body[data-view=project] .case-study .project-figure figcaption{margin-top:8px;padding-block:0;text-wrap:pretty}
+body[data-view=project] .case-study :is(.text-link,.hero-links a,.end-links a){text-underline-offset:5px;text-decoration-thickness:1px}
+body[data-view=project] .case-study .project-end{padding-block:54px}
+body[data-view=project] .case-study .project-end h2{margin-block:18px 26px}
+body[data-view=project] .chapter-bar{border-bottom-color:color-mix(in srgb,var(--ink) 14%,transparent)}
+body[data-view=project] .chapter-nav a{padding-block:5px}
+@media(max-width:800px){
+ body[data-view=project] .case-study{--section-space:44px}
+ body[data-view=project] .case-study>.case-section{row-gap:24px}
+ body[data-view=project] .case-study .project-title-row{gap:12px}
+ body[data-view=project] .case-study .project-role{padding:12px 14px}
+ body[data-view=project] .case-study .stats{gap:18px 12px;padding-block:18px}
+ body[data-view=project] .case-study .project-end{padding-block:40px}
+}

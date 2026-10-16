@@ -1,0 +1,111 @@
+/* Game case studies: quieter framing around the original art and interactions.
+   Font sizes are owned by the shared eight-token typography system. */
+body:is([data-project=ambulance],[data-project=loofasoup],[data-project=hersound],[data-project=ourworld]) .case-study .project-pill{
+  background:color-mix(in srgb,var(--accent) 9%,var(--bg));
+  color:var(--ink);
+  border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);
+}
+body:is([data-project=ambulance],[data-project=loofasoup],[data-project=hersound],[data-project=ourworld]) .case-study .hero-figure figcaption{gap:16px}
+body:is([data-project=ambulance],[data-project=loofasoup],[data-project=hersound],[data-project=ourworld]) .case-study .hero-outcome{padding-bottom:12px}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section{padding-block:44px}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-heading{margin-bottom:22px;gap:24px}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-toolbar{gap:12px 24px}
+
+/* Ambulance: give the city and six annotations comparable visual weight. */
+@media(min-width:1000px){
+  body[data-project=ambulance] .case-study .hero-overview{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:5%}
+  body[data-project=ambulance] .case-study .hero-figure{width:100%;max-width:570px;justify-self:center}
+  body[data-project=ambulance] #gameplay .ar-game-note>div:has(.ar-hospital-panel){grid-template-columns:minmax(0,1fr) 76px;gap:6px 14px}
+  body[data-project=ambulance] #gameplay .ar-game-note .ar-hospital-panel{width:76px}
+}
+body[data-project=ambulance] .ar-reflection-grid{align-items:start;gap:48px}
+body[data-project=ambulance] .ar-reflection-copy{padding-top:8px}
+body[data-project=ambulance] .ar-reflection-copy blockquote{padding-left:20px;border-left-width:2px}
+body[data-project=ambulance] #gameplay .ar-game-map{padding-top:32px;margin-top:42px;border-top:1px solid color-mix(in srgb,var(--ink) 15%,transparent)}
+body[data-project=ambulance] .ar-news-copy .news-preview{padding-top:20px}
+body[data-project=ambulance] .ar-hospitals li{padding-block:12px}
+
+/* Loofa: wider side notes, a readable dialogue pair, and evenly centred cast art. */
+@media(min-width:1101px){
+  body[data-project=loofasoup] .loofa-linked-board{grid-template-columns:minmax(210px,.83fr) minmax(0,2.7fr) minmax(220px,.88fr);column-gap:32px;row-gap:30px}
+  body[data-project=loofasoup] .loofa-fixed-note-0{grid-template-columns:25px minmax(0,1fr) auto}
+  body[data-project=loofasoup] .loofa-taste-key{padding-left:14px;gap:20px}
+}
+body[data-project=loofasoup] .loofa-gameplay-intro{max-width:none;margin-bottom:36px}
+body[data-project=loofasoup] .loofa-fixed-right{gap:32px}
+body[data-project=loofasoup] .loofa-design-decision{background:color-mix(in srgb,var(--accent) 6%,var(--bg));border:1px solid color-mix(in srgb,var(--accent) 17%,transparent);padding:18px 20px}
+body[data-project=loofasoup] .loofa-routes-layout{align-items:start;gap:44px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+body[data-project=loofasoup] .loofa-route-copy article{padding-block:22px;border-color:color-mix(in srgb,var(--ink) 20%,transparent)}
+body[data-project=loofasoup] .loofa-dialogue-intro{padding-top:28px;margin-top:40px;border-top:1px solid color-mix(in srgb,var(--ink) 15%,transparent)}
+body[data-project=loofasoup] .loofa-original-dialogues{width:min(100%,1040px);gap:32px;margin-top:16px}
+body[data-project=loofasoup] #characters .loofa-character-trigger{display:flex;justify-content:center;align-items:end}
+body[data-project=loofasoup] #characters .loofa-character figcaption{padding-top:18px;border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
+body[data-project=loofasoup] #characters .section-visuals.character-row{row-gap:42px}
+
+/* Her Sound: keep the paper and warm palette, with less texture behind reading. */
+body[data-project=hersound],body[data-project=hersound] .chapter-bar{background-image:linear-gradient(rgba(242,238,229,.83),rgba(242,238,229,.83)),url('/assets/her-1915/paper-background-original.png')}
+body[data-project=hersound] .her-abstract-story{gap:32px 6%;align-items:start}
+body[data-project=hersound] .her-abstract-portraits{padding-top:8px;gap:24px}
+body[data-project=hersound] .her-audience-quote{padding:20px 0 0;border-top:1px solid color-mix(in srgb,var(--ink) 15%,transparent)}
+body[data-project=hersound] .gx-her-layout{gap:40px;padding-block:28px}
+body[data-project=hersound] [data-experience=hersound-assemble] .gx-her-guide::before{background:#e5d4b8;border-left-color:#9c7040}
+body[data-project=hersound] .gx-play-guide .gx-her-guide{gap:12px}
+body[data-project=hersound] .her-evidence-story{grid-template-columns:minmax(0,1.65fr) minmax(240px,.7fr);gap:6%}
+body[data-project=hersound] .her-evidence-copy{max-width:66ch}
+body[data-project=hersound] .her-evidence-art{max-width:340px;justify-self:center}
+body[data-project=hersound] .her-accusation-pair{gap:48px}
+
+/* Our World: keep the reading measure close to the portraits and memorial. */
+body[data-project=ourworld] .case-study #abstract{grid-template-columns:minmax(0,1.75fr) minmax(320px,1fr)!important;column-gap:56px!important}
+body[data-project=ourworld] .case-study #abstract>.section-body{max-width:65ch}
+body[data-project=ourworld] .case-study #abstract>.section-visuals{gap:24px;max-width:420px!important}
+body[data-project=ourworld] .case-study #abstract .figure-media img{height:180px!important;max-height:180px!important}
+body[data-project=ourworld] .gx-archive .gx-animal-record{background:color-mix(in srgb,var(--accent) 4%,var(--bg));padding:32px 28px;gap:36px;border-block:1px solid color-mix(in srgb,var(--ink) 16%,transparent)}
+body[data-project=ourworld] .gx-record-copy{padding-right:0;max-width:70ch}
+body[data-project=ourworld] .gx-record-copy .gx-record-note{padding-left:18px;margin-block:20px}
+body[data-project=ourworld] .gx-archive-top{align-items:baseline;margin-bottom:24px}
+body[data-project=ourworld] .gx-archive-top .gx-instruction{grid-column:1;grid-row:1;white-space:normal;max-width:75ch}
+body[data-project=ourworld] .gx-archive-top>.gx-full-game{grid-column:2;grid-row:1}
+body[data-project=ourworld] .case-study #remember{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)!important;align-items:start!important;gap:28px 6%!important}
+body[data-project=ourworld] .case-study #remember>.section-heading{grid-column:1!important;grid-row:1!important}
+body[data-project=ourworld] .case-study #remember>.section-body{grid-column:2!important;grid-row:1!important;display:block;max-width:58ch}
+body[data-project=ourworld] .case-study #remember>.section-body>p{margin-top:0}
+body[data-project=ourworld] .case-study #remember>.section-experience{grid-row:2!important}
+body[data-project=ourworld] .gx-candles .candle-scene{box-shadow:none;border-color:color-mix(in srgb,var(--ink) 20%,transparent)}
+
+@media(max-width:900px){
+  body[data-project=ourworld] .case-study #abstract{grid-template-columns:1fr!important;gap:24px!important}
+  body[data-project=ourworld] .case-study #abstract>.section-visuals{max-width:390px!important}
+  body[data-project=hersound] .gx-her-layout{gap:28px}
+}
+@media(max-width:760px){
+  body:is([data-project=ambulance],[data-project=loofasoup],[data-project=hersound],[data-project=ourworld]) .case-study .hero-overview{margin-top:20px;gap:20px}
+  body:is([data-project=ambulance],[data-project=loofasoup],[data-project=hersound],[data-project=ourworld]) .case-study .hero-figure figcaption{gap:12px}
+  body:is([data-project=ambulance],[data-project=loofasoup]) .play-section{padding-block:34px}
+  body[data-project=ambulance] .ar-reflection-grid{gap:24px}
+  body[data-project=ambulance] .ar-reflection-copy{padding-top:0}
+  body[data-project=ambulance] #gameplay .ar-game-map{padding-top:26px;margin-top:32px}
+  body[data-project=loofasoup] .loofa-gameplay-intro{margin-block:22px 28px}
+  body[data-project=loofasoup] .loofa-routes-layout{grid-template-columns:1fr;gap:24px}
+  body[data-project=loofasoup] .loofa-dialogue-intro{padding-top:24px;margin-top:28px}
+  body[data-project=loofasoup] .loofa-original-dialogues{width:100%;grid-template-columns:1fr;gap:28px;margin-top:8px}
+  body[data-project=loofasoup] .loofa-design-decision{padding:16px}
+  body[data-project=hersound] .case-study .hero-figure>.figure-media>img{max-height:235px!important}
+  body[data-project=hersound] .her-abstract-story{gap:24px}
+  body[data-project=hersound] .her-abstract-portraits{padding-top:0;gap:20px}
+  body[data-project=hersound] .her-evidence-story{grid-template-columns:1fr;gap:22px}
+  body[data-project=hersound] .her-evidence-art{max-width:230px}
+  body[data-project=hersound] .her-accusation-pair{gap:32px}
+  body[data-project=ourworld] .case-study #remember{grid-template-columns:1fr!important;gap:22px!important}
+  body[data-project=ourworld] .case-study #remember>.section-body{grid-column:1!important;grid-row:2!important}
+  body[data-project=ourworld] .case-study #remember>.section-experience{grid-row:3!important}
+  body[data-project=ourworld] .gx-archive .gx-animal-record{padding:24px 18px;gap:20px}
+}
+@media(max-width:600px){
+  body[data-project=ambulance] #gameplay .ar-game-layout{gap:26px}
+  body[data-project=ambulance] .ar-hospitals li{justify-content:flex-start;text-align:left;gap:14px;padding-block:10px}
+  body[data-project=loofasoup] #characters .loofa-character{flex-basis:235px}
+  body[data-project=ourworld] .gx-archive-hero .figure-media{max-width:310px;margin-inline:auto}
+  body[data-project=ourworld] .gx-hero-menagerie{height:auto;aspect-ratio:31/27}
+  body[data-project=ourworld] .case-study #abstract .figure-media img{height:155px!important;max-height:155px!important}
+}
