@@ -1,4 +1,5 @@
-// Original published games; Her Sound is a locally translated source build.
+import {siteURL} from './site-paths.js';
+// Original published games; Loofa uses its original build with a local language-aware player.
 export const games = {
   ambulance: {
     title: 'Ambulance Rush',
@@ -11,9 +12,9 @@ export const games = {
   loofasoup: {
     title: 'Taste of Connection · Loofa Soup',
     source: 'https://lufasoup.ruiyuanbai.com/',
-    embed: 'https://lufasoup.ruiyuanbai.com/',
-    intro: 'Take a seat at a shared table, where every choice is a social puzzle.',
-    steps: ['Start the game and follow the instructions at the table.', 'Explore the relationships behind each dining choice.', 'For this Unity game, a desktop browser is recommended.'],
+    embed: siteURL('/assets/loofa-game/index.html'),
+    intro: 'Join Lufa at his next business dinner.',
+    steps: [],
     label: 'Play Loofa Soup',
   },
   hersound: {

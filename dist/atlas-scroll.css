@@ -110,8 +110,8 @@ body[data-project="traditional-color"] .atlas-native-record .atlas-native-citati
 
 /* One complete palette example carries the reasoning; the other original briefs remain available. */
 body[data-project="traditional-color"] .atlas-preset-primary{padding-bottom:28px}
-body[data-project="traditional-color"] .atlas-preset-reading{grid-column:1/-1;margin-top:24px;padding:24px 28px;background:#e4ebe7;border-radius:4px}
-body[data-project="traditional-color"] .atlas-preset-reading>h4{margin:0 0 20px!important;color:#3f6578}
+body[data-project="traditional-color"] .atlas-preset-reading{grid-column:1/-1;margin-top:20px;padding:18px 0 0;background:none;border-radius:0;border-top:1px solid #b9b0a3}
+body[data-project="traditional-color"] .atlas-preset-reading>h4{margin:0 0 16px!important;color:#3f6578}
 body[data-project="traditional-color"] .atlas-reading-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 body[data-project="traditional-color"] .atlas-reading-steps article{min-width:0}
 body[data-project="traditional-color"] .atlas-reading-steps article>span{display:block;color:#3f6578;letter-spacing:.04em;margin-bottom:9px}
@@ -136,7 +136,7 @@ body[data-project="traditional-color"] .atlas-preset-disclosure .atlas-preset-sw
  body[data-view="project"][data-project="traditional-color"] .case-study :is(.atlas-reading-scope,.color-scale-explanation){font-size:var(--case-caption)!important}
 }
 @media(max-width:700px){
- body[data-project="traditional-color"] .atlas-preset-reading{padding:22px 18px;margin-top:16px}
+ body[data-project="traditional-color"] .atlas-preset-reading{padding:18px 0 0;margin-top:16px}
  body[data-project="traditional-color"] .atlas-reading-steps{grid-template-columns:1fr;gap:20px}
  body[data-project="traditional-color"] .atlas-preset-disclosure{padding-inline:16px}
  body[data-project="traditional-color"] .atlas-preset-disclosure summary{grid-template-columns:minmax(0,1fr) 90px;gap:12px}

@@ -47,6 +47,27 @@ body[data-project="glancemap"] #study .section-heading h2{max-width:none;font-si
  #study .route-people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;position:relative}#study .route-person{position:relative!important;top:auto!important;left:auto!important;right:auto!important;width:auto}#study .route-person-art,#study .route-person:first-child .route-person-art{height:140px}#study .route-person-art img,#study .route-person:first-child .route-person-art img{max-height:140px}
  #study .route-study-notes{margin-top:28px;gap:22px}#study .route-study-notes>p{font-size:16px}#study .route-study-notes blockquote{font-size:19px}#study .study-voices{gap:22px}
 }
+
+/* Compare conditions side by side; all participants follow the same protocol below. */
+body[data-project=glancemap] #study .study-condition-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4%;align-items:start}
+body[data-project=glancemap] #study .study-condition{min-width:0}
+body[data-project=glancemap] #study .study-condition h3{font:600 var(--case-subhead)/1.3 var(--font-body);margin:10px 0 18px;color:var(--ink)}
+body[data-project=glancemap] #study .study-condition figure{margin:0}
+body[data-project=glancemap] #study .study-condition figure>img{display:block;width:100%;height:auto;aspect-ratio:2350/897;object-fit:contain;background:#000}
+body[data-project=glancemap] #study .study-condition figcaption{display:block;text-align:center;font:400 var(--case-caption)/1.4 var(--font-body);color:var(--muted);padding:6px 0 0;margin:0;text-wrap:pretty}
+body[data-project=glancemap] #study .study-condition .baseline-story{margin-top:18px}
+body[data-project=glancemap] #study .study-condition .baseline-story p{font:400 var(--case-copy)/1.5 var(--font-body);max-width:none;margin:12px 0 0;color:var(--muted);text-wrap:pretty}
+body[data-project=glancemap] #study .study-condition .baseline-story strong{color:var(--ink)}
+body[data-project=glancemap] #study .study-condition .glance-phrase-highlight strong{color:#10160d}
+body[data-project=glancemap] #study .study-condition .baseline-reference{font:400 var(--case-caption)/1.4 var(--font-body)}
+body[data-project=glancemap] #study .study-shared-inputs{font:400 var(--case-copy)/1.5 var(--font-body);max-width:none;margin:28px 0 0;color:var(--muted)}
+body[data-project=glancemap] #study .study-shared-inputs strong{color:var(--accent)}
+@media(max-width:700px){
+ body[data-project=glancemap] #study .study-condition-grid{grid-template-columns:1fr;gap:30px}
+ body[data-project=glancemap] #study .study-condition h3{margin-bottom:12px}
+ body[data-project=glancemap] #study .study-condition .baseline-story{margin-top:14px}
+ body[data-project=glancemap] #study .study-shared-inputs{margin-top:24px}
+}
 @media(max-width:600px){
  body[data-project="glancemap"] #study .section-heading h2{font-size:34px}#study .study-deck dl{justify-content:space-between;gap:12px}#study .study-deck dt{font-size:29px}#study .study-deck dd{font-size:14px}#study .route-map{margin-bottom:28px}
  #study .route-people{grid-template-columns:1fr;gap:22px}#study .route-person{display:grid;grid-template-columns:110px 1fr;gap:22px;align-items:center}#study .route-person-art,#study .route-person:first-child .route-person-art{height:145px}#study .route-person-art img,#study .route-person:first-child .route-person-art img{max-height:145px}#study .route-person figcaption{margin:0;padding-top:15px;gap:9px}#study .route-person strong{font-size:20px}#study .route-person p{font-size:17px}#study .route-leaders{display:none}

@@ -1,8 +1,8 @@
 /* One editorial scale for every case study. Keep this layer authoritative over
    older page-specific !important declarations; inline game artwork is separate. */
 @layer case-typography {
- :root {--case-title:64px!important;--case-heading:40px!important;--case-deck:30px!important;--case-subhead:24px!important;--case-copy:20px!important;--case-note:18px!important;--case-caption:16px!important;--case-label:12px!important}
- @media(max-width:800px){:root{--case-title:42px!important;--case-heading:32px!important;--case-deck:26px!important;--case-subhead:22px!important;--case-copy:18px!important;--case-note:16px!important;--case-caption:14px!important;--case-label:12px!important}}
+ :root {--case-title:64px!important;--case-heading:40px!important;--case-deck:30px!important;--case-subhead:24px!important;--case-copy:22px!important;--case-note:18px!important;--case-caption:16px!important;--case-label:12px!important}
+ @media(max-width:800px){:root{--case-title:42px!important;--case-heading:32px!important;--case-deck:26px!important;--case-subhead:22px!important;--case-copy:20px!important;--case-note:16px!important;--case-caption:14px!important;--case-label:12px!important}}
  body[data-view=project] :is(.case-study,.case-study *) {--case-title:inherit!important;--case-heading:inherit!important;--case-deck:inherit!important;--case-subhead:inherit!important;--case-copy:inherit!important;--case-note:inherit!important;--case-caption:inherit!important;--case-label:inherit!important}
  body[data-view=project] {font-size:var(--case-copy)!important}
  body[data-view=project] :is(.case-study,.chapter-bar) {font-family:var(--font-body)!important;font-size:var(--case-copy)!important;font-weight:400!important;font-style:normal!important;line-height:1.5}
@@ -49,6 +49,12 @@
  }
  body[data-view=project] .case-study .chapter-deck {font-size:var(--case-copy)!important;line-height:1.5!important}
  body[data-view=project] .case-study .icon-overview-scene p {text-wrap:balance!important}
+ /* The email example is a compact interface embedded within the narrative. */
+ body[data-view=project][data-project=personamail] .case-study .persona-refined {font-size:var(--case-note)!important}
+ body[data-view=project][data-project=personamail] .case-study .persona-refined :is(.persona-step,.persona-rejected-line>span,.persona-draft-heading,.persona-style-memory>strong,.persona-email-subject>span,.persona-settings>label,.persona-relationship-context>span) {font-size:var(--case-caption)!important;line-height:1.45!important}
+ body[data-view=project][data-project=personamail] .case-study .persona-refined :is(p,li,blockquote) {font-size:var(--case-note)!important;line-height:1.5!important}
+ body[data-view=project][data-project=personamail] .case-study .persona-refined h3 {font-size:var(--case-copy)!important}
+ body[data-view=project][data-project=personamail] .case-study .persona-refined h4 {font-size:var(--case-note)!important}
  /* The chapter navigation is secondary reading furniture, not a heading. */
  body[data-view=project] :is(.chapter-nav,.chapter-nav a,.back-link) {font-size:var(--case-label)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;line-height:1.4!important}
  body[data-view=project] .case-study .section-heading>.eyebrow {font-size:var(--case-caption)!important;font-weight:500!important;letter-spacing:.07em!important}

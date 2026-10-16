@@ -1006,18 +1006,7 @@
             "clarity and comfort"
           ],
           "textLayout": "full-width",
-          "navParent": "study",
-          "studyFinding": {
-            "label": "What changed our approach",
-            "body": "Blue–yellow reached 4.75 / 5 for outdoor clarity; some participants preferred it to higher-contrast blue–white. Screen contrast alone was not enough.",
-            "highlights": [
-              "4.75 / 5",
-              "Screen contrast alone was not enough"
-            ],
-            "sourceNotes": [
-              "Paper §4.5–4.6, pp.18–21: hue 240 complementary outdoor clarity 4.75; P2/P4/P6/P8/P9 reported it clear and acceptably comfortable; P9 contrasts glare in blue–white."
-            ]
-          }
+          "navParent": "study"
         },
         {
           "id": "meaning",
@@ -1079,18 +1068,7 @@
             "how well color matched the icon’s meaning"
           ],
           "textLayout": "full-width",
-          "navParent": "study",
-          "studyFinding": {
-            "label": "Why meaning needed its own measure",
-            "body": "White had the highest mean meaning rating: 4.31 / 5. Yet it still lost clarity on several warm hues. A meaningful color choice could be hard to see.",
-            "highlights": [
-              "4.31 / 5",
-              "A meaningful color choice could be hard to see"
-            ],
-            "sourceNotes": [
-              "Paper §5.2, pp.24–25: white overall semantic mean 4.31; warm-hue clarity–semantic decoupling."
-            ]
-          }
+          "navParent": "study"
         },
         {
           "id": "refinement",
@@ -1386,7 +1364,7 @@
       "highlights": [
         "clear, comfortable AR icons"
       ],
-      "contentRevision": "2026-10-16-icon-comprehension"
+      "contentRevision": "2026-10-16-icon-per-hue-ratings"
     },
     {
       "id": "traditional-color",
@@ -3157,8 +3135,8 @@
     {
       "id": "loofasoup",
       "title": "Taste of Connection",
-      "subtitle": "Work, or family? Who gets your time?",
-      "description": "Play Lufa, a rookie salesman whose business dinners become puzzles about competing tastes and expectations.",
+      "subtitle": "A shared meal. A table full of expectations.",
+      "description": "Join Lufa, a rookie salesman, at business dinners where every guest wants something different. Rotate dishes, use item cards and manage limited moves to keep the table satisfied.",
       "kicker": "NARRATIVE PUZZLE · CHINESE DINING CULTURE",
       "meta": "Unity 2D · C# · 2025.09–2026.04",
       "stats": [
@@ -3213,8 +3191,9 @@
           "eyebrow": "THE SHARED TABLE",
           "title": "A meal is never just a meal",
           "body": [
-            "In a future where good food is a luxury, Lufa sells Deliciousness Insurance—protecting flavor from farm to table. Dinner invitations bring him closer to potential clients.",
-            "We use Chinese shared-table dining to explore making a living and making time for others. Every rotation moves everyone’s food; limited actions turn different tastes into competing demands."
+            "Lufa is a luffa-person who has finished his first week of work without making a sale. He lives in a future shaped by low-level radiation, where people have become plant- and animal-like beings and good food is a luxury. His product, Deliciousness Insurance, protects flavor from farm to table.",
+            "Dinner invitations offer a way to meet potential clients, but each host brings expectations, favors and a different idea of a good life. The released work route follows Lufa into these business meals, moving between conversations and puzzles around a rotating table.",
+            "We drew on Chinese shared-table dining and the “Luffa Soup” meme to explore the pressure of being told what is “for your own good.” A meal can carry business, friendship and family obligations at once. We wanted the game to make players consider whose needs they accommodate while trying to make a living."
           ],
           "nav": "Abstract",
           "figures": [
@@ -3228,10 +3207,9 @@
           ],
           "highlights": [
             "Deliciousness Insurance",
+            "released work route",
             "Chinese shared-table dining",
-            "making a living",
-            "making time for others",
-            "Every rotation moves everyone’s food"
+            "for your own good"
           ],
           "items": [],
           "layout": "editorial"
@@ -3240,7 +3218,7 @@
           "id": "gameplay",
           "eyebrow": "READ. ROTATE. SERVE.",
           "title": "A shared table. Limited actions",
-          "body": "",
+          "body": "Every rotation moves everyone’s food: helping one guest may put a disliked dish in front of another. Spend limited action points to position the dishes, use item cards to intervene, then serve and watch the guests react. Meet their satisfaction targets and the goals for the whole table before the meal’s round limit.",
           "items": [],
           "nav": "Gameplay",
           "figures": [],
@@ -3282,16 +3260,16 @@
         {
           "id": "routes",
           "eyebrow": "STORY ROUTES",
-          "title": "The route you take, the moments you miss",
+          "title": "Lufa’s working life, one meal at a time",
           "body": "",
           "items": [
             {
               "title": "Released · Work",
-              "body": "Business dinners introduce potential clients and shared-table puzzles."
+              "body": "Business dinners introduce potential clients and shared-table puzzles. Conversations reveal what each guest expects; the meal asks you to juggle their different tastes."
             },
             {
               "title": "Planned · Family",
-              "body": "A nonlinear branch about the moments Lufa misses outside work."
+              "body": "A separate story branch explores Lufa’s relationships outside work. This route is not included in the playable build."
             }
           ],
           "nav": "Routes",
@@ -3301,13 +3279,11 @@
               "width": 1280,
               "height": 720,
               "alt": "Original Loofa Soup level-selection screen",
-              "caption": "Choose a chapter on the original game’s level map",
+              "caption": "Original chapter map, including the planned family route",
               "displayWidth": 590
             }
           ],
-          "highlights": [
-            "two paths through his life"
-          ],
+          "highlights": [],
           "layout": "editorial",
           "figureLayout": "default",
           "dialogueIntro": "Conversations establish what each guest expects before you sit down.",
@@ -3330,16 +3306,7 @@
               "sourceNode": "1577:8306",
               "sourceOrigin": "Author’s original dialogue interface artwork exported from portfolio"
             }
-          ],
-          "routeSequence": {
-            "label": "Planned nonlinear story",
-            "steps": [
-              "Choose work",
-              "Family chapters stay closed",
-              "Reach only the family finale"
-            ],
-            "meaning": "You meet the family at the end, without sharing the intervening moments."
-          }
+          ]
         },
         {
           "id": "characters",
@@ -3783,7 +3750,7 @@
         "details": "I worked with teammates to assess which features were technically feasible, then built the game project."
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
-      "outcome": "The work route is playable; the nonlinear family branch is planned.",
+      "outcome": "The work route is playable; the family route remains planned.",
       "sourceNotes": [],
       "tags": [
         "Narrative game",
@@ -3793,13 +3760,9 @@
       "highlights": [
         "Lufa",
         "business dinners",
-        "competing tastes and expectations"
+        "every guest wants something different"
       ],
-      "playGuide": [
-        "Chinese original: 开始 = Start; 设置 = Settings.",
-        "English controls and gameplay are explained below.",
-        "Play the released work route on a desktop browser."
-      ]
+      "playNote": "Starts in English on your first visit; Settings remembers your language choice. Best played on desktop."
     },
     {
       "id": "hersound",

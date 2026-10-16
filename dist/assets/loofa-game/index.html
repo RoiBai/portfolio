@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Taste of Connection — Play</title>
+  <link rel="stylesheet" href="/assets/loofa-game/player.css">
+</head>
+<body>
+  <main class="player" aria-label="Taste of Connection game">
+    <canvas id="unity-canvas" width="1280" height="720" tabindex="0" aria-label="Taste of Connection. Use the game's Settings to change language."></canvas>
+    <div class="loading" id="loading" role="status" aria-live="polite">
+      <p class="title">Taste of Connection</p>
+      <p id="loading-copy">Loading the game…</p>
+      <progress id="progress" max="1" value="0" aria-label="Game loading progress"></progress>
+      <p class="help" id="help" hidden>Try again, or open the original game.</p>
+      <div class="actions" id="actions" hidden>
+        <button type="button" id="retry">Try again</button>
+        <a href="https://lufasoup.ruiyuanbai.com/" target="_blank" rel="noopener noreferrer">Open original ↗</a>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/assets/loofa-game/player.js"></script>
+</body>
+</html>

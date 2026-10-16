@@ -186,3 +186,35 @@ body[data-project=icon-colors] .icon-guidance-findings-single h3{margin-bottom:1
  body[data-project=icon-colors] .icon-guidance-findings-single>article{grid-template-columns:1fr;gap:22px}
  body[data-project=icon-colors] .icon-guidance-findings-single figure{max-width:320px}
 }
+/* One explanation below both contexts; never a two-column text fragment. */
+body[data-project=icon-colors] #problem>.icon-context-explanation{display:block;width:100%;max-width:none;margin:28px 0 0}
+body[data-project=icon-colors] #problem>.icon-context-explanation p{width:100%;max-width:none;margin:0}
+body[data-project=icon-colors] .icon-rating-results{max-width:920px;margin:20px auto 0}
+body[data-project=icon-colors] .icon-rating-table{border-collapse:collapse;table-layout:fixed;width:100%;font-variant-numeric:tabular-nums}
+body[data-project=icon-colors] .icon-rating-table caption{text-align:left;color:var(--muted);padding:0 0 16px}
+body[data-project=icon-colors] .icon-rating-table th,body[data-project=icon-colors] .icon-rating-table td{padding:12px 14px;text-align:center;font-weight:400;vertical-align:middle}
+body[data-project=icon-colors] .icon-rating-table th:first-child{width:25%;text-align:left}
+body[data-project=icon-colors] .icon-rating-table thead th{padding-bottom:22px}
+body[data-project=icon-colors] .icon-rating-table thead th>span:last-child{display:block;margin-top:12px}
+body[data-project=icon-colors] .icon-rating-table .icon-specimen-disc{width:90px}
+body[data-project=icon-colors] .icon-rating-table tbody tr{border-bottom:1px solid var(--line)}
+body[data-project=icon-colors] .icon-rating-table tbody small{display:block;color:var(--muted)}
+body[data-project=icon-colors] .icon-rating-table td{color:var(--accent)}
+body[data-project=icon-colors] .icon-rating-source-note{display:block;color:var(--muted);margin-top:18px}
+body[data-project=icon-colors] .icon-rating-source{margin-top:12px;color:var(--muted)}
+body[data-project=icon-colors] .icon-rating-source summary{cursor:pointer;width:fit-content}
+body[data-project=icon-colors] .icon-rating-source p{margin:12px 0 0}
+body[data-project=icon-colors] .icon-rating-source a{margin-top:14px}
+@layer case-typography{
+ body[data-view=project][data-project=icon-colors] .case-study .icon-rating-table :is(th,td,caption){font-size:var(--case-caption)!important;line-height:1.4!important}
+ body[data-view=project][data-project=icon-colors] .case-study .icon-rating-table :is(small,thead th:first-child){font-size:var(--case-label)!important;line-height:1.4!important}
+ body[data-view=project][data-project=icon-colors] .case-study .icon-rating-source p{font-size:var(--case-caption)!important;line-height:1.45!important}
+}
+@media(max-width:700px){
+ body[data-project=icon-colors] .icon-rating-table th,body[data-project=icon-colors] .icon-rating-table td{padding:10px 4px}
+ body[data-project=icon-colors] .icon-rating-table th:first-child{width:29%}
+ body[data-project=icon-colors] .icon-rating-table .icon-specimen-disc{width:55px}
+ body[data-project=icon-colors] .icon-rating-table thead th{padding-bottom:15px}
+ body[data-project=icon-colors] .icon-rating-table thead th>span:last-child{margin-top:8px}
+ body[data-project=icon-colors] .icon-rating-table caption{padding-bottom:12px}
+}

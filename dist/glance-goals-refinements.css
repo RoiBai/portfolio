@@ -46,6 +46,16 @@
     max-height:none;
   }
 }
+
+/* Keep all six positions reserved while the goals follow their lesson frames. */
+body[data-project=glancemap] [data-goals-scroll] .goal-callout:not(.is-visible),
+body[data-project=glancemap] [data-goals-scroll] .goal-leader:not(.is-visible){opacity:0!important;visibility:hidden;pointer-events:none;transform:none}
+body[data-project=glancemap] [data-goals-scroll] .goal-callout.is-visible,
+body[data-project=glancemap] [data-goals-scroll] .goal-leader.is-visible{opacity:1!important;visibility:visible;transform:none}
+body[data-project=glancemap] .glance-sequence-copy{display:grid;align-content:start}
+body[data-project=glancemap] .glance-sequence-copy>p{grid-area:1/1}
+body[data-project=glancemap] .glance-sequence-copy>p[hidden]{display:block!important;visibility:hidden}
+body[data-project=glancemap] .glance-sequence-copy>small{grid-area:2/1}
 @media (min-width: 801px) and (min-height: 701px) and (prefers-reduced-motion:reduce) {
   body[data-project=glancemap] .goal-leaders {display:block}
   body[data-project=glancemap] .goal-callout,
@@ -104,4 +114,17 @@ body[data-project=glancemap] .goal-callout h3{margin-bottom:0}
  body[data-project=glancemap] .goals-composition>.goal-callout{position:static;display:block;opacity:1;transform:none;pointer-events:auto;grid-column:auto;grid-row:auto;align-self:start;justify-self:start;max-width:none}
  body[data-project=glancemap] .goal-callout h3{margin-top:7px}
  body[data-project=glancemap] .goal-callout .dg-pill{padding:4px 8px}
+}
+
+/* On phones, the complete six-goal layout can be taller than the screen.
+   Keep it in normal flow and use the same three controls without clipping. */
+@media(max-width:700px){
+ body[data-project=glancemap] .goals-scroll-track{height:auto}
+ body[data-project=glancemap] .goals-sticky{position:static;height:auto;max-height:none;min-height:0;gap:18px}
+ body[data-project=glancemap] .goals-composition{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto repeat(3,min-content);gap:15px 20px;align-content:start;flex:none;height:auto;min-height:0}
+ body[data-project=glancemap] .goals-composition>.goal-interface{position:relative;top:auto;grid-column:1/-1;grid-row:1;margin:0 0 6px;width:100%;max-width:none;height:auto!important}
+ body[data-project=glancemap] .goals-composition>.goal-callout{position:static;display:block;grid-column:auto;grid-row:auto;align-self:start;justify-self:start;max-width:none}
+ body[data-project=glancemap] .goal-callout h3{margin-top:7px}
+ body[data-project=glancemap] .goal-callout .dg-pill{padding:4px 8px}
+ body[data-project=glancemap] .goal-leaders{display:none}
 }
