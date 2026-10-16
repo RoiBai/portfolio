@@ -164,3 +164,25 @@ body[data-project=icon-colors] .icon-parking-alternatives{background:#181a1d;pad
  body[data-project=icon-colors] .icon-parking-example h4{gap:8px}
  body[data-project=icon-colors] .icon-parking-alternatives{padding:18px 14px 24px}
 }
+/* Link study observations to refinements without another full chapter. */
+body[data-project=icon-colors] .icon-study-finding{margin:24px 0 0;padding:18px 24px;background:linear-gradient(100deg,#77fbfe12,#77fbfe04);border-radius:4px}
+body[data-project=icon-colors] .icon-study-finding>small{display:block;color:var(--accent);margin-bottom:8px}
+body[data-project=icon-colors] .icon-study-finding>p{margin:0;color:var(--ink)}
+body[data-project=icon-colors] .icon-study-finding strong,body[data-project=icon-colors] .icon-refinement-reasoning strong{color:var(--accent)}
+body[data-project=icon-colors] .icon-refinement-reasoning{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:38px;margin:26px 0 0}
+body[data-project=icon-colors] .icon-refinement-reasoning article{padding:20px 24px;background:#77fbfe08;border-radius:4px}
+body[data-project=icon-colors] .icon-refinement-reasoning h4{margin:0 0 14px}
+body[data-project=icon-colors] .icon-refinement-reasoning p{margin:0;color:var(--muted)}
+body[data-project=icon-colors] .icon-refinement-reasoning .icon-refinement-decision{display:flex;align-items:baseline;gap:12px;margin-top:16px;color:var(--ink)}
+body[data-project=icon-colors] .icon-refinement-decision>span:first-child{color:var(--accent)}
+body[data-project=icon-colors] .icon-guidance-findings.icon-guidance-findings-single{display:block}
+body[data-project=icon-colors] .icon-guidance-findings-single>article{display:grid;grid-template-columns:minmax(220px,.75fr) minmax(0,1.5fr);gap:42px;align-items:center}
+body[data-project=icon-colors] .icon-guidance-findings-single figure{order:0;height:auto;margin:0}
+body[data-project=icon-colors] .icon-guidance-findings-single img{width:100%;max-width:360px;height:auto}
+body[data-project=icon-colors] .icon-guidance-findings-single h3{margin-bottom:12px}
+@media(max-width:700px){
+ body[data-project=icon-colors] .icon-refinement-reasoning{grid-template-columns:1fr;gap:18px}
+ body[data-project=icon-colors] .icon-refinement-reasoning article,body[data-project=icon-colors] .icon-study-finding{padding:18px}
+ body[data-project=icon-colors] .icon-guidance-findings-single>article{grid-template-columns:1fr;gap:22px}
+ body[data-project=icon-colors] .icon-guidance-findings-single figure{max-width:320px}
+}

@@ -29,11 +29,11 @@ const animals = [
     "id": "eldey-last-great-auks",
     "name": "The great auk pair",
     "year": "1844",
-    "date": "June 1844",
+    "date": "1844",
     "image": "eldey-last-great-auks.png",
     "title": "Collectors killed the last confirmed great auk pair",
     "body": "Fishermen killed a breeding pair to supply museum collectors at Eldey Island.",
-    "note": "Modern references differ between June 3 and July 3; the timeline uses month precision.",
+    "note": "The date is shown at year precision; the linked museum account places the event in summer.",
     "sources": [
       {
         "name": "Smithsonian Institution · Research Case: The Great Auk",
@@ -170,7 +170,7 @@ const animals = [
     "date": "November 1, 1986",
     "image": "sandoz-rhine-fish.png",
     "title": "Chemical firefighting runoff killed Rhine fish",
-    "body": "Firefighting water carried pesticides and chemicals from a warehouse into the Rhine at Rhine River downstream of Basel.",
+    "body": "Firefighting water carried pesticides and chemicals from a warehouse into the Rhine near Basel, killing fish downstream.",
     "note": "Mortality can only be estimated by reach and species; sources agree on mass fish death.",
     "sources": [
       {
@@ -192,8 +192,8 @@ const animals = [
     "year": "2006",
     "date": "2006",
     "image": "ming-ocean-quahog.png",
-    "title": "Ming died when researchers opened the shell",
-    "body": "Researchers collected a live clam and opened its shell before its exceptional age was known at Icelandic coastal waters.",
+    "title": "Ming died after being collected for research",
+    "body": "Collected alive in Icelandic coastal waters in 2006, Ming was later found to have lived for 507 years. Its shell held a long record of marine climate.",
     "note": "The team could not know the live animal's exact age before opening the shell; it was not deliberately killed after its age was known.",
     "sources": [
       {
@@ -252,7 +252,7 @@ export function renderGameExperience(projectId, part='all') {
       <div class="gx-wind-track"><div class="gx-wind-panel">
         <p class="gx-instruction"><strong>Six chapters become eighteen scenes.</strong> As you scroll, eight scenes dissolve. The gaps make the loss of their stories visible. Scroll back to recover them.</p>
         <div class="gx-wind-art" aria-label="Eighteen scenes across six chapters">
-          ${Array.from({length:18},(_,i)=>{const id=String(i+1).padStart(2,'0'),label=`Chapter ${Math.floor(i/3)+1}, scene ${i%3+1}`;return `<figure>${windProfiles[i]?`<canvas data-wind-src="${ASSETS}/her/wind/${id}.webp" data-wind-profile="${i}" role="img" aria-label="${label}; fragments disperse as you scroll"></canvas>`:`<img src="${ASSETS}/her/wind/${id}.webp" width="536" height="360" alt="${label}; a surviving record" decoding="async">`}<figcaption>${Math.floor(i/3)+1}.${i%3+1}</figcaption></figure>`;}).join('')}
+          ${Array.from({length:18},(_,i)=>{const id=String(i+1).padStart(2,'0'),label=`Chapter ${Math.floor(i/3)+1}, scene ${i%3+1}`;return `<figure>${windProfiles[i]?`<canvas data-wind-src="${ASSETS}/her/wind/${id}.webp" data-wind-profile="${i}" role="img" aria-label="${label}; fragments disperse as you scroll"></canvas>`:`<img src="${ASSETS}/her/wind/${id}.webp" width="536" height="360" alt="${label}; a surviving scene" decoding="async">`}<figcaption>${Math.floor(i/3)+1}.${i%3+1}</figcaption></figure>`;}).join('')}
         </div>
         <p class="gx-inline-status" role="status" aria-live="polite">All eighteen scenes are intact. Scroll down ↓</p>
       </div></div>
@@ -261,7 +261,7 @@ export function renderGameExperience(projectId, part='all') {
   if(projectId==='ourworld') {
     if(part==='all')return ['archive','candles'].map(p=>renderGameExperience(projectId,p)).join('');
     if(part==='archive')return `<div class="game-experience gx-archive" data-experience="ourworld-archive">
-      <div class="gx-archive-top"><div><p class="gx-guide-kicker">Selected cases · 1826–2016</p><p class="gx-instruction">Ten records from the larger archive. Follow the timeline and choose a life to remember.</p></div><a class="gx-full-game" href="https://www.ruiyuanbai.com/art/Earth-is-not-humanitys-alone/demo" target="_blank" rel="noopener noreferrer">Explore the full archive ↗</a></div>
+      <div class="gx-archive-top"><p class="gx-instruction">Dates mark each event, not necessarily an animal’s death.</p><a class="gx-full-game" href="https://www.ruiyuanbai.com/art/Earth-is-not-humanitys-alone/demo" target="_blank" rel="noopener noreferrer">Explore the full archive ↗</a></div>
       <div class="gx-timeline-window" tabindex="0" aria-label="Scroll through ten selected animal histories"><div class="gx-animal-choices" role="group" aria-label="Selected cases from 1826 to 2016">${animals.map((a,i)=>`<button type="button" class="gx-animal" data-animal="${a.id}" aria-pressed="${i===0}" aria-controls="gx-animal-record"><small>${a.year}</small><span class="gx-timeline-dot" aria-hidden="true"></span><img src="${ASSETS}/ourworld/${a.image}" width="${a.width}" height="${a.height}" alt="${a.name}, archive portrait" loading="lazy"><span>${a.name}</span></button>`).join('')}</div></div>
       <div class="gx-animal-record" id="gx-animal-record" aria-live="polite"></div>
     </div>`;
@@ -306,7 +306,7 @@ function setupHer(section) {
 }
 
 // Original target scenes, scroll behavior and wind equations. The eight animated
-// images are sampled once on load; the ten surviving records remain native images.
+// images are sampled once on load; the ten surviving scenes remain native images.
 const clamp=(n,min=0,max=1)=>Math.min(max,Math.max(min,n));
 const windProfiles={6:{angle:-.12,delay:.02,duration:.68,gust:1.05,lift:.42,seed:113},7:{angle:.22,delay:.08,duration:.72,gust:.88,lift:.76,seed:227},8:{angle:-.34,delay:.15,duration:.66,gust:1.18,lift:.31,seed:349},9:{angle:.08,delay:.21,duration:.7,gust:.95,lift:.58,seed:463},11:{angle:.27,delay:.26,duration:.64,gust:1.12,lift:.69,seed:521},13:{angle:-.2,delay:.3,duration:.62,gust:1.26,lift:.48,seed:587},16:{angle:.31,delay:.39,duration:.58,gust:1.04,lift:.82,seed:701},17:{angle:-.05,delay:.47,duration:.5,gust:1.34,lift:.63,seed:829}};
 function seeded(seed){let state=seed>>>0;return()=>{state+=0x6d2b79f5;let v=state;v=Math.imul(v^(v>>>15),v|1);v^=v+Math.imul(v^(v>>>7),v|61);return((v^(v>>>14))>>>0)/4294967296;};}
@@ -337,7 +337,7 @@ function setupWind(section) {
         ctx.globalAlpha=Math.pow(1-life,1.35);if(life<.48)ctx.drawImage(image,f.x,f.y,f.size,f.size,f.x+dx,f.y+dy,size,size);else{ctx.fillStyle=f.color;ctx.fillRect(f.x+dx,f.y+dy,size,Math.max(.45,size*.58));}
       }ctx.globalAlpha=1;
     }
-    const phase=progress===0?'intact':progress>.98?'erased':'fading';if(phase!==lastPhase){lastPhase=phase;status.textContent=phase==='intact'?'All eighteen scenes are intact. Scroll down ↓':phase==='erased'?'Eight scenes have disappeared. Ten records remain.':'Parts of their lives are disappearing. Keep scrolling ↓';}
+    const phase=progress===0?'intact':progress>.98?'erased':'fading';if(phase!==lastPhase){lastPhase=phase;status.textContent=phase==='intact'?'All eighteen scenes are intact. Scroll down ↓':phase==='erased'?'Eight scenes have disappeared. Ten scenes remain.':'Parts of their lives are disappearing. Keep scrolling ↓';}
   };
   const schedule=()=>{if(!raf)raf=requestAnimationFrame(draw);};
   section.querySelectorAll('canvas').forEach(canvas=>{const image=new Image();image.onload=()=>{if(disposed)return;const source=document.createElement('canvas');source.width=Math.min(720,image.naturalWidth);source.height=Math.round(source.width*image.naturalHeight/image.naturalWidth);source.getContext('2d').drawImage(image,0,0,source.width,source.height);canvas.width=source.width;canvas.height=source.height;const profile=windProfiles[Number(canvas.dataset.windProfile)],parts=fragments(source,profile);states.push({canvas,image:source,profile,parts});canvas.dataset.ready='true';canvas.dataset.particleCount=String(parts.length);dirty=true;schedule();};image.src=canvas.dataset.windSrc;});
@@ -371,7 +371,7 @@ function setupHerArticle(root) {
 }
 function setupArchiveHero(root) {
   const figure=root.querySelector('.case-hero .hero-figure'),media=figure?.querySelector('.figure-media');if(!media)return()=>{};
-  const original=[...media.childNodes];const gallery=document.createElement('div');gallery.className='gx-hero-menagerie';gallery.setAttribute('role','img');gallery.setAttribute('aria-label','Chunee, Laika, Freya, great auks and Juma: five lives in Our World');
+  const original=[...media.childNodes];const gallery=document.createElement('div');gallery.className='gx-hero-menagerie';gallery.setAttribute('role','img');gallery.setAttribute('aria-label','Five archive portraits: Chunee, Laika, Freya, the great auk pair and Juma');
   const portraits=[['chunee-exeter-exchange','Chunee'],['laika-sputnik-2','Laika'],['freya-oslo-walrus','Freya'],['eldey-last-great-auks','Great auks'],['juma-olympic-jaguar','Juma']];
   gallery.innerHTML=portraits.map(([id,name],i)=>`<img class="gx-hero-animal gx-hero-animal-${i}" src="${ASSETS}/ourworld/${id}.png" alt="${name}" width="1254" height="1254" decoding="async">`).join('');media.replaceChildren(gallery);figure.classList.add('gx-archive-hero');
   return()=>{media.replaceChildren(...original);figure.classList.remove('gx-archive-hero');};

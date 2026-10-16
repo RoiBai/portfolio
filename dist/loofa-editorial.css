@@ -17,6 +17,18 @@ body[data-project=loofasoup] .case-section.loofa-gameplay-editorial{display:bloc
 @media(max-width:600px){.loofa-gameplay-notes{grid-template-columns:1fr}.loofa-gameplay-notes h3{font-size:22px}.loofa-gameplay-notes p{font-size:18px!important}body[data-project=loofasoup] .project-title-row{padding-right:0;display:flex}.loofa-title-character{position:static;transform:rotate(-5deg);width:110px;height:80px;order:-1}body[data-project=loofasoup] .hero-figure img{max-height:none!important}.loofa-gameplay-film .loofa-recording figcaption p{font-size:16px!important}}
 @media(prefers-reduced-motion:reduce){.loofa-gameplay-notes>li{opacity:1;transform:none;transition:none}}
 
+/* Separate the released route from the intended nonlinear story. */
+body[data-project=loofasoup] .loofa-route-consequence{margin:32px 0 0;padding:22px 28px;background:#e1e7bb;border-radius:6px}
+body[data-project=loofasoup] .loofa-route-consequence>.eyebrow{margin:0 0 14px;color:#48643a}
+body[data-project=loofasoup] .loofa-route-consequence ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin:0;padding:0}
+body[data-project=loofasoup] .loofa-route-consequence li{position:relative;margin:0;font-weight:600;color:#234b36}
+body[data-project=loofasoup] .loofa-route-consequence li:not(:last-child)::after{content:'→';position:absolute;right:-27px;top:0;color:#70894d}
+body[data-project=loofasoup] .loofa-route-consequence>p:last-child{margin:16px 0 0}
+body[data-project=loofasoup] .loofa-design-decision{margin:26px 0 0;padding:16px 20px;background:#e6ebc7;border-radius:6px}
+body[data-project=loofasoup] .loofa-design-decision summary{cursor:pointer;font-weight:600;color:#2d5538}
+body[data-project=loofasoup] .loofa-design-decision p{margin:14px 0 0;max-width:none}
+@media(max-width:650px){body[data-project=loofasoup] .loofa-route-consequence{padding:20px}body[data-project=loofasoup] .loofa-route-consequence ol{grid-template-columns:1fr;gap:26px}body[data-project=loofasoup] .loofa-route-consequence li:not(:last-child)::after{content:'↓';right:auto;left:0;top:calc(100% + 1px)}body[data-project=loofasoup] .loofa-route-consequence>p:last-child{margin-top:20px}}
+
 body[data-project=loofasoup] .loofa-recording video{height:auto!important;aspect-ratio:16/9;max-height:none!important;object-fit:contain}
 /* Keep Lufa next to the name, independently of the keyword pills. */
 body[data-project=loofasoup] .project-title-row{padding-right:0}

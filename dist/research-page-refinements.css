@@ -10,6 +10,55 @@ body[data-project=beyond-the-gaze] .case-study .stats small{max-width:none}
 body[data-project=beyond-the-gaze] .case-study .stats>div:first-child small{white-space:nowrap}
 /* Let the evidence qualifier use its column instead of the old 240px cap. */
 body[data-project=suzhou-scrollverse] .case-study .stats small{max-width:none;hyphens:none;text-wrap:pretty}
+/* A single cultural walkthrough replaces separate feature and runtime chapters. */
+body[data-project=suzhou-scrollverse] #experience .section-visuals{max-width:none;width:100%;display:block}
+body[data-project=suzhou-scrollverse] #experience .project-figure.rf-suzhou-walkthrough{width:100%;max-width:none;margin:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-place,
+body[data-project=suzhou-scrollverse] .rf-suzhou-clue{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:20px 40px;align-items:start}
+body[data-project=suzhou-scrollverse] .rf-suzhou-step{min-width:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-step .eyebrow{margin-bottom:8px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-step h4{margin:0 0 12px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-step p{margin:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-place>.rf-suzhou-step{grid-column:1;grid-row:1}
+body[data-project=suzhou-scrollverse] .rf-suzhou-place>.rf-suzhou-image{grid-column:1;grid-row:2;width:100%;height:auto;max-height:none!important}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lenses{grid-column:2;grid-row:1/3;display:grid;gap:12px;align-self:center}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lens{display:grid;grid-template-columns:62px 1fr;gap:15px;align-items:center}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lens>img{width:62px;height:62px;object-fit:contain}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lens strong{color:var(--accent)}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lens p{margin:3px 0 0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lenses>small{color:var(--muted);margin-top:4px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-clue{margin-top:44px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-clue>.rf-suzhou-step{grid-column:1/-1}
+body[data-project=suzhou-scrollverse] .rf-suzhou-clue>.rf-suzhou-image{width:100%;height:auto;max-height:none!important}
+body[data-project=suzhou-scrollverse] .rf-suzhou-context{align-self:center;padding:24px;background:color-mix(in srgb,var(--accent) 9%,transparent);border-radius:3px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-context h4{margin:10px 0 16px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-context p{margin:0 0 16px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-context strong{color:var(--accent)}
+body[data-project=suzhou-scrollverse] :is(.rf-suzhou-source-details,.rf-suzhou-runtime-details,.rf-suzhou-rating-details){width:100%;margin-top:24px}
+body[data-project=suzhou-scrollverse] :is(.rf-suzhou-source-details,.rf-suzhou-runtime-details,.rf-suzhou-rating-details)>summary{cursor:pointer;color:var(--accent);padding:8px 0;text-underline-offset:4px}
+body[data-project=suzhou-scrollverse] :is(.rf-suzhou-source-details,.rf-suzhou-runtime-details,.rf-suzhou-rating-details)[open]>summary{margin-bottom:24px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-source-details>div{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:center}
+body[data-project=suzhou-scrollverse] .rf-suzhou-source-details img{width:100%;height:auto;max-height:none!important}
+body[data-project=suzhou-scrollverse] .rf-suzhou-source-details>p{margin-top:20px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-conditions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:35px;margin-bottom:32px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-conditions section{padding:20px 24px;background:color-mix(in srgb,var(--accent) 7%,transparent)}
+body[data-project=suzhou-scrollverse] .rf-suzhou-conditions h4{margin:10px 0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-conditions p{margin:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-needs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-needs h4{margin:12px 0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-needs p{margin:0}
+body[data-project=suzhou-scrollverse] #needs>.section-visuals{display:block;width:100%;max-width:none}
+body[data-project=suzhou-scrollverse] #study>.section-visuals{display:block;width:100%;max-width:none}
+body[data-project=suzhou-scrollverse] #study .rf-suzhou-study{width:100%;max-width:none}
+@media(max-width:760px){
+ body[data-project=suzhou-scrollverse] :is(.rf-suzhou-place,.rf-suzhou-clue,.rf-suzhou-conditions,.rf-suzhou-source-details>div,.rf-suzhou-needs){grid-template-columns:1fr;gap:22px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-place>.rf-suzhou-step,
+ body[data-project=suzhou-scrollverse] .rf-suzhou-place>.rf-suzhou-image,
+ body[data-project=suzhou-scrollverse] .rf-suzhou-lenses{grid-column:1;grid-row:auto}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-clue{margin-top:34px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-lenses{gap:15px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-context{padding:20px}
+}
 body[data-project=beyond-the-gaze] #problem{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px 7%;align-items:center}
 body[data-project=beyond-the-gaze] #problem>.section-heading{grid-column:1;grid-row:1}
 body[data-project=beyond-the-gaze] #problem>.section-body{grid-column:2;grid-row:1;padding:0;max-width:none}
@@ -20,3 +69,5 @@ body[data-project=beyond-the-gaze] #problem .section-body>p:last-child{margin:20
  body[data-project=beyond-the-gaze] #problem{display:flex;flex-direction:column;align-items:stretch;gap:24px}
  body[data-project=beyond-the-gaze] #problem .section-body>p:last-child{padding:15px 17px}
 }
+
+body[data-project=suzhou-scrollverse] .rf-suzhou-image>img{display:block;width:100%;height:auto;max-height:none!important}

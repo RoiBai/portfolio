@@ -14,3 +14,13 @@ The eleven case studies follow the author's Figma portfolio. The website-design 
 Image resolution follows native sources. SVG geometry and transparent source PNGs are preserved; Figma exports are used where they provide more detail. Lossless WebP is used for large raster assets. A low-resolution original cannot acquire missing detail from a larger export.
 
 Font licenses are included in `dist/assets/fonts`; Three.js and the selected React excerpts retain their licenses beside their source. Historical concept art, rejected styles, complete old standalone game builds, local QA outputs, and unrelated application files are excluded from this repository.
+
+## Comprehension revision — 16 October 2026
+
+- Personal contribution statements use the author's confirmed responsibilities. Taste of Connection distinguishes its released work route from the planned nonlinear family route. Our World uses the author's direct-human-harm and reliable-reporting criteria; event counts are not counts of individual animals.
+- GlanceMap's three-step illustrative glance sequence uses unchanged original consecutive lesson frames (`Mindmap + illu (4)`, `(5)`, and the previously exported final frame). It does not represent a recorded participant gaze trace or gaze-triggered audio control. The prepared-lesson scope and picture-recognition trade-off remain explicit.
+- Beyond the Gaze's P16 / The Hay Wain / A3 example follows the paper's combined gaze criterion and reported Selection/Language coding. It is a coding summary, not an invented participant transcript.
+- Icon Colors connects observed ratings and interview findings to suggested interface uses; urgent-alert/control/status tasks were not directly evaluated. Hue-angle and brightness guidance are kept distinct.
+- Color Atlas keeps all four original bilingual preset palettes. The first palette's reading aid is an editorial interpretation, not a generated reasoning trace or proof that the whole palette is historically attested. Pilot questionnaire constructs follow the paper's appendix.
+- ScrollVerse's Shantang Street walkthrough uses original interface records and documented role perspectives. VerseColor separates original interface excerpts from an illustrative contextual reading; the comparative study assigns one tool per participant. Original figures and extended details remain available in disclosures.
+- Ambulance Rush's 289 external beta tests are tests, not a claim of 289 unique participants or established long-term learning effects. Her Sound labels the interactive friendship scenes as a creative reconstruction and the selective erasure as a narrative device.

@@ -75,3 +75,33 @@
   body[data-project=glancemap] .goals-composition>.goal-interface {height:auto!important}
   body[data-project=glancemap] .goal-callout {opacity:1!important;transform:none}
 }
+
+/* Let the source lesson explain re-entry, rather than repeating six definitions. */
+body[data-project=glancemap] .glance-sequence{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:start;margin:18px 0 4px}
+body[data-project=glancemap] .glance-sequence-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+body[data-project=glancemap] .glance-sequence-controls button{font:400 var(--case-caption)/1.45 var(--font-body);border:1px solid #526140;background:transparent;color:var(--ink);padding:7px 11px;cursor:pointer;border-radius:3px;white-space:nowrap}
+body[data-project=glancemap] .glance-sequence-controls button[aria-current]{background:var(--accent);color:#101610;border-color:var(--accent)}
+body[data-project=glancemap] .glance-sequence-controls button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+body[data-project=glancemap] .glance-sequence-copy p{margin:0;font:400 var(--case-note)/1.45 var(--font-body);max-width:none}
+body[data-project=glancemap] .glance-sequence-copy small{display:block;color:var(--muted);margin-top:5px;font:400 var(--case-caption)/1.4 var(--font-body)}
+body[data-project=glancemap] .glance-sequence-copy strong{color:var(--accent)}
+body[data-project=glancemap] .goal-callout h3{margin-bottom:0}
+@media(min-width:801px){
+ body[data-project=glancemap] .goals-composition{row-gap:22px}
+}
+@media(max-width:1000px){
+ body[data-project=glancemap] .glance-sequence{grid-template-columns:1fr;gap:10px;margin-top:12px}
+}
+@media(max-width:540px){
+ body[data-project=glancemap] .glance-sequence-controls{gap:5px;justify-content:space-between}
+ body[data-project=glancemap] .glance-sequence-controls button{padding:5px 7px}
+ body[data-project=glancemap] .goals-composition>.goal-interface{position:relative;top:auto}
+ body[data-project=glancemap] .goal-callout{top:56%}
+}
+@media(max-width:540px){
+ body[data-project=glancemap] .goals-composition{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto repeat(3,min-content);gap:15px 20px;align-content:start}
+ body[data-project=glancemap] .goals-composition>.goal-interface{grid-column:1/-1;grid-row:1;margin-bottom:6px}
+ body[data-project=glancemap] .goals-composition>.goal-callout{position:static;display:block;opacity:1;transform:none;pointer-events:auto;grid-column:auto;grid-row:auto;align-self:start;justify-self:start;max-width:none}
+ body[data-project=glancemap] .goal-callout h3{margin-top:7px}
+ body[data-project=glancemap] .goal-callout .dg-pill{padding:4px 8px}
+}

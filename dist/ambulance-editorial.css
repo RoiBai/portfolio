@@ -52,6 +52,7 @@ body[data-project="ambulance"] .ar-connections .ar-is-visible,body[data-project=
 body[data-project="ambulance"] .ar-reflection-copy blockquote{margin:24px 0 0;border-left:3px solid #d84a5f;padding-left:22px}
 body[data-project="ambulance"] .ar-reflection-copy blockquote>span{font-size:14px;color:#a94151;text-transform:uppercase;letter-spacing:.08em}
 body[data-project="ambulance"] .ar-reflection-copy blockquote p{font-size:25px;line-height:1.35;margin:13px 0 0}
+body[data-project="ambulance"] .ar-reflection-evidence{margin-top:24px;padding-top:20px;border-top:1px solid #b6c0c6}
 body[data-project="ambulance"] .ar-output-grid{align-items:start}
 body[data-project="ambulance"] .ar-development{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:end}
 body[data-project="ambulance"] .ar-development figure{align-self:start}

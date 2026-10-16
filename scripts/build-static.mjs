@@ -26,6 +26,8 @@ function add(relative,allowDirectory=false){
 for(const dir of ['assets/games-revision','assets/games-motion','assets/research-interactive','assets/scroll-story','assets/ambulance-editorial','assets/icon-original-explorations','assets/icon-study3-native','assets/atlas-scroll-original'])add(dir,true);
 // Original images addressed through composed filenames in the case-study modules.
 for(const file of ['assets/design-followup/color-agent-palace-a.jpg','assets/design-followup/color-agent-palace-b.jpg','assets/research-editorial/suzhou-scroll.png','assets/research-editorial/suzhou-perspectives.png','assets/research-editorial/suzhou-cultural-clues.png','assets/games-other-followup/ambulance-hospital-tab-all-three-names-and-capacity.png'])add(file);
+// Original ScrollVerse excerpts and characters are selected by short filenames.
+for(const file of ['suzhou-original-scroll-view.webp','suzhou-original-cultural-clue.webp','suzhou-original-scene-context.webp','suzhou-original-quiz.webp','suzhou-role-commoner-native.webp','suzhou-role-merchant-native.webp','suzhou-role-scholar-native.webp'])add('assets/research-clarity/'+file);
 for(const f of fs.readdirSync(path.join(source,'assets/fonts')))if(/LICENSE|OFL|sources\.json/i.test(f))add('assets/fonts/'+f);
 add('vendor/three/LICENSE');
 while(queue.length){

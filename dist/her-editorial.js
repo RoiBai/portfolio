@@ -25,12 +25,16 @@ export function setupHerEditorial(root,project){
  // The chapter heading belongs to the sticky canvas: it remains visible throughout erasure.
  const erase=root.querySelector('#erase'),panel=erase?.querySelector('.gx-wind-panel'),eraseHeading=erase?.querySelector(':scope>.section-heading');
  if(panel&&eraseHeading){erase.classList.add('her-erase');eraseHeading.classList.remove('reveal');panel.prepend(eraseHeading);erase.querySelector(':scope>.section-body')?.remove();}
+ const eraseInstruction=panel?.querySelector(':scope>.gx-instruction');
+ if(eraseInstruction&&sections.erase.instruction)eraseInstruction.innerHTML=emphasize(sections.erase.instruction,sections.erase.highlights);
+ const restoreMeaning=root.querySelector('#restore .gx-guide-meaning');
+ if(restoreMeaning&&sections.restore.meaning)restoreMeaning.innerHTML=emphasize(sections.restore.meaning,sections.restore.highlights);
  const question=root.querySelector('#question');
  if(question){
   question.className='case-section her-question';
   const heading=question.querySelector('.section-heading');question.replaceChildren(heading);
   const s=sections.question,body=document.createElement('div');body.className='her-accusations';
-  body.innerHTML=`<p class="her-question-deck">${emphasize(s.body,s.highlights)}</p><div class="her-accusation-pair">${s.items.map((item,i)=>`<figure class="her-accusation">${image(s.figures[i].src,s.figures[i].alt,s.figures[i].width,s.figures[i].height)}<figcaption><span>${esc(item.title)}</span><p>${emphasize(item.body,s.highlights)}</p></figcaption></figure>`).join('')}</div><p class="her-question-transition">What changes when they hold the power to tell their own stories?</p>`;
+  body.innerHTML=`<p class="her-question-deck">${emphasize(s.body,s.highlights)}</p><div class="her-accusation-pair">${s.items.map((item,i)=>`<figure class="her-accusation">${image(s.figures[i].src,s.figures[i].alt,s.figures[i].width,s.figures[i].height)}<figcaption><span>${esc(item.title)}</span><p>${emphasize(item.body,s.highlights)}</p></figcaption></figure>`).join('')}</div>`;
   question.append(body);
  }
  const evidence=root.querySelector('#evidence');

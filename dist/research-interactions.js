@@ -7,9 +7,9 @@ export function renderPersonaIntent() {
  <div class="persona-before"><span class="persona-step">01 / The situation</span><h3>A day off, not a formal application</h3><div class="persona-relationship-context"><span>You<br><strong>PhD student</strong></span><i aria-hidden="true">→</i><span>To<br><strong>Familiar supervisor</strong></span></div><p>Your supervisor <strong>already knows you well</strong>. Today, you only need a <strong>polite, appreciative, brief</strong> leave request.</p><div class="persona-bad-draft"><div class="persona-bad-label"><b aria-hidden="true">×</b><strong>Generic AI draft</strong></div><div class="persona-rejected-line"><span>Too formal for this relationship</span><p>“I am writing to formally request your kind permission to be absent from the laboratory today…”</p></div><div class="persona-rejected-line"><span>Unnecessary explanation</span><p>“I sincerely apologize for any inconvenience this may cause and would like to provide further context…”</p></div><strong class="persona-rejected-summary">More rewriting. The same mismatch.</strong></div><p class="persona-before-note">Make the <strong>relationship and writing preferences</strong> explicit instead.</p></div>
  <div class="persona-after"><span class="persona-step">02 / Adjust the context</span><h3 id="${id}-title">A note that fits the relationship</h3><div class="persona-settings"><label for="${id}-relationship">Relationship<select id="${id}-relationship" data-persona-relationship><option value="familiar">Familiar supervisor</option><option value="new">New supervisor</option></select></label><label for="${id}-tone">Tone<select id="${id}-tone" data-persona-tone><option value="polite">Polite & direct</option><option value="formal">Formal</option></select></label><label for="${id}-length">Length<select id="${id}-length" data-persona-length><option value="brief">Keep it brief</option><option value="detail">Add context</option></select></label><label class="persona-appreciation"><input type="checkbox" data-persona-appreciation checked><span>Show appreciation</span></label></div>
  <div class="persona-style-memory" data-persona-memory hidden role="status"><strong data-persona-memory-label>Style saved · settings unchanged</strong><div class="persona-memory-chips" data-persona-memory-chips></div></div>
- <div class="persona-draft" aria-live="polite" aria-atomic="true"><div class="persona-draft-heading"><span><b aria-hidden="true">✓</b> Revised example</span><span data-persona-task-label>Today · Leave request</span></div><div class="persona-email-subject"><span>Subject</span><h4 data-persona-subject></h4></div><p data-persona-greeting></p><p data-persona-message></p><p data-persona-signoff></p></div>
+ <div class="persona-draft" aria-live="polite" aria-atomic="true"><div class="persona-draft-heading"><span><b aria-hidden="true">✓</b> Revised example</span><span data-persona-task-label>Today · Leave request</span></div><div class="persona-email-subject"><span>Subject</span><h4 data-persona-subject></h4></div><p data-persona-greeting></p><p data-persona-message></p><p data-persona-signoff></p></div><div class="persona-local-edit"><span class="persona-step">Edit one part</span><p>The request and greeting stay unchanged.</p><button type="button" data-persona-edit aria-pressed="false">Shorten only the explanation</button><p data-persona-edit-status role="status" hidden></p></div>
  <div class="persona-reuse"><span class="persona-step">03 / Keep the style</span><p data-persona-reuse-caption>Next request: <strong>miss a morning meeting</strong>. Reuse the relationship and style instead of explaining them again.</p><button type="button" data-persona-reuse>Save style & write the next email <span aria-hidden="true">→</span></button></div></div>
- <details class="persona-original"><summary>See the original section editor</summary><div><img src="${siteURL('/assets/research-editorial/persona-intent-editor.png')}" width="1052" height="892" alt="The original PersonaMail interface for changing the intent of one email section" loading="lazy"><p>The prototype exposes the intent behind each communication unit, so a writer can change one section without regenerating the entire email.</p></div></details><figcaption class="persona-demo-note">An authored interactive example; settings select local drafts. The original prototype also saves context anchors and learns from editing feedback.</figcaption></figure>`;
+ <details class="persona-original"><summary>See the original section editor</summary><div><img src="${siteURL('/assets/research-editorial/persona-intent-editor.png')}" width="1052" height="892" alt="The original PersonaMail interface for changing the intent of one email section" loading="lazy"><p>The prototype exposes the intent behind each communication unit, so a writer can change one section without regenerating the entire email.</p></div></details><figcaption class="persona-demo-note">An authored interactive example; settings select local drafts. This demonstrates two kinds of memory: saved relationship settings and a preference learned from a local edit.</figcaption></figure>`;
 }
 // Each task has all eight authored combinations. Relationship changes the request's
 // social assumptions and handover, not only its greeting; no private reason is invented.
@@ -99,6 +99,21 @@ const personaDrafts = {
   }
  }
 };
+// A local shortening keeps the relationship assumptions and selected tone.
+const personaShortContexts = {
+ leave: {
+  'familiar|polite': 'I’ll send you a short progress update.',
+  'familiar|formal': 'I will send you a brief progress update.',
+  'new|polite': 'Please let me know how to record the leave.',
+  'new|formal': 'Please advise how I should record this absence.'
+ },
+ meeting: {
+  'familiar|polite': 'I’ll send my update beforehand and read the notes afterward.',
+  'familiar|formal': 'I will send my update in advance and review the notes afterward.',
+  'new|polite': 'Would you prefer an update or a check-in, and how should I catch up?',
+  'new|formal': 'Please advise on an alternative update and how I should catch up.'
+ }
+};
 function settings(el){return {relationship:el.querySelector('[data-persona-relationship]').value,tone:el.querySelector('[data-persona-tone]').value,length:el.querySelector('[data-persona-length]').value,appreciation:el.querySelector('[data-persona-appreciation]').checked};}
 export function setupPersonaIntent(root=document){
  const demos=[...root.querySelectorAll('[data-persona-demo]')];
@@ -107,20 +122,38 @@ export function setupPersonaIntent(root=document){
   const draft=personaDrafts[meeting?'meeting':'leave'][`${s.relationship}|${s.tone}|${s.length}`];
   const message=el.querySelector('[data-persona-message]');message.replaceChildren();
   const requestSpan=document.createElement('span');requestSpan.className='persona-email-request';requestSpan.textContent=draft.request;
-  message.append(requestSpan,document.createTextNode(` ${draft.context}`));
-  if(s.appreciation){const thanks=document.createElement('mark');thanks.textContent=draft.thanks;message.append(document.createTextNode(' '),thanks);}
+  message.append(requestSpan,document.createTextNode(' '));
+  const localEdit=el.dataset.personaLocalEdit==='short';
+  const explanation=document.createElement(localEdit?'mark':'span');explanation.className='persona-email-explanation';
+  explanation.textContent=localEdit?personaShortContexts[meeting?'meeting':'leave'][`${s.relationship}|${s.tone}`]:draft.context;
+  message.append(explanation);
+  el.querySelector('[data-persona-edit]').textContent=localEdit?'Restore the fuller explanation':'Shorten only the explanation';
+  el.querySelector('[data-persona-edit]').setAttribute('aria-pressed',String(localEdit));
+  const editStatus=el.querySelector('[data-persona-edit-status]');
+  editStatus.hidden=!localEdit;
+  const savedShortPreference=el.dataset.personaSaved&&JSON.parse(el.dataset.personaSaved).localEdit==='short';
+  editStatus.textContent=localEdit?(meeting?(savedShortPreference?'Your preference for shorter explanations carries over.':'Only the highlighted explanation changed.'):'Ready to reuse your preference for shorter explanations.'):'';
+  el.querySelector('.persona-relationship-context>span:last-child strong').textContent=familiar?'Familiar supervisor':'New supervisor';
+  el.querySelector('.persona-before h3').textContent=meeting?'A missed meeting, with the same context':'A day off, with the right context';
+  el.querySelector('.persona-before>p').innerHTML=familiar?(meeting?'Your supervisor <strong>already knows your work</strong>. Say you’ll miss the meeting and explain <strong>how you’ll catch up</strong>.':'Your supervisor <strong>already knows you well</strong>. Make the request without repeating your background.'):(meeting?'You have <strong>just joined the group</strong>. Check how to <strong>share your update and catch up</strong> without assuming an established routine.':'You have <strong>just joined the group</strong>. Ask clearly and check the <strong>leave process</strong> without assuming an established routine.');
+  const rejected=el.querySelectorAll('.persona-rejected-line');
+  rejected[0].querySelector('span').textContent=familiar?'A needlessly elaborate opening':'Assumes an established relationship';
+  rejected[0].querySelector('p').textContent=meeting?(familiar?'“I am writing to humbly request your kind permission to miss tomorrow’s morning meeting…”':'“Missing tomorrow’s meeting—you know the usual arrangement.”'):(familiar?'“I am writing to formally request your kind permission to be absent from the laboratory today…”':'“Taking today off—you know the usual arrangement.”');
+  rejected[1].querySelector('span').textContent=familiar?'Unnecessary explanation':'Leaves the process unclear';
+  rejected[1].querySelector('p').textContent=familiar?'“I sincerely apologize for any inconvenience this may cause and would like to provide further context…”':(meeting?'“I’ll catch up somehow!”':'“See you when I’m back!”');
+  if(s.appreciation){const thanks=document.createElement(localEdit?'span':'mark');thanks.textContent=draft.thanks;message.append(document.createTextNode(' '),thanks);}
   el.querySelector('[data-persona-subject]').textContent=meeting?'Tomorrow’s morning meeting':'Away from the lab today';
   el.querySelector('[data-persona-greeting]').textContent=familiar?'Hi Professor,':'Dear Professor,';
   el.querySelector('[data-persona-signoff]').textContent=(familiar&&polite?'Best,':'Kind regards,')+'\n[Your name]';
   el.querySelector('[data-persona-task-label]').textContent=meeting?'Next request · Morning meeting':'Today · Leave request';
-  el.querySelector('[data-persona-reuse-caption]').innerHTML=meeting?'A <strong>new request</strong>, with the <strong>same saved style</strong>. Your settings carry over to this email.':'Next request: <strong>miss a morning meeting</strong>. Reuse the relationship and style instead of explaining them again.';
+  el.querySelector('[data-persona-reuse-caption]').innerHTML=meeting?(localEdit?'The new request keeps your <strong>relationship settings</strong> and your edit preference: <strong>shorter explanations</strong>.':'A new request with the same saved relationship and writing settings.'):'Next request: <strong>miss a morning meeting</strong>. Reuse the relationship and style instead of explaining them again.';
   el.querySelector('[data-persona-reuse]').innerHTML=meeting?'Return to the leave request <span aria-hidden="true">↶</span>':'Save style & write the next email <span aria-hidden="true">→</span>';
   const memory=el.querySelector('[data-persona-memory]');memory.hidden=!el.dataset.personaSaved;
-  if(el.dataset.personaSaved){const unchanged=el.dataset.personaSaved===JSON.stringify(s);el.querySelector('[data-persona-memory-label]').textContent=unchanged?'Style saved · settings unchanged':'Style adjusted · ready for the next request';el.querySelector('[data-persona-reuse-caption]').innerHTML=meeting?(unchanged?'A <strong>new request</strong>, with the <strong>same saved style</strong>. Your settings carry over to this email.':'Your <strong>updated settings</strong> now shape this meeting email.'):'Next request: <strong>miss a morning meeting</strong>. Reuse the relationship and style instead of explaining them again.';const chips=el.querySelector('[data-persona-memory-chips]');chips.replaceChildren();for(const label of[familiar?'Familiar supervisor':'New supervisor',polite?'Polite & direct':'Formal',brief?'Brief':'Added context',s.appreciation?'Appreciative':'No appreciation line']){const chip=document.createElement('span');chip.textContent=label;chips.append(chip);}}
+  if(el.dataset.personaSaved){const unchanged=el.dataset.personaSaved===JSON.stringify({...s,localEdit:el.dataset.personaLocalEdit||''});el.querySelector('[data-persona-memory-label]').textContent=unchanged?'Style saved · settings unchanged':'Style adjusted · ready for the next request';el.querySelector('[data-persona-reuse-caption]').innerHTML=meeting?(unchanged?(localEdit?'The new request keeps your <strong>relationship settings</strong> and your edit preference: <strong>shorter explanations</strong>.':'A new request with the same saved relationship and writing settings.'):'Your <strong>updated settings</strong> now shape this meeting email.'):'Next request: <strong>miss a morning meeting</strong>. Reuse the relationship and style instead of explaining them again.';const chips=el.querySelector('[data-persona-memory-chips]');chips.replaceChildren();for(const label of[familiar?'Familiar supervisor':'New supervisor',polite?'Polite & direct':'Formal',brief?'Brief':'Added context',s.appreciation?'Appreciative':'No appreciation line',...(localEdit?['Learned preference: shorter explanations']:[])]){const chip=document.createElement('span');chip.textContent=label;chips.append(chip);}}
   el.querySelector('.persona-draft').classList.remove('is-updated');void el.offsetWidth;el.querySelector('.persona-draft').classList.add('is-updated');
  }
  function change(e){const el=e.target.closest('[data-persona-demo]');if(el&&e.target.matches('select,input'))update(el);}
- function click(e){const button=e.target.closest('[data-persona-reuse]');if(!button)return;const el=button.closest('[data-persona-demo]');el.dataset.personaSaved=JSON.stringify(settings(el));el.dataset.personaTask=el.dataset.personaTask==='meeting'?'leave':'meeting';update(el);if(matchMedia('(max-width:760px)').matches)el.querySelector('[data-persona-memory]').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
+ function click(e){const edit=e.target.closest('[data-persona-edit]');if(edit){const el=edit.closest('[data-persona-demo]');el.dataset.personaLocalEdit=el.dataset.personaLocalEdit==='short'?'':'short';update(el);return;}const button=e.target.closest('[data-persona-reuse]');if(!button)return;const el=button.closest('[data-persona-demo]');el.dataset.personaSaved=JSON.stringify({...settings(el),localEdit:el.dataset.personaLocalEdit||''});el.dataset.personaTask=el.dataset.personaTask==='meeting'?'leave':'meeting';update(el);if(matchMedia('(max-width:760px)').matches)el.querySelector('[data-persona-memory]').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
  root.addEventListener('change',change);root.addEventListener('click',click);demos.forEach(update);
  return()=>{root.removeEventListener('change',change);root.removeEventListener('click',click);};
 }

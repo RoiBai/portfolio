@@ -1,22 +1,37 @@
-// This example uses only the text and relationships visible in Figma 669:251.
-// It is an interactive reading of that example, not an invented knowledge graph.
+// Source interface excerpts show the existing tool, not a replay of a new query.
+// The reading below follows the original Figma example (669:251 / 1835:6887).
+import { siteURL } from './site-paths.js';
 let instance = 0;
 export function renderVerseInteraction() {
   const id = `verse-reading-${++instance}`;
+  const original = siteURL('/assets/research-editorial/verse-interface.jpg');
+  const record = siteURL('/assets/research-revision/versecolor-source-interface-4x.png');
+  let excerptIndex = 0;
+  const excerpt = (src, box, width, height, label) => {
+    const [x,y,w,h] = box.split(' ').map(Number), clip = `${id}-clip-${++excerptIndex}`;
+    return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}" preserveAspectRatio="xMidYMid meet" class="vi-interface-excerpt"><defs><clipPath id="${clip}"><rect width="${w}" height="${h}"/></clipPath></defs><g clip-path="url(#${clip})"><image href="${src}" x="${-x}" y="${-y}" width="${width}" height="${height}"/></g></svg>`;
+  };
   return `<figure class="project-figure verse-interaction reveal" data-verse-interaction data-selection="color" aria-labelledby="${id}-title">
-    <div class="vi-heading"><h3 id="${id}-title">Example</h3><p>Illustrative reading · Wang Wei’s farewell poem</p></div>
+    <ol class="vi-workflow" aria-label="From a color search to evidence">
+      <li><span class="vi-step-number">01</span><h3>Find a color</h3>${excerpt(original,'0 115 1260 770',5314,1749,'Original color search and dynasty filter')}<p>Start with a color word; narrow by poet or dynasty.</p></li>
+      <li><span class="vi-step-number">02</span><h3>Follow a connection</h3>${excerpt(record,'40 1590 1850 1120',3760,2805,'Original color–imagery network connecting Nature with color and emotional associations')}<p>Explore linked imagery and emotions, then follow a poem.</p></li>
+      <li><span class="vi-step-number">03</span><h3>Check the poem</h3>${excerpt(record,'1970 565 1700 450',3760,2805,'Original related-poem record with poem title, author, lines and the linked color')}<p>Read the surrounding lines. Does the proposed meaning fit?</p></li>
+    </ol>
+    <div class="vi-heading"><h3 id="${id}-title">Try that final check</h3><p>Illustrative reading · Wang Wei’s farewell poem, from the original design example</p></div>
     <div class="vi-canvas">
       <svg class="vi-connections" aria-hidden="true" focusable="false"><path data-vi-edge="rain"/><path data-vi-edge="farewell"/><path data-vi-edge="evidence"/><path class="vi-live-connection"/><circle class="vi-live-point" r="3"/></svg>
       <div class="vi-example">
         <div class="vi-poem vi-block" data-source-node="1835:6890"><p>By the inn,<br><button type="button" class="vi-word" data-vi-select="color" data-vi-node="color" aria-pressed="true" aria-label="Drag green to a reading, or select to trace both readings">green</button> willows look fresh again.</p></div>
         <div class="vi-readings" aria-label="The color in context">
-          <button type="button" class="vi-reading vi-block" data-vi-select="rain" data-vi-node="rain" data-source-node="1835:6909" aria-pressed="false"><img src="/assets/research-readability/verse-rain.svg" alt="" width="56" height="56"><span>Rain refreshes the green willows.</span><span class="vi-trace" aria-hidden="true">↗</span></button>
-          <button type="button" class="vi-reading vi-block" data-vi-select="farewell" data-vi-node="farewell" data-source-node="1835:6916" aria-pressed="false"><img src="/assets/research-readability/verse-friends.svg" alt="" width="56" height="56"><span>The next lines turn this scene into a farewell between friends.</span><span class="vi-trace" aria-hidden="true">↗</span></button>
+          <button type="button" class="vi-reading vi-block" data-vi-select="rain" data-vi-node="rain" data-source-node="1835:6909" aria-pressed="false"><img src="${siteURL('/assets/research-readability/verse-rain.svg')}" alt="" width="56" height="56"><span>What the line shows: fresh willows after rain.</span><span class="vi-trace" aria-hidden="true">↗</span></button>
+          <button type="button" class="vi-reading vi-block" data-vi-select="farewell" data-vi-node="farewell" data-source-node="1835:6916" aria-pressed="false"><img src="${siteURL('/assets/research-readability/verse-friends.svg')}" alt="" width="56" height="56"><span>What the poem adds: friends about to part.</span><span class="vi-trace" aria-hidden="true">↗</span></button>
         </div>
-        <p class="vi-instruction">Drag <strong>green</strong> to either reading, or select a row to trace the connection.</p>
+        <p class="vi-instruction">Select a reading, or drag <strong>green</strong> to connect it.</p>
       </div>
       <blockquote class="vi-evidence vi-block" data-vi-node="evidence" data-source-node="1835:6918"><span class="vi-source-label">The next lines supply the farewell context</span><p>“I urge you to drink another cup;<br>beyond Yang Pass, no old friends remain.”</p></blockquote>
     </div>
+    <p class="vi-judgment"><strong>The context supports farewell.</strong> Green describes the willows; parting comes from the surrounding poem. The same color can mean something else elsewhere.</p>
+    <details class="vi-original"><summary>Original interface and review process</summary><img src="${original}" width="5314" height="1749" alt="Original VerseColor interface: filters, poet browsing, relationship network and source records" loading="lazy" decoding="async"><p>The excerpts show the original tool. The guided reading illustrates how to judge a link; it is not a recorded query.</p><p>Eight domain reviewers checked LLM-generated associations against the poems and revised uncertain links. They remain interpretations to examine, not fixed definitions of a color.</p></details>
     <p class="vi-status" aria-live="polite" aria-atomic="true">Green connects to fresh willows. The following lines supply the farewell context.</p>
   </figure>`;
 }

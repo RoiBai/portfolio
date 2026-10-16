@@ -9,7 +9,8 @@ function preview(article, compact=false) {
   const wrapper=document.createElement('article');
   wrapper.className=`news-preview${compact?' news-preview-compact':''}`;
   if(article.id)wrapper.dataset.news=article.id;
-  wrapper.innerHTML=`<div class="news-preview-meta"><span>${esc(article.outlet)}</span>${article.date?`<time>${esc(article.date)}</time>`:''}</div><h4>${esc(article.title)}</h4><div class="news-preview-actions"><a href="${esc(article.url)}" target="_blank" rel="noopener noreferrer">Open original article ↗</a><details class="news-inline-reader" data-source-url="${esc(article.url)}"><summary><span>Read here</span><span aria-hidden="true">＋</span></summary><div class="news-reader-content"><p>The original link stays available if the publisher does not allow an embedded view.</p><div class="news-reader-frame"></div><a href="${esc(article.url)}" target="_blank" rel="noopener noreferrer">Open on ${esc(article.outlet)} ↗</a></div></details></div>`;
+  const canEmbed=!/(^|\.)londonmuseum\.org\.uk$/.test(new URL(article.url).hostname);
+  wrapper.innerHTML=`<div class="news-preview-meta"><span>${esc(article.outlet)}</span>${article.date?`<time>${esc(article.date)}</time>`:''}</div><h4>${esc(article.title)}</h4><div class="news-preview-actions"><a href="${esc(article.url)}" target="_blank" rel="noopener noreferrer">Open original article ↗</a>${canEmbed?`<details class="news-inline-reader" data-source-url="${esc(article.url)}"><summary><span>Read here</span><span aria-hidden="true">＋</span></summary><div class="news-reader-content"><p>The original link stays available if the publisher does not allow an embedded view.</p><div class="news-reader-frame"></div><a href="${esc(article.url)}" target="_blank" rel="noopener noreferrer">Open on ${esc(article.outlet)} ↗</a></div></details>`:''}</div>`;
   return wrapper;
 }
 export function setupNewsEmbeds(root=document) {

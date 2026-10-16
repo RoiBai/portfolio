@@ -50,3 +50,13 @@ body[data-project=personamail] .persona-refined>.persona-demo-note{font-size:14p
  body[data-project=personamail] #research.editorial-pair .research-source-figure>figcaption p{max-width:none;text-wrap:pretty}
 }
 .persona-refined .persona-email-request{font-weight:650}
+
+/* A local edit makes the difference between a saved preset and learned preference visible. */
+.persona-refined .persona-local-edit{margin-top:16px;padding:16px 20px;background:#edf1e8;border-radius:5px}
+.persona-refined .persona-local-edit p{margin:8px 0!important}
+.persona-refined .persona-local-edit button{padding:10px 14px;border:1px solid #32685a;background:#fffdf7;color:#244e40;border-radius:4px;cursor:pointer}
+.persona-refined .persona-local-edit button[aria-pressed=true]{background:#d9e8d9}
+.persona-refined .persona-local-edit button:focus-visible{outline:3px solid #367f73;outline-offset:3px}
+.persona-refined .persona-email-subject{grid-template-columns:max-content minmax(0,1fr);gap:14px}
+@media(min-width:1000px){.persona-refined .persona-local-edit{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center}.persona-refined .persona-local-edit>.persona-step,.persona-refined .persona-local-edit>[data-persona-edit-status]{grid-column:1/-1}.persona-refined .persona-local-edit p{margin:0!important}.persona-refined .persona-local-edit button{max-width:220px}}
+@media(max-width:760px){.persona-refined .persona-email-subject{grid-template-columns:1fr;gap:5px}}

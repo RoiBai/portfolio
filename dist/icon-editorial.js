@@ -39,7 +39,7 @@ export function setupIconEditorial(root,project,visuals={}){
   problem.insertAdjacentHTML('beforeend',`<div class="icon-context-comparison">
    <figure><div class="icon-desktop-context"><div class="icon-monitor"><span class="icon-screen-parking" aria-label="White parking symbol on blue">P</span></div><div class="icon-monitor-foot"></div></div><figcaption><h3>On a screen <span class="icon-result-check">✓</span></h3><small><strong>9.06 : 1</strong> calculated screen contrast · #0000F5 / #FFFFFF</small></figcaption></figure>
    <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span></div><figcaption><h3>Through AR glasses <span class="icon-result-cross">×</span></h3><small>The real scene shows through the icon</small></figcaption></figure>
-   <div class="icon-context-explanation"><p>On a screen, a white parking symbol stands out against an opaque blue background. Through AR glasses, <strong>the real scene also shines through</strong>.</p><p><strong>White can cause glare or blend into a bright background.</strong> Screen contrast alone cannot predict AR clarity.</p></div>
+   <div class="icon-context-explanation"><p>The screen’s blue background is opaque. In AR, <strong>the real scene shines through</strong>; white can glare or merge with a bright background. <strong>Test clarity through the glasses</strong>, alongside screen contrast.</p></div>
   </div><div class="icon-abstract-pairs">
    <figure><div class="icon-abstract-pair-art"><span class="icon-abstract-t-pair">${img('/assets/icon-original-explorations/abstract-cyan-foregrounds-original.svg','Original cyan letter T with black and white foregrounds')}</span><span class="icon-abstract-opposite">${visuals.oppositeForeground||''}</span></div><figcaption><h3>Compare foregrounds</h3><p>Black, white and opposite-color symbols</p></figcaption></figure>
    <figure><div class="icon-abstract-pair-art">${img('/website-assets/icon-before.svg','Original yellow bulb without shadow')}${img('/website-assets/icon-after.svg','Original yellow bulb with shadow')}</div><figcaption><h3>Sharpen the edge</h3><p>White symbol, with and without shadow</p></figcaption></figure>
@@ -53,17 +53,31 @@ export function setupIconEditorial(root,project,visuals={}){
    <div class="icon-study-timeline"><p><strong>Three linked studies</strong><span>The same 20 participants completed Studies 1–3.</span></p><ol>
     <li><span>01</span><h3>Compare colors</h3><p>Fixed letter · clarity + comfort</p></li>
     <li><span>02</span><h3>Add meaning</h3><p>Workshop icons · how well the colors fit</p></li>
-    <li><span>03</span><h3>Refine the design</h3><p>New treatments · attention and priority</p></li>
+    <li><span>03</span><h3>Refine the design</h3><p>New treatments · perceived priority</p></li>
    </ol></div>
   </div>`);
  }
  const meaning=root.querySelector('#meaning');
  if(meaning){meaning.querySelector('.icon-color-lab')?.insertAdjacentHTML('beforebegin',`<div class="icon-designer-consensus"><div class="icon-designer-count"><strong>8</strong><span>designers</span></div><p>Agreed on <strong>one icon per color</strong><span>The twelve shared meanings became the icon library for this study.</span></p></div>`);}
+ // Put the evidence immediately after the material it explains, before the next study.
+ for(const data of project.sections||[]){
+  const section=root.querySelector('#'+data.id);
+  if(!section)continue;
+  if(data.studyFinding){
+   const f=data.studyFinding;
+   section.insertAdjacentHTML('beforeend',`<aside class="icon-study-finding"><small>${esc(f.label)}</small><p>${text(f.body,f.highlights)}</p></aside>`);
+  }
+  if(data.reasoning?.length){
+   const bridge=document.createElement('div');bridge.className='icon-refinement-reasoning';
+   bridge.innerHTML=data.reasoning.map(item=>`<article><h4>${esc(item.title)}</h4><p>${text(item.observation,item.highlights)}</p><p class="icon-refinement-decision"><span aria-hidden="true">↳</span><span>${text(item.decision,item.highlights)}</span></p></article>`).join('');
+   section.querySelector('.section-visuals')?.before(bridge);
+  }
+ }
  const guidelines=root.querySelector('#guidelines'),data=project?.sections?.find(s=>s.id==='guidelines');
  if(guidelines&&data?.items?.some(item=>item.priority)){
   const heading=guidelines.querySelector('.section-heading');guidelines.replaceChildren(heading);guidelines.classList.add('icon-guidelines-combined');
   const content=document.createElement('div');content.className='icon-guidance-content';
-  content.innerHTML=`${data.body?.length?`<div class="icon-guidance-intro">${[].concat(data.body).map(t=>`<p>${text(t,data.highlights)}</p>`).join('')}</div>`:''}<div class="icon-priority-guidance">${data.items.map(item=>`<article><span class="icon-priority-label">${esc(item.priority)} priority</span>${item.src?`<figure>${img(item.src,item.title)}</figure>`:''}<h3>${esc(item.title)}</h3><p>${text(item.body,data.highlights)}</p>${item.evidence?`<p class="icon-guidance-evidence">${text(item.evidence,data.highlights)}</p>`:''}${item.takeaway?`<p class="icon-guidance-takeaway">${text(item.takeaway,data.highlights)}</p>`:''}</article>`).join('')}</div>${data.findings?.length?`<div class="icon-guidance-findings">${data.findings.map(f=>`<article>${f.src?`<figure>${img(f.src,f.title)}</figure>`:''}<div><h3>${esc(f.title)}</h3>${f.metric?`<strong class="icon-guidance-metric">${esc(f.metric)}</strong>`:''}<p>${text(f.body,data.highlights)}</p></div></article>`).join('')}</div>`:''}${data.audience?`<aside class="icon-guidance-audience">${data.audience.figures?.length?`<div class="icon-guidance-audience-art">${data.audience.figures.map(f=>img(f.src,f.alt||data.audience.title)).join('')}</div>`:''}<div><h3>${esc(data.audience.title)}</h3><p>${text(data.audience.body,data.highlights)}</p></div></aside>`:''}`;
+  content.innerHTML=`${data.body?.length?`<div class="icon-guidance-intro">${[].concat(data.body).map(t=>`<p>${text(t,data.highlights)}</p>`).join('')}</div>`:''}<div class="icon-priority-guidance">${data.items.map(item=>`<article><span class="icon-priority-label">${esc(item.priority)} prominence</span>${item.src?`<figure>${img(item.src,item.title)}</figure>`:''}<h3>${esc(item.title)}</h3><p>${text(item.body,data.highlights)}</p>${item.evidence?`<p class="icon-guidance-evidence">${text(item.evidence,data.highlights)}</p>`:''}${item.takeaway?`<p class="icon-guidance-takeaway">${text(item.takeaway,data.highlights)}</p>`:''}</article>`).join('')}</div>${data.findings?.length?`<div class="icon-guidance-findings${data.findings.length===1?' icon-guidance-findings-single':''}">${data.findings.map(f=>`<article>${f.src?`<figure>${img(f.src,f.title)}</figure>`:''}<div><h3>${esc(f.title)}</h3>${f.metric?`<strong class="icon-guidance-metric">${esc(f.metric)}</strong>`:''}<p>${text(f.body,data.highlights)}</p></div></article>`).join('')}</div>`:''}${data.audience?`<aside class="icon-guidance-audience">${data.audience.figures?.length?`<div class="icon-guidance-audience-art">${data.audience.figures.map(f=>img(f.src,f.alt||data.audience.title)).join('')}</div>`:''}<div><h3>${esc(data.audience.title)}</h3><p>${text(data.audience.body,data.highlights)}</p></div></aside>`:''}`;
   guidelines.append(content);
  }
  groupIconStudies(root);
