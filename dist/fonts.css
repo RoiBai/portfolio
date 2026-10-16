@@ -1,3 +1,8 @@
+/* Source Sans 3 by Adobe, SIL OFL 1.1. Files are self-hosted.
+   Provenance and license: assets/fonts/SourceSans3-SOURCES.json. */
+@font-face {font-family:"Source Sans 3";src:url("./assets/fonts/SourceSans3-Regular.woff2") format("woff2");font-style:normal;font-weight:200 900;font-display:swap}
+@font-face {font-family:"Source Sans 3";src:url("./assets/fonts/SourceSans3-Italic.woff2") format("woff2");font-style:italic;font-weight:200 900;font-display:swap}
+
 /* Local Google Fonts. Load after styles.css or universe.css.
    Both families are distributed under the SIL Open Font License 1.1.
    Source URLs, checksums and license copies: /assets/fonts/.
@@ -29,9 +34,9 @@
 }
 
 :root {
-  --font-body: "Inter", sans-serif;
-  --font-display: "Space Grotesk", "Inter", sans-serif;
-  --font-editorial: Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-editorial: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
   font-family: var(--font-body);
   font-optical-sizing: auto;
   font-synthesis: none;
@@ -83,7 +88,7 @@ h2 em {
   font-family: inherit;
 }
 
-/* Retain the Chinese color project's editorial body and serif accents. */
+/* Keep the color project on the same readable sans-serif family. */
 body.serif .section-body > p,
 body.serif .hero-subtitle,
 body.serif .stats strong,
@@ -91,3 +96,7 @@ body[data-project="color-in-context"] .section-body > p,
 body[data-project="traditional-color"] .section-body > p {
   font-family: var(--font-editorial);
 }
+
+/* Preserve the original fallback name face independently of case-study type.
+   The active particle-name hero keeps its own Source Serif Pro face. */
+.name-fallback h1 {font-family:"Space Grotesk",Arial,sans-serif}

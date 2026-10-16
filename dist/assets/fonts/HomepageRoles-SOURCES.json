@@ -1,0 +1,44 @@
+{
+  "note": "Official Google Fonts text subsets, self-hosted only for homepage role labels. These font files do not alter the name font.",
+  "fonts": [
+    {
+      "family": "JetBrains Mono",
+      "weight": 600,
+      "subset_text": "Developer",
+      "font_file": "JetBrainsMono-Developer.woff2",
+      "source_css": "https://fonts.googleapis.com/css2?family=JetBrains+Mono%3Awght%40600&text=Developer&display=swap",
+      "source_binary": "https://fonts.gstatic.com/l/font?kit=tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8FqtjOFmUsaeLhznGJTviQGeOsQ&skey=48ad01c60053c2ae&v=v24",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "JetBrainsMono-Developer-OFL.txt",
+      "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/jetbrainsmono/OFL.txt",
+      "sha256": "104d6dda08fe2dd56742329036833840b877723ce3900596967d38166a4645e3",
+      "bytes": 1080
+    },
+    {
+      "family": "Press Start 2P",
+      "weight": 400,
+      "subset_text": "Gamer",
+      "font_file": "PressStart2P-Gamer.woff2",
+      "source_css": "https://fonts.googleapis.com/css2?family=Press+Start+2P%3Awght%40400&text=Gamer&display=swap",
+      "source_binary": "https://fonts.gstatic.com/l/font?kit=e3t4euO8T-267oIAQAu6jDQyK0nXgPRE4rUwQvR4gBg&skey=24cc298767068e24&v=v16",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "PressStart2P-Gamer-OFL.txt",
+      "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/pressstart2p/OFL.txt",
+      "sha256": "a3a4e60a1215e75133e5f7e0380c9b349a399db3ecb6ab6bb5d42df033bcbb36",
+      "bytes": 736
+    },
+    {
+      "family": "Nunito",
+      "weight": 800,
+      "subset_text": "Dog Walker",
+      "font_file": "Nunito-DogWalker.woff2",
+      "source_css": "https://fonts.googleapis.com/css2?family=Nunito%3Awght%40800&text=Dog+Walker&display=swap",
+      "source_binary": "https://fonts.gstatic.com/l/font?kit=XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTY9jo7fRWnCcey8Xj1OtRrovVE&skey=27bb6aa8eea8a5e7&v=v32",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "Nunito-DogWalker-OFL.txt",
+      "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/nunito/OFL.txt",
+      "sha256": "8002bfda4cc3553ab2de613958b9107518708e338ff75db8391d52a399e0ee90",
+      "bytes": 1568
+    }
+  ]
+}

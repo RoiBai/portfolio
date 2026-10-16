@@ -1,25 +1,25 @@
 /* One editorial scale for every case study. Keep this layer authoritative over
    older page-specific !important declarations; inline game artwork is separate. */
 @layer case-typography {
- :root {--case-title:64px!important;--case-heading:40px!important;--case-deck:30px!important;--case-subhead:24px!important;--case-copy:20px!important;--case-note:18px!important;--case-caption:16px!important;--case-label:14px!important}
+ :root {--case-title:64px!important;--case-heading:40px!important;--case-deck:30px!important;--case-subhead:24px!important;--case-copy:20px!important;--case-note:18px!important;--case-caption:16px!important;--case-label:12px!important}
  @media(max-width:800px){:root{--case-title:42px!important;--case-heading:32px!important;--case-deck:26px!important;--case-subhead:22px!important;--case-copy:18px!important;--case-note:16px!important;--case-caption:14px!important;--case-label:12px!important}}
  body[data-view=project] :is(.case-study,.case-study *) {--case-title:inherit!important;--case-heading:inherit!important;--case-deck:inherit!important;--case-subhead:inherit!important;--case-copy:inherit!important;--case-note:inherit!important;--case-caption:inherit!important;--case-label:inherit!important}
  body[data-view=project] {font-size:var(--case-copy)!important}
  body[data-view=project] :is(.case-study,.chapter-bar) {font-family:var(--font-body)!important;font-size:var(--case-copy)!important;font-weight:400!important;font-style:normal!important;line-height:1.5}
  body[data-view=project] :is(.case-study,.chapter-bar) :where(*:not(.gx-her-island,.gx-her-island *)) {font-size:inherit!important;font-weight:inherit!important;font-style:inherit!important}
- body[data-view=project] .case-study :is(h1,h2,h3,h4,h5,h6) {font-family:var(--font-display)!important;font-weight:600!important;font-style:normal!important;line-height:1.2!important;letter-spacing:-.025em!important;text-wrap:pretty;hyphens:none}
+ body[data-view=project] .case-study :is(h1,h2,h3,h4,h5,h6) {font-family:var(--font-display)!important;font-weight:600!important;font-style:normal!important;line-height:1.2!important;letter-spacing:-.012em!important;text-wrap:pretty;hyphens:none}
  body[data-view=project] .case-study h1 {font-size:var(--case-title)!important;line-height:1.08!important}
  body[data-view=project] .case-study h2 {font-size:var(--case-heading)!important}
  body[data-view=project] .case-study :is(h3,h4,h5,h6) {font-size:var(--case-subhead)!important}
  body[data-view=project] .case-study :is(.hero-subtitle,.next-project-name,.her-farewell) {font-size:var(--case-deck)!important}
  body[data-view=project] .case-study :is(p,li,dd,blockquote) {font-family:var(--font-body)!important;font-size:var(--case-copy)!important;line-height:1.5!important;text-wrap:pretty}
- body[data-view=project] .case-study :is(strong,b) {font-weight:650!important;font-style:inherit!important;font-family:inherit!important}
+ body[data-view=project] .case-study :is(strong,b) {font-weight:600!important;font-style:inherit!important;font-family:inherit!important}
  body[data-view=project] .case-study :is(em,i,blockquote) {font-style:italic!important;font-family:inherit!important}
  body[data-view=project] .case-study :is(cite,.quote-attribution) {font-style:normal!important;font-weight:400!important;font-size:var(--case-caption)!important;font-family:var(--font-body)!important}
  body[data-view=project] .case-study :is(.section-heading,.pilot-round-heading,.color-atlas-copy,.atlas-native-copy,.icon-subsection,.gaze-subsection) :is(h2,h3) {font-weight:600!important}
  body[data-view=project] .case-study :is(.icon-study-stage,.gaze-subsection)>.section-heading :is(h2,h3),body[data-view=project] .case-study :is(.pilot-round-heading h3,.color-atlas-copy>h3,.atlas-native-copy>h3,.glance-study-baseline h3,.study-method h3,.ar-map-intro h3) {font-size:var(--case-subhead)!important}
  /* Navigation and the line above each heading use one consistent label style. */
- body[data-view=project] :is(.chapter-nav,.back-link),body[data-view=project] .case-study :is(.eyebrow,.small-number,.project-pill,.meta-badge,.project-role>h2,.hero-outcome>span,.study-subsection-label,.pilot-insight-label,.dg-pill,.next-label,.next-category,.dv-kicker,.rf-phase-label,.rf-signal-label,.icon-priority-label,.gx-guide-kicker,.color-version-number,.color-version-status) {font-family:var(--font-body)!important;font-size:var(--case-label)!important;font-weight:600!important;font-style:normal!important;line-height:1.4!important;letter-spacing:.07em!important}
+ body[data-view=project] .case-study :is(.eyebrow,.small-number,.project-pill,.meta-badge,.project-role>h2,.hero-outcome>span,.study-subsection-label,.pilot-insight-label,.dg-pill,.next-label,.next-category,.dv-kicker,.rf-phase-label,.rf-signal-label,.icon-priority-label,.gx-guide-kicker,.color-version-number,.color-version-status) {font-family:var(--font-body)!important;font-size:var(--case-label)!important;font-weight:600!important;font-style:normal!important;line-height:1.4!important;letter-spacing:.07em!important}
  body[data-view=project] .case-study .section-heading>.eyebrow {margin-bottom:16px!important}
  /* Body support, figure captions, and controls remain legible without competing
     with the section title. Inline emphasis always inherits the text size. */
@@ -28,10 +28,10 @@
  body[data-view=project] .case-study :is(figcaption,.rf-caption) :is(h3,h4,.figure-caption-title),body[data-view=project] .case-study .rf-gaze-overview-grid figcaption strong {font-size:var(--case-note)!important;font-weight:600!important}
  body[data-view=project] .case-study :is(.role-value,.rf-caption>strong) {font-size:var(--case-subhead)!important;font-weight:600!important}
  body[data-view=project] .case-study :is(.hero-outcome p,.outcome-lines li,.insight p,.goal-callout p,.pilot-goals p,.route-person p,.icon-overview-scene p,.icon-guidance-content p,.rf-runtime-flow p,.rf-evidence-item p,.rf-composition-grid p,.rf-flow p,.rf-verse-procedure p,.persona-hero-quote,.loofa-fixed-note p,.ar-note p,.gx-play-guide p) {font-size:var(--case-note)!important;line-height:1.45!important}
- body[data-view=project] .case-study :is(.stats strong,.study-deck dt,.route-study-facts dt,.rf-gsl-hll>strong,.rf-phase-count,.ar-audience-result>strong,.rf-study-reports strong,.icon-workshop-count>strong,.icon-designer-count>strong) {font-size:var(--case-heading)!important;font-weight:600!important;line-height:1.15!important}
+ body[data-view=project] .case-study :is(.stats strong,.study-facts dt>strong,.route-study-facts dt,.rf-gsl-hll>strong,.rf-phase-count,.ar-audience-result>strong,.rf-study-reports strong,.icon-workshop-count>strong,.icon-designer-count>strong) {font-size:var(--case-heading)!important;font-weight:600!important;line-height:1.15!important}
  body[data-view=project] .case-study :is(.stats .stat-long,.gr-difference,.gr-evidence-stat strong,.baseline-gains strong,.icon-guidance-metric,.dv-value,.rf-bar-row strong,.rf-study-bar strong) {font-size:var(--case-deck)!important;font-weight:600!important}
  body[data-view=project] .case-study .pilot-count {font-size:var(--case-subhead)!important;font-weight:600!important}
- body[data-view=project] .case-study :is(.stats strong,.study-deck dt,.gr-difference) * {font-size:inherit!important}
+ body[data-view=project] .case-study :is(.stats strong,.gr-difference) * {font-size:inherit!important}
  /* Compact data labels use the label or caption tier, never tiny custom sizes. */
  body[data-view=project] .case-study :is(.dv-unit,.dv-axis,.dv-legend,.dv-row-label,.rf-rating-axis,.rf-legend,.gx-record-date,.candle-status,.atlas-native-chip,.atlas-color-token,.atlas-color-token>span,.atlas-color-token small,.atlas-preset-value,.atlas-preset-pinyin,.color-chat-step,.color-message-label,.atlas-preset-number,.atlas-preset-input-label) {font-size:var(--case-label)!important;line-height:1.35!important}
  body[data-view=project] .case-study :is(.atlas-native-source h4,.atlas-native-family) {font-size:var(--case-subhead)!important}
@@ -49,4 +49,13 @@
  }
  body[data-view=project] .case-study .chapter-deck {font-size:var(--case-copy)!important;line-height:1.5!important}
  body[data-view=project] .case-study .icon-overview-scene p {text-wrap:balance!important}
+ /* The chapter navigation is secondary reading furniture, not a heading. */
+ body[data-view=project] :is(.chapter-nav,.chapter-nav a,.back-link) {font-size:var(--case-label)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;line-height:1.4!important}
+ body[data-view=project] .case-study .section-heading>.eyebrow {font-size:var(--case-caption)!important;font-weight:500!important;letter-spacing:.07em!important}
+ body[data-view=project] .case-study :is(.study-facts dt,.study-facts dt>span) {font-size:var(--case-note)!important;font-weight:400!important;line-height:1.25!important;letter-spacing:0!important}
+ body[data-view=project] .case-study .study-facts dt>strong {font-size:var(--case-heading)!important;font-weight:600!important;line-height:1.1!important}
+ body[data-view=project] .case-study .study-facts dd {font-size:var(--case-note)!important;line-height:1.4!important}
+ body[data-view=project] .case-study .walk-scene blockquote {font-size:var(--case-deck)!important;font-weight:400!important;line-height:1.25!important}
+ body[data-view=project] .case-study :is(.walk-scene aside h4,.pilot-goals h3) {font-size:var(--case-copy)!important;font-weight:600!important}
+ @media(max-width:800px){body[data-view=project] .case-study .walk-scene blockquote {font-size:var(--case-subhead)!important}}
 }

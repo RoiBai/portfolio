@@ -3,6 +3,24 @@ import * as THREE from './vendor/three/three.module.js';
 // Independent hero: it never reads or changes project navigation or completion state.
 const hero = document.querySelector('#name-hero');
 const canvas = hero?.querySelector('#hero-space');
+// Role lettering is deliberately independent of the unchanged particle name.
+const roleFonts = Object.freeze({
+  'Researcher': {family: '"Inter", Arial, sans-serif', weight: 500, key: 'researcher'},
+  'Gamer': {family: '"Role Gamer", monospace', weight: 400, key: 'gamer'},
+  'Developer': {family: '"Role Developer", monospace', weight: 600, key: 'developer'},
+  'Dog Walker': {family: '"Role Dog Walker", sans-serif', weight: 800, key: 'dog-walker'}
+});
+const roleWords = Object.keys(roleFonts);
+// The static stylesheet link also lets the release builder collect these fonts.
+if (hero) {
+  const fallback = document.createElement('div');
+  fallback.className = 'hero-roles-fallback'; fallback.setAttribute('aria-hidden', 'true');
+  for (const word of roleWords) {
+    const label = document.createElement('span');
+    label.dataset.heroRole = roleFonts[word].key; label.textContent = word; fallback.append(label);
+  }
+  hero.append(fallback);
+}
 if (hero && canvas) startNameHero().catch(error => {
   hero.dataset.heroReady = 'false';
   hero.dataset.heroError = 'true';
@@ -24,7 +42,10 @@ async function startNameHero() {
   }
 
   const fontFamily = getComputedStyle(hero).getPropertyValue('--hero-particle-font').trim() || '"Source Serif Pro", Georgia, serif';
-  await document.fonts.load(`600 120px ${fontFamily}`).catch(() => {});
+  await Promise.all([
+    document.fonts.load(`600 120px ${fontFamily}`),
+    ...roleWords.map(word => document.fonts.load(`${roleFonts[word].weight} 64px ${roleFonts[word].family}`, word))
+  ]).catch(() => {});
   interaction.setAttribute('aria-label', 'Ruiyuan Bai. Researcher, Gamer, Developer, Dog Walker orbit the name. Drag to rotate the 3D space; arrow keys rotate, Home resets.');
   const renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: false, powerPreference: 'low-power'});
   renderer.setClearColor(0x000000, 1);
@@ -263,13 +284,12 @@ async function startNameHero() {
 
 
   const identityOrbit = new THREE.Group(); scene.add(identityOrbit);
-  const roleWords = ['Researcher','Gamer','Developer','Dog Walker'];
   const labels=roleWords.map(word=>{
     const c=document.createElement('canvas'); c.width=720;c.height=128;
-    const ctx=c.getContext('2d');ctx.font=`600 64px ${fontFamily}`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#e4e4e4';ctx.fillText(word,360,64);
+    const ctx=c.getContext('2d');const roleFont=roleFonts[word];ctx.font=`${roleFont.weight} 64px ${roleFont.family}`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#e4e4e4';ctx.fillText(word,360,64);
     const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;
     const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,transparent:true,depthTest:false,depthWrite:false}));
-    sprite.userData.word=word;identityOrbit.add(sprite);return sprite;
+    sprite.userData.word=word;sprite.userData.font=ctx.font;identityOrbit.add(sprite);return sprite;
   });
   const orbitGeometry=new THREE.BufferGeometry();
   const orbitLine=new THREE.LineLoop(orbitGeometry,new THREE.LineBasicMaterial({color:0x8b8b8b,transparent:true,opacity:.28,depthWrite:false}));
@@ -307,12 +327,18 @@ async function startNameHero() {
       ctx.fillText('Ruiyuan Bai', Math.round(width * .5), Math.round(maskHeight * (mobile ? .44 : .48)));
     } else if (mobile) {
       const size = width < 350 ? 24 : 28, line = 44;
-      ctx.font = `600 ${size}px ${family}`; ctx.textAlign = 'left';
-      ['Researcher', 'Gamer', 'Developer', 'Dog Walker'].forEach((word, i) => ctx.fillText(word, Math.round(width * .08), Math.round(maskHeight * .39 + i * line)));
+      ctx.textAlign = 'left';
+      roleWords.forEach((word, i) => {
+        ctx.font = `${roleFonts[word].weight} ${size}px ${roleFonts[word].family}`;
+        ctx.fillText(word, Math.round(width * .08), Math.round(maskHeight * .39 + i * line));
+      });
     } else {
       const size = Math.min(60, width * .042), line = size * 1.55;
-      ctx.font = `600 ${size}px ${family}`; ctx.textAlign = 'left';
-      [['Researcher', .23, -.5], ['Gamer', .50, -.5], ['Developer', .23, .5], ['Dog Walker', .50, .5]].forEach(([word, x, y]) => ctx.fillText(word, Math.round(width * x), Math.round(maskHeight * .45 + y * line)));
+      ctx.textAlign = 'left';
+      [['Researcher', .23, -.5], ['Gamer', .50, -.5], ['Developer', .23, .5], ['Dog Walker', .50, .5]].forEach(([word, x, y]) => {
+        ctx.font = `${roleFonts[word].weight} ${size}px ${roleFonts[word].family}`;
+        ctx.fillText(word, Math.round(width * x), Math.round(maskHeight * .45 + y * line));
+      });
     }
     const data = ctx.getImageData(0, 0, mask.width, mask.height).data;
     const samples = []; const bounds = {left: width, top: maskHeight, right: 0, bottom: 0};
@@ -543,7 +569,7 @@ async function startNameHero() {
     ready, frame, renderer: 'three-webgl', particleCount, starCount,
     viewport: {width, height, mobile}, target: target ? 'roles' : 'name', progress, velocity, phase: phase(),
     burst: Math.pow(Math.max(0, Math.sin(progress * Math.PI)), 1.18),
-    roles: roleWords, rolesAlwaysVisible:true, orbitRadii:{...orbitRadii}, rolePositions:labels.map(l=>({word:l.userData.word,position:l.position.toArray()})),
+    roles: roleWords, roleFonts: labels.map(label=>({word:label.userData.word,font:label.userData.font})), rolesAlwaysVisible:true, orbitRadii:{...orbitRadii}, rolePositions:labels.map(l=>({word:l.userData.word,position:l.position.toArray()})),
     name: 'Ruiyuan Bai', nameBounds: {...nameBounds}, roleBounds: {...roleBounds},
     positionDimensions: 3, depthPixels: mobile ? 18 : 32, font: fontFamily, fontWeight: 600, textFacing: progress > .80 ? 'front-facing-roles' : 'restrained-3d-name', textRotation: points ? [points.rotation.x,points.rotation.y,points.rotation.z] : [0,0,0],
     moon: {visible:moon.visible,geometry:moonGeometry.type,vertices:moonPosition.count,craters:craters.length,position:moon.position.toArray(),rotation:[moon.rotation.x,moon.rotation.y,moon.rotation.z],scale:moon.scale.x},

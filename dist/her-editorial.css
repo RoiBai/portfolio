@@ -131,3 +131,8 @@ body[data-project=hersound] .her-evidence-subtitle{font-size:clamp(24px,2vw,29px
  body[data-project=hersound] .her-evidence-subtitle{font-size:23px!important;margin-bottom:18px}
  body[data-project=hersound] .case-study #evidence.her-evidence{padding-block:30px!important}
 }
+
+/* Balance the opening synopsis so its closing thought stays together. */
+@layer case-typography {
+ body[data-project=hersound] .case-study .hero-bottom>p{text-wrap:balance!important}
+}

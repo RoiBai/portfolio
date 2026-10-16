@@ -108,3 +108,21 @@ body[data-project=glancemap] #process .pilot-history-note{width:100%;max-width:n
  .pilot-workshop p{font-size:18px}
  body[data-project=glancemap] #process .pilot-history-note{font-size:19px}
 }
+
+/* Keep each pilot comparison readable as one desktop composition. Images,
+   participant evidence and design goals retain their order without tall gaps. */
+@media(min-width:801px){
+ body[data-project=glancemap] #process .pilot-round{padding-block:18px 24px;scroll-margin-top:76px}
+ body[data-project=glancemap] #process .pilot-round-heading p{margin-top:6px}
+ body[data-project=glancemap] #process .pilot-round .pilot-gallery{margin-top:16px;gap:4%}
+ body[data-project=glancemap] #process .pilot-round .pilot-example{max-width:540px}
+ body[data-project=glancemap] #process .pilot-round .pilot-example figcaption{padding:10px 0 0!important}
+ body[data-project=glancemap] #process .pilot-example-note{margin-top:8px}
+ body[data-project=glancemap] #process .pilot-round .pilot-feedback{margin-top:16px;padding-block:0!important}
+ body[data-project=glancemap] #process .pilot-feedback cite{margin-top:6px}
+ body[data-project=glancemap] #process .pilot-round .pilot-reasoning{margin-top:20px;gap:4%;align-items:center}
+ body[data-project=glancemap] #process .pilot-round .pilot-insight p{margin-top:8px}
+ body[data-project=glancemap] #process .pilot-round .pilot-goals{padding-block:0}
+ body[data-project=glancemap] #process .pilot-goals h3{margin:10px 0 6px}
+ body[data-project=glancemap] #process .pilot-history-note{margin-top:16px}
+}

@@ -71,7 +71,7 @@ body[data-project="glancemap"] #study .section-heading h2{max-width:none;font-si
 
 /* Three study facts, read as rows rather than disconnected headline statistics. */
 body[data-project=glancemap] #study .study-deck .study-facts{display:grid;grid-template-columns:1fr;gap:0;margin:0}
-body[data-project=glancemap] #study .study-facts>div{display:grid;grid-template-columns:110px minmax(0,1fr);align-items:center;column-gap:25px;text-align:left;padding:15px 0;min-width:0;border-bottom:1px solid var(--line)}
+body[data-project=glancemap] #study .study-facts>div{display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;column-gap:24px;text-align:left;padding:15px 0;min-width:0;border-bottom:1px solid var(--line)}
 body[data-project=glancemap] #study .study-facts>div:first-child{padding-top:0}
 body[data-project=glancemap] #study .study-facts>div:last-child{border:0;padding-bottom:0}
 body[data-project=glancemap] #study .study-facts dt{margin:0;min-width:0;line-height:1.1}
@@ -105,10 +105,19 @@ body[data-project=glancemap] #study>.section-heading{margin-bottom:28px}
 body[data-project=glancemap] #study .glance-study-baseline{padding:0;margin:0;scroll-margin-top:110px}
 body[data-project=glancemap] #study .baseline-pair{margin-top:0;gap:5%;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
 body[data-project=glancemap] #study .baseline-pair figcaption{font:400 var(--case-caption)/1.4 var(--font-body);color:var(--muted);text-wrap:pretty}
-body[data-project=glancemap] #study .glance-study-opening{margin-top:42px;align-items:center}
+body[data-project=glancemap] #study .glance-study-opening{margin-top:38px;align-items:start}
 body[data-project=glancemap] #study .study-subsection-label{display:block;font:600 14px/1.3 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
 body[data-project=glancemap] #study .study-method h3{font:600 var(--case-subhead)/1.3 var(--font-body);margin:12px 0 18px;color:var(--ink);text-wrap:pretty}
 body[data-project=glancemap] #study .study-method p{font:400 var(--case-copy)/1.5 var(--font-body);margin:0;color:var(--muted);max-width:none;text-wrap:pretty}
 body[data-project=glancemap] #study .study-method p+p{margin-top:16px}
 body[data-project=glancemap] #study .study-method strong{color:var(--ink);font-weight:600}
 @media(max-width:800px){body[data-project=glancemap] #study .baseline-pair{grid-template-columns:1fr;gap:24px}body[data-project=glancemap] #study .glance-study-opening{margin-top:32px}}
+
+/* Compact evidence rows: the numbers lead; labels remain supporting text. */
+body[data-project=glancemap] #study .study-facts>div{border:0;padding:12px 0}
+body[data-project=glancemap] #study .study-facts dt span{white-space:nowrap;margin-top:3px}
+body[data-project=glancemap] #study .study-facts dd{max-width:none}
+@media(max-width:600px){
+ body[data-project=glancemap] #study .study-facts>div{grid-template-columns:118px minmax(0,1fr);gap:16px;padding:14px 0}
+ body[data-project=glancemap] #study .study-facts dt span{white-space:normal}
+}

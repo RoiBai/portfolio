@@ -8,6 +8,8 @@ body[data-project=personamail] .persona-hero-try{display:inline-block;margin-top
 body[data-project=beyond-the-gaze] .case-study .stats{grid-template-columns:1.25fr 1fr 1fr}
 body[data-project=beyond-the-gaze] .case-study .stats small{max-width:none}
 body[data-project=beyond-the-gaze] .case-study .stats>div:first-child small{white-space:nowrap}
+/* Let the evidence qualifier use its column instead of the old 240px cap. */
+body[data-project=suzhou-scrollverse] .case-study .stats small{max-width:none;hyphens:none;text-wrap:pretty}
 body[data-project=beyond-the-gaze] #problem{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px 7%;align-items:center}
 body[data-project=beyond-the-gaze] #problem>.section-heading{grid-column:1;grid-row:1}
 body[data-project=beyond-the-gaze] #problem>.section-body{grid-column:2;grid-row:1;padding:0;max-width:none}

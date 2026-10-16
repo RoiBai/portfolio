@@ -1,0 +1,17 @@
+/* Four identities; the main name keeps its original Source Serif Pro lettering.
+   Official Google Fonts subsets, SIL OFL 1.1; see assets/fonts/HomepageRoles-SOURCES.json. */
+@font-face{font-family:"Role Developer";src:url("./assets/fonts/JetBrainsMono-Developer.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Role Gamer";src:url("./assets/fonts/PressStart2P-Gamer.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Role Dog Walker";src:url("./assets/fonts/Nunito-DogWalker.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+#name-hero .hero-roles-fallback{position:absolute;inset:0;z-index:1;pointer-events:none}
+#name-hero .hero-roles-fallback>span{position:absolute;transform:translate(-50%,-50%);font-size:clamp(20px,2.1vw,28px);line-height:1.25;white-space:nowrap;color:#e4e4e4;font-synthesis:none;letter-spacing:0}
+#name-hero [data-hero-role=researcher]{left:75%;top:29%;font-family:"Inter",Arial,sans-serif;font-weight:500}
+#name-hero [data-hero-role=gamer]{left:25%;top:29%;font-family:"Role Gamer",monospace;font-weight:400}
+#name-hero [data-hero-role=developer]{left:25%;top:70%;font-family:"Role Developer",monospace;font-weight:600}
+#name-hero [data-hero-role=dog-walker]{left:75%;top:70%;font-family:"Role Dog Walker",sans-serif;font-weight:800}
+#name-hero[data-hero-ready=true] .hero-roles-fallback{display:none}
+@media(max-width:699px){
+ #name-hero .hero-roles-fallback>span{font-size:17px}
+ #name-hero [data-hero-role=researcher],#name-hero [data-hero-role=dog-walker]{left:73%}
+ #name-hero [data-hero-role=gamer],#name-hero [data-hero-role=developer]{left:27%}
+}
