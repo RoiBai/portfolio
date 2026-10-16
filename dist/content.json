@@ -205,7 +205,7 @@
         },
         {
           "id": "process",
-          "nav": "Pilot study insights",
+          "nav": "Pilots",
           "title": "14 rounds, one evolving design",
           "body": [],
           "figures": [],
@@ -457,46 +457,6 @@
           "deck": "We brought the insights from 14 pilot rounds together in GlanceMap"
         },
         {
-          "id": "baseline",
-          "eyebrow": "THE COMPARISON",
-          "title": "An illustrated baseline for audio learning",
-          "body": [
-            "Our pilot’s Illustration Only interface follows AudioXtend’s state-of-art audio-and-illustration approach. We chose it instead of full captions.",
-            "Narration, illustrations and timing were matched. GlanceMap added a persistent mind map to test the value of visible relationships."
-          ],
-          "nav": "Baseline",
-          "figures": [
-            {
-              "src": "/assets/glance-clarity/illustration-only-original.png",
-              "width": 1910,
-              "height": 897,
-              "alt": "The Illustration Only study interface.",
-              "caption": "Our AudioXtend-inspired baseline. This is not a direct test of the AudioXtend system.",
-              "displayWidth": 600,
-              "sourceRefs": [
-                {
-                  "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-                  "nodeId": "918:454"
-                }
-              ]
-            }
-          ],
-          "sourceRefs": [
-            {
-              "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
-              "nodeId": "918:441"
-            }
-          ],
-          "items": [],
-          "highlights": [
-            "Illustration Only",
-            "instead of full captions",
-            "AudioXtend",
-            "state-of-art",
-            "persistent mind map"
-          ]
-        },
-        {
           "id": "study",
           "eyebrow": "WITHIN-PARTICIPANT COMPARISON",
           "title": "The study, on one shared route",
@@ -580,7 +540,56 @@
             }
           ],
           "items": [],
-          "figureLayout": "study-route"
+          "figureLayout": "study-route",
+          "baseline": {
+            "id": "baseline",
+            "eyebrow": "THE COMPARISON",
+            "title": "An illustrated baseline for audio learning",
+            "body": [
+              "Our pilot’s Illustration Only interface follows AudioXtend’s state-of-art audio-and-illustration approach. We chose it instead of full captions.",
+              "Narration, illustrations and timing were matched. GlanceMap added a persistent mind map to test the value of visible relationships."
+            ],
+            "nav": "Baseline",
+            "figures": [
+              {
+                "src": "/assets/glance-clarity/illustration-only-original.png",
+                "width": 1910,
+                "height": 897,
+                "alt": "The Illustration Only study interface.",
+                "caption": "Our AudioXtend-inspired baseline. This is not a direct test of the AudioXtend system.",
+                "displayWidth": 600,
+                "sourceRefs": [
+                  {
+                    "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                    "nodeId": "918:454"
+                  }
+                ]
+              }
+            ],
+            "sourceRefs": [
+              {
+                "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
+                "nodeId": "918:441"
+              }
+            ],
+            "items": [],
+            "highlights": [
+              "Illustration Only",
+              "instead of full captions",
+              "AudioXtend",
+              "state-of-art",
+              "persistent mind map"
+            ]
+          },
+          "studyDesign": {
+            "design": "within-subjects",
+            "participants": 16,
+            "materials": 4,
+            "trialsPerInterface": 2,
+            "totalTrials": 64,
+            "allocation": "Counterbalanced interface order and lesson assignment",
+            "sampleSizeNote": "The final paper reports N=16 without an explicit sample-size rationale or power analysis."
+          }
         },
         {
           "id": "findings",
@@ -640,7 +649,7 @@
           "body": [
             "Keep relationships visible, retain earlier context, and give important pictures enough room."
           ],
-          "nav": "Limitations & next steps",
+          "nav": "Discussion",
           "figures": [],
           "sourceRefs": [
             {
@@ -936,14 +945,23 @@
           "textLayout": "full-width"
         },
         {
+          "id": "study",
+          "nav": "Study",
+          "eyebrow": "Study",
+          "title": "Three studies, from color to meaning",
+          "body": [],
+          "items": [],
+          "figures": []
+        },
+        {
           "id": "baseline",
           "eyebrow": "STAGE 1",
-          "title": "Stage 1 · Compare colors",
+          "title": "Compare colors",
           "body": [
             "Designers used black, white and opposite colors for contrast. Study 1 compared these across 12 hues: 36 pairs with the same letter, size and stroke.",
             "Participants rated clarity and comfort indoors and outdoors. Easy to see did not always mean comfortable."
           ],
-          "nav": "Stage 1",
+          "nav": "Study 1",
           "figures": [
             {
               "src": "/assets/design-followup/icon-study-1.svg",
@@ -985,12 +1003,13 @@
             "12 hues: 36 pairs",
             "clarity and comfort"
           ],
-          "textLayout": "full-width"
+          "textLayout": "full-width",
+          "navParent": "study"
         },
         {
           "id": "meaning",
           "eyebrow": "STUDY 2",
-          "title": "Study 2 · Add meaning",
+          "title": "Add meaning",
           "body": [
             "Using the designer workshop’s twelve icon–color pairings, Study 2 tested the same 36 color pairs outdoors, where clarity had been harder to maintain.",
             "Participants rated clarity, comfort and how well the colors fit each icon’s meaning. Visibility alone did not ensure the intended meaning."
@@ -1049,12 +1068,13 @@
             "same 36 color pairs outdoors",
             "how well the colors fit each icon’s meaning"
           ],
-          "textLayout": "full-width"
+          "textLayout": "full-width",
+          "navParent": "study"
         },
         {
           "id": "refinement",
           "eyebrow": "STUDY 3",
-          "title": "Study 3 · Refine and retest",
+          "title": "Refine and retest",
           "body": [
             "We asked designers to improve clarity, comfort and meaning using the workshop’s icons and Study 1–2 feedback. They proposed shadows, nearby-hue gradients, outlines and gray backplates.",
             "Study 3 retested these treatments and how strongly each one drew attention, distinguishing alerts from controls and persistent status."
@@ -1104,7 +1124,8 @@
           "sourceNotes": [
             "Designer agency is documented in the current portfolio: node1704:562 “Ideas from the designer workshop”, followed by original shadow/gradient and outline/gray refinements; the user explicitly confirmed the design task. The paper §6 reports the refinement study without identifying all eight pilot designers as participants in that later iteration."
           ],
-          "textLayout": "full-width"
+          "textLayout": "full-width",
+          "navParent": "study"
         },
         {
           "id": "guidelines",
@@ -1336,7 +1357,8 @@
       ],
       "highlights": [
         "clear, comfortable AR icons"
-      ]
+      ],
+      "contentRevision": "2026-10-16-icon-study-chapter"
     },
     {
       "id": "traditional-color",
@@ -3054,40 +3076,6 @@
           "layout": "editorial"
         },
         {
-          "id": "city",
-          "eyebrow": "LOCAL NEWS, FAMILIAR PLACES",
-          "title": "Adelaide Problem, Adelaide Map",
-          "body": [
-            "Real hospital names and approximate locations in Adelaide shape the game map.",
-            "Low-poly geometry keeps streets clear and rendering efficient."
-          ],
-          "items": [],
-          "nav": "Adelaide Map",
-          "figures": [
-            {
-              "src": "/assets/games-other-followup/ambulance-original-sa-health-map-context-kept.png",
-              "width": 1774,
-              "height": 1526,
-              "displayWidth": 380,
-              "alt": "SA Health map",
-              "sourceNode": "1918:616"
-            },
-            {
-              "src": "/assets/games-other-followup/ambulance-original-city-plan-paper-figure.png",
-              "width": 1240,
-              "height": 1145,
-              "displayWidth": 380,
-              "alt": "Original game city plan",
-              "sourceNode": "1918:583"
-            }
-          ],
-          "highlights": [
-            "Real hospital names and approximate locations",
-            "Low-poly geometry"
-          ],
-          "layout": "editorial"
-        },
-        {
           "id": "gameplay",
           "eyebrow": "DRIVE → TRIAGE → CHECK CAPACITY",
           "title": "Every rescue is a decision under pressure",
@@ -3107,7 +3095,33 @@
           "highlights": [
             "Drive, triage and check hospital capacity"
           ],
-          "layout": "editorial"
+          "layout": "editorial",
+          "map": {
+            "id": "city",
+            "title": "Adelaide Map",
+            "body": [
+              "Real hospital names and approximate locations in Adelaide shape the game map.",
+              "Low-poly geometry keeps streets clear and rendering efficient."
+            ],
+            "figures": [
+              {
+                "src": "/assets/games-other-followup/ambulance-original-sa-health-map-context-kept.png",
+                "width": 1774,
+                "height": 1526,
+                "displayWidth": 380,
+                "alt": "SA Health map",
+                "sourceNode": "1918:616"
+              },
+              {
+                "src": "/assets/games-other-followup/ambulance-original-city-plan-paper-figure.png",
+                "width": 1240,
+                "height": 1145,
+                "displayWidth": 380,
+                "alt": "Original game city plan",
+                "sourceNode": "1918:583"
+              }
+            ]
+          }
         },
         {
           "id": "reflection",

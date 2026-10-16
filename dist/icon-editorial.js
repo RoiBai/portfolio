@@ -4,6 +4,31 @@ const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;
 const img=(path,alt,cls='')=>`<img class="${cls}" src="${siteURL(path)}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
 const text=(value,highlights=[])=>emphasize(Array.isArray(value)?value.join(' '):value,highlights);
 
+// Keep the three experiments within one chapter while preserving their deep links.
+function groupIconStudies(root){
+ const parent=root.querySelector('#study');
+ if(!parent||parent.classList.contains('icon-study-group'))return;
+ const stages=['baseline','meaning','refinement'].map(id=>root.querySelector('#'+id)).filter(Boolean);
+ if(!stages.length)return;
+ parent.classList.add('icon-study-group');parent.removeAttribute('data-reveal-group');
+ parent.querySelector(':scope>.section-body:empty')?.remove();
+ for(const[order,stage]of stages.entries()){
+  stage.classList.add('icon-study-stage');stage.dataset.navParent='study';
+  const heading=stage.querySelector(':scope>.section-heading');
+  if(heading){
+   heading.querySelector('.eyebrow').textContent='Study '+(order+1);
+   const old=heading.querySelector('h2');
+   if(old){const title=document.createElement('h3');title.textContent=old.textContent.replace(/^(?:Stage|Study)\s+\d\s*·\s*/, '');old.replaceWith(title);}
+  }
+  parent.append(stage);
+ }
+ // Major chapter numbers exclude the three subordinate studies.
+ [...root.querySelectorAll('.case-study>.case-section')].forEach((section,index)=>{
+  const number=section.querySelector(':scope>.section-heading .eyebrow>span');
+  if(number)number.textContent=String(index+1).padStart(2,'0');
+ });
+}
+
 // The icons are original exports; the explanations and reading layout stay native HTML.
 export function setupIconEditorial(root,project,visuals={}){
  const abstract=root.querySelector('#abstract');
@@ -41,4 +66,5 @@ export function setupIconEditorial(root,project,visuals={}){
   content.innerHTML=`${data.body?.length?`<div class="icon-guidance-intro">${[].concat(data.body).map(t=>`<p>${text(t,data.highlights)}</p>`).join('')}</div>`:''}<div class="icon-priority-guidance">${data.items.map(item=>`<article><span class="icon-priority-label">${esc(item.priority)} priority</span>${item.src?`<figure>${img(item.src,item.title)}</figure>`:''}<h3>${esc(item.title)}</h3><p>${text(item.body,data.highlights)}</p>${item.evidence?`<p class="icon-guidance-evidence">${text(item.evidence,data.highlights)}</p>`:''}${item.takeaway?`<p class="icon-guidance-takeaway">${text(item.takeaway,data.highlights)}</p>`:''}</article>`).join('')}</div>${data.findings?.length?`<div class="icon-guidance-findings">${data.findings.map(f=>`<article>${f.src?`<figure>${img(f.src,f.title)}</figure>`:''}<div><h3>${esc(f.title)}</h3>${f.metric?`<strong class="icon-guidance-metric">${esc(f.metric)}</strong>`:''}<p>${text(f.body,data.highlights)}</p></div></article>`).join('')}</div>`:''}${data.audience?`<aside class="icon-guidance-audience">${data.audience.figures?.length?`<div class="icon-guidance-audience-art">${data.audience.figures.map(f=>img(f.src,f.alt||data.audience.title)).join('')}</div>`:''}<div><h3>${esc(data.audience.title)}</h3><p>${text(data.audience.body,data.highlights)}</p></div></aside>`:''}`;
   guidelines.append(content);
  }
+ groupIconStudies(root);
 }

@@ -34,6 +34,9 @@
 .atlas-color-token>span{min-width:0;align-self:center;font:500 15px/1.15 "Noto Serif SC",serif;white-space:nowrap}
 .atlas-color-token small{display:block;font:400 9px/1.2 var(--font-body);color:#645c51;margin-top:3px}
 .atlas-color-token.is-current{outline:1px solid #8a7760;background:#fff9eb;z-index:2}
+.atlas-native-field .atlas-color-token>span{opacity:var(--atlas-label-opacity,1)}
+.atlas-native-field .atlas-color-token{border-bottom-color:rgb(199 191 175 / var(--atlas-label-opacity,1))}
+.atlas-native-field .atlas-color-token.is-current{outline-color:rgb(138 119 96 / var(--atlas-label-opacity,1));background:rgb(255 249 235 / var(--atlas-label-opacity,1))}
 .atlas-native-record{display:grid;grid-template-columns:58px 205px minmax(0,1fr) minmax(150px,.8fr);gap:21px;align-items:center;border-top:1px solid #bdb5a7;padding:19px 0 0;min-height:92px}
 .atlas-native-record>i{width:58px;height:67px}.atlas-native-record h4{font:400 31px/1.2 "Ma Shan Zheng",serif;margin:0 0 6px!important}.atlas-native-record h4 small{font:400 13px var(--font-body);margin-left:7px}.atlas-native-record>div>span{font:400 14px/1.4 var(--font-body);color:#645c51}.atlas-native-record p{font:400 19px/1.5 "Noto Serif SC",serif!important;margin:0!important}.atlas-native-citation{font:400 16px/1.5 "Noto Serif SC",serif;color:#645c51}.atlas-native-mobile{display:none}
 .atlas-compose{width:100%;grid-column:1/-1}

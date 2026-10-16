@@ -82,7 +82,7 @@ function nextProject(p){
  return `<footer class="project-next"><a href="${siteURL(next.slug)}" class="next-project-link" style="--next-bg:${colors[0]};--next-ink:${colors[1]}"><span class="next-project-copy"><span class="next-label">Next Project <span aria-hidden="true">→</span></span><span class="next-category">${category}</span><span class="next-project-name">${esc(next.title)}</span></span><img class="next-project-image" src="${esc(covers[next.id])}" alt="${esc(next.title)} — project artwork" loading="lazy" decoding="async"><span class="next-project-arrow" aria-hidden="true">↗</span></a></footer>`;
 }
 function cleanProjectHeadings(){
- main.querySelectorAll('h1,h2,h3,h4').forEach(el=>{if(el.matches('.section-heading h2'))el.style.setProperty('font-size','var(--case-heading)','important');const walk=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n,last;while(n=walk.nextNode())if(n.textContent.trim())last=n;if(last)last.textContent=last.textContent.replace(/[.。]+(\s*)$/,'$1')});
+ main.querySelectorAll('h1,h2,h3,h4').forEach(el=>{const walk=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n,last;while(n=walk.nextNode())if(n.textContent.trim())last=n;if(last)last.textContent=last.textContent.replace(/[.。]+(\s*)$/,'$1')});
 }
 function projectMetadata(p){
  const entries=p.id==='glancemap'?[

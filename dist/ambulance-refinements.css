@@ -82,3 +82,14 @@ body[data-project=ambulance] #publication .ar-audience-result>p{max-width:none;w
  body[data-project=ambulance] #gameplay .ar-game-note>div:has(.ar-hospital-panel){grid-template-columns:minmax(0,1fr) 96px;column-gap:16px}
  body[data-project=ambulance] #gameplay .ar-game-note .ar-hospital-panel{width:96px!important}
 }
+
+/* The city is part of playing: location and capacity inform each rescue. */
+body[data-project=ambulance] #gameplay .ar-game-map{margin-top:52px;scroll-margin-top:110px}
+body[data-project=ambulance] #gameplay .ar-game-map .ar-map-intro{display:grid;grid-template-columns:minmax(180px,.65fr) minmax(0,2fr);gap:30px;align-items:start}
+body[data-project=ambulance] #gameplay .ar-game-map .ar-map-intro>h3{margin:0;font-size:var(--case-subhead);line-height:1.2;color:var(--accent)}
+body[data-project=ambulance] #gameplay .ar-game-map .ar-map-comparison{margin-top:26px}
+@media(max-width:760px){
+ body[data-project=ambulance] #gameplay .ar-game-map{margin-top:34px}
+ body[data-project=ambulance] #gameplay .ar-game-map .ar-map-intro{grid-template-columns:1fr;gap:14px}
+ body[data-project=ambulance] #gameplay .ar-game-map .ar-map-comparison{margin-top:20px}
+}

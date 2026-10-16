@@ -35,8 +35,8 @@
 }
 /* Read the study overview at a glance; all four source views remain visible. */
 body[data-project=beyond-the-gaze] .case-study .hero-overview{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:3.5%}
-body[data-project=beyond-the-gaze] .rf-gaze-overview{width:100%;max-width:none;margin:0!important;align-self:center}
-.rf-gaze-overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start}
+body[data-project=beyond-the-gaze] .rf-gaze-overview{width:100%;max-width:600px;margin:0 auto!important;align-self:center}
+.rf-gaze-overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 20px;align-items:start}
 .rf-gaze-overview-grid>figure{min-width:0;margin:0}
 .rf-gaze-overview-grid img{display:block;width:100%;height:auto;aspect-ratio:1.37;object-fit:contain;object-position:center}
 .rf-gaze-overview-grid figcaption{display:block;padding:11px 0 0!important;margin:0!important;border:0!important;text-align:center}
