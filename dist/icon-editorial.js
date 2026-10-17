@@ -16,9 +16,9 @@ function groupIconStudies(root){
   stage.classList.add('icon-study-stage');stage.dataset.navParent='study';
   const heading=stage.querySelector(':scope>.section-heading');
   if(heading){
-   heading.querySelector('.eyebrow').textContent='Study '+(order+1);
+   heading.querySelector('.eyebrow')?.remove();
    const old=heading.querySelector('h2');
-   if(old){const title=document.createElement('h3');title.textContent=old.textContent.replace(/^(?:Stage|Study)\s+\d\s*·\s*/, '');old.replaceWith(title);}
+   if(old){const title=document.createElement('h3');title.textContent='Study '+(order+1)+' · '+old.textContent.replace(/^(?:Stage|Study)\s+\d\s*·\s*/, '');old.replaceWith(title);}
   }
   parent.append(stage);
  }
@@ -37,14 +37,10 @@ export function setupIconEditorial(root,project,visuals={}){
  if(problem){
   problem.querySelector('.section-visuals')?.remove();
   problem.insertAdjacentHTML('beforeend',`<div class="icon-context-comparison">
-   <figure><div class="icon-desktop-context"><div class="icon-monitor"><span class="icon-screen-parking" aria-label="White parking symbol on blue">P</span></div><div class="icon-monitor-foot"></div></div><figcaption><h3>On a screen <span class="icon-result-check">✓</span></h3><small><strong>9.06 : 1</strong> calculated screen contrast · #0000F5 / #FFFFFF</small></figcaption></figure>
-   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span></div><figcaption><h3>Through AR glasses <span class="icon-result-cross">×</span></h3><small>The real scene shows through the icon</small></figcaption></figure>
+   <figure><div class="icon-desktop-context"><div class="icon-monitor"><span class="icon-screen-parking" aria-label="White parking symbol on blue">P</span></div><div class="icon-monitor-foot"></div><span class="icon-result-check" aria-label="Clear on screen">✓</span></div><figcaption><h3>On a screen</h3><small><strong>9.06 : 1</strong> calculated screen contrast · #0000F5 / #FFFFFF</small></figcaption></figure>
+   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span><span class="icon-result-cross" aria-label="Screen contrast does not guarantee AR clarity">×</span></div><figcaption><h3>Through AR glasses</h3><small>The real scene shows through the icon</small></figcaption></figure>
   </div><div class="icon-context-explanation"><p>The screen’s blue background is opaque. In AR, <strong>the real scene shines through</strong>; white can glare or merge with a bright background. <strong>Test clarity through the glasses</strong>, alongside screen contrast.</p></div>
-  <div class="icon-abstract-pairs">
-   <figure><div class="icon-abstract-pair-art"><span class="icon-abstract-t-pair">${img('/assets/icon-original-explorations/abstract-cyan-foregrounds-original.svg','Original cyan letter T with black and white foregrounds')}</span><span class="icon-abstract-opposite">${visuals.oppositeForeground||''}</span></div><figcaption><h3>Compare foregrounds</h3><p>Black, white and opposite-color symbols</p></figcaption></figure>
-   <figure><div class="icon-abstract-pair-art">${img('/website-assets/icon-before.svg','Original yellow bulb without shadow')}${img('/website-assets/icon-after.svg','Original yellow bulb with shadow')}</div><figcaption><h3>Sharpen the edge</h3><p>White symbol, with and without shadow</p></figcaption></figure>
-   <figure><div class="icon-abstract-pair-art">${img('/website-assets/icon-comic-panel-2-icon-2.svg','Original white files icon on blue')}${img('/website-assets/icon-comic-panel-3-icon-6.svg','Original blue files icon with an outline')}</div><figcaption><h3>Clarify the symbol</h3><p>Solid background or colored outline</p></figcaption></figure>
-  </div>`);
+`);
  }
  const workshop=root.querySelector('#workshop');
  if(workshop){
@@ -57,8 +53,6 @@ export function setupIconEditorial(root,project,visuals={}){
    </ol></div>
   </div>`);
  }
- const meaning=root.querySelector('#meaning');
- if(meaning){meaning.querySelector('.icon-color-lab')?.insertAdjacentHTML('beforebegin',`<div class="icon-designer-consensus"><div class="icon-designer-count"><strong>8</strong><span>designers</span></div><p>Agreed on <strong>one icon per color</strong><span>The twelve shared meanings became the icon library for this study.</span></p></div>`);}
  // Put the evidence immediately after the material it explains, before the next study.
  for(const data of project.sections||[]){
   const section=root.querySelector('#'+data.id);
@@ -69,7 +63,7 @@ export function setupIconEditorial(root,project,visuals={}){
   }
   if(data.reasoning?.length){
    const bridge=document.createElement('div');bridge.className='icon-refinement-reasoning';
-   bridge.innerHTML=data.reasoning.map(item=>`<article><h4>${esc(item.title)}</h4><p>${text(item.observation,item.highlights)}</p><p class="icon-refinement-decision"><span aria-hidden="true">↳</span><span>${text(item.decision,item.highlights)}</span></p></article>`).join('');
+   bridge.innerHTML=data.reasoning.map((item,index)=>`<article class="icon-refinement-row"><div class="icon-refinement-copy"><h4>${esc(item.title)}</h4><p>${text(item.observation,item.highlights)}</p><p class="icon-refinement-decision"><span aria-hidden="true">↳</span><span>${text(item.decision,item.highlights)}</span></p></div><div class="icon-refinement-evidence-row"><div class="icon-refinement-before-after">${index===0?visuals.whiteRefinement||'':visuals.blackRefinement||''}</div>${item.evidence?`<p class="icon-refinement-evidence">${text(item.evidence,item.highlights)}</p>`:''}</div></article>`).join('');
    section.querySelector('.section-visuals')?.before(bridge);
   }
  }

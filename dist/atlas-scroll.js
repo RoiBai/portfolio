@@ -55,7 +55,7 @@ const SOURCE_TITLES={
 const translated=c=>ENGLISH[c.id]||[c.pinyin,c.origin];
 const chip=c=>`<span class="atlas-color-token" data-color="${c.id}" style="--color:${c.hex}"><i aria-hidden="true"></i><span>${esc(c.name)}<small>${c.hex}</small></span></span>`;
 const chapterHeading=c=>`<div class="atlas-native-heading"><h3>${esc(c?.title||'From origins to color families')}</h3><p>${esc(c?.body?.[0]||'Trace 100 colors from four origins into eight color families. English notes explain the selected Chinese color record.')}</p></div>`;
-export function renderAtlasScroll(chapter){return `<div class="atlas-native" data-atlas-scroll><div class="atlas-native-sticky">${chapterHeading(chapter)}<div class="atlas-native-label"><strong data-atlas-phase>Four origins</strong><span>Scroll to follow the connections ↓</span></div><div class="atlas-native-field" data-atlas-field></div><div class="atlas-native-record" data-atlas-record></div></div><div class="atlas-native-mobile" data-atlas-mobile></div></div>`;}
+export function renderAtlasScroll(chapter){return `<div class="atlas-native atlas-stable" data-atlas-scroll><div class="atlas-native-sticky">${chapterHeading(chapter)}<span class="sr-only" data-atlas-phase>Four origins</span><div class="atlas-native-field" data-atlas-field></div><div class="atlas-native-record" data-atlas-record></div><p class="atlas-scroll-hint">Scroll to follow the connections <span aria-hidden="true">↓</span></p></div><div class="atlas-native-mobile" data-atlas-mobile></div></div>`;}
 export function renderAtlasCompose(){return `<div class="atlas-compose" data-atlas-compose><p>Opening the original design briefs…</p></div>`;}
 function sourceHeader(s){return `<img src="${siteURL(BASE+'assets/source-photos/'+s[3])}" alt="${s[2]} color origins"><h4>${s[1]}<span>${s[2]}</span></h4>`;}
 function mobileGroups(data){const focus=['shiqing','yanzhi','piao','tianshuibi'];return `<div class="atlas-mobile-origins">${SOURCES.map((s,i)=>`<section class="atlas-native-mobile-group" data-atlas-reveal><header>${sourceHeader(s)}</header><div class="atlas-native-token-grid">${data.colors.filter(c=>c.cat===s[0]).map(chip).join('')}</div><div class="atlas-native-record atlas-mobile-record">${record(data.colors.find(c=>c.id===focus[i]))}</div></section>`).join('')}</div><h4 class="atlas-native-mobile-title">The same colors, eight families</h4><div class="atlas-mobile-families">${Object.entries(data.families).map(([id,f])=>`<section class="atlas-native-mobile-group" data-atlas-reveal><h4 style="--family:${id==='white'?'#766c57':id==='yellow'?'#98721d':f.accent}">${f.cn}<span>${f.en}</span></h4><div class="atlas-native-token-grid">${data.colors.filter(c=>data.relations[c.id]?.family?.[0]===id).map(chip).join('')}</div></section>`).join('')}</div>`;}
@@ -64,25 +64,41 @@ export function setupAtlasScroll(host){
  const wrap=host?.matches?.('[data-atlas-scroll]')?host:host?.querySelector?.('[data-atlas-scroll]');if(!wrap)return()=>{};
  const abort=new AbortController();let disposed=false,frame=0,data=null,tokens=[],lastRecord='',sizes=[];const field=wrap.querySelector('[data-atlas-field]'),sticky=wrap.querySelector('.atlas-native-sticky'),mobile=wrap.querySelector('[data-atlas-mobile]'),recordBox=wrap.querySelector('[data-atlas-record]'),phase=wrap.querySelector('[data-atlas-phase]'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
  const sourceIndex=new Map(),familyIndex=new Map();
- function measure(){if(!data)return;const W=field.clientWidth,H=field.clientHeight,gap=32,sourceW=(W-gap)/2,rowH=H/2,photoW=Math.min(145,sourceW*.24),familyW=(W-gap*3)/4;
+ const focusOrigins=['shiqing','shilu','yanzhi','tenghuang','piao','xuan','tianshuibi','cui'],focusFamilies=['qian','zhizi','songhua','dianlan','ouhe','qianbai','mo','zheshi'];
+ let recordMeasure=null,recordWidth=0;
+ // Reserve the tallest real record at the current width. Changing the selected
+ // color must not resize the animated field or move the other hundred colors.
+ function reserveRecord(force=false){
+  if(innerWidth<=700||!data)return;
+  const width=recordBox.clientWidth;
+  if(!force&&width===recordWidth&&recordMeasure)return;
+  recordWidth=width;
+  if(!recordMeasure){recordMeasure=document.createElement('div');recordMeasure.className='atlas-record-measure';recordMeasure.setAttribute('aria-hidden','true');recordMeasure.inert=true;wrap.append(recordMeasure);}
+  recordMeasure.style.width=width+'px';
+  recordMeasure.innerHTML=[...focusOrigins,...focusFamilies].map(id=>`<div class="atlas-native-record atlas-record-probe">${record(data.colors.find(c=>c.id===id))}</div>`).join('');
+  const height=Math.ceil(Math.max(...[...recordMeasure.children].map(el=>el.getBoundingClientRect().height)));
+  wrap.style.setProperty('--atlas-record-height',height+'px');
+ }
+ function measure(){if(!data)return;reserveRecord();const W=field.clientWidth,H=field.clientHeight,gap=32,sourceW=(W-gap)/2,rowH=H/2,photoW=Math.min(112,sourceW*.2),familyW=(W-gap*3)/4;
   wrap.querySelectorAll('.atlas-native-source').forEach((el,i)=>{el.style.left=(i%2)*(sourceW+gap)+'px';el.style.top=Math.floor(i/2)*rowH+'px';el.style.width=photoW+'px'});
   wrap.querySelectorAll('.atlas-native-family').forEach((el,i)=>{el.style.left=(i%4)*(familyW+gap)+'px';el.style.top=Math.floor(i/4)*rowH+'px';el.style.width=familyW+'px'});
-  sizes=data.colors.map(c=>{const s=sourceIndex.get(c.id),f=familyIndex.get(c.id),sw=(sourceW-photoW-20-20)/5,fw=(familyW-12)/3,ch=Math.min(42,(rowH-70)/5);return{sx:(s.group%2)*(sourceW+gap)+photoW+20+(s.local%5)*(sw+5),sy:Math.floor(s.group/2)*rowH+45+Math.floor(s.local/5)*(ch+5),sw,syh:ch,fx:(f.group%4)*(familyW+gap)+(f.local%3)*(fw+6),fy:Math.floor(f.group/4)*rowH+45+Math.floor(f.local/3)*(ch+5),fw}});queue();
+  sizes=data.colors.map(c=>{const s=sourceIndex.get(c.id),f=familyIndex.get(c.id),sw=(sourceW-photoW-20-20)/5,fw=(familyW-12)/3,ch=Math.min(40,(rowH-64)/5);return{sx:(s.group%2)*(sourceW+gap)+photoW+20+(s.local%5)*(sw+5),sy:Math.floor(s.group/2)*rowH+14+Math.floor(s.local/5)*(ch+5),sw,syh:ch,fx:(f.group%4)*(familyW+gap)+(f.local%3)*(fw+6),fy:Math.floor(f.group/4)*rowH+32+Math.floor(f.local/3)*(ch+5),fw}});queue();
  }
  function update(){frame=0;if(disposed||!data)return;if(innerWidth<=700){wrap.querySelectorAll('[data-atlas-reveal]').forEach(el=>{const p=reduce.matches?1:clamp((innerHeight*.95-el.getBoundingClientRect().top)/(innerHeight*.28));el.style.setProperty('--enter',p)});return;}
-  const stickyTop=parseFloat(getComputedStyle(sticky).top)||82,p=clamp((stickyTop-wrap.getBoundingClientRect().top)/Math.max(1,wrap.offsetHeight-sticky.offsetHeight)),m=ease(clamp((p-.43)/.35));wrap.dataset.atlasProgress=p.toFixed(4);wrap.dataset.atlasTime=(8+p*30).toFixed(3);phase.textContent=p<.43?'Four origins':p<.78?'From origins to color families':'Eight color families';
+  const stickyTop=parseFloat(getComputedStyle(sticky).top)||82,p=clamp((stickyTop-wrap.getBoundingClientRect().top)/Math.max(1,wrap.offsetHeight-sticky.offsetHeight)),m=ease(clamp((p-.43)/.35));wrap.dataset.atlasProgress=p.toFixed(4);wrap.dataset.atlasTime=(8+p*30).toFixed(3);phase.textContent=p<.43?'Four origins':p<.78?'Colors regroup':'Eight color families';
   // Clear the labels before colors leave their rows, then restore them after landing.
   const originsVisible=1-clamp((p-.36)/.06),familiesVisible=clamp((p-.78)/.06),labelsVisible=Math.max(originsVisible,clamp((p-.8)/.06));
   field.style.setProperty('--atlas-label-opacity',labelsVisible);
   wrap.querySelectorAll('.atlas-native-source').forEach(el=>el.style.opacity=originsVisible);wrap.querySelectorAll('.atlas-native-family').forEach(el=>el.style.opacity=familiesVisible);
   tokens.forEach((el,i)=>{const a=sizes[i];if(!a)return;el.style.transform=`translate(${mix(a.sx,a.fx,m)}px,${mix(a.sy,a.fy,m)}px)`;el.style.width=mix(a.sw,a.fw,m)+'px';el.style.height=a.syh+'px';});
-  const focus=p<.43?['shiqing','shilu','yanzhi','tenghuang','piao','xuan','tianshuibi','cui'][Math.min(7,Math.floor(p/.43*8))]:['qian','zhizi','songhua','dianlan','ouhe','qianbai','mo','zheshi'][Math.min(7,Math.floor(clamp((p-.43)/.57)*8))];if(focus!==lastRecord){lastRecord=focus;recordBox.innerHTML=record(data.colors.find(c=>c.id===focus));}tokens.forEach(el=>el.classList.toggle('is-current',el.dataset.color===focus));
+  const focus=p<.43?focusOrigins[Math.min(7,Math.floor(p/.43*8))]:focusFamilies[Math.min(7,Math.floor(clamp((p-.43)/.57)*8))];if(focus!==lastRecord){lastRecord=focus;recordBox.innerHTML=record(data.colors.find(c=>c.id===focus));}tokens.forEach(el=>el.classList.toggle('is-current',el.dataset.color===focus));
  }
  function queue(){if(!frame&&!disposed)frame=requestAnimationFrame(update)}
  const observer=new ResizeObserver(measure);observer.observe(field);
  loadData().then(d=>{if(disposed)return;data=d;SOURCES.forEach((s,group)=>d.colors.filter(c=>c.cat===s[0]).forEach((c,local)=>sourceIndex.set(c.id,{group,local})));Object.keys(d.families).forEach((id,group)=>d.colors.filter(c=>d.relations[c.id]?.family?.[0]===id).forEach((c,local)=>familyIndex.set(c.id,{group,local})));
-  field.innerHTML=SOURCES.map(s=>`<div class="atlas-native-source">${sourceHeader(s)}</div>`).join('')+Object.entries(d.families).map(([id,f])=>`<h4 class="atlas-native-family" style="--family:${id==='white'?'#766c57':id==='yellow'?'#98721d':f.accent}">${f.cn}<span>${f.en}</span></h4>`).join('')+d.colors.map(chip).join('');tokens=[...field.querySelectorAll('.atlas-color-token')];mobile.innerHTML=mobileGroups(d);wrap.dataset.atlasReady='true';measure();
+  field.innerHTML=SOURCES.map(s=>`<div class="atlas-native-source">${sourceHeader(s)}</div>`).join('')+Object.entries(d.families).map(([id,f])=>`<h4 class="atlas-native-family" style="--family:${id==='white'?'#766c57':id==='yellow'?'#98721d':f.accent}">${f.cn}<span>${f.en}</span></h4>`).join('')+d.colors.map(chip).join('');tokens=[...field.querySelectorAll('.atlas-color-token')];mobile.innerHTML=mobileGroups(d);wrap.dataset.atlasReady='true';measure();document.fonts.ready.then(()=>{if(!disposed){reserveRecord(true);measure();}});
  }).catch(e=>{if(!disposed){phase.textContent='The color archive could not load';console.error(e)}});
+ document.fonts.addEventListener('loadingdone',()=>{if(!disposed){reserveRecord(true);measure();}},{signal:abort.signal});
  addEventListener('scroll',queue,{passive:true,signal:abort.signal});addEventListener('resize',measure,{passive:true,signal:abort.signal});reduce.addEventListener('change',queue,{signal:abort.signal});
  return()=>{disposed=true;abort.abort();observer.disconnect();cancelAnimationFrame(frame)};
 }

@@ -1,0 +1,23 @@
+/* Two destinations share one uninterrupted surface. The hovered project lends
+   its color to the whole bar; the images retain their original colors. */
+.project-neighbors{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:56px calc(-1 * var(--gutter)) 0;padding:30px var(--gutter) 34px;gap:clamp(24px,5vw,72px);overflow:hidden;background:linear-gradient(110deg,var(--neighbor-left),#253238 49%,var(--neighbor-right));color:#fff}
+.project-neighbors::before,.project-neighbors::after{position:absolute;inset:0;z-index:-1;content:"";opacity:0;transition:opacity .35s ease;pointer-events:none}
+.project-neighbors::before{background:linear-gradient(105deg,var(--neighbor-left) 15%,color-mix(in srgb,var(--neighbor-left) 60%,#172525) 100%)}
+.project-neighbors::after{background:linear-gradient(255deg,var(--neighbor-right) 15%,color-mix(in srgb,var(--neighbor-right) 60%,#172525) 100%)}
+.project-neighbors:has(.neighbor-previous:is(:hover,:focus-visible))::before,.project-neighbors:has(.neighbor-next:is(:hover,:focus-visible))::after{opacity:1}
+.project-neighbor{min-width:0;display:grid;grid-template-columns:minmax(130px,.85fr) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:28px;row-gap:16px;align-items:center;padding:6px 0;text-decoration:none;color:inherit;border:0}
+.project-neighbor-direction{grid-column:1/-1;display:flex;align-items:center;gap:12px;color:#f5f8f4bf}
+.neighbor-next .project-neighbor-direction{justify-content:flex-end}
+.project-neighbor-art{grid-column:1;grid-row:2;position:relative;display:grid;place-items:center;min-width:0;height:174px;transition:transform .35s ease}
+.project-neighbor-art>img{display:block;width:100%;height:100%;object-fit:contain;max-height:174px}
+.project-neighbor h3{grid-column:2;grid-row:2;margin:0!important;max-width:100%;color:#fff!important}
+.project-neighbor:is(:hover,:focus-visible) .project-neighbor-art{transform:translateY(-4px)}
+.project-neighbor:focus-visible{outline:2px solid #fff;outline-offset:8px;border-radius:2px}
+.neighbor-palace .neighbor-palace-building{position:absolute;width:67%;height:92%;left:16.5%;bottom:0}
+.neighbor-palace .neighbor-palace-waner,.neighbor-palace .neighbor-palace-taiping{position:absolute;width:43%;height:81%;bottom:0;object-position:bottom}
+.neighbor-palace .neighbor-palace-waner{left:0;transform:scaleX(-1)}
+.neighbor-palace .neighbor-palace-taiping{right:0}
+@layer case-typography{body[data-view=project] .case-study .project-neighbor-direction{font-size:var(--case-label)!important;font-weight:400!important;line-height:1.4!important;letter-spacing:.02em!important}}
+@media(max-width:900px){.project-neighbor{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;gap:16px}.project-neighbor-art{grid-row:2;height:160px}.project-neighbor h3{grid-column:1;grid-row:3}.project-neighbors{gap:28px}.neighbor-next .project-neighbor-direction{justify-content:flex-start}}
+@media(max-width:600px){.project-neighbors{margin-top:32px;padding-top:24px;padding-bottom:28px;gap:22px}.project-neighbor-art,.project-neighbor-art>img{height:112px;max-height:112px}.project-neighbor{align-content:start;gap:14px}.project-neighbor-direction{gap:6px}.project-neighbor h3{overflow-wrap:break-word}}
+@media(prefers-reduced-motion:reduce){.project-neighbors::before,.project-neighbors::after,.project-neighbor-art{transition:none;transform:none!important}}

@@ -60,3 +60,87 @@ body[data-project=personamail] .persona-refined>.persona-demo-note{font-size:14p
 .persona-refined .persona-email-subject{grid-template-columns:max-content minmax(0,1fr);gap:14px}
 @media(min-width:1000px){.persona-refined .persona-local-edit{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center}.persona-refined .persona-local-edit>.persona-step,.persona-refined .persona-local-edit>[data-persona-edit-status]{grid-column:1/-1}.persona-refined .persona-local-edit p{margin:0!important}.persona-refined .persona-local-edit button{max-width:220px}}
 @media(max-width:760px){.persona-refined .persona-email-subject{grid-template-columns:1fr;gap:5px}}
+
+/* Read the original interface as five short steps, at native image resolution. */
+body[data-project=personamail] #research>.persona-research-tour{grid-column:1/-1;grid-row:3;display:grid;gap:42px;width:100%;min-width:0;margin-top:12px}
+.persona-research-step{min-width:0;margin:0;padding:0}
+.persona-research-step>h3{display:flex;align-items:baseline;gap:12px;margin:0 0 16px;color:#264d45}
+.persona-research-letter{display:grid;place-items:center;flex:0 0 29px;height:29px;background:#dde8de;color:#315d51;border-radius:3px}
+.persona-research-step>p{width:100%;max-width:none;margin:0 0 23px;color:#34433f}
+.persona-research-image{margin:0;width:100%;min-width:0;align-self:center}
+.persona-research-image img{display:block;width:100%;height:auto;max-width:100%;margin:0;object-fit:contain}
+.persona-research-purpose>.persona-research-image{max-width:790px;margin:0 auto}
+.persona-research-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:38px}
+.persona-research-context .persona-research-image{max-width:471px;justify-self:center}
+.persona-research-editor .persona-research-pair{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.persona-research-editor .persona-research-image{max-width:660px;justify-self:center}
+.persona-research-save .persona-research-image{max-width:474px;justify-self:center}
+.persona-research-annotations{display:grid;gap:20px;min-width:0}
+.persona-research-annotations>p{margin:0;max-width:none;color:#34433f}
+.persona-research-note>p{margin:0;max-width:none;color:#34433f}
+.persona-editor-detail{display:none}
+.persona-research-annotations strong{color:#305c50}
+.persona-research-reuse-image{max-width:940px;margin:0 auto}
+.persona-research-boundary{margin:0;padding:16px 20px;background:#e7ece3;color:#46554c;border-radius:4px}
+
+/* Compact the controls and email without changing the authored choices. */
+body[data-project=personamail] #interaction>.section-heading,
+body[data-project=personamail] #interaction>.section-body,
+body[data-project=personamail] #interaction>.section-experience{grid-column:1/-1!important;width:100%;max-width:none}
+body[data-project=personamail] #interaction>.section-heading{grid-row:1!important}
+body[data-project=personamail] #interaction>.section-body{grid-row:2!important}
+body[data-project=personamail] #interaction>.section-experience{grid-row:3!important}
+body[data-project=personamail] #interaction>.section-body>p{margin-bottom:0}
+body[data-project=personamail] #interaction .section-experience>.persona-refined{grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);gap:32px 40px;align-items:start}
+.persona-refined .persona-after{padding:0;border:0}
+.persona-refined .persona-step{margin-bottom:7px}
+body[data-project=personamail] .persona-refined h3{margin-bottom:14px}
+.persona-refined .persona-relationship-context{width:max-content;max-width:100%;gap:18px;padding:12px 16px;margin-bottom:16px}
+.persona-refined .persona-settings{grid-template-columns:1.17fr 1fr 1fr;gap:10px 12px;margin-bottom:16px}
+.persona-refined .persona-settings>label:first-child{grid-column:auto}
+.persona-refined .persona-settings select{margin-top:5px;padding:8px 25px 8px 10px;min-height:42px}
+.persona-refined .persona-settings .persona-appreciation{grid-column:1/-1;min-height:26px;padding:0}
+.persona-refined .persona-draft{padding:17px 20px}
+.persona-refined .persona-draft-heading{margin-bottom:12px}
+.persona-refined .persona-email-subject{margin-bottom:12px;padding-bottom:10px}
+body[data-project=personamail] .persona-refined .persona-draft p{margin-bottom:10px!important}
+.persona-refined .persona-bad-draft{margin:17px 0 16px;padding:17px 20px}
+.persona-refined .persona-bad-label{margin-bottom:14px}
+.persona-refined .persona-rejected-line{margin-bottom:15px}
+.persona-refined .persona-local-edit{margin-top:12px;padding:12px 16px;gap:6px 12px}
+.persona-refined .persona-local-edit button{padding:8px 12px}
+.persona-refined .persona-reuse{margin-top:17px}
+.persona-refined .persona-reuse .persona-step{margin-bottom:7px}
+body[data-project=personamail] .persona-refined .persona-reuse p{margin-bottom:10px!important}
+.persona-refined .persona-reuse button{min-height:48px;padding:11px 16px}
+@media(max-width:1050px){
+ .persona-refined .persona-settings{grid-template-columns:1fr 1fr}
+ .persona-refined .persona-settings>label:first-child{grid-column:1/-1}
+ .persona-research-pair{gap:28px}
+}
+@media(max-width:760px){
+ body[data-project=personamail] #research>.persona-research-tour{gap:32px;margin-top:0}
+ .persona-research-step>h3{gap:10px;margin-bottom:12px}
+ .persona-research-pair,.persona-research-editor .persona-research-pair{grid-template-columns:1fr;gap:20px}
+ .persona-research-annotations{gap:14px}
+ .persona-research-editor .persona-research-image{max-width:520px}
+ .persona-research-editor .persona-research-pair>.persona-research-image{display:none}
+ .persona-research-editor .persona-research-annotations{gap:25px}
+ .persona-editor-detail{display:block;position:relative;overflow:hidden;width:100%;max-width:var(--detail-max);aspect-ratio:var(--detail-ratio);margin:16px auto 0;background:#fff}
+ .persona-editor-detail img{position:absolute;width:var(--detail-width);height:auto;max-width:none;left:var(--detail-left);top:var(--detail-top)}
+ .persona-research-boundary{padding:14px 16px}
+ body[data-project=personamail] #interaction .section-experience>.persona-refined{grid-template-columns:1fr;gap:28px}
+ body[data-project=personamail] .persona-refined .persona-after{padding:0;border:0}
+ .persona-refined .persona-relationship-context{gap:15px;padding:12px 14px}
+ .persona-refined .persona-settings{grid-template-columns:1fr 1fr;gap:10px 12px}
+ .persona-refined .persona-settings>label:first-child{grid-column:1/-1}
+ .persona-refined .persona-draft{padding:16px}
+ .persona-refined .persona-draft-heading{gap:12px;align-items:flex-start}
+ .persona-refined .persona-draft-heading>span:first-child{flex-shrink:0}
+ .persona-refined .persona-local-edit{padding:12px 14px}
+}
+@layer case-typography{
+ body[data-project=personamail] .case-study .persona-research-letter{font-size:var(--case-label)!important;line-height:1!important;font-weight:600!important}
+ body[data-project=personamail] .case-study :is(.persona-research-annotations>p,.persona-research-note>p){font-size:var(--case-note)!important;line-height:1.5!important}
+ body[data-project=personamail] .case-study .persona-research-boundary{font-size:var(--case-caption)!important;line-height:1.5!important}
+}

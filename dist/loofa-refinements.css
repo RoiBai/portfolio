@@ -114,3 +114,18 @@ body[data-project=loofasoup] #abstract>.section-body p{text-wrap:pretty}
  body[data-project=loofasoup] .loofa-fixed-connectors i{border-top-width:2px}
  body[data-project=loofasoup] .loofa-fixed-connectors b{width:5px;height:5px}
 }
+
+/* The explanations attach to titles; the original UI remains readable. */
+body[data-project=loofasoup] .loofa-gameplay-intro,
+body[data-project=loofasoup] p.loofa-design-decision{width:100%;max-width:none!important;font-size:var(--case-copy);line-height:1.5;text-wrap:pretty;margin:20px 0 28px}
+body[data-project=loofasoup] p.loofa-design-decision{border:0!important;padding:0!important;margin:28px 0 0;color:var(--muted,var(--ink))}
+body[data-project=loofasoup] .loofa-art-direction>.section-body,
+body[data-project=loofasoup] .loofa-art-direction>.section-body>p,
+body[data-project=loofasoup] .loofa-art-dishes>.section-body,
+body[data-project=loofasoup] .loofa-art-dishes>.section-body>p{width:100%!important;max-width:none!important}
+body[data-project=loofasoup] .loofa-art-dishes{display:block!important;border:0!important;padding:36px 0 0!important;margin:0!important;min-height:0}
+body[data-project=loofasoup] .loofa-art-subheading{font-size:var(--case-subhead)!important;line-height:1.2;margin:0 0 15px;color:var(--accent)}
+body[data-project=loofasoup] .loofa-art-dishes>.section-body{padding:0!important;margin:0 0 24px!important}
+body[data-project=loofasoup] .loofa-art-dishes>.section-visuals{width:100%;max-width:none}
+
+body[data-project=loofasoup] .loofa-fixed-connectors{z-index:4}

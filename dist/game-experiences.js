@@ -246,7 +246,6 @@ export function renderGameExperience(projectId, part='all') {
         ${part==='assemble'?'<ol class="gx-her-guide"><li><strong>01 · A completed example</strong><span>Lake + Waner + Taiping</span></li><li><strong>02 · Add Taiping</strong><span>Waner and the banquet are already here</span></li><li><strong>03 · Build it yourself</strong><span>Poetry + Waner + Taiping</span></li></ol>':'<p class="gx-guide-meaning">In this last puzzle, the change is in who gets to define their lives. The same women become political actors and trusted allies.</p>'}
         <a class="gx-full-game" href="https://she.ruiyuanbai.com/" target="_blank" rel="noopener noreferrer">Play the complete story ↗</a>
       </aside><div class="gx-her-island" data-her-part="${part}" aria-busy="true"><p class="gx-loading" role="status">Opening the scene…</p></div></div>
-      <p class="gx-inline-status" role="status" aria-live="polite"></p>
     </div>`;
     if(part==='erase')return `<div class="game-experience gx-her gx-wind" data-experience="hersound-erase">
       <div class="gx-wind-track"><div class="gx-wind-panel">
@@ -266,9 +265,8 @@ export function renderGameExperience(projectId, part='all') {
       <div class="gx-animal-record" id="gx-animal-record" aria-live="polite"></div>
     </div>`;
     if(part==='candles')return `<div class="game-experience gx-candles" data-experience="ourworld-candles">
-      <p class="gx-instruction">One candle stays lit for the recorded lives. Light the others for those still missing from the archive.</p>
+      <p class="gx-instruction">One candle stays lit for the recorded lives. Light the others for those still missing from the archive. One of ten represents the archive’s limited reach; it is symbolic, not a measured proportion.</p>
       <div class="candle-scene"><div class="candle-wall" aria-hidden="true"></div><div class="candle-row" role="group" aria-label="Ten memorial candles">${Array.from({length:10},(_,i)=>`<button class="candle ${i===0?'is-lit':'is-dark'}" type="button" data-candle="${i}" aria-pressed="${i===0}" ${i===0?'aria-disabled="true"':''} aria-label="${i===0?'Candle 1, always lit for the recorded lives':`Light candle ${i+1}`}" ><span class="candle-flame" aria-hidden="true"><i></i></span><span class="candle-wick" aria-hidden="true"></span><span class="candle-rim" aria-hidden="true"></span><span class="candle-body" aria-hidden="true"><i></i></span><span class="candle-base" aria-hidden="true"></span></button>`).join('')}</div><div class="candle-shelf" aria-hidden="true"></div><p class="candle-status" role="status" aria-live="polite">1 of 10 candles lit</p></div>
-      <p class="gx-caption">Click or tap a candle to light it; select it again to put it out. Keyboard: Tab, then Enter or Space.</p>
     </div>`;
   }
   return '';
@@ -291,7 +289,6 @@ function setupHer(section) {
   };
   const complete=e=>{
     section.classList.toggle('is-done',e.detail.complete);
-    section.querySelector('.gx-inline-status').textContent=e.detail.complete?(host.dataset.herPart==='assemble'?'All three scenes are complete.':'Their agency returns to view.'):'';
     collapse();
   };
   window.addEventListener('resize',collapse);

@@ -1,4 +1,4 @@
-import { siteURL } from './site-paths.js';
+import { setupPersonaResearch } from './persona-research.js';
 // Authored local examples; this demo does not call the research prototype or an AI API.
 let instance = 0;
 export function renderPersonaIntent() {
@@ -9,7 +9,7 @@ export function renderPersonaIntent() {
  <div class="persona-style-memory" data-persona-memory hidden role="status"><strong data-persona-memory-label>Style saved · settings unchanged</strong><div class="persona-memory-chips" data-persona-memory-chips></div></div>
  <div class="persona-draft" aria-live="polite" aria-atomic="true"><div class="persona-draft-heading"><span><b aria-hidden="true">✓</b> Revised example</span><span data-persona-task-label>Today · Leave request</span></div><div class="persona-email-subject"><span>Subject</span><h4 data-persona-subject></h4></div><p data-persona-greeting></p><p data-persona-message></p><p data-persona-signoff></p></div><div class="persona-local-edit"><span class="persona-step">Edit one part</span><p>The request and greeting stay unchanged.</p><button type="button" data-persona-edit aria-pressed="false">Shorten only the explanation</button><p data-persona-edit-status role="status" hidden></p></div>
  <div class="persona-reuse"><span class="persona-step">03 / Keep the style</span><p data-persona-reuse-caption>Next request: <strong>miss a morning meeting</strong>. Reuse the relationship and style instead of explaining them again.</p><button type="button" data-persona-reuse>Save style & write the next email <span aria-hidden="true">→</span></button></div></div>
- <details class="persona-original"><summary>See the original section editor</summary><div><img src="${siteURL('/assets/research-editorial/persona-intent-editor.png')}" width="1052" height="892" alt="The original PersonaMail interface for changing the intent of one email section" loading="lazy"><p>The prototype exposes the intent behind each communication unit, so a writer can change one section without regenerating the entire email.</p></div></details><figcaption class="persona-demo-note">An authored interactive example; settings select local drafts. This demonstrates two kinds of memory: saved relationship settings and a preference learned from a local edit.</figcaption></figure>`;
+ </figure>`;
 }
 // Each task has all eight authored combinations. Relationship changes the request's
 // social assumptions and handover, not only its greeting; no private reason is invented.
@@ -116,6 +116,7 @@ const personaShortContexts = {
 };
 function settings(el){return {relationship:el.querySelector('[data-persona-relationship]').value,tone:el.querySelector('[data-persona-tone]').value,length:el.querySelector('[data-persona-length]').value,appreciation:el.querySelector('[data-persona-appreciation]').checked};}
 export function setupPersonaIntent(root=document){
+ const researchCleanup=setupPersonaResearch(root);
  const demos=[...root.querySelectorAll('[data-persona-demo]')];
  function update(el){
   const s=settings(el),familiar=s.relationship==='familiar',brief=s.length==='brief',polite=s.tone==='polite',meeting=el.dataset.personaTask==='meeting';
@@ -155,5 +156,5 @@ export function setupPersonaIntent(root=document){
  function change(e){const el=e.target.closest('[data-persona-demo]');if(el&&e.target.matches('select,input'))update(el);}
  function click(e){const edit=e.target.closest('[data-persona-edit]');if(edit){const el=edit.closest('[data-persona-demo]');el.dataset.personaLocalEdit=el.dataset.personaLocalEdit==='short'?'':'short';update(el);return;}const button=e.target.closest('[data-persona-reuse]');if(!button)return;const el=button.closest('[data-persona-demo]');el.dataset.personaSaved=JSON.stringify({...settings(el),localEdit:el.dataset.personaLocalEdit||''});el.dataset.personaTask=el.dataset.personaTask==='meeting'?'leave':'meeting';update(el);if(matchMedia('(max-width:760px)').matches)el.querySelector('[data-persona-memory]').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
  root.addEventListener('change',change);root.addEventListener('click',click);demos.forEach(update);
- return()=>{root.removeEventListener('change',change);root.removeEventListener('click',click);};
+ return()=>{root.removeEventListener('change',change);root.removeEventListener('click',click);researchCleanup();};
 }

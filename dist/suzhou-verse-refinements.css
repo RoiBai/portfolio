@@ -1,0 +1,113 @@
+/* Suzhou and VerseColor: aligned chapter copy, original source images and study flow. */
+body:is([data-project=suzhou-scrollverse],[data-project=versecolor]) .case-study > .case-section:not(#findings) > .section-body {
+  grid-column:1/-1!important;grid-row:auto!important;width:100%;max-width:none;padding:0!important;align-self:start;
+}
+body:is([data-project=suzhou-scrollverse],[data-project=versecolor]) .case-study > .case-section:not(#findings) > .section-heading {
+  grid-column:1/-1!important;grid-row:auto!important;
+}
+body[data-project=suzhou-scrollverse] .case-study .rf-suzhou-place {
+  display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:stretch;
+}
+body[data-project=suzhou-scrollverse] .rf-suzhou-locate {display:flex;flex-direction:column;gap:24px;min-width:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-locate .rf-suzhou-image {margin-top:auto}
+body[data-project=suzhou-scrollverse] .case-study .rf-suzhou-lenses {
+  grid-column:auto;grid-row:auto;align-self:stretch;display:flex;flex-direction:column;gap:20px;padding:0;min-width:0;
+}
+body[data-project=suzhou-scrollverse] .rf-suzhou-role-list {display:grid;gap:16px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lens {grid-template-columns:72px minmax(0,1fr);gap:16px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lens > img {width:72px;height:72px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-lenses > small {margin-top:auto;color:var(--muted)}
+body[data-project=suzhou-scrollverse] .case-study .rf-suzhou-clue {gap:24px 40px;margin-top:44px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-context {align-self:stretch;display:flex;flex-direction:column;justify-content:center;padding:24px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-context p {margin:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-step h4 {text-wrap:balance}
+
+/* The complete source figure is visible immediately. Smaller screens pan the
+   native-resolution image instead of shrinking its labels into unreadable text. */
+body[data-project=versecolor] .case-study .verse-interaction {padding:0;width:100%;max-width:none}
+body[data-project=versecolor] .case-study .vi-original {margin:0 0 40px}
+body[data-project=versecolor] .case-study .vi-original > p {margin:0 0 24px;width:100%;max-width:none}
+body[data-project=versecolor] .vi-original-viewport {width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#7a9b7d #e7ece4;padding-bottom:8px}
+body[data-project=versecolor] .case-study .vi-original-viewport > img {display:block;width:100%;min-width:1200px;height:auto;max-width:none;max-height:none!important;object-fit:contain}
+body[data-project=versecolor] .vi-original-viewport:focus-visible {outline:2px solid var(--accent);outline-offset:5px}
+body[data-project=versecolor] .case-study .vi-original > .vi-pan-hint {display:none;color:var(--muted);margin-bottom:12px}
+body[data-project=versecolor] .case-study .vi-heading {margin:0 0 24px}
+body[data-project=versecolor] #findings .section-body > p:first-of-type .text-emphasis {color:var(--accent)!important;font-weight:650!important}
+
+/* Formative work is a compact introduction; the comparative task has one clear
+   sequence. Arrows express task order, not decorative chapter separators. */
+body[data-project=versecolor] .case-study .rf-verse-procedure {width:100%;max-width:none;margin:0}
+body[data-project=versecolor] .rf-verse-phases {display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+body[data-project=versecolor] .rf-verse-formative {display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,.7fr) minmax(0,2fr);gap:24px;align-items:center;padding:22px 24px;background:color-mix(in srgb,var(--accent) 5%,var(--bg));border-radius:4px}
+body[data-project=versecolor] .rf-phase-label {padding:0;border:0;line-height:1.4}
+body[data-project=versecolor] .rf-verse-formative .rf-phase-count {margin:0;color:var(--accent)}
+body[data-project=versecolor] .rf-verse-formative h4 {margin:0 0 6px}
+body[data-project=versecolor] .rf-verse-formative p {margin:0;max-width:none}
+body[data-project=versecolor] .rf-verse-comparison ol {margin-top:20px;gap:32px;align-items:stretch}
+body[data-project=versecolor] .rf-verse-comparison li {padding:18px 18px 20px;background:color-mix(in srgb,var(--ink) 3%,var(--bg));border-radius:4px}
+body[data-project=versecolor] .rf-verse-comparison li > span {display:block;color:var(--accent);font-variant-numeric:tabular-nums}
+body[data-project=versecolor] .rf-verse-comparison h4 {margin:14px 0 12px;text-wrap:balance}
+body[data-project=versecolor] .rf-verse-comparison li > p {margin:0;max-width:none}
+body[data-project=versecolor] .rf-verse-comparison li:not(:last-child)::after {top:20px;right:-24px;color:var(--accent)}
+body[data-project=versecolor] .rf-tool-branches {display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 12px}
+body[data-project=versecolor] .rf-tool-branches > span {border:0;padding:4px 8px;background:color-mix(in srgb,var(--accent) 7%,var(--bg));border-radius:3px}
+@layer case-typography {
+ body[data-view=project][data-project=versecolor] .case-study .vi-original > p:not(.vi-pan-hint) {font-size:var(--case-copy)!important;line-height:1.6!important}
+ body[data-view=project][data-project=versecolor] .case-study .vi-pan-hint {font-size:var(--case-caption)!important;line-height:1.5!important}
+ body[data-view=project][data-project=versecolor] .case-study .rf-phase-count {font-size:var(--case-deck)!important;font-weight:600!important;line-height:1.2!important}
+ body[data-view=project][data-project=versecolor] .case-study :is(.rf-phase-label,.rf-verse-comparison li > span) {font-size:var(--case-label)!important;font-weight:600!important;line-height:1.4!important}
+ body[data-view=project][data-project=versecolor] .case-study .rf-tool-branches > span {font-size:var(--case-caption)!important;line-height:1.4!important}
+ body[data-view=project][data-project=suzhou-scrollverse] .case-study .rf-suzhou-lenses > small {font-size:var(--case-caption)!important;line-height:1.5!important}
+}
+@media(max-width:1280px) {
+ body[data-project=versecolor] .case-study .vi-original > .vi-pan-hint {display:block}
+}
+@media(max-width:760px) {
+ body[data-project=suzhou-scrollverse] .case-study .rf-suzhou-place {grid-template-columns:minmax(0,1fr);gap:32px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-locate {gap:20px}
+ body[data-project=suzhou-scrollverse] .case-study .rf-suzhou-clue {grid-template-columns:minmax(0,1fr);gap:22px;margin-top:34px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-context {padding:20px}
+ body[data-project=versecolor] .case-study .vi-original {margin-bottom:32px}
+ body[data-project=versecolor] .rf-verse-phases {gap:28px}
+ body[data-project=versecolor] .rf-verse-formative {grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:20px}
+ body[data-project=versecolor] .rf-verse-formative .rf-phase-label {grid-column:1;grid-row:1}
+ body[data-project=versecolor] .rf-verse-formative .rf-phase-count {grid-column:2;grid-row:1}
+ body[data-project=versecolor] .rf-verse-formative > div {grid-column:1/-1;grid-row:2}
+ body[data-project=versecolor] .rf-verse-comparison ol {grid-template-columns:minmax(0,1fr);gap:24px}
+ body[data-project=versecolor] .rf-verse-comparison li {display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px 12px;padding:20px}
+ body[data-project=versecolor] .rf-verse-comparison li > span {grid-column:1;grid-row:1;align-self:center}
+ body[data-project=versecolor] .rf-verse-comparison h4 {grid-column:2;grid-row:1;margin:0}
+ body[data-project=versecolor] .rf-verse-comparison li > :is(p,.rf-tool-branches) {grid-column:2}
+ body[data-project=versecolor] .rf-tool-branches {margin:4px 0}
+ body[data-project=versecolor] .rf-verse-comparison li:not(:last-child)::after {display:block;content:'↓';top:auto;right:auto;left:50%;bottom:-22px;transform:translateX(-50%)}
+}
+/* Native results emphasize the two reported effect sizes. Qualitative
+   comparisons use text rather than implying unreported numerical distances. */
+body[data-project=versecolor] .case-study > .case-section#findings > .section-visuals {grid-column:1/-1!important;grid-row:4!important;max-width:none!important;width:100%}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-body > blockquote {grid-column:1/-1!important;grid-row:5!important;width:100%}
+body[data-project=versecolor] .case-study .rf-verse-results {max-width:none!important;width:100%!important;margin:0!important}
+body[data-project=versecolor] .rf-verse-effect-cards {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+body[data-project=versecolor] .rf-verse-effect-cards > section {padding:28px 32px;background:color-mix(in srgb,var(--accent) 7%,var(--bg));border-radius:4px}
+body[data-project=versecolor] .rf-verse-result-label {display:block;color:var(--accent)}
+body[data-project=versecolor] .rf-verse-effect-cards h4 {margin:10px 0 22px;color:var(--accent)}
+body[data-project=versecolor] .rf-verse-effect-value {display:flex;gap:14px;align-items:baseline;margin-bottom:16px;color:var(--accent)}
+body[data-project=versecolor] .rf-verse-effect-value strong {font-variant-numeric:tabular-nums;font-weight:600}
+body[data-project=versecolor] .rf-verse-effect-cards p {margin:0;color:var(--accent)}
+body[data-project=versecolor] .rf-verse-results > figcaption {display:block;text-align:center;margin:12px 0 0;padding:0!important;color:var(--muted)}
+body[data-project=versecolor] .rf-verse-other-ratings {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px}
+body[data-project=versecolor] .rf-verse-other-ratings > section {padding:22px 32px;background:color-mix(in srgb,var(--ink) 3%,var(--bg));border-radius:4px}
+body[data-project=versecolor] .rf-verse-other-ratings h4 {margin:0 0 10px;color:var(--ink)}
+body[data-project=versecolor] .rf-verse-other-ratings p {margin:0;color:var(--muted)}
+@layer case-typography {
+ body[data-view=project][data-project=versecolor] .case-study .rf-verse-effect-value strong {font-size:var(--case-title)!important;line-height:1.1!important;font-weight:600!important}
+ body[data-view=project][data-project=versecolor] .case-study :is(.rf-verse-effect-cards p,.rf-verse-other-ratings p) {font-size:var(--case-note)!important;line-height:1.45!important}
+ body[data-view=project][data-project=versecolor] .case-study :is(.rf-verse-effect-value > span,.rf-verse-results > figcaption) {font-size:var(--case-caption)!important;line-height:1.5!important}
+ body[data-view=project][data-project=versecolor] .case-study .rf-verse-result-label {font-size:var(--case-label)!important;font-weight:500!important;line-height:1.4!important}
+}
+@media(max-width:760px) {
+ body[data-project=versecolor] .rf-verse-effect-cards {grid-template-columns:minmax(0,1fr);gap:16px}
+ body[data-project=versecolor] .rf-verse-effect-cards > section {padding:22px 24px}
+ body[data-project=versecolor] .rf-verse-effect-cards h4 {margin-bottom:18px}
+ body[data-project=versecolor] .rf-verse-other-ratings {grid-template-columns:minmax(0,1fr);gap:16px;margin-top:24px}
+ body[data-project=versecolor] .rf-verse-other-ratings > section {padding:20px 24px}
+}

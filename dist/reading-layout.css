@@ -1,0 +1,205 @@
+/* Main chapter copy uses the available editorial width. Diagram labels, forms,
+   study conditions and figure captions keep their own contextual columns. */
+body[data-view=project] .case-study .case-section > .section-body,
+body[data-view=project] .case-study .case-section > .section-body > p,
+body[data-view=project] .case-study .case-section > .section-heading > p,
+body[data-view=project] .case-study .hero-bottom > p {
+  max-width:none!important;
+  text-wrap:pretty;
+}
+body[data-view=project] .case-study .case-section > .section-body > p {
+  width:100%;
+}
+/* Spacing and labels distinguish ideas within a chapter. Horizontal rules mark
+   chapter boundaries; functional charts and control outlines remain intact. */
+body[data-view=project] .case-study :is(.insight,.dv-scope,.rf-method-context,.rf-gsl-hll,.rf-study-reports,.color-study-sequence,.color-pilot-next,.color-atlas-subchapter,.icon-abstract-pairs,.icon-guidance-findings,.icon-guidance-audience,.loofa-dialogue-intro,.ar-game-map,.ar-real-playback,.ar-reflection-evidence,.her-audience-quote,.gx-her-layout) {
+  border-top:0!important;
+  border-bottom:0!important;
+}
+body[data-view=project] .case-study .project-figure > figcaption,
+body[data-view=project] .case-study .rf-caption {
+  border-top:0!important;
+  border-bottom:0!important;
+}
+body[data-project=loofasoup] .loofa-route-copy > article {
+  border-top:0!important;
+  border-bottom:0!important;
+}
+body[data-project=traditional-color] .color-agent-heading {
+  border-bottom:0!important;
+}
+/* Text-only chapters have no competing column: title, introduction, then ideas. */
+body[data-view=project] .case-study > .case-section.text-only:not(.with-experience) > :is(.section-heading,.section-body) {
+  grid-column:1/-1!important;
+  grid-row:auto!important;
+  width:100%;
+}
+body[data-view=project] .case-study > .case-section.text-only:not(.with-experience) > .section-body {
+  padding-top:0!important;
+}
+/* One chapter introduction precedes each of these full-width visual experiences. */
+body:is([data-project=icon-colors],[data-project=suzhou-scrollverse],[data-project=versecolor],[data-project=ourworld]) .case-study > .case-section:is(#setup,#study,#timeline,#remember) > .section-heading {
+  grid-column:1/-1!important;grid-row:1!important;
+}
+body:is([data-project=icon-colors],[data-project=suzhou-scrollverse],[data-project=versecolor],[data-project=ourworld]) .case-study > .case-section:is(#setup,#study,#timeline,#remember) > .section-body {
+  grid-column:1/-1!important;grid-row:2!important;width:100%;padding:0!important;margin:0!important;
+}
+body:is([data-project=icon-colors],[data-project=suzhou-scrollverse],[data-project=versecolor],[data-project=ourworld]) .case-study > .case-section:is(#setup,#study,#timeline,#remember) > :is(.section-visuals,.section-experience) {
+  grid-column:1/-1!important;grid-row:3!important;
+}
+body[data-project=loofasoup] .case-study > :is(#characters,#production) > .section-body {width:100%}
+
+/* These chapter introductions are reading passages, not diagram annotations.
+   Give each its own row before the bounded figure or interactive experience. */
+:is(
+  body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
+  body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
+  body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
+  body[data-project=loofasoup] .case-study > .case-section#abstract,
+  body[data-project=hersound] .case-study > .case-section#assemble,
+  body[data-project=ourworld] .case-study > .case-section#abstract
+) {
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:24px!important;
+  align-items:start!important;
+}
+:is(
+  body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
+  body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
+  body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
+  body[data-project=loofasoup] .case-study > .case-section#abstract,
+  body[data-project=hersound] .case-study > .case-section#assemble,
+  body[data-project=ourworld] .case-study > .case-section#abstract
+) > .section-heading {
+  grid-column:1/-1!important;grid-row:1!important;
+  width:100%;min-width:0;max-width:none;
+  padding:0!important;margin-block:0!important;
+}
+:is(
+  body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
+  body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
+  body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
+  body[data-project=loofasoup] .case-study > .case-section#abstract,
+  body[data-project=hersound] .case-study > .case-section#assemble,
+  body[data-project=ourworld] .case-study > .case-section#abstract
+) > .section-body {
+  grid-column:1/-1!important;grid-row:2!important;
+  width:100%;min-width:0;max-width:none;
+  padding:0!important;margin-block:0!important;
+}
+:is(
+  body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
+  body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
+  body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
+  body[data-project=loofasoup] .case-study > .case-section#abstract,
+  body[data-project=hersound] .case-study > .case-section#assemble,
+  body[data-project=ourworld] .case-study > .case-section#abstract
+) > .section-visuals {
+  display:block!important;
+  grid-column:1/-1!important;grid-row:3!important;
+  width:100%;min-width:0;max-width:none;
+  padding:0!important;margin-block:0!important;
+}
+:is(
+  body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
+  body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
+  body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
+  body[data-project=loofasoup] .case-study > .case-section#abstract,
+  body[data-project=hersound] .case-study > .case-section#assemble,
+  body[data-project=ourworld] .case-study > .case-section#abstract
+) > .section-experience {
+  grid-column:1/-1!important;grid-row:4!important;
+  width:100%;min-width:0;max-width:none;
+  padding:0!important;margin-block:0!important;
+}
+
+body[data-project=hersound] .case-study > .case-section#assemble > .section-experience {
+  grid-row:3!important;
+}
+/* The previous PersonaMail figure used display:contents to share the old
+   two-column grid. Restore its own box before moving it below the introduction. */
+body[data-project=personamail] .case-study > .case-section:is(#research,#reflection) > .section-visuals {
+  display:block!important;
+  max-width:960px!important;
+  margin-inline:auto!important;
+}
+body[data-project=personamail] .case-study > .case-section:is(#research,#reflection) > .section-visuals > .project-figure {
+  display:block!important;
+  width:100%;max-width:none;margin-inline:0!important;
+}
+body[data-project=personamail] .case-study > .case-section#research .research-source-figure > :is(.figure-media,figcaption) {
+  grid-column:auto!important;grid-row:auto!important;
+}
+body[data-project=personamail] .case-study > .case-section#research .research-source-figure > figcaption {
+  padding-top:18px!important;
+}
+body[data-project=loofasoup] .case-study > .case-section#abstract > .section-visuals {
+  max-width:600px!important;margin-inline:auto!important;
+}
+body[data-project=ourworld] .case-study > .case-section#abstract > .section-visuals {
+  display:grid!important;
+  max-width:500px!important;margin-inline:auto!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+/* VerseColor's two findings paragraphs span the chapter. The participant's
+   quotation keeps its contextual position beside the original data chart. */
+body[data-project=versecolor] .case-study > .case-section#findings {
+  display:grid!important;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important;
+  gap:24px 38px!important;
+  align-items:start!important;
+}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-heading {
+  grid-column:1/-1!important;grid-row:1!important;
+}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-body {
+  display:contents!important;
+}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-body > p {
+  grid-column:1/-1!important;
+  width:100%;max-width:none!important;margin:0!important;
+}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-body > p:nth-of-type(1) {
+  grid-row:2!important;
+}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-body > p:nth-of-type(2) {
+  grid-row:3!important;
+}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-visuals {
+  display:block!important;
+  grid-column:1!important;grid-row:4!important;
+  width:100%;max-width:760px!important;margin:0!important;
+}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-body > blockquote {
+  grid-column:2!important;grid-row:4!important;
+  align-self:center;margin:0!important;
+}
+@media(max-width:760px) {
+  body[data-project=versecolor] .case-study > .case-section#findings {
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  body[data-project=versecolor] .case-study > .case-section#findings > .section-body > blockquote {
+    grid-column:1!important;grid-row:5!important;
+  }
+}
+/* Remove repeated internal decoration while keeping chart axes, diagram
+   connections, controls, spacing, and the main chapter separators. */
+body[data-view=project] .case-study .stats {
+  border-top:0!important;border-bottom:0!important;
+}
+body[data-project=ambulance] .case-study .ar-pressure,
+body[data-project=versecolor] .case-study .rf-verse-procedure > .rf-chart-note,
+body[data-project=glancemap] .case-study #study .glance-study-opening {
+  border-top:0!important;
+}
+/* A chapter introduction runs below its heading before the interactive figure. */
+body[data-project=traditional-color] .case-study > #future > .section-heading {
+  grid-column:1/-1!important;grid-row:1!important;
+}
+body[data-project=traditional-color] .case-study > #future > .section-body {
+  grid-column:1/-1!important;grid-row:2!important;padding:0!important;margin:0!important;
+}
+body[data-project=traditional-color] .case-study > #future > .section-visuals {
+  grid-column:1/-1!important;grid-row:3!important;
+}

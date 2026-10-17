@@ -93,3 +93,40 @@ body[data-project=ambulance] #gameplay .ar-game-map .ar-map-comparison{margin-to
  body[data-project=ambulance] #gameplay .ar-game-map .ar-map-intro{grid-template-columns:1fr;gap:14px}
  body[data-project=ambulance] #gameplay .ar-game-map .ar-map-comparison{margin-top:20px}
 }
+
+/* One rule per chapter; within gameplay the title and spacing do the grouping. */
+body[data-project=ambulance] .case-study #play,
+body[data-project=ambulance] .case-study #play .play-heading,
+body[data-project=ambulance] .case-study #gameplay .ar-pressure,
+body[data-project=ambulance] .case-study #gameplay .ar-game-map,
+body[data-project=ambulance] .case-study #gameplay .ar-real-playback{border-top:0!important;border-bottom:0!important}
+body[data-project=ambulance] .case-study #overview .stats{border-bottom:0!important}
+body[data-project=ambulance] #abstract .ar-news-copy p{max-width:none;text-wrap:pretty}
+body[data-project=ambulance] #abstract .news-preview{border-top:0;padding-top:4px}
+body[data-project=ambulance] #gameplay .ar-game-map .ar-map-intro{display:block}
+body[data-project=ambulance] #gameplay .ar-game-map .ar-map-intro>h3{--case-subhead:var(--case-heading);font-size:var(--case-heading)!important;margin-bottom:20px;color:var(--ink)}
+body[data-project=ambulance] #gameplay .ar-map-intro>.ar-section-deck{width:100%;max-width:none}
+body[data-project=ambulance] .ar-hospital-scenes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start;margin-top:34px}
+body[data-project=ambulance] .ar-hospital-scenes figure{display:grid;justify-items:center}
+body[data-project=ambulance] .ar-hospital-scenes img{height:235px;width:100%;object-fit:contain;object-position:center bottom}
+body[data-project=ambulance] .ar-hospital-scenes figcaption{display:flex;gap:10px;justify-content:center;align-items:baseline;text-align:center;font-size:var(--case-note);color:var(--accent)}
+body[data-project=ambulance] .ar-hospital-scenes figcaption>span{font-weight:700;color:#bd4c63}
+body[data-project=ambulance] #publication.ambulance-chapter{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:42px}
+body[data-project=ambulance] #publication>.section-heading h2{white-space:normal;--case-heading:clamp(30px,3vw,44px)}
+body[data-project=ambulance] #publication .ar-audience-result{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px}
+body[data-project=ambulance] #publication .ar-audience-result>strong{font-size:clamp(76px,8vw,116px);line-height:1}
+body[data-project=ambulance] #publication .ar-audience-result>p{font-size:var(--case-copy);line-height:1.3;white-space:normal;text-align:center}
+@media(max-width:700px){
+ body[data-project=ambulance] .ar-hospital-scenes{gap:24px 16px;grid-template-columns:1fr}
+ body[data-project=ambulance] .ar-hospital-scenes img{height:225px;max-width:310px}
+ body[data-project=ambulance] #publication.ambulance-chapter{grid-template-columns:1fr;gap:24px}
+ body[data-project=ambulance] #publication .ar-audience-result>strong{font-size:80px}
+ body[data-project=ambulance] #publication .ar-audience-result>p{font-size:20px}
+}
+
+/* Leaders sit above note backplates, with their paths kept outside the copy. */
+body[data-project=ambulance] #gameplay .ar-game-layout>.ar-connections{z-index:4}
+@layer case-typography{
+ body[data-view=project][data-project=ambulance] .case-study #gameplay .ar-map-intro>h3{font-size:var(--case-heading)!important}
+ body[data-view=project][data-project=ambulance] .case-study #publication .ar-audience-result>strong{font-size:var(--case-title)!important}
+}

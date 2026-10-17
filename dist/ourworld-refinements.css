@@ -149,3 +149,19 @@ body[data-project=ourworld] .case-study #remember>.section-experience {
     margin-top:2px;
   }
 }
+
+/* The archive introduction is one reading row, followed by the timeline. */
+body[data-project=ourworld] .case-study #timeline > :is(.section-heading,.section-body),
+body[data-project=ourworld] .case-study #timeline > .section-heading h2,
+body[data-project=ourworld] .case-study #timeline > .section-body > p {
+  width:100%;max-width:none!important;margin-inline:0!important;
+}
+body[data-project=ourworld] .case-study #timeline > .section-body {padding:0!important}
+body[data-project=ourworld] .case-study #timeline > .section-experience {margin-top:0!important}
+body[data-project=ourworld] .case-study #remember .gx-candles > .gx-instruction {
+  width:100%;max-width:none!important;margin:0 0 24px!important;
+  font-size:var(--case-copy)!important;line-height:1.5!important;
+}
+body[data-project=ourworld] .case-study #remember .gx-candles {margin-top:0!important;margin-bottom:0!important}
+body[data-project=ourworld] .case-study #reflection {padding-block:40px!important}
+body[data-project=ourworld] .case-study #reflection .section-body:empty {display:none!important}

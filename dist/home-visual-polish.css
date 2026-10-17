@@ -1,5 +1,5 @@
 /* Selected-work typography only. The name scene and its four role faces are untouched. */
-#selected-work{--work-title:52px;--work-heading:36px;--work-copy:22px;--work-note:20px;--work-caption:18px;--work-label:14px}
+#selected-work{--work-title:48px;--work-heading:34px;--work-copy:20px;--work-note:18px;--work-caption:16px;--work-label:13px}
 #selected-work :is(.row-copy h2,.group-heading h2){font-family:var(--font-body);font-weight:600;letter-spacing:-.015em;line-height:1.12;text-wrap:pretty}
 #selected-work .row-copy h2{font-size:var(--work-title);margin-bottom:16px}
 #selected-work .group-heading h2{font-size:var(--work-heading)}
@@ -26,7 +26,7 @@
  #selected-work .comic-art figure img{height:145px}
 }
 @media(max-width:699px){
- #selected-work{--work-title:38px;--work-heading:30px;--work-copy:20px;--work-note:18px;--work-caption:16px;--work-label:14px}
+ #selected-work{--work-title:36px;--work-heading:28px;--work-copy:18px;--work-note:16px;--work-caption:14px;--work-label:13px}
  #selected-work .project-row{height:auto;min-height:520px;padding-block:38px 46px;gap:28px}
  #selected-work .row-copy h2{margin-bottom:14px}
  #selected-work .row-description{margin-bottom:20px}

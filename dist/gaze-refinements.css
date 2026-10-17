@@ -140,3 +140,24 @@ body[data-project=beyond-the-gaze] .case-study #example .data-visual{width:100%!
 body[data-project=beyond-the-gaze] .case-study #example .dv-shell{padding:0}
 body[data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:48px}
 @media(max-width:760px){body[data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:20px}}
+
+/* Keep the recorded case centered, then show every original trace without
+   hiding paintings behind a disclosure or a tab. Main copy uses reading-layout. */
+body[data-project=beyond-the-gaze] .case-study #evidence .rf-gaze-record{width:min(1100px,100%);margin-inline:auto!important}
+body[data-project=beyond-the-gaze] .rf-gaze-archive{width:100%;margin-top:44px}
+body[data-project=beyond-the-gaze] .rf-gaze-archive>h3{margin:0 0 28px;color:var(--ink)}
+body[data-project=beyond-the-gaze] .rf-gaze-paintings{display:grid;gap:42px}
+body[data-project=beyond-the-gaze] .rf-gaze-painting{min-width:0}
+body[data-project=beyond-the-gaze] .rf-gaze-painting>h4{margin:0 0 20px;line-height:1.5!important;color:var(--accent)}
+body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-grid{gap:28px}
+body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item{min-width:0}
+body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item>h4{margin:14px 0 6px}
+body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item>p{margin:0}
+@media(max-width:760px){
+ body[data-project=beyond-the-gaze] .rf-gaze-archive{margin-top:34px}
+ body[data-project=beyond-the-gaze] .rf-gaze-archive>h3{margin-bottom:24px}
+ body[data-project=beyond-the-gaze] .rf-gaze-paintings{gap:36px}
+ body[data-project=beyond-the-gaze] .rf-gaze-painting>h4{margin-bottom:18px}
+ body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item{display:block}
+ body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item>img{max-height:none;width:100%;height:auto}
+}

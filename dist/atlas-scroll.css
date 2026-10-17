@@ -142,3 +142,63 @@ body[data-project="traditional-color"] .atlas-preset-disclosure .atlas-preset-sw
  body[data-project="traditional-color"] .atlas-preset-disclosure summary{grid-template-columns:minmax(0,1fr) 90px;gap:12px}
  body[data-project="traditional-color"] .atlas-preset-disclosure-label{grid-column:1/-1;text-align:left}
 }
+
+/* A stable reading frame: record length does not change the animation geometry. */
+body[data-project="traditional-color"] .atlas-stable{overflow-anchor:none}
+body[data-project="traditional-color"] .atlas-stable>.atlas-native-sticky{display:flex;flex-direction:column;gap:0;min-height:0;height:calc(100svh - 96px);max-height:930px;top:74px;padding:8px 0 10px}
+body[data-project="traditional-color"] .atlas-stable .atlas-chapter-heading{flex:none;margin-bottom:12px!important}
+body[data-project="traditional-color"] .atlas-stable .atlas-native-heading{display:block;flex:none;width:100%;margin:0 0 16px}
+body[data-project="traditional-color"] .atlas-stable .atlas-native-heading h3{margin-bottom:7px!important}
+body[data-project="traditional-color"] .atlas-stable .atlas-native-heading>p{max-width:none;width:100%;margin:0!important}
+body[data-project="traditional-color"] .atlas-stable .atlas-native-field{flex:1 1 0;min-height:0;height:auto;width:100%;min-width:0}
+body[data-project="traditional-color"] .atlas-stable .atlas-native-source{gap:8px}
+body[data-project="traditional-color"] .atlas-stable .atlas-native-source img{height:82px}
+body[data-project="traditional-color"] .atlas-stable .atlas-native-source h4 span{margin-top:5px}
+body[data-project="traditional-color"] .atlas-stable .atlas-color-token{border:0;gap:7px;padding-block:1px}
+body[data-project="traditional-color"] .atlas-stable .atlas-color-token>i{flex-basis:11px}
+body[data-project="traditional-color"] .atlas-stable .atlas-color-token small{margin-top:1px;letter-spacing:0;white-space:nowrap}
+body[data-project="traditional-color"] .atlas-stable .atlas-native-record{flex:none;grid-template-columns:minmax(180px,.8fr) minmax(0,1.1fr) minmax(0,1fr);height:var(--atlas-record-height,94px);min-height:0;box-sizing:border-box;padding-top:12px;gap:30px;border:0}
+body[data-project="traditional-color"] .atlas-stable .atlas-record-name{gap:12px}
+body[data-project="traditional-color"] .atlas-stable .atlas-record-name>i{flex-basis:27px;height:58px}
+body[data-project="traditional-color"] .atlas-stable .atlas-record-name h4{margin-bottom:4px!important}
+body[data-project="traditional-color"] .atlas-stable .atlas-record-name strong{margin-bottom:5px}
+body[data-project="traditional-color"] .atlas-stable :is(.atlas-record-origin,.atlas-native-citation)::before{content:none}
+body[data-project="traditional-color"] .atlas-stable :is(.atlas-record-origin,.atlas-native-citation)>span{margin-bottom:6px}
+body[data-project="traditional-color"] .atlas-stable .atlas-scroll-hint{flex:none;align-self:flex-end;max-width:none;margin:8px 0 0!important;color:#625b50}
+body[data-project="traditional-color"] .atlas-record-measure{position:absolute;top:0;left:0;height:0;overflow:hidden;visibility:hidden;pointer-events:none;contain:layout style}
+body[data-project="traditional-color"] .atlas-stable .atlas-record-probe{height:auto;min-height:0}
+body[data-project="traditional-color"] :is(.atlas-preset,.atlas-preset-reading){border:0}
+@media(min-width:701px) and (max-height:800px){
+ body[data-project="traditional-color"] .atlas-stable>.atlas-native-sticky{height:calc(100svh - 82px);top:66px;padding:5px 0 8px}
+ body[data-project="traditional-color"] .atlas-stable .atlas-chapter-heading{margin-bottom:8px!important}
+ body[data-project="traditional-color"] .atlas-stable .atlas-native-heading{margin-bottom:10px}
+ body[data-project="traditional-color"] .atlas-stable .atlas-native-source img{height:64px}
+}
+@media(max-width:700px){
+ body[data-project="traditional-color"] .atlas-stable>.atlas-native-sticky{display:block;height:auto;min-height:0;max-height:none;top:70px;padding:10px 0 12px}
+ body[data-project="traditional-color"] .atlas-stable .atlas-native-heading{margin-bottom:0}
+ body[data-project="traditional-color"] .atlas-stable .atlas-native-sticky>.atlas-scroll-hint{margin-top:9px!important;text-align:right}
+ body[data-project="traditional-color"] .atlas-stable .atlas-mobile-record{height:auto;grid-template-columns:1fr;gap:16px;padding:0;border:0;margin-top:24px}
+ body[data-project="traditional-color"] .atlas-stable .atlas-native-token-grid{gap:12px 9px}
+ body[data-project="traditional-color"] .atlas-stable .atlas-color-token{min-height:38px;gap:6px}
+ body[data-project="traditional-color"] .atlas-stable .atlas-color-token>i{flex-basis:9px}
+ body[data-project="traditional-color"] .atlas-stable .atlas-native-mobile-group{margin-bottom:36px}
+}
+@layer case-typography {
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-chapter-heading>.eyebrow{font-size:var(--case-label)!important;margin-bottom:6px!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-native-heading>p{font-size:var(--case-copy)!important;line-height:1.4!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-scroll-hint{font-size:var(--case-label)!important;line-height:1.35!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable :is(.atlas-native-source h4,.atlas-native-family){font-size:var(--case-note)!important;line-height:1.2!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable :is(.atlas-native-source h4,.atlas-native-family)>span{font-size:var(--case-label)!important;line-height:1.3!important;letter-spacing:.03em!important}
+ /* These are dense diagram labels, not article text. Two distinct lines fit
+    their measured rows without the global small-text tier overrunning them. */
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-color-token>span{font-size:14px!important;line-height:15px!important;font-family:"Noto Serif SC",serif!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-color-token small{font-size:11px!important;line-height:12px!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-native-record :is(.atlas-record-origin>span,.atlas-native-citation>span,small){font-size:var(--case-label)!important;line-height:1.35!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-native-record :is(p,.atlas-record-name strong){font-size:var(--case-caption)!important;line-height:1.4!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-native-record .atlas-native-citation p{font-size:var(--case-label)!important;line-height:1.45!important}
+ body[data-view="project"][data-project="traditional-color"] .case-study .atlas-stable .atlas-native-record h4{font-size:var(--case-subhead)!important;line-height:1.15!important}
+}
+
+body[data-project="traditional-color"] .atlas-stable [data-atlas-phase]{position:absolute!important;width:1px!important;height:1px!important;margin:0!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:380px){body[data-project="traditional-color"] .atlas-stable .atlas-native-token-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}

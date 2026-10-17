@@ -5,8 +5,8 @@ export const games = {
     title: 'Ambulance Rush',
     source: 'https://unisanewsgames.itch.io/ambulance-rush',
     embed: 'https://itch.io/embed-upload/11753425?color=111111',
-    intro: 'Step into the pressures of ambulance ramping in Adelaide.',
-    steps: ['Start the game, then follow its on-screen controls.', 'Manage emergency calls and the pressure on hospital capacity.', 'Use a desktop browser and full screen for the clearest view.'],
+    intro: '',
+    steps: [],
     label: 'Play Ambulance Rush',
   },
   loofasoup: {
@@ -41,12 +41,12 @@ export function gameSection(id) {
   const game = games[id];
   if (!game || game.native) return '';
   return `<section id="play" class="play-section" aria-labelledby="play-title" data-game="${id}">
-    <div class="play-heading"><div><p class="eyebrow">Interactive experience</p><h2 id="play-title">${id === 'hersound' ? 'Play the story. Uncover her voice.' : 'Step inside the project'}</h2><p>${escape(game.intro)}</p></div><a href="${game.source}" target="_blank" rel="noopener noreferrer" class="text-link">Open original ↗</a></div>
-    <ol class="play-guide">${game.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol>
+    <div class="play-heading"><div><p class="eyebrow">Interactive experience</p><h2 id="play-title">${id === 'hersound' ? 'Play the story. Uncover her voice.' : 'Step inside the project'}</h2>${game.intro?`<p>${escape(game.intro)}</p>`:''}</div>${id==='ambulance'?'':`<a href="${game.source}" target="_blank" rel="noopener noreferrer" class="text-link">Open original ↗</a>`}</div>
+    ${game.steps.length?`<ol class="play-guide">${game.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol>`:''}
     <div class="play-stage">
       <div class="play-cover"><span class="play-symbol" aria-hidden="true">▷</span><h3>${escape(game.title)}</h3><button class="play-start" type="button">${escape(game.label)} <span aria-hidden="true">→</span></button></div>
     </div>
-    <div class="play-toolbar"><p class="play-status" role="status">${id === 'hersound' ? 'English edition · Original game and particle interaction' : 'Play here, or open the original in a new tab.'}</p><div><button class="play-fullscreen" type="button" hidden>Full screen ↗</button><button class="play-close" type="button" hidden>Close game ×</button></div></div>
+    <div class="play-toolbar"><p class="play-status" role="status">${id === 'hersound' ? 'English edition · Original game and particle interaction' : id==='ambulance'?'Play the original game here.':'Play here, or open the original in a new tab.'}</p><div><button class="play-fullscreen" type="button" hidden>Full screen ↗</button><button class="play-close" type="button" hidden>Close game ×</button></div></div>
   </section>`;
 }
 
@@ -79,11 +79,11 @@ export function setupGames(root=document) {
       });
       stage.append(frame);
       full.hidden = close.hidden = false;
-      loadTimer = setTimeout(() => { status.textContent = 'Still loading? You can also use “Open original” above.'; }, 20000);
+      loadTimer = setTimeout(() => { status.textContent = section.dataset.game==='ambulance'?'Still loading? Try the browser-build link at the top of this page.':'Still loading? You can also use “Open original” above.'; }, 20000);
     },options);
     full.addEventListener('click', async () => {
       try { await stage.requestFullscreen(); }
-      catch { status.textContent = 'Use “Open original” for a larger game window.'; }
+      catch { status.textContent = section.dataset.game==='ambulance'?'Use the browser-build link at the top for a larger game window.':'Use “Open original” for a larger game window.'; }
     },options);
     close.addEventListener('click', async () => {
       clearTimeout(loadTimer);

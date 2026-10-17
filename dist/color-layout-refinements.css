@@ -59,3 +59,88 @@ body[data-project="traditional-color"] .color-pilot-results-copy>.data-visual {m
   body[data-project="traditional-color"] .color-pilot-results-copy {gap:22px}
   body[data-project="traditional-color"] .color-pilot-results-copy>.section-body>p {font-size:18px!important}
 }
+
+/* 18 Oct: introductions run across the article; only supporting evidence splits. */
+body[data-project="traditional-color"] .hero-overview .hero-bottom>p {
+  width:100%;
+  max-width:none!important;
+}
+body[data-project="traditional-color"] :is(#abstract,#research,#colorgene) {
+  display:block;
+}
+body[data-project="traditional-color"] :is(#abstract,#research,#colorgene)>.section-heading {
+  width:100%;
+  max-width:none;
+  margin-bottom:22px;
+}
+body[data-project="traditional-color"] :is(#abstract,#research,#colorgene)>.section-body,
+body[data-project="traditional-color"] :is(#abstract,#research,#colorgene)>.section-body>p {
+  width:100%;
+  max-width:none!important;
+}
+body[data-project="traditional-color"] #colorgene>.section-body {margin:0 0 30px}
+body[data-project="traditional-color"] #research.color-research-brief .insight {
+  border-top:0;
+  padding-top:0;
+}
+body[data-project="traditional-color"] #research.color-research-brief .insight h3 {
+  text-wrap:balance;
+}
+body[data-project="traditional-color"] #colorgene .project-figure {
+  border-top:0;
+  padding-top:0;
+}
+body[data-project="traditional-color"] #colorgene .section-visuals.character-row {
+  gap:36px;
+}
+body[data-project="traditional-color"] .color-atlas-brief>.color-atlas-copy {
+  display:block;
+  width:100%;
+  max-width:none;
+}
+body[data-project="traditional-color"] .color-atlas-brief>.color-atlas-copy>h3 {
+  margin:0 0 18px;
+}
+body[data-project="traditional-color"] .color-atlas-brief>.color-atlas-copy>ul {
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+body[data-project="traditional-color"] .color-pilot-compact>.section-visuals {
+  align-items:center;
+}
+body[data-project="traditional-color"] .color-pilot-evidence-copy {
+  align-self:center;
+}
+body[data-project="traditional-color"] .color-pilot-next {
+  display:grid;
+  grid-template-columns:minmax(170px,.42fr) minmax(0,1.58fr);
+  gap:30px;
+}
+body[data-project="traditional-color"] .color-pilot-next>ul {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:32px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+body[data-project="traditional-color"] .color-pilot-next li {margin:0}
+body[data-project="traditional-color"] .color-pilot-next h4 {
+  color:#3f6578;
+  margin:0 0 12px;
+}
+body[data-project="traditional-color"] .color-pilot-next p {margin:0}
+@media(min-width:900px) {
+  body[data-project="traditional-color"] .case-study .hero-overview {
+    grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+  }
+}
+@media(max-width:700px) {
+  body[data-project="traditional-color"] :is(#abstract,#research,#colorgene)>.section-heading {margin-bottom:18px}
+  body[data-project="traditional-color"] .color-pilot-next {grid-template-columns:1fr;gap:20px}
+  body[data-project="traditional-color"] .color-pilot-next>ul {grid-template-columns:1fr;gap:23px}
+  body[data-project="traditional-color"] .color-pilot-next li+li {margin:0}
+}

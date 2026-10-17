@@ -689,7 +689,8 @@
       ],
       "highlights": [
         "audio lessons while walking"
-      ]
+      ],
+      "outcome": "A progressive, illustrated mind map for learning while walking, developed through 14 pilot rounds and evaluated with 16 participants."
     },
     {
       "id": "icon-colors",
@@ -925,7 +926,8 @@
           ],
           "sourceNotes": [
             "Comprehension revision: omit the broad HoloLens 2 validation claim; §3.3 identifies a secondary optical-design check but does not specify which conditions or sample were repeated."
-          ]
+          ],
+          "textLayout": "full-width"
         },
         {
           "id": "workshop",
@@ -933,12 +935,13 @@
           "eyebrow": "DESIGNER WORKSHOP",
           "title": "From design practice to three linked studies",
           "body": [
-            "Eight professional designers informed our three foreground choices and paired each of twelve hues with an icon meaning."
+            "Eight professional designers informed our three foreground choices. They proposed meanings for twelve hues, then agreed on one icon per hue to form the study’s twelve-icon library."
           ],
           "highlights": [
             "Eight professional designers",
             "three foreground choices",
-            "twelve hues"
+            "one icon per hue",
+            "twelve-icon library"
           ],
           "figures": [],
           "items": [],
@@ -1013,7 +1016,7 @@
           "eyebrow": "STUDY 2",
           "title": "Add meaning",
           "body": [
-            "We replaced the letter with the workshop’s twelve icons and retested all 36 pairs outdoors, adding a rating for how well color matched the icon’s meaning."
+            "We replaced the letter with the workshop’s twelve icons and retested all 36 pairs outdoors, adding semantics: how well each color matched the icon’s function."
           ],
           "nav": "Study 2",
           "figures": [
@@ -1065,7 +1068,10 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "how well color matched the icon’s meaning"
+            "twelve icons",
+            "all 36 pairs",
+            "semantics",
+            "icon’s function"
           ],
           "textLayout": "full-width",
           "navParent": "study"
@@ -1075,7 +1081,7 @@
           "eyebrow": "STUDY 3",
           "title": "Refine and retest",
           "body": [
-            "Designers turned these conflicts into refinements. We retested clarity, comfort and meaning, and added perceived visual priority: how strongly an icon demanded attention."
+            "Designers turned these conflicts into refinements. We retested clarity, comfort and semantics, and added perceived visual priority: how strongly an icon demanded attention."
           ],
           "nav": "Study 3",
           "figures": [
@@ -1115,7 +1121,7 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "clarity, comfort and meaning",
+            "clarity, comfort and semantics",
             "perceived visual priority"
           ],
           "sourceNotes": [
@@ -1132,8 +1138,11 @@
               "decision": "Keep white; test shadows and nearby-hue gradients.",
               "highlights": [
                 "White preserved meaning",
-                "shadows and nearby-hue gradients"
-              ]
+                "shadows and nearby-hue gradients",
+                "0.88–1.62 points",
+                "four tested hues"
+              ],
+              "evidence": "Across four tested hues, shadows improved mean clarity by 0.88–1.62 points on a 1–5 scale."
             },
             {
               "title": "Keep it comfortable; clarify the shape",
@@ -1141,8 +1150,13 @@
               "decision": "Move color into the symbol; test outlines and gray backplates.",
               "highlights": [
                 "scene detail showing through",
-                "outlines and gray backplates"
-              ]
+                "outlines and gray backplates",
+                "B20",
+                "B30",
+                "B40",
+                "HSB brightness"
+              ],
+              "evidence": "Participants described outlines as clearer and less intrusive. Gray backplates: B20 had little effect; B30 improved clarity and semantics; B40 caused blending and reduced clarity. B means HSB brightness, not opacity."
             }
           ]
         },
@@ -1270,7 +1284,7 @@
           "findings": [
             {
               "title": "Test both gradient directions",
-              "body": "For cyan, +30° toward blue improved clarity; −30° toward green reduced it. These are hue-angle shifts—not brightness values. Check endpoint brightness separately so one color does not dominate.",
+              "body": "Begin with cyan at 180°. Test a gradient toward green (−30°) and toward blue (+30°): the green direction reduced clarity, while the blue direction improved it in this comparison. A gradient is not automatically better. Keep the two ends similar in brightness so the brighter color does not take over the intended color meaning.",
               "src": "/assets/design-revision/icon-gradients.svg",
               "alt": "Cyan-green, plain cyan and cyan-blue examples with their observed clarity labels.",
               "sourceNotes": [
@@ -1279,8 +1293,8 @@
             }
           ],
           "audience": {
-            "title": "Leave room for unexpected color pairings",
-            "body": "Some participants read green–purple bar and music icons as clear, youthful and stylish. Unusual pairings can work; check their meaning with your audience.",
+            "title": "Explore pairings that may work unexpectedly well",
+            "body": "Try combinations beyond the expected color rules. Some participants found the green–purple bar and music icons clear, youthful and stylish. Explore these possibilities, then check that the pairing fits the icon’s function and your audience.",
             "figures": [
               {
                 "src": "/assets/design-revision/icon-audience.svg",
@@ -1352,9 +1366,7 @@
         ],
         "boundary": "I am second author; my advisor is first author."
       },
-      "outcome": [
-        "Evidence-based starting points for AR icon clarity, comfort and meaning"
-      ],
+      "outcome": "Color guidelines for AR UI designers, grounded in a designer workshop and three linked user studies.",
       "sourceNotes": [],
       "tags": [
         "AR",
@@ -1374,7 +1386,8 @@
       "kicker": "CULTURAL HERITAGE · INFORMATION DESIGN",
       "meta": [
         "ColoGene · Oct 2025–Jan 2026",
-        "Color Atlas · Apr 2026–present"
+        "Color Atlas · Apr 2026–present",
+        "ColoGene · CHI 2026 Poster accepted"
       ],
       "stats": [
         {
@@ -1477,20 +1490,20 @@
           "eyebrow": "DESIGNER RESEARCH",
           "title": "How designers choose a color",
           "body": [
-            "We interviewed 12 participants with humanities and design backgrounds for 30 to 45 minutes each about finding, comparing and explaining traditional colors."
+            "We interviewed 12 participants with design backgrounds for 30 to 45 minutes each about finding, comparing and explaining traditional colors. The website addresses three practical questions about these choices."
           ],
           "items": [
             {
-              "title": "References come first",
-              "body": "Designers sampled websites, social media and relevant images, then refined the colors."
+              "title": "Does the color fit the historical brief?",
+              "body": "A reference can look right while leaving its period, material and cultural meaning unclear. Designers need context to judge whether it belongs in the setting."
             },
             {
-              "title": "Appearance leads the choice",
-              "body": "“I usually make several versions and then pick the one that looks best.” — P6"
+              "title": "Which reference can I trust?",
+              "body": "Different sources can show different shades under the same traditional name. A color value needs its source beside it so designers can compare the references."
             },
             {
-              "title": "A name needs context",
-              "body": "“But I rarely look up where those names come from.” — P7. A name such as Zhu Sha needs its origin and evidence beside the swatch."
+              "title": "How do the colors work together?",
+              "body": "Selecting one color is only a start. Designers need to compare a complete palette that works visually and fits the same historical or cultural setting."
             }
           ],
           "quote": null,
@@ -1504,17 +1517,13 @@
             }
           ],
           "highlights": [
-            "12 participants",
+            "12 participants with design backgrounds",
             "30 to 45 minutes",
-            "Zhu Sha"
+            "period, material and cultural meaning",
+            "same traditional name",
+            "complete palette"
           ],
-          "colorSwatches": [
-            {
-              "label": "Zhu Sha · 朱砂",
-              "hex": "#8B1A1A",
-              "note": "Cinnabar · a mineral-origin color"
-            }
-          ]
+          "colorSwatches": []
         },
         {
           "id": "colorgene",
@@ -1591,17 +1600,19 @@
           "eyebrow": "EARLY EVIDENCE",
           "title": "Early signals from a ten-designer pilot",
           "body": [
-            "Ten additional designers colored the same Jiangnan and Tang templates: five with ColoGene, five with their usual workflow."
+            "Ten new designers completed three palette tasks in 15 minutes: five used ColoGene and five used their usual workflow. Everyone worked from the same templates.",
+            "The briefs covered a Jiangnan postcard, a Tang-culture product and a Tang-themed film storyboard. We compared task completion, palette explanations and before/after questionnaires.",
+            "Participants described clearer cultural explanations, but still wanted help applying palettes to their own design work."
           ],
           "items": [
             {
               "title": "Next iteration",
-              "body": "Designers wanted fuller sources and palettes tailored to their own brief."
+              "body": "Make historical sources easier to check and suggest whole palettes for the designer’s scene."
             }
           ],
           "quote": {
             "text": "With ColoGene, I can filter by Tang and see where colors come from.",
-            "attribution": "Pilot participant · contiguous excerpt from source paper"
+            "attribution": "P3 · pilot interview"
           },
           "nav": "Pilot",
           "figures": [
@@ -1629,11 +1640,24 @@
             }
           ],
           "highlights": [
-            "Ten additional designers",
-            "five with ColoGene",
-            "five with their usual workflow"
+            "Ten new designers",
+            "three palette tasks in 15 minutes",
+            "five used ColoGene",
+            "five used their usual workflow",
+            "same templates",
+            "clearer cultural explanations"
           ],
-          "navParent": "colorgene"
+          "navParent": "colorgene",
+          "nextIteration": [
+            {
+              "title": "Make the sources easier to check",
+              "body": "Add museum and scholarly references for color names, materials and period associations, beside each color."
+            },
+            {
+              "title": "Start from the designer’s scene",
+              "body": "Use the brief’s setting, cultural theme and intended object to suggest a complete palette, then let the designer refine it."
+            }
+          ]
         },
         {
           "id": "atlas",
@@ -2037,9 +2061,9 @@
         ]
       },
       "outcome": [
-        "ColoGene: CHI 2026 Poster accepted.",
-        "Color Atlas: ongoing research.",
-        "Color Agent: a future design concept."
+        "ColoGene: a website for exploring cultural color records.",
+        "Color Atlas: connected records and brief-based palettes, with its designer study complete.",
+        "Color Agent: a proposed next step for previewing and refining palettes."
       ],
       "sourceNotes": [],
       "tags": [
@@ -2114,28 +2138,15 @@
           "title": "Turn social context into something editable",
           "body": [
             "Eight participants using three writing tools struggled to express social goals, revise one part, and reuse successful choices.",
-            "A review of 97 social-psychology papers informed the controls. For example, familiarity and power are separate: a supervisor can hold authority while knowing you well."
+            "A review of 97 social-psychology papers informed the controls. The original interface follows five steps, from the first request to reusing a writing strategy."
           ],
           "items": [],
-          "figures": [
-            {
-              "src": "/assets/research-editorial/persona-context-panel.png",
-              "width": 971,
-              "height": 602,
-              "displayWidth": 980,
-              "sourceOrigin": "Discrete original interface panel extracted from the paper figure; native pixels.",
-              "alt": "Choose relationship and situation factors, then add details that preset choices miss.",
-              "caption": "Define the relationship and add situation details that preset choices do not capture.",
-              "className": "research-source-figure",
-              "captionTitle": "The original context controls"
-            }
-          ],
+          "figures": [],
           "highlights": [
             "Eight participants",
-            "explaining social goals",
-            "changing one part",
-            "reusing what worked",
-            "97 social-psychology papers"
+            "three writing tools",
+            "97 social-psychology papers",
+            "five steps"
           ],
           "layout": "editorial"
         },
@@ -2144,49 +2155,18 @@
           "nav": "Interaction",
           "eyebrow": "Interaction",
           "title": "Set the context, edit one part, reuse it",
-          "body": [],
+          "body": [
+            "I made this small demo so you can try setting the context, editing one explanation and reusing a style. It uses local examples, not a live AI service."
+          ],
           "items": [],
           "figures": [],
           "highlights": [
-            "relationship, tone and length",
-            "save the style"
+            "setting the context",
+            "editing one explanation",
+            "reusing a style"
           ],
           "layout": "editorial",
           "interaction": "persona-intent"
-        },
-        {
-          "id": "reflection",
-          "nav": "Takeaway",
-          "eyebrow": "Takeaway",
-          "title": "Keep what worked for the next request",
-          "body": [
-            "Context anchors keep the relationship and situation. The stylebook captures preferences from edits, such as keeping explanations brief. The writer decides what to carry forward."
-          ],
-          "items": [
-            {
-              "title": "Evidence boundary",
-              "body": "The demonstration reports a working prototype and formative findings; it does not establish comparative effectiveness."
-            }
-          ],
-          "figures": [
-            {
-              "src": "/assets/research-editorial/persona-saved-anchors.png",
-              "width": 1046,
-              "height": 275,
-              "displayWidth": 1080,
-              "sourceOrigin": "Discrete original interface panel extracted from the paper figure; native pixels.",
-              "alt": "Original saved persona and situation anchors.",
-              "caption": "Original persona and situation anchors preserve recurring context for later emails.",
-              "className": "research-source-figure",
-              "captionTitle": "Saved context for the next request"
-            }
-          ],
-          "highlights": [
-            "Saved context anchors",
-            "personal stylebook",
-            "writer stays in control"
-          ],
-          "layout": "editorial"
         }
       ],
       "role": {
@@ -2207,7 +2187,7 @@
         "16 October 2026: author confirmed responsibility for web interaction logic, project storytelling and the promotional video. Final local demonstration keeps relationship and tone when shortening an explanation and reusing that preference."
       ],
       "contentRevision": "2026-10-16-persona-comprehension-final",
-      "outcome": "Published IUI Companion ’26 demonstration: reusable context, local intent editing, and a personal stylebook.",
+      "outcome": "An email-writing interface for setting social context, editing specific intentions and reusing a personal communication style.",
       "tags": [
         "Human–AI interaction",
         "Email",
@@ -2223,7 +2203,7 @@
       "id": "beyond-the-gaze",
       "title": "Beyond the Gaze",
       "subtitle": "Looking is only part of the story",
-      "description": "Can a museum guide infer what matters from where you look? We compare gaze, later selection and interpretation within the same detail.",
+      "description": "Can a museum guide infer what matters from where you look? We compare gaze, later selection and interpretation within the same detail. These mismatches point to a role for guides that ask what visitors understood before choosing an explanation.",
       "kicker": "Research / Eye tracking",
       "meta": "ACM Multimedia Asia 2026 · Accepted special-session poster · Co-first author",
       "stats": [
@@ -2274,9 +2254,9 @@
           "eyebrow": "Abstract",
           "title": "Looking is not the same as interpreting",
           "body": [
-            "A gaze-aware museum guide may read a long look as interest. But attention does not always appear in what a visitor later selects or says.",
-            "Across 24 paintings, we recorded eye movements, recalled important regions and spoken interpretations. Gaze–Selection–Language (GSL) aligns all three for the same viewer and region.",
-            "High/Low coding yields eight patterns. We focus on HLL—High Gaze, Low Selection, Low Language—a recurring mismatch that challenges gaze-only explanation."
+            "A gaze-aware museum guide may read a long look as interest. But attention does not always appear in what a visitor later selects or says. A guide therefore needs to distinguish where someone looked from what they found meaningful.",
+            "Across 24 paintings, we recorded eye movements, later selections of important regions and spoken interpretations. Gaze–Selection–Language (GSL) aligns all three for the same viewer and region. Fifteen people joined the study; 12 passed the gaze-quality checks.",
+            "High/Low coding yields eight patterns. We focus on HLL—High Gaze, Low Selection, Low Language—a recurring mismatch that challenges gaze-only explanation. HLL identifies a discrepancy between measures, not proof that a viewer was interested or failed to understand."
           ],
           "items": [],
           "figures": [],
@@ -2348,7 +2328,7 @@
               "researchFigure": {
                 "kind": "gaze-evidence"
               },
-              "alt": "Expandable original heatmaps, scanpaths and semantic region maps for five paintings",
+              "alt": "Original gaze heatmaps, eye paths and semantic region maps for all five paintings, displayed together",
               "sourceOrigin": "Paper Figure 3 for original traces; Hay Wain region map uses matching Figure 5 A1–A6 view. Figure 3 historical-scene panel has no verified artwork title, so is described generically."
             }
           ],
@@ -2451,7 +2431,7 @@
                     "note": ""
                   }
                 ],
-                "scope": "These measures describe the already HLL-coded case. They do not, by themselves, reproduce the full High-Gaze criterion or explain why the viewer looked this way."
+                "scope": ""
               }
             }
           ],
@@ -2498,8 +2478,8 @@
         "14 October interactive revision: original embedded images from Figures 1, 3, 4 and 5 supplement the original portfolio. Each visual crop has native dimensions and provenance in assets/research-interactive/sources.json. No simulated eye-tracking data.",
         "16 October comprehension revision: September 13 manuscript section 3.3 clarifies retrospective Selection; section 4.2 and Figure 5 provide the P16 / Hay Wain / A3 HLL code and measurements. No participant transcript invented. Figure 3 region shapes may share semantic labels; Hay Wain gallery uses Figure 5 semantic outlines."
       ],
-      "contentRevision": "2026-10-16-gaze-comprehension-evidence-chain",
-      "outcome": "9.4% of cleaned region records showed high gaze without later selection or a coded interpretive claim.",
+      "contentRevision": "2026-10-18-gaze-expanded-source-views",
+      "outcome": "The Gaze–Selection–Language framework, revealing where visual attention and later interpretation diverge.",
       "tags": [
         "Eye tracking",
         "Art appreciation",
@@ -2582,7 +2562,7 @@
           "eyebrow": "Problem",
           "title": "Seeing the detail is only the start",
           "body": [
-            "Viewers wanted close inspection without losing their place, and cultural explanations they could actively explore. These needs shaped three design choices."
+            "Seeing a detail is only the start: viewers wanted to inspect it without losing their place in the city, and to explore its cultural meaning. These needs shaped three design choices."
           ],
           "figures": [
             {
@@ -2596,8 +2576,8 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "locate details",
-            "cultural context"
+            "without losing their place",
+            "explore its cultural meaning"
           ]
         },
         {
@@ -2614,13 +2594,6 @@
               },
               "alt": "Shantang Street walkthrough: locate the scene, compare social lenses, find visual evidence and connect the shopfronts to their cultural record",
               "sourceOrigin": "Manuscript pp. 11–13 role lenses and inquiry; original Shantang interface caption identifies fan shops, lantern shops and restaurants. This walkthrough summarizes the original interface and study, not a new historical claim."
-            },
-            {
-              "researchFigure": {
-                "kind": "suzhou-runtime"
-              },
-              "alt": "Original runtime images with progressive HTML step explanations",
-              "sourceOrigin": "Suzhou paper Figure 3, page 13: three original native crops; explanations follow the original pipeline."
             }
           ],
           "highlights": [
@@ -2694,10 +2667,11 @@
         "14 October 2026: checked latest visible research portfolio nodes 1835:838 / 2114 / 4291 / 6862. Portfolio remains authority for counts and authorship where manuscript versions disagree. Original paper figures supplement visuals; no whole-page screenshots.",
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
         "14 October interactive revision: Figure 1 reported percentages rebuilt as HTML/CSS; Figure 3 original image excerpts with native HTML explanation; all 19 Figure 4 intervals and means recreated using exact native PDF coordinates. Coordinates are plotted evidence, not participant-level raw data. No new claim of objective learning or equivalence.",
-        "16 October 2026 comprehension revision: grounded Shantang Street walkthrough in original interface text; role lenses and cultural-record boundaries follow latest manuscript pp. 11–13. Baseline affordances, matched content and between-subjects rationale verified pp. 9–10, 13–14. Original runtime, context images, quiz and full ratings preserved in disclosures. No claim of learning efficacy or feature-level causal effect."
+        "16 October 2026 comprehension revision: grounded Shantang Street walkthrough in original interface text; role lenses and cultural-record boundaries follow latest manuscript pp. 11–13. Baseline affordances, matched content and between-subjects rationale verified pp. 9–10, 13–14. Original runtime, context images, quiz and full ratings preserved in disclosures. No claim of learning efficacy or feature-level causal effect.",
+        "18 October 2026 reading revision: scene and role steps aligned; explanatory disclosures for runtime and additional contextual story removed from the page at author request. Native scene and character images retained. Counts, conditions, results and contribution unchanged."
       ],
-      "contentRevision": "2026-10-16-outsider-comprehension-suzhou",
-      "outcome": "25 of 30 ScrollVerse participants reported a clearer understanding of everyday life in Qing-dynasty Suzhou.",
+      "contentRevision": "2026-10-18-reading-refinement-suzhou",
+      "outcome": "An interactive scroll that connects close-up details, social roles and cultural evidence, evaluated with 60 participants.",
       "tags": [
         "Cultural heritage",
         "Storytelling",
@@ -2763,19 +2737,18 @@
           "id": "research",
           "nav": "Abstract",
           "eyebrow": "Abstract",
-          "title": "Finding the word is only the start",
+          "title": "From finding poems to understanding their imagery",
           "body": [
-            "A search finds poems containing qing (青), but not why it means green mountains in one poem and black hair in another. Eight reader interviews exposed this gap: finding a word still leaves readers to assemble its meaning.",
-            "VerseColor links colors, imagery and emotions back to source poems. Readers can follow a proposed association, check its context and compare other uses. In our comparison, readers valued this interpretive support, although Souyun was easier to use."
+            "Color in Chinese poetry does more than describe a scene: it can connect objects, emotions and cultural associations. Keyword search locates a color word, but leaves readers to work out how its meaning changes across poems. Eight reader interviews showed the need to bring these connections and their textual evidence together.",
+            "VerseColor connects colors, imagery and emotions to source poems. Readers can compare uses across poets and dynasties, follow a proposed association, and check it against the surrounding lines. The aim is to support interpretation while keeping the poem available as evidence."
           ],
           "items": [],
           "figures": [],
           "highlights": [
+            "how its meaning changes across poems",
             "Eight reader interviews",
-            "assemble its meaning",
-            "back to source poems",
-            "check its context",
-            "Souyun was easier to use"
+            "connects colors, imagery and emotions",
+            "check it against the surrounding lines"
           ],
           "layout": "editorial"
         },
@@ -2822,49 +2795,17 @@
           "eyebrow": "Findings",
           "title": "Connections became easier to see",
           "body": [
-            "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery. Finding relevant poems was similar; Souyun was easier to use.",
-            "These are experience ratings, not learning gains. Next: simplify navigation and test longer-term reading with a wider range of readers."
+            "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery. Ratings for finding relevant poems were similar; Souyun was easier to use.",
+            "Readers reported how the tools supported interpretation during the session; the study did not measure lasting learning. Next, simplify navigation and follow a wider range of readers over longer periods."
           ],
           "items": [],
           "figures": [
             {
-              "src": "/assets/results-aeccb8f9.webp",
-              "width": 2272,
-              "height": 656,
-              "alt": "Figure 4 · Original questionnaire comparison chart and study photographs; axes and legend preserved.",
-              "caption": "Figure 4 · Original questionnaire comparison chart and study photographs; axes and legend preserved.",
-              "dataVisual": {
-                "id": "verse-effect-sizes",
-                "type": "bars",
-                "title": "Stronger support for making connections",
-                "description": "How strongly questionnaire ratings differed between the two tools",
-                "panels": [
-                  {
-                    "title": "Ratings favoring VerseColor",
-                    "unit": "Cohen’s d (standardized difference)",
-                    "min": 0,
-                    "max": 2.5,
-                    "rows": [
-                      {
-                        "label": "Connecting ideas",
-                        "value": 2.29,
-                        "display": "2.29",
-                        "series": "primary"
-                      },
-                      {
-                        "label": "Interpreting imagery",
-                        "value": 1.91,
-                        "display": "1.91",
-                        "series": "primary"
-                      }
-                    ],
-                    "note": ""
-                  }
-                ],
-                "scope": "Cohen’s d describes the size of a rating difference. It is not a percentage or a learning gain. Souyun was rated easier to use."
+              "researchFigure": {
+                "kind": "verse-results"
               },
-              "sourceOrigin": "Original project paper figure; retained native pixels and source composition.",
-              "displayWidth": 1050
+              "alt": "Native result cards: VerseColor received higher relational and imagery support ratings; retrieval precision ratings were descriptively similar and Souyun received higher usability ratings.",
+              "sourceOrigin": "Native HTML/CSS. Manuscript results paragraph reports relational-support Cohen’s d=2.29 and imagery-support d=1.91; retrieval precision descriptively similar and Souyun usability higher. No exact means or error values are available, so no scores or intervals are inferred from the image. Cognitive load/ease direction is omitted because source labels conflict."
             }
           ],
           "quote": {
@@ -2872,10 +2813,7 @@
             "attribution": "P13 · Post-task interview"
           },
           "highlights": [
-            "connecting ideas and interpreting imagery",
-            "Souyun was easier to use",
-            "not learning gains",
-            "simplify navigation"
+            "more helpful for connecting ideas and interpreting imagery"
           ],
           "layout": "editorial"
         }
@@ -2896,10 +2834,12 @@
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
         "Poem example follows current original portfolio frame 1835:6887: green highlighted in the poem, dashed connection, shared two-row context panel and the following two lines. Original vector symbols 1835:6904 and 1835:6911 retained.",
         "14 October interactive revision: original poem interaction retained; study sequence is responsive HTML/CSS with current portfolio counts. Souyun linked as the comparison platform, not as a VerseColor demo.",
-        "16 October 2026 comprehension revision: problem and feature sequence grounded in manuscript pp. 2, 5–8. Original Figure 3 interface excerpts preserve native pixels; the green-willow example remains explicitly illustrative and is not presented as a recorded query. Eight experts cross-checked structured associations against source poems (p. 7); no invented before/after correction case. Comparative design is between-subjects, one tool per person (p. 8 and verse_content.json); approved current portfolio N=30 retained despite inconsistent older draft counts. Cohen’s d remains in Findings; eight expert reviewers replace the unexplained hero effect size."
+        "16 October 2026 comprehension revision: problem and feature sequence grounded in manuscript pp. 2, 5–8. Original Figure 3 interface excerpts preserve native pixels; the green-willow example remains explicitly illustrative and is not presented as a recorded query. Eight experts cross-checked structured associations against source poems (p. 7); no invented before/after correction case. Comparative design is between-subjects, one tool per person (p. 8 and verse_content.json); approved current portfolio N=30 retained despite inconsistent older draft counts. Cohen’s d remains in Findings; eight expert reviewers replace the unexplained hero effect size.",
+        "18 October 2026 reading revision: broadened the problem framing using manuscript introduction; full original Figure 3 is always visible as the native-resolution lossless image. Preserved the illustrative poem interaction, 8 formative interviewees, 30 comparative participants, 8 separate expert reviewers and reported effect sizes. No new learning or causal claims.",
+        "18 October 2026 native-results correction: removed the paper Figure 4 raster chart. Replaced it with two reported effect-size cards and two source-supported qualitative comparisons, preserving the contextual interface images. No graph-derived mean estimates, uncertainty estimates or reconstructed significance tests."
       ],
-      "contentRevision": "2026-10-16-outsider-comprehension-verse",
-      "outcome": "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery; Souyun was easier to use.",
+      "contentRevision": "2026-10-18-native-results-verse",
+      "outcome": "An interactive poetry interface connecting color words, imagery and emotion, evaluated with 30 readers.",
       "tags": [
         "Chinese poetry",
         "Color",
@@ -2916,7 +2856,7 @@
       "subtitle": "A faster driver cannot create a hospital bed",
       "description": "A 3D newsgame for younger students about Adelaide’s ambulance-ramping crisis. Drive to emergencies and find a hospital bed: faster driving cannot solve a capacity shortage.",
       "kicker": "JOURNALISM GAME · DRIVING SIMULATION",
-      "meta": "Unity 3D · C# · WebGL · 2024",
+      "meta": "Unity 3D · C# · WebGL · Mar 2024–Mar 2025",
       "stats": [
         {
           "value": "3",
@@ -2973,9 +2913,13 @@
       "sections": [
         {
           "id": "abstract",
-          "eyebrow": "THE PROBLEM",
+          "eyebrow": "ABSTRACT",
           "title": "Rising demand. Scarce beds",
-          "body": "Ramping leaves ambulance crews waiting to hand patients over to hospital staff. Limited beds and rising demand become constraints players experience firsthand.",
+          "body": [
+            "Ambulance ramping leaves crews waiting to hand patients over. When beds are scarce and demand rises, faster driving cannot resolve the pressure.",
+            "We turned local reporting into a serious newsgame for younger students. Taking calls, choosing routes and checking capacity lets players feel the urgency—and consider the public issue behind each rescue.",
+            "Reported by InDaily, the game reached 2,000+ Adelaide players and informed a co-authored article in Australian Journalism Review."
+          ],
           "items": [
             {
               "title": "From local reporting",
@@ -2997,8 +2941,12 @@
             }
           ],
           "highlights": [
-            "waiting to hand patients over",
-            "Limited beds and rising demand"
+            "beds are scarce",
+            "faster driving cannot resolve the pressure",
+            "serious newsgame",
+            "feel the urgency",
+            "Reported by InDaily",
+            "2,000+ Adelaide players"
           ],
           "layout": "editorial"
         },
@@ -3026,10 +2974,7 @@
           "map": {
             "id": "city",
             "title": "Adelaide Map",
-            "body": [
-              "Real hospital names and approximate locations in Adelaide shape the game map.",
-              "Low-poly geometry keeps streets clear and rendering efficient."
-            ],
+            "body": "Familiar geography helps Adelaide players see their own city in the crisis. We kept the hospitals’ real names and relative locations, connecting each rescue to places residents recognize.",
             "figures": [
               {
                 "src": "/assets/games-other-followup/ambulance-original-sa-health-map-context-kept.png",
@@ -3047,6 +2992,26 @@
                 "alt": "Original game city plan",
                 "sourceNode": "1918:583"
               }
+            ],
+            "hospitalFigures": [
+              {
+                "src": "/assets/ambulance-hospitals/lyell-mcewin.png",
+                "width": 500,
+                "height": 638,
+                "alt": "Lyell McEwin Hospital in the game"
+              },
+              {
+                "src": "/assets/ambulance-hospitals/royal-adelaide.png",
+                "width": 420,
+                "height": 360,
+                "alt": "Royal Adelaide Hospital in the game"
+              },
+              {
+                "src": "/assets/ambulance-hospitals/flinders-medical.png",
+                "width": 350,
+                "height": 448,
+                "alt": "Flinders Medical Centre in the game"
+              }
             ]
           }
         },
@@ -3059,10 +3024,6 @@
             {
               "title": "One student’s response",
               "quote": "I feel frustrated when I want to save someone but there are no hospital beds. The game made me realise how serious ramping is."
-            },
-            {
-              "title": "What the evidence shows",
-              "body": "289 external beta tests informed development. Longer-term news comprehension remains to be evaluated."
             }
           ],
           "nav": "Reflection",
@@ -3080,10 +3041,10 @@
         {
           "id": "publication",
           "eyebrow": "AUDIENCE",
-          "title": "Bringing the story to Adelaide",
+          "title": "Adelaide players",
           "body": "The project reached more than 2,000 Adelaide players.",
           "items": [],
-          "nav": "Audience",
+          "nav": "Adelaide players",
           "figures": [],
           "highlights": [
             "more than 2,000 Adelaide players"
@@ -3101,7 +3062,7 @@
         "details": "I built the game, implemented all gameplay and system logic, and integrated the team’s 2D and 3D artwork."
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
-      "outcome": "More than 2,000 Adelaide players, project coverage in InDaily, and one co-authored journal article.",
+      "outcome": "A playable newsgame about ambulance ramping, bringing hospital capacity and time pressure to more than 2,000 Adelaide players.",
       "sourceNotes": [
         "Only source artwork; section 02 and 03 descriptions are HTML, no generated SVG.",
         "Figma original Games page 168:3792, source frame 1918:374; older original development photos 1577:7262/7263.",
@@ -3191,9 +3152,9 @@
           "eyebrow": "THE SHARED TABLE",
           "title": "A meal is never just a meal",
           "body": [
-            "Lufa is a luffa-person who has finished his first week of work without making a sale. He lives in a future shaped by low-level radiation, where people have become plant- and animal-like beings and good food is a luxury. His product, Deliciousness Insurance, protects flavor from farm to table.",
-            "Dinner invitations offer a way to meet potential clients, but each host brings expectations, favors and a different idea of a good life. The released work route follows Lufa into these business meals, moving between conversations and puzzles around a rotating table.",
-            "We drew on Chinese shared-table dining and the “Luffa Soup” meme to explore the pressure of being told what is “for your own good.” A meal can carry business, friendship and family obligations at once. We wanted the game to make players consider whose needs they accommodate while trying to make a living."
+            "Lufa is a luffa-person and rookie salesman who ends his first week without a sale. In a radiation-altered future, people resemble plants and animals, good food is a luxury, and his Deliciousness Insurance protects flavor from farm to table.",
+            "Business dinners offer potential clients—and hosts with conflicting expectations. The released work route alternates conversations with shared-table puzzles.",
+            "Drawing on Chinese dining culture and the “Luffa Soup” meme, we explore pressure disguised as “for your own good.” Balancing work, friendship and family asks whose needs you accommodate to make a living."
           ],
           "nav": "Abstract",
           "figures": [
@@ -3206,9 +3167,10 @@
             }
           ],
           "highlights": [
+            "rookie salesman",
             "Deliciousness Insurance",
             "released work route",
-            "Chinese shared-table dining",
+            "Chinese dining culture",
             "for your own good"
           ],
           "items": [],
@@ -3218,7 +3180,7 @@
           "id": "gameplay",
           "eyebrow": "READ. ROTATE. SERVE.",
           "title": "A shared table. Limited actions",
-          "body": "Every rotation moves everyone’s food: helping one guest may put a disliked dish in front of another. Spend limited action points to position the dishes, use item cards to intervene, then serve and watch the guests react. Meet their satisfaction targets and the goals for the whole table before the meal’s round limit.",
+          "body": "Every rotation changes everyone’s meal. Use limited action points and item cards to satisfy guests before the rounds run out.",
           "items": [],
           "nav": "Gameplay",
           "figures": [],
@@ -3253,8 +3215,7 @@
             }
           ],
           "designDecision": {
-            "title": "Why the table must change each turn",
-            "body": "Early random movement cards disrupted planning. Fixed action points made moves predictable. Requiring at least one action point before serving prevents repeating a favorable arrangement—players must keep considering everyone at the table."
+            "body": "Fixed action points replace unpredictable movement cards. Spending one before serving prevents repeating a favorable arrangement, so players must keep balancing everyone’s needs."
           }
         },
         {
@@ -3265,11 +3226,11 @@
           "items": [
             {
               "title": "Released · Work",
-              "body": "Business dinners introduce potential clients and shared-table puzzles. Conversations reveal what each guest expects; the meal asks you to juggle their different tastes."
+              "body": "Meet potential clients through conversations and table puzzles, balancing their tastes and expectations."
             },
             {
               "title": "Planned · Family",
-              "body": "A separate story branch explores Lufa’s relationships outside work. This route is not included in the playable build."
+              "body": "A separate, planned branch follows Lufa’s relationships outside work. It is not included in the playable build."
             }
           ],
           "nav": "Routes",
@@ -3310,11 +3271,11 @@
         },
         {
           "id": "characters",
-          "eyebrow": "CHARACTER DESIGN",
-          "title": "People we know. Guests from another world",
-          "body": "Teammates chose the animals and plants behind our cast. Expressions make each guest’s mood visible.",
+          "eyebrow": "CHARACTERS & FOOD",
+          "title": "Art direction",
+          "body": "Teammates chose the animals and plants behind our cast, then created expressions that make each guest’s changing mood visible.",
           "items": [],
-          "nav": "Characters",
+          "nav": "Art direction",
           "figures": [
             {
               "src": "/assets/games-revision/loofa/lufa.png",
@@ -3407,7 +3368,7 @@
           ],
           "highlights": [
             "animals and plants",
-            "Expressions"
+            "expressions"
           ],
           "figureLayout": "character-row",
           "layout": "editorial"
@@ -3416,7 +3377,7 @@
           "id": "production",
           "eyebrow": "ART & TEAM COORDINATION",
           "title": "One table. Many hands",
-          "body": "26 Chinese dishes, reimagined with alien ingredients.",
+          "body": "We reimagined 26 Chinese dishes with alien ingredients, using Chinese cooking methods to make an unfamiliar world feel recognizable at the table.",
           "items": [],
           "nav": "Production",
           "figures": [
@@ -3734,10 +3695,13 @@
             }
           ],
           "highlights": [
-            "26 Chinese dishes"
+            "26 Chinese dishes",
+            "alien ingredients",
+            "Chinese cooking methods"
           ],
           "figureLayout": "dish-grid",
-          "layout": "editorial"
+          "layout": "editorial",
+          "navParent": "characters"
         }
       ],
       "role": {
@@ -3750,7 +3714,7 @@
         "details": "I worked with teammates to assess which features were technically feasible, then built the game project."
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
-      "outcome": "The work route is playable; the family route remains planned.",
+      "outcome": "A playable work-route game about shared meals, conflicting tastes and limited actions; the family route remains planned.",
       "sourceNotes": [],
       "tags": [
         "Narrative game",
@@ -3761,8 +3725,7 @@
         "Lufa",
         "business dinners",
         "every guest wants something different"
-      ],
-      "playNote": "Starts in English on your first visit; Settings remembers your language choice. Best played on desktop."
+      ]
     },
     {
       "id": "hersound",
@@ -3770,7 +3733,7 @@
       "subtitle": "Who gets to tell her story?",
       "description": "Rebuild Waner and Taiping’s memories, watch their story disappear, then restore their agency. A narrative puzzle about who tells women’s history.",
       "kicker": "HISTORICAL NARRATIVE · PUZZLE GAME",
-      "meta": "",
+      "meta": "Beijing · Women’s hackathon · 1,000 participants",
       "stats": [
         {
           "value": "6",
@@ -3804,14 +3767,13 @@
         "cutout": "/cutouts/hersound.png"
       },
       "hero": {
-        "src": "/assets/1577-8964-source-crop-27b273f6.svg",
-        "width": 850,
-        "height": 1318,
-        "displayWidth": 370,
-        "alt": "Waner and Taiping in the game artwork",
-        "caption": "Reclaim their past. Imagine our future.",
-        "sourceNode": "1577:8964",
-        "sourceOrigin": "Original character art with the author’s Figma viewport"
+        "src": "/assets/her-1018/after2-palace-original.png",
+        "width": 419,
+        "height": 322,
+        "displayWidth": 620,
+        "alt": "Waner and Taiping on either side of the imperial palace",
+        "caption": "Two lives in one imperial court.",
+        "sourceOrigin": "Original game chapter-two palace and transparent character sprites, composed as native HTML image layers"
       },
       "sections": [
         {
@@ -3997,14 +3959,14 @@
           "nav": "Wish",
           "figures": [
             {
-              "src": "/assets/her-1915/waner-taiping-lakeside-original.png",
-              "width": 2016,
-              "height": 1344,
-              "alt": "Waner and Taiping look out across a lake toward a palace and bridge",
+              "src": "/assets/1577-8964-source-crop-27b273f6.svg",
+              "width": 850,
+              "height": 1318,
+              "displayWidth": 320,
+              "alt": "Original transparent artwork of Waner and Taiping together",
               "caption": "",
-              "sourceNode": "2005:597",
-              "sourceFile": "fxEaTzMakzZPfG2dzSPHOR",
-              "sourceOrigin": "Original image172 in Website · Editable case studies; original image bytes, displayed with a soft edge mask"
+              "sourceNode": "1577:8964",
+              "sourceOrigin": "Original character art with the author’s Figma viewport"
             }
           ],
           "highlights": [
@@ -4029,7 +3991,6 @@
         "Question illustration uses epilogue reader 40:1716, avoiding repeated static versions of the final-chapter before/after scenes.",
         "Comprehension revision: Tang identities and 2013 discovery verified against the existing CCTV/China News epitaph report, 2014-01-07. Chapter 3 scenes are identified as creative reconstruction; the eight disappearing scenes are an authored narrative device, not a historical archival count."
       ],
-      "outcome": "Audience Choice Award at Beijing’s 1,000-participant women’s hackathon.",
       "tags": [
         "Narrative puzzle",
         "Women’s history",
@@ -4163,9 +4124,9 @@
         {
           "id": "reflection",
           "eyebrow": "WHAT CAN WE DO DIFFERENTLY?",
-          "title": "How should we teach care for animals—and improve their protection?",
+          "title": "How can we teach care for animals—and better protect them?",
           "body": "",
-          "nav": "Reflection",
+          "nav": "Your turn",
           "figures": [],
           "highlights": [],
           "items": [],
@@ -4183,7 +4144,7 @@
         "details": "I independently researched the cases, created the portraits, and designed and built the interactive archive."
       },
       "revision": "2026-10-16 · Unified archive abstract, solo authorship and remembrance invitation",
-      "outcome": "An interactive memorial with 191 published events drawn from 286 researched records, spanning 1826–2026.",
+      "outcome": "An interactive memorial of 191 sourced events of direct human harm to animals, drawn from 286 researched records.",
       "sourceNotes": [
         "2026-10-16: Author confirmed solo project, 191 documented cases and full archive range 1826–2026. Selected timeline remains ten cases spanning 1826–2016. Archive categories are grounded in the existing case records. Portraits retain the project’s AI-assisted provenance disclosure.",
         "2026-10-16: User confirms reliable news + direct human harm as inclusion criteria; cases are distinct events, not merged reports; indirect-impact extinction cases excluded.",

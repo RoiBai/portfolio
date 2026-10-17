@@ -8,8 +8,18 @@ export function setupHerEditorial(root,project){
  const sections=Object.fromEntries(project.sections.map(s=>[s.id,s]));
  const awardStat=[...root.querySelectorAll('.case-hero .stats>div')].find(stat=>stat.querySelector('strong')?.textContent.trim()==='Audience Choice'&&stat.querySelector(':scope>span')?.textContent.trim()==='Award');
  awardStat?.classList.add('her-audience-award');
- const award=root.querySelector('.hero-outcome'),hero=root.querySelector('.case-hero');
- if(award&&hero){award.classList.add('her-award');hero.insertBefore(award,hero.querySelector('.stats'));}
+ root.querySelector('.hero-outcome')?.remove();
+ // The original post-chapter-two palace and transparent game portraits form one
+ // composition. These are native image layers, not a flattened screenshot.
+ const heroFigure=root.querySelector('.case-hero .hero-figure'),heroMedia=heroFigure?.querySelector('.figure-media');
+ if(heroFigure&&heroMedia){
+  heroFigure.classList.add('her-palace-hero');
+  heroMedia.innerHTML=`<div class="her-palace-composition" role="img" aria-label="Waner and Taiping stand on either side of the imperial palace"><img class="her-palace-building" src="${siteURL('/assets/her-1018/after2-palace-original.png')}" width="419" height="322" alt="" decoding="async"><img class="her-palace-waner" src="${siteURL('/assets/games-revision/her/game/shangguan-waner-close-side.png')}" width="273" height="354" alt="" decoding="async"><img class="her-palace-taiping" src="${siteURL('/assets/games-revision/her/game/princess-taiping-close-side.png')}" width="273" height="354" alt="" decoding="async"></div>`;
+ }
+ for(const id of ['assemble','restore']){
+  const section=root.querySelector('#'+id),body=section?.querySelector(':scope>.section-body');
+  if(body&&!body.textContent.trim()&&!body.querySelector('img,video,button,a'))body.remove();
+ }
  const abstract=root.querySelector('#abstract');
  if(abstract){
   abstract.className='case-section her-abstract';
@@ -88,10 +98,34 @@ export function setupHerEditorial(root,project){
   const instruction=assemble?.querySelector('.gx-play-guide>.gx-instruction');
   if(instruction){
    const second=event?.detail?.scenes?.[1]||['banquet','waner'];
-   instruction.textContent=current<0?'All three scenes are complete. Select a frame to clear it and try again.':current===2?'Choose Poetry, Waner and Taiping, then place each in the last frame.':second.includes('banquet')&&second.includes('waner')?'The first frame is complete. Choose Taiping and place her in the second frame.':'Rebuild the second frame with Banquet, Waner and Taiping.';
+   instruction.hidden=current<0;
+   instruction.textContent=current<0?'':current===2?'Choose Poetry, Waner and Taiping, then place each in the last frame.':second.includes('banquet')&&second.includes('waner')?'The first frame is complete. Choose Taiping and place her in the second frame.':'Rebuild the second frame with Banquet, Waner and Taiping.';
   }
  };
+ // Keep original React-owned letter nodes untouched. A sibling visual layer
+ // groups cloned animated letters by word, so a line can wrap only at spaces.
+ const captionObserver=host?new MutationObserver(()=>syncCaptionWords()):null;
+ const captionOptions={childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['class']};
+ const syncCaptionWords=()=>{
+  if(!host)return;
+  captionObserver?.disconnect();
+  for(const caption of host.querySelectorAll('.level-clue-slot')){
+   let visible=caption.querySelector(':scope>.her-caption-words');
+   if(!caption.classList.contains('is-completion-caption')){visible?.remove();continue;}
+   const letters=[...caption.querySelectorAll(':scope>.level-clue-particle')];
+   const signature=letters.map(letter=>letter.textContent).join('');
+   if(!signature||visible?.dataset.text===signature)continue;
+   visible?.remove();visible=document.createElement('span');visible.className='her-caption-words';visible.dataset.text=signature;visible.setAttribute('aria-hidden','true');
+   let word=null;
+   for(const letter of letters){
+    if(/^\s+$/.test(letter.textContent)){word=null;visible.append(document.createTextNode(' '));}
+    else{if(!word){word=document.createElement('span');word.className='her-caption-word';visible.append(word);}word.append(letter.cloneNode(true));}
+   }
+   caption.append(visible);
+  }
+  captionObserver?.observe(host,captionOptions);
+ };
  host?.addEventListener('portfolio:her-progress',updateGuide);
- updateGuide();
- return()=>{cancelAnimationFrame(measureFrame);host?.removeEventListener('portfolio:her-progress',updateGuide);};
+ updateGuide();syncCaptionWords();
+ return()=>{cancelAnimationFrame(measureFrame);captionObserver?.disconnect();host?.querySelectorAll('.her-caption-words').forEach(el=>el.remove());host?.removeEventListener('portfolio:her-progress',updateGuide);};
 }

@@ -136,3 +136,75 @@ body[data-project=hersound] .her-evidence-subtitle{font-size:clamp(24px,2vw,29px
 @layer case-typography {
  body[data-project=hersound] .case-study .hero-bottom>p{text-wrap:balance!important}
 }
+
+/* The outcome is intentionally omitted for this case; all three opening
+   milestones share one baseline and the same column width. */
+body[data-project=hersound] .case-study .case-hero .stats {
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  align-items:start!important;
+}
+body[data-project=hersound] .case-study .case-hero .stats > .stat-item {
+  display:grid!important;grid-template-rows:64px auto;
+  align-items:start;align-content:start;justify-items:center;text-align:center;
+  min-width:0;grid-column:auto!important;
+}
+body[data-project=hersound] .case-study .case-hero .stats > .stat-item > strong {
+  align-self:end;margin:0!important;
+}
+body[data-project=hersound] .case-study .case-hero .stats > .stat-item > span {
+  margin-top:10px!important;max-width:none;
+}
+body[data-project=hersound] .case-study .case-hero .stats > .her-audience-award > strong {
+  font-size:var(--case-heading)!important;line-height:1.15!important;
+  white-space:normal;text-wrap:balance;
+}
+body[data-project=hersound] .case-hero .her-palace-hero {
+  width:100%!important;max-width:620px!important;margin-inline:auto!important;
+}
+body[data-project=hersound] .her-palace-hero .figure-media {
+  width:100%;max-width:none;padding:0!important;
+}
+.her-palace-composition {position:relative;width:100%;aspect-ratio:1.75;isolation:isolate}
+body[data-project=hersound] .her-palace-composition img {
+  position:absolute;object-fit:contain;height:auto!important;max-height:none!important;max-width:none!important;
+}
+body[data-project=hersound] .her-palace-composition .her-palace-building {width:58%!important;left:21%;top:2%;z-index:0}
+body[data-project=hersound] .her-palace-composition .her-palace-waner {width:35%!important;left:0;bottom:0;z-index:1}
+body[data-project=hersound] .her-palace-composition .her-palace-taiping {width:35%!important;right:0;bottom:0;z-index:1;transform:scaleX(-1)}
+/* Empty completion strips no longer create a second, blank band below a game. */
+body[data-project=hersound] .case-study :is(#assemble,#restore) {padding-bottom:30px!important}
+body[data-project=hersound] :is(#assemble,#restore) .game-experience {margin-bottom:0!important}
+body[data-project=hersound] :is(#assemble,#restore) .gx-her-layout {border:0!important;padding-bottom:0!important}
+body[data-project=hersound] :is(#assemble,#restore) .gx-inline-status {display:none!important}
+body[data-project=hersound] #assemble .gx-play-guide > .gx-instruction[hidden] {display:none!important}
+body[data-project=hersound] .her-erase .gx-inline-status {margin-top:28px!important;padding-top:0}
+/* The farewell stays readable across the page. The exact original paired
+   character cutout is shown below it without a geometric or fading mask. */
+body[data-project=hersound] .case-study #wish.her-wish {display:block!important}
+body[data-project=hersound] .case-study #wish.her-wish > .section-heading {width:100%;max-width:none!important}
+body[data-project=hersound] #wish .her-farewell-context {width:100%;max-width:none!important;font-size:var(--case-copy)!important}
+body[data-project=hersound] #wish.her-wish .her-farewell-art {
+  position:relative;overflow:visible;aspect-ratio:auto;mask-image:none;-webkit-mask-image:none;
+  width:min(320px,80%);margin:26px auto 0;
+}
+body[data-project=hersound] #wish.her-wish .her-farewell-art img {
+  position:static;width:100%;height:auto!important;max-height:440px!important;object-fit:contain;
+}
+@media(max-width:760px){
+ body[data-project=hersound] .case-study .case-hero .stats {gap:15px!important}
+ body[data-project=hersound] .case-study .case-hero .stats > .stat-item {grid-template-rows:58px auto;padding-inline:0!important}
+ body[data-project=hersound] .case-study .case-hero .stats > .her-audience-award > strong {font-size:var(--case-subhead)!important;line-height:1.15!important}
+ body[data-project=hersound] .her-erase .gx-inline-status {margin-top:22px!important}
+ body[data-project=hersound] #wish.her-wish .her-farewell-art {width:min(250px,80%)}
+}
+
+@layer case-typography {
+ body[data-project=hersound] .case-study .case-hero .stats > .her-audience-award > strong {font-size:var(--case-heading)!important}
+ @media(max-width:760px){body[data-project=hersound] .case-study .case-hero .stats > .her-audience-award > strong {font-size:var(--case-subhead)!important}}
+}
+/* Preserve the original per-letter completion motion while allowing line
+   breaks only between words. React retains its original direct letter nodes. */
+body[data-project=hersound] #assemble .is-completion-caption > .level-clue-particle {display:none!important}
+body[data-project=hersound] #assemble .her-caption-words {display:inline;white-space:normal;word-break:normal;overflow-wrap:normal}
+body[data-project=hersound] #assemble .her-caption-word {display:inline-block;white-space:nowrap;word-break:keep-all;overflow-wrap:normal}
+body[data-project=hersound] #assemble .her-caption-word > .level-clue-particle {display:inline-block!important}

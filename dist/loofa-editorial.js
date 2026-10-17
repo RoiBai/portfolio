@@ -10,7 +10,7 @@ const notes=[
  ['Serve','Move once before serving. Click EAT and meet the guests’ targets before the round limit.']
 ];
 // Fixed endpoints refer to stable UI in the original 1280 × 720 recording.
-const targets=[{x:.735,y:.005,side:'top'},{x:.025,y:.33,side:'left'},{x:.95,y:.12,side:'right'},{x:.85,y:.52,side:'right'},{x:.49,y:.84,side:'bottom'},{x:.86,y:.82,side:'bottom'}];
+const targets=[{x:.68,y:.005,side:'top'},{x:.008,y:.33,side:'left'},{x:.995,y:.18,side:'right'},{x:.965,y:.48,side:'right'},{x:.505,y:.82,side:'bottom'},{x:.985,y:.82,side:'bottom'}];
 function gameplayNote(copy,i){const [title,body]=copy[i];let extra='';if(i===0)extra=`<div class="loofa-taste-key"><span><img src="${siteURL('/assets/games-other-followup/loofa-like-original-ui.png')}" alt="Original liked-food icon" width="80" height="67"><span>Liked<br><strong>Score +</strong></span></span><span><img src="${siteURL('/assets/games-other-followup/loofa-dislike-original-ui.png')}" alt="Original disliked-food icon" width="86" height="69"><span>Disliked<br><strong>Score −</strong></span></span></div>`;if(i===2)extra=`<div class="loofa-card-key"><img src="${siteURL('/assets/games-other-followup/loofa-use-item-cards-original-swap-plates-card.png')}" alt="Original Swap Plates item card" width="691" height="1139"><span><strong>Swap Plates</strong><br>Swap any two dishes.</span></div>`;if(i===4)extra=`<img class="loofa-hand-key" src="${siteURL('/assets/games-other-followup/loofa-hover-new-outstretched-hand-screenshot.png')}" alt="Original Lufa hand-hover state: click the outstretched hand to rotate the table" width="440" height="454">`;return `<article class="loofa-fixed-note loofa-fixed-note-${i}" data-loofa-fixed-note="${i}"><span class="loofa-fixed-number">${String(i+1).padStart(2,'0')}</span><div class="loofa-fixed-copy"><h3>${esc(title)}</h3><p>${esc(body)}</p></div>${extra}</article>`;}
 function setupVideoAnnotations(section,project){
  const recording=section.querySelector('.loofa-recording');if(!recording)return()=>{};const video=recording.querySelector('video');if(!video)return()=>{};
@@ -18,11 +18,37 @@ function setupVideoAnnotations(section,project){
  const gameplay=project.sections.find(s=>s.id==='gameplay'),data=gameplay?.videoSteps,copy=data?.length===6?data.map(s=>[s.title,s.body]):notes;
  if(gameplay?.body){const intro=document.createElement('p');intro.className='loofa-gameplay-intro';intro.textContent=gameplay.body;recording.before(intro);}
  const board=document.createElement('div');board.className='loofa-linked-board';board.innerHTML=gameplayNote(copy,0)+gameplayNote(copy,1)+`<div class="loofa-linked-film"><div class="loofa-fixed-film-stage"></div><div class="loofa-mobile-anchors" aria-hidden="true">${targets.map((_,i)=>`<span data-loofa-mobile-anchor="${i}">${String(i+1).padStart(2,'0')}</span>`).join('')}</div></div>`+`<div class="loofa-fixed-right">${gameplayNote(copy,2)+gameplayNote(copy,3)}</div><div class="loofa-fixed-bottom">${gameplayNote(copy,4)+gameplayNote(copy,5)}</div><div class="loofa-fixed-connectors" aria-hidden="true">${targets.map((_,i)=>`<div data-loofa-fixed-line="${i}"><i></i><i></i><i></i><b></b></div>`).join('')}</div>`;
- board.querySelector('.loofa-fixed-film-stage').append(video);recording.prepend(board);recording.classList.add('loofa-recording-fixed');const caption=recording.querySelector('figcaption');if(caption)caption.innerHTML='<span>Original gameplay · 2× speed</span><p><a href="#play">Play the game ↑</a></p>';
- const decision=gameplay?.designDecision;if(decision)section.insertAdjacentHTML('beforeend',`<details class="loofa-design-decision"><summary>${esc(decision.title)}</summary><p>${esc(decision.body)}</p></details>`);
+ board.querySelector('.loofa-fixed-film-stage').append(video);recording.prepend(board);recording.classList.add('loofa-recording-fixed');recording.querySelector('figcaption')?.remove();
+ const decision=gameplay?.designDecision;if(decision)section.insertAdjacentHTML('beforeend',`<p class="loofa-design-decision">${esc(decision.body)}</p>`);
  let frame=0,disposed=false;
  function segment(el,x1,y1,x2,y2){const dx=x2-x1,dy=y2-y1;el.style.cssText=`left:${x1}px;top:${y1}px;width:${Math.hypot(dx,dy)}px;transform:rotate(${Math.atan2(dy,dx)}rad)`;}
- function draw(){frame=0;if(disposed)return;const br=board.getBoundingClientRect(),vr=video.getBoundingClientRect(),small=innerWidth<=760;targets.forEach((target,i)=>{const source=board.querySelector(small?`[data-loofa-mobile-anchor="${i}"]`:`[data-loofa-fixed-note="${i}"]`),r=source.getBoundingClientRect();let x1,y1;const x2=vr.left-br.left+vr.width*target.x,y2=vr.top-br.top+vr.height*target.y;if(small){x1=r.left+r.width/2-br.left;y1=r.top+r.height/2-br.top;}else if(target.side==='left'){x1=r.right-br.left+8;y1=r.top+Math.min(90,r.height*.55)-br.top;}else if(target.side==='right'){x1=r.left-br.left-8;y1=r.top+Math.min(75,r.height*.45)-br.top;}else if(target.side==='top'){x1=r.left+r.width*.68-br.left;y1=r.bottom-br.top+5;}else{x1=r.left+r.width*.55-br.left;y1=r.top-br.top-5;}const line=board.querySelector(`[data-loofa-fixed-line="${i}"]`),parts=line.querySelectorAll('i');if(target.side==='left'||target.side==='right'){const edge=target.side==='left'?vr.left-br.left:vr.right-br.left,mid=(x1+edge)/2;segment(parts[0],x1,y1,mid,y1);segment(parts[1],mid,y1,mid,y2);segment(parts[2],mid,y2,x2,y2);}else{const edge=target.side==='top'?vr.top-br.top:vr.bottom-br.top,mid=(y1+edge)/2;segment(parts[0],x1,y1,x1,mid);segment(parts[1],x1,mid,x2,mid);segment(parts[2],x2,mid,x2,y2);}line.querySelector('b').style.cssText=`left:${x2}px;top:${y2}px`;});}
+ function draw(){
+  frame=0;if(disposed)return;
+  const br=board.getBoundingClientRect(),vr=video.getBoundingClientRect(),small=innerWidth<=760;
+  targets.forEach((target,i)=>{
+   const source=board.querySelector(small?`[data-loofa-mobile-anchor="${i}"]`:`[data-loofa-fixed-note="${i}"] h3`);
+   let r=source.getBoundingClientRect();
+   if(!small){const range=document.createRange();range.selectNodeContents(source);r=[...range.getClientRects()].at(-1)||r;}
+   const x2=vr.left-br.left+vr.width*target.x,y2=vr.top-br.top+vr.height*target.y;
+   let x1,y1;
+   if(small){x1=r.left+r.width/2-br.left;y1=r.top+r.height/2-br.top;}
+   else if(target.side==='left'){x1=r.right-br.left+8;y1=r.top+r.height/2-br.top;}
+   else if(target.side==='right'){x1=r.left-br.left+8;y1=r.bottom+5-br.top;}
+   else if(target.side==='top'){x1=r.right+10-br.left;y1=r.top+r.height/2-br.top;}
+   else{x1=r.left+r.width*.5-br.left;y1=r.top-br.top-7;}
+   const line=board.querySelector(`[data-loofa-fixed-line="${i}"]`),parts=line.querySelectorAll('i');
+   if(target.side==='left'||target.side==='right'){
+    const edge=target.side==='left'?vr.left-br.left:vr.right-br.left,mid=target.side==='right'&&!small?edge+14:(x1+edge)/2;
+    segment(parts[0],x1,y1,mid,y1);segment(parts[1],mid,y1,mid,y2);segment(parts[2],mid,y2,x2,y2);
+   }else if(target.side==='top'&&!small){
+    segment(parts[0],x1,y1,x2,y1);segment(parts[1],x2,y1,x2,y2);segment(parts[2],x2,y2,x2,y2);
+   }else{
+    const edge=target.side==='top'?vr.top-br.top:vr.bottom-br.top,mid=(y1+edge)/2;
+    segment(parts[0],x1,y1,x1,mid);segment(parts[1],x1,mid,x2,mid);segment(parts[2],x2,mid,x2,y2);
+   }
+   line.querySelector('b').style.cssText=`left:${x2}px;top:${y2}px`;
+  });
+ }
  function queue(){if(!frame&&!disposed)frame=requestAnimationFrame(draw);}const observer=new ResizeObserver(queue);observer.observe(board);observer.observe(video);const imgs=[...board.querySelectorAll('img')];imgs.forEach(img=>img.addEventListener('load',queue));addEventListener('resize',queue,{passive:true});document.fonts.ready.then(queue);queue();
  return()=>{disposed=true;observer.disconnect();cancelAnimationFrame(frame);removeEventListener('resize',queue);imgs.forEach(img=>img.removeEventListener('load',queue));};
 }
@@ -40,10 +66,15 @@ function setupRoutes(section,project){
 export function setupLoofaEditorial(root,project){
  if(project.id!=='loofasoup')return()=>{};
  const clean=[],title=root.querySelector('.project-title-row');
- const playGuide=root.querySelector('#play .play-guide');if(playGuide){const note=document.createElement('p');note.className='loofa-play-note';note.textContent=project.playNote||'The work route is ready to play. A desktop browser works best.';playGuide.replaceWith(note);}
+ root.querySelector('#play .loofa-play-note')?.remove();
  const reclining=document.createElement('img');reclining.className='loofa-title-character';reclining.src=siteURL('/assets/games-revision/loofa/lufa-reclining.png');reclining.alt='Lufa reclining beside the title';reclining.width=569;reclining.height=399;const heading=title?.querySelector('h1');if(heading){const lockup=document.createElement('div');lockup.className='loofa-name-lockup';heading.before(lockup);const ending=document.createElement('span');ending.className='loofa-title-ending';ending.append(document.createTextNode('Connection'),reclining);heading.replaceChildren(document.createTextNode('Taste of '),ending);lockup.append(heading);}
  const gameplay=root.querySelector('#gameplay');if(gameplay)clean.push(setupVideoAnnotations(gameplay,project));
  const routes=root.querySelector('#routes');if(routes)setupRoutes(routes,project);
+ const characters=root.querySelector('#characters'),production=root.querySelector('#production');
+ if(characters&&production){
+  characters.classList.add('loofa-art-direction');production.className='loofa-art-dishes';production.dataset.navParent='characters';
+  const productionHeading=production.querySelector('.section-heading'),subheading=document.createElement('h3');subheading.className='loofa-art-subheading';subheading.textContent='One table. Many hands';productionHeading?.replaceWith(subheading);characters.append(production);
+ }
  const joma=root.querySelector('[data-character=joma]');
  if(joma){const note=document.createElement('div');note.className='loofa-joma-personal';note.innerHTML=`<strong>That’s me!</strong><span><img src="${siteURL(art+'jojo-yoyo-original.png')}" width="166" height="95" alt="Jojo and Yoyo, the two dogs in the original portfolio"><span>Jojo + Yoyo</span></span>`;joma.append(note);}
  return()=>clean.forEach(fn=>fn());
