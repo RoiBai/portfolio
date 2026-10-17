@@ -55,7 +55,6 @@ body[data-project=loofasoup] .case-study > :is(#characters,#production) > .secti
   body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
   body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
   body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
-  body[data-project=loofasoup] .case-study > .case-section#abstract,
   body[data-project=hersound] .case-study > .case-section#assemble,
   body[data-project=ourworld] .case-study > .case-section#abstract
 ) {
@@ -68,7 +67,6 @@ body[data-project=loofasoup] .case-study > :is(#characters,#production) > .secti
   body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
   body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
   body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
-  body[data-project=loofasoup] .case-study > .case-section#abstract,
   body[data-project=hersound] .case-study > .case-section#assemble,
   body[data-project=ourworld] .case-study > .case-section#abstract
 ) > .section-heading {
@@ -80,7 +78,6 @@ body[data-project=loofasoup] .case-study > :is(#characters,#production) > .secti
   body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
   body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
   body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
-  body[data-project=loofasoup] .case-study > .case-section#abstract,
   body[data-project=hersound] .case-study > .case-section#assemble,
   body[data-project=ourworld] .case-study > .case-section#abstract
 ) > .section-body {
@@ -92,7 +89,6 @@ body[data-project=loofasoup] .case-study > :is(#characters,#production) > .secti
   body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
   body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
   body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
-  body[data-project=loofasoup] .case-study > .case-section#abstract,
   body[data-project=hersound] .case-study > .case-section#assemble,
   body[data-project=ourworld] .case-study > .case-section#abstract
 ) > .section-visuals {
@@ -105,7 +101,6 @@ body[data-project=loofasoup] .case-study > :is(#characters,#production) > .secti
   body[data-project=personamail] .case-study > .case-section:is(#research,#reflection),
   body[data-project=beyond-the-gaze] .case-study > .case-section:is(#evidence,#study),
   body[data-project=suzhou-scrollverse] .case-study > .case-section#needs,
-  body[data-project=loofasoup] .case-study > .case-section#abstract,
   body[data-project=hersound] .case-study > .case-section#assemble,
   body[data-project=ourworld] .case-study > .case-section#abstract
 ) > .section-experience {
@@ -134,9 +129,7 @@ body[data-project=personamail] .case-study > .case-section#research .research-so
 body[data-project=personamail] .case-study > .case-section#research .research-source-figure > figcaption {
   padding-top:18px!important;
 }
-body[data-project=loofasoup] .case-study > .case-section#abstract > .section-visuals {
-  max-width:600px!important;margin-inline:auto!important;
-}
+
 body[data-project=ourworld] .case-study > .case-section#abstract > .section-visuals {
   display:grid!important;
   max-width:500px!important;margin-inline:auto!important;
@@ -202,4 +195,19 @@ body[data-project=traditional-color] .case-study > #future > .section-body {
 }
 body[data-project=traditional-color] .case-study > #future > .section-visuals {
   grid-column:1/-1!important;grid-row:3!important;
+}
+
+/* The abstract pairs the shared table with the story it introduces. */
+body[data-project=loofasoup] .case-study > #abstract {
+ display:grid!important;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)!important;
+ gap:30px 52px!important;align-items:center!important;
+}
+body[data-project=loofasoup] .case-study > #abstract > .section-heading {grid-column:1/-1!important;grid-row:1!important}
+body[data-project=loofasoup] .case-study > #abstract > .section-visuals {grid-column:1!important;grid-row:2!important;align-self:center!important;width:100%;max-width:500px!important;margin:0 auto!important}
+body[data-project=loofasoup] .case-study > #abstract > .section-body {display:block!important;grid-column:2!important;grid-row:2!important;margin:0!important;padding:0!important;align-self:center!important}
+body[data-view=project] .case-study > .case-hero {border-bottom:1px solid color-mix(in srgb,var(--ink) 20%,transparent)!important;padding-bottom:36px}
+@media(max-width:800px){
+ body[data-project=loofasoup] .case-study > #abstract {grid-template-columns:minmax(0,1fr)!important;gap:24px!important}
+ body[data-project=loofasoup] .case-study > #abstract > .section-visuals {grid-column:1!important;grid-row:2!important;max-width:380px!important}
+ body[data-project=loofasoup] .case-study > #abstract > .section-body {grid-column:1!important;grid-row:3!important}
 }

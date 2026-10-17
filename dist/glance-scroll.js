@@ -11,14 +11,14 @@ const goals=[
 ];
 // The frames are consecutive original lesson assets, not a simulated gaze recording.
 const reentryFrames=[
- {src:'/assets/glance-clarity/reentry-follow-original.png',label:'Following',text:'Brief labels and <strong>parent–child links</strong> make the Distance Cost branch readable.',alt:'Original lesson frame: the Distance Cost branch and close-range point, with earlier topics retained above'},
- {src:'/assets/glance-clarity/reentry-away-original.png',label:'Looking away',text:'While the listener checks the path, <strong>the audio continues</strong> and a new distance point appears.',alt:'Next original lesson frame: the 2m and 5m point and increased arm fatigue appear on the same branch'},
- {src:'/assets/glance-clarity/final-interface-original.png',label:'Rejoining',text:'Bright green marks the <strong>current branch</strong>; yellow-green preserves the <strong>earlier context</strong>.',alt:'Original lesson frame: the current distance branch is bright green; earlier interface and advantage branches remain yellow-green'}
+ {src:'/assets/glance-clarity/reentry-follow-original.png',alt:'Original lesson frame: the Distance Cost branch and close-range point, with earlier topics retained above'},
+ {src:'/assets/glance-clarity/reentry-away-original.png',alt:'Next original lesson frame: the 2m and 5m point and increased arm fatigue appear on the same branch'},
+ {src:'/assets/glance-clarity/final-interface-original.png',alt:'Original lesson frame: the current distance branch is bright green; earlier interface and advantage branches remain yellow-green'}
 ];
-// Reveal a goal only when the matching feature enters the lesson sequence.
-// Brief labels and hierarchy are present first; new nodes unfold next;
-// the final frame adds the concrete illustration and the return to history.
-const goalRevealStage=[0,0,0,2,1,2];
+// Six explanatory steps use the unchanged lesson frames in chronological order.
+// The completed frame stays in place while its illustration, new nodes and
+// retained context are considered separately.
+const goalFrameForStep=[0,0,1,2,2,2];
 const pill=i=>`<span class="dg-pill">DG ${String(i+1).padStart(2,'0')}</span>`;
 const headphones=`<span class="headphone-symbol" aria-hidden="true">🎧︎</span>`;
 const wave=`<span class="podcast-wave" aria-hidden="true">${[14,28,42,24,50,34,20,42,30,16,38,24].map((h,i)=>`<i style="--h:${h}px;--d:${i*.08}s"></i>`).join('')}</span>`;
@@ -39,9 +39,10 @@ export function renderGlanceScroll(s,i){
   return `<section id="process" class="case-section glance-pilot-collection">${title(s,i)}<aside class="pilot-introduction"><p><strong>14 rounds of pilot studies</strong> and a <strong>designer workshop</strong> shaped the interface below.</p></aside>${s.rounds.map((r,n)=>`${n===1?workshop:''}<article id="pilot-round-${n+1}" class="glance-pilot pilot-round" aria-labelledby="pilot-round-title-${n+1}"><header class="pilot-round-heading">${stageMarker(n)}<div><h3 id="pilot-round-title-${n+1}"><span class="pilot-title-panel">${esc(r.nav)} <span class="pilot-count">${Number(r.pilotParticipants)} participants</span></span></h3><p>${esc(r.title)}</p></div></header><div class="pilot-gallery">${examples(r)}</div>${n<2?feedback(r):`<div class="pilot-observation"><span class="pilot-insight-label">Observation</span><p class="pilot-history-note">${esc(r.historyNote)}</p></div>`}<div class="pilot-reasoning"><div class="pilot-insight"><span class="pilot-insight-label">Insight</span><h3>${insights[n]}</h3><p>${emphasize(r.body[0],r.highlights||[])}</p></div><div class="pilot-goals">${goals.slice(n*2,n*2+2).map((g,j)=>`<article data-cascade>${pill(n*2+j)}<h3>${g[0]}</h3><p>${g[1]}</p></article>`).join('')}</div></div></article>`).join('')}</section>`;
  }
  if(s.id==='goals'){
- const item=j=>`<article class="goal-callout goal-${j+1}${goalRevealStage[j]===0?' is-visible':''}" data-goal="${j}" aria-hidden="${goalRevealStage[j]!==0}">${pill(j)}<div><h3>${goals[j][0]}</h3></div></article>`;
- return `<section id="goals" class="case-section glance-goals-chapter"><div class="goals-scroll-track" data-goals-scroll><div class="goals-sticky"><div class="goals-story-heading">${title(s,i)}<p class="chapter-deck">${esc(s.deck||'Insights from 14 pilot rounds, brought together in GlanceMap')}</p><div class="glance-sequence"><div class="glance-sequence-controls" aria-label="Illustrative glance sequence">${reentryFrames.map((f,j)=>`<button type="button" data-reentry-jump="${j}" ${j===0?'aria-current="step"':''}><span>0${j+1}</span> ${f.label}</button>`).join('')}</div><div class="glance-sequence-copy">${reentryFrames.map((f,j)=>`<p data-reentry-copy="${j}" ${j?'hidden':''}>${f.text}</p>`).join('')}<small>Illustrative glance sequence · original lesson frames</small></div></div></div><div class="goals-composition"><figure class="goal-interface"><img data-reentry-frame src="${reentryFrames[0].src}" width="2350" height="897" alt="${reentryFrames[0].alt}"></figure><div class="goal-leaders" aria-hidden="true">${goals.map(()=>'<span class="goal-leader"><i></i><i></i><i></i><b></b></span>').join('')}</div>${goals.map((_,j)=>item(j)).join('')}</div></div></div></section>`;
+ const item=j=>`<article class="goal-callout goal-${j+1}${j===0?' is-visible is-current':''}" data-goal="${j}" aria-hidden="${j!==0}"${j===0?' aria-current="step"':''}>${pill(j)}<div><h3>${goals[j][0]}</h3></div></article>`;
+ return `<section id="goals" class="case-section glance-goals-chapter"><div class="goals-scroll-track" data-goals-scroll><div class="goals-sticky"><div class="goals-story-heading">${title(s,i)}<p class="chapter-deck">${esc(s.deck||'Insights from 14 pilot rounds, brought together in GlanceMap')}</p></div><div class="goals-composition"><figure class="goal-interface"><img data-reentry-frame src="${reentryFrames[0].src}" width="2350" height="897" alt="${reentryFrames[0].alt}"></figure><svg class="goal-leaders" aria-hidden="true" focusable="false">${goals.map(()=>'<g class="goal-leader"><path/><circle r="2.5"/></g>').join('')}</svg>${goals.map((_,j)=>item(j)).join('')}</div></div></div></section>`;
  }
+
  return null;
 }
 export function setupGlanceScroll(root){
@@ -52,22 +53,34 @@ export function setupGlanceScroll(root){
  const progress=el=>{const r=el.getBoundingClientRect();const top=parseFloat(getComputedStyle(el.firstElementChild).top)||90;return clamp((top-r.top)/Math.max(1,r.height-el.firstElementChild.offsetHeight));};
  function point(t){const pts=[[.31,.27],[.41,.40],[.48,.51],[.62,.69],[.77,.90]];const seg=Math.min(3,Math.floor(t*4)),u=t*4-seg;return{x:pts[seg][0]+(pts[seg+1][0]-pts[seg][0])*u,y:pts[seg][1]+(pts[seg+1][1]-pts[seg][1])*u};}
  function lines(){if(!goal)return;const box=goal.querySelector('.goals-composition').getBoundingClientRect(),im=goal.querySelector('.goal-interface img').getBoundingClientRect(),leaders=goal.querySelector('.goal-leaders');
- // Each endpoint is checked against the original 2350 × 897 lesson frames.
- // Use one direct segment from the nearest edge of its text, rather than a
- // long perimeter route. The six labels occupy separate sides of the image.
- const anchors=[[.018,.47],[.205,.53],[.215,.31],[.92,.42],[.64,.75],[.60,.025]];
+ if(!box.width||!box.height)return;
+ leaders.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`);
+ // Endpoints sit beside the root phrase, root junction, familiar fork,
+ // concrete illustration, newly revealed node and retained upper branch.
+ const anchors=[[.019,.53],[.204,.535],[.215,.31],[.94,.42],[.60,.765],[.60,.025]];
  anchors.forEach(([ax,ay],i)=>{
   const label=goal.querySelector(`[data-goal="${i}"] h3`),r=label.getBoundingClientRect();
   const x=im.left-box.left+im.width*ax,y=im.top-box.top+im.height*ay;
   const left=r.left-box.left,right=r.right-box.left,top=r.top-box.top,bottom=r.bottom-box.top;
-  let ex,ey;
-  if(i===2||i===5){ex=Math.max(left,Math.min(right,x));ey=bottom+6;}
-  else if(i===1||i===4){ex=Math.max(left,Math.min(right,x));ey=top-6;}
-  else {ex=i===0?right+8:left-8;ey=Math.max(top,Math.min(bottom,y));}
+  let ex,ey,c1x,c1y,c2x,c2y;
+  if(i===2||i===5){
+   ex=Math.max(left+8,Math.min(right-8,x));ey=bottom+8;
+   const bend=Math.max(20,Math.abs(y-ey)*.42);
+   const bow=Math.abs(x-ex)<24?-24:0;
+   c1x=ex+bow;c1y=ey+bend;c2x=x+bow;c2y=y-20;
+  }else if(i===1||i===4){
+   ex=Math.max(left+8,Math.min(right-8,x));ey=top-8;
+   const bend=Math.max(20,Math.abs(y-ey)*.42);
+   const bow=Math.abs(x-ex)<24?24:0;
+   c1x=ex+bow;c1y=ey-bend;c2x=x+bow;c2y=y+20;
+  }else{
+   ex=i===0?right+8:left-8;ey=Math.max(top+4,Math.min(bottom-4,y));
+   const dx=x-ex;
+   c1x=ex+dx*.45;c1y=ey;c2x=x-dx*.2;c2y=y+(ey>y?10:-10);
+  }
   const line=leaders.children[i];
-  Object.assign(line.firstElementChild.style,{left:ex+'px',top:ey+'px',width:Math.hypot(x-ex,y-ey)+'px',rotate:Math.atan2(y-ey,x-ex)+'rad'});
-  [...line.querySelectorAll('i')].slice(1).forEach(n=>n.style.display='none');
-  Object.assign(line.lastElementChild.style,{left:x+'px',top:y+'px'});
+  line.querySelector('path').setAttribute('d',`M ${ex} ${ey} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${x} ${y}`);
+  line.querySelector('circle').setAttribute('cx',x);line.querySelector('circle').setAttribute('cy',y);
   line.dataset.targetX=String(ax);line.dataset.targetY=String(ay);
  });}
 
@@ -76,14 +89,17 @@ export function setupGlanceScroll(root){
  const approach=clamp((t-.30)/.10),departure=clamp((t-.50)/.25),ease=v=>v*v*(3-2*v);
  const listeningOpacity=plain?1:1-.7*ease(approach)*(1-ease(departure));
  walk.querySelector('.walk-listening').style.opacity=String(listeningOpacity);}
- if(goal){const t=progress(goal),plain=reduce.matches||getComputedStyle(goal.firstElementChild).position!=='sticky',stage=plain?Number(goal.dataset.manualReentry||0):Math.min(2,Math.floor(t*3));goal.dataset.goalsShown=String(goalRevealStage.filter(s=>s<=stage).length);goal.dataset.reentryStage=String(stage);
+ if(goal){const t=progress(goal),plain=reduce.matches||getComputedStyle(goal.firstElementChild).position!=='sticky',step=plain?5:Math.min(5,Math.floor(t*6)),stage=goalFrameForStep[step];
+ goal.dataset.goalsShown=String(step+1);goal.dataset.goalStep=String(step);goal.dataset.reentryStage=String(stage);goal.dataset.staticGoals=String(plain);
  const frame=goal.querySelector('[data-reentry-frame]');if(frame.dataset.frame!==String(stage)){frame.src=reentryFrames[stage].src;frame.alt=reentryFrames[stage].alt;frame.dataset.frame=String(stage);}
- goal.querySelectorAll('[data-reentry-copy]').forEach(n=>{n.hidden=Number(n.dataset.reentryCopy)!==stage;});goal.querySelectorAll('[data-reentry-jump]').forEach((n,i)=>{if(i===stage)n.setAttribute('aria-current','step');else n.removeAttribute('aria-current');});goal.querySelectorAll('[data-goal]').forEach(n=>{const i=Number(n.dataset.goal),visible=goalRevealStage[i]<=stage;n.classList.toggle('is-visible',visible);n.classList.toggle('is-current',goalRevealStage[i]===stage);n.setAttribute('aria-hidden',String(!visible));});goal.querySelectorAll('[data-goal-jump]').forEach((n,i)=>n.classList.toggle('is-visible',goalRevealStage[i]<=stage));goal.querySelectorAll('.goal-leader').forEach((n,i)=>n.classList.toggle('is-visible',goalRevealStage[i]<=stage));}
+ goal.querySelectorAll('[data-goal]').forEach(n=>{const i=Number(n.dataset.goal),visible=i<=step,current=!plain&&i===step;n.classList.toggle('is-visible',visible);n.classList.toggle('is-current',current);n.setAttribute('aria-hidden',String(!visible));if(current)n.setAttribute('aria-current','step');else n.removeAttribute('aria-current');});
+ goal.querySelectorAll('.goal-leader').forEach((n,i)=>{n.classList.toggle('is-visible',i<=step);n.classList.toggle('is-current',!plain&&i===step);});}
+
  }
  const cueObserver=walk?new IntersectionObserver(entries=>{walk.classList.toggle('walk-is-visible',entries[0].isIntersecting)},{threshold:.05}):null;
  if(cueObserver){cueObserver.observe(walk);cleanups.push(()=>cueObserver.disconnect());}
  const queue=()=>{if(!raf)raf=requestAnimationFrame(update)};
- const click=e=>{const reentry=e.target.closest('[data-reentry-jump]');if(reentry&&goal){const index=Number(reentry.dataset.reentryJump);if(reduce.matches||getComputedStyle(goal.firstElementChild).position!=='sticky'){goal.dataset.manualReentry=String(index);update();}else{const r=goal.getBoundingClientRect(),top=parseFloat(getComputedStyle(goal.firstElementChild).top)||90;window.scrollTo({top:scrollY+r.top-top+((index+.2)/3)*(r.height-goal.firstElementChild.offsetHeight),behavior:'smooth'});}return;}const button=e.target.closest('[data-walk-jump],[data-goal-jump]');if(!button)return;const isWalk=button.hasAttribute('data-walk-jump'),track=isWalk?walk:goal,index=Number(isWalk?button.dataset.walkJump:button.dataset.goalJump),r=track.getBoundingClientRect(),top=parseFloat(getComputedStyle(track.firstElementChild).top)||90,f=isWalk?(index+.35)/3:(index+.15)/6;window.scrollTo({top:scrollY+r.top-top+f*(r.height-track.firstElementChild.offsetHeight),behavior:reduce.matches?'instant':'smooth'});};
+ const click=e=>{const button=e.target.closest('[data-walk-jump]');if(!button||!walk)return;const index=Number(button.dataset.walkJump),r=walk.getBoundingClientRect(),top=parseFloat(getComputedStyle(walk.firstElementChild).top)||90;window.scrollTo({top:scrollY+r.top-top+((index+.35)/3)*(r.height-walk.firstElementChild.offsetHeight),behavior:reduce.matches?'instant':'smooth'});};
  root.addEventListener('click',click);window.addEventListener('scroll',queue,{passive:true});const resize=new ResizeObserver(()=>{lines();queue()});[walk,goal,...(goal?[goal.querySelector('.goals-composition'),goal.querySelector('.goal-interface img'),...goal.querySelectorAll('.goal-callout')]:[])].filter(Boolean).forEach(n=>resize.observe(n));window.addEventListener('resize',queue,{passive:true});reduce.addEventListener('change',queue);short.addEventListener('change',queue);lines();update();
  const observer=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('has-entered',e.isIntersecting)),{threshold:.15});root.querySelectorAll('.pilot-goals [data-cascade]').forEach(n=>observer.observe(n));
  return()=>{cancelAnimationFrame(raf);resize.disconnect();observer.disconnect();root.removeEventListener('click',click);window.removeEventListener('scroll',queue);window.removeEventListener('resize',queue);reduce.removeEventListener('change',queue);short.removeEventListener('change',queue);cleanups.forEach(f=>f())};

@@ -27,7 +27,7 @@ export function setupHerEditorial(root,project){
   abstract.replaceChildren(heading);
   const story=document.createElement('div');story.className='her-abstract-story';
   const s=sections.abstract;
-  story.innerHTML=`<div class="her-abstract-copy">${[].concat(s.body).map(p=>`<p>${emphasize(p,s.highlights)}</p>`).join('')}</div><div class="her-abstract-portraits">${s.figures.map(f=>`<figure>${image(f.src,f.alt,f.width,f.height)}<figcaption>${esc(f.caption)}</figcaption></figure>`).join('')}</div><blockquote class="her-audience-quote"><p>“${keepQuoteEnding(s.items[0].quote)}”</p><cite>Hackathon audience feedback</cite></blockquote>`;
+  story.innerHTML=`<div class="her-abstract-copy">${[].concat(s.body).map(p=>`<p>${emphasize(p,s.highlights)}</p>`).join('')}<blockquote class="her-audience-quote"><p>“${keepQuoteEnding(s.items[0].quote)}”</p><cite>Hackathon audience feedback</cite></blockquote></div><div class="her-abstract-portraits">${s.figures.map(f=>`<figure>${image(f.src,f.alt,f.width,f.height)}<figcaption>${esc(f.caption)}</figcaption></figure>`).join('')}</div>`;
   abstract.append(story);
  }
  const assembleSection=root.querySelector('#assemble');

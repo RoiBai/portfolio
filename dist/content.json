@@ -413,7 +413,7 @@
           "eyebrow": "FINAL DESIGN",
           "title": "Six goals, one final design",
           "body": [
-            "New ideas appear with the audio; earlier branches stay readable. Brief labels and familiar links show relationships, while illustrations ground concrete ideas."
+            "New ideas appear with the audio; earlier branches stay readable."
           ],
           "nav": "GlanceMap design",
           "figures": [
@@ -456,7 +456,8 @@
           "deck": "Fourteen pilot rounds led to one principle: reveal the current idea and retain its context",
           "sourceNotes": [
             "Glance sequence uses unchanged original Mindmap + illu (4), (5), and (7) lesson frames. The look-away scenario is illustrative, not a recorded gaze trace.",
-            "Active green and retained yellow-green branches: submission-ready manuscript §4.1–4.2, lines 521–547."
+            "Active green and retained yellow-green branches: submission-ready manuscript §4.1–4.2, lines 521–547.",
+            "18 October 2026 interaction refinement: six scroll steps reveal DG01 through DG06 individually. Original lesson frames stay unchanged and advance chronologically; local curved SVG leaders connect each goal to its corresponding feature. Previous goals remain neutral while the current one is highlighted."
           ]
         },
         {
@@ -690,7 +691,8 @@
       "highlights": [
         "audio lessons while walking"
       ],
-      "outcome": "A progressive, illustrated mind map for learning while walking, developed through 14 pilot rounds and evaluated with 16 participants."
+      "outcome": "A progressive, illustrated mind map for learning while walking, developed through 14 pilot rounds and evaluated with 16 participants.",
+      "contentRevision": "2026-10-18-sequential-design-goals"
     },
     {
       "id": "icon-colors",
@@ -780,8 +782,9 @@
           "eyebrow": "ABSTRACT",
           "title": "Clear, comfortable, meaningful icons",
           "body": [
-            "AR glasses could make directions and messages part of everyday life. But color guidance still borrows from phone screens or green-only displays, such as the MicroLED waveguides in Even G1. Full-color optical see-through glasses face a different challenge: real-world light changes the icon itself.",
-            "With 8 professional designers and 20 participants, we tested clarity, comfort and meaning across three studies. Refinements led to guidance for different levels of visual prominence."
+            "AR glasses could bring directions and messages into everyday life, but color guidance still borrows from phone screens or green-only displays. In full-color optical see-through glasses, real-world light changes how an icon appears: screen contrast alone cannot predict clarity or comfort.",
+            "We worked with 8 professional designers and tested 20 participants across three linked studies. We compared color pairs indoors and outdoors, added icon semantics, then tested refinements such as shadows, gradients and outlines.",
+            "The result is a set of color guidelines for AR UI designers, supported by systematic experiments. The guidelines connect clarity, comfort and semantics to different uses: noticeable alerts, recognizable controls and quieter persistent status."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -794,10 +797,12 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "real-world light changes the icon itself",
+            "screen contrast alone cannot predict clarity or comfort",
             "8 professional designers",
             "20 participants",
-            "clarity, comfort and meaning"
+            "three linked studies",
+            "color guidelines for AR UI designers",
+            "clarity, comfort and semantics"
           ],
           "figureLayout": null,
           "textLayout": "full-width",
@@ -1385,9 +1390,8 @@
       "description": "A website helping Chinese product designers choose traditional colors through their origins, cultural meanings and historical context.",
       "kicker": "CULTURAL HERITAGE · INFORMATION DESIGN",
       "meta": [
-        "ColoGene · Oct 2025–Jan 2026",
-        "Color Atlas · Apr 2026–present",
-        "ColoGene · CHI 2026 Poster accepted"
+        "ColoGene · CHI 2026 Poster accepted · Oct 2025–Jan 2026",
+        "Color Atlas · Apr 2026–present"
       ],
       "stats": [
         {
@@ -1450,7 +1454,9 @@
           "eyebrow": "ABSTRACT",
           "title": "From interviews to three versions",
           "body": [
-            "From browsing cultural records to composing a palette: each version responds to feedback from the previous study."
+            "Designers can find traditional color values online, but it is harder to judge their historical fit, trust the reference, or combine them into a complete palette.",
+            "We began with ColoGene, connecting color values with their names, origins, periods and meanings. Interviews and the pilot informed Color Atlas; later feedback points toward a future Color Agent.",
+            "The pilot showed a larger self-reported gain with ColoGene. Atlas designers valued new color directions, while asking for more alternatives, fuller sources, support for every object and room to refine suggestions."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -1490,20 +1496,20 @@
           "eyebrow": "DESIGNER RESEARCH",
           "title": "How designers choose a color",
           "body": [
-            "We interviewed 12 participants with design backgrounds for 30 to 45 minutes each about finding, comparing and explaining traditional colors. The website addresses three practical questions about these choices."
+            "We interviewed 12 participants with design backgrounds for 30 to 45 minutes each about finding, comparing and explaining traditional colors. These three questions carried through the later Atlas study."
           ],
           "items": [
             {
               "title": "Does the color fit the historical brief?",
-              "body": "A reference can look right while leaving its period, material and cultural meaning unclear. Designers need context to judge whether it belongs in the setting."
+              "body": "A convincing scene can still use a color from the wrong period. Designers need to check the period, material and cultural use—not only whether the color looks right."
             },
             {
               "title": "Which reference can I trust?",
-              "body": "Different sources can show different shades under the same traditional name. A color value needs its source beside it so designers can compare the references."
+              "body": "Online references can show different shades under the same traditional name. A value alone does not explain its cultural use; designers need the origin and source beside it."
             },
             {
-              "title": "How do the colors work together?",
-              "body": "Selecting one color is only a start. Designers need to compare a complete palette that works visually and fits the same historical or cultural setting."
+              "title": "How do I build a whole palette?",
+              "body": "A palette must balance the background, motifs and accents. Designers need to compare these relationships across the whole artwork while keeping the same cultural setting."
             }
           ],
           "quote": null,
@@ -1600,9 +1606,7 @@
           "eyebrow": "EARLY EVIDENCE",
           "title": "Early signals from a ten-designer pilot",
           "body": [
-            "Ten new designers completed three palette tasks in 15 minutes: five used ColoGene and five used their usual workflow. Everyone worked from the same templates.",
-            "The briefs covered a Jiangnan postcard, a Tang-culture product and a Tang-themed film storyboard. We compared task completion, palette explanations and before/after questionnaires.",
-            "Participants described clearer cultural explanations, but still wanted help applying palettes to their own design work."
+            "Ten new designers completed three Chinese-inspired art and cultural-product tasks using the same templates: five used ColoGene and five used their usual workflow. The time limit was 15 minutes."
           ],
           "items": [
             {
@@ -1650,12 +1654,12 @@
           "navParent": "colorgene",
           "nextIteration": [
             {
-              "title": "Make the sources easier to check",
-              "body": "Add museum and scholarly references for color names, materials and period associations, beside each color."
+              "title": "Fuller historical sources",
+              "body": "Add museum and scholarly references for color names, materials and periods beside each record."
             },
             {
-              "title": "Start from the designer’s scene",
-              "body": "Use the brief’s setting, cultural theme and intended object to suggest a complete palette, then let the designer refine it."
+              "title": "Palettes for the designer’s brief",
+              "body": "Use the intended scene, cultural setting and objects to suggest a complete palette that the designer can refine."
             }
           ]
         },
@@ -1855,7 +1859,6 @@
               "next": "Connect suggestions to their sources."
             }
           ],
-          "colorStudyNote": "Participant quotations translated from Chinese. Changes in the paired artworks show different directions, not a ranking of quality.",
           "sourceRefs": [
             "output/color-portfolio/condensed-interview-evidence.md",
             "output/color-portfolio/interview-evidence.md",
@@ -2328,7 +2331,7 @@
               "researchFigure": {
                 "kind": "gaze-evidence"
               },
-              "alt": "Original gaze heatmaps, eye paths and semantic region maps for all five paintings, displayed together",
+              "alt": "Original gaze heatmaps, eye paths and semantic region maps, arranged in three views for the selected painting",
               "sourceOrigin": "Paper Figure 3 for original traces; Hay Wain region map uses matching Figure 5 A1–A6 view. Figure 3 historical-scene panel has no verified artwork title, so is described generically."
             }
           ],
@@ -2543,17 +2546,19 @@
           "eyebrow": "Abstract",
           "title": "Make a long painting easier to follow",
           "body": [
-            "A close-up can reveal a figure yet lose the city around it. ScrollVerse helps viewers connect details in the eighteenth-century Prosperous Suzhou Scroll through gradual unfolding, social perspectives and visual clues.",
-            "191 survey responses and 30 interviews shaped the system. A 60-person comparison tested the complete experience against an annotation viewer using the same painting and cultural content."
+            "A long handscroll holds a city’s stories, but zooming into one figure can lose the streets around it. Static annotations explain isolated details without helping viewers connect them to the wider scene.",
+            "Guided by 191 survey responses and 30 interviews, we designed ScrollVerse for the eighteenth-century Prosperous Suzhou Scroll. Gradual unfolding keeps viewers oriented; social perspectives and visual clues connect people, places and cultural explanations.",
+            "In a 60-person comparison with an annotation viewer using the same painting and content, ScrollVerse received stronger usability and contextual-understanding ratings. The findings support an interactive way to explore a handscroll while keeping its details connected."
           ],
           "items": [],
           "figures": [],
           "highlights": [
-            "connect details",
-            "social perspectives",
+            "lose the streets around it",
             "191 survey responses",
             "30 interviews",
-            "same painting and cultural content"
+            "social perspectives and visual clues",
+            "60-person comparison",
+            "stronger usability and contextual-understanding ratings"
           ]
         },
         {
@@ -2739,16 +2744,18 @@
           "eyebrow": "Abstract",
           "title": "From finding poems to understanding their imagery",
           "body": [
-            "Color in Chinese poetry does more than describe a scene: it can connect objects, emotions and cultural associations. Keyword search locates a color word, but leaves readers to work out how its meaning changes across poems. Eight reader interviews showed the need to bring these connections and their textual evidence together.",
-            "VerseColor connects colors, imagery and emotions to source poems. Readers can compare uses across poets and dynasties, follow a proposed association, and check it against the surrounding lines. The aim is to support interpretation while keeping the poem available as evidence."
+            "Color in Chinese poetry connects objects, emotions and cultural associations. Keyword search can find a color word, but leaves readers to assemble how its meaning changes across poems. Eight reader interviews exposed this gap between finding poems and interpreting them.",
+            "We designed VerseColor to link colors, imagery and emotions back to source poems. Readers filter by color, poet or dynasty, explore an association, and check its surrounding lines. Eight expert reviewers checked the proposed links against the texts.",
+            "In a 30-person comparison with Souyun, readers rated VerseColor more helpful for connecting ideas and interpreting imagery. Relevant-poem retrieval was similar, while Souyun was easier to use—pointing to clearer navigation as the next design priority."
           ],
           "items": [],
           "figures": [],
           "highlights": [
             "how its meaning changes across poems",
             "Eight reader interviews",
-            "connects colors, imagery and emotions",
-            "check it against the surrounding lines"
+            "link colors, imagery and emotions back to source poems",
+            "Eight expert reviewers",
+            "more helpful for connecting ideas and interpreting imagery"
           ],
           "layout": "editorial"
         },
@@ -2795,8 +2802,7 @@
           "eyebrow": "Findings",
           "title": "Connections became easier to see",
           "body": [
-            "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery. Ratings for finding relevant poems were similar; Souyun was easier to use.",
-            "Readers reported how the tools supported interpretation during the session; the study did not measure lasting learning. Next, simplify navigation and follow a wider range of readers over longer periods."
+            "VerseColor helped readers connect ideas and interpret imagery; poem retrieval was similar, while Souyun was easier to use. Next, simplify navigation and test whether these reported benefits last beyond one session."
           ],
           "items": [],
           "figures": [
@@ -2804,8 +2810,8 @@
               "researchFigure": {
                 "kind": "verse-results"
               },
-              "alt": "Native result cards: VerseColor received higher relational and imagery support ratings; retrieval precision ratings were descriptively similar and Souyun received higher usability ratings.",
-              "sourceOrigin": "Native HTML/CSS. Manuscript results paragraph reports relational-support Cohen’s d=2.29 and imagery-support d=1.91; retrieval precision descriptively similar and Souyun usability higher. No exact means or error values are available, so no scores or intervals are inferred from the image. Cognitive load/ease direction is omitted because source labels conflict."
+              "alt": "Six native paired bar comparisons of source-figure mean ratings for VerseColor and Souyun, with reported effect sizes for relational and imagery support.",
+              "sourceOrigin": "Native HTML/CSS. Mean bars read from research_portfolio/assets/verse/results.png at original 2272×656 pixels, baseline y492 and six-unit line y114. Pixel-derived estimates rounded to 0.1; error bars omitted. No raw participant means are claimed. Cognitive Load omitted because the figure label conflicts with cognitive ease in the prose. Reported d=2.29 and d=1.91 retained from manuscript Results."
             }
           ],
           "quote": {
@@ -2813,7 +2819,7 @@
             "attribution": "P13 · Post-task interview"
           },
           "highlights": [
-            "more helpful for connecting ideas and interpreting imagery"
+            "connect ideas and interpret imagery"
           ],
           "layout": "editorial"
         }
@@ -3213,10 +3219,7 @@
               "title": "Serve",
               "body": "Use at least one action point, then click EAT."
             }
-          ],
-          "designDecision": {
-            "body": "Fixed action points replace unpredictable movement cards. Spending one before serving prevents repeating a favorable arrangement, so players must keep balancing everyone’s needs."
-          }
+          ]
         },
         {
           "id": "routes",
@@ -3799,22 +3802,13 @@
           "nav": "Abstract",
           "figures": [
             {
-              "src": "/assets/games-motion/her-waner-writing.png",
-              "width": 273,
-              "height": 354,
-              "displayWidth": 225,
-              "alt": "Young Waner writing in the original game artwork",
-              "caption": "Waner · Writing",
-              "sourceOrigin": "Original game source artwork, original transparent PNG bytes retained"
-            },
-            {
-              "src": "/assets/games-motion/her-taiping-reading.png",
-              "width": 273,
-              "height": 354,
-              "displayWidth": 225,
-              "alt": "Young Taiping reading in the original game artwork",
-              "caption": "Taiping · Reading",
-              "sourceOrigin": "Original game source artwork, original transparent PNG bytes retained"
+              "src": "/assets/her-1915/waner-taiping-lakeside-original.png",
+              "width": 2016,
+              "height": 1344,
+              "displayWidth": 520,
+              "alt": "Waner and Taiping together beside the lake in the original game artwork",
+              "caption": "Waner and Taiping · A shared journey",
+              "sourceOrigin": "Original game artwork, unchanged PNG"
             }
           ],
           "highlights": [
@@ -4046,11 +4040,11 @@
         "src": "/assets/games-revision/ourworld/chunee-exeter-exchange.png",
         "width": 1254,
         "height": 1254,
-        "alt": "Chunee, transparent archive portrait",
+        "alt": "Five original archive portraits: Chunee, Laika, Freya, the great auks and Juma",
         "caption": "Lives from the archive",
         "displayWidth": 620,
         "sourceNode": "1598:330",
-        "sourceOrigin": "Author’s local source repository: public/animals/chunee-exeter-exchange.png"
+        "sourceOrigin": "Five original transparent portraits from the author’s game repository, composed as native HTML image layers"
       },
       "sections": [
         {

@@ -24,7 +24,7 @@ function gazeOverview(){
   ['gaze-1-scanpath.webp','Eye path','The order of eye movements'],
   ['gaze-1-regions.webp','Region map','Meaningful areas for comparison']
  ];
- return `<figure class="project-figure rf-figure rf-gaze-overview" data-research-figure="gaze-artwork"><div class="rf-gaze-overview-grid">${views.map(([file,label,detail],i)=>`<figure><img src="${siteURL(ASSET+file)}" alt="Paris Street, Rainy Day — ${detail.toLowerCase()}" loading="eager" decoding="async"${i===0?' fetchpriority="high"':''}><figcaption><strong>${label}</strong><span>${detail}</span></figcaption></figure>`).join('')}</div><figcaption class="rf-gaze-overview-note"><em>Paris Street, Rainy Day</em> · One of 24 study paintings</figcaption></figure>`;
+ return `<figure class="project-figure rf-figure rf-gaze-overview" data-research-figure="gaze-artwork"><div class="rf-gaze-overview-grid" role="group" aria-label="Four aligned views of the same painting">${views.map(([file,label,detail],i)=>`<figure><img src="${siteURL(ASSET+file)}" alt="Paris Street, Rainy Day — ${detail.toLowerCase()}" loading="eager" decoding="async"${i===0?' fetchpriority="high"':''}><figcaption><strong>${label}</strong></figcaption></figure>`).join('')}</div><figcaption class="rf-gaze-overview-note"><em>Paris Street, Rainy Day</em> · One of 24 study paintings</figcaption></figure>`;
 }
 function setupGazeHierarchy(root){
  if(document.body.dataset.project!=='beyond-the-gaze')return;
@@ -50,11 +50,11 @@ function evidencePanel(selected=0){
   const haywain=Number(selected)===4&&key==='regions';
   const file=haywain?'gaze-haywain-a3.webp':`gaze-${Number(selected)+1}-${key}.webp`;
   const detail=key==='heatmap'?'Where looking accumulated':key==='scanpath'?'The order of eye movements':haywain?'Six semantic regions · A3 highlighted':'Semantic region labels';
-  return `<div class="rf-evidence-item">${picture(file,`${paintings[selected]}: ${key}${haywain?' from Figure 5':''}`)}<h4>${esc(label)}</h4><p>${detail}</p></div>`;
+  return `<div class="rf-evidence-item">${picture(file,`${paintings[selected]}: ${key}${haywain?' from Figure 5':''}`).replace('loading="lazy"','loading="eager"')}<h4>${esc(label)}</h4><p>${detail}</p></div>`;
  }).join('')}</div>`;
 }
-function gazeArchive(){
- return `<section class="project-figure rf-gaze-archive" data-research-figure="gaze-evidence" aria-label="Original eye-tracking views"><h3>Original eye-tracking views</h3><div class="rf-gaze-paintings">${paintings.map((name,i)=>`<article class="rf-gaze-painting"><h4>${esc(name)}</h4>${evidencePanel(i)}</article>`).join('')}</div></section>`;
+function gazeArchive(id){
+ return `<section class="project-figure rf-gaze-archive rf-gaze-evidence" data-research-figure="gaze-evidence" data-rf-id="${id}" data-rf-selected="0" aria-label="Original eye-tracking views"><h3>Original eye-tracking views</h3>${tabs(id,paintings.map((name,i)=>[i,name]),0).replace('Choose a view','Choose a painting')}<p class="rf-gaze-gallery-hint">Swipe to compare the three views →</p><div class="rf-panel" id="${id}-panel" role="tabpanel" aria-labelledby="${id}-0" tabindex="0">${evidencePanel(0)}</div></section>`;
 }
 function gazeRecord(){
  const codes=[
@@ -108,14 +108,14 @@ function suzhouWalkthrough(){
   ['merchant','Merchant','Shops, transport and trade'],
   ['scholar','Scholar','Gardens and the city’s cultural life']
  ];
- return `<figure class="project-figure rf-figure rf-suzhou-walkthrough" data-research-figure="suzhou-experience"><div class="rf-suzhou-place"><section class="rf-suzhou-locate"><div class="rf-suzhou-step"><span class="eyebrow">01 · Locate</span><h4>Arrive at Shantang Street</h4><p>Scroll along the city. The location marker keeps this riverfront street connected to the whole painting.</p></div>${media('suzhou-original-scroll-view.webp','Original Shantang Street interface with the scene name and position marker',1897,823)}</section><section class="rf-suzhou-lenses" data-no-detail><div class="rf-suzhou-step"><span class="eyebrow">02 · Choose a perspective</span><h4>One riverfront, three readings</h4></div><div class="rf-suzhou-role-list">${roles.map(([file,name,body])=>`<div class="rf-suzhou-lens">${photo('suzhou-role-'+file+'-native.webp',name+' character',228,229)}<div><strong>${name}</strong><p>${body}</p></div></div>`).join('')}</div><small>Interpretive lenses from the study; the original painting remains the evidence.</small></section></div><div class="rf-suzhou-clue"><div class="rf-suzhou-step"><span class="eyebrow">03 · Return to the evidence</span><h4>Find the figure, then read the street</h4><p>Match the pictured person to the scroll. Look at the surrounding shops, then connect them to the scene’s explanation.</p></div>${media('suzhou-original-cultural-clue.webp','A street figure located within the Shantang Street painting using the original trace-seeking interface',1896,826)}<aside class="rf-suzhou-context"><span class="eyebrow">What the scene record adds</span><h4>Shopfronts become a commercial street</h4><p>The Shantang Street record names <strong>fan shops, lantern shops and restaurants</strong>. The merchant lens connects these pictured details to the city’s trade and services.</p></aside></div></figure>`;
+ return `<figure class="project-figure rf-figure rf-suzhou-walkthrough" data-research-figure="suzhou-experience"><div class="rf-suzhou-place"><section class="rf-suzhou-locate"><div class="rf-suzhou-step"><span class="eyebrow">01 · Locate</span><h4>Arrive at Shantang Street</h4><p>Scroll along the city. The location marker keeps this riverfront street connected to the whole painting.</p></div>${media('suzhou-original-scroll-view.webp','Original Shantang Street interface with the scene name and position marker',1897,823)}</section><section class="rf-suzhou-lenses" data-no-detail><div class="rf-suzhou-step"><span class="eyebrow">02 · Choose a perspective</span><h4>One riverfront, three readings</h4></div><div class="rf-suzhou-role-list">${roles.map(([file,name,body])=>`<div class="rf-suzhou-lens">${photo('suzhou-role-'+file+'-native.webp',name+' character',228,229)}<div><strong>${name}</strong><p>${body}</p></div></div>`).join('')}</div></section></div><div class="rf-suzhou-clue"><div class="rf-suzhou-step"><span class="eyebrow">03 · Return to the evidence</span><h4>Find the figure, then read the street</h4><p>Match the pictured person to the scroll. Look at the surrounding shops, then connect them to the scene’s explanation.</p></div>${media('suzhou-original-cultural-clue.webp','A street figure located within the Shantang Street painting using the original trace-seeking interface',1896,826)}<aside class="rf-suzhou-context"><span class="eyebrow">What the scene record adds</span><h4>Shopfronts become a commercial street</h4><p>The Shantang Street record names <strong>fan shops, lantern shops and restaurants</strong>. The merchant lens connects these pictured details to the city’s trade and services.</p></aside></div></figure>`;
 }
 export function renderResearchFigure(spec={}){
  const id=`research-figure-${++sequence}`;
  switch(spec.kind){
  case 'persona-opening': return personaOpening(spec.image);
  case 'gaze-artwork': return gazeOverview();
- case 'gaze-evidence': return gazeArchive();
+ case 'gaze-evidence': return gazeArchive(id);
  case 'gaze-procedure': return `<figure class="project-figure rf-figure rf-method-source" data-research-figure="${spec.kind}"><p class="rf-method-context">Nine-point calibration → 24 self-paced painting trials</p><ol class="rf-method-source-steps">${[
  ['Look','View freely; click when an initial interpretation forms.'],
  ['Recall','With the screen blank, identify the regions that helped your understanding.'],
@@ -133,7 +133,19 @@ export function renderResearchFigure(spec={}){
  case 'suzhou-experience': return suzhouWalkthrough();
  case 'suzhou-study': return compactSuzhouStudy(spec.kind);
  case 'suzhou-runtime': return `<details class="rf-suzhou-runtime-details"><summary>How the website keeps place and content together</summary><figure class="project-figure rf-figure rf-runtime" data-research-figure="${spec.kind}"><ol class="rf-runtime-flow"><li><span>01</span><h4>Load nearby tiles</h4>${picture('suzhou-tiles.webp','Visible and prefetched scroll tiles from the original pipeline figure')}<p>Buffer the next area as the viewer moves.</p></li><li><span>02</span><h4>Match scene and role</h4>${picture('suzhou-scene.webp','An indexed scene in the scroll')}<p>Retrieve the scene’s story for the selected perspective.</p></li><li><span>03</span><h4>Keep the view aligned</h4>${picture('suzhou-renderer.webp','The actual composite renderer interface')}<p>Synchronize painting, hotspots, progress and media.</p></li></ol></figure></details>`;
- case 'verse-results': return `<figure class="project-figure rf-figure rf-verse-results" data-research-figure="${spec.kind}"><div class="rf-verse-effect-cards"><section><span class="rf-verse-result-label">Relational support</span><h4>Connecting ideas</h4><div class="rf-verse-effect-value"><strong>2.29</strong><span>Cohen’s d</span></div><p>Higher ratings with VerseColor</p></section><section><span class="rf-verse-result-label">Imagery support</span><h4>Interpreting imagery</h4><div class="rf-verse-effect-value"><strong>1.91</strong><span>Cohen’s d</span></div><p>Higher ratings with VerseColor</p></section></div><figcaption>Cohen’s d expresses the size of the reported rating difference between the tools.</figcaption><div class="rf-verse-other-ratings"><section><h4>Finding relevant poems</h4><p>Ratings were descriptively similar.</p></section><section><h4>Ease of use</h4><p>Souyun received higher usability ratings.</p></section></div></figure>`;
+ case 'verse-results': {
+  // Mean-bar heights read from the source plot, excluding error bars.
+  // These are displayed to 0.1, not presented as raw study data.
+  const measures=[
+   ['Connecting ideas',3.0,4.7,'d = 2.29'],
+   ['Interpreting imagery',3.2,4.7,'d = 1.91'],
+   ['Completing the task',3.8,4.3,''],
+   ['Comparing poems',3.8,4.2,''],
+   ['Finding relevant poems',4.2,4.2,''],
+   ['Ease of use',4.7,4.2,'']
+  ];
+  return `<figure class="project-figure rf-figure rf-verse-results" data-research-figure="${spec.kind}"><div class="rf-verse-chart-heading"><h3>Experience ratings</h3><div class="rf-verse-chart-legend"><span><i class="verse-key"></i>VerseColor</span><span><i class="souyun-key"></i>Souyun</span></div></div><div class="rf-verse-chart-axis" aria-hidden="true"><span></span><div>${[0,1,2,3,4,5,6].map(n=>`<span>${n}</span>`).join('')}</div></div><div class="rf-verse-rating-rows">${measures.map(([label,souyun,verse,effect])=>`<div class="rf-verse-rating-row"><div class="rf-verse-rating-label"><strong>${label}</strong>${effect?`<small>${effect}</small>`:''}</div><div class="rf-verse-bars"><div class="rf-verse-rating-bar verse-bar" aria-label="VerseColor estimated mean ${verse.toFixed(1)}"><span style="--rating-width:${verse/6*100}%"></span><b style="--rating-width:${verse/6*100}%">${verse.toFixed(1)}</b></div><div class="rf-verse-rating-bar souyun-bar" aria-label="Souyun estimated mean ${souyun.toFixed(1)}"><span style="--rating-width:${souyun/6*100}%"></span><b style="--rating-width:${souyun/6*100}%">${souyun.toFixed(1)}</b></div></div></div>`).join('')}</div><figcaption>Mean ratings read from the source figure, rounded to 0.1; error bars omitted. Reported effect sizes appear beside the two strongest differences.</figcaption></figure>`;
+ }
  case 'verse-procedure': return `<figure class="project-figure rf-figure rf-verse-procedure" data-research-figure="${spec.kind}"><div class="rf-verse-phases"><section class="rf-verse-formative"><span class="rf-phase-label">Formative study</span><strong class="rf-phase-count">8 readers</strong><div><h4>Reader interviews</h4><p>Identify interpretive needs and shape the research questions.</p></div></section><section class="rf-verse-comparison"><span class="rf-phase-label">Comparative evaluation · 30 participants</span><ol><li><span>01</span><h4>Before reading</h4><p>Background and pre-test questionnaire</p></li><li><span>02</span><h4>Interpret color imagery</h4><div class="rf-tool-branches"><span>VerseColor</span><span>Souyun</span></div><p>Same tasks · 15 minutes</p></li><li><span>03</span><h4>Rate the experience</h4><p>Usability questionnaire</p></li><li><span>04</span><h4>Explain the experience</h4><p>Follow-up interview</p></li></ol></section></div></figure>`;
  default: return '';
  }
@@ -153,7 +165,7 @@ export function setupResearchFigures(root=document){
   el.dataset.rfSelected=value;const select=el.querySelector('[data-rf-select]');if(select)select.value=String(value);
   el.querySelectorAll('[data-rf-tab]').forEach(b=>{const active=b.dataset.rfTab===String(value);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});
   panel.setAttribute('aria-labelledby',`${el.dataset.rfId}-${value}`);
-  if(kind==='gaze-evidence')panel.innerHTML=evidencePanel(Number(value));
+  if(kind==='gaze-evidence'){panel.innerHTML=evidencePanel(Number(value));panel.scrollLeft=0;}
   if(kind==='suzhou-survey')panel.innerHTML=surveyPanel(value);
   if(kind==='suzhou-ratings')panel.innerHTML=ratingsPanel(value);
   if(el.classList.contains('rf-visible'))animateNumbers(el);

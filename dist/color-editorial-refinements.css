@@ -42,3 +42,81 @@ body[data-project="traditional-color"] #atlas-brief .color-atlas-copy>ul {list-s
  body[data-project="traditional-color"] .color-artwork-row-subtitle {font-size:14px;padding:7px 10px}
  body[data-project="traditional-color"] #atlas-brief .color-atlas-copy>ul {font-size:18px!important}
 }
+
+/* October 18: a connected reading sequence, with evidence kept in the page. */
+body[data-project="traditional-color"] .case-study .stats-grouped {gap:30px}
+body[data-project="traditional-color"] .stats-grouped .stat-group,
+body[data-project="traditional-color"] .stats-grouped .stat-group:last-child {
+  --study-color:#3f6578;background:none;border-radius:0;border-top:2px solid var(--study-color);padding:12px 0 0;
+}
+body[data-project="traditional-color"] .stats-grouped .stat-group:last-child {--study-color:#93643a}
+body[data-project="traditional-color"] .stats-grouped h3,
+body[data-project="traditional-color"] .stat-group .stat-item>strong {color:var(--study-color)}
+body[data-project="traditional-color"] .color-abstract-overview>.section-body>p {margin-bottom:15px}
+body[data-project="traditional-color"] .color-abstract-overview .color-version-overview {margin:25px 0 23px;gap:30px}
+body[data-project="traditional-color"] .color-abstract-finding {max-width:none!important;margin:0!important}
+body[data-project="traditional-color"] .color-research-questions {display:grid;gap:30px;margin-top:26px}
+body[data-project="traditional-color"] .color-research-question {display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr);gap:45px;align-items:center}
+body[data-project="traditional-color"] .color-research-question>div {min-width:0}
+body[data-project="traditional-color"] .color-question-number {display:block;color:#956e40;font-size:var(--case-label);font-weight:600;margin:0 0 9px}
+body[data-project="traditional-color"] .color-research-question h3 {color:#3f6578;margin:0 0 12px!important}
+body[data-project="traditional-color"] .color-research-question p {margin:0!important;max-width:none!important}
+body[data-project="traditional-color"] .color-research-question figure {margin:0;width:100%;justify-self:center;max-width:390px}
+body[data-project="traditional-color"] .color-research-question img {display:block;max-width:100%;width:100%;height:215px;object-fit:contain}
+body[data-project="traditional-color"] .color-research-question figcaption {margin-top:10px;text-align:center;color:#4c5756}
+.color-reference-swatches {display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.color-reference-swatches>div {min-width:0}
+.color-reference-swatches i {display:block;height:95px;margin-bottom:10px}
+.color-reference-swatches strong {display:block;font-size:var(--case-caption);line-height:1.4}
+body[data-project="traditional-color"] .color-pilot-compact .dv-header:empty {display:none}
+body[data-project="traditional-color"] .color-pilot-compact .dv-heading:empty {display:none}
+body[data-project="traditional-color"] .color-pilot-panel-meaning {font-size:var(--case-caption)!important;line-height:1.45!important;margin:15px 0 0!important;max-width:none!important}
+body[data-project="traditional-color"] .color-pilot-results-copy {gap:20px}
+body[data-project="traditional-color"] .color-pilot-compact .dv-panels {margin-top:0}
+body[data-project="traditional-color"] .color-pilot-next {display:block;margin-top:28px}
+body[data-project="traditional-color"] .color-pilot-next>h3 {margin:0 0 18px!important}
+body[data-project="traditional-color"] .color-pilot-next>ul {gap:24px;list-style:none;padding:0;margin:0}
+body[data-project="traditional-color"] .color-pilot-next li {padding:0;border:0}
+body[data-project="traditional-color"] .color-pilot-next h4 {margin:0 0 8px!important;color:#3f6578}
+body[data-project="traditional-color"] .color-pilot-next p {font-size:var(--case-note)!important;line-height:1.45!important}
+body[data-project="traditional-color"] .color-study-artworks>h3 {margin-bottom:15px!important}
+body[data-project="traditional-color"] .color-artwork-row {padding:8px 0 12px;gap:11px 22px}
+body[data-project="traditional-color"] .color-artwork-row-with {background:none;margin-top:13px;border-radius:0}
+body[data-project="traditional-color"] .color-artwork-row-label {justify-content:flex-start;gap:16px}
+body[data-project="traditional-color"] .color-artwork-row-subtitle,
+body[data-project="traditional-color"] .color-artwork-row-with .color-artwork-row-subtitle {padding:0;background:none;color:#4c5756;border-radius:0}
+body[data-project="traditional-color"] .color-artwork-row .color-atlas-figure img {height:155px;max-height:155px}
+body[data-project="traditional-color"] .color-artwork-row .color-atlas-figure figcaption {margin-top:8px}
+body[data-project="traditional-color"] .color-study-feedback {margin-top:26px}
+body[data-project="traditional-color"] .color-study-feedback>h3 {margin-bottom:18px!important}
+body[data-project="traditional-color"] .color-study-feedback>div {gap:22px 30px}
+body[data-project="traditional-color"] .color-study-feedback article {border:0;padding:0}
+body[data-project="traditional-color"] .color-study-feedback h4 {margin:0 0 7px!important}
+body[data-project="traditional-color"] .color-study-feedback blockquote {font-size:var(--case-note)!important;line-height:1.45!important}
+body[data-project="traditional-color"] .color-study-feedback article>p {font-size:var(--case-caption)!important;line-height:1.45!important;margin-top:7px!important}
+@media(max-width:700px) {
+ body[data-project="traditional-color"] .case-study .stats-grouped {gap:20px}
+ body[data-project="traditional-color"] .color-research-questions {gap:30px;margin-top:22px}
+ body[data-project="traditional-color"] .color-research-question {grid-template-columns:1fr;gap:20px}
+ body[data-project="traditional-color"] .color-research-question figure {max-width:330px}
+ body[data-project="traditional-color"] .color-research-question img {height:210px}
+ body[data-project="traditional-color"] .color-pilot-next>ul {gap:19px}
+ body[data-project="traditional-color"] .color-artwork-row-with .color-artwork-row-label strong {background:var(--bg,#f4f0e7)}
+ body[data-project="traditional-color"] .color-artwork-row .color-atlas-figure img {height:145px;max-height:145px}
+ body[data-project="traditional-color"] .color-artwork-row {padding-inline:0}
+ body[data-project="traditional-color"] .color-study-feedback>div {gap:20px}
+}
+/* These deliberately override the older shared Color framing layer. */
+body[data-project="traditional-color"] .case-study .stats-grouped>.stat-group,
+body[data-project="traditional-color"] .case-study .stats-grouped>.stat-group:last-child {background:transparent!important;border-radius:0!important;padding:12px 0 0!important}
+body[data-project="traditional-color"] .case-study .color-artwork-row {padding:8px 0 12px;gap:11px 22px}
+body[data-project="traditional-color"] .case-study .color-artwork-row-with {background:transparent;border-radius:0}
+body[data-project="traditional-color"] .case-study .color-artwork-row-subtitle {padding:0}
+body[data-project="traditional-color"] .case-study .color-artwork-row .color-atlas-figure img {height:155px;max-height:155px}
+body[data-project="traditional-color"] .case-study .color-pilot-next {padding-top:0}
+@media(max-width:700px) {
+ body[data-project="traditional-color"] .case-study .color-artwork-row .color-atlas-figure img {height:145px;max-height:145px}
+}
+/* Clip the original artwork in its native coordinate system. Palette pixels
+   remain untouched; only the surrounding paper lies outside the SVG viewport. */
+body[data-project=traditional-color] .color-palace-cutout {display:block;width:100%;height:auto;overflow:visible}

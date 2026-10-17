@@ -111,3 +111,46 @@ body[data-project=versecolor] .rf-verse-other-ratings p {margin:0;color:var(--mu
  body[data-project=versecolor] .rf-verse-other-ratings {grid-template-columns:minmax(0,1fr);gap:16px;margin-top:24px}
  body[data-project=versecolor] .rf-verse-other-ratings > section {padding:20px 24px}
 }
+/* A readable source-to-interpretation sequence and a native comparative plot. */
+body[data-project=versecolor] .vi-reading-flow {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;padding:0;margin:24px 0 36px}
+body[data-project=versecolor] .vi-reading-flow li {display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-content:start;padding:18px 20px;background:color-mix(in srgb,var(--accent) 6%,var(--bg));border-radius:4px}
+body[data-project=versecolor] .vi-reading-flow li>span {color:var(--accent)}
+body[data-project=versecolor] .vi-reading-flow li>p {grid-column:2;margin:0}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-visuals {grid-row:3!important}
+body[data-project=versecolor] .case-study > .case-section#findings > .section-body > blockquote {grid-row:4!important}
+body[data-project=versecolor] .rf-verse-chart-heading {display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 24px}
+body[data-project=versecolor] .rf-verse-chart-heading h3 {margin:0}
+body[data-project=versecolor] .rf-verse-chart-legend {display:flex;gap:24px;align-items:center}
+body[data-project=versecolor] .rf-verse-chart-legend>span {display:inline-flex;gap:9px;align-items:center}
+body[data-project=versecolor] .rf-verse-chart-legend i {width:22px;height:10px;border-radius:2px;display:block}
+body[data-project=versecolor] .verse-key {background:#4d8c70}
+body[data-project=versecolor] .souyun-key {background:#b5b6af}
+body[data-project=versecolor] :is(.rf-verse-chart-axis,.rf-verse-rating-row) {display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px}
+body[data-project=versecolor] .rf-verse-chart-axis {margin:0 0 10px;color:var(--muted)}
+body[data-project=versecolor] .rf-verse-chart-axis>div {display:flex;justify-content:space-between}
+body[data-project=versecolor] .rf-verse-rating-rows {display:grid;gap:24px}
+body[data-project=versecolor] .rf-verse-rating-row {align-items:center}
+body[data-project=versecolor] .rf-verse-rating-label strong {display:block}
+body[data-project=versecolor] .rf-verse-rating-label small {display:block;color:var(--accent);margin-top:5px}
+body[data-project=versecolor] .rf-verse-bars {display:grid;gap:8px;background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--ink) 9%,transparent) 0 1px,transparent 1px calc(100% / 6));border-right:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:4px 0}
+body[data-project=versecolor] .rf-verse-rating-bar {height:22px;position:relative}
+body[data-project=versecolor] .rf-verse-rating-bar>span {display:block;height:100%;width:var(--rating-width);background:#4d8c70;border-radius:0 2px 2px 0}
+body[data-project=versecolor] .rf-verse-rating-bar.souyun-bar>span {background:#b5b6af}
+body[data-project=versecolor] .rf-verse-rating-bar>b {position:absolute;left:calc(var(--rating-width) + 8px);top:50%;transform:translateY(-50%);font-variant-numeric:tabular-nums;color:var(--ink);line-height:1}
+body[data-project=versecolor] .rf-verse-results>figcaption {text-align:left;margin-top:24px;max-width:none}
+@layer case-typography {
+ body[data-view=project][data-project=versecolor] .case-study :is(.rf-verse-chart-legend,.rf-verse-chart-axis,.rf-verse-rating-label,.rf-verse-rating-bar>b) {font-size:var(--case-caption)!important;line-height:1.3!important}
+ body[data-view=project][data-project=versecolor] .case-study .rf-verse-rating-label small {font-size:var(--case-label)!important}
+ body[data-view=project][data-project=versecolor] .case-study :is(.vi-reading-flow li,.vi-reading-flow p,.rf-verse-procedure p,.rf-tool-branches>span) {font-size:var(--case-note)!important;line-height:1.45!important}
+ body[data-view=project][data-project=versecolor] .case-study :is(.rf-verse-procedure h4,.rf-phase-count) {font-size:var(--case-copy)!important;line-height:1.3!important}
+ body[data-view=project][data-project=versecolor] .case-study :is(.rf-phase-label,.rf-verse-comparison li>span) {font-size:var(--case-caption)!important;letter-spacing:0!important}
+}
+@media(max-width:760px){
+ body[data-project=versecolor] .vi-reading-flow {grid-template-columns:1fr;gap:12px;margin-block:22px}
+ body[data-project=versecolor] :is(.rf-verse-chart-axis,.rf-verse-rating-row) {grid-template-columns:112px minmax(0,1fr);gap:12px}
+ body[data-project=versecolor] .rf-verse-chart-heading {display:block;margin-bottom:20px}
+ body[data-project=versecolor] .rf-verse-chart-legend {gap:20px;margin-top:16px}
+ body[data-project=versecolor] .rf-verse-rating-rows {gap:20px}
+ body[data-project=versecolor] .rf-verse-rating-bar {height:18px}
+ body[data-project=versecolor] .rf-verse-rating-bar>b {left:calc(var(--rating-width) + 5px)}
+}

@@ -11,7 +11,8 @@ export function renderVerseInteraction() {
       <p class="vi-pan-hint">Swipe across the original interface to read its details →</p>
       <div class="vi-original-viewport" tabindex="0" role="region" aria-label="Original VerseColor interface; scroll horizontally on smaller screens"><img src="${original}" width="5314" height="1749" alt="Original VerseColor interface: color filters, poet browsing, a poet–color network, and links between colors, imagery and emotions" loading="lazy" decoding="async"></div>
     </section>
-    <div class="vi-heading"><h3 id="${id}-title">Try that final check</h3><p>Illustrative reading · Wang Wei’s farewell poem, from the original design example</p></div>
+    <div class="vi-heading"><h3 id="${id}-title">Follow a color back to the poem</h3><p>Try the same sequence with Wang Wei’s farewell poem.</p></div>
+    <ol class="vi-reading-flow"><li><span>01</span><strong>Select a color</strong><p>Start with <b>green</b> in the line below.</p></li><li><span>02</span><strong>Explore a connection</strong><p>Choose the willow scene or the farewell reading.</p></li><li><span>03</span><strong>Check the poem</strong><p>Read the next lines to see what supports that interpretation.</p></li></ol>
     <div class="vi-canvas">
       <svg class="vi-connections" aria-hidden="true" focusable="false"><path data-vi-edge="rain"/><path data-vi-edge="farewell"/><path data-vi-edge="evidence"/><path class="vi-live-connection"/><circle class="vi-live-point" r="3"/></svg>
       <div class="vi-example">

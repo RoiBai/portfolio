@@ -141,23 +141,49 @@ body[data-project=beyond-the-gaze] .case-study #example .dv-shell{padding:0}
 body[data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:48px}
 @media(max-width:760px){body[data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:20px}}
 
-/* Keep the recorded case centered, then show every original trace without
-   hiding paintings behind a disclosure or a tab. Main copy uses reading-layout. */
+/* One compact group in the hero; one painting at a time in the source gallery. */
 body[data-project=beyond-the-gaze] .case-study #evidence .rf-gaze-record{width:min(1100px,100%);margin-inline:auto!important}
-body[data-project=beyond-the-gaze] .rf-gaze-archive{width:100%;margin-top:44px}
-body[data-project=beyond-the-gaze] .rf-gaze-archive>h3{margin:0 0 28px;color:var(--ink)}
-body[data-project=beyond-the-gaze] .rf-gaze-paintings{display:grid;gap:42px}
-body[data-project=beyond-the-gaze] .rf-gaze-painting{min-width:0}
-body[data-project=beyond-the-gaze] .rf-gaze-painting>h4{margin:0 0 20px;line-height:1.5!important;color:var(--accent)}
-body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-grid{gap:28px}
-body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item{min-width:0}
-body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item>h4{margin:14px 0 6px}
-body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item>p{margin:0}
+body[data-project=beyond-the-gaze] .rf-gaze-overview-grid{gap:8px 12px;padding:12px;background:color-mix(in srgb,var(--accent) 7%,transparent);border-radius:4px}
+body[data-project=beyond-the-gaze] .rf-gaze-overview-grid figcaption{padding-top:5px!important}
+body[data-project=beyond-the-gaze] .rf-gaze-overview-grid img{max-height:148px}
+body[data-project=beyond-the-gaze] .rf-gaze-overview-note{margin-top:10px!important}
+body[data-project=beyond-the-gaze] .rf-gaze-archive{width:100%;margin-top:28px}
+body[data-project=beyond-the-gaze] .rf-gaze-archive>h3{margin:0 0 14px;color:var(--ink)}
+body[data-project=beyond-the-gaze] .rf-gaze-archive>.rf-tabs{display:flex;gap:8px 26px;margin-bottom:22px;border-bottom:1px solid var(--rf-border)}
+body[data-project=beyond-the-gaze] .rf-gaze-archive>.rf-tabs button{padding-block:9px 11px;line-height:1.45}
+body[data-project=beyond-the-gaze] .rf-gaze-archive>.rf-panel{width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-color:var(--accent) transparent}
+body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-item{min-width:0;display:block;scroll-snap-align:start}
+body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-item>img{max-height:none;width:100%;height:auto;aspect-ratio:1.4;object-fit:contain}
+body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-item>h4{margin:12px 0 5px}
+body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-item>p{margin:0}
+body[data-project=beyond-the-gaze] .rf-gaze-gallery-hint{display:none}
+/* Keep section starts clear while tightening the larger gaps between related figures. */
+body[data-view=project][data-project=beyond-the-gaze] .case-study{--section-space:48px}
+body[data-view=project][data-project=beyond-the-gaze] .case-study>.case-section{row-gap:22px}
+body[data-view=project][data-project=beyond-the-gaze] .case-study>.case-section.gaze-has-subsection{padding-bottom:22px}
+body[data-view=project][data-project=beyond-the-gaze] .case-study>.case-section.gaze-subsection{padding-top:22px}
+body[data-view=project][data-project=beyond-the-gaze] .case-study .rf-method-source{margin-block:0!important}
+body[data-view=project][data-project=beyond-the-gaze] .case-study .rf-method-source-steps img{margin-bottom:14px}
+body[data-view=project][data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:28px}
+@layer case-typography{
+ body[data-project=beyond-the-gaze] .case-study .rf-gaze-overview-grid figcaption strong{font-size:var(--case-caption)!important;line-height:1.35!important}
+ body[data-project=beyond-the-gaze] .case-study .rf-gaze-archive>.rf-tabs button{font-size:var(--case-note)!important}
+ body[data-project=beyond-the-gaze] .case-study .rf-gaze-gallery-hint{font-size:var(--case-caption)!important}
+}
 @media(max-width:760px){
- body[data-project=beyond-the-gaze] .rf-gaze-archive{margin-top:34px}
- body[data-project=beyond-the-gaze] .rf-gaze-archive>h3{margin-bottom:24px}
- body[data-project=beyond-the-gaze] .rf-gaze-paintings{gap:36px}
- body[data-project=beyond-the-gaze] .rf-gaze-painting>h4{margin-bottom:18px}
- body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item{display:block}
- body[data-project=beyond-the-gaze] .rf-gaze-painting .rf-evidence-item>img{max-height:none;width:100%;height:auto}
+ body[data-view=project][data-project=beyond-the-gaze] .case-study{--section-space:34px}
+ body[data-view=project][data-project=beyond-the-gaze] .case-study>.case-section{row-gap:20px}
+ body[data-view=project][data-project=beyond-the-gaze] .case-study>.case-section.gaze-has-subsection{padding-bottom:16px}
+ body[data-view=project][data-project=beyond-the-gaze] .case-study>.case-section.gaze-subsection{padding-top:16px}
+ body[data-project=beyond-the-gaze] .rf-gaze-overview-grid{gap:8px 10px;padding:10px}
+ body[data-project=beyond-the-gaze] .rf-gaze-overview-note{margin-top:10px!important}
+ body[data-project=beyond-the-gaze] .rf-gaze-archive{margin-top:24px}
+ body[data-project=beyond-the-gaze] .rf-gaze-archive>h3{margin-bottom:14px}
+ body[data-project=beyond-the-gaze] .rf-gaze-archive>.rf-tabs{gap:2px 18px;margin-bottom:12px}
+ body[data-project=beyond-the-gaze] .rf-gaze-archive>.rf-tabs button{max-width:calc(50% - 9px);padding-block:7px 9px}
+ body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-grid{width:860px;gap:18px}
+ body[data-project=beyond-the-gaze] .rf-gaze-archive>.rf-panel{padding-bottom:12px;scroll-snap-type:x proximity}
+ body[data-project=beyond-the-gaze] .rf-gaze-gallery-hint{display:block;margin:0 0 12px;color:var(--muted)}
+ body[data-view=project][data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:18px}
 }

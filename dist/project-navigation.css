@@ -1,6 +1,6 @@
 /* Two destinations share one uninterrupted surface. The hovered project lends
    its color to the whole bar; the images retain their original colors. */
-.project-neighbors{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:56px calc(-1 * var(--gutter)) 0;padding:30px var(--gutter) 34px;gap:clamp(24px,5vw,72px);overflow:hidden;background:linear-gradient(110deg,var(--neighbor-left),#253238 49%,var(--neighbor-right));color:#fff}
+.project-neighbors{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:56px calc(-1 * var(--gutter)) 0;padding:30px var(--gutter) 34px;gap:clamp(24px,5vw,72px);overflow:hidden;background:#2b2e30;color:#fff}
 .project-neighbors::before,.project-neighbors::after{position:absolute;inset:0;z-index:-1;content:"";opacity:0;transition:opacity .35s ease;pointer-events:none}
 .project-neighbors::before{background:linear-gradient(105deg,var(--neighbor-left) 15%,color-mix(in srgb,var(--neighbor-left) 60%,#172525) 100%)}
 .project-neighbors::after{background:linear-gradient(255deg,var(--neighbor-right) 15%,color-mix(in srgb,var(--neighbor-right) 60%,#172525) 100%)}

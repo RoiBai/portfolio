@@ -208,3 +208,23 @@ body[data-project=hersound] #assemble .is-completion-caption > .level-clue-parti
 body[data-project=hersound] #assemble .her-caption-words {display:inline;white-space:normal;word-break:normal;overflow-wrap:normal}
 body[data-project=hersound] #assemble .her-caption-word {display:inline-block;white-space:nowrap;word-break:keep-all;overflow-wrap:normal}
 body[data-project=hersound] #assemble .her-caption-word > .level-clue-particle {display:inline-block!important}
+/* The audience response belongs beside the shared image, not in a separate band. */
+body[data-project=hersound] .case-study #abstract .her-abstract-story {grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:35px}
+body[data-project=hersound] .case-study #abstract .her-abstract-copy .her-audience-quote {margin:20px 0 0;padding:0;border:0}
+body[data-project=hersound] .case-study #abstract .her-audience-quote p {white-space:normal;text-wrap:pretty;margin:0 0 8px}
+body[data-project=hersound] .case-study #abstract .her-abstract-portraits {display:block;max-width:560px;padding:0}
+body[data-project=hersound] .case-study #abstract .her-abstract-portraits img {width:100%;height:auto;max-height:340px}
+body[data-project=hersound] .case-study>.case-section#assemble>.section-experience {padding-top:0!important;margin-top:0!important}
+body[data-project=hersound] .case-study>.case-section#assemble {row-gap:18px!important}
+body[data-project=hersound] .case-study #assemble .gx-her-layout {padding-top:0!important}
+body[data-project=hersound] .case-study #wish.her-wish {display:grid!important;grid-template-columns:minmax(0,1.5fr) minmax(240px,.6fr)!important;align-items:center!important;gap:45px!important}
+body[data-project=hersound] .case-study #wish.her-wish>.section-heading {grid-column:1!important;grid-row:1!important;align-self:center!important}
+body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art {grid-column:2!important;grid-row:1!important;width:100%;max-width:300px;margin:0;justify-self:center}
+@media(max-width:760px){
+ body[data-project=hersound] .case-study #abstract .her-abstract-story {grid-template-columns:1fr;gap:22px}
+ body[data-project=hersound] .case-study #abstract .her-abstract-portraits {max-width:500px}
+ body[data-project=hersound] .case-study #wish.her-wish {grid-template-columns:1fr!important;gap:24px!important}
+ body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art {grid-column:1!important;grid-row:2!important;max-width:230px}
+}
+body[data-project=hersound] .case-study #assemble>.section-body>p {margin-bottom:0!important}
+body[data-project=hersound] .case-study #assemble .game-experience {margin-top:0!important}

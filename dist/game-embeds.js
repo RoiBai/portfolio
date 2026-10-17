@@ -4,7 +4,7 @@ export const games = {
   ambulance: {
     title: 'Ambulance Rush',
     source: 'https://unisanewsgames.itch.io/ambulance-rush',
-    embed: 'https://itch.io/embed-upload/11753425?color=111111',
+    embed: siteURL('/assets/ambulance-game/index.html'),
     intro: '',
     steps: [],
     label: 'Play Ambulance Rush',

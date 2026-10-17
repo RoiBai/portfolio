@@ -144,3 +144,47 @@ body[data-project=personamail] .persona-refined .persona-reuse p{margin-bottom:1
  body[data-project=personamail] .case-study :is(.persona-research-annotations>p,.persona-research-note>p){font-size:var(--case-note)!important;line-height:1.5!important}
  body[data-project=personamail] .case-study .persona-research-boundary{font-size:var(--case-caption)!important;line-height:1.5!important}
 }
+/* Original prototype labels rendered as text, not enlarged screenshot pixels. */
+.persona-original-ui {background:#fff;border:1px solid #cdd8dd;border-radius:5px;padding:20px;color:#243330;min-width:0}
+.persona-original-ui h4 {margin:0 0 15px!important;color:#243330}
+.persona-original-prompt {max-width:950px;margin:auto;width:100%;box-sizing:border-box}
+.persona-original-prompt>p {border:1px solid #80949b;border-radius:24px;padding:15px 19px;margin:0!important}
+.persona-original-field {padding:12px 0;border-bottom:1px solid #e0e6e6}
+.persona-original-field>strong {display:block;margin-bottom:9px}
+.persona-original-field>div {display:flex;flex-wrap:wrap;gap:9px 15px}
+.persona-original-choice {display:inline-flex;gap:8px;align-items:baseline;line-height:1.4}
+.persona-original-choice i {font-style:normal!important;color:#83918e}
+.persona-original-choice.is-selected i {color:#527ada}
+.persona-original-free-text {background:#edf6fa;border:1px solid #a8cedd;border-radius:4px;padding:13px;margin:13px 0!important}
+.persona-research-editor-details {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:27px;align-items:start}
+.persona-research-editor-details>.persona-research-note {display:grid;grid-template-rows:auto 1fr;gap:18px;min-width:0}
+.persona-original-unit {padding:10px 12px;border-left:3px solid #cad8dd;margin-top:7px}
+.persona-original-unit.is-selected {border-color:#7596da;background:#eaf1fb;color:#3b61a4}
+.persona-original-intent>div {display:grid;gap:12px}
+.persona-original-selection {background:#eaf1fb;padding:13px;margin:16px 0 0!important}
+.persona-original-quickfix>article {padding:13px;border:1px solid #a8c1df;background:#f2f7fd;border-radius:4px;margin-top:12px}
+.persona-original-quickfix article>strong {display:block;color:#3b61a4;margin-bottom:8px}
+.persona-original-quickfix article>p {margin:0!important}
+.persona-original-anchor-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.persona-original-anchor {background:#fff;border:1px solid #d4dddc;border-radius:5px;padding:15px;min-width:0}
+.persona-original-anchor>span {display:block;color:#526760;margin-bottom:10px}
+.persona-original-anchor h4 {margin:13px 0 8px!important;color:#2c4d45}
+.persona-original-anchor p {margin:0!important}
+.persona-original-anchor-art {position:relative;width:100%;max-width:250px;margin:auto;aspect-ratio:203/77;overflow:hidden}
+.persona-original-anchor-art img {position:absolute;width:517.734%;max-width:none!important;height:auto!important;left:var(--source-left);top:-127.273%;}
+.persona-research-reuse>.persona-original-anchor-grid {grid-template-columns:repeat(4,minmax(0,1fr))}
+@layer case-typography{
+ body[data-project=personamail] .case-study .persona-original-ui,
+ body[data-project=personamail] .case-study .persona-original-ui :is(p,span,strong,div),
+ body[data-project=personamail] .case-study .persona-original-anchor :is(p,span,strong) {font-size:var(--case-caption)!important;line-height:1.5!important}
+ body[data-project=personamail] .case-study :is(.persona-original-ui,.persona-original-anchor) h4 {font-size:var(--case-note)!important;line-height:1.3!important}
+}
+@media(max-width:1000px){.persona-research-editor-details{grid-template-columns:1fr}.persona-research-editor-details>.persona-research-note{grid-template-columns:1fr 1fr;gap:25px}.persona-research-reuse>.persona-original-anchor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.persona-research-editor-details>.persona-research-note{grid-template-columns:1fr;gap:15px}.persona-original-ui{padding:16px}.persona-original-anchor-grid,.persona-research-reuse>.persona-original-anchor-grid{grid-template-columns:1fr}.persona-original-anchor-art{max-width:220px}.persona-original-prompt>p{border-radius:15px;padding:13px}}
+@media(min-width:1001px){
+ .persona-research-editor-details {grid-template-rows:auto auto;row-gap:18px;align-items:stretch}
+ .persona-research-editor-details>.persona-research-note {grid-row:span 2;grid-template-rows:subgrid;gap:18px}
+}
+/* Crop only the original illustrations; keep rasterized source captions out. */
+.persona-original-anchor-art {aspect-ratio:203/70}
+.persona-original-anchor-art img {top:-138.571%}

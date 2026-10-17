@@ -5,11 +5,11 @@ const articles = [
   { id:'abc-ramping', section:'abstract', outlet:'ABC News', date:'6 December 2023', title:'Ambulance ramping outside South Australian public hospitals hits record high', url:'https://www.abc.net.au/news/2023-12-06/november-ambulance-ramping-hits-record-high-in-south-australia/103194476' },
   { id:'indaily-game', section:'publication', outlet:'InDaily', date:'5 November 2024', title:'What if South Australia’s ramping crisis was a video game? Now it is', url:'https://www.indailysa.com.au/news/in-depth/2024/11/05/what-if-south-australias-ramping-crisis-was-a-video-game-now-it-is' }
 ];
-function preview(article, compact=false) {
+function preview(article, compact=false, allowEmbed=true) {
   const wrapper=document.createElement('article');
   wrapper.className=`news-preview${compact?' news-preview-compact':''}`;
   if(article.id)wrapper.dataset.news=article.id;
-  const canEmbed=!/(^|\.)londonmuseum\.org\.uk$/.test(new URL(article.url).hostname);
+  const canEmbed=allowEmbed&&!/(^|\.)londonmuseum\.org\.uk$/.test(new URL(article.url).hostname);
   wrapper.innerHTML=`<div class="news-preview-meta"><span>${esc(article.outlet)}</span>${article.date?`<time>${esc(article.date)}</time>`:''}</div><h4>${esc(article.title)}</h4><div class="news-preview-actions"><a href="${esc(article.url)}" target="_blank" rel="noopener noreferrer">Open original article ↗</a>${canEmbed?`<details class="news-inline-reader" data-source-url="${esc(article.url)}"><summary><span>Read here</span><span aria-hidden="true">＋</span></summary><div class="news-reader-content"><p>The original link stays available if the publisher does not allow an embedded view.</p><div class="news-reader-frame"></div><a href="${esc(article.url)}" target="_blank" rel="noopener noreferrer">Open on ${esc(article.outlet)} ↗</a></div></details>`:''}</div>`;
   return wrapper;
 }
@@ -35,7 +35,7 @@ export function setupNewsEmbeds(root=document) {
       const url=new URL(link.href);if(url.protocol!=='https:')continue;
       const label=link.textContent.replace(/\s*↗\s*$/,'').trim();
       const parts=label.split(' · '),outlet=parts.length>1?parts.shift():url.hostname.replace(/^www\./,'');
-      const card=preview({outlet,title:parts.length?parts.join(' · '):label,url:link.href},true);
+      const card=preview({outlet,title:parts.length?parts.join(' · '):label,url:link.href},true,body.dataset.project!=='ourworld');
       link.replaceWith(card);
     }
   };

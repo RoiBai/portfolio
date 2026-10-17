@@ -165,3 +165,16 @@ body[data-project=ourworld] .case-study #remember .gx-candles > .gx-instruction 
 body[data-project=ourworld] .case-study #remember .gx-candles {margin-top:0!important;margin-bottom:0!important}
 body[data-project=ourworld] .case-study #reflection {padding-block:40px!important}
 body[data-project=ourworld] .case-study #reflection .section-body:empty {display:none!important}
+/* Give each portrait a place in the opening ensemble. */
+body[data-project=ourworld] .case-study .gx-hero-menagerie {height:auto;aspect-ratio:1.4}
+body[data-project=ourworld] .case-study .gx-hero-menagerie .gx-hero-animal-0 {width:55%!important;left:26%;top:0}
+body[data-project=ourworld] .case-study .gx-hero-menagerie .gx-hero-animal-1 {width:40%!important;left:0;top:44%}
+body[data-project=ourworld] .case-study .gx-hero-menagerie .gx-hero-animal-2 {width:43%!important;left:58%;top:43%}
+body[data-project=ourworld] .case-study .gx-hero-menagerie .gx-hero-animal-3 {width:34%!important;left:0;top:0}
+body[data-project=ourworld] .case-study .gx-hero-menagerie .gx-hero-animal-4 {width:39%!important;left:31%;top:51%}
+@media(min-width:901px){
+ body[data-view=project][data-project=ourworld] .case-study>.case-section#abstract {display:grid!important;grid-template-columns:minmax(0,1.5fr) minmax(300px,.8fr)!important;align-items:center!important;gap:22px 45px!important}
+ body[data-view=project][data-project=ourworld] .case-study>.case-section#abstract>.section-heading {grid-column:1/-1!important;grid-row:1!important}
+ body[data-view=project][data-project=ourworld] .case-study>.case-section#abstract>.section-body {grid-column:1!important;grid-row:2!important;align-self:center!important;padding:0!important}
+ body[data-view=project][data-project=ourworld] .case-study>.case-section#abstract>.section-visuals {grid-column:2!important;grid-row:2!important;width:100%;max-width:420px!important;justify-self:center;align-self:center!important;padding:0!important}
+}

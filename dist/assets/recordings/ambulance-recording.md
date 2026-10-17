@@ -1,14 +1,16 @@
-# Original Ambulance Rush recording
+# Ambulance Rush — user-supplied recording
 
-`ambulance-original-gameplay.webm` is a new **55-second**, **1280 × 720**, **30 fps**, silent recording of the published Unity WebGL game, captured in Chrome on 2026-10-18. Delivery codec: VP9 in WebM; file size: 6,766,614 bytes (6.45 MiB). The seekable delivery file includes duration metadata and a keyframe every two seconds. There is no audio track.
+The page uses the complete recording supplied by the project creator on 2026-10-18: `螢幕錄製 2026-10-18 上午2.23.49.mov`.
 
-- Source: https://unisanewsgames.itch.io/ambulance-rush
-- Published build: https://html-classic.itch.zone/html/11753425/ambulance%20rush%202%20oct-18/index.html
+- Original: 3402 × 2144, 265.376667 seconds, H.264, no audio track, 2,014,596,425 bytes.
+- Delivery: `ambulance-user-gameplay.mp4`, 1440 × 908, 30 fps, H.264, 265.40 seconds, no audio track, 61,128,420 bytes.
+- Delivery retains the entire recording and its aspect ratio. No scenes were fabricated, reordered or removed.
+- The webpage initializes `defaultPlaybackRate` and `playbackRate` at 2, so the full recording plays in about 132.7 seconds.
+- Conversion: Lanczos downscale, libx264 CRF 23 / fast, YUV420p, fast-start MP4.
+- Poster: the first frame of the supplied recording.
 
-This take uses the original **Level 1 tutorial**: read Sam's patient briefing, open the hospital tab to inspect available beds, return to the patient tab, turn toward the route, then drive slowly along the street using the game's real keyboard controls. It demonstrates the interface and an approach to a patient; it does **not** depict a completed rescue or a successful mission. The tutorial's hospital labels are preserved exactly as the game displays them.
+First two seconds, last two seconds and two midpoints were visually checked in the delivered file.
 
-The game, models, game state, timers and traffic were not modified. The recording comes directly from the Unity canvas via `captureStream(30)` and `MediaRecorder`, followed by a 30 fps VP9 delivery encode. It is one continuous new take at normal speed: no reused old footage, artificial slow motion, generated frames, retouching, or scene substitutions. The poster is the actual frame at 35 seconds.
+## Playable game audio
 
-The new capture avoids the old accelerated presentation and uses a stable street route. The parked gray car remains visible without recurrent blanking in the inspected 6–15 second window. Full-video black-frame detection found no black intervals; first, middle, last and transition frames were checked. Normal traffic motion remains original gameplay.
-
-The portfolio player defaults to **muted, 1× playback**, with controls and looping. It pauses offscreen and respects reduced motion. Both 1440 × 900 desktop and 390 × 844 mobile were checked for playback, duration, muting, reduced-motion pause and overflow.
+The separate interactive game uses the original published Unity build, mirrored byte-for-byte from the project’s itch.io build because that host does not permit cross-origin asset loading. Its audio output is routed through a zero-gain Web Audio node before Unity starts. Audio contexts remain running, so game logic and audio timing are not suspended. HTML audio elements, if any are used, are also muted within this game frame. The source build and hashes are recorded in `../ambulance-game/build-source.json`.

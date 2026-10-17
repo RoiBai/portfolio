@@ -183,3 +183,52 @@ body[data-project=glancemap] .goal-callout h3{margin-top:8px}
  body[data-project=glancemap] #study .study-facts dd{margin:0}
  body[data-project=glancemap] #study .route-story{margin-top:34px}
 }
+
+/* Six scrolling steps keep their positions. Only the current explanation is
+   green; previous goals stay readable without competing with its emphasis. */
+body[data-project=glancemap] .goals-composition > .goal-callout {color:var(--ink)}
+body[data-project=glancemap] .goals-composition > .goal-callout h3 {color:var(--ink);transition:color .25s}
+body[data-project=glancemap] .goals-composition > .goal-callout .dg-pill {background:color-mix(in srgb,var(--ink) 12%,var(--bg));color:var(--muted);transition:background .25s,color .25s}
+body[data-project=glancemap] .goals-composition > .goal-callout.is-current h3 {color:var(--accent)}
+body[data-project=glancemap] .goals-composition > .goal-callout.is-current .dg-pill {background:var(--accent);color:#121610}
+body[data-project=glancemap] svg.goal-leaders {overflow:visible;z-index:1}
+body[data-project=glancemap] .goal-leader path {fill:none;stroke:var(--muted);stroke-width:1.35;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.32;transition:stroke .25s,opacity .25s}
+body[data-project=glancemap] .goal-leader circle {fill:var(--muted);opacity:.5;transition:fill .25s,opacity .25s}
+body[data-project=glancemap] .goal-leader.is-current path {stroke:var(--accent);opacity:.8}
+body[data-project=glancemap] .goal-leader.is-current circle {fill:var(--accent);opacity:1}
+@media(prefers-reduced-motion:no-preference) and (min-height:651px) {
+ body[data-project=glancemap] .goals-scroll-track {height:400svh}
+ body[data-project=glancemap] .goals-sticky {position:sticky;top:80px;display:flex;flex-direction:column;height:calc(100svh - 104px);min-height:0;max-height:860px;gap:18px}
+ body[data-project=glancemap] .goals-composition {flex:1;min-height:0;height:auto}
+}
+@media(max-width:800px) {
+ body[data-project=glancemap] .goals-composition {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto repeat(3,min-content);gap:16px 20px;align-content:start;min-height:0}
+ body[data-project=glancemap] .goals-composition > .goal-interface {grid-column:1/-1;grid-row:1;position:relative;top:auto;display:block;width:100%;max-width:none;height:auto!important;margin:0 0 6px}
+ body[data-project=glancemap] .goal-interface img {width:100%;height:auto;max-height:180px;object-fit:contain}
+ body[data-project=glancemap] .goals-composition > .goal-callout {position:static;display:block;grid-column:auto;grid-row:auto;max-width:none;align-self:start;justify-self:start}
+ body[data-project=glancemap] .goal-callout h3 {margin-top:7px}
+ body[data-project=glancemap] .goal-callout .dg-pill {padding:4px 8px}
+ body[data-project=glancemap] svg.goal-leaders {display:none}
+ body[data-project=glancemap] .goals-story-heading .chapter-deck {max-width:none;margin:12px 0 0}
+}
+@media(max-width:800px) and (min-height:651px) and (prefers-reduced-motion:no-preference) {
+ body[data-project=glancemap] .goals-sticky {position:sticky;top:94px;height:calc(100svh - 118px);max-height:none;gap:18px}
+}
+@media(prefers-reduced-motion:reduce), (max-height:650px) {
+ body[data-project=glancemap] .goals-scroll-track {height:auto}
+ body[data-project=glancemap] .goals-sticky {position:static;display:block;height:auto;min-height:0;max-height:none}
+ body[data-project=glancemap] .goals-composition {height:auto;min-height:0}
+ body[data-project=glancemap] .goal-callout,
+ body[data-project=glancemap] .goal-leader path,
+ body[data-project=glancemap] .goal-leader circle {transition:none}
+}
+@layer case-typography {
+ body[data-view=project][data-project=glancemap] .case-study #study .study-facts dt > strong {font-size:var(--case-heading)!important;font-weight:600!important;line-height:1.1!important;font-variant-numeric:tabular-nums}
+}
+/* A modest layout inset shifts the analysis while preserving its right edge. */
+@media(min-width:1000px) {
+ body[data-project=glancemap] #findings > :is(.gr-pairs,.gr-secondary,.gr-study-note) {margin-inline-start:32px;width:auto;min-width:0}
+}
+@media(min-width:801px) and (min-height:651px) {
+ body[data-project=glancemap] .goals-composition {max-height:520px}
+}

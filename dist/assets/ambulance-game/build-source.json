@@ -1,0 +1,23 @@
+{
+  "source": "https://html-classic.itch.zone/html/11753425/ambulance%20rush%202%20oct-18/index.html",
+  "retrieved": "2026-10-18",
+  "note": "Original Unity build files are byte-for-byte copies. Only this site\u2019s HTML player controls sound output.",
+  "files": {
+    "ambulance.wasm": {
+      "bytes": 24737941,
+      "sha256": "3c49bdcf504f459f4f47dc48951f07a114b05b86d80fcf61edb2026e07be13c3"
+    },
+    "ambulance.loader.js": {
+      "bytes": 20642,
+      "sha256": "86ea62283e54262ba471d7fccfd1af877ef7a09ec4d047afbd9ddbb6d315d169"
+    },
+    "ambulance.framework.js": {
+      "bytes": 380390,
+      "sha256": "52a5392c1a47ea9b4ce7e75470b0a8c923bc2755ef1b62a8a61dc40a977608e7"
+    },
+    "ambulance.data": {
+      "bytes": 28109053,
+      "sha256": "131610c80f52ebede6ec24b94642779a40f0953e0dd3e62bd53e657ca6962e64"
+    }
+  }
+}
