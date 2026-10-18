@@ -40,7 +40,7 @@ export function renderGlanceScroll(s,i){
  }
  if(s.id==='goals'){
  const item=j=>`<article class="goal-callout goal-${j+1}${j===0?' is-visible is-current':''}" data-goal="${j}" aria-hidden="${j!==0}"${j===0?' aria-current="step"':''}>${pill(j)}<div><h3>${goals[j][0]}</h3></div></article>`;
- return `<section id="goals" class="case-section glance-goals-chapter"><div class="goals-scroll-track" data-goals-scroll><div class="goals-sticky"><div class="goals-story-heading">${title(s,i)}<p class="chapter-deck">${esc(s.deck||'Insights from 14 pilot rounds, brought together in GlanceMap')}</p>${scrollCue.replace('class="walk-scroll-cue"','class="walk-scroll-cue goals-scroll-cue"')}</div><div class="goals-composition"><figure class="goal-interface"><img data-reentry-frame src="${reentryFrames[0].src}" width="2350" height="897" alt="${reentryFrames[0].alt}"></figure><svg class="goal-leaders" aria-hidden="true" focusable="false">${goals.map(()=>'<g class="goal-leader"><path/><circle r="2.5"/></g>').join('')}</svg>${goals.map((_,j)=>item(j)).join('')}</div></div></div></section>`;
+ return `<section id="goals" class="case-section glance-goals-chapter"><div class="goals-scroll-track" data-goals-scroll><div class="goals-sticky"><div class="goals-story-heading">${title(s,i)}<p class="chapter-deck">${esc(s.deck||'Insights from 14 pilot rounds, brought together in GlanceMap')}</p></div><div class="goals-composition"><figure class="goal-interface"><img data-reentry-frame src="${reentryFrames[0].src}" width="2350" height="897" alt="${reentryFrames[0].alt}"></figure><svg class="goal-leaders" aria-hidden="true" focusable="false">${goals.map(()=>'<g class="goal-leader"><path/><circle r="2.5"/></g>').join('')}</svg>${goals.map((_,j)=>item(j)).join('')}</div>${scrollCue.replace('class="walk-scroll-cue"','class="walk-scroll-cue goals-scroll-cue"')}</div></div></section>`;
  }
 
  return null;
@@ -55,10 +55,11 @@ export function setupGlanceScroll(root){
  function lines(){
   const connector=pilots?.querySelector('.pilot-workshop-connector'),source=pilots?.querySelector('#pilot-workshop-title'),target=pilots?.querySelector('[data-workshop-target] img');
   if(connector&&source&&target){
-   const box=pilots.getBoundingClientRect(),from=source.getBoundingClientRect(),to=target.getBoundingClientRect();
-   const sx=from.left-box.left-9,sy=from.top-box.top+from.height/2,tx=to.left-box.left+to.width*.22,ty=to.top-box.top-6;
+   const box=pilots.getBoundingClientRect(),from=source.getBoundingClientRect(),panel=source.closest('.pilot-workshop').getBoundingClientRect(),to=target.getBoundingClientRect();
+   const sx=panel.left-box.left-4,sy=from.top-box.top+from.height/2,tx=to.left-box.left+6,ty=to.top-box.top+6;
+   const lane=Math.max(6-box.left,panel.left-box.left-(innerWidth<=700?16:26));
    connector.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`);
-   connector.querySelector('path').setAttribute('d',`M ${sx} ${sy} H -6 V ${ty-18} H ${tx} V ${ty}`);
+   connector.querySelector('path').setAttribute('d',`M ${sx} ${sy} H ${lane} V ${ty} H ${tx}`);
   }
   if(!goal)return;const box=goal.querySelector('.goals-composition').getBoundingClientRect(),im=goal.querySelector('.goal-interface img').getBoundingClientRect(),leaders=goal.querySelector('.goal-leaders');
  if(!box.width||!box.height)return;

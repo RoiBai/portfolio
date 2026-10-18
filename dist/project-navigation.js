@@ -6,7 +6,7 @@ const palettes={glancemap:'#384c24','traditional-color':'#4a6266','icon-colors':
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function cover(project){
- if(project.id==='home')return `<span class="project-neighbor-art neighbor-home"><img src="${siteURL('/assets/navigation/home-starfield.svg')}" alt="" loading="lazy"></span>`;
+ if(project.id==='home')return `<span class="project-neighbor-art neighbor-home"><img src="${siteURL('/assets/navigation/home-universe.png')}" alt="" loading="lazy"></span>`;
  if(project.id==='ourworld')return `<span class="project-neighbor-art neighbor-menagerie" aria-hidden="true">${['chunee-exeter-exchange','laika-sputnik-2','freya-oslo-walrus','eldey-last-great-auks','juma-olympic-jaguar'].map((name,i)=>`<img class="neighbor-animal-${i}" src="${siteURL('/assets/games-revision/ourworld/'+name+'.png')}" alt="" loading="lazy">`).join('')}</span>`;
  if(project.id==='hersound')return `<span class="project-neighbor-art neighbor-palace" aria-hidden="true"><img class="neighbor-palace-building" src="${siteURL('/assets/her-1018/after2-palace-original.png')}" alt="" loading="lazy"><img class="neighbor-palace-waner" src="${siteURL('/assets/games-revision/her/game/shangguan-waner-close-side.png')}" alt="" loading="lazy"><img class="neighbor-palace-taiping" src="${siteURL('/assets/games-revision/her/game/princess-taiping-close-side.png')}" alt="" loading="lazy"></span>`;
  const hero=project.hero;
