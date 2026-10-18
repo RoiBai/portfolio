@@ -1,6 +1,6 @@
 /* Shared page rhythm. Type sizes remain defined only by the eight case tokens. */
-body[data-view=project] .case-study{--section-space:64px}
-body[data-view=project] .case-study>.case-section{padding-block:var(--section-space);row-gap:28px;border-bottom-color:color-mix(in srgb,var(--ink) 15%,transparent)}
+body[data-view=project] .case-study{--section-space:48px;--subsection-space:32px}
+body[data-view=project] .case-study>.case-section{padding-block:var(--section-space);row-gap:24px;border-bottom-color:color-mix(in srgb,var(--ink) 15%,transparent)}
 body[data-view=project] .case-study .section-heading h2{margin-top:0;margin-bottom:0}
 body[data-view=project] .case-study .section-body>p:last-child{margin-bottom:0}
 body[data-view=project] .case-study .project-title-row{gap:14px 22px;margin-bottom:12px}
@@ -19,8 +19,8 @@ body[data-view=project] .case-study .project-end h2{margin-block:18px 26px}
 body[data-view=project] .chapter-bar{border-bottom-color:color-mix(in srgb,var(--ink) 14%,transparent)}
 body[data-view=project] .chapter-nav a{padding-block:5px}
 @media(max-width:800px){
- body[data-view=project] .case-study{--section-space:44px}
- body[data-view=project] .case-study>.case-section{row-gap:24px}
+ body[data-view=project] .case-study{--section-space:32px;--subsection-space:24px}
+ body[data-view=project] .case-study>.case-section{row-gap:20px}
  body[data-view=project] .case-study .project-title-row{gap:12px}
  body[data-view=project] .case-study .project-role{padding:12px 14px}
  body[data-view=project] .case-study .stats{gap:18px 12px;padding-block:18px}

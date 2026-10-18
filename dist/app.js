@@ -71,6 +71,14 @@ function section(s,i,hideFigures=false,projectId='') {
 function cleanProjectHeadings(){
  main.querySelectorAll('h1,h2,h3,h4').forEach(el=>{const walk=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n,last;while(n=walk.nextNode())if(n.textContent.trim())last=n;if(last)last.textContent=last.textContent.replace(/[.。]+(\s*)$/,'$1')});
 }
+function compactEmptySectionCopy(){
+ // Project-specific renderers can remove the prose while retaining its old
+ // wrapper. Remove that empty grid item as well as its margins and row gap.
+ main.querySelectorAll('.case-section > .section-body:empty').forEach(copy=>{
+  copy.parentElement.classList.add('without-section-copy');
+  copy.remove();
+ });
+}
 function projectMetadata(p){
  const entries=p.id==='glancemap'?[
   {kind:'date',text:'July 2025–September 2026'},
@@ -94,6 +102,7 @@ function renderProject(p) {
  glanceResultsCleanup=setupGlanceResults(main);glanceScrollCleanup=setupGlanceScroll(main);glanceCleanup=setupGlanceEditorial(main);gamesCleanup=setupGames(main);setupDataViz(main);setupHerEditorial(main,p);experienceCleanup=setupGameExperiences(main);newsCleanup=setupNewsEmbeds(main);sourceCleanup=setupSourceFigures(main);colorCleanup=setupColorInteractions(main,p);iconCleanup=setupIconInteractions(main,p);layeredCleanup=setupLayeredFigures(main);researchFiguresCleanup=setupResearchFigures(main);gamesMotionCleanup=setupGamesMotion(main);
  ambulanceCleanup=setupAmbulanceEditorial(main,p);ambulanceRecordingCleanup=setupAmbulanceRecording(main,p);loofaCleanup=setupLoofaEditorial(main,p);
  if(p.id==='versecolor')verseCleanup=setupVerseInteraction(main);
+ compactEmptySectionCopy();
  labelAbstractParagraphs(main,p);
  cleanProjectHeadings();
  warmProject(p.id);

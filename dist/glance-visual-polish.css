@@ -229,7 +229,7 @@ body[data-project=glancemap] .goal-leader.is-current circle {fill:var(--accent);
    Keep chapter headings on the site grid; only the content is inset. */
 @media(min-width:1100px) {
  body[data-project=glancemap] #findings > :is(.gr-pairs,.gr-secondary,.gr-study-note),
- body[data-project=glancemap] #next > :is(.gr-next-head,.gr-next-list) {width:60%;margin-inline:auto;min-width:0}
+ body[data-project=glancemap] #next > :is(.gr-next-head,.gr-next-list) {width:72%;margin-inline:auto;min-width:0}
  body[data-project=glancemap] #findings .gr-result-pair {grid-template-columns:minmax(0,1fr) 9% minmax(0,1fr)}
  body[data-project=glancemap] #findings .gr-connector {padding-inline:10px}
  body[data-project=glancemap] #findings .gr-secondary {gap:24px}
@@ -238,4 +238,20 @@ body[data-project=glancemap] .goal-leader.is-current circle {fill:var(--accent);
 }
 @media(min-width:801px) and (min-height:651px) {
  body[data-project=glancemap] .goals-composition {max-height:520px}
+}
+
+/* Give the condition summaries one shared reading baseline, rather than
+   allowing the larger lesson frame to push its explanation below the control. */
+@media(min-width:701px) {
+ body[data-project=glancemap] #study .study-condition-grid {align-items:stretch;gap:30px}
+ body[data-project=glancemap] #study .study-condition {display:flex;flex-direction:column;padding-block:20px}
+ body[data-project=glancemap] #study .study-control {padding-inline:22px}
+ body[data-project=glancemap] #study .study-condition h3 {margin:8px 0 14px}
+ body[data-project=glancemap] #study .study-experimental figure>img {max-height:255px;object-fit:contain}
+ body[data-project=glancemap] #study .study-condition .baseline-story {margin-top:auto;padding-top:14px}
+ body[data-project=glancemap] #study .study-condition .baseline-story p {margin-bottom:0}
+ body[data-project=glancemap] #study .study-experimental .baseline-story p {margin-top:0}
+}
+@media(min-width:701px) and (max-width:1099px) {
+ body[data-project=glancemap] #study .study-condition-grid {grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px}
 }

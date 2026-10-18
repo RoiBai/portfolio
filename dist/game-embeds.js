@@ -38,9 +38,9 @@ export const games = {
 const escape = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function gameCover(id,game){
-  const button=`<button class="play-start" type="button" aria-label="${escape(game.label)}" aria-controls="play-stage-${id}" aria-expanded="false">Open game <span aria-hidden="true">→</span></button>`;
-  if(id==='ambulance')return `<div class="play-cover play-cover-banner"><button class="play-start play-banner-start" type="button" aria-label="Open Ambulance Rush" aria-controls="play-stage-${id}" aria-expanded="false"><img class="play-cover-art" src="${siteURL('/assets/ambulance-game/launch-banner.png')}" alt="Ramping Rush: Ambulance Rescue!" width="2228" height="366" loading="lazy" decoding="async"></button></div>`;
-  if(id==='loofasoup')return `<div class="play-cover play-cover-poster"><img class="play-cover-art" src="${siteURL('/assets/games-motion/loofa-ensemble-cutout.png')}" alt="Lufa and the Taste of Connection cast" width="1672" height="941" loading="lazy" decoding="async"><div class="play-launch-actions"><h3>Taste of Connection</h3>${button}</div></div>`;
+  const button=`<button class="play-start" type="button" aria-label="${escape(game.label)}" aria-controls="play-stage-${id}" aria-expanded="false">Play game <span aria-hidden="true">→</span></button>`;
+  if(id==='ambulance')return `<div class="play-cover play-cover-poster"><img class="play-cover-art" src="${siteURL('/website-assets/ambulance-display.svg')}" alt="The original low-poly Adelaide game scene" width="360" height="190" loading="lazy" decoding="async"><div class="play-launch-actions"><h3>Ambulance<br> Rush</h3>${button}</div></div>`;
+  if(id==='loofasoup')return `<div class="play-cover play-cover-poster"><img class="play-cover-art" src="${siteURL('/assets/games-motion/loofa-ensemble-cutout.png')}" alt="Lufa and the Taste of Connection cast" width="1672" height="941" loading="lazy" decoding="async"><div class="play-launch-actions"><h3 class="play-title-art"><img src="${siteURL('/assets/game-launchers/taste-of-connection-title.png')}" alt="Taste of Connection" width="3222" height="1164" loading="lazy" decoding="async"></h3>${button}</div></div>`;
   return `<div class="play-cover"><h3>${escape(game.title)}</h3>${button}</div>`;
 }
 
@@ -53,7 +53,7 @@ export function gameSection(id) {
     <div class="play-stage" id="play-stage-${id}">
       ${gameCover(id,game)}
     </div>
-    <div class="play-toolbar"><p class="play-status" role="status">${id === 'hersound' ? 'English edition · Original game and particle interaction' : id==='ambulance'?'Select the banner to play.':'Play here, or open the original in a new tab.'}</p><div><button class="play-fullscreen" type="button" hidden>Full screen ↗</button><button class="play-close" type="button" hidden>Close game ×</button></div></div>
+    <div class="play-toolbar"><p class="play-status" role="status">${id === 'hersound' ? 'English edition · Original game and particle interaction' : 'Play here, or use full screen after the game opens.'}</p><div><button class="play-fullscreen" type="button" hidden>Full screen ↗</button><button class="play-close" type="button" hidden>Close game ×</button></div></div>
   </section>`;
 }
 

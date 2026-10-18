@@ -10,6 +10,10 @@ body[data-view=project] .case-study .hero-bottom > p {
 body[data-view=project] .case-study .case-section > .section-body > p {
   width:100%;
 }
+/* A deleted introduction should not leave an empty row before its figure. */
+body[data-view=project] .case-study > .case-section.without-section-copy > :is(.section-visuals,.section-experience) {
+  grid-row:2!important;
+}
 /* Spacing and labels distinguish ideas within a chapter. Horizontal rules mark
    chapter boundaries; functional charts and control outlines remain intact. */
 body[data-view=project] .case-study :is(.insight,.dv-scope,.rf-method-context,.rf-gsl-hll,.rf-study-reports,.color-study-sequence,.color-pilot-next,.color-atlas-subchapter,.icon-abstract-pairs,.icon-guidance-findings,.icon-guidance-audience,.loofa-dialogue-intro,.ar-game-map,.ar-real-playback,.ar-reflection-evidence,.her-audience-quote,.gx-her-layout) {
@@ -27,6 +31,15 @@ body[data-project=loofasoup] .loofa-route-copy > article {
 }
 body[data-project=traditional-color] .color-agent-heading {
   border-bottom:0!important;
+}
+/* When an internal divider is removed, its padding must go with it. Keep one
+   consistent interval between ordinary subsections instead of two stacked gaps. */
+body[data-view=project] .case-study :is(.icon-guidance-findings,.icon-guidance-audience,.loofa-dialogue-intro,.ar-game-map,.ar-real-playback) {
+  margin-top:var(--subsection-space)!important;
+  padding-top:0!important;
+}
+body[data-project=icon-colors] .case-study .icon-study-group > .icon-study-stage + .icon-study-stage {
+  margin-top:var(--section-space);
 }
 /* Text-only chapters have no competing column: title, introduction, then ideas. */
 body[data-view=project] .case-study > .case-section.text-only:not(.with-experience) > :is(.section-heading,.section-body) {
