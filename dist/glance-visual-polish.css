@@ -128,10 +128,10 @@ body[data-project=glancemap] #process .pilot-goals p{grid-column:2;grid-row:2;ma
 /* A small source-based control sits in one tinted panel; the unannotated
    GlanceMap source frame is the primary comparison image on the right. */
 body[data-project=glancemap] #study .study-condition-grid{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:32px;align-items:start}
-body[data-project=glancemap] #study .study-control{padding:24px;background:#000;border-radius:4px;isolation:isolate}
+body[data-project=glancemap] #study .study-control{padding:24px;background:#24311d;border-radius:4px;isolation:isolate}
 body[data-project=glancemap] #study .study-experimental{padding:24px 0 0}
 body[data-project=glancemap] #study .study-condition figure{isolation:auto;background:transparent}
-body[data-project=glancemap] #study .study-condition figure>img{background:transparent;mix-blend-mode:lighten}
+body[data-project=glancemap] #study .study-condition figure>img{background:#000;mix-blend-mode:normal}
 body[data-project=glancemap] #study .study-condition h3{margin:8px 0 18px}
 body[data-project=glancemap] #study .study-condition .baseline-story{margin-top:20px}
 body[data-project=glancemap] #study .study-condition .baseline-story p{width:100%;max-width:none;margin-top:12px}
@@ -229,7 +229,7 @@ body[data-project=glancemap] .goal-leader.is-current circle {fill:var(--accent);
    Keep chapter headings on the site grid; only the content is inset. */
 @media(min-width:1100px) {
  body[data-project=glancemap] #findings > :is(.gr-pairs,.gr-secondary,.gr-study-note),
- body[data-project=glancemap] #next > :is(.gr-next-head,.gr-next-list) {width:50%;margin-inline:auto;min-width:0}
+ body[data-project=glancemap] #next > :is(.gr-next-head,.gr-next-list) {width:60%;margin-inline:auto;min-width:0}
  body[data-project=glancemap] #findings .gr-result-pair {grid-template-columns:minmax(0,1fr) 9% minmax(0,1fr)}
  body[data-project=glancemap] #findings .gr-connector {padding-inline:10px}
  body[data-project=glancemap] #findings .gr-secondary {gap:24px}

@@ -178,3 +178,23 @@ body[data-project=ourworld] .case-study .gx-hero-menagerie .gx-hero-animal-4 {wi
  body[data-view=project][data-project=ourworld] .case-study>.case-section#abstract>.section-body {grid-column:1!important;grid-row:2!important;align-self:center!important;padding:0!important}
  body[data-view=project][data-project=ourworld] .case-study>.case-section#abstract>.section-visuals {grid-column:2!important;grid-row:2!important;width:100%;max-width:420px!important;justify-self:center;align-self:center!important;padding:0!important}
 }
+
+/* Bring the introduction, timeline and individual stories into one compact flow. */
+body[data-project=ourworld] .case-study #timeline{row-gap:16px!important}
+body[data-project=ourworld] .case-study #timeline>.section-body>p{margin-bottom:0!important}
+body[data-project=ourworld] .gx-archive-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px 24px;margin-bottom:12px}
+body[data-project=ourworld] .gx-archive-top .gx-instruction{white-space:normal;margin:0!important}
+body[data-project=ourworld] .gx-timeline-window{padding-bottom:8px}
+body[data-project=ourworld] .gx-timeline-hint{margin-bottom:10px!important}
+body[data-project=ourworld] .gx-archive .gx-animal-record{min-height:0;margin-top:10px;padding-block:20px;gap:28px}
+body[data-project=ourworld] .gx-record-copy .news-source-list{margin-top:12px;gap:22px!important}
+body[data-project=ourworld] .gx-record-copy .news-preview{border:0;padding:10px 0 0;margin:0}
+body[data-project=ourworld] .gx-record-copy .news-preview h4{margin:8px 0 12px}
+@media(max-width:700px){
+ body[data-project=ourworld] .gx-archive-top{align-items:flex-start;gap:8px}
+ body[data-project=ourworld] .gx-archive .gx-animal-record{gap:14px;padding-block:16px}
+ body[data-project=ourworld] .gx-record-copy .news-source-list{gap:16px!important}
+}
+body[data-project=ourworld] .case-study #timeline .gx-archive{margin-block:0!important}
+body[data-project=ourworld] .case-study #timeline .gx-archive-top{margin-bottom:12px!important}
+body[data-project=ourworld] .gx-archive .gx-animal-record{border-bottom:0}

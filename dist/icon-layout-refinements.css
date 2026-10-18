@@ -365,3 +365,21 @@ body[data-project=icon-colors] .icon-guidance-audience-art figcaption {margin:10
  body[data-project=icon-colors] .icon-guidance-audience-art {gap:18px}
  body[data-project=icon-colors] .icon-guidance-audience-art .icon-specimen-disc {width:72px;height:72px}
 }
+
+/* Compact, aligned treatment rows: original/shadow, then two source gradients. */
+body[data-project=icon-colors] .icon-refinement-evidence-row{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px}
+body[data-project=icon-colors] .icon-refinement-before-after{--refinement-art-size:88px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:start;gap:18px}
+body[data-project=icon-colors] .icon-refinement-before-after figure{width:100%;max-width:none}
+body[data-project=icon-colors] .icon-refinement-before-after .icon-refinement-arrow{display:none}
+body[data-project=icon-colors] .icon-refinement-before-after :is(img,.icon-specimen-disc,.icon-tested-art){width:var(--refinement-art-size);height:var(--refinement-art-size)}
+body[data-project=icon-colors] .icon-refinement-before-after .icon-tested-art img{max-width:none}
+body[data-project=icon-colors] .icon-refinement-evidence p{margin:0}
+body[data-project=icon-colors] .icon-refinement-evidence p+p{margin-top:14px}
+@media(max-width:1000px){
+ body[data-project=icon-colors] .icon-refinement-evidence-row{grid-template-columns:1fr;gap:24px}
+ body[data-project=icon-colors] .icon-refinement-before-after{max-width:600px}
+}
+@media(max-width:600px){
+ body[data-project=icon-colors] .icon-refinement-before-after{--refinement-art-size:64px;gap:12px}
+ body[data-project=icon-colors] .icon-refinement-before-after figcaption{font-size:var(--case-label)!important;line-height:1.4!important;margin-top:10px}
+}

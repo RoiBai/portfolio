@@ -132,9 +132,9 @@ body[data-project=hersound] .her-evidence-subtitle{font-size:clamp(24px,2vw,29px
  body[data-project=hersound] .case-study #evidence.her-evidence{padding-block:30px!important}
 }
 
-/* Balance the opening synopsis so its closing thought stays together. */
+/* The synopsis follows the same full-width measure as the contribution below. */
 @layer case-typography {
- body[data-project=hersound] .case-study .hero-bottom>p{text-wrap:balance!important}
+ body[data-project=hersound] .case-study .hero-bottom>p{text-wrap:wrap!important}
 }
 
 /* The outcome is intentionally omitted for this case; all three opening
@@ -228,6 +228,21 @@ body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art {grid-c
 }
 body[data-project=hersound] .case-study #assemble>.section-body>p {margin-bottom:0!important}
 body[data-project=hersound] .case-study #assemble .game-experience {margin-top:0!important}
+
+/* Description and role share one measure; wider abstract copy leaves less unused space. */
+body[data-view=project][data-project=hersound] .case-study .hero-overview{
+ grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:4%;
+}
+body[data-project=hersound] .case-study .hero-bottom>p{
+ width:100%;max-width:none!important;text-wrap:pretty!important;
+}
+body[data-project=hersound] .case-study #abstract .her-abstract-story{
+ grid-template-columns:minmax(0,1.65fr) minmax(240px,.75fr);gap:40px;
+}
+body[data-project=hersound] .case-study #abstract .her-abstract-copy{width:100%;max-width:none}
+@media(max-width:800px){
+ body[data-project=hersound] .case-study #abstract .her-abstract-story{grid-template-columns:1fr;gap:22px}
+}
 
 /* The original candle portrait leaves room for the story; the farewell stays modest. */
 body[data-project=hersound] .case-study #abstract .her-abstract-portraits{max-width:350px;justify-self:center;width:100%}

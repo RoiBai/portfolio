@@ -36,3 +36,37 @@ body:is([data-project=ambulance],[data-project=loofasoup]) .play-section.is-game
  body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-start{grid-column:1/-1;justify-self:center}
  body:is([data-project=ambulance],[data-project=loofasoup]) .play-section.is-game-open .play-stage{width:100%;aspect-ratio:4/3}
 }
+
+/* Original artwork is the invitation. Unity is created only after an explicit click. */
+body[data-project=ambulance] .play-section .play-cover-banner{
+ display:block;min-height:0;padding:0;background:#70d9f0;
+}
+body[data-project=ambulance] .play-cover-banner .play-cover-art{
+ display:block;width:100%;height:auto;object-fit:contain;
+}
+body[data-project=ambulance] .play-cover-banner .play-banner-start{
+ display:block;width:100%;padding:0;background:transparent;border:0;border-radius:0;
+}
+body[data-project=ambulance] .play-cover-banner .play-banner-start:hover{filter:brightness(1.04)}
+body[data-project=ambulance] .play-section .play-cover-banner .play-banner-start:focus-visible{
+ outline:4px solid #21434b;outline-offset:-6px;
+}
+body[data-project=loofasoup] .play-section .play-cover-poster{
+ display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;
+ min-height:0;gap:32px;padding:20px 48px 0;background:#214e37;
+}
+body[data-project=loofasoup] .play-cover-poster .play-cover-art{
+ display:block;justify-self:center;width:min(100%,410px);height:auto;align-self:end;
+}
+body[data-project=loofasoup] .play-cover-poster .play-launch-actions{
+ display:grid;gap:24px;justify-items:start;padding-block:24px;color:#f6f2cf;
+}
+body[data-project=loofasoup] .play-cover-poster h3{font-size:var(--case-deck);font-weight:600;line-height:1.2}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-start:focus-visible{
+ outline:3px solid currentColor;outline-offset:4px;
+}
+@media(max-width:700px){
+ body[data-project=loofasoup] .play-section .play-cover-poster{grid-template-columns:1fr;gap:0;padding:20px 20px 0}
+ body[data-project=loofasoup] .play-cover-poster .play-cover-art{width:min(100%,300px);order:2}
+ body[data-project=loofasoup] .play-cover-poster .play-launch-actions{padding:0 0 20px;gap:14px;justify-items:center;text-align:center}
+}

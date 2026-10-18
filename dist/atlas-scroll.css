@@ -202,3 +202,10 @@ body[data-project="traditional-color"] :is(.atlas-preset,.atlas-preset-reading){
 
 body[data-project="traditional-color"] .atlas-stable [data-atlas-phase]{position:absolute!important;width:1px!important;height:1px!important;margin:0!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:380px){body[data-project="traditional-color"] .atlas-stable .atlas-native-token-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* End the three secondary briefs where their content ends. */
+body[data-project="traditional-color"] .atlas-secondary-presets{margin-bottom:0}
+body[data-project="traditional-color"] .atlas-preset-disclosure:last-child{margin-bottom:0}
+body[data-project="traditional-color"] #atlas-brief{padding-bottom:0}
+body[data-project="traditional-color"] #atlas{padding-bottom:36px}
+body[data-project="traditional-color"] #atlas-study{padding-top:36px}

@@ -37,6 +37,13 @@ export const games = {
 
 const escape = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
+function gameCover(id,game){
+  const button=`<button class="play-start" type="button" aria-label="${escape(game.label)}" aria-controls="play-stage-${id}" aria-expanded="false">Open game <span aria-hidden="true">→</span></button>`;
+  if(id==='ambulance')return `<div class="play-cover play-cover-banner"><button class="play-start play-banner-start" type="button" aria-label="Open Ambulance Rush" aria-controls="play-stage-${id}" aria-expanded="false"><img class="play-cover-art" src="${siteURL('/assets/ambulance-game/launch-banner.png')}" alt="Ramping Rush: Ambulance Rescue!" width="2228" height="366" loading="lazy" decoding="async"></button></div>`;
+  if(id==='loofasoup')return `<div class="play-cover play-cover-poster"><img class="play-cover-art" src="${siteURL('/assets/games-motion/loofa-ensemble-cutout.png')}" alt="Lufa and the Taste of Connection cast" width="1672" height="941" loading="lazy" decoding="async"><div class="play-launch-actions"><h3>Taste of Connection</h3>${button}</div></div>`;
+  return `<div class="play-cover"><h3>${escape(game.title)}</h3>${button}</div>`;
+}
+
 export function gameSection(id) {
   const game = games[id];
   if (!game || game.native) return '';
@@ -44,9 +51,9 @@ export function gameSection(id) {
     <div class="play-heading"><div><p class="eyebrow">Interactive experience</p><h2 id="play-title">${id === 'hersound' ? 'Play the story. Uncover her voice.' : 'Step inside the project'}</h2>${game.intro?`<p>${escape(game.intro)}</p>`:''}</div>${id==='ambulance'?'':`<a href="${game.source}" target="_blank" rel="noopener noreferrer" class="text-link">Open original ↗</a>`}</div>
     ${game.steps.length?`<ol class="play-guide">${game.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol>`:''}
     <div class="play-stage" id="play-stage-${id}">
-      <div class="play-cover"><span class="play-symbol" aria-hidden="true">▷</span><h3>${escape(game.title)}</h3><button class="play-start" type="button" aria-controls="play-stage-${id}" aria-expanded="false">${escape(game.label)} <span aria-hidden="true">→</span></button></div>
+      ${gameCover(id,game)}
     </div>
-    <div class="play-toolbar"><p class="play-status" role="status">${id === 'hersound' ? 'English edition · Original game and particle interaction' : id==='ambulance'?'Play the original game here.':'Play here, or open the original in a new tab.'}</p><div><button class="play-fullscreen" type="button" hidden>Full screen ↗</button><button class="play-close" type="button" hidden>Close game ×</button></div></div>
+    <div class="play-toolbar"><p class="play-status" role="status">${id === 'hersound' ? 'English edition · Original game and particle interaction' : id==='ambulance'?'Select the banner to play.':'Play here, or open the original in a new tab.'}</p><div><button class="play-fullscreen" type="button" hidden>Full screen ↗</button><button class="play-close" type="button" hidden>Close game ×</button></div></div>
   </section>`;
 }
 

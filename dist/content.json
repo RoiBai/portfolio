@@ -2243,11 +2243,11 @@
         "researchFigure": {
           "kind": "gaze-artwork"
         },
-        "alt": "Four views of Paris Street, Rainy Day: the artwork, gaze heatmap, eye path and semantic region map",
+        "alt": "Four original views of Paris Street, Rainy Day: artwork, gaze heatmap, eye path and semantic region map",
         "sourceOrigin": "Original Gaze paper Figures 1 and 3: matching Paris Street, Rainy Day panels, displayed together without exploration controls.",
-        "src": "/assets/research-interactive/gaze-art-2-original.jpg",
+        "src": "/assets/research-interactive/gaze-four-view-cover.svg",
         "width": 800,
-        "height": 619,
+        "height": 584,
         "displayWidth": 740
       },
       "sections": [
@@ -2450,17 +2450,20 @@
           "id": "reflection",
           "nav": "Takeaway",
           "eyebrow": "Takeaway",
-          "title": "A more careful starting point for museum guides",
+          "title": "Connect attention with the meaning visitors construct",
           "body": [
-            "A future guide could ask what a visitor noticed or thought it meant before choosing an explanation. Gaze identifies a place to ask about; the answer supplies interpretive context.",
-            "HLL is not proof of poor understanding. This small desktop study identifies a mismatch; it did not test an adaptive museum guide."
+            "High attention does not automatically make a detail important to a viewer’s interpretation. GSL makes this gap visible by aligning where people look with what they later select and explain. It offers a concrete way to examine agreement and mismatch within the same detail.",
+            "For digital museums and AI guides, the design opportunity is to combine behavioral attention with visitors’ own expressions of meaning. Before adapting an explanation, consider both where they looked and how they interpreted it. This moves the design question from attracting attention toward supporting cultural understanding."
           ],
           "items": [],
           "figures": [],
           "highlights": [
-            "ask what a visitor noticed or thought it meant",
-            "not proof of poor understanding",
-            "did not test an adaptive museum guide"
+            "aligning where people look with what they later select and explain",
+            "combine behavioral attention with visitors’ own expressions of meaning",
+            "supporting cultural understanding"
+          ],
+          "sourceNotes": [
+            "18 October 2026: Takeaway rewritten from original September manuscript Discussion and Limitations (pp. 5–6): gaze allocations and explicit meaning are complementary evidence; region-level GSL alignment makes agreement/mismatch visible; multimodal cultural-interface implications remain a design opportunity, not a tested museum-guide benefit. Four-view homepage/footer cover uses original image bytes without modification."
           ]
         }
       ],
@@ -4053,7 +4056,8 @@
           "title": "Their lives belong in our history",
           "body": [
             "This archive remembers animals directly harmed by people. Its 191 published cases are distinct events documented in reliable reporting; museum and research records provide historical context.",
-            "Cases span war, captivity, hunting, experiments and pollution. Extinctions caused by indirect human impacts fall outside this archive; its scope is deliberately narrower than the full harm."
+            "Cases span war, captivity, hunting, experiments and pollution. Extinctions caused by indirect human impacts fall outside this archive; its scope is deliberately narrower than the full harm.",
+            "Our World asks readers to remember these lives and reconsider how people treat animals. Follow the sources, share overlooked stories, and carry that awareness into everyday choices and support for animal protection."
           ],
           "nav": "Abstract",
           "figures": [
@@ -4079,7 +4083,9 @@
           "highlights": [
             "animals directly harmed by people",
             "distinct events",
-            "reliable reporting"
+            "reliable reporting",
+            "remember these lives",
+            "support for animal protection"
           ],
           "items": [],
           "layout": "editorial"

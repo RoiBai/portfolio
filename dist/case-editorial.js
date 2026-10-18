@@ -57,9 +57,9 @@ export function labelAbstractParagraphs(root, project) {
   };
   const labels = {
     personamail: ['Problem', 'Approach'],
-    loofasoup: ['World', 'Gameplay', 'Intent'],
+    loofasoup: ['Game background', 'Gameplay', 'Intent'],
     hersound: ['Context', 'Approach'],
-    ourworld: ['Archive', 'Scope'],
+    ourworld: ['Archive', 'Scope', 'Purpose'],
     ambulance: ['Problem', 'Approach', 'Outcome']
   }[project.id] || ['Problem', 'Approach', 'Findings'];
   host.querySelectorAll(selectors[project.id] || '.section-body > p').forEach((paragraph, index) => {

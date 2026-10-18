@@ -63,7 +63,7 @@ export function setupIconEditorial(root,project,visuals={}){
   }
   if(data.reasoning?.length){
    const bridge=document.createElement('div');bridge.className='icon-refinement-reasoning';
-   bridge.innerHTML=data.reasoning.map((item,index)=>`<article class="icon-refinement-row"><div class="icon-refinement-copy"><h4>${esc(item.title)}</h4><p>${text(item.observation,item.highlights)}</p><p class="icon-refinement-decision"><span aria-hidden="true">↳</span><span>${text(item.decision,item.highlights)}</span></p></div><div class="icon-refinement-evidence-row"><div class="icon-refinement-before-after">${index===0?visuals.whiteRefinement||'':visuals.blackRefinement||''}</div>${item.evidence?`<p class="icon-refinement-evidence">${text(item.evidence,item.highlights)}</p>`:''}</div></article>`).join('');
+   bridge.innerHTML=data.reasoning.map((item,index)=>`<article class="icon-refinement-row"><div class="icon-refinement-copy"><h4>${esc(item.title)}</h4><p>${text(item.observation,item.highlights)}</p><p class="icon-refinement-decision"><span aria-hidden="true">↳</span><span>${text(item.decision,item.highlights)}</span></p></div><div class="icon-refinement-evidence-row"><div class="icon-refinement-before-after">${index===0?visuals.whiteRefinement||'':visuals.blackRefinement||''}</div>${item.evidence?`<div class="icon-refinement-evidence"><p>${text(item.evidence,item.highlights)}</p>${index===0&&visuals.whiteGradientEvidence?`<p>${esc(visuals.whiteGradientEvidence)}</p>`:''}</div>`:''}</div></article>`).join('');
    section.querySelector('.section-visuals')?.before(bridge);
   }
  }

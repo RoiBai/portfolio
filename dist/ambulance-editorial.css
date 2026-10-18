@@ -106,5 +106,13 @@ body[data-project=ambulance] .ar-hero-publication>a{font-size:20px;line-height:1
 @media(max-width:600px){body[data-project=ambulance] .ar-game-layout{display:flex;flex-direction:column;align-items:stretch}body[data-project=ambulance] .ar-game-frame{order:0}body[data-project=ambulance] .ar-game-notes-left{order:1}body[data-project=ambulance] .ar-game-notes-right{order:2}body[data-project=ambulance] .ar-game-note-bottom{order:3;max-width:none}body[data-project=ambulance] .ar-game-note p{font-size:19px}body[data-project=ambulance] .ar-hero-publication>a{font-size:19px}}
 
 body[data-project=ambulance] .ar-elbow canvas{position:absolute;inset:0;display:block;pointer-events:none}
+
+/* News references sit one step inside the paragraph measure. */
+body[data-project=ambulance] .case-study #abstract .ar-news-copy .news-preview{
+ margin-left:32px;margin-right:0;
+}
+@media(max-width:600px){
+ body[data-project=ambulance] .case-study #abstract .ar-news-copy .news-preview{margin-left:20px}
+}
 @media(min-width:1000px){body[data-project=ambulance] .ar-game-note>div:has(.ar-hospital-panel){display:grid;grid-template-columns:minmax(0,1fr) 48px;gap:6px 12px}body[data-project=ambulance] .ar-game-note>div:has(.ar-hospital-panel) h3{grid-column:1/-1}body[data-project=ambulance] .ar-game-note .ar-hospital-panel{grid-column:2;grid-row:2;width:48px;margin:0;align-self:center}}
 @media(max-width:600px){body[data-project=ambulance] .ar-game-notes,body[data-project=ambulance] .ar-game-note-bottom{display:contents}body[data-project=ambulance] .ar-game-note[data-game-note="0"]{order:1}body[data-project=ambulance] .ar-game-note[data-game-note="1"]{order:2}body[data-project=ambulance] .ar-game-note[data-game-note="2"]{order:3}body[data-project=ambulance] .ar-game-note[data-game-note="3"]{order:4}body[data-project=ambulance] .ar-game-note[data-game-note="4"]{order:5}body[data-project=ambulance] .ar-game-note[data-game-note="5"]{order:6}}
