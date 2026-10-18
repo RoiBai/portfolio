@@ -183,3 +183,14 @@ body[data-project=ambulance] .ar-covered-news .news-preview h4{margin-top:8px}
  body[data-project=ambulance] #city .ar-map-game{grid-column:2;grid-row:1}
  body[data-project=ambulance] #city .ar-hospital-scenes{grid-column:1/-1;grid-row:2}
 }
+
+/* Keep the hospital trio inside the same top and bottom edges as both maps. */
+@media(min-width:1000px){
+ body[data-project=ambulance] #city .ar-map-comparison{align-items:start}
+ body[data-project=ambulance] #city .ar-hospital-scenes{height:var(--ar-map-height,360px);margin-top:var(--ar-map-header,36px);grid-template-rows:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+ body[data-project=ambulance] #city .ar-hospital-scenes .ar-hospital-scene:nth-child(n){display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:10px;align-items:center;justify-self:stretch;width:100%;min-height:0}
+ body[data-project=ambulance] #city .ar-hospital-scenes figcaption{margin:0;min-width:0}
+ body[data-project=ambulance] #city .ar-hospital-scenes img{height:100%;width:104px;min-height:0;max-height:100%;object-position:right center}
+ body[data-project=ambulance] #city .ar-hospital-scene:first-child img{object-position:right top}
+ body[data-project=ambulance] #city .ar-hospital-scene:last-child img{object-position:right bottom}
+}

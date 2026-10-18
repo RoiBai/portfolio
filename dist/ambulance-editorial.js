@@ -44,6 +44,13 @@ export function setupAmbulanceEditorial(root=document,project){
  }
  function measure(){
   const map=root.querySelector('[data-ar-map]');if(map){
+   const crop=map.querySelector('.ar-map-real .ar-map-crop'),mapFigure=map.querySelector('.ar-map-real');
+   if(crop&&mapFigure){
+    const cropBox=crop.getBoundingClientRect(),figureBox=mapFigure.getBoundingClientRect();
+    for(const [key,value] of [['--ar-map-height',cropBox.height],['--ar-map-header',cropBox.top-figureBox.top]]){
+     const next=value.toFixed(2)+'px';if(map.style.getPropertyValue(key)!==next)map.style.setProperty(key,next);
+    }
+   }
    const base=map.getBoundingClientRect(),point=el=>{const r=el.getBoundingClientRect();return{x:r.left+r.width/2-base.left,y:r.top+r.height/2-base.top,r:r.width/2+2};};
    for(let i=0;i<3;i++){
     const real=point(map.querySelector(`.ar-map-real [data-hospital="${i}"]`)),gamePin=point(map.querySelector(`.ar-map-game [data-hospital="${i}"]`));

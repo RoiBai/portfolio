@@ -20,7 +20,8 @@
 .neighbor-menagerie .neighbor-animal-2{width:43%;height:60%;left:57%;top:40%}
 .neighbor-menagerie .neighbor-animal-3{width:34%;height:48%;left:0;top:0}
 .neighbor-menagerie .neighbor-animal-4{width:39%;height:54%;left:31%;top:47%}
-.neighbor-home>img{border-radius:0;clip-path:none;object-fit:contain}
+.neighbor-home>img{border-radius:0;clip-path:none;object-fit:contain;opacity:.48;transition:opacity .35s ease}
+.project-neighbor:is(:hover,:focus-visible) .neighbor-home>img{opacity:1}
 .neighbor-palace .neighbor-palace-building{position:absolute;width:67%;height:92%;left:16.5%;bottom:0}
 .neighbor-palace .neighbor-palace-waner,.neighbor-palace .neighbor-palace-taiping{position:absolute;width:43%;height:81%;bottom:0;object-position:bottom}
 .neighbor-palace .neighbor-palace-waner{left:0;transform:none}
@@ -28,4 +29,4 @@
 @layer case-typography{body[data-view=project] .case-study .project-neighbor-direction{font-size:var(--case-label)!important;font-weight:400!important;line-height:1.4!important;letter-spacing:.02em!important}}
 @media(max-width:900px){.project-neighbor{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;gap:16px}.project-neighbor-art{grid-row:2;height:160px}.project-neighbor h3{grid-column:1;grid-row:3}.project-neighbors{gap:28px}.neighbor-next .project-neighbor-direction{justify-content:flex-start}}
 @media(max-width:600px){.project-neighbors{margin-top:32px;padding-top:24px;padding-bottom:28px;gap:22px}.project-neighbor-art,.project-neighbor-art>img{height:112px;max-height:112px}.project-neighbor{align-content:start;gap:14px}.project-neighbor-direction{gap:6px}.project-neighbor h3{overflow-wrap:break-word}}
-@media(prefers-reduced-motion:reduce){.project-neighbors::before,.project-neighbors::after,.project-neighbor-art{transition:none;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.project-neighbors::before,.project-neighbors::after,.project-neighbor-art,.neighbor-home>img{transition:none;transform:none!important}}
