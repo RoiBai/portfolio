@@ -2732,13 +2732,13 @@
         "cutout": "/cutouts/versecolor.png"
       },
       "hero": {
-        "src": "/assets/research-editorial/verse-meaning-in-context.png",
-        "width": 2754,
-        "height": 850,
+        "src": "/assets/research-editorial/verse-bubble-network.svg",
+        "width": 1100,
+        "height": 680,
         "displayWidth": 1100,
-        "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
-        "alt": "Move from a color keyword to imagery, feeling, and source lines.",
-        "caption": "Trace color, imagery and feeling back to the poem."
+        "alt": "A network of colored bubbles connecting poetic colors, imagery and emotion.",
+        "caption": "Colors, imagery and emotion, connected through poems.",
+        "sourceOrigin": "Native SVG conceptual cover inspired by the original VerseColor color–imagery interface. Bubble sizes are compositional, not numerical encodings."
       },
       "sections": [
         {
@@ -2752,7 +2752,19 @@
             "In a 30-person comparison with Souyun, readers rated VerseColor more helpful for connecting ideas and interpreting imagery. Relevant-poem retrieval was similar, while Souyun was easier to use—pointing to clearer navigation as the next design priority."
           ],
           "items": [],
-          "figures": [],
+          "figures": [
+            {
+              "src": "/assets/research-editorial/verse-meaning-in-context.png",
+              "width": 2754,
+              "height": 850,
+              "displayWidth": 1400,
+              "sourceOrigin": "Original paper figure asset; native resolution, not a page screenshot.",
+              "alt": "Move from a color keyword to imagery, feeling, and source lines.",
+              "caption": "Left: search retrieves poems containing a color word. Right: VerseColor connects that word to imagery, emotion and source lines, so readers can check its meaning in context.",
+              "className": "verse-abstract-overview",
+              "captionTitle": "From keyword search to connected reading"
+            }
+          ],
           "highlights": [
             "how its meaning changes across poems",
             "Eight reader interviews",
@@ -2847,7 +2859,7 @@
         "18 October 2026 reading revision: broadened the problem framing using manuscript introduction; full original Figure 3 is always visible as the native-resolution lossless image. Preserved the illustrative poem interaction, 8 formative interviewees, 30 comparative participants, 8 separate expert reviewers and reported effect sizes. No new learning or causal claims.",
         "18 October 2026 native-results correction: removed the paper Figure 4 raster chart. Replaced it with two reported effect-size cards and two source-supported qualitative comparisons, preserving the contextual interface images. No graph-derived mean estimates, uncertainty estimates or reconstructed significance tests."
       ],
-      "contentRevision": "2026-10-18-native-results-verse",
+      "contentRevision": "2026-10-18-connected-bubble-cover",
       "outcome": "An interactive poetry interface connecting color words, imagery and emotion, evaluated with 30 readers.",
       "tags": [
         "Chinese poetry",

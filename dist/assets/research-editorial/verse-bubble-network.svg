@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="680" viewBox="0 0 1100 680" role="img" aria-labelledby="title desc">
+  <title id="title">VerseColor — colors, imagery and emotion</title>
+  <desc id="desc">An editorial network of colored bubbles based on the Solitary and Nature clusters in the original VerseColor interface. Bi and Gold connect both clusters. Circle sizes and placement are compositional, not frequency encodings.</desc>
+  <defs>
+    <linearGradient id="jade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6A9B7B"/><stop offset="1" stop-color="#367857"/></linearGradient>
+    <linearGradient id="forest" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#84B09A"/><stop offset="1" stop-color="#4B8D72"/></linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#76B4A7"/><stop offset="1" stop-color="#3C9486"/></linearGradient>
+    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D78D87"/><stop offset="1" stop-color="#BE6F70"/></linearGradient>
+    <linearGradient id="ochre" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D6BA6B"/><stop offset="1" stop-color="#B69A46"/></linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F5F7F3"/><stop offset="1" stop-color="#DCE8E4"/></linearGradient>
+    <style>
+      .word { font-family: 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif; font-size: 31px; font-weight: 500; text-anchor: middle; fill: #fff; }
+      .roman { font-family: 'Avenir Next', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; font-weight: 500; text-anchor: middle; fill: #fff; opacity: .88; }
+      .imagery { font-family: 'Avenir Next', 'Helvetica Neue', Arial, sans-serif; font-size: 28px; font-weight: 500; letter-spacing: -.4px; text-anchor: middle; fill: #fff; }
+      .small-imagery { font-size: 19px; letter-spacing: -.2px; }
+      .light { fill: #516B68; }
+      .link { fill: none; stroke-width: 2.5; stroke-linecap: round; opacity: .68; }
+    </style>
+  </defs>
+
+  <!-- Associations retained from the source interface; no quantitative scale. -->
+  <g class="link">
+    <path stroke="#7AA28A" d="M350 351C350 271 302 229 289 156"/>
+    <path stroke="#6C7B86" d="M350 351C273 348 235 302 158 290"/>
+    <path stroke="#A8BBB4" d="M350 351C393 294 452 250 454 180"/>
+    <path stroke="#AC8BAF" d="M350 351C320 417 283 465 225 489"/>
+    <path stroke="#73A697" d="M350 351C461 333 508 201 600 163"/>
+    <path stroke="#BCA65D" d="M350 351C376 454 462 527 566 530"/>
+    <path stroke="#73A697" d="M740 340C727 266 676 205 600 163"/>
+    <path stroke="#C2AB64" d="M740 340C736 449 651 518 566 530"/>
+    <path stroke="#78A68C" d="M740 340C758 259 789 222 814 144"/>
+    <path stroke="#72866D" d="M740 340C806 307 869 276 942 277"/>
+    <path stroke="#A5C5BA" d="M740 340C826 372 877 429 899 501"/>
+    <path stroke="#77A58A" d="M740 340C743 416 766 484 787 551"/>
+  </g>
+
+  <!-- Soft outer rings keep overlapping families legible against a pale page. -->
+  <circle cx="350" cy="351" r="119" fill="#7FA78F" opacity=".13"/>
+  <circle cx="350" cy="351" r="109" fill="none" stroke="#6C987A" stroke-width="1.5" opacity=".35"/>
+  <circle cx="740" cy="340" r="114" fill="#8AB49F" opacity=".14"/>
+  <circle cx="740" cy="340" r="105" fill="none" stroke="#8AB49F" stroke-width="1.5" opacity=".35"/>
+  <circle cx="600" cy="163" r="62" fill="#8EC3B5" opacity=".15"/>
+  <circle cx="566" cy="530" r="52" fill="#D6BA6B" opacity=".15"/>
+
+  <g>
+    <circle cx="350" cy="351" r="99" fill="url(#jade)"/>
+    <text x="350" y="361" class="imagery">Solitary</text>
+    <circle cx="740" cy="340" r="95" fill="url(#forest)"/>
+    <text x="740" y="350" class="imagery">Nature</text>
+
+    <circle cx="289" cy="156" r="42" fill="#6C9D78"/>
+    <text x="289" y="156" class="word">翠</text><text x="289" y="180" class="roman">Cui</text>
+    <circle cx="158" cy="290" r="43" fill="#526572"/>
+    <text x="158" y="290" class="word">黛</text><text x="158" y="314" class="roman">Dai</text>
+    <circle cx="454" cy="180" r="43" fill="url(#paper)" stroke="#BDCEC7" stroke-width="1.5"/>
+    <text x="454" y="180" class="word light" style="font-size:27px">月白</text><text x="454" y="204" class="roman light" style="font-size:15px">Yue Bai</text>
+    <circle cx="225" cy="489" r="41" fill="#8B739D"/>
+    <text x="225" y="489" class="word">紫</text><text x="225" y="513" class="roman">Zi</text>
+    <circle cx="600" cy="163" r="53" fill="url(#teal)"/>
+    <text x="600" y="162" class="word" style="font-size:37px">碧</text><text x="600" y="189" class="roman">Bi</text>
+    <circle cx="566" cy="530" r="43" fill="url(#ochre)"/>
+    <text x="566" y="529" class="word">金</text><text x="566" y="554" class="roman">Gold</text>
+    <circle cx="814" cy="144" r="40" fill="#57906B"/>
+    <text x="814" y="150" class="imagery small-imagery" style="font-size:17px">Emerald</text>
+    <circle cx="942" cy="277" r="44" fill="#7F9479"/>
+    <text x="942" y="273" class="imagery small-imagery">Oil</text><text x="942" y="296" class="imagery small-imagery">Green</text>
+    <circle cx="899" cy="501" r="47" fill="url(#paper)" stroke="#BDCEC7" stroke-width="1.5"/>
+    <text x="899" y="497" class="imagery small-imagery light">Moon</text><text x="899" y="520" class="imagery small-imagery light">White</text>
+    <circle cx="787" cy="551" r="40" fill="#9ABB98"/>
+    <text x="787" y="547" class="imagery small-imagery" style="font-size:16px">Verdant</text><text x="787" y="569" class="imagery small-imagery" style="font-size:16px">Green</text>
+  </g>
+
+  <!-- Other visible imagery bubbles retain their source labels without asserting new links. -->
+  <g>
+    <circle cx="134" cy="135" r="48" fill="#D9B279" opacity=".82"/>
+    <text x="134" y="142" class="imagery small-imagery">Romance</text>
+    <circle cx="1021" cy="409" r="49" fill="url(#rose)"/>
+    <text x="1021" y="416" class="imagery small-imagery">History</text>
+    <circle cx="445" cy="561" r="49" fill="#77AFA0" opacity=".92"/>
+    <text x="445" y="568" class="imagery small-imagery">Longing</text>
+    <circle cx="102" cy="444" r="32" fill="#C9AC69" opacity=".85"/>
+    <circle cx="981" cy="135" r="26" fill="#C27881" opacity=".75"/>
+    <circle cx="701" cy="87" r="21" fill="#B7D5BE"/>
+    <circle cx="372" cy="78" r="19" fill="#DBC8A0"/>
+    <circle cx="344" cy="585" r="20" fill="#C38C83" opacity=".84"/>
+    <circle cx="664" cy="585" r="23" fill="#A2BBD0" opacity=".85"/>
+    <circle cx="1018" cy="552" r="20" fill="#B7B0C8"/>
+    <circle cx="76" cy="352" r="15" fill="#97B7AE"/>
+    <circle cx="1044" cy="206" r="15" fill="#D6C49A"/>
+  </g>
+</svg>

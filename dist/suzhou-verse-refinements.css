@@ -1,4 +1,30 @@
 /* Suzhou and VerseColor: aligned chapter copy, original source images and study flow. */
+/* The original overview now explains the approach inside the abstract. Keep
+   its full width between the approach paragraph and the study finding. */
+body[data-project=versecolor] .case-study > .case-section#research {
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:24px!important;
+}
+body[data-project=versecolor] .case-study > .case-section#research > .section-heading {
+  grid-column:1!important;grid-row:1!important;
+}
+body[data-project=versecolor] .case-study > .case-section#research > .section-body {
+  display:contents!important;
+}
+body[data-project=versecolor] .case-study > .case-section#research > .section-body > p {
+  grid-column:1!important;margin:0!important;width:100%;
+}
+body[data-project=versecolor] #research > .section-body > p:nth-of-type(1) {grid-row:2!important}
+body[data-project=versecolor] #research > .section-body > p:nth-of-type(2) {grid-row:3!important}
+body[data-project=versecolor] #research > .section-body > p:nth-of-type(3) {grid-row:5!important}
+body[data-project=versecolor] .case-study > .case-section#research > .section-visuals {
+  display:block!important;grid-column:1!important;grid-row:4!important;width:100%;max-width:none!important;margin:0!important;
+}
+body[data-project=versecolor] #research .verse-abstract-overview {width:100%;max-width:none!important;margin:0}
+body[data-project=versecolor] #research .verse-abstract-overview .figure-media {padding:0!important}
+body[data-project=versecolor] #research .verse-abstract-overview img {display:block;width:100%;height:auto;max-height:none!important}
+body[data-project=versecolor] #research .verse-abstract-overview figcaption {margin-top:16px;padding:0!important;max-width:none}
+body[data-project=versecolor] #research .verse-abstract-overview figcaption > span:first-child {display:none}
+body[data-project=versecolor] #research .verse-abstract-overview figcaption p {margin:6px 0 0}
 body:is([data-project=suzhou-scrollverse],[data-project=versecolor]) .case-study > .case-section:not(#findings) > .section-body {
   grid-column:1/-1!important;grid-row:auto!important;width:100%;max-width:none;padding:0!important;align-self:start;
 }
