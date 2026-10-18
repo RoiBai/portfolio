@@ -258,10 +258,10 @@ body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art img{max
 /* One character palette throughout the story and its interactive chapter. */
 body[data-project=hersound] .her-title-waner{color:#859CAA}
 body[data-project=hersound] .her-title-taiping{color:#DF7B4D}
-body[data-project=hersound] .her-name-waner{background:#DF7B4D;color:#30180D}
-body[data-project=hersound] .her-name-taiping{background:#859CAA;color:#152D3A}
-body[data-project=hersound] .gx-her-island .choice-button:has(img[alt="Waner"]) .choice-caption{background:#DF7B4D!important;color:#30180D!important}
-body[data-project=hersound] .gx-her-island .choice-button:has(img[alt="Taiping"]) .choice-caption{background:#859CAA!important;color:#152D3A!important}
+body[data-project=hersound] .her-name-waner{background:#E9A382;color:#30180D}
+body[data-project=hersound] .her-name-taiping{background:#AABAC4;color:#152D3A}
+body[data-project=hersound] .gx-her-island .choice-button:has(img[alt="Waner"]) .choice-caption{background:#E9A382!important;color:#30180D!important}
+body[data-project=hersound] .gx-her-island .choice-button:has(img[alt="Taiping"]) .choice-caption{background:#AABAC4!important;color:#152D3A!important}
 body[data-project=hersound] .case-study .case-hero .stats{align-items:center!important;gap:24px!important}
 body[data-project=hersound] .case-study .case-hero .stats>div{display:grid!important;grid-template-rows:52px 26px;justify-items:center;align-content:center;align-items:center;text-align:center;padding:0!important}
 body[data-project=hersound] .case-study .case-hero .stats>div>strong{align-self:center!important;justify-self:center;margin:0!important;line-height:1.1!important}
