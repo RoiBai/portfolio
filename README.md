@@ -29,6 +29,10 @@ The `Publish portfolio` GitHub Actions workflow checks the source, builds for th
 
 Repository: https://github.com/RoiBai/portfolio
 
+### Vercel
+
+Import the repository with its root directory unchanged. The checked-in `vercel.json` selects the **Other** framework, runs `npm run build`, and publishes `site/` as static files at the domain root. `server.mjs` is only the local preview server; production does not need a Node function or `npm start`. GitHub Pages continues to use its separate base-path build above.
+
 ## Structure
 
 - `dist/universe.html`, `homepage.*`, `name-hero.*`, `hero-intro.*`: homepage, hover states and particle scene.
