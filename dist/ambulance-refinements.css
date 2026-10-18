@@ -191,6 +191,31 @@ body[data-project=ambulance] .ar-covered-news .news-preview h4{margin-top:8px}
  body[data-project=ambulance] #city .ar-hospital-scenes .ar-hospital-scene:nth-child(n){display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:10px;align-items:center;justify-self:stretch;width:100%;min-height:0}
  body[data-project=ambulance] #city .ar-hospital-scenes figcaption{margin:0;min-width:0}
  body[data-project=ambulance] #city .ar-hospital-scenes img{height:100%;width:104px;min-height:0;max-height:100%;object-position:right center}
- body[data-project=ambulance] #city .ar-hospital-scene:first-child img{object-position:right top}
- body[data-project=ambulance] #city .ar-hospital-scene:last-child img{object-position:right bottom}
+ body[data-project=ambulance] #city .ar-hospital-scene:first-of-type img{object-position:left top}
+ body[data-project=ambulance] #city .ar-hospital-scene:last-of-type img{object-position:left bottom}
+}
+
+/* A consistent photo-and-name group keeps each hospital legible between both maps. */
+body[data-project=ambulance] #city .ar-hospital-scenes{position:relative}
+body[data-project=ambulance] #city .ar-hospital-heading{display:block;color:var(--accent);font-size:var(--case-caption);line-height:1.4;grid-column:1/-1}
+body[data-project=ambulance] #city .ar-hospital-scenes .ar-hospital-scene:nth-child(n){background:color-mix(in srgb,var(--accent) 4%,var(--bg));box-shadow:inset 0 0 0 1px #47728615;border-radius:4px;overflow:visible;justify-items:stretch}
+body[data-project=ambulance] #city .ar-hospital-scenes figcaption{background:none;gap:8px}
+body[data-project=ambulance] #city .ar-hospital-scenes figcaption strong{line-height:1.35}
+@media(min-width:1000px){
+ body[data-project=ambulance] #city .ar-hospital-heading{position:absolute;left:0;top:calc(-1 * var(--ar-map-header,36px));margin:0}
+ body[data-project=ambulance] #city .ar-hospital-scenes .ar-hospital-scene:nth-child(n){grid-template-columns:96px minmax(0,1fr);gap:14px}
+ body[data-project=ambulance] #city .ar-hospital-scenes img{grid-column:1;grid-row:1;width:96px;object-position:left center}
+ body[data-project=ambulance] #city .ar-hospital-scenes figcaption{grid-column:2;grid-row:1;padding:0 12px 0 0}
+ body[data-project=ambulance] #city .ar-hospital-scene:first-of-type img{object-position:left top}
+ body[data-project=ambulance] #city .ar-hospital-scene:last-of-type img{object-position:left bottom}
+}
+@media(min-width:601px) and (max-width:999px){
+ body[data-project=ambulance] #city .ar-hospital-scenes .ar-hospital-scene:nth-child(n){padding:12px;box-sizing:border-box}
+ body[data-project=ambulance] #city .ar-hospital-scenes img{height:115px;object-position:left center}
+}
+@media(max-width:600px){
+ body[data-project=ambulance] #city .ar-hospital-scenes{gap:12px}
+ body[data-project=ambulance] #city .ar-hospital-scenes .ar-hospital-scene:nth-child(n){grid-template-columns:88px minmax(0,1fr);gap:16px}
+ body[data-project=ambulance] #city .ar-hospital-scenes img{grid-column:1;grid-row:1;width:88px;height:105px;object-position:left center}
+ body[data-project=ambulance] #city .ar-hospital-scenes figcaption{grid-column:2;grid-row:1;padding:0 12px 0 0}
 }
