@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300" role="img" aria-labelledby="title desc">
+<title id="title">Gray past nodes</title><desc id="desc">An explanatory illustration of the pilot iteration: the previous Interface Mode and Advantages branches are gray; the current Distance Cost branch is green.</desc>
+<rect width="720" height="300" fill="#000"/>
+<g fill="none" stroke="#707070" stroke-width="2.5" stroke-linecap="round">
+<path d="M147 153 C178 153 171 54 200 54"/><path d="M147 153 C176 153 178 128 200 128"/>
+<path d="M353 54 C378 54 371 31 398 31 M353 54 C378 54 371 76 398 76"/>
+<path d="M353 128 C378 128 371 112 398 112 M353 128 C378 128 371 153 398 153"/>
+</g>
+<g fill="#777" font-family="Arial, sans-serif" font-size="18">
+<text x="207" y="60">Interface mode</text><text x="405" y="37">AR glasses only</text><text x="405" y="82">Hybrid interface</text>
+<text x="207" y="134">Advantages</text><text x="405" y="118">Improved task accuracy</text><text x="405" y="159">Reduced visual fatigue</text>
+</g>
+<g fill="none" stroke="#53ee32" stroke-width="2.5" stroke-linecap="round"><path d="M147 153 C177 153 173 221 200 221 M354 221 C376 221 377 201 398 201 M354 221 C376 221 377 249 398 249"/></g>
+<g fill="#53ee32" font-family="Arial, sans-serif" font-size="19"><text x="23" y="137">AR + phone</text><text x="23" y="162">reading</text><text x="207" y="227">Distance cost</text><text x="405" y="207">0.45 m · close range</text><text x="405" y="255">2 m &amp; 5 m · arm fatigue</text></g>
+</svg>

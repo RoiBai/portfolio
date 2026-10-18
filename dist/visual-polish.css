@@ -18,6 +18,10 @@ body[data-view=project] .case-study .project-end{padding-block:54px}
 body[data-view=project] .case-study .project-end h2{margin-block:18px 26px}
 body[data-view=project] .chapter-bar{border-bottom-color:color-mix(in srgb,var(--ink) 14%,transparent)}
 body[data-view=project] .chapter-nav a{padding-block:5px}
+/* Shorter editorial rhythm where removed copy formerly left large gaps. */
+body[data-view=project]:is([data-project=ourworld],[data-project=personamail],[data-project=beyond-the-gaze],[data-project=suzhou-scrollverse],[data-project=versecolor]) .case-study{--section-space:40px}
+body[data-project=ourworld] .case-study :is(#abstract,#reflection){padding-block:40px}
+body[data-project=ourworld] .case-study #remember{row-gap:20px}
 @media(max-width:800px){
  body[data-view=project] .case-study{--section-space:32px;--subsection-space:24px}
  body[data-view=project] .case-study>.case-section{row-gap:20px}
@@ -25,4 +29,6 @@ body[data-view=project] .chapter-nav a{padding-block:5px}
  body[data-view=project] .case-study .project-role{padding:12px 14px}
  body[data-view=project] .case-study .stats{gap:18px 12px;padding-block:18px}
  body[data-view=project] .case-study .project-end{padding-block:40px}
+ body[data-view=project]:is([data-project=ourworld],[data-project=personamail],[data-project=beyond-the-gaze],[data-project=suzhou-scrollverse],[data-project=versecolor]) .case-study{--section-space:28px}
+ body[data-project=ourworld] .case-study :is(#abstract,#reflection){padding-block:28px}
 }

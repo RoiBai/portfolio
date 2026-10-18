@@ -187,3 +187,9 @@ body[data-view=project][data-project=beyond-the-gaze] .case-study #example .dv-p
  body[data-project=beyond-the-gaze] .rf-gaze-gallery-hint{display:block;margin:0 0 12px;color:var(--muted)}
  body[data-view=project][data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:18px}
 }
+
+/* Preserve each full procedure photograph and its complete speech bubble. */
+body[data-project=beyond-the-gaze] .rf-procedure-photo{display:flex;align-items:end;width:100%;aspect-ratio:405/313;margin-bottom:14px;background:transparent}
+body[data-project=beyond-the-gaze] .rf-method-source-steps .rf-procedure-photo>img{display:block;width:100%;height:auto;max-height:none!important;object-fit:contain;transform:none;margin:0!important}
+body[data-project=beyond-the-gaze] .rf-method-context{padding-block:0;margin:0!important}
+body[data-project=beyond-the-gaze] .rf-method-source-steps{padding-top:20px;padding-bottom:0}

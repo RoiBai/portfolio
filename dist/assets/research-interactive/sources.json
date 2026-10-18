@@ -636,6 +636,8 @@
   },
   {
     "file": "gaze-signal-1.webp",
+    "transparentVariant": "gaze-signal-1-transparent.png",
+    "transparentVariantMethod": "User-authorized alpha-only removal of outer white frame; original dimensions and every RGB pixel preserved. No generative image output used.",
     "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
     "sourceSize": [
       3024,
@@ -653,6 +655,8 @@
   },
   {
     "file": "gaze-signal-2.webp",
+    "transparentVariant": "gaze-signal-2-transparent.png",
+    "transparentVariantMethod": "User-authorized alpha-only removal of outer white frame; original dimensions and every RGB pixel preserved. Speech bubble retained. No generative image output used.",
     "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
     "sourceSize": [
       3024,
@@ -670,6 +674,8 @@
   },
   {
     "file": "gaze-signal-3.webp",
+    "transparentVariant": "gaze-signal-3-transparent.png",
+    "transparentVariantMethod": "User-authorized alpha-only removal of outer white frame; original dimensions and every RGB pixel preserved. Speech bubble retained. No generative image output used.",
     "sourceImage": "research_portfolio/assets/gaze/gsl-evidence.png",
     "sourceSize": [
       3024,

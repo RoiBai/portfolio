@@ -6,6 +6,7 @@ const image=(src,alt,width,height)=>`<img src="${siteURL(src)}" alt="${esc(alt)}
 export function setupHerEditorial(root,project){
  if(project.id!=='hersound')return()=>{};
  const sections=Object.fromEntries(project.sections.map(s=>[s.id,s]));
+ const projectTitle=root.querySelector('.project-title-row h1');if(projectTitle)projectTitle.innerHTML='<span class="her-title-waner">Her Sound</span> <span class="her-title-taiping">Re-sound</span>';
  const awardStat=[...root.querySelectorAll('.case-hero .stats>div')].find(stat=>stat.querySelector('strong')?.textContent.trim()==='Audience Choice'&&stat.querySelector(':scope>span')?.textContent.trim()==='Award');
  awardStat?.classList.add('her-audience-award');
  root.querySelector('.hero-outcome')?.remove();
@@ -67,6 +68,13 @@ export function setupHerEditorial(root,project){
   words.innerHTML=`<p class="her-farewell">${emphasize(s.body,s.highlights)}</p><p class="her-farewell-context">${emphasize(s.context,['Taiping’s farewell'])}</p>`;
   heading.append(words);
   const art=document.createElement('figure');art.className='her-farewell-art';const f=s.figures[0];art.innerHTML=image(f.src,f.alt,f.width,f.height);wish.append(art);
+ }
+ // Editorial sections are rebuilt after the initial name pass, so apply the
+ // same character labels to their new copy as well.
+ for(const container of root.querySelectorAll('.her-abstract-story,.her-accusations,.her-evidence-copy,.her-wish-words')){
+  const walker=document.createTreeWalker(container,NodeFilter.SHOW_TEXT),nodes=[];
+  while(walker.nextNode()){const n=walker.currentNode;if(/\b(Waner|Taiping)\b/.test(n.textContent)&&!n.parentElement.closest('.her-name'))nodes.push(n);}
+  for(const n of nodes){const fragment=document.createDocumentFragment();for(const word of n.textContent.split(/(\bWaner\b|\bTaiping\b)/)){if(word==='Waner'||word==='Taiping'){const mark=document.createElement('span');mark.className='her-name her-name-'+word.toLowerCase();mark.textContent=word;fragment.append(mark);}else fragment.append(document.createTextNode(word));}n.replaceWith(fragment);}
  }
  const assemble=root.querySelector('[data-experience="hersound-assemble"]');
  const host=assemble?.querySelector('[data-her-part="assemble"]');

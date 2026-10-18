@@ -185,7 +185,7 @@ body[data-project=versecolor] .rf-verse-results>figcaption {text-align:left;marg
 body[data-project=versecolor] .rf-verse-results .rf-verse-chart-heading {margin-bottom:8px}
 body[data-project=versecolor] .rf-verse-measure-title {color:var(--muted)}
 body[data-project=versecolor] .rf-verse-result-pairs {display:grid;gap:14px}
-body[data-project=versecolor] .rf-verse-result-pair {display:grid;grid-template-columns:minmax(0,1fr) 10% minmax(0,1fr);align-items:center;padding-block:26px}
+body[data-project=versecolor] .rf-verse-result-pair {display:grid;grid-template-columns:minmax(0,1fr) 10% minmax(0,1fr);align-items:center;padding-block:18px}
 body[data-project=versecolor] .rf-verse-evidence>h3 {margin:0 0 20px}
 body[data-project=versecolor] .rf-verse-evidence .rf-verse-bars {background:none;border:0;padding:0;gap:16px}
 body[data-project=versecolor] .rf-verse-series-label {display:flex;align-items:baseline;justify-content:space-between;gap:20px}
@@ -210,7 +210,7 @@ body[data-project=versecolor] .rf-verse-results>figcaption {margin-top:8px}
  body[data-project=versecolor] .case-study .rf-verse-results {width:82%!important;margin-inline:auto!important}
 }
 @media(max-width:700px) {
- body[data-project=versecolor] .rf-verse-result-pair {grid-template-columns:1fr;padding-block:22px}
+ body[data-project=versecolor] .rf-verse-result-pair {grid-template-columns:1fr;padding-block:16px}
  body[data-project=versecolor] .rf-verse-result-connector {height:30px;padding:8px 0 8px 16px}
  body[data-project=versecolor] .rf-verse-result-connector>span {height:100%;width:1px}
  body[data-project=versecolor] .rf-verse-result-connector>span::after {top:auto;bottom:-2px;right:-2px}

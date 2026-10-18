@@ -256,7 +256,7 @@
               ],
               "quote": {
                 "text": "“I don’t have time to read such long passages, so I keep missing content. The text blocks my view of the path and traffic lights—it could be unsafe.”",
-                "attribution": "Participant 4 · translated from project feedback"
+                "attribution": "Participant 4"
               },
               "figureLayout": "comparison",
               "items": [
@@ -327,7 +327,7 @@
               "figureLayout": "comparison",
               "quote": {
                 "text": "“I don’t know what the designer means. I would rather read the words—understanding these symbols takes time.”",
-                "attribution": "Participant 3 · feedback on Structured Keywords · translated from project feedback"
+                "attribution": "Participant 3 · feedback on Structured Keywords"
               },
               "highlights": [
                 "Structured Keywords",
@@ -376,6 +376,14 @@
                       "nodeId": "1827:555"
                     }
                   ]
+                },
+                {
+                  "src": "/assets/glance-clarity/gray-past-nodes-illustration.svg",
+                  "width": 720,
+                  "height": 300,
+                  "displayWidth": 650,
+                  "alt": "Illustration of the gray-past-nodes iteration: earlier branches are gray while the current Distance Cost branch stays green",
+                  "caption": "Gray past nodes"
                 }
               ],
               "sourceRefs": [
@@ -398,7 +406,8 @@
               "pilotParticipants": 24,
               "figureNotes": [
                 "All branches restored the overview, but made the active topic hard to find.",
-                "Showing only the active branch removed context needed later."
+                "Showing only the active branch removed context needed later.",
+                "Iteration illustration: faded earlier branches remained difficult to read."
               ],
               "historyNote": "Gray past nodes were hard to read. The final design uses bright green for the current branch and legible yellow-green for completed branches."
             }
@@ -2258,8 +2267,8 @@
           "title": "Looking is not the same as interpreting",
           "body": [
             "A gaze-aware museum guide may read a long look as interest. But attention does not always appear in what a visitor later selects or says. A guide therefore needs to distinguish where someone looked from what they found meaningful.",
-            "Across 24 paintings, we recorded eye movements, later selections of important regions and spoken interpretations. Gaze–Selection–Language (GSL) aligns all three for the same viewer and region. Fifteen people joined the study; 12 passed the gaze-quality checks.",
-            "High/Low coding yields eight patterns. We focus on HLL—High Gaze, Low Selection, Low Language—a recurring mismatch that challenges gaze-only explanation. HLL identifies a discrepancy between measures, not proof that a viewer was interested or failed to understand."
+            "We designed Gaze–Selection–Language (GSL) to align eye movements, later selections and spoken interpretations for the same painting region. Across 24 paintings and 12 analyzed viewers, eight High/Low patterns guided our analysis. We focused on HLL—High Gaze, Low Selection, Low Language—to investigate attention that did not enter viewers’ explicit interpretations.",
+            "HLL appeared in 156 of 1,651 region records. In 19 selected cases, early access and repeated returns were common; prolonged fixations were not. Several regions connected parts of the composition, suggesting that looking may help viewers orient themselves as well as interpret a detail. This is a hypothesis raised by the analysis, rather than a demonstrated cause."
           ],
           "items": [],
           "figures": [],
@@ -2268,8 +2277,9 @@
             "what a visitor later selects or says",
             "24 paintings",
             "Gaze–Selection–Language (GSL)",
-            "HLL",
-            "gaze-only explanation"
+            "HLL—High Gaze, Low Selection, Low Language",
+            "early access and repeated returns",
+            "orient themselves as well as interpret a detail"
           ]
         },
         {
@@ -2475,7 +2485,7 @@
           "User-confirmed responsibilities in conversation"
         ],
         "boundary": "Specific individual responsibilities are not stated in the current case study.",
-        "details": "I designed the study, analyzed its data, and co-wrote the paper."
+        "details": "I designed the study, analyzed the data, and wrote the paper."
       },
       "sourceNotes": [
         "Current visible Figma portfolio fxEaTzMakzZPfG2dzSPHOR, Research page 669:247, read 2026-10-13.",
@@ -2485,7 +2495,7 @@
         "16 October comprehension revision: September 13 manuscript section 3.3 clarifies retrospective Selection; section 4.2 and Figure 5 provide the P16 / Hay Wain / A3 HLL code and measurements. No participant transcript invented. Figure 3 region shapes may share semantic labels; Hay Wain gallery uses Figure 5 semantic outlines."
       ],
       "contentRevision": "2026-10-18-gaze-expanded-source-views",
-      "outcome": "The Gaze–Selection–Language framework, revealing where visual attention and later interpretation diverge.",
+      "outcome": "The Gaze–Selection–Language framework and an analysis of HLL: an unusual mismatch between visual attention, later selection and interpretation.",
       "tags": [
         "Eye tracking",
         "Art appreciation",
@@ -2708,17 +2718,10 @@
         },
         {
           "value": "8",
-          "label": "Expert reviewers",
-          "detail": "Checked proposed links against source poems"
+          "label": "Expert reviewers"
         }
       ],
-      "links": [
-        {
-          "label": "Comparison platform · Souyun",
-          "url": "https://sou-yun.cn/",
-          "source": "Paper comparison platform; URL verified 14 October 2026"
-        }
-      ],
+      "links": [],
       "category": "Research",
       "slug": "/research/versecolor",
       "theme": {
@@ -2937,13 +2940,13 @@
           "eyebrow": "ABSTRACT",
           "title": "Rising demand. Scarce beds",
           "body": [
-            "Ambulance ramping leaves crews waiting to hand patients over. When beds are scarce and demand rises, faster driving cannot resolve the pressure.",
-            "We turned local reporting into a serious newsgame for younger students. Taking calls, choosing routes and checking capacity lets players feel the urgency—and consider the public issue behind each rescue.",
+            "Ramping means ambulance crews must wait outside a hospital to hand patients over because care spaces are unavailable. In our student interviews, published news alone had not made the crisis feel urgent: some students knew little about it, while others did not see it as their concern.",
+            "We turned the news into a serious game for younger students. Taking calls, finding beds and driving under pressure lets players experience the urgency and consider the public issue behind each rescue.",
             "Reported by InDaily, the game reached 2,000+ Adelaide players and informed a co-authored article in Australian Journalism Review."
           ],
           "items": [
             {
-              "title": "From local reporting",
+              "title": "The news we covered",
               "body": "Ambulance ramping outside South Australian public hospitals hits record high.",
               "label": "ABC News · 06 Dec 2023",
               "url": "https://www.abc.net.au/news/2023-12-06/november-ambulance-ramping-hits-record-high-in-south-australia/103194476"
@@ -3258,7 +3261,7 @@
               "width": 1280,
               "height": 720,
               "alt": "Original Loofa Soup level-selection screen",
-              "caption": "Original chapter map, including the planned family route",
+              "caption": "",
               "displayWidth": 590
             }
           ],
@@ -3272,7 +3275,7 @@
               "width": 3406,
               "height": 2140,
               "alt": "Original dialogue: Lufa and Onion Man",
-              "caption": "Onion Man pressures Lufa to find clients.",
+              "caption": "",
               "sourceNode": "1577:8305",
               "sourceOrigin": "Author’s original dialogue interface artwork exported from portfolio"
             },
@@ -3281,7 +3284,7 @@
               "width": 3420,
               "height": 2142,
               "alt": "Original dialogue: Lufa and Ekvin",
-              "caption": "Ekvin funds the deal, but defers its details.",
+              "caption": "",
               "sourceNode": "1577:8306",
               "sourceOrigin": "Author’s original dialogue interface artwork exported from portfolio"
             }
@@ -3291,7 +3294,7 @@
           "id": "characters",
           "eyebrow": "CHARACTERS & FOOD",
           "title": "Art direction",
-          "body": "Teammates chose the animals and plants behind our cast, then created expressions that make each guest’s changing mood visible.",
+          "body": "",
           "items": [],
           "nav": "Art direction",
           "figures": [
@@ -3729,7 +3732,7 @@
         "sourceRefs": [
           "User-confirmed responsibilities in conversation"
         ],
-        "details": "I worked with teammates to assess which features were technically feasible, then built the game project."
+        "details": "As the programmer, I built the project and worked with teammates to decide which gameplay features were technically feasible."
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
       "outcome": "A playable work-route game about shared meals, conflicting tastes and limited actions; the family route remains planned.",
@@ -3822,7 +3825,7 @@
               "height": 1536,
               "displayWidth": 330,
               "alt": "Original game artwork of Waner holding a candle",
-              "caption": "Waner · Carrying a light",
+              "caption": "Waner",
               "sourceOrigin": "Original transparent game artwork, Figma asset 1577:9116, unchanged PNG"
             }
           ],
@@ -3880,6 +3883,10 @@
             {
               "title": "Taiping · Comprehensive Mirror, vol. 210",
               "body": "Her political work becomes a charge of acting “to prolong her power.”"
+            },
+            {
+              "title": "Later popular retellings · An invented rivalry",
+              "body": "Later popular retellings stitched Waner’s ties to Cui Shi and his later allegiance to Taiping into a story of two women competing for one man—recasting them as rivals in both love and power."
             }
           ],
           "nav": "Question",
@@ -3901,6 +3908,13 @@
               "sourceNode": "2005:809",
               "sourceFile": "fxEaTzMakzZPfG2dzSPHOR",
               "sourceOrigin": "Original Figma image bytes, Website · Editable case studies"
+            },
+            {
+              "src": "/assets/her-1915/accusation-rivalry-original.png",
+              "width": 1445,
+              "height": 1088,
+              "alt": "Original game illustration critiquing the popular rivalry story",
+              "sourceOrigin": "Existing original game artwork; illustration of a later retelling, not a historical record"
             }
           ],
           "highlights": [

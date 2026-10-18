@@ -254,3 +254,38 @@ body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art img{max
  body[data-project=hersound] .case-study #abstract .her-abstract-portraits img{height:330px;max-height:330px!important}
  body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art{max-width:200px}
 }
+
+/* One character palette throughout the story and its interactive chapter. */
+body[data-project=hersound] .her-title-waner{color:#9B5B71}
+body[data-project=hersound] .her-title-taiping{color:#476B80}
+body[data-project=hersound] .her-name-waner{background:#F3DDE3;color:#653E4D}
+body[data-project=hersound] .her-name-taiping{background:#DCE8EE;color:#355363}
+body[data-project=hersound] .case-study .case-hero .stats{align-items:center!important;gap:24px!important}
+body[data-project=hersound] .case-study .case-hero .stats>div{display:grid!important;grid-template-rows:52px 26px;justify-items:center;align-content:center;align-items:center;text-align:center;padding:0!important}
+body[data-project=hersound] .case-study .case-hero .stats>div>strong{align-self:center!important;justify-self:center;margin:0!important;line-height:1.1!important}
+body[data-project=hersound] .case-study .case-hero .stats>div>span{align-self:center!important;margin:0!important;text-align:center}
+body[data-project=hersound] .her-accusation-pair{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:none;margin:0}
+body[data-project=hersound] .her-accusation img{height:235px;max-height:235px;object-fit:contain;object-position:center bottom}
+body[data-project=hersound] .her-accusation figcaption{text-align:left!important;margin-top:14px!important}
+body[data-project=hersound] .her-accusation figcaption>p{margin-top:7px;text-align:left}
+body[data-project=hersound] .her-question-deck{margin-block:18px 24px;max-width:none}
+body[data-project=hersound] .her-evidence-story{grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:4%;align-items:center}
+body[data-project=hersound] .her-evidence-copy{max-width:none;width:100%}
+body[data-project=hersound] .her-evidence-art{max-width:none;width:100%;margin:0}
+body[data-project=hersound] .her-evidence-art img{width:100%;max-height:260px;object-fit:contain}
+body[data-project=hersound] .case-study #abstract .her-abstract-story{margin-top:20px}
+body[data-project=hersound] .case-study #abstract .her-abstract-portraits img{max-height:345px!important}
+@media(max-width:760px){
+ body[data-project=hersound] .her-accusation-pair{grid-template-columns:1fr;gap:24px}
+ body[data-project=hersound] .her-accusation{max-width:440px;margin-inline:auto}
+ body[data-project=hersound] .her-accusation img{height:auto;max-height:260px}
+ body[data-project=hersound] .her-evidence-story{grid-template-columns:1fr;gap:20px}
+ body[data-project=hersound] .her-evidence-art{max-width:300px;grid-row:auto}
+ body[data-project=hersound] .case-study .case-hero .stats{gap:12px!important}
+ body[data-project=hersound] .case-study .case-hero .stats>div{grid-template-rows:52px 26px}
+}
+body[data-project=hersound] .case-study .case-hero .stats>div{grid-template-columns:minmax(0,1fr);justify-content:stretch!important}
+body[data-project=hersound] .case-study #evidence .her-evidence-story{grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:4%}
+body[data-project=hersound] .case-study #evidence .her-evidence-copy,
+body[data-project=hersound] .case-study #evidence .her-evidence-copy>p{max-width:none!important;width:100%}
+@media(max-width:760px){body[data-project=hersound] .case-study #evidence .her-evidence-story{grid-template-columns:1fr;gap:20px}}

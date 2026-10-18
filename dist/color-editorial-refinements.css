@@ -175,3 +175,41 @@ body[data-project="traditional-color"] .case-study .color-next-steps cite {displ
  body[data-project="traditional-color"] .case-study .color-reference-swatches {gap:18px}
  body[data-project="traditional-color"] .case-study .color-reference-swatches i {width:34px;height:34px}
 }
+
+/* Six major chapters; the two studies are subdivisions of their versions. */
+body[data-project=traditional-color] .color-overview-label {margin:0 0 12px;color:var(--accent)}
+body[data-project=traditional-color] .color-internal-section {border-top:0!important;padding-top:24px!important}
+body[data-project=traditional-color] .case-study .color-next-steps>ul {gap:20px 28px}
+body[data-project=traditional-color] .case-study .color-next-steps li {border:0;border-left:2px solid color-mix(in srgb,var(--color-section-accent,var(--accent)) 50%,transparent);padding-left:18px}
+body[data-project=traditional-color] .case-study .color-next-steps {margin-top:24px}
+body[data-project=traditional-color] #pilot.color-pilot-compact {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px;row-gap:20px}
+body[data-project=traditional-color] #pilot.color-pilot-compact>.section-heading {display:contents}
+body[data-project=traditional-color] #pilot.color-pilot-compact>.section-heading>.eyebrow {grid-column:1/-1;grid-row:1;margin:0!important}
+body[data-project=traditional-color] #pilot.color-pilot-compact>.section-heading>h2 {grid-column:1;grid-row:2;margin:0;align-self:start}
+body[data-project=traditional-color] #pilot.color-pilot-compact>.section-body {display:block;grid-column:2;grid-row:2;margin:0;max-width:none;padding:0;align-self:start}
+body[data-project=traditional-color] #pilot.color-pilot-compact>.section-body>p {margin:0!important}
+body[data-project=traditional-color] #pilot.color-pilot-compact>.section-visuals {grid-column:1/-1;grid-row:3;margin:6px 0 0;align-items:start;gap:34px}
+body[data-project=traditional-color] #pilot .color-pilot-evidence-copy {align-self:start;margin:0}
+body[data-project=traditional-color] #pilot .color-pilot-evidence-copy .project-figure {margin-top:0}
+body[data-project=traditional-color] #pilot .color-pilot-results-copy {align-self:start;gap:0}
+body[data-project=traditional-color] #pilot .color-pilot-next {grid-column:1/-1;grid-row:4}
+body[data-project=traditional-color] #colorgene .section-visuals.character-row {gap:26px}
+body[data-project=traditional-color] .case-study .color-version-overview {gap:20px;margin-block:20px}
+@layer case-typography {
+ body[data-view=project][data-project=traditional-color] .color-internal-section .section-heading h2 {font-size:var(--case-subhead)!important}
+ body[data-view=project][data-project=traditional-color] #pilot .section-heading>.eyebrow {margin-bottom:0!important}
+}
+@media(max-width:700px){
+ body[data-project=traditional-color] #pilot.color-pilot-compact {grid-template-columns:1fr;gap:16px}
+ body[data-project=traditional-color] #pilot.color-pilot-compact>.section-heading>h2 {grid-column:1;grid-row:2}
+ body[data-project=traditional-color] #pilot.color-pilot-compact>.section-body {grid-column:1;grid-row:3}
+ body[data-project=traditional-color] #pilot.color-pilot-compact>.section-visuals {grid-column:1;grid-row:4;grid-template-columns:1fr;gap:24px;margin-top:4px}
+ body[data-project=traditional-color] #pilot .color-pilot-next {grid-column:1;grid-row:5;margin-top:8px}
+}
+
+/* A version and its study are one chapter. The study's closing rule remains
+   the boundary before the next major chapter (Atlas or Future). */
+body[data-project=traditional-color] .case-study>:is(#colorgene,#atlas) {
+ border-bottom:0!important;
+ padding-bottom:18px!important;
+}

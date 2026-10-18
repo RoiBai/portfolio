@@ -82,3 +82,9 @@ body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-s
  }
 }
 body:is([data-project=ambulance],[data-project=loofasoup]) .play-section:not(.is-game-open) .play-toolbar{display:none}
+/* Keep the game name together without enlarging the compact invitation. */
+body[data-project=ambulance] .play-cover-poster h3{white-space:nowrap;text-wrap:nowrap}
+@layer case-typography{
+ @media(min-width:701px) and (max-width:1100px){body[data-view=project][data-project=ambulance] .case-study .play-cover-poster h3{font-size:var(--case-heading)!important}}
+ @media(max-width:700px){body[data-view=project][data-project=ambulance] .case-study .play-cover-poster h3{font-size:var(--case-heading)!important}}
+}

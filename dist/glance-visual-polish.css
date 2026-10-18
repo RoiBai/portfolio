@@ -255,3 +255,30 @@ body[data-project=glancemap] .goal-leader.is-current circle {fill:var(--accent);
 @media(min-width:701px) and (max-width:1099px) {
  body[data-project=glancemap] #study .study-condition-grid {grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px}
 }
+
+/* Workshop proposals lead into the tested condition without crossing copy. */
+body[data-project=glancemap] #process {position:relative}
+body[data-project=glancemap] #process .pilot-workshop {padding-left:32px;position:relative}
+body[data-project=glancemap] #process .pilot-workshop-connector {position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:2}
+body[data-project=glancemap] #process .pilot-workshop-connector path {fill:none;stroke:var(--accent);stroke-width:1.5;stroke-dasharray:5 6;stroke-linecap:round;stroke-linejoin:round;opacity:.65;vector-effect:non-scaling-stroke}
+body[data-project=glancemap] #process .pilot-round {padding-block:24px 30px}
+body[data-project=glancemap] #process .pilot-round .pilot-gallery {margin-top:20px;gap:26px}
+body[data-project=glancemap] #process .pilot-round .pilot-gallery-three {grid-template-columns:repeat(3,minmax(0,1fr))}
+body[data-project=glancemap] #process .pilot-gallery-three .pilot-example>img {height:auto;aspect-ratio:2.6;object-fit:contain;background:#000}
+body[data-project=glancemap] #process .pilot-round :is(.pilot-feedback,.pilot-observation,.pilot-reasoning) {margin-top:22px}
+body[data-project=glancemap] .goals-story-heading .chapter-deck {margin-bottom:0}
+body[data-project=glancemap] .goals-scroll-cue {justify-content:flex-start;margin:2px 0 0;gap:8px}
+body[data-project=glancemap] .goals-scroll-cue .walk-scroll-particles {height:28px}
+body[data-project=glancemap] .goals-scroll-cue .walk-scroll-particles i {animation-play-state:running}
+body[data-project=glancemap] #study .route-leaders {z-index:3;pointer-events:none}
+body[data-project=glancemap] #study .glance-study-opening {margin-top:32px;padding-top:0;border-top:0}
+body[data-project=glancemap] #study .route-story {margin-top:30px}
+body[data-project=glancemap] #study .study-measures {margin-top:26px}
+@media(max-width:700px){
+ body[data-project=glancemap] #process .pilot-round .pilot-gallery-three {grid-template-columns:1fr;gap:22px}
+ body[data-project=glancemap] #process .pilot-gallery-three .pilot-example>img {max-height:180px}
+ body[data-project=glancemap] #process .pilot-workshop {padding-left:26px}
+}
+@media(prefers-reduced-motion:reduce),(max-height:650px){
+ body[data-project=glancemap] .goals-scroll-cue {display:none}
+}

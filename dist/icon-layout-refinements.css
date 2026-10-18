@@ -383,3 +383,63 @@ body[data-project=icon-colors] .icon-refinement-evidence p+p{margin-top:14px}
  body[data-project=icon-colors] .icon-refinement-before-after{--refinement-art-size:64px;gap:12px}
  body[data-project=icon-colors] .icon-refinement-before-after figcaption{font-size:var(--case-label)!important;line-height:1.4!important;margin-top:10px}
 }
+
+/* Explicit comparison dismissal and three readable guideline subsections. */
+body[data-project=icon-colors] .icon-compare-head>[data-icon-close] {
+ border:1px solid var(--line);border-radius:4px;padding:8px 12px;
+ min-height:40px;background:color-mix(in srgb,var(--accent) 8%,transparent);
+}
+body[data-project=icon-colors] .icon-refinement-copy h4 {
+ display:inline-block;background:#263b41;color:#c5f5fa;
+ padding:9px 14px;border-radius:3px;margin-bottom:14px;
+}
+body[data-project=icon-colors] .icon-treatment-art {
+ display:block;width:88px;height:88px;max-width:100%;margin:0 auto;
+ overflow:visible;background:none;border:0;border-radius:0;
+}
+body[data-project=icon-colors] .icon-refinement-before-after .icon-treatment-art {
+ width:var(--refinement-art-size);height:var(--refinement-art-size);
+}
+body[data-project=icon-colors] .icon-refinement-row:nth-child(2) .icon-refinement-before-after {
+ grid-template-columns:repeat(5,minmax(0,1fr));
+}
+body[data-project=icon-colors] .icon-refinement-evidence-row {
+ grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:32px;margin-top:22px;
+}
+body[data-project=icon-colors] .icon-refinement-reasoning {gap:26px;margin-top:24px}
+body[data-project=icon-colors] .icon-refinement-reasoning>.icon-refinement-row {padding:10px 0}
+body[data-project=icon-colors] .icon-parking-alternatives {
+ grid-template-columns:repeat(5,minmax(0,1fr));gap:24px 20px;
+}
+body[data-project=icon-colors] .icon-parking-alternatives figure {padding-top:0}
+body[data-project=icon-colors] .icon-guideline-section {margin-top:34px;padding:0;border:0}
+body[data-project=icon-colors] .icon-guideline-section>h3 {margin-bottom:22px}
+body[data-project=icon-colors] .icon-guideline-section>h3>span {color:var(--accent);margin-right:12px}
+body[data-project=icon-colors] .icon-guideline-section .icon-priority-guidance {margin-top:0}
+body[data-project=icon-colors] .icon-guideline-section :is(.icon-guidance-findings,.icon-guidance-audience) {
+ border:0;margin:0;padding:0;
+}
+body[data-project=icon-colors] .icon-guideline-section h4 {
+ font:600 var(--case-subhead)/1.3 var(--font-body);margin:0 0 12px;color:var(--ink);
+}
+body[data-project=icon-colors] .case-study .icon-study-group>.icon-study-stage+.icon-study-stage {margin-top:38px}
+@media(max-width:1000px) {
+ body[data-project=icon-colors] .icon-refinement-evidence-row {grid-template-columns:1fr;gap:20px}
+ body[data-project=icon-colors] .icon-refinement-before-after {max-width:640px}
+}
+@media(max-width:700px) {
+ body[data-project=icon-colors] .icon-parking-alternatives {grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 14px}
+ body[data-project=icon-colors] .icon-parking-alternatives figcaption {font-size:var(--case-label)!important}
+ body[data-project=icon-colors] .icon-guideline-section {margin-top:28px}
+ body[data-project=icon-colors] .icon-guideline-section>h3 {margin-bottom:18px}
+ body[data-project=icon-colors] .icon-refinement-row:nth-child(2) .icon-refinement-before-after {
+  --refinement-art-size:54px;gap:8px;
+ }
+}
+@media(max-width:420px) {
+ body[data-project=icon-colors] .icon-refinement-row:nth-child(2) .icon-refinement-before-after {
+  grid-template-columns:repeat(3,minmax(0,1fr));row-gap:18px;
+ }
+}
+/* Match the unmodified disc to the inset SVG discs without shifting captions. */
+body[data-project=icon-colors] .icon-refinement-before-after .icon-specimen-disc {transform:scale(.865)}

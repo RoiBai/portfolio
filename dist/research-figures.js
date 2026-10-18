@@ -54,7 +54,7 @@ function evidencePanel(selected=0){
  }).join('')}</div>`;
 }
 function gazeArchive(id){
- return `<section class="project-figure rf-gaze-archive rf-gaze-evidence" data-research-figure="gaze-evidence" data-rf-id="${id}" data-rf-selected="0" aria-label="Original eye-tracking views"><h3>Original eye-tracking views</h3>${tabs(id,paintings.map((name,i)=>[i,name]),0).replace('Choose a view','Choose a painting')}<p class="rf-gaze-gallery-hint">Swipe to compare the three views →</p><div class="rf-panel" id="${id}-panel" role="tabpanel" aria-labelledby="${id}-0" tabindex="0">${evidencePanel(0)}</div></section>`;
+ return `<section class="project-figure rf-gaze-archive rf-gaze-evidence" data-research-figure="gaze-evidence" data-rf-id="${id}" data-rf-selected="4" aria-label="Original eye-tracking views"><h3>Original eye-tracking views</h3>${tabs(id,paintings.map((name,i)=>[i,name]),4).replace('Choose a view','Choose a painting')}<p class="rf-gaze-gallery-hint">Swipe to compare the three views →</p><div class="rf-panel" id="${id}-panel" role="tabpanel" aria-labelledby="${id}-4" tabindex="0">${evidencePanel(4)}</div></section>`;
 }
 function gazeRecord(){
  const codes=[
@@ -86,7 +86,7 @@ function gazeSignalMatrix(){
   ['Selection','selection','Selected the region as important or helpful in later recall.','Did not select it as important or helpful in later recall.'],
   ['Language','language','Used the region to explain the painting: “The smoke suggests war.”','Did not mention it, or only described it: “There is smoke.”']
  ];
- return `<figure class="project-figure rf-figure rf-gaze-signals" data-research-figure="gaze-signals"><div class="rf-signal-columns">${signals.map(([name,key,high,low],i)=>`<section data-signal="${key}"><h4>${name}</h4><dl>${[['High',high],['Low',low]].map(([level,description],j)=>{const selected=i===0?j===0:j===1;return `<div class="rf-signal-cell${selected?' is-hll-component':''}" data-signal-level="${level.toLowerCase()}"${selected?' data-hll-selected="true"':''}><dt><b>${level[0]}</b><span>${level}</span>${selected?'<span class="sr-only"> — part of HLL</span>':''}</dt><dd>${description}</dd></div>`;}).join('')}</dl></section>`).join('')}</div><figcaption class="rf-gsl-hll"><strong>HLL</strong><div><h4>Read the highlighted cells: H–L–L</h4><p>High accumulated gaze, no later selection, and no coded interpretive claim.</p><small>The smoke statements above illustrate the coding rule; they are not participant quotations.</small></div></figcaption></figure>`;
+ return `<figure class="project-figure rf-figure rf-gaze-signals" data-research-figure="gaze-signals"><div class="rf-signal-columns">${signals.map(([name,key,high,low],i)=>`<section data-signal="${key}"><h4>${name}</h4><dl>${[['High',high],['Low',low]].map(([level,description],j)=>{const selected=i===0?j===0:j===1;return `<div class="rf-signal-cell${selected?' is-hll-component':''}" data-signal-level="${level.toLowerCase()}"${selected?' data-hll-selected="true"':''}><dt><b>${level[0]}</b><span>${level}</span>${selected?'<span class="sr-only"> — part of HLL</span>':''}</dt><dd>${description}</dd></div>`;}).join('')}</dl></section>`).join('')}</div><figcaption class="rf-gsl-hll"><strong>HLL</strong><div><h4>Read the highlighted cells: H–L–L</h4><p>High accumulated gaze, no later selection, and no coded interpretive claim.</p></div></figcaption></figure>`;
 }
 function personaOpening(image){
  const scenes=[
@@ -120,7 +120,7 @@ export function renderResearchFigure(spec={}){
  ['Look','View freely; click when an initial interpretation forms.'],
  ['Recall','With the screen blank, identify the regions that helped your understanding.'],
  ['Explain','Explain the painting’s meaning. Both spoken responses are recorded.']
- ].map(([title,body],i)=>`<li>${picture('gaze-signal-'+(i+1)+'.webp',title+' scene from the original study procedure')}<div><span>0${i+1}</span><h4>${title}</h4><p>${body}</p></div></li>`).join('')}</ol></figure>`;
+ ].map(([title,body],i)=>`<li><span class="rf-procedure-photo">${picture('gaze-signal-'+(i+1)+'-transparent.png',title+' scene from the original study procedure')}</span><div><span>0${i+1}</span><h4>${title}</h4><p>${body}</p></div></li>`).join('')}</ol></figure>`;
  case 'gaze-signals': return gazeSignalMatrix();
  case 'gaze-record': return gazeRecord();
  case 'gaze-composition': return `<figure class="project-figure rf-figure" data-research-figure="${spec.kind}"><div class="rf-composition-grid">${[

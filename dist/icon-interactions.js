@@ -24,20 +24,36 @@ function ratingTable(i,kind){
 function comparison(i,kind){return `<div class="icon-compare-head"><div><strong>${HUES[i]}° · ${kind==='study1'?'Fixed letter T':ICONS[i].name}</strong><p>${kind==='study1'?'Same letter, size and stroke; different foreground colors.':'The same icon, with black, white and opposite-color foregrounds.'}</p></div><button type="button" data-icon-close aria-label="Close color comparison">Close ×</button></div>${ratingTable(i,kind)}`;}
 function matrix(kind){return `<div class="icon-color-lab" data-icon-lab="${kind}"><p class="icon-lab-instruction">12 selected hues. <span>Hover, focus or tap a color to compare.</span></p><div class="icon-hue-grid">${HUES.map((h,i)=>`<button class="icon-hue" type="button" data-hue="${i}" aria-expanded="false" aria-controls="${kind}-comparison" aria-label="Compare ${h} degree hue"><span style="background:${COLORS[i]}" aria-hidden="true"></span><small>${h}°</small></button>`).join('')}</div><div class="icon-hue-comparison" id="${kind}-comparison" hidden></div></div>`;}
 
-const variantNames=['White outline','Opposite-color outline','Gradient A','Gradient B','Gradient A + white outline','Gradient B + white outline','Gradient A + opposite outline','Gradient B + opposite outline'];
-const explorationNames=['Parking','Yoga','Bar','Files'];
-const ORIGINAL_TREATMENTS={"outline":{"caption":"Selected outline","icon":"Parking","background":"1577-6613.png","foreground":"1577-6616.png","bounds":[36.25,25.0,32.6953125,50.85937499999999]},"shadow":{"caption":"Shadow only","icon":"Weather","background":"1577-6289.png","foreground":"1577-6290.png","bounds":[10.0,21.25,76.1962890625,67.5]},"gray20":{"caption":"Gray backplate 20% brightness","icon":"Parking","background":"1577-6599.png","foreground":"1577-6617.png","bounds":[33.75,25.0,32.6953125,50.85937499999999]},"gray30":{"caption":"Gray backplate 30% brightness","icon":"Parking","background":"1577-6600.png","foreground":"1577-6618.png","bounds":[33.75,25.0,32.6953125,50.85937499999999]},"gray40":{"caption":"Gray backplate 40% brightness","icon":"Parking","background":"1577-6601.png","foreground":"1577-6619.png","bounds":[33.75,25.0,32.6953125,50.85937499999999]},"minus":{"caption":"Gradient \u221230\u00b0","icon":"Weather","background":"1577-6299.png","foreground":"1577-6300.png","bounds":[17.5,22.5,66.1962890625,57.49999999999999]},"plus":{"caption":"Gradient +30\u00b0","icon":"Weather","background":"1577-6301.png","foreground":"1577-6302.png","bounds":[15.0,21.25,66.1962890625,57.49999999999999]},"minus-shadow":{"caption":"Gradient \u221230\u00b0 + shadow","icon":"Weather","background":"1577-6291.png","foreground":"1577-6292.png","bounds":[11.25,21.25,76.1962890625,67.5]},"plus-shadow":{"caption":"Gradient +30\u00b0 + shadow","icon":"Weather","background":"1577-6293.png","foreground":"1577-6294.png","bounds":[12.5,21.25,76.1962890625,67.5]}};
-function originalTreatment(key){const t=ORIGINAL_TREATMENTS[key],[left,top,width,height]=t.bounds;return `<figure data-study-treatment="${key}"><span class="icon-tested-art" role="img" aria-label="${esc(t.icon+': '+t.caption)}"><img src="${siteURL('/assets/icon-study3-native/'+t.background)}" alt="" style="left:0;top:0;width:100%;height:100%" loading="lazy" decoding="async"><img src="${siteURL('/assets/icon-study3-native/'+t.foreground)}" alt="" style="left:${left}%;top:${top}%;width:${width}%;height:${height}%" loading="lazy" decoding="async"></span><figcaption>${esc(t.caption)}</figcaption></figure>`;}
-// Reuses the original Parking vector from the Figma library. The circular fills,
-// outline colors and gradient direction follow source node 1887:345.
-function originalVariant(row,column){
- const gradient=column>=2,blueGradient=[3,5,7].includes(column),opposite=[1,6,7].includes(column),outline=[0,1,4,5,6,7].includes(column);
- const ink=opposite?(column===1?'#FFFF53':'#FFEE00'):'#FFFFFF',fill=gradient?`linear-gradient(135deg,${blueGradient?'#55BCF9':'#B023F6'},#0000F5)`:'#0000F5';
- return `<figure><span class="icon-native-alternative" style="--variant-fill:${fill};--variant-ink:${ink};--variant-outline:${outline?ink:'transparent'}" role="img" aria-label="${explorationNames[row]}: ${variantNames[column]}"><svg viewBox="0 0 96 96" aria-hidden="true">${ICONS[7].art}</svg></span><figcaption>${variantNames[column]}</figcaption></figure>`;
+// Reuse the original library paths in native, transparent SVG specimens.
+// Gray levels are HSB brightness, not opacity. The ±30° alternatives are
+// explanatory renderings of the requested treatments, not new measurements.
+let treatmentSerial=0;
+function treatmentFigure({icon=7,caption,shift=0,shadow=false,outline='',gray=null,colored=false}){
+ const id=`icon-treatment-${++treatmentSerial}`,hue=HUES[icon],base=COLORS[icon];
+ const ink=colored?base:'#FFFFFF';
+ const fill=gray!==null?`hsl(0 0% ${gray}%)`:colored?'none':shift?`url(#${id}-gradient)`:base;
+ const border=outline==='opposite'?OPPOSITES[icon]:outline==='color'?base:outline==='white'?'#FFFFFF':'none';
+ const color=outline==='opposite'?OPPOSITES[icon]:ink;
+ return `<figure data-native-treatment="${esc(caption)}"><svg class="icon-treatment-art" viewBox="0 0 104 104" role="img" aria-label="${esc(ICONS[icon].name+': '+caption)}"><defs>${shift?`<linearGradient id="${id}-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="hsl(${hue+shift} 100% 50%)"/><stop offset="1" stop-color="${base}"/></linearGradient>`:''}${shadow?`<filter id="${id}-shadow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB"><feDropShadow dx="1.5" dy="2.4" stdDeviation="1.7" flood-color="#000" flood-opacity=".85"/></filter>`:''}</defs><circle cx="52" cy="52" r="45" fill="${fill}" stroke="${border}" stroke-width="2.5"/><g transform="translate(4 4)" color="${color}"${shadow?` filter="url(#${id}-shadow)"`:''}>${ICONS[icon].art}</g></svg><figcaption>${esc(caption)}</figcaption></figure>`;
 }
+const parkingAlternatives=[
+ {caption:'White outline',outline:'white'},
+ {caption:'Opposite-color outline',outline:'opposite'},
+ {caption:'Gradient +30°',shift:30},
+ {caption:'Gradient −30°',shift:-30},
+ {caption:'Gradient +30° + white outline',shift:30,outline:'white'},
+ {caption:'Gradient −30° + white outline',shift:-30,outline:'white'},
+ {caption:'Gradient +30° + opposite outline',shift:30,outline:'opposite'},
+ {caption:'Gradient −30° + opposite outline',shift:-30,outline:'opposite'},
+ {caption:'Shadow',shadow:true},
+ {caption:'Gradient +30° + shadow',shift:30,shadow:true},
+ {caption:'Gradient −30° + shadow',shift:-30,shadow:true},
+ {caption:'Selected outline',outline:'color',colored:true},
+ ...[20,30,40].map(gray=>({caption:`Gray backplate ${gray}%`,gray,colored:true}))
+];
 function refinement(){return `<div class="icon-refinement-lab"><div class="icon-design-gallery" data-icon-alternatives>
  <h3 class="icon-gallery-heading">Original design alternatives</h3>
- <section class="icon-parking-example"><h4>Parking · Hue ${HUES[7]}° <span class="icon-hue-swatch" style="background:${COLORS[7]}" role="img" aria-label="Original blue swatch ${COLORS[7]}"></span><small>${COLORS[7]}</small></h4><div class="icon-parking-alternatives">${variantNames.map((_,c)=>originalVariant(0,c)).join('')}${['outline','gray20','gray30','gray40'].map(originalTreatment).join('')}</div></section>
+ <section class="icon-parking-example"><h4>Parking · Hue ${HUES[7]}° <span class="icon-hue-swatch" style="background:${COLORS[7]}" role="img" aria-label="Original blue swatch ${COLORS[7]}"></span><small>${COLORS[7]}</small></h4><div class="icon-parking-alternatives">${parkingAlternatives.map(treatmentFigure).join('')}</div></section>
  </div></div>`;}
 const gradientData=[{name:'Cyan + green',end:'#65f4a1',result:'Less clear in the cyan comparison',shift:'−30°'},{name:'Plain cyan',end:'#77fbfe',result:'Baseline',shift:'0°'},{name:'Cyan + blue',end:'#559cff',result:'Clearer in the cyan comparison',shift:'+30°'}];
 function gradients(){return `<div class="icon-gradient-lab"><div class="icon-gradient-specimens">${gradientData.map((g,i)=>`<button class="icon-gradient-option" type="button" data-gradient="${i}" aria-pressed="${i===1}"><span class="icon-gradient-disc" style="--gradient-end:${g.end}"><svg viewBox="0 0 96 96" aria-hidden="true">${ICONS[5].art}</svg></span><strong>${g.name}</strong><span>${g.shift}</span></button>`).join('')}</div><p class="icon-gradient-result" aria-live="polite">Baseline</p><p class="icon-lab-note">The motion illustrates the color blend. The original observation compared static icons in AR, with hue shifts of ±30°.</p></div>`;}
@@ -60,21 +76,42 @@ export function setupIconInteractions(root=document,p){
  const replacements=[['baseline','icon-study-1.svg','study1'],['meaning','icon-study-2.svg','study2'],['refinement','icon-study-3.svg','study3'],['gradients','icon-gradients.svg','gradients']];
  for(const[id,path,kind]of replacements){const fig=[...root.querySelectorAll(`#${id} .project-figure`)].find(f=>f.querySelector(`img[src*="${path}"]`));if(fig){const div=document.createElement('div');div.className='icon-interactive-figure';div.innerHTML=renderIconInteraction(kind);fig.replaceWith(div);}}
  setupIconEditorial(root,p,{
-  whiteRefinement:`<figure><img src="${siteURL('/website-assets/icon-before.svg')}" alt="Original white bulb on yellow"><figcaption>Before · white symbol</figcaption></figure><span class="icon-refinement-arrow" aria-hidden="true">→</span><figure><img src="${siteURL('/website-assets/icon-after.svg')}" alt="The same original white bulb with a shadow"><figcaption>After · shadow</figcaption></figure>${originalTreatment('minus')}${originalTreatment('plus')}`,
-  whiteGradientEvidence:'For cyan, the blue direction (+30°) improved clarity, while the green direction (−30°) reduced it. Test both directions.',
-  blackRefinement:`<figure>${specimen(7,0,'study2')}<figcaption>Before · black symbol</figcaption></figure><span class="icon-refinement-arrow" aria-hidden="true">→</span>${originalTreatment('outline')}${originalTreatment('gray30')}`,
+  whiteRefinement:[
+   {icon:2,caption:'Original · white symbol'},
+   {icon:2,caption:'Shadow',shadow:true},
+   {icon:2,caption:'Gradient −30°',shift:-30},
+   {icon:2,caption:'Gradient +30°',shift:30}
+  ].map(treatmentFigure).join(''),
+  whiteGradientEvidence:'These bulb examples show both gradient directions. In the tested cyan comparison, +30° improved clarity while −30° reduced it; the direction needs testing for each hue.',
+  blackRefinement:`<figure>${specimen(7,0,'study2')}<figcaption>Original · black symbol</figcaption></figure>${treatmentFigure({caption:'Colored outline',outline:'color',colored:true})}${[20,30,40].map(gray=>treatmentFigure({caption:`Gray backplate ${gray}%`,gray,colored:true})).join('')}`,
   audienceExamples:`${[9,10].map(i=>`<figure>${specimen(i,2,'study2')}<figcaption>${ICONS[i].name}</figcaption></figure>`).join('')}`
  });
  function interact(event){
   const hue=event.target.closest('.icon-hue');
-  if(hue){const lab=hue.closest('[data-icon-lab]'),i=Number(hue.dataset.hue),panel=lab.querySelector('.icon-hue-comparison');if(event.type==='click'&&lab.dataset.pinned==='true'&&lab.dataset.selected===String(i)){hideLab(lab);return;}lab.dataset.selected=i;if(event.type==='click')lab.dataset.pinned='true';lab.querySelectorAll('.icon-hue').forEach(b=>b.setAttribute('aria-expanded',String(b===hue)));panel.innerHTML=comparison(i,lab.dataset.iconLab);panel.hidden=false;}
+  if(hue){
+   const lab=hue.closest('[data-icon-lab]'),i=Number(hue.dataset.hue),panel=lab.querySelector('.icon-hue-comparison');
+   if(event.type==='focusin'&&lab.dataset.suppressFocus==='true')return;
+   // Hover opens the comparison, but only an explicit close dismisses it.
+   // Avoid rebuilding a selected table while the pointer moves inside a swatch.
+   if(panel.hidden||lab.dataset.selected!==String(i)){
+    lab.dataset.selected=i;
+    lab.querySelectorAll('.icon-hue').forEach(b=>b.setAttribute('aria-expanded',String(b===hue)));
+    panel.innerHTML=comparison(i,lab.dataset.iconLab);panel.hidden=false;
+   }
+  }
   if(event.type==='click'&&event.target.closest('[data-icon-close]'))hideLab(event.target.closest('[data-icon-lab]'));
-
   const gradient=event.target.closest('[data-gradient]');if(gradient){const lab=gradient.closest('.icon-gradient-lab');lab.querySelectorAll('[data-gradient]').forEach(b=>b.setAttribute('aria-pressed',String(b===gradient)));lab.querySelector('.icon-gradient-result').textContent=gradientData[Number(gradient.dataset.gradient)].result;}
  }
- function hideLab(lab){lab.dataset.pinned='false';lab.querySelector('.icon-hue-comparison').hidden=true;lab.querySelectorAll('.icon-hue').forEach(b=>b.setAttribute('aria-expanded','false'));}
- function leave(event){const lab=event.target.closest('[data-icon-lab]');if(lab&&!lab.contains(event.relatedTarget)&&lab.dataset.pinned!=='true'){queueMicrotask(()=>{if(!lab.contains(document.activeElement))hideLab(lab);});}}
+ function hideLab(lab){
+  if(!lab)return;
+  lab.querySelector('.icon-hue-comparison').hidden=true;
+  lab.querySelectorAll('.icon-hue').forEach(b=>b.setAttribute('aria-expanded','false'));
+  // Return keyboard focus without the focus trigger immediately reopening it.
+  lab.dataset.suppressFocus='true';
+  lab.querySelector(`[data-hue="${lab.dataset.selected}"]`)?.focus({preventScroll:true});
+  queueMicrotask(()=>delete lab.dataset.suppressFocus);
+ }
  function key(event){if(event.key==='Escape'){const lab=event.target.closest('[data-icon-lab]');if(lab){hideLab(lab);event.preventDefault();}}}
- ['pointerover','focusin','click'].forEach(name=>root.addEventListener(name,interact));root.addEventListener('pointerout',leave);root.addEventListener('focusout',leave);root.addEventListener('keydown',key);
- return()=>{['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('pointerout',leave);root.removeEventListener('focusout',leave);root.removeEventListener('keydown',key);};
+ ['pointerover','focusin','click'].forEach(name=>root.addEventListener(name,interact));root.addEventListener('keydown',key);
+ return()=>{['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('keydown',key);};
 }

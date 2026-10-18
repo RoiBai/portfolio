@@ -10,7 +10,7 @@ const notes=[
  ['Serve','Move once before serving. Click EAT and meet the guests’ targets before the round limit.']
 ];
 // Fixed endpoints refer to stable UI in the original 1280 × 720 recording.
-const targets=[{x:.68,y:.005,side:'top'},{x:.008,y:.33,side:'left'},{x:.995,y:.18,side:'right'},{x:.965,y:.48,side:'right'},{x:.505,y:.82,side:'bottom'},{x:.985,y:.82,side:'bottom'}];
+const targets=[{x:.68,y:.005,side:'top'},{x:.008,y:.33,side:'left'},{x:.995,y:.18,side:'right'},{x:.965,y:.48,side:'right'},{x:.505,y:1.015,side:'bottom'},{x:.985,y:.82,side:'bottom'}];
 function gameplayNote(copy,i){const [title,body]=copy[i];let extra='';if(i===0)extra=`<div class="loofa-taste-key"><span><img src="${siteURL('/assets/games-other-followup/loofa-like-original-ui.png')}" alt="Original liked-food icon" width="80" height="67"><span>Liked<br><strong>Score +</strong></span></span><span><img src="${siteURL('/assets/games-other-followup/loofa-dislike-original-ui.png')}" alt="Original disliked-food icon" width="86" height="69"><span>Disliked<br><strong>Score −</strong></span></span></div>`;if(i===2)extra=`<div class="loofa-card-key"><img src="${siteURL('/assets/games-other-followup/loofa-use-item-cards-original-swap-plates-card.png')}" alt="Original Swap Plates item card" width="691" height="1139"><span><strong>Swap Plates</strong><br>Swap any two dishes.</span></div>`;if(i===4)extra=`<img class="loofa-hand-key" src="${siteURL('/assets/games-other-followup/loofa-hover-new-outstretched-hand-screenshot.png')}" alt="Original Lufa hand-hover state: click the outstretched hand to rotate the table" width="440" height="454">`;return `<article class="loofa-fixed-note loofa-fixed-note-${i}" data-loofa-fixed-note="${i}"><span class="loofa-fixed-number">${String(i+1).padStart(2,'0')}</span><div class="loofa-fixed-copy"><h3>${esc(title)}</h3><p>${esc(body)}</p></div>${extra}</article>`;}
 function setupVideoAnnotations(section,project){
  const recording=section.querySelector('.loofa-recording');if(!recording)return()=>{};const video=recording.querySelector('video');if(!video)return()=>{};
@@ -33,7 +33,7 @@ function setupVideoAnnotations(section,project){
    let x1,y1;
    if(small){x1=r.left+r.width/2-br.left;y1=r.top+r.height/2-br.top;}
    else if(target.side==='left'){x1=r.right-br.left+8;y1=r.top+r.height/2-br.top;}
-   else if(target.side==='right'){x1=r.left-br.left+8;y1=r.bottom+5-br.top;}
+   else if(target.side==='right'){const nr=board.querySelector(`[data-loofa-fixed-note="${i}"] .loofa-fixed-number`).getBoundingClientRect();x1=nr.left-br.left-8;y1=r.top+r.height/2-br.top;}
    else if(target.side==='top'){x1=r.right+10-br.left;y1=r.top+r.height/2-br.top;}
    else{x1=r.left+r.width*.5-br.left;y1=r.top-br.top-7;}
    const line=board.querySelector(`[data-loofa-fixed-line="${i}"]`),parts=line.querySelectorAll('i');
@@ -61,7 +61,7 @@ function setupRoutes(section,project){
  {src:'/assets/1577-8305-raw-1-06b0c478.webp',width:3406,height:2140,alt:'Original dialogue between Lufa and Onion Man',caption:'Lufa and Onion Man'},
  {src:'/assets/1577-8306-raw-1-e13b7f64.webp',width:3420,height:2142,alt:'Original dialogue between Lufa and Ekvin',caption:'Lufa and Ekvin'}
  ];
- section.insertAdjacentHTML('beforeend',`<div class="loofa-routes-layout"><figure class="loofa-route-map"><img src="${siteURL(map.src)}" alt="${esc(map.alt)}" width="${map.width}" height="${map.height}" loading="lazy" decoding="async"><figcaption>${esc(map.caption||'Original chapter map')}</figcaption></figure><div class="loofa-route-copy">${data.body?`<p>${esc(data.body)}</p>`:''}${(data.items||[]).map((item,i)=>`<article><span class="loofa-route-number">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></div></article>`).join('')}</div></div><div class="loofa-dialogue-intro"><h3>Before the meal</h3><p>${esc(data.dialogueIntro||'Before each chapter, Lufa talks with the guests.')}</p><div class="loofa-original-dialogues">${dialogue.map(f=>`<figure><img src="${siteURL(f.src)}" width="${f.width}" height="${f.height}" alt="${esc(f.alt)}" loading="lazy" decoding="async"><figcaption>${esc(f.caption)}</figcaption></figure>`).join('')}</div></div>`);
+ section.insertAdjacentHTML('beforeend',`<div class="loofa-routes-layout"><figure class="loofa-route-map"><img src="${siteURL(map.src)}" alt="${esc(map.alt)}" width="${map.width}" height="${map.height}" loading="lazy" decoding="async">${map.caption?`<figcaption>${esc(map.caption)}</figcaption>`:''}</figure><div class="loofa-route-copy">${data.body?`<p>${esc(data.body)}</p>`:''}${(data.items||[]).map((item,i)=>`<article><span class="loofa-route-number">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></div></article>`).join('')}</div></div><div class="loofa-dialogue-intro"><h3>Before the meal</h3><p>${esc(data.dialogueIntro||'Before each chapter, Lufa talks with the guests.')}</p><div class="loofa-original-dialogues">${dialogue.map(f=>`<figure><img src="${siteURL(f.src)}" width="${f.width}" height="${f.height}" alt="${esc(f.alt)}" loading="lazy" decoding="async">${f.caption?`<figcaption>${esc(f.caption)}</figcaption>`:''}</figure>`).join('')}</div></div>`);
 }
 export function setupLoofaEditorial(root,project){
  if(project.id!=='loofasoup')return()=>{};
