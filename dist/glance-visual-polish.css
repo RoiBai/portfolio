@@ -128,7 +128,7 @@ body[data-project=glancemap] #process .pilot-goals p{grid-column:2;grid-row:2;ma
 /* A small source-based control sits in one tinted panel; the unannotated
    GlanceMap source frame is the primary comparison image on the right. */
 body[data-project=glancemap] #study .study-condition-grid{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:32px;align-items:start}
-body[data-project=glancemap] #study .study-control{padding:24px;background:#24311d;border-radius:4px;isolation:isolate}
+body[data-project=glancemap] #study .study-control{padding:24px;background:#000;border-radius:4px;isolation:isolate}
 body[data-project=glancemap] #study .study-experimental{padding:24px 0 0}
 body[data-project=glancemap] #study .study-condition figure{isolation:auto;background:transparent}
 body[data-project=glancemap] #study .study-condition figure>img{background:transparent;mix-blend-mode:lighten}
@@ -225,9 +225,16 @@ body[data-project=glancemap] .goal-leader.is-current circle {fill:var(--accent);
 @layer case-typography {
  body[data-view=project][data-project=glancemap] .case-study #study .study-facts dt > strong {font-size:var(--case-heading)!important;font-weight:600!important;line-height:1.1!important;font-variant-numeric:tabular-nums}
 }
-/* A modest layout inset shifts the analysis while preserving its right edge. */
-@media(min-width:1000px) {
- body[data-project=glancemap] #findings > :is(.gr-pairs,.gr-secondary,.gr-study-note) {margin-inline-start:32px;width:auto;min-width:0}
+/* Center the evidence and future directions on a common reading column.
+   Keep chapter headings on the site grid; only the content is inset. */
+@media(min-width:1100px) {
+ body[data-project=glancemap] #findings > :is(.gr-pairs,.gr-secondary,.gr-study-note),
+ body[data-project=glancemap] #next > :is(.gr-next-head,.gr-next-list) {width:50%;margin-inline:auto;min-width:0}
+ body[data-project=glancemap] #findings .gr-result-pair {grid-template-columns:minmax(0,1fr) 9% minmax(0,1fr)}
+ body[data-project=glancemap] #findings .gr-connector {padding-inline:10px}
+ body[data-project=glancemap] #findings .gr-secondary {gap:24px}
+ body[data-project=glancemap] #next .gr-next-head,
+ body[data-project=glancemap] #next .gr-next-list>li {grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px}
 }
 @media(min-width:801px) and (min-height:651px) {
  body[data-project=glancemap] .goals-composition {max-height:520px}

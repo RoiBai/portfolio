@@ -188,3 +188,27 @@ body[data-project=personamail] .persona-refined .persona-reuse p{margin-bottom:1
 /* Crop only the original illustrations; keep rasterized source captions out. */
 .persona-original-anchor-art {aspect-ratio:203/70}
 .persona-original-anchor-art img {top:-138.571%}
+
+/* Consistent research tour: a bounded interface on the left, its reading on the right. */
+body[data-project=personamail] #research>.persona-research-tour{gap:38px;margin-top:4px}
+.persona-research-tour .persona-research-pair{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(32px,5vw,76px);align-items:center}
+.persona-research-tour .persona-research-editor{display:grid;gap:38px}
+.persona-research-visual{width:100%;max-width:480px;justify-self:center;min-width:0}
+.persona-research-context .persona-research-visual{max-width:500px}
+.persona-research-explanation{min-width:0}
+.persona-research-explanation>h3{display:flex;align-items:baseline;gap:12px;margin:0 0 16px;color:#264d45}
+.persona-research-explanation>p{margin:0 0 14px;max-width:none;color:#34433f}
+.persona-research-explanation>p:last-child{margin-bottom:0}
+.persona-research-explanation .persona-research-letter{display:inline-grid;min-width:31px;flex-basis:auto;padding:0 5px}
+.persona-research-tour .persona-original-ui{padding:17px}
+.persona-research-tour .persona-original-anchor-grid{gap:12px}
+.persona-research-tour .persona-original-anchor{padding:12px}
+.persona-research-tour .persona-original-anchor-art{max-width:175px}
+@media(max-width:760px){
+ body[data-project=personamail] #research>.persona-research-tour,.persona-research-tour .persona-research-editor{gap:30px}
+ .persona-research-tour .persona-research-pair{grid-template-columns:minmax(0,1fr);gap:18px}
+ .persona-research-explanation{grid-row:1}
+ .persona-research-tour .persona-original-anchor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .persona-research-tour .persona-original-anchor{padding:10px}
+ .persona-research-tour .persona-original-anchor h4{overflow-wrap:normal;text-wrap:pretty}
+}

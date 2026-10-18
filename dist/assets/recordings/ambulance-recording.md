@@ -5,7 +5,7 @@ The page uses the complete recording supplied by the project creator on 2026-10-
 - Original: 3402 × 2144, 265.376667 seconds, H.264, no audio track, 2,014,596,425 bytes.
 - Delivery: `ambulance-user-gameplay.mp4`, 1440 × 908, 30 fps, H.264, 265.40 seconds, no audio track, 61,128,420 bytes.
 - Delivery retains the entire recording and its aspect ratio. No scenes were fabricated, reordered or removed.
-- The webpage initializes `defaultPlaybackRate` and `playbackRate` at 2, so the full recording plays in about 132.7 seconds.
+- The webpage initializes `defaultPlaybackRate` and `playbackRate` at 1.5, so the full recording plays in about 176.9 seconds.
 - Conversion: Lanczos downscale, libx264 CRF 23 / fast, YUV420p, fast-start MP4.
 - Poster: the first frame of the supplied recording.
 

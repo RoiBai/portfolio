@@ -41,3 +41,33 @@ export function publicLink(url) {
     return ['https:','http:'].includes(parsed.protocol) && !/(^|\.)figma\.com$/i.test(parsed.hostname);
   } catch { return false; }
 }
+
+// Paragraph labels identify the job each passage does, after page-specific
+// compositions have placed their copy. They never label captions or quotes.
+export function labelAbstractParagraphs(root, project) {
+  const section = project.sections.find(s => s.nav?.toLowerCase() === 'abstract')
+    || (project.id === 'personamail' ? project.sections[0] : null);
+  if (!section) return;
+  const host = root.querySelector(`#${section.id}`);
+  if (!host) return;
+  const selectors = {
+    ambulance: '.ar-news-copy > p',
+    hersound: '.her-abstract-copy > p',
+    'traditional-color': '.section-body > p, :scope > .color-abstract-finding'
+  };
+  const labels = {
+    personamail: ['Problem', 'Approach'],
+    loofasoup: ['World', 'Gameplay', 'Intent'],
+    hersound: ['Context', 'Approach'],
+    ourworld: ['Archive', 'Scope'],
+    ambulance: ['Problem', 'Approach', 'Outcome']
+  }[project.id] || ['Problem', 'Approach', 'Findings'];
+  host.querySelectorAll(selectors[project.id] || '.section-body > p').forEach((paragraph, index) => {
+    if (!labels[index] || paragraph.querySelector('.abstract-purpose')) return;
+    paragraph.classList.add('abstract-paragraph');
+    const label = document.createElement('span');
+    label.className = 'abstract-purpose';
+    label.textContent = `${labels[index]}:`;
+    paragraph.prepend(label, document.createTextNode(' '));
+  });
+}

@@ -13,3 +13,26 @@
 .play-guide li{font-size:17px;line-height:1.55}.play-toolbar{font-size:15px;line-height:1.5}.play-start{font-size:17px;padding:17px 24px}.play-heading p{font-size:20px}.play-heading .eyebrow{font-size:13px}
 body[data-project=loofasoup] .play-cover{background:radial-gradient(ellipse at 50% 12%,#61784b,#293f31 80%)}body[data-project=loofasoup] .play-start{background:#e8e6a5;color:#234b36}body[data-project=ambulance] .play-cover{background:radial-gradient(ellipse at 50% 12%,#2c4b6c,#142636 80%)}
 @media(max-width:700px){.play-guide li{font-size:16px}.play-toolbar{font-size:14px}.play-stage{aspect-ratio:4/3;min-height:320px}.play-cover{min-height:320px}.play-heading p{font-size:18px}}
+
+/* A compact invitation keeps the case readable; Unity exists only after Play. */
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-stage{
+ width:100%;min-height:0;aspect-ratio:auto;margin-inline:auto;
+}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-cover{
+ min-height:148px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+ gap:22px;padding:28px 36px;text-align:left;
+}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-cover[hidden]{display:none}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-cover h3{margin:0}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-start{white-space:nowrap;gap:20px}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section.is-game-open .play-stage{
+ width:min(100%,1120px,calc((100svh - 190px) * 16 / 9));aspect-ratio:16/9;
+}
+body:is([data-project=ambulance],[data-project=loofasoup]) .play-section.is-game-open .play-stage:fullscreen{width:100vw;height:100vh;aspect-ratio:auto}
+@media(max-width:700px){
+ body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-cover{
+  min-height:200px;grid-template-columns:auto minmax(0,1fr);gap:20px 14px;padding:24px;
+ }
+ body:is([data-project=ambulance],[data-project=loofasoup]) .play-section .play-start{grid-column:1/-1;justify-self:center}
+ body:is([data-project=ambulance],[data-project=loofasoup]) .play-section.is-game-open .play-stage{width:100%;aspect-ratio:4/3}
+}

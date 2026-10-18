@@ -154,3 +154,40 @@ body[data-project=versecolor] .rf-verse-results>figcaption {text-align:left;marg
  body[data-project=versecolor] .rf-verse-rating-bar {height:18px}
  body[data-project=versecolor] .rf-verse-rating-bar>b {left:calc(var(--rating-width) + 5px)}
 }
+
+/* Two findings, each beside the interpretation it supports. */
+body[data-project=versecolor] .rf-verse-results .rf-verse-chart-heading {margin-bottom:8px}
+body[data-project=versecolor] .rf-verse-measure-title {color:var(--muted)}
+body[data-project=versecolor] .rf-verse-result-pairs {display:grid;gap:14px}
+body[data-project=versecolor] .rf-verse-result-pair {display:grid;grid-template-columns:minmax(0,1fr) 10% minmax(0,1fr);align-items:center;padding-block:26px}
+body[data-project=versecolor] .rf-verse-evidence>h3 {margin:0 0 20px}
+body[data-project=versecolor] .rf-verse-evidence .rf-verse-bars {background:none;border:0;padding:0;gap:16px}
+body[data-project=versecolor] .rf-verse-series-label {display:flex;align-items:baseline;justify-content:space-between;gap:20px}
+body[data-project=versecolor] .rf-verse-series-label strong {font-variant-numeric:tabular-nums;font-weight:600}
+body[data-project=versecolor] .rf-verse-series-track {height:8px;background:color-mix(in srgb,var(--ink) 9%,transparent);margin-top:8px}
+body[data-project=versecolor] .rf-verse-series-track>span {height:100%;display:block;background:#4d8c70}
+body[data-project=versecolor] .rf-verse-series.souyun-series .rf-verse-series-track>span {background:#b5b6af}
+body[data-project=versecolor] .rf-verse-series.verse-series .rf-verse-series-label {color:var(--accent)}
+body[data-project=versecolor] .rf-verse-score-axis {display:flex;justify-content:space-between;margin-top:8px;color:var(--muted)}
+body[data-project=versecolor] .rf-verse-result-connector {display:flex;align-items:center;padding-inline:20px}
+body[data-project=versecolor] .rf-verse-result-connector>span {display:block;width:100%;height:1px;background:color-mix(in srgb,var(--accent) 40%,transparent);position:relative}
+body[data-project=versecolor] .rf-verse-result-connector>span::after {content:'';position:absolute;right:-2px;top:-2px;width:5px;height:5px;background:var(--accent);border-radius:50%}
+body[data-project=versecolor] .rf-verse-reported-effect {display:inline-block;color:var(--muted);margin-bottom:10px}
+body[data-project=versecolor] .rf-verse-interpretation h3 {color:var(--accent);margin:0 0 10px}
+body[data-project=versecolor] .rf-verse-interpretation p {margin:0;max-width:none;color:var(--muted)}
+body[data-project=versecolor] .rf-verse-results>figcaption {margin-top:8px}
+@layer case-typography {
+ body[data-view=project][data-project=versecolor] .case-study :is(.rf-verse-measure-title,.rf-verse-series-label,.rf-verse-interpretation p) {font-size:var(--case-note)!important;line-height:1.5!important}
+ body[data-view=project][data-project=versecolor] .case-study :is(.rf-verse-score-axis,.rf-verse-reported-effect) {font-size:var(--case-caption)!important;line-height:1.4!important}
+}
+@media(min-width:1100px) {
+ body[data-project=versecolor] .case-study .rf-verse-results {width:82%!important;margin-inline:auto!important}
+}
+@media(max-width:700px) {
+ body[data-project=versecolor] .rf-verse-result-pair {grid-template-columns:1fr;padding-block:22px}
+ body[data-project=versecolor] .rf-verse-result-connector {height:30px;padding:8px 0 8px 16px}
+ body[data-project=versecolor] .rf-verse-result-connector>span {height:100%;width:1px}
+ body[data-project=versecolor] .rf-verse-result-connector>span::after {top:auto;bottom:-2px;right:-2px}
+ body[data-project=versecolor] .rf-verse-result-pairs {gap:12px}
+ body[data-project=versecolor] .rf-verse-reported-effect {margin-bottom:6px}
+}

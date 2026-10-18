@@ -15,7 +15,7 @@ export const games = {
     embed: siteURL('/assets/loofa-game/index.html'),
     intro: 'Join Lufa at his next business dinner.',
     steps: [],
-    label: 'Play Loofa Soup',
+    label: 'Play Taste of Connection',
   },
   hersound: {
     title: 'Her Sound, Re-sound',
@@ -43,8 +43,8 @@ export function gameSection(id) {
   return `<section id="play" class="play-section" aria-labelledby="play-title" data-game="${id}">
     <div class="play-heading"><div><p class="eyebrow">Interactive experience</p><h2 id="play-title">${id === 'hersound' ? 'Play the story. Uncover her voice.' : 'Step inside the project'}</h2>${game.intro?`<p>${escape(game.intro)}</p>`:''}</div>${id==='ambulance'?'':`<a href="${game.source}" target="_blank" rel="noopener noreferrer" class="text-link">Open original ↗</a>`}</div>
     ${game.steps.length?`<ol class="play-guide">${game.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol>`:''}
-    <div class="play-stage">
-      <div class="play-cover"><span class="play-symbol" aria-hidden="true">▷</span><h3>${escape(game.title)}</h3><button class="play-start" type="button">${escape(game.label)} <span aria-hidden="true">→</span></button></div>
+    <div class="play-stage" id="play-stage-${id}">
+      <div class="play-cover"><span class="play-symbol" aria-hidden="true">▷</span><h3>${escape(game.title)}</h3><button class="play-start" type="button" aria-controls="play-stage-${id}" aria-expanded="false">${escape(game.label)} <span aria-hidden="true">→</span></button></div>
     </div>
     <div class="play-toolbar"><p class="play-status" role="status">${id === 'hersound' ? 'English edition · Original game and particle interaction' : id==='ambulance'?'Play the original game here.':'Play here, or open the original in a new tab.'}</p><div><button class="play-fullscreen" type="button" hidden>Full screen ↗</button><button class="play-close" type="button" hidden>Close game ×</button></div></div>
   </section>`;
@@ -66,6 +66,8 @@ export function setupGames(root=document) {
     const events=new AbortController(),options={signal:events.signal};
     start.addEventListener('click', () => {
       if (frame) return;
+      section.classList.add('is-game-open');
+      start.setAttribute('aria-expanded','true');
       cover.hidden = true;
       status.textContent = 'Opening the game…';
       frame = document.createElement('iframe');
@@ -78,6 +80,11 @@ export function setupGames(root=document) {
         status.textContent = 'Game window opened. Click inside to begin.';
       });
       stage.append(frame);
+      requestAnimationFrame(()=>{
+        if(!frame)return;
+        const bounds=stage.getBoundingClientRect();
+        if(bounds.top<80||bounds.bottom>innerHeight-70)stage.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+      });
       full.hidden = close.hidden = false;
       loadTimer = setTimeout(() => { status.textContent = section.dataset.game==='ambulance'?'Still loading? Try the browser-build link at the top of this page.':'Still loading? You can also use “Open original” above.'; }, 20000);
     },options);
@@ -91,8 +98,12 @@ export function setupGames(root=document) {
       frame?.remove(); frame = null;
       full.hidden = close.hidden = true;
       cover.hidden = false;
+      section.classList.remove('is-game-open');
+      start.setAttribute('aria-expanded','false');
       status.textContent = initialStatus;
       start.focus({preventScroll:true});
+      const bounds=stage.getBoundingClientRect();
+      if(bounds.top<80||bounds.bottom>innerHeight-40)stage.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
     },options);
     cleanups.push(()=>{events.abort();clearTimeout(loadTimer);frame?.remove();});
   });

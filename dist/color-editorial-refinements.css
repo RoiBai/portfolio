@@ -120,3 +120,58 @@ body[data-project="traditional-color"] .case-study .color-pilot-next {padding-to
 /* Clip the original artwork in its native coordinate system. Palette pixels
    remain untouched; only the surrounding paper lies outside the SVG viewport. */
 body[data-project=traditional-color] .color-palace-cutout {display:block;width:100%;height:auto;overflow:visible}
+
+/* Three versions form a reading sequence rather than competing columns. */
+body[data-project="traditional-color"] .case-study .color-version-overview {
+ display:grid;grid-template-columns:1fr;gap:24px;margin:24px 0 28px;
+}
+body[data-project="traditional-color"] .case-study .color-version-overview article {
+ display:grid;grid-template-columns:minmax(210px,.62fr) minmax(0,1.38fr);gap:34px;align-items:center;
+}
+body[data-project="traditional-color"] .case-study .color-version-image {
+ grid-row:auto;height:145px;margin:0;align-items:center;justify-content:center;
+}
+body[data-project="traditional-color"] .case-study .color-version-image img,
+body[data-project="traditional-color"] .case-study .color-version-overview article:nth-child(1) img,
+body[data-project="traditional-color"] .case-study .color-version-overview article:nth-child(3) img {
+ width:100%;height:145px;max-height:145px;object-position:center;object-fit:contain;
+}
+body[data-project="traditional-color"] .case-study .color-version-copy {min-width:0}
+body[data-project="traditional-color"] .case-study .color-version-caption {text-align:left;margin:0 0 10px}
+body[data-project="traditional-color"] .case-study .color-version-caption h3 {text-align:left}
+body[data-project="traditional-color"] .case-study .color-version-meta {justify-content:flex-start;margin-bottom:7px}
+body[data-project="traditional-color"] .case-study .color-version-overview p {margin:0;max-width:none}
+/* The interview questions remain text-led; color references need only a chip. */
+body[data-project="traditional-color"] .case-study .color-research-questions {gap:26px;margin-top:26px}
+body[data-project="traditional-color"] .case-study .color-research-question {
+ display:grid;grid-template-columns:28px minmax(0,1fr);gap:15px;align-items:start;
+}
+body[data-project="traditional-color"] .case-study .color-question-number {margin:4px 0 0}
+body[data-project="traditional-color"] .case-study .color-research-question h3 {margin-bottom:10px!important}
+body[data-project="traditional-color"] .case-study .color-reference-swatches {display:flex;flex-wrap:wrap;gap:20px 40px;margin-top:17px}
+body[data-project="traditional-color"] .case-study .color-reference-swatches>div {display:flex;align-items:center;gap:12px}
+body[data-project="traditional-color"] .case-study .color-reference-swatches i {width:42px;height:42px;margin:0;flex:none}
+body[data-project="traditional-color"] .case-study .color-reference-swatches strong,
+body[data-project="traditional-color"] .case-study .color-reference-swatches small {display:block;font-size:var(--case-caption);line-height:1.4}
+body[data-project="traditional-color"] .case-study .color-reference-swatches strong {font-weight:500}
+body[data-project="traditional-color"] .case-study .color-reference-swatches small {color:var(--muted)}
+/* Both studies end in the same compact action-led format. */
+body[data-project="traditional-color"] .case-study .color-next-steps {display:block;margin-top:28px;padding:0}
+body[data-project="traditional-color"] .case-study .color-next-steps>h3 {margin:0 0 18px!important}
+body[data-project="traditional-color"] .case-study .color-next-steps>ul {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 36px;list-style:none;padding:0;margin:0}
+body[data-project="traditional-color"] .case-study .color-next-steps li {margin:0;padding:0;border:0}
+body[data-project="traditional-color"] .case-study .color-next-steps h4 {margin:0 0 8px!important;color:#3f6578}
+body[data-project="traditional-color"] .case-study .color-next-steps :is(p,blockquote) {margin:0;font-size:var(--case-note)!important;line-height:1.5!important}
+body[data-project="traditional-color"] .case-study .color-next-steps blockquote {padding:0;border:0;font-style:italic;color:var(--ink)}
+body[data-project="traditional-color"] .case-study .color-next-steps cite {display:inline;margin-left:8px;font:400 var(--case-caption)/1.4 var(--font-body);color:var(--muted)}
+@media(max-width:700px) {
+ body[data-project="traditional-color"] .case-study .color-version-overview {gap:26px}
+ body[data-project="traditional-color"] .case-study .color-version-overview article {grid-template-columns:1fr;gap:14px}
+ body[data-project="traditional-color"] .case-study .color-version-image {height:135px}
+ body[data-project="traditional-color"] .case-study .color-version-image img,
+ body[data-project="traditional-color"] .case-study .color-version-overview article:nth-child(1) img,
+ body[data-project="traditional-color"] .case-study .color-version-overview article:nth-child(3) img {height:135px;max-height:135px;max-width:100%;object-position:center}
+ body[data-project="traditional-color"] .case-study .color-next-steps>ul {grid-template-columns:1fr;gap:20px}
+ body[data-project="traditional-color"] .case-study .color-reference-swatches {gap:18px}
+ body[data-project="traditional-color"] .case-study .color-reference-swatches i {width:34px;height:34px}
+}

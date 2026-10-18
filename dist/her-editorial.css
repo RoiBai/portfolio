@@ -228,3 +228,14 @@ body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art {grid-c
 }
 body[data-project=hersound] .case-study #assemble>.section-body>p {margin-bottom:0!important}
 body[data-project=hersound] .case-study #assemble .game-experience {margin-top:0!important}
+
+/* The original candle portrait leaves room for the story; the farewell stays modest. */
+body[data-project=hersound] .case-study #abstract .her-abstract-portraits{max-width:350px;justify-self:center;width:100%}
+body[data-project=hersound] .case-study #abstract .her-abstract-portraits img{height:410px;max-height:410px!important;width:100%;object-fit:contain}
+body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art{max-width:240px}
+body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art img{max-height:370px!important}
+@media(max-width:760px){
+ body[data-project=hersound] .case-study #abstract .her-abstract-portraits{max-width:280px}
+ body[data-project=hersound] .case-study #abstract .her-abstract-portraits img{height:330px;max-height:330px!important}
+ body[data-project=hersound] .case-study #wish.her-wish>.her-farewell-art{max-width:200px}
+}

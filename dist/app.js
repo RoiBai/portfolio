@@ -21,7 +21,7 @@ import { renderGameExperience, setupGameExperiences } from './game-experiences.j
 import { renderVerseInteraction, setupVerseInteraction } from './verse-interaction.js';
 import { setupSourceFigures } from './source-figures.js';
 import { projectHomeOrigin, prepareHomeReturn } from './home-position.js';
-import { emphasize, rolePanel, outcomePanel, comicPanel, publicLink } from './case-editorial.js';
+import { emphasize, rolePanel, outcomePanel, comicPanel, publicLink, labelAbstractParagraphs } from './case-editorial.js';
 import { replacementFor, renderDataVisual, setupDataViz, DATA_VISUAL_ADDITIONS } from './data-viz.js';
 const homeOrigin = projectHomeOrigin();
 let glanceResultsCleanup=()=>{};
@@ -94,6 +94,7 @@ function renderProject(p) {
  glanceResultsCleanup=setupGlanceResults(main);glanceScrollCleanup=setupGlanceScroll(main);glanceCleanup=setupGlanceEditorial(main);gamesCleanup=setupGames(main);setupDataViz(main);setupHerEditorial(main,p);experienceCleanup=setupGameExperiences(main);newsCleanup=setupNewsEmbeds(main);sourceCleanup=setupSourceFigures(main);colorCleanup=setupColorInteractions(main,p);iconCleanup=setupIconInteractions(main,p);layeredCleanup=setupLayeredFigures(main);researchFiguresCleanup=setupResearchFigures(main);gamesMotionCleanup=setupGamesMotion(main);
  ambulanceCleanup=setupAmbulanceEditorial(main,p);ambulanceRecordingCleanup=setupAmbulanceRecording(main,p);loofaCleanup=setupLoofaEditorial(main,p);
  if(p.id==='versecolor')verseCleanup=setupVerseInteraction(main);
+ labelAbstractParagraphs(main,p);
  cleanProjectHeadings();
  warmProject(p.id);
 }

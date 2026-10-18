@@ -348,3 +348,20 @@ body[data-project=icon-colors] .icon-refinement-evidence-row>.icon-refinement-ev
 body[data-project=icon-colors] .case-study > #setup > .section-body {margin:26px 0 30px!important}
 body[data-project=icon-colors] .icon-context-comparison :is(.icon-result-check,.icon-result-cross) svg {display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:600px){body[data-project=icon-colors] .icon-context-comparison :is(.icon-result-check,.icon-result-cross){width:54px;height:54px}}
+
+/* Stronger on-image markers and equal-size specimen comparisons. */
+body[data-project=icon-colors] .icon-context-comparison .icon-result-check {color:#32986b}
+body[data-project=icon-colors] .icon-context-comparison .icon-result-cross {color:#d95755}
+body[data-project=icon-colors] .icon-refinement-before-after {--refinement-art-size:104px;align-items:flex-start}
+body[data-project=icon-colors] .icon-refinement-before-after figure {align-self:flex-start}
+body[data-project=icon-colors] .icon-refinement-before-after .icon-refinement-arrow {margin-top:calc(var(--refinement-art-size)/2 - .5em);line-height:1}
+body[data-project=icon-colors] .icon-guidance-audience-art {display:flex;gap:24px;align-items:flex-start;justify-content:center}
+body[data-project=icon-colors] .icon-guidance-audience-art figure {margin:0;min-width:0;text-align:center}
+body[data-project=icon-colors] .icon-guidance-audience-art .icon-specimen-disc {display:block;width:88px;height:88px;max-width:none;border-radius:50%;margin:0 auto}
+body[data-project=icon-colors] .icon-guidance-audience-art .icon-specimen-disc svg {display:block;width:100%;height:100%}
+body[data-project=icon-colors] .icon-guidance-audience-art figcaption {margin:10px 0 0;text-align:center;font-size:var(--case-caption);color:var(--muted)}
+@media(max-width:800px) {
+ body[data-project=icon-colors] .icon-refinement-before-after {--refinement-art-size:80px}
+ body[data-project=icon-colors] .icon-guidance-audience-art {gap:18px}
+ body[data-project=icon-colors] .icon-guidance-audience-art .icon-specimen-disc {width:72px;height:72px}
+}

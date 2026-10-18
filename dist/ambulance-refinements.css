@@ -130,3 +130,14 @@ body[data-project=ambulance] #gameplay .ar-game-layout>.ar-connections{z-index:4
  body[data-view=project][data-project=ambulance] .case-study #gameplay .ar-map-intro>h3{font-size:var(--case-heading)!important}
  body[data-view=project][data-project=ambulance] .case-study #publication .ar-audience-result>strong{font-size:var(--case-title)!important}
 }
+
+/* Source previews are supporting reading, with the same treatment for both outlets. */
+body[data-project=ambulance] #abstract .ar-news-copy .news-preview{margin:16px 0 22px;padding:12px 0 0;border:0}
+body[data-project=ambulance] #abstract .ar-news-copy .news-preview h4{margin:8px 0 10px;text-wrap:pretty}
+body[data-project=ambulance] #reflection .ar-reflection-grid{align-items:center}
+body[data-project=ambulance] #reflection .ar-reflection-copy{padding-top:0;align-self:center}
+@layer case-typography{
+ body[data-view=project][data-project=ambulance] .case-study #abstract .news-preview h4{font-size:var(--case-note)!important;line-height:1.35!important}
+ body[data-view=project][data-project=ambulance] .case-study #abstract .news-preview-meta,
+ body[data-view=project][data-project=ambulance] .case-study #abstract .news-preview-actions{font-size:var(--case-caption)!important}
+}

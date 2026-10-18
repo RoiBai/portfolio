@@ -61,7 +61,8 @@ export function setupIconInteractions(root=document,p){
  for(const[id,path,kind]of replacements){const fig=[...root.querySelectorAll(`#${id} .project-figure`)].find(f=>f.querySelector(`img[src*="${path}"]`));if(fig){const div=document.createElement('div');div.className='icon-interactive-figure';div.innerHTML=renderIconInteraction(kind);fig.replaceWith(div);}}
  setupIconEditorial(root,p,{
   whiteRefinement:`<figure><img src="${siteURL('/website-assets/icon-before.svg')}" alt="Original white bulb on yellow"><figcaption>Before · white symbol</figcaption></figure><span class="icon-refinement-arrow" aria-hidden="true">→</span><figure><img src="${siteURL('/website-assets/icon-after.svg')}" alt="The same original white bulb with a shadow"><figcaption>After · shadow</figcaption></figure>`,
-  blackRefinement:`<figure>${specimen(7,0,'study2')}<figcaption>Before · black symbol</figcaption></figure><span class="icon-refinement-arrow" aria-hidden="true">→</span>${originalTreatment('outline')}${originalTreatment('gray30')}`
+  blackRefinement:`<figure>${specimen(7,0,'study2')}<figcaption>Before · black symbol</figcaption></figure><span class="icon-refinement-arrow" aria-hidden="true">→</span>${originalTreatment('outline')}${originalTreatment('gray30')}`,
+  audienceExamples:`${[9,10].map(i=>`<figure>${specimen(i,2,'study2')}<figcaption>${ICONS[i].name}</figcaption></figure>`).join('')}`
  });
  function interact(event){
   const hue=event.target.closest('.icon-hue');

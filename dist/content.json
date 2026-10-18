@@ -1654,11 +1654,11 @@
           "navParent": "colorgene",
           "nextIteration": [
             {
-              "title": "Fuller historical sources",
+              "title": "Expand historical sources",
               "body": "Add museum and scholarly references for color names, materials and periods beside each record."
             },
             {
-              "title": "Palettes for the designer’s brief",
+              "title": "Compose for the designer’s brief",
               "body": "Use the intended scene, cultural setting and objects to suggest a complete palette that the designer can refine."
             }
           ]
@@ -2802,7 +2802,7 @@
           "eyebrow": "Findings",
           "title": "Connections became easier to see",
           "body": [
-            "VerseColor helped readers connect ideas and interpret imagery; poem retrieval was similar, while Souyun was easier to use. Next, simplify navigation and test whether these reported benefits last beyond one session."
+            "The strongest advantages were connecting ideas and interpreting imagery. Souyun was easier to use; the next step is simpler navigation and testing whether the benefits last beyond one session."
           ],
           "items": [],
           "figures": [
@@ -2810,7 +2810,7 @@
               "researchFigure": {
                 "kind": "verse-results"
               },
-              "alt": "Six native paired bar comparisons of source-figure mean ratings for VerseColor and Souyun, with reported effect sizes for relational and imagery support.",
+              "alt": "Two native paired bar comparisons: VerseColor was rated higher for connecting ideas and interpreting imagery, each accompanied by an explanation.",
               "sourceOrigin": "Native HTML/CSS. Mean bars read from research_portfolio/assets/verse/results.png at original 2272×656 pixels, baseline y492 and six-unit line y114. Pixel-derived estimates rounded to 0.1; error bars omitted. No raw participant means are claimed. Cognitive Load omitted because the figure label conflicts with cognitive ease in the prose. Reported d=2.29 and d=1.91 retained from manuscript Results."
             }
           ],
@@ -2819,7 +2819,7 @@
             "attribution": "P13 · Post-task interview"
           },
           "highlights": [
-            "connect ideas and interpret imagery"
+            "connecting ideas and interpreting imagery"
           ],
           "layout": "editorial"
         }
@@ -3802,13 +3802,13 @@
           "nav": "Abstract",
           "figures": [
             {
-              "src": "/assets/her-1915/waner-taiping-lakeside-original.png",
-              "width": 2016,
-              "height": 1344,
-              "displayWidth": 520,
-              "alt": "Waner and Taiping together beside the lake in the original game artwork",
-              "caption": "Waner and Taiping · A shared journey",
-              "sourceOrigin": "Original game artwork, unchanged PNG"
+              "src": "/assets/games-revision/her/figma-9116.png",
+              "width": 1024,
+              "height": 1536,
+              "displayWidth": 330,
+              "alt": "Original game artwork of Waner holding a candle",
+              "caption": "Waner · Carrying a light",
+              "sourceOrigin": "Original transparent game artwork, Figma asset 1577:9116, unchanged PNG"
             }
           ],
           "highlights": [

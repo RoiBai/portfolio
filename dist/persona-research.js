@@ -20,36 +20,25 @@ function originalSaved(indices=[1,3]){return `<div class="persona-original-ancho
 function heading(letter, title) {
  return `<h3><span class="persona-research-letter" aria-hidden="true">${letter}</span>${title}</h3>`;
 }
+const researchPair=(visual,letter,title,copy)=>`<div class="persona-research-pair"><div class="persona-research-visual">${visual}</div><div class="persona-research-explanation">${heading(letter,title)}${copy}</div></div>`;
 export function renderPersonaResearch() {
  return `<div class="persona-research-tour" data-persona-research>
  <article class="persona-research-step persona-research-purpose" aria-label="A: Start with the purpose">
- ${heading('A','Start with the purpose')}
- <p>Describe the task in a sentence. In the original example, the writer needs to <strong>decline a dinner invitation they had already accepted</strong> from a senior faculty member.</p>
- ${originalPrompt()}
+ ${researchPair(originalPrompt(),'A','Start with the purpose','<p>Describe the task in a sentence. Here, the writer needs to <strong>decline a dinner invitation they already accepted</strong> from a senior faculty member.</p>')}
  </article>
  <article class="persona-research-step persona-research-context" aria-label="B: Make the relationship explicit">
- ${heading('B','Make the relationship explicit')}
- <div class="persona-research-pair">
- ${originalContext()}
- <div class="persona-research-annotations"><p><strong>Choose the factors.</strong> Relationship, familiarity and power are separate. A recipient can know you well and still be more senior.</p><p><strong>Add the nuance.</strong> The writer adds that the email should be warm, but also respectful and apologetic. Free text covers what a preset cannot.</p></div>
- </div></article>
+ ${researchPair(originalContext(),'B','Make the relationship explicit','<p><strong>Choose the factors.</strong> Familiarity, friendliness and power are separate: someone can know you well and still be more senior.</p><p><strong>Add the nuance.</strong> Free text explains what presets miss—in this case, a warm tone that remains respectful and apologetic.</p>')}
+ </article>
  <article class="persona-research-step persona-research-editor" aria-label="C: Change one intention at a time">
- ${heading('C','Change one intention at a time')}
- <div class="persona-research-editor-details">
- <div class="persona-research-note"><p><strong>C1 · Choose a communication unit.</strong> Opening, purpose, justification and closing are editable parts of the email.</p>${originalUnits()}</div>
- <div class="persona-research-note"><p><strong>C2 · Change its intent.</strong> If the justification feels too defensive, select a more private explanation. Only that part is rewritten; the rest stays intact.</p>${originalIntent()}</div>
- <div class="persona-research-note"><p><strong>C3 · Reuse editing preferences.</strong> The Adaptive Stylebook learns from edits and optional explanations of why they were made. QuickFix offers suggestions for the writer to choose.</p>${originalQuickFix()}</div>
- </div></article>
+ ${researchPair(originalUnits(),'C1','Choose one part to edit','<p>Opening, purpose, justification and closing become <strong>separate communication units</strong>. Select the part you want to change.</p>')}
+ ${researchPair(originalIntent(),'C2','Change its intent','<p>If a justification feels too revealing, choose a more private explanation. <strong>Only that part is rewritten</strong>; the rest of the email stays intact.</p>')}
+ ${researchPair(originalQuickFix(),'C3','Reuse an editing preference','<p>The <strong>Adaptive Stylebook</strong> learns from edits and optional explanations. QuickFix offers suggestions for the writer to choose—for example, a more conversational or more private version.</p>')}
+ </article>
  <article class="persona-research-step persona-research-save" aria-label="D: Save the context that worked">
- ${heading('D','Save the context that worked')}
- <div class="persona-research-pair">
- ${originalSaved()}
- <div class="persona-research-annotations"><p><strong>Persona Anchors</strong> keep strategies for particular kinds of people. <strong>Situation Anchors</strong> keep strategies for recurring requests.</p><p>The writer chooses what to save—for example, declining a previously accepted event while preserving the relationship.</p></div>
- </div></article>
+ ${researchPair(originalSaved(),'D','Save the context that worked','<p><strong>Persona Anchors</strong> save strategies for particular people; <strong>Situation Anchors</strong> save strategies for recurring requests.</p><p>The writer chooses what to save, such as declining an accepted invitation while preserving the relationship.</p>')}
+ </article>
  <article class="persona-research-step persona-research-reuse" aria-label="E: Carry the strategy into the next email">
- ${heading('E','Carry the strategy into the next email')}
- <p>Apply a saved anchor to a similar request instead of explaining the context again. <strong>Anchors retain social context; the stylebook retains editing preferences.</strong> The writer decides what to reuse and what to change.</p>
- ${originalSaved([0,1,2,3])}
+ ${researchPair(originalSaved([0,2]),'E','Carry the strategy into the next email','<p>Apply a saved anchor to a similar request instead of explaining the context again.</p><p><strong>Anchors retain social context; the stylebook retains editing preferences.</strong> The writer decides what to reuse and what to change.</p>')}
  </article>
  </div>`;
 }

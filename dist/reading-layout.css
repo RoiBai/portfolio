@@ -211,3 +211,16 @@ body[data-view=project] .case-study > .case-hero {border-bottom:1px solid color-
  body[data-project=loofasoup] .case-study > #abstract > .section-visuals {grid-column:1!important;grid-row:2!important;max-width:380px!important}
  body[data-project=loofasoup] .case-study > #abstract > .section-body {grid-column:1!important;grid-row:3!important}
 }
+
+/* A compact color label gives each abstract paragraph a clear purpose. */
+body[data-view=project] .case-study .abstract-purpose{
+ display:inline-block;vertical-align:baseline;white-space:nowrap;
+ padding:2px 8px;margin-right:5px;border-radius:3px;
+ color:var(--ink);background:color-mix(in srgb,var(--accent) 20%,var(--bg));
+}
+@layer case-typography{
+ body[data-view=project] .case-study .abstract-purpose{
+  font-size:var(--case-note)!important;font-weight:600!important;
+  line-height:1.45!important;font-style:normal!important;letter-spacing:0!important;
+ }
+}
