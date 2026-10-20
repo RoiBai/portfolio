@@ -93,6 +93,7 @@ export function setupIconInteractions(root=document,p){
  const replacements=[['baseline','icon-study-1.svg','study1'],['meaning','icon-study-2.svg','study2'],['refinement','icon-study-3.svg','study3'],['gradients','icon-gradients.svg','gradients']];
  for(const[id,path,kind]of replacements){const fig=[...root.querySelectorAll(`#${id} .project-figure`)].find(f=>f.querySelector(`img[src*="${path}"]`));if(fig){const div=document.createElement('div');div.className='icon-interactive-figure';div.innerHTML=renderIconInteraction(kind);fig.replaceWith(div);}}
  const editorialCleanup=setupIconEditorial(root,p,{
+  workshopLibrary:ICONS.map((icon,i)=>`<figure>${specimen(i,1,'study2')}<figcaption>${esc(icon.name)}<small>${HUES[i]}°</small></figcaption></figure>`).join(''),
   designAlternatives:designAlternatives(),
   whiteRefinement:[
    {icon:2,caption:'Original · white symbol'},
@@ -114,21 +115,12 @@ export function setupIconInteractions(root=document,p){
    if(panel.hidden||lab.dataset.selected!==String(i)){
     lab.dataset.selected=i;
     lab.querySelectorAll('.icon-hue').forEach(b=>b.setAttribute('aria-expanded',String(b===hue)));
-    panel.innerHTML=comparison(i,lab.dataset.iconLab);panel.hidden=false;positionComparison(lab);
+    panel.innerHTML=comparison(i,lab.dataset.iconLab);panel.hidden=false;
    }
   }
   if(event.type==='click'&&event.target.closest('[data-icon-close]'))hideLab(event.target.closest('[data-icon-lab]'));
   const gradient=event.target.closest('[data-gradient]');if(gradient){const lab=gradient.closest('.icon-gradient-lab');lab.querySelectorAll('[data-gradient]').forEach(b=>b.setAttribute('aria-pressed',String(b===gradient)));lab.querySelector('.icon-gradient-result').textContent=gradientData[Number(gradient.dataset.gradient)].result;}
  }
- function positionComparison(lab){
-  const panel=lab.querySelector('.icon-hue-comparison'),grid=lab.querySelector('.icon-hue-grid').getBoundingClientRect();
-  const width=Math.min(510,innerWidth-32),left=Math.min(Math.max(16,grid.left),innerWidth-width-16);
-  panel.style.width=width+'px';panel.style.left=left+'px';
-  const height=panel.getBoundingClientRect().height;
-  panel.style.top=Math.max(16,Math.min(grid.bottom+10,innerHeight-height-16))+'px';
- }
- function reposition(){root.querySelectorAll('[data-icon-lab]').forEach(lab=>{if(!lab.querySelector('.icon-hue-comparison').hidden)positionComparison(lab);});}
- window.addEventListener('resize',reposition);window.addEventListener('scroll',reposition,{passive:true});
  function hideLab(lab){
   if(!lab)return;
   lab.querySelector('.icon-hue-comparison').hidden=true;
@@ -140,5 +132,5 @@ export function setupIconInteractions(root=document,p){
  }
  function key(event){if(event.key==='Escape'){const lab=event.target.closest('[data-icon-lab]');if(lab){hideLab(lab);event.preventDefault();}}}
  ['pointerover','focusin','click'].forEach(name=>root.addEventListener(name,interact));root.addEventListener('keydown',key);
- return()=>{editorialCleanup?.();window.removeEventListener('resize',reposition);window.removeEventListener('scroll',reposition);['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('keydown',key);};
+ return()=>{editorialCleanup?.();['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('keydown',key);};
 }

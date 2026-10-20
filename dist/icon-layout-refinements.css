@@ -498,79 +498,85 @@ body[data-project=icon-colors] .icon-ar-detail p>span {color:var(--muted)}
 }
 @media(max-width:450px) {body[data-project=icon-colors] .icon-shared-setup {grid-template-columns:1fr;gap:20px}}
 
-/* Oct 20: circular context views, then three compact and distinct study cards. */
-body[data-project=icon-colors] .icon-context-comparison {max-width:920px;margin:24px auto 0;gap:80px}
-body[data-project=icon-colors] .icon-context-comparison :is(.icon-desktop-context,.icon-ar-context) {width:300px;height:300px;max-width:100%;aspect-ratio:1;border-radius:50%;margin:auto;background:color-mix(in srgb,var(--ink) 5%,transparent)}
-body[data-project=icon-colors] .icon-desktop-context .icon-monitor {width:73%;height:150px;border-width:6px;border-bottom-width:12px;border-radius:6px;box-shadow:none;transform:translateY(7px)}
-body[data-project=icon-colors] .icon-desktop-context .icon-monitor-foot {height:26px;width:40px;transform:translateY(7px)}
-body[data-project=icon-colors] .icon-monitor-foot:after {width:104px;left:-32px;height:5px}
-body[data-project=icon-colors] .icon-ar-context>img {width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:47% center}
-body[data-project=icon-colors] .icon-ar-context .icon-ar-parking {left:65px;top:85px}
-body[data-project=icon-colors] .icon-context-comparison :is(.icon-screen-parking,.icon-ar-parking) {width:80px;height:80px;border-radius:50%}
-body[data-project=icon-colors] .icon-context-comparison :is(.icon-result-check,.icon-result-cross) {width:52px;height:52px;bottom:7px;right:13px}
-body[data-project=icon-colors] .icon-context-comparison figcaption {max-width:370px;margin:18px auto 0}
-body[data-project=icon-colors] .icon-context-explanation {margin-top:26px;display:block}
-body[data-project=icon-colors] .icon-study-cards {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
-body[data-project=icon-colors] .icon-study-cards>.icon-study-stage {--study-color:#ed8b36;--study-ink:#a34b0b;display:flex!important;flex-direction:column;border:0;border-top:4px solid var(--study-color);padding:20px 22px 22px!important;margin:0!important;min-height:0;background:color-mix(in srgb,var(--study-color) 7%,var(--bg));border-radius:0 0 8px 8px;scroll-margin-top:90px;min-width:0}
-body[data-project=icon-colors] .icon-study-cards>#meaning {--study-color:#e83ab7;--study-ink:#ac177f}
-body[data-project=icon-colors] .icon-study-cards>#refinement {--study-color:#d7d92f;--study-ink:#74720a}
+/* Oct 20 evening: circular symbols inside the original rectangular contexts. */
+body[data-project=icon-colors] .icon-context-comparison {max-width:none;margin:24px auto 0;gap:55px}
+body[data-project=icon-colors] .icon-context-comparison :is(.icon-desktop-context,.icon-ar-context) {width:100%;height:270px;max-width:520px;aspect-ratio:auto;border-radius:0;margin:auto;background:none}
+body[data-project=icon-colors] .icon-desktop-context .icon-monitor {width:85%;height:219px;border-width:8px;border-bottom-width:17px;border-radius:10px;box-shadow:0 10px 30px #0004;transform:none}
+body[data-project=icon-colors] .icon-desktop-context .icon-monitor-foot {height:37px;width:70px;transform:none}
+body[data-project=icon-colors] .icon-monitor-foot:after {width:160px;left:-45px;height:7px}
+body[data-project=icon-colors] .icon-ar-context>img {width:100%;height:250px;border-radius:8px;object-fit:cover;object-position:center}
+body[data-project=icon-colors] .icon-ar-context .icon-ar-parking {left:27px;top:33px}
+body[data-project=icon-colors] .icon-context-comparison :is(.icon-screen-parking,.icon-ar-parking) {width:108px;height:108px;border-radius:50%}
+body[data-project=icon-colors] .icon-context-comparison :is(.icon-result-check,.icon-result-cross) {width:60px;height:60px;bottom:0;right:0}
+body[data-project=icon-colors] .icon-context-comparison figcaption {max-width:none;margin:18px auto 0}
+
+/* The website gives each study a full-width section, in reading order. */
+body[data-project=icon-colors] .icon-study-cards {display:grid;grid-template-columns:1fr;gap:38px;align-items:start}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage {--study-color:#ed8b36;--study-ink:#ffad68;display:grid!important;grid-template-columns:minmax(220px,.65fr) minmax(0,1.65fr);gap:22px 36px!important;border:0;border-left:3px solid var(--study-color);padding:26px 30px!important;margin:0!important;min-height:0;background:color-mix(in srgb,var(--study-color) 5%,var(--bg));border-radius:0 6px 6px 0;scroll-margin-top:90px;min-width:0}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>#meaning {--study-color:#e83ab7;--study-ink:#ff71d8}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>#refinement {--study-color:#d7d92f;--study-ink:#eff45a}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>* {order:0!important}
 body[data-project=icon-colors] .icon-study-cards .section-heading h3 {display:block;background:none;padding:0;color:var(--ink);border:0;border-radius:0;letter-spacing:0}
-body[data-project=icon-colors] .icon-study-number {display:block;width:fit-content;background:var(--study-color);color:#121719;padding:4px 8px;margin-bottom:12px;border-radius:3px;letter-spacing:.025em}
-body[data-project=icon-colors] .case-study .icon-study-cards .icon-study-stage>.section-body {margin:17px 0 0!important}
+body[data-project=icon-colors] .icon-study-number {display:block;width:fit-content;color:var(--study-ink);padding:0;margin-bottom:9px;letter-spacing:.025em}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>.section-heading {grid-column:1;grid-row:1;margin:0!important;min-width:0}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>.section-body {grid-column:2;grid-row:1;margin:0!important;align-self:center;min-height:0}
 body[data-project=icon-colors] .case-study .icon-study-cards .icon-study-stage>.section-body p {margin:0}
-body[data-project=icon-colors] .case-study .icon-study-cards .icon-study-stage>.section-visuals {margin:22px 0 0!important}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>.section-visuals {grid-column:1/-1;grid-row:2;margin:0!important;order:0}
 body[data-project=icon-colors] .icon-study-cards :is(.icon-color-lab,.icon-study3-example) {position:static;min-width:0;padding:0;margin:0}
-body[data-project=icon-colors] .icon-study-cards .icon-representative-comparison {display:flex;flex-direction:column;gap:20px;margin:0 0 20px}
-body[data-project=icon-colors] .icon-study-cards .icon-representative-specimens {width:100%;gap:10px}
-body[data-project=icon-colors] .icon-study-cards .icon-representative-specimens .icon-specimen-disc {width:64px;height:64px}
+body[data-project=icon-colors] .icon-study-cards .icon-representative-comparison {display:grid;grid-template-columns:minmax(260px,.85fr) minmax(0,1.4fr);gap:35px;align-items:center;margin:0 0 24px}
+body[data-project=icon-colors] .icon-study-cards .icon-representative-specimens {width:100%;gap:12px;max-width:380px}
+body[data-project=icon-colors] .icon-study-cards .icon-representative-specimens .icon-specimen-disc {width:68px;height:68px}
 body[data-project=icon-colors] .icon-study-cards .icon-representative-specimens figcaption {margin:9px 0 0}
-body[data-project=icon-colors] .icon-study-cards .icon-representative-copy {width:100%}
+body[data-project=icon-colors] .icon-study-cards .icon-representative-copy {width:100%;min-height:0}
 body[data-project=icon-colors] .icon-study-cards :is(.icon-representative-copy strong,.icon-study-next strong,.icon-study3-finding strong,.section-body strong,.text-emphasis) {color:var(--study-ink)!important}
-body[data-project=icon-colors] .icon-study-cards .icon-lab-instruction {margin:0 0 10px}
+body[data-project=icon-colors] .icon-study-cards .icon-lab-instruction {margin:0 0 12px}
 body[data-project=icon-colors] .icon-study-cards .icon-lab-instruction>span {color:var(--study-ink);padding:0;background:none}
-body[data-project=icon-colors] .icon-study-cards .icon-hue-grid {grid-template-columns:repeat(6,minmax(0,1fr));gap:8px 5px}
-body[data-project=icon-colors] .icon-study-cards .icon-hue {padding:4px 2px;border-radius:4px}
-body[data-project=icon-colors] .icon-study-cards .icon-hue>span {max-width:31px;margin-bottom:5px}
-body[data-project=icon-colors] .icon-study-cards .icon-study-next {margin:18px 0 0;padding:0;border:0}
+body[data-project=icon-colors] .icon-study-cards .icon-hue-grid {grid-template-columns:repeat(12,minmax(0,1fr));gap:10px}
+body[data-project=icon-colors] .icon-study-cards .icon-hue {padding:5px 2px;border-radius:4px}
+body[data-project=icon-colors] .icon-study-cards .icon-hue>span {max-width:42px;margin-bottom:6px}
+body[data-project=icon-colors] .icon-study-cards .icon-hue:is(:hover,:focus-visible),body[data-project=icon-colors] .icon-study-cards .icon-hue[aria-expanded=true] {border-color:var(--study-color)}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>.icon-study-next {grid-column:1/-1;grid-row:3;margin:0;padding:0;border:0}
 body[data-project=icon-colors] .icon-study-cards .icon-study3-example .icon-example-label {display:flex;gap:8px;align-items:center;margin:0 0 14px;color:var(--muted)}
-body[data-project=icon-colors] .icon-study3-specimens {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 8px}
+body[data-project=icon-colors] .icon-study3-specimens {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px;max-width:100%}
 body[data-project=icon-colors] .icon-study3-specimens figure {margin:0;text-align:center}
-body[data-project=icon-colors] .icon-study3-specimens .icon-treatment-art {width:64px;height:64px}
+body[data-project=icon-colors] .icon-study3-specimens .icon-treatment-art {width:68px;height:68px}
 body[data-project=icon-colors] .icon-study3-specimens figcaption {display:block;text-align:center;margin:7px 0 0;padding:0!important}
-body[data-project=icon-colors] .icon-study3-finding {margin:18px 0 0}
-body[data-project=icon-colors] .icon-study-cards .icon-study3-results {margin:20px 0 0;padding:0;border:0}
-body[data-project=icon-colors] .icon-study3-results summary {display:flex;justify-content:space-between;align-items:center;gap:15px;list-style:none;cursor:pointer;color:var(--study-ink);font-weight:600;padding:8px 0}
+body[data-project=icon-colors] .icon-study3-finding {margin:22px 0 0}
+body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>.icon-study3-results {grid-column:1/-1;grid-row:3;margin:0;padding:0;border:0}
+body[data-project=icon-colors] .icon-study3-results summary {display:flex;justify-content:space-between;align-items:center;gap:15px;list-style:none;cursor:pointer;color:var(--study-ink);font-weight:600;padding:0}
 body[data-project=icon-colors] .icon-study3-results summary::-webkit-details-marker {display:none}
 body[data-project=icon-colors] .icon-study3-results summary:after {content:'+';font-size:22px;line-height:1}
 body[data-project=icon-colors] .icon-study3-results[open] summary:after {content:'−'}
-body[data-project=icon-colors] .icon-study3-comparisons {grid-template-columns:1fr;gap:20px;margin-top:16px}
+body[data-project=icon-colors] .icon-study3-comparisons {grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 36px;margin-top:20px}
 body[data-project=icon-colors] .icon-study3-comparisons h5 {color:var(--study-ink)}
-/* The ratings float above the cards, retaining readable table columns. */
-body[data-project=icon-colors] .icon-study-cards .icon-hue-comparison {position:fixed;z-index:120;margin:0;padding:18px 20px;background:var(--bg);border:1px solid var(--line);border-top:4px solid var(--study-color);border-radius:6px;box-shadow:0 12px 42px #0003;max-height:calc(100svh - 32px);overflow:auto;overscroll-behavior:contain;animation:none}
+/* Selection expands below the palette and moves later content down naturally. */
+body[data-project=icon-colors] .icon-study-cards .icon-hue-comparison {position:static;z-index:auto;width:100%;margin:22px 0 0;padding:20px 0 0;background:none;border:0;border-top:1px solid color-mix(in srgb,var(--study-color) 35%,transparent);border-radius:0;box-shadow:none;max-height:none;overflow:visible;animation:none}
 body[data-project=icon-colors] .icon-study-cards .icon-compare-head {gap:16px}
 body[data-project=icon-colors] .icon-study-cards .icon-compare-head p {margin-top:5px;color:var(--muted)}
-body[data-project=icon-colors] .icon-study-cards .icon-rating-results {margin:14px 0 0}
-body[data-project=icon-colors] .icon-study-cards .icon-rating-table :is(th,td) {padding:7px 5px}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-results {margin:16px auto 0;max-width:860px}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-table :is(th,td) {padding:9px 7px}
 body[data-project=icon-colors] .icon-study-cards .icon-rating-table thead th {padding-bottom:12px}
-body[data-project=icon-colors] .icon-study-cards .icon-rating-table .icon-specimen-disc {width:48px;height:48px}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-table .icon-specimen-disc {width:52px;height:52px}
 body[data-project=icon-colors] .icon-study-cards .icon-rating-table thead th>span:last-child {margin-top:6px}
 body[data-project=icon-colors] .icon-study-cards .icon-rating-table caption {padding-bottom:10px}
 body[data-project=icon-colors] .icon-study-cards .icon-rating-source-note {margin-top:12px}
-/* Workshop carries design rationale; its plain headings never resemble study badges. */
-body[data-project=icon-colors] #workshop .icon-research-plan {grid-template-columns:minmax(0,.65fr) minmax(0,1fr);gap:36px;max-width:900px;align-items:center;margin-top:22px}
-body[data-project=icon-colors] #workshop .icon-workshop-library {max-width:250px;margin:0}
-body[data-project=icon-colors] #workshop .icon-workshop-library img {width:100%;height:auto;max-height:180px;object-fit:contain}
-body[data-project=icon-colors] #workshop .icon-workshop-library figcaption {margin-top:9px}
-body[data-project=icon-colors] #workshop .icon-workshop-brief h3 {margin:0 0 10px}
-body[data-project=icon-colors] #workshop .icon-workshop-brief p {margin:0}
-body[data-project=icon-colors] #workshop .icon-refinement-reasoning {grid-template-columns:repeat(2,minmax(0,1fr));gap:38px;margin-top:30px}
+/* Full-width workshop library, with the original vector icons rather than a thumbnail. */
+body[data-project=icon-colors] #workshop .icon-research-plan {display:block;max-width:none;margin-top:26px}
+body[data-project=icon-colors] #workshop .icon-workshop-brief h3 {margin:0 0 12px}
+body[data-project=icon-colors] #workshop .icon-workshop-brief p {margin:0;max-width:none}
+body[data-project=icon-colors] #workshop .icon-workshop-library {display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;max-width:none;margin:28px 0 0;align-items:start}
+body[data-project=icon-colors] #workshop .icon-workshop-library figure {margin:0;text-align:center;min-width:0}
+body[data-project=icon-colors] #workshop .icon-workshop-library .icon-specimen-disc {width:58px;height:58px}
+body[data-project=icon-colors] #workshop .icon-workshop-library figcaption {display:block;margin-top:10px;padding:0;text-align:center}
+body[data-project=icon-colors] #workshop .icon-workshop-library figcaption small {display:block;color:var(--muted);margin-top:3px}
+body[data-project=icon-colors] #workshop .icon-refinement-reasoning {grid-template-columns:repeat(2,minmax(0,1fr));gap:38px;margin-top:36px}
 body[data-project=icon-colors] #workshop .icon-refinement-row {display:block;padding:0;background:none}
 body[data-project=icon-colors] #workshop .icon-refinement-copy h4 {padding:0;background:none;color:var(--ink);margin:0 0 12px}
 body[data-project=icon-colors] #workshop .icon-refinement-decision {margin-top:10px}
 body[data-project=icon-colors] #workshop .icon-refinement-evidence-row {display:block;margin-top:18px}
 body[data-project=icon-colors] #workshop .icon-refinement-before-after {--refinement-art-size:64px;gap:10px}
 body[data-project=icon-colors] #workshop .icon-refinement-before-after figcaption {margin-top:8px}
-body[data-project=icon-colors] .icon-workshop-alternatives {margin-top:32px}
+body[data-project=icon-colors] .icon-workshop-alternatives {margin-top:36px}
 body[data-project=icon-colors] .icon-workshop-alternatives .icon-refinement-lab {max-width:none;margin:0;padding:0}
 body[data-project=icon-colors] .icon-workshop-alternatives .icon-gallery-heading {margin:0 0 14px}
 body[data-project=icon-colors] .icon-workshop-alternatives .icon-parking-example>h4 {margin:0 0 16px}
@@ -578,56 +584,44 @@ body[data-project=icon-colors] .icon-workshop-alternatives .icon-parking-alterna
 body[data-project=icon-colors] .icon-workshop-alternatives .icon-treatment-art {width:64px;height:64px}
 body[data-project=icon-colors] .icon-workshop-alternatives figcaption {padding-top:8px!important}
 @layer case-typography {
- body[data-view=project][data-project=icon-colors] .case-study .icon-context-comparison :is(.icon-screen-parking,.icon-ar-parking) {font-size:54px!important}
+ body[data-view=project][data-project=icon-colors] .case-study .icon-context-comparison :is(.icon-screen-parking,.icon-ar-parking) {font-size:72px!important}
  body[data-view=project][data-project=icon-colors] .case-study .icon-study-cards .section-heading h3 {font-size:var(--case-subhead)!important;line-height:1.25!important}
  body[data-view=project][data-project=icon-colors] .case-study .icon-study-number {font-size:var(--case-label)!important;line-height:1.4!important}
- body[data-view=project][data-project=icon-colors] .case-study .icon-study-cards :is(.section-body p,.icon-representative-copy p,.icon-study3-finding,.icon-study-next) {font-size:var(--case-note)!important;line-height:1.5!important}
+ body[data-view=project][data-project=icon-colors] .case-study .icon-study-cards :is(.section-body p,.icon-representative-copy p,.icon-study3-finding,.icon-study-next) {font-size:var(--case-copy)!important;line-height:1.5!important}
  body[data-view=project][data-project=icon-colors] .case-study .icon-study-cards :is(figcaption,.icon-lab-instruction,.icon-lab-instruction>span,.icon-example-label,.icon-study3-results summary) {font-size:var(--case-caption)!important;line-height:1.4!important}
  body[data-view=project][data-project=icon-colors] .case-study .icon-study-cards :is(.icon-hue>small,.icon-study3-specimens figcaption,.icon-rating-source-note,.icon-compare-head p) {font-size:var(--case-label)!important;line-height:1.4!important}
  body[data-view=project][data-project=icon-colors] .case-study .icon-study-cards .icon-compare-head strong {font-size:var(--case-note)!important}
- body[data-view=project][data-project=icon-colors] #workshop :is(.icon-workshop-brief p,.icon-refinement-copy p) {font-size:var(--case-note)!important;line-height:1.5!important}
- body[data-view=project][data-project=icon-colors] #workshop :is(.icon-refinement-before-after figcaption,.icon-parking-alternatives figcaption,.icon-workshop-library figcaption) {font-size:var(--case-label)!important;line-height:1.4!important}
+ body[data-view=project][data-project=icon-colors] #workshop :is(.icon-workshop-brief p,.icon-refinement-copy p) {font-size:var(--case-copy)!important;line-height:1.5!important}
+ body[data-view=project][data-project=icon-colors] #workshop :is(.icon-refinement-before-after figcaption,.icon-parking-alternatives figcaption,.icon-workshop-library figcaption,.icon-workshop-library figcaption small) {font-size:var(--case-label)!important;line-height:1.4!important}
 }
 @media(max-width:1100px) {
- body[data-project=icon-colors] .icon-study-cards {gap:18px}
- body[data-project=icon-colors] .icon-study-cards>.icon-study-stage {padding-inline:16px!important}
+ body[data-project=icon-colors] #workshop .icon-workshop-library {grid-template-columns:repeat(6,minmax(0,1fr));gap:24px}
  body[data-project=icon-colors] .icon-workshop-alternatives .icon-parking-alternatives {grid-template-columns:repeat(5,minmax(0,1fr))}
 }
-@media(max-width:900px) {
- body[data-project=icon-colors] .icon-study-cards {grid-template-columns:1fr;gap:28px}
- body[data-project=icon-colors] .icon-study-cards>.icon-study-stage {padding:20px 22px!important}
- body[data-project=icon-colors] .icon-study-cards .icon-representative-comparison {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px}
- body[data-project=icon-colors] .icon-study-cards .icon-hue-grid {grid-template-columns:repeat(12,minmax(0,1fr))}
- body[data-project=icon-colors] .icon-study3-specimens {grid-template-columns:repeat(6,minmax(0,1fr))}
- body[data-project=icon-colors] .icon-context-comparison {gap:36px}
- body[data-project=icon-colors] #workshop .icon-refinement-reasoning {grid-template-columns:1fr;gap:28px}
+@media(max-width:850px) {
+ body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage {grid-template-columns:1fr;gap:20px!important;padding:22px!important}
+ body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>.section-body {grid-column:1;grid-row:2}
+ body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>.section-visuals {grid-row:3}
+ body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage>:is(.icon-study-next,.icon-study3-results) {grid-row:4}
+ body[data-project=icon-colors] .icon-study-cards .icon-hue-grid {grid-template-columns:repeat(6,minmax(0,1fr))}
+ body[data-project=icon-colors] #workshop .icon-refinement-reasoning {grid-template-columns:1fr;gap:30px}
 }
 @media(max-width:600px) {
- body[data-project=icon-colors] .icon-context-comparison {gap:28px;max-width:100%}
- body[data-project=icon-colors] .icon-context-comparison :is(.icon-desktop-context,.icon-ar-context) {width:260px;height:260px}
- body[data-project=icon-colors] .icon-ar-context .icon-ar-parking {left:53px;top:70px}
- body[data-project=icon-colors] .icon-study-cards .icon-representative-comparison {display:flex;gap:18px}
- body[data-project=icon-colors] .icon-study-cards .icon-hue-grid {grid-template-columns:repeat(6,minmax(0,1fr))}
- body[data-project=icon-colors] .icon-study3-specimens {grid-template-columns:repeat(3,minmax(0,1fr))}
- body[data-project=icon-colors] #workshop .icon-research-plan {grid-template-columns:1fr;gap:20px}
- body[data-project=icon-colors] #workshop .icon-workshop-library {max-width:240px;margin:auto}
+ body[data-project=icon-colors] .icon-context-comparison {gap:30px;max-width:100%}
+ body[data-project=icon-colors] .icon-context-comparison :is(.icon-desktop-context,.icon-ar-context) {height:220px}
+ body[data-project=icon-colors] .icon-desktop-context .icon-monitor {height:170px}
+ body[data-project=icon-colors] .icon-ar-context>img {height:210px}
+ body[data-project=icon-colors] .icon-context-comparison :is(.icon-screen-parking,.icon-ar-parking) {width:88px;height:88px}
+ body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>.icon-study-stage {padding:20px 15px!important}
+ body[data-project=icon-colors] .icon-study-cards .icon-representative-comparison {display:flex;flex-direction:column;gap:18px}
+ body[data-project=icon-colors] .icon-study-cards .icon-representative-specimens .icon-specimen-disc {width:60px;height:60px}
+ body[data-project=icon-colors] .icon-study-cards .icon-hue-grid {gap:8px 5px}
+ body[data-project=icon-colors] .icon-study-cards .icon-hue>span {max-width:32px}
+ body[data-project=icon-colors] .icon-study3-specimens {grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 10px}
+ body[data-project=icon-colors] #workshop .icon-workshop-library {grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 10px}
  body[data-project=icon-colors] .icon-workshop-alternatives .icon-parking-alternatives {grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 12px}
- body[data-project=icon-colors] .icon-study-cards .icon-hue-comparison {padding:14px}
  body[data-project=icon-colors] .icon-study-cards .icon-rating-table .icon-specimen-disc {width:40px;height:40px}
-}
-/* Match the three reading columns without inheriting whole-section grid gaps. */
-body[data-project=icon-colors] .icon-study-cards {align-items:stretch}
-body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>:is(#baseline,#meaning,#refinement) {display:flex!important;flex-direction:column;gap:0!important;--study-ink:#ffad68}
-body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>#meaning {--study-ink:#ff71d8}
-body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>#refinement {--study-ink:#eff45a}
-body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>:is(#baseline,#meaning,#refinement)>.section-body {margin:17px 0 0!important}
-body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>:is(#baseline,#meaning,#refinement)>.section-visuals {margin:22px 0 0!important}
-body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>:is(#baseline,#meaning,#refinement)>:is(.icon-study-next,.icon-study3-results) {margin-top:auto;padding-top:18px}
-@media(min-width:901px) {
- body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>:is(#baseline,#meaning,#refinement)>.section-body {min-height:108px}
-}
-body[data-project=icon-colors] .case-study #study.icon-study-group .icon-study-cards>:is(#baseline,#meaning,#refinement)>* {order:0!important}
-body[data-project=icon-colors] .case-study #study.icon-study-group #meaning .icon-color-lab {margin:0}
-@media(min-width:901px) {
- body[data-project=icon-colors] .icon-study-cards .icon-representative-copy {min-height:81px}
+ body[data-project=icon-colors] .icon-study-cards .icon-rating-table :is(th,td) {padding:8px 3px}
+ body[data-project=icon-colors] .icon-study3-comparisons {grid-template-columns:1fr;gap:20px}
+ @layer case-typography {body[data-view=project][data-project=icon-colors] .case-study .icon-context-comparison :is(.icon-screen-parking,.icon-ar-parking) {font-size:60px!important}}
 }

@@ -53,8 +53,8 @@ export function setupIconEditorial(root,project,visuals={}){
  const workshop=root.querySelector('#workshop');
  if(workshop){
   workshop.insertAdjacentHTML('beforeend',`<div class="icon-research-plan">
-   <figure class="icon-workshop-library">${img('/assets/design-revision/icon-library.svg','The original twelve-icon library: dining, finance, light bulb, cycling, video call, weather, files, parking, yoga, bar, music and alert')}<figcaption>Twelve meanings selected by the designer workshop</figcaption></figure>
-   <div class="icon-workshop-brief"><h3>From color choices to design alternatives</h3><p>First, designers paired the twelve hues with familiar functions. Feedback from Studies 1 and 2 then guided new treatments for edges and backgrounds.</p></div>
+   <div class="icon-workshop-brief"><h3>From color choices to design alternatives</h3><p>Designers paired twelve hues with familiar functions. After Studies 1 and 2, they explored treatments for edges and backgrounds.</p></div>
+   <div class="icon-workshop-library" aria-label="Twelve meanings selected by the designer workshop">${visuals.workshopLibrary||''}</div>
   </div>`);
  }
  // Put the evidence immediately after the material it explains, before the next study.

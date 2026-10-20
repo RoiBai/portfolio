@@ -242,14 +242,7 @@ body[data-project="traditional-color"] .case-study .color-record-connectors i[da
  body[data-project="traditional-color"] .case-study .color-record-original img:last-child {width:230px}
 }
 
-/* Five functions, grouped into three connected interface views. */
-body[data-project=traditional-color] .color-entry-points {
- display:flex;flex-wrap:wrap;gap:10px 28px;list-style:none;padding:0;margin:14px 0 0;
-}
-body[data-project=traditional-color] .color-entry-points li {
- display:flex;align-items:baseline;gap:8px;font-size:var(--case-note);line-height:1.5;
-}
-body[data-project=traditional-color] .color-entry-points li>span {color:#986238;font-size:var(--case-caption);font-weight:600}
+/* Five functions are explained within their three interface views. */
 body[data-project=traditional-color] #colorgene>.section-body {margin-bottom:20px}
 body[data-project=traditional-color] #colorgene .project-figure {gap:26px}
 body[data-project=traditional-color] #colorgene .figure-media {display:flex;justify-content:flex-end}
@@ -267,10 +260,42 @@ body[data-project=traditional-color] .color-artwork-observation {
 body[data-project=traditional-color] #atlas-study>.section-body>p+p {margin-top:12px}
 body[data-project=traditional-color] .color-study-feedback.color-next-steps>ul {grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:700px) {
- body[data-project=traditional-color] .color-entry-points {display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
  body[data-project=traditional-color] #colorgene .project-figure {gap:14px}
  body[data-project=traditional-color] #colorgene .figure-media,
  body[data-project=traditional-color] #colorgene .project-figure:nth-child(2) .figure-media {justify-content:center}
  body[data-project=traditional-color] #colorgene .figure-media img {height:auto;max-height:280px;max-width:100%}
  body[data-project=traditional-color] .color-study-feedback.color-next-steps>ul {grid-template-columns:1fr}
+}
+
+/* Version colors identify the editorial hierarchy, not the native color data. */
+body[data-project=traditional-color] {
+ --color-cologene:#87690f;
+ --color-atlas:#3f6578;
+ --color-future:#41705b;
+}
+body[data-project=traditional-color] :is(#colorgene,#pilot) {--color-section-accent:var(--color-cologene)}
+body[data-project=traditional-color] :is(#atlas,#atlas-study) {--color-section-accent:var(--color-atlas)}
+body[data-project=traditional-color] #future {--color-section-accent:var(--color-future)}
+body[data-project=traditional-color] .case-study .stats-grouped>.stat-group {--study-color:var(--color-cologene)}
+body[data-project=traditional-color] .case-study .stats-grouped>.stat-group:last-child {--study-color:var(--color-atlas)}
+body[data-project=traditional-color] .case-study .color-version-overview article:nth-child(1) {--version-accent:var(--color-cologene)}
+body[data-project=traditional-color] .case-study .color-version-overview article:nth-child(2) {--version-accent:var(--color-atlas)}
+body[data-project=traditional-color] .case-study .color-version-overview article:nth-child(3) {--version-accent:var(--color-future)}
+body[data-project=traditional-color] .case-study .color-version-overview :is(h3,.color-version-number,.color-version-status) {color:var(--version-accent)}
+body[data-project=traditional-color] .case-study :is(#colorgene,#pilot,#atlas,#atlas-study,#future)>.section-heading :is(h2,.eyebrow),
+body[data-project=traditional-color] .case-study :is(#colorgene,#pilot,#atlas-study) :is(h3,h4),
+body[data-project=traditional-color] .case-study #atlas :is(.color-record-heading,.color-record-callouts,.color-atlas-copy,.atlas-native-heading) :is(h3,h4),
+body[data-project=traditional-color] .case-study #future .color-agent-row-note h3,
+body[data-project=traditional-color] .case-study #future .color-agent-heading {color:var(--color-section-accent)}
+body[data-project=traditional-color] .case-study .color-research-question {display:block}
+body[data-project=traditional-color] .case-study #colorgene .color-function-title {margin:0 0 10px}
+body[data-project=traditional-color] .case-study #colorgene .project-figure figcaption {max-width:none}
+body[data-project=traditional-color] .case-study #colorgene .project-figure figcaption p {margin:0}
+@layer case-typography {
+ body[data-view=project][data-project=traditional-color] .case-study #colorgene .project-figure figcaption .color-function-title {
+  font-size:var(--case-subhead)!important;line-height:1.25!important;
+ }
+ body[data-view=project][data-project=traditional-color] .case-study #colorgene .project-figure figcaption p {
+  font-size:var(--case-copy)!important;line-height:1.5!important;
+ }
 }

@@ -54,7 +54,7 @@ const SOURCE_TITLES={
 };
 const translated=c=>ENGLISH[c.id]||[c.pinyin,c.origin];
 const chip=c=>`<span class="atlas-color-token" data-color="${c.id}" style="--color:${c.hex}"><i aria-hidden="true"></i><span>${esc(c.name)}<small>${c.hex}</small></span></span>`;
-const chapterHeading=c=>`<div class="atlas-native-heading"><h3>${esc(c?.title||'From origins to color families')}</h3><p>${esc(c?.body?.[0]||'Trace 100 colors from four origins into eight color families. English notes explain the selected Chinese color record.')}</p></div>`;
+const chapterHeading=c=>`<div class="atlas-native-heading"><h3>${esc(c?.title||'From origins to color families')}</h3>${c?.body?.[0]?`<p>${esc(c.body[0])}</p>`:''}</div>`;
 export function renderAtlasScroll(chapter){return `<div class="atlas-native atlas-stable" data-atlas-scroll><div class="atlas-native-sticky">${chapterHeading(chapter)}<span class="sr-only" data-atlas-phase>Four origins</span><div class="atlas-native-field" data-atlas-field></div><div class="atlas-native-record" data-atlas-record></div><p class="atlas-scroll-hint">Scroll to follow the connections <span aria-hidden="true">↓</span></p></div><div class="atlas-native-mobile" data-atlas-mobile></div></div>`;}
 export function renderAtlasCompose(){return `<div class="atlas-compose" data-atlas-compose><p>Opening the original design briefs…</p></div>`;}
 function sourceHeader(s){return `<img src="${siteURL(BASE+'assets/source-photos/'+s[3])}" alt="${s[2]} color origins"><h4>${s[1]}<span>${s[2]}</span></h4>`;}

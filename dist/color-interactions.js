@@ -48,14 +48,21 @@ function setupResearch(root,p){
  section.classList.add('color-research-brief');section.querySelector('.section-visuals')?.remove();section.classList.remove('with-visual','editorial-pair');
  section.querySelector('.insights')?.remove();
  const swatches=`<div class="color-reference-swatches" aria-label="Two illustrative digital references for Zhu sha">${[['#CA3433','Reference A'],['#9D2933','Reference B']].map(([hex,label])=>`<div><i style="background:${hex}" aria-hidden="true"></i><span><strong>Zhu sha / 朱砂</strong><small>${hex}</small></span></div>`).join('')}</div>`;
- section.insertAdjacentHTML('beforeend',`<div class="color-research-questions">${(data.items||[]).map((item,i)=>`<article class="color-research-question"><span class="color-question-number">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(item.title)}</h3>${item.quote?`<blockquote class="color-formative-quote">“${esc(item.quote.text)}”<cite>${esc(item.quote.attribution)}</cite></blockquote>`:''}<p>${esc(item.body)}</p>${i===1?swatches:''}</div></article>`).join('')}</div>`);
+ section.insertAdjacentHTML('beforeend',`<div class="color-research-questions">${(data.items||[]).map((item,i)=>`<article class="color-research-question"><div><h3>${esc(item.title)}</h3>${item.quote?`<blockquote class="color-formative-quote">“${esc(item.quote.text)}”<cite>${esc(item.quote.attribution)}</cite></blockquote>`:''}<p>${esc(item.body)}</p>${i===1?swatches:''}</div></article>`).join('')}</div>`);
 }
 
 function setupColoGene(root,p){
- const section=root.querySelector('#colorgene'),data=p.sections.find(s=>s.id==='colorgene');if(!section||!data?.entryPoints)return;
- section.querySelector('.section-body')?.insertAdjacentHTML('beforeend',`<ol class="color-entry-points" aria-label="Five ColoGene functions">${data.entryPoints.map((name,i)=>`<li><span>${String(i+1).padStart(2,'0')}</span>${esc(name)}</li>`).join('')}</ol>`);
+ const section=root.querySelector('#colorgene'),data=p.sections.find(s=>s.id==='colorgene');if(!section||!data)return;
  const labels=['Function 01','Functions 02–04','Function 05'];
- section.querySelectorAll('.project-figure>figcaption>span').forEach((el,i)=>{el.textContent=labels[i]||'';});
+ section.querySelectorAll('.project-figure>figcaption').forEach((caption,i)=>{
+  caption.querySelector(':scope>span')?.remove();
+  const title=caption.querySelector('.figure-caption-title');
+  if(!title)return;
+  const heading=document.createElement('h3');
+  heading.className='color-function-title';
+  heading.textContent=`${labels[i]}: ${data.figures[i].captionTitle}`;
+  title.replaceWith(heading);
+ });
 }
 
 function setupAtlasStudy(root,p){const section=root.querySelector('#atlas-study'),data=p.sections.find(s=>s.id==='atlas-study');if(!section||!data)return;section.classList.add('color-atlas-study');section.querySelector('.section-visuals')?.remove();section.insertAdjacentHTML('beforeend',`<div class="color-study-sequence"><div><strong>3 artworks</strong><span>Usual workflow</span></div><span class="color-study-sequence-arrow" aria-hidden="true">→</span><div><strong>Explore Atlas</strong><span>Color records + palette recommendations</span></div><span class="color-study-sequence-arrow" aria-hidden="true">→</span><div><strong>3 artworks</strong><span>Revisit the same briefs with Atlas</span></div></div><div class="color-study-artworks"><h3>Selected revisions across three briefs</h3><p class="color-comparison-hint">Scroll sideways to compare the three briefs →</p><div class="color-study-comparison-window" tabindex="0" role="region" aria-label="Three artwork comparisons: usual workflow above, Color Atlas below"><div class="color-study-comparison-matrix">${[0,1].map(row=>`<div class="color-artwork-row ${row?'color-artwork-row-with':'color-artwork-row-without'}"><div class="color-artwork-row-label"><strong class="color-artwork-row-title">${row?'With Color Atlas':'Without Color Atlas'}</strong><span class="color-artwork-row-subtitle">${row?'The same three briefs, revisited':'The designers’ usual workflow'}</span></div>${data.figures.filter((_,i)=>i%2===row).map(atlasFigure).join('')}</div>`).join('')}</div></div></div><div class="color-study-feedback color-next-steps"><h3>Next iteration</h3><ul>${(data.colorStudyFeedback||[]).map(f=>`<li><h4>${esc(f.next.replace(/\.$/,''))}</h4><blockquote>“${esc(f.text)}”<cite>${esc(f.participant)}</cite></blockquote></li>`).join('')}</ul></div>`);}

@@ -1502,7 +1502,7 @@
         "width": 470.0,
         "height": 400.97900390625,
         "alt": "The original Color Atlas wheel, with 48 traditional colors arranged by origin",
-        "caption": "Original 48-color overview · the expanded 100-color demonstration appears below.",
+        "caption": "Atlas",
         "displayWidth": 520,
         "sourceRefs": [
           {
@@ -1519,7 +1519,7 @@
           "body": [
             "Designers can find traditional color values online, but it is harder to judge their historical fit, trust the reference, or combine them into a complete palette.",
             "We began with ColoGene, connecting color values with their names, origins, periods and meanings. Interviews and the pilot informed Color Atlas; later feedback points toward a future Color Agent.",
-            "The small ColoGene pilot suggested a larger self-reported gain. Selected Atlas artwork revisions and feedback point toward more palette options, fuller sources and support for the whole composition."
+            "The small ColoGene pilot suggested a larger self-reported gain. Atlas artwork revisions and feedback point toward more palette options, fuller sources and support for the whole composition."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -1563,15 +1563,15 @@
           ],
           "items": [
             {
-              "title": "Does the color fit the historical brief?",
+              "title": "Problem 1: Historical fit is hard to judge",
               "body": "P2 sampled architectural photographs for cultural-heritage projects. A visual reference offers a starting point, but its period, material and cultural use still need explanation."
             },
             {
-              "title": "Which reference can I trust?",
+              "title": "Problem 2: Sources disagree on color values",
               "body": "Online references can show different shades under the same traditional name. A value alone does not explain its cultural use; designers need the origin and source beside it."
             },
             {
-              "title": "How do I build a whole palette?",
+              "title": "Problem 3: A single color does not define a palette",
               "body": "Visual comparison needs a cultural rationale for the whole palette.",
               "quote": {
                 "text": "I usually make several versions and then pick the one that looks best.",
@@ -1604,7 +1604,7 @@
           "eyebrow": "VERSION 1 · COLOGENE",
           "title": "ColoGene",
           "body": [
-            "ColoGene brings sources beside the swatches through five functions:"
+            "Browse traditional colors with their sources in view."
           ],
           "items": [],
           "nav": "ColoGene",
@@ -1614,7 +1614,7 @@
               "width": 1520,
               "height": 1336,
               "alt": "ColoGene name-origin interface figure.",
-              "caption": "Name origins connect colors to materials, meanings and naming stories.",
+              "caption": "Trace each name to its material and cultural meaning.",
               "displayWidth": 380,
               "sourceRefs": [
                 {
@@ -1629,7 +1629,7 @@
               "width": 1520,
               "height": 1347,
               "alt": "ColoGene contextual browsing interface figure.",
-              "caption": "Hue and color family support visual filtering; dynasty narrows the historical period.",
+              "caption": "Hue and family filter appearance; dynasty filters the historical period.",
               "displayWidth": 380,
               "sourceRefs": [
                 {
@@ -1637,14 +1637,14 @@
                   "nodeId": "1239:296"
                 }
               ],
-              "captionTitle": "Browse with context"
+              "captionTitle": "Filter by appearance and period"
             },
             {
               "src": "/assets/design-revision/colorgene-palettes.png",
               "width": 1520,
               "height": 907,
               "alt": "ColoGene scene-palette interface figure.",
-              "caption": "Cultural scenes offer three- or five-color combinations.",
+              "caption": "Compare three- or five-color palettes for cultural scenes.",
               "displayWidth": 450,
               "sourceRefs": [
                 {
@@ -1664,13 +1664,6 @@
           ],
           "highlights": [
             "sources beside the swatches"
-          ],
-          "entryPoints": [
-            "Name origins",
-            "Hue filter",
-            "Color family",
-            "Dynasty filter",
-            "Scene-based palettes"
           ]
         },
         {
@@ -1756,9 +1749,7 @@
             {
               "id": "connections",
               "title": "From origins to color families",
-              "body": [
-                "Scroll through the expanded 100-color demonstration: four origins, then eight color families."
-              ],
+              "body": [],
               "figures": [],
               "highlights": [
                 "100 colors",
@@ -2151,7 +2142,7 @@
         "Chinese product designers",
         "origins, cultural meanings and historical context"
       ],
-      "contentRevision": "2026-10-20-color-evidence-and-reading-flow"
+      "contentRevision": "2026-10-20-version-colors-and-function-hierarchy"
     },
     {
       "id": "personamail",
