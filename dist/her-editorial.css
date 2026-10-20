@@ -269,6 +269,7 @@ body[data-project=hersound] .case-study .case-hero .stats>div>span{align-self:ce
 body[data-project=hersound] .her-accusation-pair{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:none;margin:0}
 body[data-project=hersound] .her-accusation img{height:235px;max-height:235px;object-fit:contain;object-position:center bottom}
 body[data-project=hersound] .her-accusation figcaption{text-align:left!important;margin-top:14px!important}
+body[data-project=hersound] .her-accusation figcaption>span{display:block;text-align:center}
 body[data-project=hersound] .her-accusation figcaption>p{margin-top:7px;text-align:left}
 body[data-project=hersound] .her-question-deck{margin-block:18px 24px;max-width:none}
 body[data-project=hersound] .her-evidence-story{grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:4%;align-items:center}

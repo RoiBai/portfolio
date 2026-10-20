@@ -29,9 +29,9 @@ function ratingTable(i,kind){
 function comparison(i,kind){return `<div class="icon-compare-head"><div><strong>${HUES[i]}° · ${kind==='study1'?'Fixed letter T':ICONS[i].name}</strong><p>${kind==='study1'?'Same letter, size and stroke; different foreground colors.':'The same icon, with black, white and opposite-color foregrounds.'}</p></div><button type="button" data-icon-close aria-label="Close color comparison">Close ×</button></div>${ratingTable(i,kind)}`;}
 function representativeComparison(kind){
  const isFirst=kind==='study1',i=isFirst?7:5;
- return `<div class="icon-representative-comparison"><div class="icon-representative-copy"><h4>${isFirst?'Blue background · three foregrounds':'Weather icon · three foregrounds'}</h4><p>${isFirst?'Blue–yellow reached <strong>4.75 / 5 for outdoor clarity</strong>, showing why screen contrast alone could miss a strong AR pairing.':'White had the highest <strong>overall semantics rating (4.31 / 5 across twelve hues)</strong>, yet could lose clarity on bright backgrounds.'}</p></div><div class="icon-representative-specimens">${MODES.map((mode,m)=>`<figure>${specimen(i,m,kind)}<figcaption>${mode}</figcaption></figure>`).join('')}</div></div>`;
+ return `<div class="icon-representative-comparison"><div class="icon-representative-specimens">${MODES.map((mode,m)=>`<figure>${specimen(i,m,kind)}<figcaption>${mode}</figcaption></figure>`).join('')}</div><div class="icon-representative-copy"><p>${isFirst?'Blue–yellow reached <strong>4.75 / 5 for outdoor clarity</strong>. Screen contrast alone missed this strong AR pairing.':'White led <strong>semantics (4.31 / 5 overall)</strong>, but could lose clarity on bright backgrounds.'}</p></div></div>`;
 }
-function matrix(kind){return `<div class="icon-color-lab" data-icon-lab="${kind}">${representativeComparison(kind)}<p class="icon-lab-instruction">12 selected hues. <span>Hover, focus or tap a color to compare.</span></p><div class="icon-hue-grid">${HUES.map((h,i)=>`<button class="icon-hue" type="button" data-hue="${i}" aria-expanded="false" aria-controls="${kind}-comparison" aria-label="Compare ${h} degree hue"><span style="background:${COLORS[i]}" aria-hidden="true"></span><small>${h}°</small></button>`).join('')}</div><div class="icon-hue-comparison" id="${kind}-comparison" hidden></div></div>`;}
+function matrix(kind){return `<div class="icon-color-lab" data-icon-lab="${kind}">${representativeComparison(kind)}<p class="icon-lab-instruction">12 hues. <span>Hover, focus or tap to compare.</span></p><div class="icon-hue-grid">${HUES.map((h,i)=>`<button class="icon-hue" type="button" data-hue="${i}" aria-expanded="false" aria-controls="${kind}-comparison" aria-label="Compare ${h} degree hue"><span style="background:${COLORS[i]}" aria-hidden="true"></span><small>${h}°</small></button>`).join('')}</div><div class="icon-hue-comparison" id="${kind}-comparison" hidden></div></div>`;}
 
 // Reuse the original library paths in native, transparent SVG specimens.
 // Gray levels are HSB brightness, not opacity. The ±30° alternatives are
@@ -60,10 +60,18 @@ const parkingAlternatives=[
  {caption:'Selected outline',outline:'color',colored:true},
  ...[20,30,40].map(gray=>({caption:`Gray backplate ${gray}%`,gray,colored:true}))
 ];
-function refinement(){return `<div class="icon-refinement-lab"><div class="icon-design-gallery" data-icon-alternatives>
- <h3 class="icon-gallery-heading">Original design alternatives</h3>
+function designAlternatives(){return `<div class="icon-refinement-lab"><div class="icon-design-gallery" data-icon-alternatives>
+ <h3 class="icon-gallery-heading">Exploring the treatments</h3>
  <section class="icon-parking-example"><h4>Parking · Hue ${HUES[7]}° <span class="icon-hue-swatch" style="background:${COLORS[7]}" role="img" aria-label="Original blue swatch ${COLORS[7]}"></span><small>${COLORS[7]}</small></h4><div class="icon-parking-alternatives">${parkingAlternatives.map(treatmentFigure).join('')}</div></section>
  </div></div>`;}
+function refinement(){return `<div class="icon-study3-example"><p class="icon-example-label">Parking · Hue 240° <span class="icon-hue-swatch" style="background:${COLORS[7]}"></span></p><div class="icon-study3-specimens">${[
+ {caption:'Original'},
+ {caption:'Shadow',shadow:true},
+ {caption:'Gradient + shadow',shift:30,shadow:true},
+ {caption:'Colored outline',outline:'color',colored:true},
+ {caption:'Gray B20',gray:20,colored:true},
+ {caption:'Gray B30',gray:30,colored:true}
+ ].map(treatmentFigure).join('')}</div><p class="icon-study3-finding"><strong>Shadows improved clarity by 0.88–1.62 points</strong> across four hues. Gradients depended on direction; B30 supported clarity and semantics.</p></div>`;}
 const gradientData=[{name:'Cyan + green',end:'#65f4a1',result:'Less clear in the cyan comparison',shift:'−30°'},{name:'Plain cyan',end:'#77fbfe',result:'Baseline',shift:'0°'},{name:'Cyan + blue',end:'#559cff',result:'Clearer in the cyan comparison',shift:'+30°'}];
 function gradients(){return `<div class="icon-gradient-lab"><div class="icon-gradient-specimens">${gradientData.map((g,i)=>`<button class="icon-gradient-option" type="button" data-gradient="${i}" aria-pressed="${i===1}"><span class="icon-gradient-disc" style="--gradient-end:${g.end}"><svg viewBox="0 0 96 96" aria-hidden="true">${ICONS[5].art}</svg></span><strong>${g.name}</strong><span>${g.shift}</span></button>`).join('')}</div><p class="icon-gradient-result" aria-live="polite">Baseline</p><p class="icon-lab-note">The motion illustrates the color blend. The original observation compared static icons in AR, with hue shifts of ±30°.</p></div>`;}
 export function renderIconInteraction(kind){return kind==='study3'?refinement():kind==='gradients'?gradients():matrix(kind);}
@@ -85,6 +93,7 @@ export function setupIconInteractions(root=document,p){
  const replacements=[['baseline','icon-study-1.svg','study1'],['meaning','icon-study-2.svg','study2'],['refinement','icon-study-3.svg','study3'],['gradients','icon-gradients.svg','gradients']];
  for(const[id,path,kind]of replacements){const fig=[...root.querySelectorAll(`#${id} .project-figure`)].find(f=>f.querySelector(`img[src*="${path}"]`));if(fig){const div=document.createElement('div');div.className='icon-interactive-figure';div.innerHTML=renderIconInteraction(kind);fig.replaceWith(div);}}
  const editorialCleanup=setupIconEditorial(root,p,{
+  designAlternatives:designAlternatives(),
   whiteRefinement:[
    {icon:2,caption:'Original · white symbol'},
    {icon:2,caption:'Shadow',shadow:true},
@@ -105,12 +114,21 @@ export function setupIconInteractions(root=document,p){
    if(panel.hidden||lab.dataset.selected!==String(i)){
     lab.dataset.selected=i;
     lab.querySelectorAll('.icon-hue').forEach(b=>b.setAttribute('aria-expanded',String(b===hue)));
-    panel.innerHTML=comparison(i,lab.dataset.iconLab);panel.hidden=false;
+    panel.innerHTML=comparison(i,lab.dataset.iconLab);panel.hidden=false;positionComparison(lab);
    }
   }
   if(event.type==='click'&&event.target.closest('[data-icon-close]'))hideLab(event.target.closest('[data-icon-lab]'));
   const gradient=event.target.closest('[data-gradient]');if(gradient){const lab=gradient.closest('.icon-gradient-lab');lab.querySelectorAll('[data-gradient]').forEach(b=>b.setAttribute('aria-pressed',String(b===gradient)));lab.querySelector('.icon-gradient-result').textContent=gradientData[Number(gradient.dataset.gradient)].result;}
  }
+ function positionComparison(lab){
+  const panel=lab.querySelector('.icon-hue-comparison'),grid=lab.querySelector('.icon-hue-grid').getBoundingClientRect();
+  const width=Math.min(510,innerWidth-32),left=Math.min(Math.max(16,grid.left),innerWidth-width-16);
+  panel.style.width=width+'px';panel.style.left=left+'px';
+  const height=panel.getBoundingClientRect().height;
+  panel.style.top=Math.max(16,Math.min(grid.bottom+10,innerHeight-height-16))+'px';
+ }
+ function reposition(){root.querySelectorAll('[data-icon-lab]').forEach(lab=>{if(!lab.querySelector('.icon-hue-comparison').hidden)positionComparison(lab);});}
+ window.addEventListener('resize',reposition);window.addEventListener('scroll',reposition,{passive:true});
  function hideLab(lab){
   if(!lab)return;
   lab.querySelector('.icon-hue-comparison').hidden=true;
@@ -122,5 +140,5 @@ export function setupIconInteractions(root=document,p){
  }
  function key(event){if(event.key==='Escape'){const lab=event.target.closest('[data-icon-lab]');if(lab){hideLab(lab);event.preventDefault();}}}
  ['pointerover','focusin','click'].forEach(name=>root.addEventListener(name,interact));root.addEventListener('keydown',key);
- return()=>{editorialCleanup?.();['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('keydown',key);};
+ return()=>{editorialCleanup?.();window.removeEventListener('resize',reposition);window.removeEventListener('scroll',reposition);['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('keydown',key);};
 }

@@ -976,7 +976,7 @@
           "eyebrow": "DESIGNER WORKSHOP",
           "title": "From design practice to three linked studies",
           "body": [
-            "Eight professional designers informed our three foreground choices. They proposed meanings for twelve hues, then agreed on one icon per hue to form the study’s twelve-icon library."
+            "Eight professional designers proposed black, white and opposite-color foregrounds, and agreed on one icon for each of twelve hues. Their design ideas also informed the later refinements."
           ],
           "highlights": [
             "Eight professional designers",
@@ -1006,7 +1006,7 @@
           "eyebrow": "STUDY 1",
           "title": "Compare colors",
           "body": [
-            "We tested 36 pairs: 12 hues with black, white or opposite-color lettering. Participants rated clarity and comfort indoors and outdoors; letter, size and stroke stayed fixed."
+            "36 color pairs: twelve hues × three foregrounds. Participants rated clarity and comfort indoors and outdoors, keeping letter, size and stroke fixed."
           ],
           "nav": "Study 1",
           "figures": [
@@ -1052,8 +1052,8 @@
           "textLayout": "full-width",
           "navParent": "study",
           "studyNext": {
-            "label": "Why Study 2?",
-            "body": "Visibility did not tell us whether a pairing communicated the right function, so we replaced letters with meaningful icons."
+            "label": "Next:",
+            "body": "Test whether a clear pairing also communicates the right function."
           }
         },
         {
@@ -1061,7 +1061,7 @@
           "eyebrow": "STUDY 2",
           "title": "Add meaning",
           "body": [
-            "We replaced the letter with the workshop’s twelve icons and retested all 36 pairs outdoors, adding semantics: how well each color matched the icon’s function."
+            "The same 36 pairs, now with the workshop’s icons. Outdoors, participants rated clarity, comfort and semantics—how well the color fit the function."
           ],
           "nav": "Study 2",
           "figures": [
@@ -1121,16 +1121,16 @@
           "textLayout": "full-width",
           "navParent": "study",
           "studyNext": {
-            "label": "Why Study 3?",
-            "body": "A color could fit the function yet remain hard to see; we refined its edges and background while retaining that meaning."
+            "label": "Next:",
+            "body": "Refine the edges and backgrounds of meaningful but hard-to-see icons."
           }
         },
         {
           "id": "refinement",
           "eyebrow": "STUDY 3",
-          "title": "Refine and retest",
+          "title": "Test the refinements",
           "body": [
-            "Designers proposed shadows, nearby-hue gradients, outlines and gray backplates. We compared the refinements with their originals, retesting clarity, comfort and semantics and adding perceived visual priority."
+            "We retested workshop refinements against their originals in AR: clarity, comfort, semantics and visual prominence. Parking shows the treatments."
           ],
           "nav": "Study 3",
           "figures": [
@@ -1170,9 +1170,8 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
-            "compared the refinements with their originals",
-            "clarity, comfort and semantics",
-            "perceived visual priority"
+            "clarity, comfort, semantics",
+            "visual prominence"
           ],
           "sourceNotes": [
             "Designer agency is documented in the current portfolio: node1704:562 “Ideas from the designer workshop”, followed by original shadow/gradient and outline/gray refinements; the user explicitly confirmed the design task. The paper §6 reports the refinement study without identifying all eight pilot designers as participants in that later iteration.",
@@ -1183,24 +1182,22 @@
           "navParent": "study",
           "reasoning": [
             {
-              "title": "Keep the meaning; recover the edge",
-              "observation": "White preserved semantics but could lose its edge against bright backgrounds.",
-              "decision": "Keep white; test shadows and nearby-hue gradients.",
+              "title": "White symbols: recover the edge",
+              "observation": "White could retain meaning but lose its edge in bright scenes.",
+              "decision": "Test shadows and both nearby-hue gradients.",
               "highlights": [
                 "White preserved semantics",
                 "shadows and nearby-hue gradients"
-              ],
-              "evidence": "Compare the original with a shadow and both gradient directions; the amount of added emphasis also matters."
+              ]
             },
             {
-              "title": "Keep it comfortable; clarify the shape",
-              "observation": "Black was comfortable, but scene detail showing through could weaken recognition.",
+              "title": "Dark symbols: clarify the shape",
+              "observation": "Black felt comfortable, but real-world details could weaken recognition.",
               "decision": "Move color into the symbol; test outlines and gray backplates.",
               "highlights": [
                 "scene detail showing through",
                 "outlines and gray backplates"
-              ],
-              "evidence": "Compare a colored outline with B20, B30 and B40 backplates. B is HSB brightness, not opacity."
+              ]
             }
           ],
           "studyComparisons": [
@@ -1447,7 +1444,7 @@
       "highlights": [
         "clear, comfortable AR icons"
       ],
-      "contentRevision": "2026-10-20-default-findings-and-design-decisions"
+      "contentRevision": "2026-10-20-compact-color-coded-studies"
     },
     {
       "id": "traditional-color",
@@ -3089,7 +3086,7 @@
         "details": "I built the game, implemented all gameplay and system logic, and integrated the team’s 2D and 3D artwork."
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
-      "outcome": "A browser-playable newsgame that turns local reporting into decisions about hospital capacity.",
+      "outcome": "A browser-playable newsgame about hospital capacity, with a paper published in Australian Journalism Review (2025).",
       "sourceNotes": [
         "Only source artwork; section 02 and 03 descriptions are HTML, no generated SVG.",
         "Figma original Games page 168:3792, source frame 1918:374; older original development photos 1577:7262/7263.",
@@ -3119,7 +3116,7 @@
         "role": "Third author",
         "url": "https://intellectdiscover.com/content/journals/10.1386/ajr_00184_1"
       },
-      "contentRevision": "2026-10-20-distinct-reading-roles"
+      "contentRevision": "2026-10-20-paper-outcome"
     },
     {
       "id": "loofasoup",
@@ -3732,7 +3729,7 @@
           "id": "implementation",
           "eyebrow": "PROGRAMMING",
           "title": "From static artwork to a playable scene",
-          "body": "Lufa’s hand is one example of my programming work: a static character asset becomes an action that moves the whole shared table.",
+          "body": "I turned the team’s static character artwork into animated Unity scenes. Lufa’s poses and hand interaction bring the artwork, scene layout and game logic together.",
           "items": [
             {
               "title": "Animate the artwork",
@@ -3750,17 +3747,36 @@
           "nav": "Implementation",
           "figures": [
             {
+              "src": "/assets/games-motion/loofa-lufa-normal.png",
+              "width": 534,
+              "height": 1807,
+              "alt": "Original Lufa character art with one arm down",
+              "caption": "Arm down",
+              "figureRole": "original-pose"
+            },
+            {
+              "src": "/assets/games-motion/loofa-lufa-active.png",
+              "width": 624,
+              "height": 1806,
+              "alt": "Original Lufa character art with one arm raised behind his head",
+              "caption": "Arm raised",
+              "figureRole": "original-pose"
+            },
+            {
               "src": "/assets/games-other-followup/loofa-hover-new-outstretched-hand-screenshot.png",
               "width": 440,
               "height": 454,
-              "alt": "Original in-game Lufa hand-hover state",
-              "caption": "In-game example: Lufa’s hand rotates every dish."
+              "alt": "Original in-game Lufa reaching-hand state at the table",
+              "caption": "Reaching toward the table",
+              "figureRole": "in-game-state"
             }
           ],
           "layout": "editorial",
           "highlights": [],
           "sourceRefs": [
-            "User-confirmed 2026-10-20: team static art, animation by Ruiyuan, Unity import, scaling and layout, interaction and game-logic programming."
+            "User-confirmed 2026-10-20: team static art, animation by Ruiyuan, Unity import, scaling and layout, interaction and game-logic programming.",
+            "Original transparent Lufa character poses previously exported from the user’s Figma portfolio; original source file 1v14DA9zcnHUyfiZZGNhQG, Art and UI 0:1. These poses are presented as separate artwork states, not sequential rotation frames.",
+            "Actual hand-hover screenshot: portfolio node 1577:8215, existing original export."
           ]
         }
       ],
@@ -3785,7 +3801,7 @@
         "narrative table puzzle",
         "competing tastes"
       ],
-      "contentRevision": "2026-10-20-distinct-reading-roles"
+      "contentRevision": "2026-10-20-original-lufa-implementation-art"
     },
     {
       "id": "hersound",

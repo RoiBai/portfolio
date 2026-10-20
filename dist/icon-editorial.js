@@ -11,6 +11,7 @@ function groupIconStudies(root){
  const stages=['baseline','meaning','refinement'].map(id=>root.querySelector('#'+id)).filter(Boolean);
  if(!stages.length)return;
  parent.classList.add('icon-study-group');parent.removeAttribute('data-reveal-group');
+ const cards=document.createElement('div');cards.className='icon-study-cards';
  parent.querySelector(':scope>.section-body:empty')?.remove();
  for(const[order,stage]of stages.entries()){
   stage.classList.add('icon-study-stage');stage.dataset.navParent='study';
@@ -18,10 +19,11 @@ function groupIconStudies(root){
   if(heading){
    heading.querySelector('.eyebrow')?.remove();
    const old=heading.querySelector('h2');
-   if(old){const title=document.createElement('h3');title.textContent='Study '+(order+1)+' · '+old.textContent.replace(/^(?:Stage|Study)\s+\d\s*·\s*/, '');old.replaceWith(title);}
+   if(old){const title=document.createElement('h3');title.innerHTML='<span class="icon-study-number">Study '+(order+1)+'</span>'+esc(old.textContent.replace(/^(?:Stage|Study)\s+\d\s*·\s*/, ''));old.replaceWith(title);}
   }
-  parent.append(stage);
+  cards.append(stage);
  }
+ parent.append(cards);
  // Major chapter numbers exclude the three subordinate studies.
  [...root.querySelectorAll('.case-study>.case-section')].forEach((section,index)=>{
   const number=section.querySelector(':scope>.section-heading .eyebrow>span');
@@ -31,7 +33,7 @@ function groupIconStudies(root){
 
 // The icons are original exports; the explanations and reading layout stay native HTML.
 export function setupIconEditorial(root,project,visuals={}){
- let detailObserver=null,detailDisposed=false;
+
  const abstract=root.querySelector('#abstract');
  if(abstract){abstract.querySelector('.section-visuals')?.remove();abstract.classList.add('icon-prose-abstract');}
  const problem=root.querySelector('#problem');
@@ -39,20 +41,9 @@ export function setupIconEditorial(root,project,visuals={}){
   problem.querySelector('.section-visuals')?.remove();
   problem.insertAdjacentHTML('beforeend',`<div class="icon-context-comparison">
    <figure><div class="icon-desktop-context"><div class="icon-monitor"><span class="icon-screen-parking" aria-label="White parking symbol on blue">P</span></div><div class="icon-monitor-foot"></div><span class="icon-result-check" aria-label="Clear on screen"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 33 26 47 54 16"/></svg></span></div><figcaption><h3>On a screen</h3><small><strong>9.06 : 1</strong> calculated screen contrast · #0000F5 / #FFFFFF</small></figcaption></figure>
-   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span><span class="icon-result-cross" aria-label="Screen contrast does not guarantee AR clarity"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m16 16 32 32m0-32L16 48"/></svg></span></div><figcaption><h3>Through AR glasses</h3><small>The real scene shows through the icon</small></figcaption><div class="icon-ar-detail"><div class="icon-ar-detail-viewport"><div class="icon-ar-detail-source">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Enlarged detail of the same street background')}<span class="icon-ar-parking" aria-hidden="true">P</span></div></div><p>Enlarged detail<br><span>The same symbol and scene</span></p></div></figure>
+   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span><span class="icon-result-cross" aria-label="Screen contrast does not guarantee AR clarity"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m16 16 32 32m0-32L16 48"/></svg></span></div><figcaption><h3>Through AR glasses</h3><small>The real scene shows through the icon</small></figcaption></figure>
   </div><div class="icon-context-explanation"><p>The screen’s blue background is opaque. In AR, <strong>the real scene shines through</strong>; white can glare or merge with a bright background. <strong>Test clarity through the glasses</strong>, alongside screen contrast.</p></div>
 `);
- }
- const arScene=problem?.querySelector('.icon-ar-context'),arDetail=problem?.querySelector('.icon-ar-detail-source');
- if(arScene&&arDetail){
-  const syncDetail=()=>{
-   if(detailDisposed)return;
-   const sceneRect=arScene.getBoundingClientRect(),sourceImage=arScene.querySelector('img'),sourceIcon=arScene.querySelector('.icon-ar-parking'),imageRect=sourceImage.getBoundingClientRect(),iconRect=sourceIcon.getBoundingClientRect();
-   arDetail.style.width=sceneRect.width+'px';arDetail.style.height=sceneRect.height+'px';
-   Object.assign(arDetail.querySelector('img').style,{width:imageRect.width+'px',height:imageRect.height+'px',left:imageRect.left-sceneRect.left+'px',top:imageRect.top-sceneRect.top+'px'});
-   Object.assign(arDetail.querySelector('.icon-ar-parking').style,{width:iconRect.width+'px',height:iconRect.height+'px',left:iconRect.left-sceneRect.left+'px',top:iconRect.top-sceneRect.top+'px'});
-  };
-  detailObserver=new ResizeObserver(syncDetail);detailObserver.observe(arScene);syncDetail();
  }
  const setup=root.querySelector('#setup'),setupData=project.sections?.find(s=>s.id==='setup');
  if(setup&&setupData?.studySetup){
@@ -63,11 +54,7 @@ export function setupIconEditorial(root,project,visuals={}){
  if(workshop){
   workshop.insertAdjacentHTML('beforeend',`<div class="icon-research-plan">
    <figure class="icon-workshop-library">${img('/assets/design-revision/icon-library.svg','The original twelve-icon library: dining, finance, light bulb, cycling, video call, weather, files, parking, yoga, bar, music and alert')}<figcaption>Twelve meanings selected by the designer workshop</figcaption></figure>
-   <div class="icon-study-timeline"><p><strong>Three linked studies</strong><span>From visibility, to semantics, to targeted refinements.</span></p><ol>
-    <li><span>01</span><h3>Compare colors</h3><p>Fixed letter · clarity + comfort</p></li>
-    <li><span>02</span><h3>Add meaning</h3><p>Workshop icons · how well the colors fit</p></li>
-    <li><span>03</span><h3>Refine the design</h3><p>New treatments · perceived priority</p></li>
-   </ol></div>
+   <div class="icon-workshop-brief"><h3>From color choices to design alternatives</h3><p>First, designers paired the twelve hues with familiar functions. Feedback from Studies 1 and 2 then guided new treatments for edges and backgrounds.</p></div>
   </div>`);
  }
  // Put the evidence immediately after the material it explains, before the next study.
@@ -82,14 +69,15 @@ export function setupIconEditorial(root,project,visuals={}){
    section.insertAdjacentHTML('beforeend',`<p class="icon-study-next"><strong>${esc(data.studyNext.label)}</strong> ${esc(data.studyNext.body)}</p>`);
   }
   if(data.studyComparisons?.length){
-   section.insertAdjacentHTML('beforeend',`<div class="icon-study3-results"><h4>What changed in retesting</h4><div class="icon-study3-comparisons">${data.studyComparisons.map(item=>`<article><h5>${esc(item.treatment)}</h5><span>${esc(item.comparison)}</span><p>${esc(item.result)}</p></article>`).join('')}</div></div>`);
+   section.insertAdjacentHTML('beforeend',`<details class="icon-study3-results"><summary>Retesting results</summary><div class="icon-study3-comparisons">${data.studyComparisons.map(item=>`<article><h5>${esc(item.treatment)}</h5><span>${esc(item.comparison)}</span><p>${esc(item.result)}</p></article>`).join('')}</div></details>`);
   }
   if(data.reasoning?.length){
    const bridge=document.createElement('div');bridge.className='icon-refinement-reasoning';
    bridge.innerHTML=data.reasoning.map((item,index)=>`<article class="icon-refinement-row"><div class="icon-refinement-copy"><h4>${esc(item.title)}</h4><p>${text(item.observation,item.highlights)}</p><p class="icon-refinement-decision"><span aria-hidden="true">↳</span><span>${text(item.decision,item.highlights)}</span></p></div><div class="icon-refinement-evidence-row"><div class="icon-refinement-before-after">${index===0?visuals.whiteRefinement||'':visuals.blackRefinement||''}</div>${item.evidence?`<div class="icon-refinement-evidence"><p>${text(item.evidence,item.highlights)}</p>${index===0&&visuals.whiteGradientEvidence?`<p>${esc(visuals.whiteGradientEvidence)}</p>`:''}</div>`:''}</div></article>`).join('');
-   section.querySelector('.section-visuals')?.before(bridge);
+   workshop?.append(bridge);
   }
  }
+ if(workshop&&visuals.designAlternatives){const gallery=document.createElement('div');gallery.className='icon-workshop-alternatives';gallery.innerHTML=visuals.designAlternatives;workshop.append(gallery);}
  const guidelines=root.querySelector('#guidelines'),data=project?.sections?.find(s=>s.id==='guidelines');
  if(guidelines&&data?.items?.some(item=>item.priority)){
   const heading=guidelines.querySelector('.section-heading');guidelines.replaceChildren(heading);guidelines.classList.add('icon-guidelines-combined');
@@ -101,5 +89,5 @@ export function setupIconEditorial(root,project,visuals={}){
   guidelines.append(content);
  }
  groupIconStudies(root);
- return()=>{detailDisposed=true;detailObserver?.disconnect();};
+ return()=>{};
 }

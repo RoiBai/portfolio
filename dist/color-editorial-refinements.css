@@ -216,14 +216,14 @@ body[data-project=traditional-color] .case-study>:is(#colorgene,#atlas) {
 
 /* One annotation per relationship keeps the complete color record in focus. */
 body[data-project="traditional-color"] .case-study .color-record-board {
- grid-template-columns:minmax(0,1fr) 280px;gap:70px;max-width:1000px;align-items:center;
+ grid-template-columns:minmax(0,1fr) 180px;gap:70px;max-width:1000px;align-items:stretch;
 }
-body[data-project="traditional-color"] .case-study .color-record-callouts {gap:26px}
+body[data-project="traditional-color"] .case-study .color-record-callouts {gap:26px;align-content:space-between}
 body[data-project="traditional-color"] .case-study .color-record-callouts>article {
  padding:0 20px 0 0;background:none;border:0;border-radius:0;box-shadow:none;
 }
 body[data-project="traditional-color"] .case-study .color-record-callouts h4 {margin:0 0 8px!important}
-body[data-project="traditional-color"] .case-study .color-record-original {width:280px!important}
+body[data-project="traditional-color"] .case-study .color-record-original {width:180px!important;align-self:start}
 body[data-project="traditional-color"] .case-study .color-record-connectors i[data-axis="x"] {border-top-width:2px}
 body[data-project="traditional-color"] .case-study .color-record-connectors i[data-axis="y"] {border-left-width:2px}
 @layer case-typography {
@@ -231,15 +231,15 @@ body[data-project="traditional-color"] .case-study .color-record-connectors i[da
  body[data-view="project"][data-project="traditional-color"] .case-study .color-pilot-result-summary {font-size:var(--case-note)!important;line-height:1.5!important}
 }
 @media(min-width:701px) and (max-width:1000px) {
- body[data-project="traditional-color"] .case-study .color-record-board {grid-template-columns:minmax(0,1fr) 245px;gap:45px}
- body[data-project="traditional-color"] .case-study .color-record-original {width:245px!important}
+ body[data-project="traditional-color"] .case-study .color-record-board {grid-template-columns:minmax(0,1fr) 180px;gap:40px}
+ body[data-project="traditional-color"] .case-study .color-record-original {width:180px!important}
 }
 @media(max-width:700px) {
  body[data-project="traditional-color"] .case-study .color-record-board {grid-template-columns:32px minmax(0,1fr);gap:20px 0}
  body[data-project="traditional-color"] .case-study .color-record-callouts>article {padding:0}
  body[data-project="traditional-color"] .case-study .color-record-original {width:auto!important}
- body[data-project="traditional-color"] .case-study .color-record-original img:first-child {width:250px}
- body[data-project="traditional-color"] .case-study .color-record-original img:last-child {width:280px}
+ body[data-project="traditional-color"] .case-study .color-record-original img:first-child {width:190px}
+ body[data-project="traditional-color"] .case-study .color-record-original img:last-child {width:230px}
 }
 
 /* Five functions, grouped into three connected interface views. */
