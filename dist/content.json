@@ -1563,16 +1563,16 @@
           ],
           "items": [
             {
-              "title": "Problem 1: Historical fit is hard to judge",
-              "body": "P2 sampled architectural photographs for cultural-heritage projects. A visual reference offers a starting point, but its period, material and cultural use still need explanation."
+              "title": "Historical fit is hard to judge",
+              "body": "Designers often start by sampling images; P2 used architectural photographs for cultural-heritage projects. These references show how a color looks, but rarely explain its material origins, historical use or symbolism. Designers need this context beside the swatch to judge whether it fits their brief."
             },
             {
-              "title": "Problem 2: Sources disagree on color values",
-              "body": "Online references can show different shades under the same traditional name. A value alone does not explain its cultural use; designers need the origin and source beside it."
+              "title": "Sources disagree on color values",
+              "body": "Traditional color names do not map to one fixed digital value: the same name can appear as different shades across sources. Keeping the source and historical description beside each value helps designers examine these differences and choose a reference for their intended context."
             },
             {
-              "title": "Problem 3: A single color does not define a palette",
-              "body": "Visual comparison needs a cultural rationale for the whole palette.",
+              "title": "A single color does not define a palette",
+              "body": "Participants compared several versions, usually judging appearance and harmony rather than explaining cultural fit. Choosing one traditional color does not reveal which others share the intended setting; designers need a rationale for the whole combination.",
               "quote": {
                 "text": "I usually make several versions and then pick the one that looks best.",
                 "attribution": "P6 · formative interview"
@@ -1588,7 +1588,8 @@
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "658:265"
             },
-            "ColoGene paper §4.2, p.4: P2 architectural photographs and P6 choosing among versions; output/color-portfolio/revision-2026-09-29/p3/paper-fulltext.txt:338–344. Initial 12-person formative study, not Atlas interviews."
+            "ColoGene paper §4.2, p.4: P2 architectural photographs and P6 choosing among versions; output/color-portfolio/revision-2026-09-29/p3/paper-fulltext.txt:338–344. Initial 12-person formative study, not Atlas interviews.",
+            "ColoGene paper §2.2: traditional names need not map to a single fixed digital value; §4.2: reference sampling, aesthetic-led iteration and provenance rarely entering stated rationales. Verified in output/color-portfolio/condensed-paper-evidence.md and paper-evidence.md. No later Atlas interview used as formative evidence."
           ],
           "highlights": [
             "12 participants with design backgrounds",
@@ -1622,7 +1623,7 @@
                   "nodeId": "1239:295"
                 }
               ],
-              "captionTitle": "Make meaning visible"
+              "captionTitle": "Explore color names and origins"
             },
             {
               "src": "/assets/design-revision/colorgene-context.png",
@@ -1637,7 +1638,7 @@
                   "nodeId": "1239:296"
                 }
               ],
-              "captionTitle": "Filter by appearance and period"
+              "captionTitle": "Filter by hue, family and dynasty"
             },
             {
               "src": "/assets/design-revision/colorgene-palettes.png",
@@ -1652,7 +1653,7 @@
                   "nodeId": "1239:297"
                 }
               ],
-              "captionTitle": "Compare whole palettes"
+              "captionTitle": "Choose palettes for cultural scenes"
             }
           ],
           "figureLayout": "character-row",
@@ -2142,7 +2143,7 @@
         "Chinese product designers",
         "origins, cultural meanings and historical context"
       ],
-      "contentRevision": "2026-10-20-version-colors-and-function-hierarchy"
+      "contentRevision": "2026-10-21-problem-evidence-and-capability-labels"
     },
     {
       "id": "personamail",

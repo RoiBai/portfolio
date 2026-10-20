@@ -299,3 +299,24 @@ body[data-project=traditional-color] .case-study #colorgene .project-figure figc
   font-size:var(--case-copy)!important;line-height:1.5!important;
  }
 }
+
+/* A problem label and its statement are separate reading levels. */
+body[data-project=traditional-color] .case-study .hero-figure figcaption {
+ justify-content:center;text-align:center;
+}
+body[data-project=traditional-color] .case-study .hero-figure figcaption>span {display:none}
+body[data-project=traditional-color] .case-study .color-problem-heading {
+ display:flex;align-items:baseline;flex-wrap:wrap;gap:10px 14px;margin-bottom:12px;
+}
+body[data-project=traditional-color] .case-study .color-problem-heading h3 {
+ margin:0!important;color:var(--ink);
+}
+body[data-project=traditional-color] .case-study .color-problem-badge {
+ display:inline-block;flex:none;padding:5px 10px;border-radius:3px;
+ color:var(--color-cologene);background:color-mix(in srgb,var(--color-cologene) 12%,transparent);
+}
+@layer case-typography {
+ body[data-view=project][data-project=traditional-color] .case-study .color-problem-badge {
+  font-size:var(--case-caption)!important;font-weight:600!important;line-height:1.4!important;
+ }
+}

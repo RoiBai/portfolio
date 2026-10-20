@@ -625,3 +625,12 @@ body[data-project=icon-colors] .icon-workshop-alternatives figcaption {padding-t
  body[data-project=icon-colors] .icon-study3-comparisons {grid-template-columns:1fr;gap:20px}
  @layer case-typography {body[data-view=project][data-project=icon-colors] .case-study .icon-context-comparison :is(.icon-screen-parking,.icon-ar-parking) {font-size:60px!important}}
 }
+
+/* Keep each verdict beside its symbol, independent of the context image bounds. */
+body[data-project=icon-colors] .icon-context-comparison .icon-parking-pair {display:block;position:relative;width:fit-content;height:fit-content}
+body[data-project=icon-colors] .icon-context-comparison .icon-parking-pair-ar {position:absolute;left:27px;top:33px}
+body[data-project=icon-colors] .icon-context-comparison .icon-parking-pair .icon-ar-parking {position:static}
+body[data-project=icon-colors] .icon-context-comparison .icon-parking-pair :is(.icon-result-check,.icon-result-cross) {left:calc(100% + 10px);right:auto;top:50%;bottom:auto;transform:translateY(-50%);width:52px;height:52px}
+@media(max-width:600px) {
+ body[data-project=icon-colors] .icon-context-comparison .icon-parking-pair :is(.icon-result-check,.icon-result-cross) {left:calc(100% + 8px);width:44px;height:44px}
+}

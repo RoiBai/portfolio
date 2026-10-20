@@ -48,19 +48,18 @@ function setupResearch(root,p){
  section.classList.add('color-research-brief');section.querySelector('.section-visuals')?.remove();section.classList.remove('with-visual','editorial-pair');
  section.querySelector('.insights')?.remove();
  const swatches=`<div class="color-reference-swatches" aria-label="Two illustrative digital references for Zhu sha">${[['#CA3433','Reference A'],['#9D2933','Reference B']].map(([hex,label])=>`<div><i style="background:${hex}" aria-hidden="true"></i><span><strong>Zhu sha / 朱砂</strong><small>${hex}</small></span></div>`).join('')}</div>`;
- section.insertAdjacentHTML('beforeend',`<div class="color-research-questions">${(data.items||[]).map((item,i)=>`<article class="color-research-question"><div><h3>${esc(item.title)}</h3>${item.quote?`<blockquote class="color-formative-quote">“${esc(item.quote.text)}”<cite>${esc(item.quote.attribution)}</cite></blockquote>`:''}<p>${esc(item.body)}</p>${i===1?swatches:''}</div></article>`).join('')}</div>`);
+ section.insertAdjacentHTML('beforeend',`<div class="color-research-questions">${(data.items||[]).map((item,i)=>`<article class="color-research-question"><div><div class="color-problem-heading"><span class="color-problem-badge">Problem ${i+1}</span><h3>${esc(item.title)}</h3></div>${item.quote?`<blockquote class="color-formative-quote">“${esc(item.quote.text)}”<cite>${esc(item.quote.attribution)}</cite></blockquote>`:''}<p>${esc(item.body)}</p>${i===1?swatches:''}</div></article>`).join('')}</div>`);
 }
 
 function setupColoGene(root,p){
  const section=root.querySelector('#colorgene'),data=p.sections.find(s=>s.id==='colorgene');if(!section||!data)return;
- const labels=['Function 01','Functions 02–04','Function 05'];
  section.querySelectorAll('.project-figure>figcaption').forEach((caption,i)=>{
   caption.querySelector(':scope>span')?.remove();
   const title=caption.querySelector('.figure-caption-title');
   if(!title)return;
   const heading=document.createElement('h3');
   heading.className='color-function-title';
-  heading.textContent=`${labels[i]}: ${data.figures[i].captionTitle}`;
+  heading.textContent=data.figures[i].captionTitle;
   title.replaceWith(heading);
  });
 }

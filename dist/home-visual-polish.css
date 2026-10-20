@@ -1,7 +1,8 @@
 /* Selected-work typography only. The name scene and its four role faces are untouched. */
 #selected-work{--work-title:48px;--work-heading:34px;--work-copy:20px;--work-note:18px;--work-caption:16px;--work-label:13px}
 @media(min-width:700px){
- #selected-work{width:94%;margin-inline:auto}
+ #selected-work{--band-height:400px}
+ #selected-work .project-choice .object-hit{height:145px}
 }
 #selected-work :is(.row-copy h2,.group-heading h2){font-family:var(--font-body);font-weight:600;letter-spacing:-.015em;line-height:1.12;text-wrap:pretty}
 #selected-work .row-copy h2{font-size:var(--work-title);margin-bottom:16px}
