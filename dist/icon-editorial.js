@@ -31,6 +31,7 @@ function groupIconStudies(root){
 
 // The icons are original exports; the explanations and reading layout stay native HTML.
 export function setupIconEditorial(root,project,visuals={}){
+ let detailObserver=null,detailDisposed=false;
  const abstract=root.querySelector('#abstract');
  if(abstract){abstract.querySelector('.section-visuals')?.remove();abstract.classList.add('icon-prose-abstract');}
  const problem=root.querySelector('#problem');
@@ -38,15 +39,31 @@ export function setupIconEditorial(root,project,visuals={}){
   problem.querySelector('.section-visuals')?.remove();
   problem.insertAdjacentHTML('beforeend',`<div class="icon-context-comparison">
    <figure><div class="icon-desktop-context"><div class="icon-monitor"><span class="icon-screen-parking" aria-label="White parking symbol on blue">P</span></div><div class="icon-monitor-foot"></div><span class="icon-result-check" aria-label="Clear on screen"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 33 26 47 54 16"/></svg></span></div><figcaption><h3>On a screen</h3><small><strong>9.06 : 1</strong> calculated screen contrast · #0000F5 / #FFFFFF</small></figcaption></figure>
-   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span><span class="icon-result-cross" aria-label="Screen contrast does not guarantee AR clarity"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m16 16 32 32m0-32L16 48"/></svg></span></div><figcaption><h3>Through AR glasses</h3><small>The real scene shows through the icon</small></figcaption></figure>
+   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span><span class="icon-result-cross" aria-label="Screen contrast does not guarantee AR clarity"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m16 16 32 32m0-32L16 48"/></svg></span></div><figcaption><h3>Through AR glasses</h3><small>The real scene shows through the icon</small></figcaption><div class="icon-ar-detail"><div class="icon-ar-detail-viewport"><div class="icon-ar-detail-source">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Enlarged detail of the same street background')}<span class="icon-ar-parking" aria-hidden="true">P</span></div></div><p>Enlarged detail<br><span>The same symbol and scene</span></p></div></figure>
   </div><div class="icon-context-explanation"><p>The screen’s blue background is opaque. In AR, <strong>the real scene shines through</strong>; white can glare or merge with a bright background. <strong>Test clarity through the glasses</strong>, alongside screen contrast.</p></div>
 `);
+ }
+ const arScene=problem?.querySelector('.icon-ar-context'),arDetail=problem?.querySelector('.icon-ar-detail-source');
+ if(arScene&&arDetail){
+  const syncDetail=()=>{
+   if(detailDisposed)return;
+   const sceneRect=arScene.getBoundingClientRect(),sourceImage=arScene.querySelector('img'),sourceIcon=arScene.querySelector('.icon-ar-parking'),imageRect=sourceImage.getBoundingClientRect(),iconRect=sourceIcon.getBoundingClientRect();
+   arDetail.style.width=sceneRect.width+'px';arDetail.style.height=sceneRect.height+'px';
+   Object.assign(arDetail.querySelector('img').style,{width:imageRect.width+'px',height:imageRect.height+'px',left:imageRect.left-sceneRect.left+'px',top:imageRect.top-sceneRect.top+'px'});
+   Object.assign(arDetail.querySelector('.icon-ar-parking').style,{width:iconRect.width+'px',height:iconRect.height+'px',left:iconRect.left-sceneRect.left+'px',top:iconRect.top-sceneRect.top+'px'});
+  };
+  detailObserver=new ResizeObserver(syncDetail);detailObserver.observe(arScene);syncDetail();
+ }
+ const setup=root.querySelector('#setup'),setupData=project.sections?.find(s=>s.id==='setup');
+ if(setup&&setupData?.studySetup){
+  setup.querySelector('.section-body')?.remove();
+  setup.querySelector('.section-heading')?.insertAdjacentHTML('afterend',`<div class="icon-shared-setup">${setupData.studySetup.map(item=>`<article><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></article>`).join('')}</div>${setupData.hardwareCheck?`<p class="icon-hardware-check">${esc(setupData.hardwareCheck)}</p>`:''}`);
  }
  const workshop=root.querySelector('#workshop');
  if(workshop){
   workshop.insertAdjacentHTML('beforeend',`<div class="icon-research-plan">
    <figure class="icon-workshop-library">${img('/assets/design-revision/icon-library.svg','The original twelve-icon library: dining, finance, light bulb, cycling, video call, weather, files, parking, yoga, bar, music and alert')}<figcaption>Twelve meanings selected by the designer workshop</figcaption></figure>
-   <div class="icon-study-timeline"><p><strong>Three linked studies</strong><span>The same 20 participants completed Studies 1–3.</span></p><ol>
+   <div class="icon-study-timeline"><p><strong>Three linked studies</strong><span>From visibility, to semantics, to targeted refinements.</span></p><ol>
     <li><span>01</span><h3>Compare colors</h3><p>Fixed letter · clarity + comfort</p></li>
     <li><span>02</span><h3>Add meaning</h3><p>Workshop icons · how well the colors fit</p></li>
     <li><span>03</span><h3>Refine the design</h3><p>New treatments · perceived priority</p></li>
@@ -60,6 +77,12 @@ export function setupIconEditorial(root,project,visuals={}){
   if(data.studyFinding){
    const f=data.studyFinding;
    section.insertAdjacentHTML('beforeend',`<aside class="icon-study-finding"><small>${esc(f.label)}</small><p>${text(f.body,f.highlights)}</p></aside>`);
+  }
+  if(data.studyNext){
+   section.insertAdjacentHTML('beforeend',`<p class="icon-study-next"><strong>${esc(data.studyNext.label)}</strong> ${esc(data.studyNext.body)}</p>`);
+  }
+  if(data.studyComparisons?.length){
+   section.insertAdjacentHTML('beforeend',`<div class="icon-study3-results"><h4>What changed in retesting</h4><div class="icon-study3-comparisons">${data.studyComparisons.map(item=>`<article><h5>${esc(item.treatment)}</h5><span>${esc(item.comparison)}</span><p>${esc(item.result)}</p></article>`).join('')}</div></div>`);
   }
   if(data.reasoning?.length){
    const bridge=document.createElement('div');bridge.className='icon-refinement-reasoning';
@@ -78,4 +101,5 @@ export function setupIconEditorial(root,project,visuals={}){
   guidelines.append(content);
  }
  groupIconStudies(root);
+ return()=>{detailDisposed=true;detailObserver?.disconnect();};
 }

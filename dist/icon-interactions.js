@@ -14,15 +14,24 @@ const MODES=['Black','White','Opposite'];
 const foreground=(i,m)=>m===0?'#080808':m===1?'#fff':OPPOSITES[i];
 const glyph=(i,kind)=>kind==='study1'?'<g transform="translate(-7.2 0) scale(.6)"><path d="M128.021 36.8398V50.7998H99.5801V123.16H84.1807V50.7998H55.9805V36.8398H128.021Z" fill="currentColor"/></g>':ICONS[i].art;
 function specimen(i,m,kind){return `<span class="icon-specimen-disc" style="background:${COLORS[i]}"><svg viewBox="0 0 96 96" aria-hidden="true" style="color:${foreground(i,m)}">${glyph(i,kind)}</svg></span>`;}
+function ratingValue(kind,hue,mode,env,metric){
+ // Prefer an explicitly reported manuscript value to the chart estimate.
+ if(kind==='study1'&&hue===240&&mode==='opposite'&&metric==='clarity')return env==='indoor'?5:4.75;
+ return ICON_RATINGS[kind]?.[hue]?.[mode]?.[env]?.[metric];
+}
 function ratingTable(i,kind){
  const rowKeys=kind==='study1'?[['indoor','clarity'],['indoor','comfort'],['outdoor','clarity'],['outdoor','comfort']]:[['outdoor','clarity'],['outdoor','comfort'],['outdoor','meaning']];
- const labels={clarity:'Clarity',comfort:'Comfort',meaning:'Meaning fit'},data=ICON_RATINGS[kind]?.[HUES[i]],figure=kind==='study1'?4:8;
- return `<div class="icon-rating-results"><table class="icon-rating-table"><caption>Mean ratings · 1–5 scale${kind==='study2'?' · outdoors':''}</caption><thead><tr><th scope="col"><span>20 participants</span></th>${MODES.map((mode,m)=>`<th scope="col">${specimen(i,m,kind)}<span>${mode}</span></th>`).join('')}</tr></thead><tbody>${rowKeys.map(([env,metric])=>`<tr><th scope="row">${kind==='study1'?`<small>${env==='indoor'?'Indoor':'Outdoor'}</small>`:''}${labels[metric]}</th>${MODES.map(mode=>`<td data-rating="${env}-${metric}-${mode.toLowerCase()}">${Number.isFinite(data?.[mode.toLowerCase()]?.[env]?.[metric])?data[mode.toLowerCase()][env][metric].toFixed(2):'Not reported'}</td>`).join('')}</tr>`).join('')}</tbody></table>
- <small class="icon-rating-source-note">Chart-derived estimates · Figure ${figure}. Higher scores mean clearer, more comfortable or better-fitting colors.</small>
+ const labels={clarity:'Clarity',comfort:'Comfort',meaning:'Semantics'},figure=kind==='study1'?4:8;
+ return `<div class="icon-rating-results"><table class="icon-rating-table"><caption>Mean ratings · 1–5 scale${kind==='study2'?' · outdoors':''}</caption><thead><tr><th scope="col"><span>20 participants</span></th>${MODES.map((mode,m)=>`<th scope="col">${specimen(i,m,kind)}<span>${mode}</span></th>`).join('')}</tr></thead><tbody>${rowKeys.map(([env,metric])=>`<tr><th scope="row">${kind==='study1'?`<small>${env==='indoor'?'Indoor':'Outdoor'}</small>`:''}${labels[metric]}</th>${MODES.map(mode=>`<td data-rating="${env}-${metric}-${mode.toLowerCase()}">${Number.isFinite(ratingValue(kind,HUES[i],mode.toLowerCase(),env,metric))?ratingValue(kind,HUES[i],mode.toLowerCase(),env,metric).toFixed(2):'Not reported'}</td>`).join('')}</tr>`).join('')}</tbody></table>
+ <small class="icon-rating-source-note">Chart-derived estimates · Figure ${figure}${kind==='study1'&&HUES[i]===240?'; opposite-color clarity uses the manuscript’s reported values':''}. Higher scores mean clearer, more comfortable or better-fitting colors.</small>
 </div>`;
 }
 function comparison(i,kind){return `<div class="icon-compare-head"><div><strong>${HUES[i]}° · ${kind==='study1'?'Fixed letter T':ICONS[i].name}</strong><p>${kind==='study1'?'Same letter, size and stroke; different foreground colors.':'The same icon, with black, white and opposite-color foregrounds.'}</p></div><button type="button" data-icon-close aria-label="Close color comparison">Close ×</button></div>${ratingTable(i,kind)}`;}
-function matrix(kind){return `<div class="icon-color-lab" data-icon-lab="${kind}"><p class="icon-lab-instruction">12 selected hues. <span>Hover, focus or tap a color to compare.</span></p><div class="icon-hue-grid">${HUES.map((h,i)=>`<button class="icon-hue" type="button" data-hue="${i}" aria-expanded="false" aria-controls="${kind}-comparison" aria-label="Compare ${h} degree hue"><span style="background:${COLORS[i]}" aria-hidden="true"></span><small>${h}°</small></button>`).join('')}</div><div class="icon-hue-comparison" id="${kind}-comparison" hidden></div></div>`;}
+function representativeComparison(kind){
+ const isFirst=kind==='study1',i=isFirst?7:5;
+ return `<div class="icon-representative-comparison"><div class="icon-representative-copy"><h4>${isFirst?'Blue background · three foregrounds':'Weather icon · three foregrounds'}</h4><p>${isFirst?'Blue–yellow reached <strong>4.75 / 5 for outdoor clarity</strong>, showing why screen contrast alone could miss a strong AR pairing.':'White had the highest <strong>overall semantics rating (4.31 / 5 across twelve hues)</strong>, yet could lose clarity on bright backgrounds.'}</p></div><div class="icon-representative-specimens">${MODES.map((mode,m)=>`<figure>${specimen(i,m,kind)}<figcaption>${mode}</figcaption></figure>`).join('')}</div></div>`;
+}
+function matrix(kind){return `<div class="icon-color-lab" data-icon-lab="${kind}">${representativeComparison(kind)}<p class="icon-lab-instruction">12 selected hues. <span>Hover, focus or tap a color to compare.</span></p><div class="icon-hue-grid">${HUES.map((h,i)=>`<button class="icon-hue" type="button" data-hue="${i}" aria-expanded="false" aria-controls="${kind}-comparison" aria-label="Compare ${h} degree hue"><span style="background:${COLORS[i]}" aria-hidden="true"></span><small>${h}°</small></button>`).join('')}</div><div class="icon-hue-comparison" id="${kind}-comparison" hidden></div></div>`;}
 
 // Reuse the original library paths in native, transparent SVG specimens.
 // Gray levels are HSB brightness, not opacity. The ±30° alternatives are
@@ -75,14 +84,14 @@ export function setupIconInteractions(root=document,p){
  if(outdoor&&!outdoor.querySelector('.icon-outdoor-overlay')){const layer=document.createElement('span');layer.className='icon-outdoor-overlay';layer.setAttribute('aria-label','Parking icon preview');layer.innerHTML=`<svg viewBox="0 0 96 96" aria-hidden="true">${ICONS[7].art}</svg>`;outdoor.append(layer);}
  const replacements=[['baseline','icon-study-1.svg','study1'],['meaning','icon-study-2.svg','study2'],['refinement','icon-study-3.svg','study3'],['gradients','icon-gradients.svg','gradients']];
  for(const[id,path,kind]of replacements){const fig=[...root.querySelectorAll(`#${id} .project-figure`)].find(f=>f.querySelector(`img[src*="${path}"]`));if(fig){const div=document.createElement('div');div.className='icon-interactive-figure';div.innerHTML=renderIconInteraction(kind);fig.replaceWith(div);}}
- setupIconEditorial(root,p,{
+ const editorialCleanup=setupIconEditorial(root,p,{
   whiteRefinement:[
    {icon:2,caption:'Original · white symbol'},
    {icon:2,caption:'Shadow',shadow:true},
    {icon:2,caption:'Gradient −30°',shift:-30},
    {icon:2,caption:'Gradient +30°',shift:30}
   ].map(treatmentFigure).join(''),
-  whiteGradientEvidence:'These bulb examples show both gradient directions. In the tested cyan comparison, +30° improved clarity while −30° reduced it; the direction needs testing for each hue.',
+  whiteGradientEvidence:'',
   blackRefinement:`<figure>${specimen(7,0,'study2')}<figcaption>Original · black symbol</figcaption></figure>${treatmentFigure({caption:'Colored outline',outline:'color',colored:true})}${[20,30,40].map(gray=>treatmentFigure({caption:`Gray backplate ${gray}%`,gray,colored:true})).join('')}`,
   audienceExamples:`${[9,10].map(i=>`<figure>${specimen(i,2,'study2')}<figcaption>${ICONS[i].name}</figcaption></figure>`).join('')}`
  });
@@ -113,5 +122,5 @@ export function setupIconInteractions(root=document,p){
  }
  function key(event){if(event.key==='Escape'){const lab=event.target.closest('[data-icon-lab]');if(lab){hideLab(lab);event.preventDefault();}}}
  ['pointerover','focusin','click'].forEach(name=>root.addEventListener(name,interact));root.addEventListener('keydown',key);
- return()=>{['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('keydown',key);};
+ return()=>{editorialCleanup?.();['pointerover','focusin','click'].forEach(name=>root.removeEventListener(name,interact));root.removeEventListener('keydown',key);};
 }

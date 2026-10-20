@@ -898,9 +898,9 @@
         {
           "id": "setup",
           "eyebrow": "SHARED EXPERIMENT CONTEXT",
-          "title": "Two lighting conditions",
+          "title": "Shared study setup",
           "body": [
-            "Participants rated randomized color pairs through XREAL Air 2 Pro and explained their choices."
+            "The same 20 participants rated randomized color pairs through XREAL Air 2 Pro and explained their choices."
           ],
           "nav": "Study setup",
           "figures": [
@@ -943,12 +943,32 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
+            "same 20 participants",
             "XREAL Air 2 Pro"
           ],
           "sourceNotes": [
-            "Comprehension revision: omit the broad HoloLens 2 validation claim; §3.3 identifies a secondary optical-design check but does not specify which conditions or sample were repeated."
+            "Manuscript §3.1, pp.8–9: 12 hue selection cites Gu et al.(2025), From Simple to Polychromatic; HSB S/B100%. §3.2: indoor250–300lux, outdoor1500–2000lux. §3.3: XREAL primary, HoloLens2 secondary optical-design check, without a separate sample or full repeated-condition protocol. §3.4: same20participants, screened normal color vision; §5.1: Study2outdoors. Secondary check is not claimed as a fully replicated study."
           ],
-          "textLayout": "full-width"
+          "textLayout": "full-width",
+          "studySetup": [
+            {
+              "title": "Participants",
+              "body": "20 adults with normal color vision; the same cohort across all three studies."
+            },
+            {
+              "title": "Main display",
+              "body": "XREAL Air 2 Pro, connected to an iPad to present stimuli and record selections."
+            },
+            {
+              "title": "Lighting",
+              "body": "250–300 lux indoors; 1,500–2,000 lux outdoors. Study 1 used both; later studies focused outdoors."
+            },
+            {
+              "title": "Color selection",
+              "body": "12 representative hues informed by Gu et al. (2025); HSB saturation and brightness held at 100%."
+            }
+          ],
+          "hardwareCheck": "HoloLens 2 provided an additional check with a different optical design."
         },
         {
           "id": "workshop",
@@ -1030,7 +1050,11 @@
             "clarity and comfort"
           ],
           "textLayout": "full-width",
-          "navParent": "study"
+          "navParent": "study",
+          "studyNext": {
+            "label": "Why Study 2?",
+            "body": "Visibility did not tell us whether a pairing communicated the right function, so we replaced letters with meaningful icons."
+          }
         },
         {
           "id": "meaning",
@@ -1095,14 +1119,18 @@
             "icon’s function"
           ],
           "textLayout": "full-width",
-          "navParent": "study"
+          "navParent": "study",
+          "studyNext": {
+            "label": "Why Study 3?",
+            "body": "A color could fit the function yet remain hard to see; we refined its edges and background while retaining that meaning."
+          }
         },
         {
           "id": "refinement",
           "eyebrow": "STUDY 3",
           "title": "Refine and retest",
           "body": [
-            "Designers turned these conflicts into refinements. We retested clarity, comfort and semantics, and added perceived visual priority: how strongly an icon demanded attention."
+            "Designers proposed shadows, nearby-hue gradients, outlines and gray backplates. We compared the refinements with their originals, retesting clarity, comfort and semantics and adding perceived visual priority."
           ],
           "nav": "Study 3",
           "figures": [
@@ -1142,6 +1170,7 @@
           "items": [],
           "layout": "editorial",
           "highlights": [
+            "compared the refinements with their originals",
             "clarity, comfort and semantics",
             "perceived visual priority"
           ],
@@ -1155,15 +1184,13 @@
           "reasoning": [
             {
               "title": "Keep the meaning; recover the edge",
-              "observation": "White preserved meaning but could lose its edge against bright backgrounds.",
+              "observation": "White preserved semantics but could lose its edge against bright backgrounds.",
               "decision": "Keep white; test shadows and nearby-hue gradients.",
               "highlights": [
-                "White preserved meaning",
-                "shadows and nearby-hue gradients",
-                "0.88–1.62 points",
-                "four tested hues"
+                "White preserved semantics",
+                "shadows and nearby-hue gradients"
               ],
-              "evidence": "Across four tested hues, shadows improved mean clarity by 0.88–1.62 points on a 1–5 scale."
+              "evidence": "Compare the original with a shadow and both gradient directions; the amount of added emphasis also matters."
             },
             {
               "title": "Keep it comfortable; clarify the shape",
@@ -1171,13 +1198,31 @@
               "decision": "Move color into the symbol; test outlines and gray backplates.",
               "highlights": [
                 "scene detail showing through",
-                "outlines and gray backplates",
-                "B20",
-                "B30",
-                "B40",
-                "HSB brightness"
+                "outlines and gray backplates"
               ],
-              "evidence": "Participants described outlines as clearer and less intrusive. Gray backplates: B20 had little effect; B30 improved clarity and semantics; B40 caused blending and reduced clarity. B means HSB brightness, not opacity."
+              "evidence": "Compare a colored outline with B20, B30 and B40 backplates. B is HSB brightness, not opacity."
+            }
+          ],
+          "studyComparisons": [
+            {
+              "treatment": "Shadow",
+              "comparison": "Original → shadow · four hues",
+              "result": "Clarity improved by 0.88–1.62 points on the 1–5 scale."
+            },
+            {
+              "treatment": "Gradient + shadow",
+              "comparison": "Hue60 · original → refined",
+              "result": "Semantics rose from 3.25 to 4.25 / 5; participants also reported stronger attentional draw."
+            },
+            {
+              "treatment": "Gradient direction",
+              "comparison": "Hue180 · −30° versus +30°",
+              "result": "The −30° direction reduced clarity; +30° improved it. At hue135, gradients reduced clarity."
+            },
+            {
+              "treatment": "Outline & backplate",
+              "comparison": "Colored outline · B20 / B30 / B40",
+              "result": "Outlines were described as clear and less intrusive. B20 added little; B30 supported clarity and semantics; B40 caused blending."
             }
           ]
         },
@@ -1186,7 +1231,7 @@
           "eyebrow": "DESIGN GUIDELINES",
           "title": "From tested treatments to suggested uses",
           "body": [
-            "These uses follow the ratings and interviews—not tests of alert response or control tasks. Choose a treatment, then validate it in your interface."
+            "Start with the interface’s need, then choose a treatment. These uses follow ratings and interviews; validate them in the intended glasses and environment."
           ],
           "nav": "Guidelines",
           "figures": [
@@ -1266,24 +1311,24 @@
           ],
           "items": [
             {
-              "title": "White symbol + shadow",
+              "title": "Urgent cues → white + shadow",
               "priority": "High",
-              "body": "Clarity rose by 0.88–1.62 points / 5 across four tested hues; participants found these icons highly noticeable.",
-              "takeaway": "Suggested use · urgent cues",
+              "body": "Use stronger emphasis when a cue needs to stand out.",
+              "evidence": "Study 3: shadows consistently improved clarity and drew attention.",
               "src": "/assets/design-revision/icon-alerts.svg"
             },
             {
-              "title": "Colored symbol + outline",
+              "title": "Everyday controls → colored outline",
               "priority": "Medium",
-              "body": "Participants described clear meaning and less intrusion than white symbols with shadow.",
-              "takeaway": "Suggested use · everyday controls",
+              "body": "Keep the function recognizable without filling the view.",
+              "evidence": "Participants described this treatment as clear and less intrusive.",
               "src": "/assets/design-revision/icon-controls.svg"
             },
             {
-              "title": "Colored symbol + gray backplate",
+              "title": "Persistent status → gray backplate",
               "priority": "Low",
-              "body": "B30 balanced recognition with low intrusion. It means 30% HSB brightness, not opacity.",
-              "takeaway": "Suggested use · persistent status",
+              "body": "Support a quieter, continuously visible signal.",
+              "evidence": "B30 balanced clarity and semantics; 30% refers to HSB brightness, not opacity.",
               "src": "/assets/design-revision/icon-status.svg"
             }
           ],
@@ -1295,27 +1340,27 @@
           ],
           "layout": "editorial",
           "highlights": [
-            "suggested uses",
-            "ratings and interviews",
-            "0.88–1.62 points",
-            "30% HSB brightness",
-            "hue angle",
-            "brightness"
+            "interface’s need",
+            "validate them",
+            "stronger emphasis",
+            "recognizable",
+            "quieter",
+            "HSB brightness"
           ],
           "findings": [
             {
-              "title": "Test both gradient directions",
-              "body": "Begin with cyan at 180°. Test a gradient toward green (−30°) and toward blue (+30°): the green direction reduced clarity, while the blue direction improved it in this comparison. A gradient is not automatically better. Keep the two ends similar in brightness so the brighter color does not take over the intended color meaning.",
+              "title": "For a gradient, test both directions",
+              "body": "Compare −30° and +30° rather than assuming either will help. Keep endpoint brightness similar: the brighter end can dominate the perceived color and its meaning.",
               "src": "/assets/design-revision/icon-gradients.svg",
-              "alt": "Cyan-green, plain cyan and cyan-blue examples with their observed clarity labels.",
+              "alt": "The two cyan gradient directions, compared with the plain cyan original.",
               "sourceNotes": [
-                "Paper §6.2 p.31: hue180 +30° clarity increases, −30° decreases; larger luminance differences bias perceived color toward brighter endpoint. No universal hue-angle brightness rule is claimed."
+                "Paper §6.2, pp.30–31: hue180 +30° improves clarity, −30° decreases it; greater endpoint luminance differences bias perceived color toward the brighter endpoint. Specific results remain in Study3."
               ]
             }
           ],
           "audience": {
-            "title": "Explore pairings that may work unexpectedly well",
-            "body": "Try combinations beyond the expected color rules. Some participants found the green–purple bar and music icons clear, youthful and stylish. Explore these possibilities, then check that the pairing fits the icon’s function and your audience.",
+            "title": "Explore beyond familiar pairings",
+            "body": "Unexpected combinations can still suit a function. Participants described some green–purple bar and music icons as clear, youthful and stylish; test unfamiliar pairings with your audience.",
             "figures": [
               {
                 "src": "/assets/design-revision/icon-audience.svg",
@@ -1380,12 +1425,17 @@
       "role": {
         "label": "My role",
         "value": "",
-        "details": "I organized the designer workshop, designed the icon colors and three studies, ran about 80% of testing, and co-wrote the paper with my advisor.",
+        "details": "",
         "status": "explicit",
         "sourceRefs": [
           "User-confirmed responsibilities in conversation"
         ],
-        "boundary": "I am second author; my advisor is first author."
+        "boundary": "I am second author; my advisor is first author.",
+        "bullets": [
+          "Organized the designer workshop and developed the icon colors.",
+          "Designed the three studies and conducted about 80% of testing.",
+          "Co-wrote the manuscript with my advisor."
+        ]
       },
       "outcome": "Color guidelines for AR UI designers, grounded in a designer workshop and three linked user studies.",
       "sourceNotes": [],
@@ -1397,7 +1447,7 @@
       "highlights": [
         "clear, comfortable AR icons"
       ],
-      "contentRevision": "2026-10-16-icon-per-hue-ratings"
+      "contentRevision": "2026-10-20-default-findings-and-design-decisions"
     },
     {
       "id": "traditional-color",
@@ -1472,7 +1522,7 @@
           "body": [
             "Designers can find traditional color values online, but it is harder to judge their historical fit, trust the reference, or combine them into a complete palette.",
             "We began with ColoGene, connecting color values with their names, origins, periods and meanings. Interviews and the pilot informed Color Atlas; later feedback points toward a future Color Agent.",
-            "The pilot showed a larger self-reported gain with ColoGene. Atlas designers valued new color directions, while asking for more alternatives, fuller sources, support for every object and room to refine suggestions."
+            "The small ColoGene pilot suggested a larger self-reported gain. Selected Atlas artwork revisions and feedback point toward more palette options, fuller sources and support for the whole composition."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -1486,8 +1536,8 @@
             {
               "title": "Color Atlas",
               "version": "Version 2.0",
-              "status": "In progress",
-              "body": "Connected records and brief-based palettes; the 25-designer study is complete."
+              "status": "Experiment complete",
+              "body": "Connected records and brief-based palettes. All 25 designers completed the experiment; data analysis and paper writing are next."
             },
             {
               "title": "Color Agent",
@@ -1512,12 +1562,12 @@
           "eyebrow": "DESIGNER RESEARCH",
           "title": "How designers choose a color",
           "body": [
-            "We interviewed 12 participants with design backgrounds for 30 to 45 minutes each about finding, comparing and explaining traditional colors. These three questions carried through the later Atlas study."
+            "We interviewed 12 participants with design backgrounds for 30 to 45 minutes each about finding, comparing and explaining traditional colors."
           ],
           "items": [
             {
               "title": "Does the color fit the historical brief?",
-              "body": "A convincing scene can still use a color from the wrong period. Designers need to check the period, material and cultural use—not only whether the color looks right."
+              "body": "P2 sampled architectural photographs for cultural-heritage projects. A visual reference offers a starting point, but its period, material and cultural use still need explanation."
             },
             {
               "title": "Which reference can I trust?",
@@ -1525,7 +1575,11 @@
             },
             {
               "title": "How do I build a whole palette?",
-              "body": "A palette must balance the background, motifs and accents. Designers need to compare these relationships across the whole artwork while keeping the same cultural setting."
+              "body": "Visual comparison needs a cultural rationale for the whole palette.",
+              "quote": {
+                "text": "I usually make several versions and then pick the one that looks best.",
+                "attribution": "P6 · formative interview"
+              }
             }
           ],
           "quote": null,
@@ -1536,7 +1590,8 @@
             {
               "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
               "nodeId": "658:265"
-            }
+            },
+            "ColoGene paper §4.2, p.4: P2 architectural photographs and P6 choosing among versions; output/color-portfolio/revision-2026-09-29/p3/paper-fulltext.txt:338–344. Initial 12-person formative study, not Atlas interviews."
           ],
           "highlights": [
             "12 participants with design backgrounds",
@@ -1552,7 +1607,7 @@
           "eyebrow": "VERSION 1 · COLOGENE",
           "title": "ColoGene",
           "body": [
-            "The interviews showed that visual appeal was easier to judge than cultural fit. ColoGene brings sources beside the swatches, with five entry points shown below."
+            "ColoGene brings sources beside the swatches through five functions:"
           ],
           "items": [],
           "nav": "ColoGene",
@@ -1577,7 +1632,7 @@
               "width": 1520,
               "height": 1347,
               "alt": "ColoGene contextual browsing interface figure.",
-              "caption": "Hue, family and dynasty narrow choices by period.",
+              "caption": "Hue and color family support visual filtering; dynasty narrows the historical period.",
               "displayWidth": 380,
               "sourceRefs": [
                 {
@@ -1611,10 +1666,14 @@
             }
           ],
           "highlights": [
-            "visual appeal",
-            "cultural fit",
-            "sources beside the swatches",
-            "five entry points"
+            "sources beside the swatches"
+          ],
+          "entryPoints": [
+            "Name origins",
+            "Hue filter",
+            "Color family",
+            "Dynasty filter",
+            "Scene-based palettes"
           ]
         },
         {
@@ -1789,7 +1848,8 @@
           "eyebrow": "VERSION 2 · DESIGNER STUDY",
           "title": "25 designers, three briefs revisited",
           "body": [
-            "Each of 25 designers made three artworks with their usual workflow, then revisited the same briefs with Color Atlas. Interviews and questionnaires captured their reasoning and feedback."
+            "Each of 25 designers made three artworks with their usual workflow, then revisited the same briefs with Color Atlas. Interviews and questionnaires captured their choices and feedback; the 15 sessions I conducted lasted about three hours each.",
+            "All experimental sessions are complete; data analysis and paper writing are pending. The selected revisions below describe visible changes in the artworks."
           ],
           "items": [],
           "figures": [
@@ -1807,7 +1867,8 @@
               "height": 1080,
               "alt": "Participant 16 Tang-themed storyboard using the atlas",
               "caption": "P16 · with the atlas.",
-              "displayWidth": 850
+              "displayWidth": 850,
+              "observation": "The sky becomes darker and more muted, while the scene composition stays intact."
             },
             {
               "src": "/assets/p17-street-without-425d9ad0.webp",
@@ -1823,7 +1884,8 @@
               "height": 1237,
               "alt": "Participant 17 canal-street illustration using the atlas",
               "caption": "P17 · with the atlas.",
-              "displayWidth": 850
+              "displayWidth": 850,
+              "observation": "Neutral buildings shift to blue–green, with pink awnings and clothing accents."
             },
             {
               "src": "/assets/p19-tape-without-6a70447f.webp",
@@ -1839,7 +1901,8 @@
               "height": 1811,
               "alt": "Participant 19 ornamental tape with the atlas",
               "caption": "P19 · with the atlas.",
-              "displayWidth": 850
+              "displayWidth": 850,
+              "observation": "A violet ground becomes warm beige, with brighter blue outlines around the repeated motifs."
             }
           ],
           "figureLayout": "comparison",
@@ -1851,16 +1914,10 @@
           ],
           "colorStudyFeedback": [
             {
-              "title": "A new direction",
-              "text": "It lets me move beyond the palette in my original, fixed impression.",
-              "participant": "P25",
-              "next": "Keep alternatives open."
-            },
-            {
-              "title": "More than one palette",
+              "title": "Explore more directions",
               "text": "It could give me a few more palettes to refer to, so I have more choices.",
               "participant": "P16",
-              "next": "Offer distinct directions to compare."
+              "next": "Compare distinct palette directions."
             },
             {
               "title": "Consider every object",
@@ -1878,7 +1935,8 @@
           "sourceRefs": [
             "output/color-portfolio/condensed-interview-evidence.md",
             "output/color-portfolio/interview-evidence.md",
-            "User-confirmed25designers;three usual-workflow plus three Atlas artworks"
+            "User-confirmed25designers;three usual-workflow plus three Atlas artworks",
+            "Visible revisions verified against the six original participant artworks; source mapping: output/color-portfolio/density-revision/page4-sources.md. Descriptive examples, not completed formal analysis."
           ],
           "navParent": "atlas"
         },
@@ -1887,7 +1945,7 @@
           "eyebrow": "VERSION 3 · FUTURE DESIGN",
           "title": "Six needs, one conversation",
           "body": [
-            "The Atlas study led to a proposed Color Agent: connect palette suggestions, source checking and whole-artwork refinement in one conversation."
+            "Selected feedback from the Atlas sessions informed a proposed Color Agent: connect palette suggestions, source checking and whole-artwork refinement in one conversation."
           ],
           "items": [],
           "nav": "Future",
@@ -1923,7 +1981,7 @@
                     "number": 1,
                     "src": "/assets/design-followup/color-agent-step-01.svg",
                     "title": "Clarify the brief",
-                    "body": "Help the designer turn an uncertain request into a clear intention.",
+                    "body": "Designers may know what they are making before knowing the mood they want.",
                     "sourceRefs": [
                       {
                         "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -1943,7 +2001,7 @@
                     "number": 2,
                     "src": "/assets/design-followup/color-agent-step-02.svg",
                     "title": "Set the context",
-                    "body": "Ask for period and place before suggesting a direction.",
+                    "body": "Period and place help determine which cultural references belong.",
                     "sourceRefs": [
                       {
                         "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -1963,7 +2021,7 @@
                     "number": 3,
                     "src": "/assets/design-followup/color-agent-step-03.svg",
                     "title": "Compare palettes",
-                    "body": "Offer alternatives to compare instead of one fixed answer.",
+                    "body": "Designers wanted several directions before committing to a palette.",
                     "sourceRefs": [
                       {
                         "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -1983,7 +2041,7 @@
                     "number": 4,
                     "src": "/assets/design-followup/color-agent-step-04.svg",
                     "title": "Explain the choices",
-                    "body": "Keep the cited records beside the suggested colors.",
+                    "body": "A plausible suggestion still needs traceable evidence.",
                     "sourceRefs": [
                       {
                         "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -2003,7 +2061,7 @@
                     "number": 5,
                     "src": "/assets/design-followup/color-agent-step-05.svg",
                     "title": "Apply to every part",
-                    "body": "Preview the palette across every object in the drawing.",
+                    "body": "A scene contains several objects; a palette focused on one may miss the others.",
                     "sourceRefs": [
                       {
                         "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -2023,7 +2081,7 @@
                     "number": 6,
                     "src": "/assets/design-followup/color-agent-step-06.svg",
                     "title": "Keep judgment",
-                    "body": "Let the designer revise one part and accept the result.",
+                    "body": "Designers need to refine a suggestion without losing choices they want to keep.",
                     "sourceRefs": [
                       {
                         "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
@@ -2068,20 +2126,21 @@
         "contributions": [
           {
             "label": "ColoGene",
-            "value": "I organized designer workshops, analyzed the study data, and built the website."
+            "value": "I organized designer workshops, analyzed the study data, and built ColoGene to connect color records with design decisions."
           },
           {
             "label": "Color Atlas",
-            "value": "I built the website, interviewed 15 of the 25 designers (60%; about three hours each), and analyzed the data."
+            "value": "I built Color Atlas and interviewed 15 of the 25 designers to document how they chose and revised palettes."
           }
         ],
         "sourceRefs": [
-          "User-confirmed 2026-10-14 18:52: ColoGene workshops/data/website; Atlas website/15 of25 interviews (~3h each)/data analysis"
+          "User-confirmed 2026-10-14 18:52: ColoGene workshops/data/website; Atlas website/15 of25 interviews (~3h each)/data analysis",
+          "User-confirmed 2026-10-20: Atlas experiment with 25 designers complete; data analysis and paper writing pending. Personal interview count 15 of 25."
         ]
       },
       "outcome": [
         "ColoGene: a website for exploring cultural color records.",
-        "Color Atlas: connected records and brief-based palettes, with its designer study complete.",
+        "Color Atlas: connected records and brief-based palettes; 25-designer experiment completed.",
         "Color Agent: a proposed next step for previewing and refining palettes."
       ],
       "sourceNotes": [],
@@ -2094,7 +2153,8 @@
       "highlights": [
         "Chinese product designers",
         "origins, cultural meanings and historical context"
-      ]
+      ],
+      "contentRevision": "2026-10-20-color-evidence-and-reading-flow"
     },
     {
       "id": "personamail",
@@ -2825,7 +2885,7 @@
       "id": "ambulance",
       "title": "Ambulance Rush",
       "subtitle": "A faster driver cannot create a hospital bed",
-      "description": "A 3D newsgame for younger students about Adelaide’s ambulance-ramping crisis. Drive to emergencies and find a hospital bed: faster driving cannot solve a capacity shortage.",
+      "description": "A 3D newsgame for younger students about Adelaide’s ambulance-ramping crisis. Respond to emergencies and choose a hospital with space to care for each patient.",
       "kicker": "JOURNALISM GAME · DRIVING SIMULATION",
       "meta": "Unity 3D · C# · WebGL · Mar 2024–Mar 2025",
       "stats": [
@@ -2887,9 +2947,9 @@
           "eyebrow": "ABSTRACT",
           "title": "Rising demand. Scarce beds",
           "body": [
-            "Ramping means ambulance crews must wait outside a hospital to hand patients over because care spaces are unavailable. In our student interviews, published news alone had not made the crisis feel urgent: some students knew little about it, while others did not see it as their concern.",
-            "We turned the news into a serious game for younger students. Taking calls, finding beds and driving under pressure lets players experience the urgency and consider the public issue behind each rescue.",
-            "Reported by InDaily, the game reached 2,000+ Adelaide players and informed a co-authored article in Australian Journalism Review."
+            "Ramping leaves patients waiting in ambulances because hospital care spaces are unavailable. In our student interviews, published news felt distant: some students knew little about the crisis or did not see it as their concern.",
+            "We made that pressure playable. Taking calls, finding beds and driving against the clock turns a reported crisis into decisions about someone’s care.",
+            "After each run, real ramping figures bring players back to the reporting behind the game."
           ],
           "items": [
             {
@@ -2912,12 +2972,10 @@
             }
           ],
           "highlights": [
-            "beds are scarce",
-            "faster driving cannot resolve the pressure",
-            "serious newsgame",
-            "feel the urgency",
-            "Reported by InDaily",
-            "2,000+ Adelaide players"
+            "Ramping",
+            "published news felt distant",
+            "pressure playable",
+            "back to the reporting"
           ],
           "layout": "editorial"
         },
@@ -3011,15 +3069,13 @@
         },
         {
           "id": "publication",
-          "eyebrow": "AUDIENCE",
-          "title": "Adelaide players",
-          "body": "The project reached more than 2,000 Adelaide players.",
+          "eyebrow": "PROJECT OUTCOMES",
+          "title": "From development to public reporting",
+          "body": "",
           "items": [],
-          "nav": "Adelaide players",
+          "nav": "Outcomes",
           "figures": [],
-          "highlights": [
-            "more than 2,000 Adelaide players"
-          ],
+          "highlights": [],
           "layout": "editorial"
         }
       ],
@@ -3033,7 +3089,7 @@
         "details": "I built the game, implemented all gameplay and system logic, and integrated the team’s 2D and 3D artwork."
       },
       "revision": "2026-10-13 · Original portfolio game diagrams and 26 source dish artworks",
-      "outcome": "A playable newsgame about ambulance ramping, bringing hospital capacity and time pressure to more than 2,000 Adelaide players.",
+      "outcome": "A browser-playable newsgame that turns local reporting into decisions about hospital capacity.",
       "sourceNotes": [
         "Only source artwork; section 02 and 03 descriptions are HTML, no generated SVG.",
         "Figma original Games page 168:3792, source frame 1918:374; older original development photos 1577:7262/7263.",
@@ -3047,7 +3103,7 @@
       ],
       "highlights": [
         "younger students",
-        "faster driving cannot solve a capacity shortage"
+        "hospital with space"
       ],
       "integration": {
         "module": "/ambulance-editorial.js",
@@ -3062,13 +3118,14 @@
         "status": "Published paper",
         "role": "Third author",
         "url": "https://intellectdiscover.com/content/journals/10.1386/ajr_00184_1"
-      }
+      },
+      "contentRevision": "2026-10-20-distinct-reading-roles"
     },
     {
       "id": "loofasoup",
       "title": "Taste of Connection",
       "subtitle": "A shared meal. A table full of expectations.",
-      "description": "Join Lufa, a rookie salesman, at business dinners where every guest wants something different. Rotate dishes, use item cards and manage limited moves to keep the table satisfied.",
+      "description": "A narrative table puzzle about Lufa’s first business dinners. Rotate shared dishes, use item cards and balance guests’ competing tastes with limited actions.",
       "kicker": "NARRATIVE PUZZLE · CHINESE DINING CULTURE",
       "meta": "Unity 2D · C# · 2025.09–2026.04",
       "stats": [
@@ -3123,9 +3180,8 @@
           "eyebrow": "THE SHARED TABLE",
           "title": "A meal is never just a meal",
           "body": [
-            "Lufa is a luffa-person and rookie salesman who ends his first week without a sale. In a radiation-altered future, people resemble plants and animals, good food is a luxury, and his Deliciousness Insurance protects flavor from farm to table.",
-            "Business dinners offer potential clients—and hosts with conflicting expectations. The released work route alternates conversations with shared-table puzzles.",
-            "Drawing on Chinese dining culture and the “Luffa Soup” meme, we explore pressure disguised as “for your own good.” Balancing work, friendship and family asks whose needs you accommodate to make a living."
+            "Good food is a luxury, and Lufa is a new Deliciousness Insurance salesperson who finishes his first week without a sale. Business dinners offer access to potential clients—but draw him into their expectations and favors.",
+            "We use Chinese dining culture to explore the pressure hidden in a shared meal: whom do you accommodate, and at what cost? Conversations and table puzzles turn the familiar promise of ‘for your own good’ into choices about belonging and self-direction."
           ],
           "nav": "Abstract",
           "figures": [
@@ -3138,11 +3194,11 @@
             }
           ],
           "highlights": [
-            "rookie salesman",
+            "Good food is a luxury",
             "Deliciousness Insurance",
-            "released work route",
             "Chinese dining culture",
-            "for your own good"
+            "whom do you accommodate",
+            "belonging and self-direction"
           ],
           "items": [],
           "layout": "editorial"
@@ -3241,7 +3297,7 @@
           "id": "characters",
           "eyebrow": "CHARACTERS & FOOD",
           "title": "Art direction",
-          "body": "",
+          "body": "In a future altered by radiation, people have become plant- and animal-like beings. The team used hybrid silhouettes and changing expressions to make each guest’s personality and mood readable.",
           "items": [],
           "nav": "Art direction",
           "figures": [
@@ -3335,7 +3391,8 @@
             }
           ],
           "highlights": [
-            "animals and plants",
+            "plant- and animal-like beings",
+            "silhouettes",
             "expressions"
           ],
           "figureLayout": "character-row",
@@ -3345,7 +3402,7 @@
           "id": "production",
           "eyebrow": "ART & TEAM COORDINATION",
           "title": "One table. Many hands",
-          "body": "We reimagined 26 Chinese dishes with alien ingredients, using Chinese cooking methods to make an unfamiliar world feel recognizable at the table.",
+          "body": "The team reimagined 26 Chinese dishes with mutated, alien ingredients. Familiar Chinese cooking methods make this strange food economy recognizable at the table.",
           "items": [],
           "nav": "Production",
           "figures": [
@@ -3670,6 +3727,41 @@
           "figureLayout": "dish-grid",
           "layout": "editorial",
           "navParent": "characters"
+        },
+        {
+          "id": "implementation",
+          "eyebrow": "PROGRAMMING",
+          "title": "From static artwork to a playable scene",
+          "body": "Lufa’s hand is one example of my programming work: a static character asset becomes an action that moves the whole shared table.",
+          "items": [
+            {
+              "title": "Animate the artwork",
+              "body": "I created animations from the team’s static character art."
+            },
+            {
+              "title": "Build the Unity scene",
+              "body": "I imported the assets, then adjusted their scale and placement."
+            },
+            {
+              "title": "Connect input to the game rules",
+              "body": "Clicking Lufa’s hand rotates every dish. I coded the interaction and the logic that updates the table."
+            }
+          ],
+          "nav": "Implementation",
+          "figures": [
+            {
+              "src": "/assets/games-other-followup/loofa-hover-new-outstretched-hand-screenshot.png",
+              "width": 440,
+              "height": 454,
+              "alt": "Original in-game Lufa hand-hover state",
+              "caption": "In-game example: Lufa’s hand rotates every dish."
+            }
+          ],
+          "layout": "editorial",
+          "highlights": [],
+          "sourceRefs": [
+            "User-confirmed 2026-10-20: team static art, animation by Ruiyuan, Unity import, scaling and layout, interaction and game-logic programming."
+          ]
         }
       ],
       "role": {
@@ -3690,16 +3782,16 @@
         "Social connection"
       ],
       "highlights": [
-        "Lufa",
-        "business dinners",
-        "every guest wants something different"
-      ]
+        "narrative table puzzle",
+        "competing tastes"
+      ],
+      "contentRevision": "2026-10-20-distinct-reading-roles"
     },
     {
       "id": "hersound",
       "title": "Her Sound Re-sound",
       "subtitle": "Who gets to tell her story?",
-      "description": "A narrative puzzle about Shangguan Waner, a Tang court writer, and Princess Taiping. Arrange characters and scenes across six chapters to rebuild their shared memories, then watch those scenes dissolve as stories of scandal take their place. Restore their agency and question whose voices shape women’s history.",
+      "description": "Rebuild Shangguan Waner and Princess Taiping’s memories across six chapters. Assemble their scenes, watch them dissolve into accusations, then restore their agency—a narrative puzzle about who tells women’s history.",
       "kicker": "HISTORICAL NARRATIVE · PUZZLE GAME",
       "meta": "Beijing · Women’s hackathon · 1,000 participants",
       "stats": [
@@ -3749,8 +3841,8 @@
           "eyebrow": "RECLAIM THEIR PAST",
           "title": "Two lives beyond scandal",
           "body": [
-            "In Tang-dynasty China, Shangguan Waner drafted imperial edicts; Princess Taiping shaped court politics. Waner’s epitaph, unearthed in 2013, revealed Taiping’s mourning and inspired us to revisit stories of scandal and rivalry.",
-            "Her Sound Re-sound turns that question into play: assemble shared memories, watch them disappear, then use POWER to restore the women’s agency."
+            "Shangguan Waner wrote imperial edicts in Tang-dynasty China; Princess Taiping shaped court politics. The discovery of Waner’s epitaph in 2013 prompted us to revisit stories of scandal and rivalry.",
+            "We made this game to ask how those stories obscure women’s work, friendships and political agency."
           ],
           "items": [
             {
@@ -3780,8 +3872,7 @@
             "Shangguan Waner",
             "Princess Taiping",
             "2013",
-            "scandal and rivalry",
-            "POWER"
+            "work, friendships and political agency"
           ],
           "layout": "editorial"
         },
@@ -3804,36 +3895,36 @@
         {
           "id": "erase",
           "eyebrow": "ERASE",
-          "title": "Scroll to watch history disappear",
+          "title": "When stories disappear",
           "body": "",
           "nav": "Erase",
           "figures": [],
           "highlights": [
-            "Six chapters become eighteen scenes.",
-            "a narrative device"
+            "Eight of eighteen scenes",
+            "historical erasure"
           ],
           "experience": "erase",
           "items": [],
           "layout": "editorial",
-          "instruction": "Six chapters become eighteen scenes. Eight dissolve—a narrative device for historical erasure. Scroll back to recover them."
+          "instruction": "Eight of eighteen scenes dissolve as you scroll—a narrative device for historical erasure. Scroll back to recover them."
         },
         {
           "id": "question",
           "eyebrow": "QUESTION",
-          "title": "Their lives become accusations",
-          "body": "Historical accusations frame the women through scandal. The game makes that framing visible before players challenge it.",
+          "title": "How their stories were retold",
+          "body": "The game places historical accusations beside later retellings, showing how political lives and relationships become stories of scandal.",
           "items": [
             {
               "title": "Waner · Old Book of Tang, vol. 51",
-              "body": "Her influence becomes an accusation of an “illicit affair with Wu Sansi.”"
+              "body": "The Old Book of Tang describes Waner’s influence through an accusation of an “illicit affair with Wu Sansi.”"
             },
             {
               "title": "Taiping · Comprehensive Mirror, vol. 210",
-              "body": "Her political work becomes a charge of acting “to prolong her power.”"
+              "body": "The Comprehensive Mirror frames Taiping’s political actions as an effort “to prolong her power.”"
             },
             {
-              "title": "Later popular retellings · An invented rivalry",
-              "body": "Later popular retellings stitched Waner’s ties to Cui Shi and his later allegiance to Taiping into a story of two women competing for one man—recasting them as rivals in both love and power."
+              "title": "Later popular retellings",
+              "body": "Later retellings combined Waner’s ties to Cui Shi and his later allegiance to Taiping into a love rivalry, presenting the women as competitors for one man."
             }
           ],
           "nav": "Question",
@@ -3874,7 +3965,7 @@
         {
           "id": "restore",
           "eyebrow": "RESTORE",
-          "title": "The final chapter: give their agency back",
+          "title": "Restore their agency",
           "body": "",
           "nav": "Restore",
           "figures": [],
@@ -3885,15 +3976,15 @@
           "items": [],
           "experiencePosition": "after-body",
           "layout": "editorial",
-          "meaning": "The same women return as political actors, writers and trusted allies."
+          "meaning": "The women return as political actors, writers and trusted allies, able to shape their own lives."
         },
         {
           "id": "evidence",
           "eyebrow": "710 → 2013",
-          "title": "An epitaph changes the story we inherited",
+          "title": "What the epitaph records",
           "body": [
-            "Buried in 710 and uncovered in 2013, Waner’s epitaph records Taiping’s grief and support for her funeral.",
-            "We grew up hearing scandal and rivalry. The discovery made us ask: whose work, care and relationships disappear when women’s lives are told by others?"
+            "The epitaph records Taiping’s grief and support for Waner’s funeral. This evidence complicates the familiar story of rivalry.",
+            "It asks us to reconsider whose work, care and relationships survive when history is told by others."
           ],
           "nav": "Evidence",
           "figures": [
@@ -3909,7 +4000,6 @@
             }
           ],
           "highlights": [
-            "2013",
             "Taiping’s grief",
             "work, care and relationships"
           ],
@@ -3970,13 +4060,14 @@
         "Waner",
         "Taiping",
         "restore their agency"
-      ]
+      ],
+      "contentRevision": "2026-10-20-distinct-reading-roles"
     },
     {
       "id": "ourworld",
       "title": "Our World",
       "subtitle": "Earth Is Not Humanity’s Alone",
-      "description": "An interactive memorial to animals harmed by humans. Follow their lives, read the sources and light a candle.",
+      "description": "An interactive memorial that gives animals directly harmed by people a place in recorded history.",
       "kicker": "INTERACTIVE ARCHIVE · DIGITAL MEMORIAL",
       "meta": "Next.js · React · TypeScript · Framer Motion",
       "stats": [
@@ -4028,9 +4119,8 @@
           "eyebrow": "AN INTERACTIVE ANIMAL MEMORIAL",
           "title": "Their lives belong in our history",
           "body": [
-            "This archive remembers animals directly harmed by people. Its 191 published cases are distinct events documented in reliable reporting; museum and research records provide historical context.",
-            "Cases span war, captivity, hunting, experiments and pollution. Extinctions caused by indirect human impacts fall outside this archive; its scope is deliberately narrower than the full harm.",
-            "Our World asks readers to remember these lives and reconsider how people treat animals. Follow the sources, share overlooked stories, and carry that awareness into everyday choices and support for animal protection."
+            "I selected distinct cases documented in reliable news, with museum and research records adding historical context. Each published case describes a different event involving direct human harm to animals.",
+            "The archive spans war, captivity, hunting, experiments and pollution. It excludes extinctions caused by indirect human impacts, so its scope represents only part of a much larger history."
           ],
           "nav": "Abstract",
           "figures": [
@@ -4054,11 +4144,10 @@
             }
           ],
           "highlights": [
-            "animals directly harmed by people",
-            "distinct events",
-            "reliable reporting",
-            "remember these lives",
-            "support for animal protection"
+            "reliable news",
+            "different event",
+            "direct human harm",
+            "excludes extinctions caused by indirect human impacts"
           ],
           "items": [],
           "layout": "editorial"
@@ -4066,8 +4155,8 @@
         {
           "id": "timeline",
           "eyebrow": "SELECTED CASES",
-          "title": "Ten cases across 1826–2016",
-          "body": "Select a portrait to read the event, its uncertainties and its sources. One case may concern an individual animal or a group.",
+          "title": "Ten selected cases · 1826–2016",
+          "body": "Select a portrait to read the event, its uncertainties and its sources. A case may concern one animal or a group.",
           "nav": "Timeline",
           "figures": [],
           "highlights": [
@@ -4081,28 +4170,12 @@
           "id": "remember",
           "eyebrow": "PAUSE AND REMEMBER",
           "title": "Light a candle for them",
-          "body": [
-            "Many animal lives never reach the news. Light a candle for those still unrecorded; then open one source and learn the story behind the portrait."
-          ],
+          "body": [],
           "items": [],
           "nav": "Remember",
           "figures": [],
-          "highlights": [
-            "those still unrecorded",
-            "open one source"
-          ],
-          "experience": "candles",
-          "layout": "editorial"
-        },
-        {
-          "id": "reflection",
-          "eyebrow": "WHAT CAN WE DO DIFFERENTLY?",
-          "title": "How can we teach care for animals—and better protect them?",
-          "body": "",
-          "nav": "Your turn",
-          "figures": [],
           "highlights": [],
-          "items": [],
+          "experience": "candles",
           "layout": "editorial"
         }
       ],
@@ -4117,7 +4190,7 @@
         "details": "I independently researched the cases, created the portraits, and designed and built the interactive archive."
       },
       "revision": "2026-10-16 · Unified archive abstract, solo authorship and remembrance invitation",
-      "outcome": "An interactive memorial of 191 sourced events of direct human harm to animals, drawn from 286 researched records.",
+      "outcome": null,
       "sourceNotes": [
         "2026-10-16: Author confirmed solo project, 191 documented cases and full archive range 1826–2026. Selected timeline remains ten cases spanning 1826–2016. Archive categories are grounded in the existing case records. Portraits retain the project’s AI-assisted provenance disclosure.",
         "2026-10-16: User confirms reliable news + direct human harm as inclusion criteria; cases are distinct events, not merged reports; indirect-impact extinction cases excluded.",
@@ -4130,7 +4203,8 @@
       ],
       "highlights": [
         "animals harmed by humans"
-      ]
+      ],
+      "contentRevision": "2026-10-20-distinct-reading-roles"
     }
   ]
 }

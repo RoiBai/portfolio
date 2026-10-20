@@ -14,3 +14,16 @@ First two seconds, last two seconds and two midpoints were visually checked in t
 ## Playable game audio
 
 The separate interactive game uses the original published Unity build, mirrored byte-for-byte from the project’s itch.io build because that host does not permit cross-origin asset loading. Its audio output is routed through a zero-gain Web Audio node before Unity starts. Audio contexts remain running, so game logic and audio timing are not suspended. HTML audio elements, if any are used, are also muted within this game frame. The source build and hashes are recorded in `../ambulance-game/build-source.json`.
+
+## Focused capacity sequence · 2026-10-20
+
+The webpage now shows one continuous 57-second excerpt, original source **02:43–03:40** (`ambulance-capacity-sequence.mp4`). The complete recording above is retained. At the webpage’s unchanged 1.5× playback rate, the excerpt lasts 38 seconds. No scenes were reordered or invented.
+
+Verified directly in source frames:
+- 02:45: Lucas pickup prompt.
+- 02:50: `Hospital Full` / `No beds available` message while Lucas is the current patient.
+- 03:00: all three hospital capacity values are 0.
+- 03:15: Flinders Medical Centre has 1 bed; the other hospitals have 0.
+- 03:35: Lucas delivery countdown at Flinders, while his deadline still has time remaining.
+
+Delivery: original 1440×908 frame size, libx264 CRF 22 / fast, YUV420p, fast-start MP4, no audio. Poster is the original 02:50 frame. This excerpt makes the capacity decision concrete; the annotated full-interface figure remains the instruction guide.

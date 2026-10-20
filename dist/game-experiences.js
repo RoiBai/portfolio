@@ -241,9 +241,9 @@ export function renderGameExperience(projectId, part='all') {
       <div class="gx-her-layout"><aside class="gx-play-guide">
         <p class="gx-guide-kicker">${part==='assemble'?'A guided chapter':'The final chapter'}</p>
         <div class="gx-guide-icons" aria-hidden="true"><img src="${ASSETS}/her/game/choice-normalized/${part==='assemble'?'shangguan-waner':'power'}.png" alt="">${part==='assemble'?`<img src="${ASSETS}/her/game/choice-normalized/princess-taiping.png" alt="">`:''}</div>
-        <h3>${part==='assemble'?'Bring them into the same story':'Give them the power to act'}</h3>
-        <p class="gx-instruction">${part==='assemble'?'The first frame is complete. Taiping is selected for you: add her to the second frame, then build the last scene.':'Choose <strong>POWER</strong>. Select each picture to restore their agency.'}</p>
-        ${part==='assemble'?'<ol class="gx-her-guide"><li><strong>01 · A completed example</strong><span>Lake + Waner + Taiping</span></li><li><strong>02 · Add Taiping</strong><span>Waner and the banquet are already here</span></li><li><strong>03 · Build it yourself</strong><span>Poetry + Waner + Taiping</span></li></ol>':'<p class="gx-guide-meaning">In this last puzzle, the change is in who gets to define their lives. The same women become political actors and trusted allies.</p>'}
+        ${part==='assemble'?'<h3>Bring them into the same story</h3>':''}
+        ${part==='assemble'?'<p class="gx-instruction">The first frame is complete. Taiping is selected for you: add her to the second frame, then build the last scene.</p>':''}
+        ${part==='assemble'?'<ol class="gx-her-guide"><li><strong>01 · A completed example</strong><span>Lake + Waner + Taiping</span></li><li><strong>02 · Add Taiping</strong><span>Waner and the banquet are already here</span></li><li><strong>03 · Build it yourself</strong><span>Poetry + Waner + Taiping</span></li></ol>':'<p class="gx-guide-meaning">The women return as political actors, writers and trusted allies, able to shape their own lives.</p>'}
         <a class="gx-full-game" href="https://she.ruiyuanbai.com/" target="_blank" rel="noopener noreferrer">Play the complete story ↗</a>
       </aside><div class="gx-her-island" data-her-part="${part}" aria-busy="true"><p class="gx-loading" role="status">Opening the scene…</p></div></div>
     </div>`;
@@ -260,13 +260,14 @@ export function renderGameExperience(projectId, part='all') {
   if(projectId==='ourworld') {
     if(part==='all')return ['archive','candles'].map(p=>renderGameExperience(projectId,p)).join('');
     if(part==='archive')return `<div class="game-experience gx-archive" data-experience="ourworld-archive">
-      <div class="gx-archive-top"><p class="gx-instruction">Dates mark each event, not necessarily an animal’s death.</p><a class="gx-full-game" href="https://www.ruiyuanbai.com/art/Earth-is-not-humanitys-alone/demo" target="_blank" rel="noopener noreferrer">Explore the full archive ↗</a></div>
+      <div class="gx-archive-top"><p class="gx-instruction">A selected preview. Dates mark events, not necessarily deaths.</p><a class="gx-full-game" href="https://www.ruiyuanbai.com/art/Earth-is-not-humanitys-alone/demo" target="_blank" rel="noopener noreferrer">Full archive: 191 cases · 1826–2026 ↗</a></div>
       <div class="gx-timeline-window" tabindex="0" aria-label="Scroll through ten selected animal histories"><div class="gx-animal-choices" role="group" aria-label="Selected cases from 1826 to 2016">${animals.map((a,i)=>`<button type="button" class="gx-animal" data-animal="${a.id}" aria-pressed="${i===0}" aria-controls="gx-animal-record"><small>${a.year}</small><span class="gx-timeline-dot" aria-hidden="true"></span><img src="${ASSETS}/ourworld/${a.image}" width="${a.width}" height="${a.height}" alt="${a.name}, archive portrait" loading="lazy"><span>${a.name}</span></button>`).join('')}</div></div>
       <div class="gx-animal-record" id="gx-animal-record" aria-live="polite"></div>
     </div>`;
     if(part==='candles')return `<div class="game-experience gx-candles" data-experience="ourworld-candles">
-      <p class="gx-instruction">One candle stays lit for the recorded lives. Light the others for those still missing from the archive. One of ten represents the archive’s limited reach; it is symbolic, not a measured proportion.</p>
+      <p class="gx-instruction">One candle stays lit for documented lives. Light the others for those missing from the archive; one of ten symbolizes its limited reach, not a measured proportion.</p>
       <div class="candle-scene"><div class="candle-wall" aria-hidden="true"></div><div class="candle-row" role="group" aria-label="Ten memorial candles">${Array.from({length:10},(_,i)=>`<button class="candle ${i===0?'is-lit':'is-dark'}" type="button" data-candle="${i}" aria-pressed="${i===0}" ${i===0?'aria-disabled="true"':''} aria-label="${i===0?'Candle 1, always lit for the recorded lives':`Light candle ${i+1}`}" ><span class="candle-flame" aria-hidden="true"><i></i></span><span class="candle-wick" aria-hidden="true"></span><span class="candle-rim" aria-hidden="true"></span><span class="candle-body" aria-hidden="true"><i></i></span><span class="candle-base" aria-hidden="true"></span></button>`).join('')}</div><div class="candle-shelf" aria-hidden="true"></div><p class="candle-status" role="status" aria-live="polite">1 of 10 candles lit</p></div>
+      <div class="gx-remembrance-meaning"><h3>How can we teach care for animals—and better protect them?</h3></div>
     </div>`;
   }
   return '';

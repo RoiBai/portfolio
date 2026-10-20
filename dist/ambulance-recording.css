@@ -4,3 +4,10 @@
 .ar-playback-notes{list-style:none;margin:0;padding:0;display:grid;gap:24px}.ar-playback-notes li{display:grid;grid-template-columns:26px 1fr;gap:11px;align-items:baseline}.ar-playback-notes li>span{font-size:13px;color:var(--accent);font-weight:700}.ar-playback-notes h4{font-size:23px;line-height:1.25;margin:0 0 9px}.ar-playback-notes p{font-size:20px;line-height:1.45;margin:0;color:var(--ink)}
 @media(max-width:900px){.ar-playback-layout{grid-template-columns:1fr;gap:28px}.ar-playback-notes{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.ar-playback-notes li{grid-template-columns:1fr;gap:6px}.ar-playback-notes h4{font-size:21px}.ar-playback-notes p{font-size:18px}}
 @media(max-width:600px){.ar-real-playback{margin-top:32px;padding-top:28px}.ar-playback-heading h3{font-size:27px}.ar-playback-notes{grid-template-columns:1fr;gap:23px}.ar-playback-notes li{grid-template-columns:26px 1fr;gap:11px}.ar-playback-layout figcaption{font-size:16px!important}}
+
+/* The diagram teaches controls; the recording now asks the viewer to follow a dilemma. */
+.ar-playback-dilemma{align-self:center;padding-left:22px;border-left:3px solid color-mix(in srgb,var(--accent) 45%,transparent)}
+.ar-playback-dilemma h4{font-size:var(--case-subhead);line-height:1.3;margin:0 0 14px;color:var(--accent)}
+.ar-playback-dilemma p{margin:0 0 16px}
+.ar-playback-dilemma .ar-playback-prompt{margin-bottom:0}
+@media(max-width:900px){.ar-playback-dilemma{padding-left:18px}}

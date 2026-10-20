@@ -143,3 +143,19 @@ body[data-project=loofasoup] .loofa-art-direction>.section-body:empty{display:no
  body[data-project=loofasoup] .loofa-name-lockup{padding-top:0}
  body[data-project=loofasoup] .loofa-routes-layout{gap:22px}
 }
+
+/* A compact implementation example gives the programmer's work a visible place after the art. */
+body[data-project=loofasoup] #implementation.loofa-implementation{display:block;min-height:0}
+body[data-project=loofasoup] #implementation>.section-heading{margin-bottom:24px}
+.loofa-implementation-layout{display:grid;grid-template-columns:minmax(200px,.75fr) minmax(0,1.5fr);gap:44px;align-items:center}
+.loofa-implementation-example{margin:0;max-width:290px;justify-self:center;text-align:center}
+.loofa-implementation-example img{display:block;width:100%;height:auto;max-height:285px;object-fit:contain}
+.loofa-implementation-example figcaption{font-size:var(--case-caption);line-height:1.4;margin-top:12px;color:var(--muted)}
+.loofa-implementation-copy>p{margin:0 0 24px;max-width:none}
+.loofa-production-flow{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+.loofa-production-flow li{display:grid;grid-template-columns:25px minmax(0,1fr);gap:10px;align-items:baseline}
+.loofa-production-flow li>span{font-size:var(--case-label);color:var(--accent);font-weight:600}
+.loofa-production-flow h3{margin:0 0 6px;color:var(--accent)}
+.loofa-production-flow p{margin:0}
+.loofa-production-flow li:last-child{grid-column:1/-1}
+@media(max-width:760px){.loofa-implementation-layout{grid-template-columns:1fr;gap:24px}.loofa-implementation-example{max-width:210px}.loofa-production-flow{grid-template-columns:1fr;gap:18px}}

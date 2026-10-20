@@ -291,3 +291,20 @@ body[data-project=hersound] .case-study #evidence .her-evidence-story{grid-templ
 body[data-project=hersound] .case-study #evidence .her-evidence-copy,
 body[data-project=hersound] .case-study #evidence .her-evidence-copy>p{max-width:none!important;width:100%}
 @media(max-width:760px){body[data-project=hersound] .case-study #evidence .her-evidence-story{grid-template-columns:1fr;gap:20px}}
+
+/* Erasure keeps its original particles, with less travel before the question. */
+body[data-project=hersound] .case-study #erase .gx-wind-track{
+ --gx-wind-travel:clamp(320px,48svh,520px);
+}
+body[data-project=hersound] .case-study #erase{
+ padding-bottom:22px!important;
+}
+body[data-project=hersound] .case-study #erase + #question{
+ padding-top:24px!important;
+}
+body[data-project=hersound] .case-study #restore .gx-play-guide{
+ align-content:center;
+}
+body[data-project=hersound] .case-study #restore .gx-guide-meaning{
+ margin-top:0!important;
+}

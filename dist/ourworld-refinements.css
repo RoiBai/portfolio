@@ -198,3 +198,35 @@ body[data-project=ourworld] .gx-record-copy .news-preview h4{margin:8px 0 12px}
 body[data-project=ourworld] .case-study #timeline .gx-archive{margin-block:0!important}
 body[data-project=ourworld] .case-study #timeline .gx-archive-top{margin-bottom:12px!important}
 body[data-project=ourworld] .gx-archive .gx-animal-record{border-bottom:0!important}
+
+/* A single ending joins the candle interaction to the question it raises. */
+body[data-project=ourworld] .case-study>.case-section#remember{
+ display:block!important;
+}
+body[data-project=ourworld] .case-study>.case-section#remember>.section-heading{
+ width:100%;max-width:none!important;margin-bottom:18px!important;
+}
+body[data-project=ourworld] .case-study>.case-section#remember>.section-body:empty{
+ display:none!important;
+}
+body[data-project=ourworld] .case-study>.case-section#remember>.section-experience{
+ margin:0!important;padding:0!important;
+}
+body[data-project=ourworld] .case-study #remember .gx-candles>.gx-instruction{
+ margin-bottom:16px!important;
+}
+body[data-project=ourworld] .gx-remembrance-meaning{
+ max-width:960px;margin:28px auto 0;text-align:center;
+}
+body[data-project=ourworld] .gx-remembrance-meaning>h3{
+ font-size:var(--case-subhead);font-weight:600;line-height:1.35;
+ color:var(--accent);margin:20px 0 0;text-wrap:balance;
+}
+body[data-project=ourworld] .gx-archive-top>.gx-full-game{
+ flex:none;max-width:100%;
+}
+@media(max-width:700px){
+ body[data-project=ourworld] .gx-archive-top{flex-direction:column;align-items:flex-start}
+ body[data-project=ourworld] .gx-remembrance-meaning{margin-top:22px;text-align:left}
+ body[data-project=ourworld] .gx-remembrance-meaning>h3{text-wrap:pretty}
+}

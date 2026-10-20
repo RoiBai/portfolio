@@ -58,10 +58,10 @@ export function labelAbstractParagraphs(root, project) {
   };
   const labels = {
     personamail: ['Problem', 'Approach'],
-    loofasoup: ['Game background', 'Gameplay', 'Intent'],
+    loofasoup: ['Game background', 'Intent'],
     hersound: ['Context', 'Approach'],
     ourworld: ['Archive', 'Scope', 'Purpose'],
-    ambulance: ['Problem', 'Approach', 'Outcome']
+    ambulance: ['Problem', 'Approach', 'Return to the news']
   }[project.id] || ['Problem', 'Approach', 'Findings'];
   host.querySelectorAll(selectors[project.id] || '.section-body > p').forEach((paragraph, index) => {
     if (!labels[index] || paragraph.querySelector('.abstract-purpose')) return;

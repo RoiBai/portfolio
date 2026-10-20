@@ -75,6 +75,12 @@ export function setupLoofaEditorial(root,project){
   characters.classList.add('loofa-art-direction');production.className='loofa-art-dishes';production.dataset.navParent='characters';
   const productionHeading=production.querySelector('.section-heading'),subheading=document.createElement('h3');subheading.className='loofa-art-subheading';subheading.textContent='One table. Many hands';productionHeading?.replaceWith(subheading);characters.append(production);
  }
+ const implementation=root.querySelector('#implementation'),implementationData=project.sections.find(s=>s.id==='implementation');
+ if(implementation&&implementationData){
+  const heading=implementation.querySelector('.section-heading')?.outerHTML||'',fig=implementationData.figures?.[0];
+  implementation.classList.add('loofa-implementation');
+  implementation.innerHTML=heading+`<div class="loofa-implementation-layout">${fig?`<figure class="loofa-implementation-example"><img src="${siteURL(fig.src)}" alt="${esc(fig.alt)}" width="${fig.width}" height="${fig.height}" loading="lazy"><figcaption>${esc(fig.caption||'')}</figcaption></figure>`:''}<div class="loofa-implementation-copy"><p>${esc(implementationData.body)}</p><ol class="loofa-production-flow">${(implementationData.items||[]).map((item,i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><div><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></div></li>`).join('')}</ol></div></div>`;
+ }
  const joma=root.querySelector('[data-character=joma]');
  if(joma){const note=document.createElement('div');note.className='loofa-joma-personal';note.innerHTML=`<strong>That’s me!</strong><span><img src="${siteURL(art+'jojo-yoyo-original.png')}" width="166" height="95" alt="Jojo and Yoyo, the two dogs in the original portfolio"><span>Jojo + Yoyo</span></span>`;joma.append(note);}
  return()=>clean.forEach(fn=>fn());

@@ -443,3 +443,57 @@ body[data-project=icon-colors] .case-study .icon-study-group>.icon-study-stage+.
 }
 /* Match the unmodified disc to the inset SVG discs without shifting captions. */
 body[data-project=icon-colors] .icon-refinement-before-after .icon-specimen-disc {transform:scale(.865)}
+
+/* October 20: the main finding is visible before the optional hue comparison. */
+body[data-project=icon-colors] .icon-representative-comparison {display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;margin:0 0 26px;padding:0}
+body[data-project=icon-colors] .icon-representative-copy h4 {margin:0 0 12px}
+body[data-project=icon-colors] .icon-representative-copy p {margin:0;max-width:none}
+body[data-project=icon-colors] .icon-representative-copy strong {color:var(--accent)}
+body[data-project=icon-colors] .icon-representative-specimens {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+body[data-project=icon-colors] .icon-representative-specimens figure {margin:0;text-align:center}
+body[data-project=icon-colors] .icon-representative-specimens .icon-specimen-disc {width:82px;height:82px}
+body[data-project=icon-colors] .icon-representative-specimens figcaption {margin:10px 0 0;padding:0;display:block;text-align:center}
+body[data-project=icon-colors] .icon-study-next {margin:22px 0 0;padding-left:16px;border-left:2px solid var(--accent);max-width:none}
+body[data-project=icon-colors] .icon-study-next strong {color:var(--accent)}
+body[data-project=icon-colors] .icon-shared-setup {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px;margin:24px 0 18px}
+body[data-project=icon-colors] .icon-shared-setup article {min-width:0}
+body[data-project=icon-colors] .icon-shared-setup h3 {margin:0 0 10px;color:var(--accent)}
+body[data-project=icon-colors] .icon-shared-setup p {margin:0;max-width:none}
+body[data-project=icon-colors] .icon-hardware-check {margin:0 0 24px!important;max-width:none!important;color:var(--muted)}
+body[data-project=icon-colors] #setup .section-visuals {margin-top:0}
+body[data-project=icon-colors] .icon-study3-results {margin-top:26px}
+body[data-project=icon-colors] .icon-study3-results>h4 {margin:0 0 20px}
+body[data-project=icon-colors] .icon-study3-comparisons {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 38px}
+body[data-project=icon-colors] .icon-study3-comparisons h5 {margin:0 0 7px;color:var(--accent)}
+body[data-project=icon-colors] .icon-study3-comparisons article>span {display:block;color:var(--muted);margin-bottom:10px}
+body[data-project=icon-colors] .icon-study3-comparisons p {margin:0;max-width:none}
+body[data-project=icon-colors] .role-points {margin:0;padding-left:18px;display:grid;gap:7px}
+body[data-project=icon-colors] .icon-ar-parking {width:108px;height:108px;border-radius:10px}
+body[data-project=icon-colors] .icon-ar-detail {display:flex;gap:20px;align-items:center;max-width:520px;margin:18px auto 0}
+body[data-project=icon-colors] .icon-ar-detail-viewport {position:relative;width:210px;height:180px;overflow:hidden;flex:none;border-radius:5px}
+body[data-project=icon-colors] .icon-ar-detail-source {position:absolute;left:-22px;top:-25px;width:520px;height:270px;transform:scale(1.5);transform-origin:top left}
+body[data-project=icon-colors] .icon-ar-detail-source>img {display:block;width:520px;height:250px;object-fit:cover;position:absolute;top:10px;left:0}
+body[data-project=icon-colors] .icon-ar-detail p {margin:0;color:var(--ink)}
+body[data-project=icon-colors] .icon-ar-detail p>span {color:var(--muted)}
+@layer case-typography {
+ body[data-view=project][data-project=icon-colors] .case-study :is(.icon-screen-parking,.icon-ar-parking) {font-size:72px!important;font-weight:600!important;font-family:Arial,sans-serif!important;line-height:1!important}
+ body[data-view=project][data-project=icon-colors] .case-study :is(.icon-representative-copy p,.icon-study-next,.icon-shared-setup p,.icon-study3-comparisons p) {font-size:var(--case-note)!important;line-height:1.5!important}
+ body[data-view=project][data-project=icon-colors] .case-study :is(.icon-hardware-check,.icon-study3-comparisons article>span,.icon-ar-detail p,.role-points li) {font-size:var(--case-caption)!important;line-height:1.45!important}
+ body[data-view=project][data-project=icon-colors] .case-study .icon-shared-setup h3 {font-size:var(--case-note)!important}
+}
+@media(max-width:1000px) {
+ body[data-project=icon-colors] .icon-shared-setup {grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+ body[data-project=icon-colors] .icon-representative-comparison {gap:25px;grid-template-columns:1fr 1fr}
+ body[data-project=icon-colors] .icon-ar-detail {gap:14px}
+ body[data-project=icon-colors] .icon-ar-detail-viewport {width:175px;height:160px}
+ body[data-project=icon-colors] .icon-ar-detail-source {transform:scale(1.35)}
+}
+@media(max-width:700px) {
+ body[data-project=icon-colors] .icon-representative-comparison {grid-template-columns:1fr;gap:20px}
+ body[data-project=icon-colors] .icon-representative-specimens {max-width:360px;gap:16px}
+ body[data-project=icon-colors] .icon-representative-specimens .icon-specimen-disc {width:70px;height:70px}
+ body[data-project=icon-colors] .icon-study3-comparisons {grid-template-columns:1fr;gap:22px}
+ body[data-project=icon-colors] .icon-ar-parking,body[data-project=icon-colors] .icon-screen-parking {width:85px;height:85px}
+ body[data-project=icon-colors] .icon-ar-detail-source .icon-ar-parking {width:108px;height:108px}
+}
+@media(max-width:450px) {body[data-project=icon-colors] .icon-shared-setup {grid-template-columns:1fr;gap:20px}}
