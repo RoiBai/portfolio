@@ -17,8 +17,9 @@ export function emphasize(text, phrases = []) {
 
 export function rolePanel(role) {
   const contributions = Array.isArray(role?.contributions) ? role.contributions.filter(item => item?.label && item?.value) : [];
-  if (!role?.value && !role?.details && !contributions.length) return '';
-  return `<aside class="project-role${contributions.length?' has-contributions':''}" aria-label="My role"><h2>My role</h2>${role.value?`<p class="role-value">${esc(role.value)}</p>`:''}${role.details?`<p class="role-detail">${esc(role.details)}</p>`:''}${contributions.length?`<dl class="role-contributions">${contributions.map(item=>`<div><dt>${esc(item.label)}</dt><dd><p>${esc(item.value)}</p>${item.details?`<p class="role-contribution-detail">${esc(item.details)}</p>`:''}</dd></div>`).join('')}</dl>`:''}</aside>`;
+  const bullets = Array.isArray(role?.bullets) ? role.bullets.filter(item => typeof item === 'string' && item.trim()) : [];
+  if (!role?.value && !role?.details && !contributions.length && !bullets.length) return '';
+  return `<aside class="project-role${contributions.length?' has-contributions':''}${bullets.length?' has-role-points':''}" aria-label="My role"><h2>My role</h2>${role.value?`<p class="role-value">${esc(role.value)}</p>`:''}${role.details?`<p class="role-detail">${esc(role.details)}</p>`:''}${bullets.length?`<ul class="role-points">${bullets.map(item=>`<li>${esc(item)}</li>`).join('')}</ul>`:''}${contributions.length?`<dl class="role-contributions">${contributions.map(item=>`<div><dt>${esc(item.label)}</dt><dd><p>${esc(item.value)}</p>${item.details?`<p class="role-contribution-detail">${esc(item.details)}</p>`:''}</dd></div>`).join('')}</dl>`:''}</aside>`;
 }
 
 export function outcomePanel(outcome) {

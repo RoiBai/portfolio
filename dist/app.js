@@ -81,8 +81,8 @@ function compactEmptySectionCopy(){
 }
 function projectMetadata(p){
  const entries=p.id==='glancemap'?[
-  {kind:'date',text:'July 2025–September 2026'},
-  {kind:'paper',text:'CHI 2027 · Under review'},
+  {kind:'date',text:'2025.07–2026.09'},
+  {kind:'paper',text:'CHI · Under review'},
   {kind:'author',text:'Second author'}
  ]:(typeof p.meta==='string'?p.meta.split(' · '):normalizedList(p.meta).filter(m=>typeof m==='string'||!/^my role$|^research$/i.test(m.label)).map(m=>typeof m==='string'?m:m.value||m.text||'')).filter(Boolean).map(text=>({kind:/20[0-9]{2}|present/i.test(text)&&! /CHI|IUI|ACM|paper/i.test(text)?'date':/CHI|IUI|ACM|paper|poster|published|review|conference|journal|preprint|session/i.test(text)?'paper':'detail',text}));
  return entries.length?`<div class="project-meta" aria-label="Project dates and publication">${entries.map(e=>`<span class="meta-badge meta-${e.kind}">${esc(e.text)}</span>`).join('')}</div>`:'';

@@ -4,7 +4,7 @@
       "id": "glancemap",
       "title": "GlanceMap",
       "subtitle": "Follow the lesson. Find your place again",
-      "description": "An AR prototype that keeps an audio lesson’s structure visible while you walk.",
+      "description": "An AR prototype for prepared audio lessons: a growing mind map keeps ideas connected and earlier context visible while you walk.",
       "kicker": "AR · LEARNING ON THE MOVE",
       "meta": [
         {
@@ -17,7 +17,7 @@
         },
         {
           "label": "Project record",
-          "value": "July 2025–September 2026 · Second author · CHI 2027 under review"
+          "value": "2025.07–2026.09 · Second author · CHI under review"
         }
       ],
       "stats": [
@@ -69,11 +69,11 @@
         {
           "id": "abstract",
           "eyebrow": "OVERVIEW",
-          "title": "A mind map that grows with the audio",
+          "title": "Research summary",
           "body": [
-            "AR glasses could make walks and commutes opportunities for hands-free learning. But learning podcasts demand concentration: listeners check the path, then return to an explanation that has moved on.",
-            "Across 14 pilot rounds and a designer workshop, we developed GlanceMap for prepared audio lessons. Its illustrated mind map grows with the narration and keeps earlier ideas visible, so learners can recover how the ideas connect.",
-            "In a 16-person study, free recall exceeded our AudioXtend-inspired Illustration Only baseline by 9.6 percentage points immediately and 7.0 points after seven days. Picture recognition was lower—a trade-off between lesson and picture memory."
+            "Walking divides attention between a lesson and the path. We asked whether visible relationships could help listeners return to an explanation.",
+            "Fourteen pilot rounds and a five-designer workshop informed an illustrated mind map that grows with prepared narration and keeps earlier branches readable.",
+            "A counterbalanced, within-subjects study compared GlanceMap with an AudioXtend-inspired Illustration Only interface. GlanceMap improved immediate and seven-day free recall, with lower picture recognition."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -85,15 +85,11 @@
           ],
           "items": [],
           "highlights": [
-            "hands-free learning",
-            "prepared audio lessons",
-            "14 pilot rounds",
-            "keeps earlier ideas visible",
-            "16-person study",
-            "9.6 percentage points",
-            "7.0 points",
-            "Picture recognition was lower"
-          ]
+            "visible relationships",
+            "keeps earlier branches readable",
+            "immediate and seven-day free recall"
+          ],
+          "summary": "The research question, design process and evaluation."
         },
         {
           "id": "problem",
@@ -256,7 +252,9 @@
               ],
               "quote": {
                 "text": "“I don’t have time to read such long passages, so I keep missing content. The text blocks my view of the path and traffic lights—it could be unsafe.”",
-                "attribution": "Participant 4"
+                "attribution": "Participant 4",
+                "excerpt": "“I don’t have time to read such long passages, so I keep missing content.”",
+                "remainder": "“The text blocks my view of the path and traffic lights—it could be unsafe.”"
               },
               "figureLayout": "comparison",
               "items": [
@@ -279,7 +277,7 @@
               "eyebrow": "ROUND 2",
               "title": "Replace learned codes with familiar meaning",
               "body": [
-                "Structured Keywords required learning a visual code. We kept familiar parent–child links and used illustrations for concrete meaning."
+                "Use familiar parent–child links and illustrations instead of codes readers must learn."
               ],
               "nav": "Pilots 4–9",
               "figures": [
@@ -327,7 +325,9 @@
               "figureLayout": "comparison",
               "quote": {
                 "text": "“I don’t know what the designer means. I would rather read the words—understanding these symbols takes time.”",
-                "attribution": "Participant 3 · feedback on Structured Keywords"
+                "attribution": "Participant 3 · feedback on Structured Keywords",
+                "excerpt": "“I would rather read the words—understanding these symbols takes time.”",
+                "remainder": "“I don’t know what the designer means.”"
               },
               "highlights": [
                 "Structured Keywords",
@@ -414,13 +414,14 @@
           ],
           "sourceNotes": [
             "Grouped participant counts 13 / 27 / 24 confirmed as actual counts by the project author, 15 October 2026. Participants differ by round.",
-            "Workshop: five UI/UX and HMD researchers, final manuscript section 3."
+            "Workshop: five UI/UX and HMD researchers, final manuscript section 3.",
+            "20 October 2026: the five workshop designers are separate from the 27 participants listed for Pilots 4–9; counts are not combined."
           ]
         },
         {
           "id": "goals",
           "eyebrow": "FINAL DESIGN",
-          "title": "Six goals, one final design",
+          "title": "Three actions, one glanceable lesson",
           "body": [
             "New ideas appear with the audio; earlier branches stay readable."
           ],
@@ -462,19 +463,19 @@
           ],
           "items": [],
           "figureLayout": "final-design",
-          "deck": "Fourteen pilot rounds led to one principle: reveal the current idea and retain its context",
+          "deck": "Keep relationships clear, ground them in pictures, and preserve context as the lesson unfolds.",
           "sourceNotes": [
             "Glance sequence uses unchanged original Mindmap + illu (4), (5), and (7) lesson frames. The look-away scenario is illustrative, not a recorded gaze trace.",
             "Active green and retained yellow-green branches: submission-ready manuscript §4.1–4.2, lines 521–547.",
-            "18 October 2026 interaction refinement: six scroll steps reveal DG01 through DG06 individually. Original lesson frames stay unchanged and advance chronologically; local curved SVG leaders connect each goal to its corresponding feature. Previous goals remain neutral while the current one is highlighted."
+            "20 October 2026: three scroll actions group DG01–03, DG04 and DG05–06. Unchanged original lesson frames advance chronologically; curved leaders connect the current action to its feature."
           ]
         },
         {
           "id": "study",
-          "eyebrow": "WITHIN-PARTICIPANT COMPARISON",
-          "title": "The study, on one shared route",
+          "eyebrow": "MAIN STUDY",
+          "title": "Comparing two interfaces on the same route",
           "body": [],
-          "nav": "Formative study",
+          "nav": "Main study",
           "figures": [
             {
               "src": "/assets/design-revision/glance-route.svg",
@@ -658,9 +659,9 @@
         {
           "id": "next",
           "eyebrow": "DESIGN IMPLICATIONS",
-          "title": "Remember the structure. Give pictures enough room",
+          "title": "Designing for a returning glance",
           "body": [
-            "Keep relationships visible, retain earlier context, and give important pictures enough room."
+            "Preserve relationships, reveal ideas progressively, and balance pictures with structure."
           ],
           "nav": "Discussion",
           "figures": [],
@@ -685,12 +686,18 @@
           "User-confirmed responsibilities in conversation"
         ],
         "boundary": "My collaborator ran the experiments; we developed the iterations together.",
-        "details": "I prepared materials for 14 pilot rounds, analyzed five pilots and the formal study, interviewed each participant twice, and contributed to the paper."
+        "details": "",
+        "bullets": [
+          "Prepared materials for 14 pilot rounds.",
+          "Analyzed five pilots and the main study.",
+          "Conducted participant interviews and contributed to the paper."
+        ]
       },
       "sourceNotes": [
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
-        "15 October 2026: author clarified the 14-round iteration narrative and pilot feedback; final within-subject study details checked against submission-ready manuscript. Website chapter label “Formative study” follows the author’s requested navigation wording.",
-        "16 October 2026 comprehension edit: prepared-stimulus scope and Structured Keywords encoding grounded in submission-ready manuscript §3.2–3.3, §4 and §6 limitations; current/history sequence uses the author’s original consecutive lesson PNGs."
+        "15 October 2026: author clarified the 14-round iteration narrative and pilot feedback; final within-subject study details checked against submission-ready manuscript.",
+        "16 October 2026 comprehension edit: prepared-stimulus scope and Structured Keywords encoding grounded in submission-ready manuscript §3.2–3.3, §4 and §6 limitations; current/history sequence uses the author’s original consecutive lesson PNGs.",
+        "20 October 2026 author correction: timeline 2025.07–2026.09; CHI under review; recall tested immediately and seven days later, not a second interview. Main study distinguishes the evaluation from the pilots."
       ],
       "tags": [
         "AR",
@@ -698,10 +705,11 @@
         "Glanceable interfaces"
       ],
       "highlights": [
-        "audio lessons while walking"
+        "prepared audio lessons",
+        "keeps ideas connected"
       ],
-      "outcome": "A progressive, illustrated mind map for learning while walking, developed through 14 pilot rounds and evaluated with 16 participants.",
-      "contentRevision": "2026-10-18-sequential-design-goals"
+      "outcome": "",
+      "contentRevision": "2026-10-20-gm-reading-path-w1-w7"
     },
     {
       "id": "icon-colors",
@@ -2150,15 +2158,14 @@
           "title": "Turn social context into something editable",
           "body": [
             "Eight participants using three writing tools struggled to express social goals, revise one part, and reuse successful choices.",
-            "A review of 97 social-psychology papers informed the controls. The original interface follows five steps, from the first request to reusing a writing strategy."
+            "A review of 97 social-psychology papers informed three design decisions: make relationships explicit, edit one intention at a time, and retain useful context and preferences."
           ],
           "items": [],
           "figures": [],
           "highlights": [
             "Eight participants",
-            "three writing tools",
             "97 social-psychology papers",
-            "five steps"
+            "three design decisions"
           ],
           "layout": "editorial"
         },
@@ -2166,17 +2173,13 @@
           "id": "interaction",
           "nav": "Interaction",
           "eyebrow": "Interaction",
-          "title": "Set the context, edit one part, reuse it",
+          "title": "Try a leave request",
           "body": [
-            "I made this small demo so you can try setting the context, editing one explanation and reusing a style. It uses local examples, not a live AI service."
+            "Try the same leave request from the opening example. Change the context, edit one explanation, then reuse the style for a follow-up email. This small demo uses authored examples."
           ],
           "items": [],
           "figures": [],
-          "highlights": [
-            "setting the context",
-            "editing one explanation",
-            "reusing a style"
-          ],
+          "highlights": [],
           "layout": "editorial",
           "interaction": "persona-intent"
         }
@@ -2198,7 +2201,7 @@
         "Current website scenario is authored by Ruiyuan Bai: lab leave and a later missed morning meeting. Interactive settings select authored examples locally; no AI API is presented as connected. Original section editor is preserved in an expandable source view.",
         "16 October 2026: author confirmed responsibility for web interaction logic, project storytelling and the promotional video. Final local demonstration keeps relationship and tone when shortening an explanation and reusing that preference."
       ],
-      "contentRevision": "2026-10-16-persona-comprehension-final",
+      "contentRevision": "2026-10-20-focused-research-demo",
       "outcome": "An email-writing interface for setting social context, editing specific intentions and reusing a personal communication style.",
       "tags": [
         "Human–AI interaction",
@@ -2215,26 +2218,10 @@
       "id": "beyond-the-gaze",
       "title": "Beyond the Gaze",
       "subtitle": "Looking is only part of the story",
-      "description": "Can a museum guide infer what matters from where you look? We compare gaze, later selection and interpretation within the same detail. These mismatches point to a role for guides that ask what visitors understood before choosing an explanation.",
+      "description": "Some painting details attract repeated looks but never appear in what viewers later select or explain. We investigate this gap between looking and interpretation.",
       "kicker": "Research / Eye tracking",
       "meta": "ACM Multimedia Asia 2026 · Accepted special-session poster · Co-first author",
-      "stats": [
-        {
-          "value": "12 / 15",
-          "label": "Analyzed / enrolled",
-          "detail": "Three excluded after gaze-quality checks"
-        },
-        {
-          "value": "24",
-          "label": "Paintings",
-          "detail": "5–7 semantic regions per painting"
-        },
-        {
-          "value": "9.4%",
-          "label": "Region records showed HLL",
-          "detail": "156 of 1,651 cleaned records"
-        }
-      ],
+      "stats": [],
       "links": [],
       "category": "Research",
       "slug": "/research/beyond-the-gaze",
@@ -2266,20 +2253,13 @@
           "eyebrow": "Abstract",
           "title": "Looking is not the same as interpreting",
           "body": [
-            "A gaze-aware museum guide may read a long look as interest. But attention does not always appear in what a visitor later selects or says. A guide therefore needs to distinguish where someone looked from what they found meaningful.",
-            "We designed Gaze–Selection–Language (GSL) to align eye movements, later selections and spoken interpretations for the same painting region. Across 24 paintings and 12 analyzed viewers, eight High/Low patterns guided our analysis. We focused on HLL—High Gaze, Low Selection, Low Language—to investigate attention that did not enter viewers’ explicit interpretations.",
-            "HLL appeared in 156 of 1,651 region records. In 19 selected cases, early access and repeated returns were common; prolonged fixations were not. Several regions connected parts of the composition, suggesting that looking may help viewers orient themselves as well as interpret a detail. This is a hypothesis raised by the analysis, rather than a demonstrated cause."
+            "Museum guides may treat a long look as interest, yet viewers can look repeatedly at a detail without using it in their interpretation. We aligned eye movements, later selections and spoken explanations within the same painting region. Repeated returns to some connecting regions suggest a role in navigating the composition—a question for further testing."
           ],
           "items": [],
           "figures": [],
           "highlights": [
-            "a long look as interest",
-            "what a visitor later selects or says",
-            "24 paintings",
-            "Gaze–Selection–Language (GSL)",
-            "HLL—High Gaze, Low Selection, Low Language",
-            "early access and repeated returns",
-            "orient themselves as well as interpret a detail"
+            "look repeatedly at a detail",
+            "navigating the composition"
           ]
         },
         {
@@ -2338,68 +2318,18 @@
               "sourceOrigin": "September 13 manuscript, sections 3.3 and 4.2; Figure 5 labels P16 / The Hay Wain / A3 as HLL. Selection/Language statements summarize those codes, not verbatim responses. No transcript is supplied."
             },
             {
-              "researchFigure": {
-                "kind": "gaze-evidence"
-              },
-              "alt": "Original gaze heatmaps, eye paths and semantic region maps, arranged in three views for the selected painting",
-              "sourceOrigin": "Paper Figure 3 for original traces; Hay Wain region map uses matching Figure 5 A1–A6 view. Figure 3 historical-scene panel has no verified artwork title, so is described generically."
-            }
-          ],
-          "items": [],
-          "layout": "editorial",
-          "highlights": [
-            "156 of 1,651",
-            "9.4%",
-            "One recorded case"
-          ]
-        },
-        {
-          "id": "study",
-          "nav": "Analysis",
-          "eyebrow": "Analysis",
-          "title": "Where mismatches appeared",
-          "body": [
-            "Selected HLL regions linked groups of figures or connected foreground and background. Could repeated looks help viewers navigate a composition? These examples raise that question; they do not establish a cause."
-          ],
-          "items": [],
-          "figures": [
-            {
-              "researchFigure": {
-                "kind": "gaze-composition"
-              },
-              "alt": "Three original HLL composition examples, with source outlines and lines",
-              "sourceOrigin": "Gaze paper Figure 4, page 6: three native artwork crops with original annotations retained."
-            }
-          ],
-          "highlights": [
-            "navigate a composition",
-            "do not establish a cause"
-          ],
-          "layout": "editorial"
-        },
-        {
-          "id": "example",
-          "nav": "One example",
-          "eyebrow": "One example",
-          "title": "Many short looks can add up",
-          "body": [
-            "The same A3 record had more visits but shorter individual fixations. High Gaze refers to accumulated fixation time and supporting measures—not the duration of each look."
-          ],
-          "items": [],
-          "figures": [
-            {
               "src": "/assets/hll-metrics-case-c5d7bdfe.webp",
               "width": 3294,
               "height": 598,
-              "alt": "Figure 5 · One participant–painting–region example, with the original comparison table.",
+              "alt": "Native charts for P16, The Hay Wain, Region A3: 38 visits versus a trial mean of 20.33, and mean fixation duration 0.051 seconds versus 0.170 seconds.",
               "caption": "Single-case measurements, compared with the same trial’s region mean",
-              "sourceOrigin": "Original project paper figure; retained native pixels and source composition.",
+              "sourceOrigin": "Manuscript Figure 5 measurements redrawn in native HTML/CSS; no screenshot table.",
               "displayWidth": 1050,
               "dataVisual": {
                 "id": "gaze-single-case-readable",
                 "type": "bars",
-                "title": "Repeated access to A3",
-                "description": "Same recorded case · P16 · The Hay Wain · A3",
+                "title": "Many short looks can add up",
+                "description": "The same A3 record had more visits but shorter individual fixations. High Gaze concerns accumulated time, not how long each look lasted.",
                 "panels": [
                   {
                     "title": "How often the eyes returned",
@@ -2446,31 +2376,61 @@
                 ],
                 "scope": ""
               }
+            },
+            {
+              "researchFigure": {
+                "kind": "gaze-evidence"
+              },
+              "alt": "Original gaze heatmaps, eye paths and semantic region maps, arranged in three views for the selected painting",
+              "sourceOrigin": "Paper Figure 3 for original traces; Hay Wain region map uses matching Figure 5 A1–A6 view. Figure 3 historical-scene panel has no verified artwork title, so is described generically."
+            }
+          ],
+          "items": [],
+          "layout": "editorial",
+          "highlights": [
+            "156 of 1,651",
+            "9.4%",
+            "One recorded case"
+          ]
+        },
+        {
+          "id": "study",
+          "nav": "Analysis",
+          "eyebrow": "Analysis",
+          "title": "Where mismatches appeared",
+          "body": [
+            "Selected HLL regions linked groups of figures or connected foreground and background. Could repeated looks help viewers navigate a composition? These examples raise that question; they do not establish a cause."
+          ],
+          "items": [],
+          "figures": [
+            {
+              "researchFigure": {
+                "kind": "gaze-composition"
+              },
+              "alt": "Three original HLL composition examples, with source outlines and lines",
+              "sourceOrigin": "Gaze paper Figure 4, page 6: three native artwork crops with original annotations retained."
             }
           ],
           "highlights": [
-            "more visits",
-            "shorter individual fixations",
-            "accumulated fixation time"
+            "navigate a composition",
+            "do not establish a cause"
           ],
-          "layout": "editorial",
-          "navParent": "study"
+          "layout": "editorial"
         },
         {
           "id": "reflection",
           "nav": "Takeaway",
           "eyebrow": "Takeaway",
-          "title": "Connect attention with the meaning visitors construct",
+          "title": "Use a mismatch to start a conversation",
           "body": [
-            "High attention does not automatically make a detail important to a viewer’s interpretation. GSL makes this gap visible by aligning where people look with what they later select and explain. It offers a concrete way to examine agreement and mismatch within the same detail.",
-            "For digital museums and AI guides, the design opportunity is to combine behavioral attention with visitors’ own expressions of meaning. Before adapting an explanation, consider both where they looked and how they interpreted it. This moves the design question from attracting attention toward supporting cultural understanding."
+            "Selected mismatch cases often involved repeated returns, without uniformly prolonged fixations. Several regions connected figures or foreground and background, suggesting that looking can support orientation as well as interpretation.",
+            "A museum guide could use a repeatedly viewed region to ask, “What did you notice here?” It could then offer a compositional cue or historical context based on the visitor’s answer. This application follows from the analysis; it was not tested in this study."
           ],
           "items": [],
           "figures": [],
           "highlights": [
-            "aligning where people look with what they later select and explain",
-            "combine behavioral attention with visitors’ own expressions of meaning",
-            "supporting cultural understanding"
+            "repeated returns",
+            "ask, “What did you notice here?”"
           ],
           "sourceNotes": [
             "18 October 2026: Takeaway rewritten from original September manuscript Discussion and Limitations (pp. 5–6): gaze allocations and explicit meaning are complementary evidence; region-level GSL alignment makes agreement/mismatch visible; multimodal cultural-interface implications remain a design opportunity, not a tested museum-guide benefit. Four-view homepage/footer cover uses original image bytes without modification."
@@ -2494,16 +2454,16 @@
         "14 October interactive revision: original embedded images from Figures 1, 3, 4 and 5 supplement the original portfolio. Each visual crop has native dimensions and provenance in assets/research-interactive/sources.json. No simulated eye-tracking data.",
         "16 October comprehension revision: September 13 manuscript section 3.3 clarifies retrospective Selection; section 4.2 and Figure 5 provide the P16 / Hay Wain / A3 HLL code and measurements. No participant transcript invented. Figure 3 region shapes may share semantic labels; Hay Wain gallery uses Figure 5 semantic outlines."
       ],
-      "contentRevision": "2026-10-18-gaze-expanded-source-views",
-      "outcome": "The Gaze–Selection–Language framework and an analysis of HLL: an unusual mismatch between visual attention, later selection and interpretation.",
+      "contentRevision": "2026-10-20-continuous-gaze-case",
+      "outcome": "A framework linking eye movements, later selections and spoken interpretations, used to investigate where those signals diverge.",
       "tags": [
         "Eye tracking",
         "Art appreciation",
         "Mixed methods"
       ],
       "highlights": [
-        "remember and explain",
-        "gaze alone can miss"
+        "repeated looks",
+        "later select or explain"
       ]
     },
     {
@@ -2559,28 +2519,25 @@
           "eyebrow": "Abstract",
           "title": "Make a long painting easier to follow",
           "body": [
-            "A long handscroll holds a city’s stories, but zooming into one figure can lose the streets around it. Static annotations explain isolated details without helping viewers connect them to the wider scene.",
-            "Guided by 191 survey responses and 30 interviews, we designed ScrollVerse for the eighteenth-century Prosperous Suzhou Scroll. Gradual unfolding keeps viewers oriented; social perspectives and visual clues connect people, places and cultural explanations.",
-            "In a 60-person comparison with an annotation viewer using the same painting and content, ScrollVerse received stronger usability and contextual-understanding ratings. The findings support an interactive way to explore a handscroll while keeping its details connected."
+            "Zooming into a long handscroll can separate a figure from the streets and stories around it.",
+            "Guided by 191 survey responses and 30 interviews, we designed ScrollVerse for the eighteenth-century Prosperous Suzhou Scroll: unfolding scenes, social perspectives and visual inquiry support contextual exploration.",
+            "In a 60-person comparison using the same painting and cultural content, 25 of 30 ScrollVerse users reported clearer understanding of Qing-dynasty urban life. The study found no clear difference in usability or workload between the interfaces."
           ],
           "items": [],
           "figures": [],
           "highlights": [
-            "lose the streets around it",
-            "191 survey responses",
-            "30 interviews",
-            "social perspectives and visual clues",
-            "60-person comparison",
-            "stronger usability and contextual-understanding ratings"
+            "unfolding scenes, social perspectives and visual inquiry",
+            "25 of 30",
+            "no clear difference in usability or workload"
           ]
         },
         {
           "id": "needs",
           "nav": "Problem",
           "eyebrow": "Problem",
-          "title": "Seeing the detail is only the start",
+          "title": "What viewers needed",
           "body": [
-            "Seeing a detail is only the start: viewers wanted to inspect it without losing their place in the city, and to explore its cultural meaning. These needs shaped three design choices."
+            "The formative study identified three priorities for the interface."
           ],
           "figures": [
             {
@@ -2593,10 +2550,7 @@
           ],
           "items": [],
           "layout": "editorial",
-          "highlights": [
-            "without losing their place",
-            "explore its cultural meaning"
-          ]
+          "highlights": []
         },
         {
           "id": "experience",
@@ -2634,7 +2588,7 @@
               "researchFigure": {
                 "kind": "suzhou-study"
               },
-              "alt": "Compact comparative results with the explanation beside each measurement",
+              "alt": "Two matched viewing conditions followed by self-reported understanding and interest, then usability and workload comparisons.",
               "sourceOrigin": "Original manuscript SUS and workload scores plus portfolio 25/30 and 26/30 self-report counts; native HTML/CSS."
             },
             {
@@ -2657,16 +2611,14 @@
           "id": "reflection",
           "nav": "Takeaway",
           "eyebrow": "Takeaway",
-          "title": "Help viewers connect the details",
+          "title": "From exploration to learning",
           "body": [
-            "The design keeps detail, place and interpretation connected. Participants valued the combined experience; next, test what visitors learn and retain, and which features help."
+            "Participants valued the experience. The next question is whether contextual exploration improves what viewers learn and retain, and which features contribute."
           ],
           "items": [],
           "figures": [],
           "highlights": [
-            "detail, place and interpretation",
-            "learn and retain",
-            "which features help"
+            "learn and retain"
           ]
         }
       ],
@@ -2688,7 +2640,7 @@
         "16 October 2026 comprehension revision: grounded Shantang Street walkthrough in original interface text; role lenses and cultural-record boundaries follow latest manuscript pp. 11–13. Baseline affordances, matched content and between-subjects rationale verified pp. 9–10, 13–14. Original runtime, context images, quiz and full ratings preserved in disclosures. No claim of learning efficacy or feature-level causal effect.",
         "18 October 2026 reading revision: scene and role steps aligned; explanatory disclosures for runtime and additional contextual story removed from the page at author request. Native scene and character images retained. Counts, conditions, results and contribution unchanged."
       ],
-      "contentRevision": "2026-10-18-reading-refinement-suzhou",
+      "contentRevision": "2026-10-20-study-evidence-hierarchy",
       "outcome": "An interactive scroll that connects close-up details, social roles and cultural evidence, evaluated with 60 participants.",
       "tags": [
         "Cultural heritage",
@@ -2704,7 +2656,7 @@
       "id": "versecolor",
       "title": "VerseColor",
       "subtitle": "Follow a color into a poem",
-      "description": "For readers of Chinese poetry: follow a color word to its imagery, emotions and source lines, then judge its meaning in context.",
+      "description": "A visual reading tool for interpreting color in Chinese poetry, with associations that readers can check against the poems.",
       "kicker": "Research / Chinese poetry",
       "meta": "iConference · Under review · Sep 2026 · corresponding author",
       "stats": [
@@ -2750,9 +2702,9 @@
           "eyebrow": "Abstract",
           "title": "From finding poems to understanding their imagery",
           "body": [
-            "Color in Chinese poetry connects objects, emotions and cultural associations. Keyword search can find a color word, but leaves readers to assemble how its meaning changes across poems. Eight reader interviews exposed this gap between finding poems and interpreting them.",
-            "We designed VerseColor to link colors, imagery and emotions back to source poems. Readers filter by color, poet or dynasty, explore an association, and check its surrounding lines. Eight expert reviewers checked the proposed links against the texts.",
-            "In a 30-person comparison with Souyun, readers rated VerseColor more helpful for connecting ideas and interpreting imagery. Relevant-poem retrieval was similar, while Souyun was easier to use—pointing to clearer navigation as the next design priority."
+            "A color word can carry different meanings across poems. Eight reader interviews showed that keyword search finds occurrences but leaves readers to assemble their cultural and emotional associations.",
+            "VerseColor brings those associations into one visual reading space. Eight expert reviewers checked proposed links against the source texts.",
+            "In a 30-person comparison with a widely used Chinese poetry search website, readers rated VerseColor more helpful for connecting ideas and interpreting imagery. The poetry website was easier to use, making navigation the next design priority."
           ],
           "items": [],
           "figures": [
@@ -2769,9 +2721,7 @@
             }
           ],
           "highlights": [
-            "how its meaning changes across poems",
-            "Eight reader interviews",
-            "link colors, imagery and emotions back to source poems",
+            "different meanings across poems",
             "Eight expert reviewers",
             "more helpful for connecting ideas and interpreting imagery"
           ],
@@ -2793,9 +2743,9 @@
           "id": "study",
           "nav": "Study",
           "eyebrow": "Study",
-          "title": "Reading with VerseColor and Souyun",
+          "title": "Compare two reading tools",
           "body": [
-            "Thirty participants each used one assigned tool—VerseColor or Souyun—for the same 15-minute interpretation tasks, followed by a questionnaire and interview. Eight expert reviewers separately checked proposed associations against the source texts."
+            "Thirty participants each used one assigned tool—VerseColor or the poetry website—for the same 15-minute interpretation tasks, followed by a questionnaire and interview."
           ],
           "items": [],
           "figures": [
@@ -2809,8 +2759,7 @@
           ],
           "highlights": [
             "one assigned tool",
-            "same 15-minute interpretation tasks",
-            "Eight expert reviewers"
+            "same 15-minute interpretation tasks"
           ],
           "layout": "editorial"
         },
@@ -2820,7 +2769,7 @@
           "eyebrow": "Findings",
           "title": "Connections became easier to see",
           "body": [
-            "The strongest advantages were connecting ideas and interpreting imagery. Souyun was easier to use; the next step is simpler navigation and testing whether the benefits last beyond one session."
+            "Readers rated VerseColor more helpful for connecting ideas and interpreting imagery. The poetry website was easier to use; next, simplify navigation and test whether the benefits last beyond one session."
           ],
           "items": [],
           "figures": [
@@ -2828,8 +2777,8 @@
               "researchFigure": {
                 "kind": "verse-results"
               },
-              "alt": "Two native paired bar comparisons: VerseColor was rated higher for connecting ideas and interpreting imagery, each accompanied by an explanation.",
-              "sourceOrigin": "Native HTML/CSS. Mean bars read from research_portfolio/assets/verse/results.png at original 2272×656 pixels, baseline y492 and six-unit line y114. Pixel-derived estimates rounded to 0.1; error bars omitted. No raw participant means are claimed. Cognitive Load omitted because the figure label conflicts with cognitive ease in the prose. Reported d=2.29 and d=1.91 retained from manuscript Results."
+              "alt": "Two manuscript-reported standardized rating differences favoring VerseColor: relational support d=2.29 and imagery support d=1.91, with plain-language interpretation.",
+              "sourceOrigin": "Manuscript-reported effect sizes; native HTML/CSS, no pixel-estimated means."
             }
           ],
           "quote": {
@@ -2837,7 +2786,7 @@
             "attribution": "P13 · Post-task interview"
           },
           "highlights": [
-            "connecting ideas and interpreting imagery"
+            "more helpful for connecting ideas and interpreting imagery"
           ],
           "layout": "editorial"
         }
@@ -2862,7 +2811,7 @@
         "18 October 2026 reading revision: broadened the problem framing using manuscript introduction; full original Figure 3 is always visible as the native-resolution lossless image. Preserved the illustrative poem interaction, 8 formative interviewees, 30 comparative participants, 8 separate expert reviewers and reported effect sizes. No new learning or causal claims.",
         "18 October 2026 native-results correction: removed the paper Figure 4 raster chart. Replaced it with two reported effect-size cards and two source-supported qualitative comparisons, preserving the contextual interface images. No graph-derived mean estimates, uncertainty estimates or reconstructed significance tests."
       ],
-      "contentRevision": "2026-10-18-connected-bubble-cover",
+      "contentRevision": "2026-10-20-reported-effects",
       "outcome": "An interactive poetry interface connecting color words, imagery and emotion, evaluated with 30 readers.",
       "tags": [
         "Chinese poetry",
@@ -2870,8 +2819,7 @@
         "Visual exploration"
       ],
       "highlights": [
-        "imagery, emotion and source lines",
-        "in context"
+        "interpreting color in Chinese poetry"
       ]
     },
     {

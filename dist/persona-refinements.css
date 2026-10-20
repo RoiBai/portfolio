@@ -212,3 +212,71 @@ body[data-project=personamail] #research>.persona-research-tour{gap:30px;margin-
  .persona-research-tour .persona-original-anchor{padding:10px}
  .persona-research-tour .persona-original-anchor h4{overflow-wrap:normal;text-wrap:pretty}
 }
+
+/* One hero contrast, three research decisions, then the actual controls. */
+body[data-project=personamail] .rf-persona-opening .persona-hero-change{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+body[data-project=personamail] .rf-persona-opening .persona-hero-change>div{padding-left:0}
+body[data-project=personamail] .rf-persona-opening .persona-hero-change h4{margin:0 0 10px}
+body[data-project=personamail] #research>.persona-research-tour{gap:28px}
+body[data-project=personamail] #research .persona-research-case{padding:12px 16px;background:#e7ece4;border-radius:4px;display:flex;gap:12px 22px;align-items:baseline}
+body[data-project=personamail] #research .persona-research-case>span{font:600 var(--case-caption)/1.5 var(--font-body);color:#315d51;white-space:nowrap}
+body[data-project=personamail] #research .persona-research-case>p{font:400 var(--case-note)/1.5 var(--font-body);margin:0;width:auto;max-width:none;color:#34433f}
+body[data-project=personamail] #research .persona-research-editor{display:block}
+body[data-project=personamail] #research .persona-original-edit-selection{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;font:400 var(--case-caption)/1.4 var(--font-body)}
+body[data-project=personamail] #research .persona-original-edit-selection>*{padding:5px 8px;border:1px solid #cdd8dd;border-radius:3px;background:#fff;color:#526760}
+body[data-project=personamail] #research .persona-original-edit-selection>strong{background:#eaf1fb;border-color:#7596da;color:#3b61a4;font-weight:600}
+body[data-project=personamail] #research .persona-original-stylebook{margin-top:12px;padding:13px 15px;background:#edf1e8;border:1px solid #c9d5c5;border-radius:4px;font:400 var(--case-caption)/1.45 var(--font-body)}
+body[data-project=personamail] #research .persona-original-stylebook>span{font-weight:600;color:#315d51}
+body[data-project=personamail] #research .persona-original-stylebook p{font:400 var(--case-caption)/1.45 var(--font-body);margin:5px 0 0}
+body[data-project=personamail] #interaction .section-experience>figure.persona-direct-demo{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px 40px;align-items:start;margin:0}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-controls{min-width:0}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-settings{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-settings>label:first-child{grid-column:1/-1}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-relationship-context{margin-bottom:16px;padding:0;background:transparent;border:0;gap:18px}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-settings .persona-appreciation{grid-column:1/-1}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-local-edit{display:block;margin-top:18px;padding:14px 16px}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-local-edit>p{margin:6px 0 10px!important}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-local-edit>button{max-width:none;min-height:40px}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-reuse{margin-top:20px}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-draft{min-height:0}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-draft-heading{margin-bottom:16px}
+@media(max-width:760px){
+ body[data-project=personamail] .rf-persona-opening .persona-hero-change{grid-template-columns:1fr;gap:20px}
+ body[data-project=personamail] #research>.persona-research-tour{gap:26px}
+ body[data-project=personamail] #research .persona-research-case{display:block;padding:12px 14px}
+ body[data-project=personamail] #research .persona-research-case>p{margin-top:5px}
+ body[data-project=personamail] #interaction .section-experience>figure.persona-direct-demo{grid-template-columns:1fr;gap:22px}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-controls{display:contents}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-controls>h3{grid-row:1;margin:0}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-relationship-context{grid-row:2;margin:0}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-settings{grid-row:3;margin:0}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-after{grid-row:4}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-local-edit{grid-row:5;margin:0}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-reuse{grid-row:6;margin:0}
+}
+/* Put the context above the draft, and use the adjacent space for editing. */
+body[data-project=personamail] #interaction .section-experience>figure.persona-direct-demo{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:22px 32px}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-controls{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:center}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-controls>h3{margin:0}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-relationship-context{margin:0}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-settings{grid-column:1/-1;grid-template-columns:1.2fr 1fr 1fr auto;gap:16px;margin:0;align-items:end}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-settings>label:first-child,
+body[data-project=personamail] #interaction .persona-direct-demo .persona-settings .persona-appreciation{grid-column:auto}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-settings .persona-appreciation{min-height:48px}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-actions{min-width:0}
+body[data-project=personamail] #interaction .persona-direct-demo .persona-local-edit{margin:0}
+@media(max-width:760px){
+ body[data-project=personamail] #interaction .section-experience>figure.persona-direct-demo{grid-template-columns:1fr;gap:20px}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-controls{display:grid;grid-template-columns:1fr;gap:16px}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-controls>h3,
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-relationship-context,
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-settings,
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-after,
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-local-edit,
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-reuse{grid-row:auto}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-settings{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-settings>label:first-child,
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-settings .persona-appreciation{grid-column:1/-1}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-settings .persona-appreciation{min-height:26px}
+ body[data-project=personamail] #interaction .persona-direct-demo .persona-reuse{margin-top:18px}
+}

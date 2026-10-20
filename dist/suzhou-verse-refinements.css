@@ -217,3 +217,40 @@ body[data-project=versecolor] .rf-verse-results>figcaption {margin-top:8px}
  body[data-project=versecolor] .rf-verse-result-pairs {gap:12px}
  body[data-project=versecolor] .rf-verse-reported-effect {margin-bottom:6px}
 }
+
+/* Study comparisons come first; the results then lead with what viewers reported. */
+body[data-project=suzhou-scrollverse] .rf-suzhou-conditions {margin-bottom:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results {margin-top:34px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results-heading {display:flex;align-items:baseline;gap:24px;margin-bottom:22px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results-heading h3 {margin:0;color:var(--accent)}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results-heading p {margin:0;color:var(--muted)}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-reports {border:0;padding:0;margin:0;gap:28px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-reports>div {grid-template-columns:105px minmax(0,1fr);gap:18px;align-items:start;padding:22px 24px;background:color-mix(in srgb,var(--accent) 5%,var(--bg));border-radius:4px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-reports h4 {margin:0 0 9px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-reports p {margin:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-reports strong {white-space:nowrap}
+body[data-project=suzhou-scrollverse] .rf-suzhou-reports-note {margin:15px 0 0;color:var(--muted);max-width:none}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-comparisons {margin-top:30px;gap:42px}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-comparisons>section {border:0;padding:0}
+body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-reading {margin-bottom:0}
+/* Only reported effect sizes are plotted. No reconstructed group-mean scores. */
+body[data-project=versecolor] .rf-verse-effect-score {display:flex;justify-content:space-between;align-items:baseline;gap:20px;color:var(--accent)}
+body[data-project=versecolor] .rf-verse-effect-score strong {font-variant-numeric:tabular-nums}
+body[data-project=versecolor] .rf-verse-effect-track {height:8px;margin-top:10px;background:color-mix(in srgb,var(--ink) 9%,transparent)}
+body[data-project=versecolor] .rf-verse-effect-track>span {display:block;height:100%;background:var(--accent)}
+body[data-project=versecolor] .rf-verse-results .rf-verse-result-pair {padding-block:20px}
+body[data-project=versecolor] .vi-heading+.vi-canvas {margin-top:22px}
+@layer case-typography {
+ body[data-view=project][data-project=suzhou-scrollverse] .case-study :is(.rf-suzhou-results-heading p,.rf-suzhou-results .rf-study-reports p) {font-size:var(--case-note)!important;line-height:1.45!important}
+ body[data-view=project][data-project=suzhou-scrollverse] .case-study .rf-suzhou-reports-note {font-size:var(--case-caption)!important;line-height:1.45!important}
+ body[data-view=project][data-project=versecolor] .case-study .rf-verse-effect-score strong {font-size:var(--case-heading)!important;font-weight:600!important;line-height:1.2!important}
+ body[data-view=project][data-project=versecolor] .case-study .rf-verse-effect-score>span {font-size:var(--case-caption)!important;line-height:1.4!important}
+}
+@media(max-width:760px) {
+ body[data-project=suzhou-scrollverse] .rf-suzhou-results {margin-top:28px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-results-heading {display:block;margin-bottom:18px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-results-heading p {margin-top:9px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-reports {gap:16px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-reports>div {grid-template-columns:1fr;gap:12px;padding:20px}
+ body[data-project=suzhou-scrollverse] .rf-suzhou-results .rf-study-comparisons {margin-top:27px;gap:26px}
+}

@@ -16,3 +16,26 @@ body[data-project=glancemap] .case-section.glance-next-steps{display:block;paddi
 @media(min-width:1100px){body[data-project=glancemap] #findings .section-heading h2{white-space:nowrap;font-size:clamp(32px,2.8vw,42px)!important;max-width:none!important}}
 
 .glance-results .gr-interpretation h3,.glance-results .gr-secondary h3{color:var(--accent)}
+
+/* Discussion leads with design implications; future experiments are optional detail. */
+body[data-project=glancemap] #next .gr-discussion {width:100%;min-width:0;margin-inline:auto}
+body[data-project=glancemap] #next .gr-discussion-intro {max-width:none;margin:0 0 25px;color:var(--gr-muted)}
+body[data-project=glancemap] #next .gr-design-implications {display:grid;gap:25px;list-style:none;padding:0;margin:0}
+body[data-project=glancemap] #next .gr-design-implications>li {display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start;margin:0;padding:0}
+body[data-project=glancemap] #next .gr-design-implications h3 {color:var(--accent);margin:0}
+body[data-project=glancemap] #next .gr-design-implications p {margin:0;color:var(--gr-muted);max-width:none}
+body[data-project=glancemap] #next .gr-future-work {margin:30px 0 0;padding:15px 19px;background:color-mix(in srgb,var(--accent) 5%,var(--bg));border-radius:4px;color:var(--gr-muted)}
+body[data-project=glancemap] #next .gr-future-work summary {width:fit-content;min-height:24px;cursor:pointer;color:var(--ink)}
+body[data-project=glancemap] #next .gr-future-work summary:focus-visible {outline:1px solid var(--accent);outline-offset:5px}
+body[data-project=glancemap] #next .gr-future-work ul {margin:15px 0 0;padding-left:19px;display:grid;gap:11px}
+body[data-project=glancemap] #next .gr-future-work li {padding-left:3px;margin:0}
+@media(min-width:1100px) {body[data-project=glancemap] #next .gr-discussion {width:72%}}
+@media(max-width:600px) {
+ body[data-project=glancemap] #next .gr-design-implications {gap:23px}
+ body[data-project=glancemap] #next .gr-design-implications>li {grid-template-columns:1fr;gap:8px}
+ body[data-project=glancemap] #next .gr-discussion-intro {margin-bottom:24px}
+ body[data-project=glancemap] #next .gr-future-work {padding:14px 15px;margin-top:25px}
+}
+@layer case-typography {
+ body[data-view=project][data-project=glancemap] .case-study #next .gr-future-work li {font-size:var(--case-note)!important;line-height:1.5!important}
+}

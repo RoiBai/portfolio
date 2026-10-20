@@ -130,3 +130,13 @@ body[data-project=glancemap] #process .pilot-history-note{width:100%;max-width:n
 /* Participant evidence spans the full comparison row, with natural mobile wrapping. */
 body[data-project=glancemap] #process #pilot-round-1 .pilot-feedback{width:100%;max-width:none!important;box-sizing:border-box;font-style:italic;text-wrap:pretty}
 body[data-project=glancemap] #process #pilot-round-1 .pilot-feedback cite{font-style:normal}
+
+/* Three concrete contributions replace the repeated hero outcome paragraph. */
+body[data-project=glancemap] .hero-bottom .role-points{margin:8px 0 0;padding-left:1.1em;display:grid;gap:5px}
+body[data-project=glancemap] .hero-bottom .role-points li{padding-left:2px}
+body[data-project=glancemap] .hero-bottom .role-points li::marker{color:var(--accent)}
+body[data-project=glancemap] .hero-bottom .hero-links:empty{display:none}
+body[data-project=glancemap] .hero-bottom .project-meta{margin-top:16px}
+@layer case-typography {
+ body[data-view=project][data-project=glancemap] .case-study .role-points li{font-size:var(--case-note)!important;line-height:1.45!important}
+}

@@ -4,41 +4,29 @@ import { siteURL } from './site-paths.js';
 // selections (paper Figure 1). Anchor illustrations are unchanged native crops.
 // No email output is generated here; the authored interactive demo follows below.
 const nativeChoice=(text,selected=false)=>`<span class="persona-original-choice${selected?' is-selected':''}"><i aria-hidden="true">${selected?'●':'○'}</i>${text}</span>`;
-function originalPrompt(){return `<div class="persona-original-ui persona-original-prompt"><h4>What can I help with?</h4><p>Help me write an email rejecting a dinner invitation that I initially accepted from a senior faculty member</p></div>`;}
 function originalContext(){return `<div class="persona-original-ui persona-original-context"><h4>Relationship between sender and receiver</h4><div class="persona-original-field"><strong>Affiliation (Warmth / Friendliness)</strong><div>${['Hostile','Neutral','Friendly / Warm'].map((s,i)=>nativeChoice(s,i===2)).join('')}</div></div><div class="persona-original-field"><strong>Familiarity</strong><div>${['Strangers','Known but Unfamiliar','Superficially Familiar','Familiar','Close / Intimate'].map((s,i)=>nativeChoice(s,i===3)).join('')}</div></div><p class="persona-original-free-text">Since we are familiar, it should not be a cold professional email. However, since the recipient is more senior and the fault lies more with me, it should be respectful, sincere and apologetic.</p><div class="persona-original-field"><strong>Power, resource, status, hierarchy difference</strong><div>${nativeChoice('Receiver is higher',true)}</div></div></div>`;}
-function originalUnits(){return `<div class="persona-original-ui persona-original-units"><h4>Email components</h4>${['Opening Salutation','Statement of Purpose','Justification','Call to Action — Reschedule','Closing Pleasantry'].map((text,i)=>`<div class="persona-original-unit${i===2?' is-selected':''}">${text}</div>`).join('')}</div>`;}
 function originalIntent(){return `<div class="persona-original-ui persona-original-intent"><h4>Explanation Specificity</h4><div>${["Vague ‘family matter’",'Briefly hint at reason','No explanation given','Offer full disclosure'].map((s,i)=>nativeChoice(s,i===0)).join('')}</div><p class="persona-original-selection">A family matter has arisen unexpectedly that requires my immediate attention.</p></div>`;}
-function originalQuickFix(){return `<div class="persona-original-ui persona-original-quickfix"><h4>Stylebook Recommendations</h4><article><strong>Soften Formality / Conversational Tone</strong><p>Something has come up with my family that I need to attend to immediately.</p></article><article><strong>Increase Professional Privacy</strong><p>Something unavoidable has come up that requires my immediate attention.</p></article></div>`;}
 const originalAnchors=[
- {type:'Persona Anchor',title:'Academic Supervisor',description:'A supervisor who oversees research and academic progress.',x:39},
  {type:'Persona Anchor',title:'Senior Professional Acquaintance',description:'An established professional whose goodwill and future opportunities matter.',x:276},
- {type:'Situation Anchor',title:'Requesting Academic Extension Due to Illness',description:'A student requests an extension while explaining a recent health challenge.',x:521},
  {type:'Situation Anchor',title:'Unexpected Last-Minute Cancellation',description:'Decline a previously accepted event while preserving the relationship.',x:749}
 ];
 function originalAnchor(index){const a=originalAnchors[index];return `<article class="persona-original-anchor"><span>${a.type}</span><div class="persona-original-anchor-art" style="--source-left:${-a.x/203*100}%"><img src="${siteURL('/assets/persona-research-original/reuse-native.png')}" width="1051" height="287" alt="Original ${a.title} illustration" loading="lazy"></div><h4>${a.title}</h4><p>${a.description}</p></article>`;}
-function originalSaved(indices=[1,3]){return `<div class="persona-original-anchor-grid">${indices.map(originalAnchor).join('')}</div>`;}
+function originalSaved(indices=[0,1]){return `<div class="persona-original-anchor-grid">${indices.map(originalAnchor).join('')}</div>`;}
 function heading(letter, title) {
  return `<h3><span class="persona-research-letter" aria-hidden="true">${letter}</span>${title}</h3>`;
 }
 const researchPair=(visual,letter,title,copy)=>`<div class="persona-research-pair"><div class="persona-research-visual">${visual}</div><div class="persona-research-explanation">${heading(letter,title)}${copy}</div></div>`;
 export function renderPersonaResearch() {
  return `<div class="persona-research-tour" data-persona-research>
- <article class="persona-research-step persona-research-purpose" aria-label="A: Start with the purpose">
- ${researchPair(originalPrompt(),'A','Start with the purpose','<p>Describe the task in a sentence. Here, the writer needs to <strong>decline a dinner invitation they already accepted</strong> from a senior faculty member.</p>')}
+ <div class="persona-research-case"><span>Original research example</span><p>Decline a dinner invitation already accepted from a senior faculty member.</p></div>
+ <article class="persona-research-step persona-research-context" aria-label="1: Make the relationship explicit">
+ ${researchPair(originalContext(),'01','Make the relationship explicit','<p><strong>Familiarity, friendliness and power are separate.</strong> A recipient can know you well and still be more senior. Presets capture these factors; free text adds nuance, such as keeping a warm but respectful tone.</p>')}
  </article>
- <article class="persona-research-step persona-research-context" aria-label="B: Make the relationship explicit">
- ${researchPair(originalContext(),'B','Make the relationship explicit','<p><strong>Choose the factors.</strong> Familiarity, friendliness and power are separate: someone can know you well and still be more senior.</p><p><strong>Add the nuance.</strong> Free text explains what presets miss—in this case, a warm tone that remains respectful and apologetic.</p>')}
+ <article class="persona-research-step persona-research-editor" aria-label="2: Edit one communication unit">
+ ${researchPair(`<div class="persona-original-edit-selection"><span>Opening</span><span>Purpose</span><strong>Justification</strong><span>Closing</span></div>${originalIntent()}`,'02','Edit one communication unit','<p>The email is split into <strong>separate communication units</strong>. Select the justification and request a more private explanation: only that part changes, while the request and greeting stay intact.</p>')}
  </article>
- <article class="persona-research-step persona-research-editor" aria-label="C: Change one intention at a time">
- ${researchPair(originalUnits(),'C1','Choose one part to edit','<p>Opening, purpose, justification and closing become <strong>separate communication units</strong>. Select the part you want to change.</p>')}
- ${researchPair(originalIntent(),'C2','Change its intent','<p>If a justification feels too revealing, choose a more private explanation. <strong>Only that part is rewritten</strong>; the rest of the email stays intact.</p>')}
- ${researchPair(originalQuickFix(),'C3','Reuse an editing preference','<p>The <strong>Adaptive Stylebook</strong> learns from edits and optional explanations. QuickFix offers suggestions for the writer to choose—for example, a more conversational or more private version.</p>')}
- </article>
- <article class="persona-research-step persona-research-save" aria-label="D: Save the context that worked">
- ${researchPair(originalSaved(),'D','Save the context that worked','<p><strong>Persona Anchors</strong> save strategies for particular people; <strong>Situation Anchors</strong> save strategies for recurring requests.</p><p>The writer chooses what to save, such as declining an accepted invitation while preserving the relationship.</p>')}
- </article>
- <article class="persona-research-step persona-research-reuse" aria-label="E: Carry the strategy into the next email">
- ${researchPair(originalSaved([0,2]),'E','Carry the strategy into the next email','<p>Apply a saved anchor to a similar request instead of explaining the context again.</p><p><strong>Anchors retain social context; the stylebook retains editing preferences.</strong> The writer decides what to reuse and what to change.</p>')}
+ <article class="persona-research-step persona-research-save" aria-label="3: Save context and reuse preferences">
+ ${researchPair(`${originalSaved()}<div class="persona-original-stylebook"><span>Adaptive Stylebook</span><p>Editing preference: <strong>keep explanations private</strong>.</p></div>`,'03','Save context; reuse preferences','<p><strong>Persona and Situation Anchors save social context</strong> for a recipient or recurring request. The <strong>Adaptive Stylebook learns editing preferences</strong>, such as a more private explanation.</p><p>On the next email, the writer chooses the anchors and suggested edits to reuse.</p>')}
  </article>
  </div>`;
 }

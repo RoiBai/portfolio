@@ -51,9 +51,6 @@ body[data-project=beyond-the-gaze] #abstract>.section-body>p{max-width:none;widt
 body[data-project=beyond-the-gaze] .case-study .gaze-has-subsection{border-bottom:0;padding-bottom:20px}
 body[data-project=beyond-the-gaze] .case-study .gaze-subsection{--case-heading:clamp(28px,2.4vw,36px);padding-top:25px}
 body[data-project=beyond-the-gaze] .gaze-subsection>.section-heading .eyebrow{font-size:14px;letter-spacing:.06em;margin-bottom:12px}
-body[data-project=beyond-the-gaze] #example>.section-heading{grid-column:1/-1!important;grid-row:1!important}
-body[data-project=beyond-the-gaze] #example>.section-body{grid-column:1/-1!important;grid-row:2!important;max-width:none;width:100%;padding:0!important}
-body[data-project=beyond-the-gaze] #example>.section-visuals{grid-row:3!important}
 @media(max-width:1050px) and (min-width:761px){
  body[data-project=beyond-the-gaze] .case-study .hero-overview{grid-template-columns:1fr;gap:25px}
  .rf-gaze-overview-grid{gap:20px}
@@ -115,8 +112,6 @@ body[data-project=beyond-the-gaze] .rf-gaze-archive{margin-top:30px;max-width:no
 body[data-project=beyond-the-gaze] .rf-gaze-archive>summary{cursor:pointer;display:list-item;width:fit-content;color:var(--accent);padding:10px 0;text-underline-offset:4px}
 body[data-project=beyond-the-gaze] .rf-gaze-archive>summary:hover{text-decoration:underline}
 body[data-project=beyond-the-gaze] .rf-gaze-archive[open]>.rf-figure{margin-top:18px!important}
-body[data-project=beyond-the-gaze] #example>.section-visuals{display:block}
-body[data-project=beyond-the-gaze] #example .data-viz{width:100%;max-width:none}
 body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-grid img{object-fit:contain;object-position:center}
 @layer case-typography {
  body[data-project=beyond-the-gaze] .case-study .rf-record-letter{font-size:var(--case-subhead)!important;font-weight:600!important}
@@ -132,14 +127,7 @@ body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-grid img{object
  body[data-project=beyond-the-gaze] .rf-record-letter{width:32px;height:32px}
  body[data-project=beyond-the-gaze] .rf-gaze-archive{margin-top:20px}
 }
-/* The chart is now the only visual in this subsection; do not reserve the
-   former left-image column from the older paired-figure layout. */
-body[data-project=beyond-the-gaze] .case-study #example>.section-visuals{grid-column:1/-1!important;grid-row:3!important;display:block!important;width:100%;max-width:none!important}
-body[data-project=beyond-the-gaze] .case-study #example>.section-body>p{max-width:none;width:100%}
-body[data-project=beyond-the-gaze] .case-study #example .data-visual{width:100%!important;max-width:none!important}
-body[data-project=beyond-the-gaze] .case-study #example .dv-shell{padding:0}
-body[data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:48px}
-@media(max-width:760px){body[data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:20px}}
+
 
 /* One compact group in the hero; one painting at a time in the source gallery. */
 body[data-project=beyond-the-gaze] .case-study #evidence .rf-gaze-record{width:min(1100px,100%);margin-inline:auto!important}
@@ -165,7 +153,6 @@ body[data-view=project][data-project=beyond-the-gaze] .case-study>.case-section.
 body[data-view=project][data-project=beyond-the-gaze] .case-study>.case-section.gaze-subsection{padding-top:22px}
 body[data-view=project][data-project=beyond-the-gaze] .case-study .rf-method-source{margin-block:0!important}
 body[data-view=project][data-project=beyond-the-gaze] .case-study .rf-method-source-steps img{margin-bottom:14px}
-body[data-view=project][data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:28px}
 @layer case-typography{
  body[data-project=beyond-the-gaze] .case-study .rf-gaze-overview-grid figcaption strong{font-size:var(--case-caption)!important;line-height:1.35!important}
  body[data-project=beyond-the-gaze] .case-study .rf-gaze-archive>.rf-tabs button{font-size:var(--case-note)!important}
@@ -185,7 +172,6 @@ body[data-view=project][data-project=beyond-the-gaze] .case-study #example .dv-p
  body[data-project=beyond-the-gaze] .rf-gaze-archive .rf-evidence-grid{width:860px;gap:18px}
  body[data-project=beyond-the-gaze] .rf-gaze-archive>.rf-panel{padding-bottom:12px;scroll-snap-type:x proximity}
  body[data-project=beyond-the-gaze] .rf-gaze-gallery-hint{display:block;margin:0 0 12px;color:var(--muted)}
- body[data-view=project][data-project=beyond-the-gaze] .case-study #example .dv-panels{gap:18px}
 }
 
 /* Preserve each full procedure photograph and its complete speech bubble. */
@@ -193,3 +179,55 @@ body[data-project=beyond-the-gaze] .rf-procedure-photo{display:flex;align-items:
 body[data-project=beyond-the-gaze] .rf-method-source-steps .rf-procedure-photo>img{display:block;width:100%;height:auto;max-height:none!important;object-fit:contain;transform:none;margin:0!important}
 body[data-project=beyond-the-gaze] .rf-method-context{padding-block:0;margin:0!important}
 body[data-project=beyond-the-gaze] .rf-method-source-steps{padding-top:20px;padding-bottom:0}
+
+/* 20 October: introduce the sample in Method, then follow one continuous case. */
+body[data-project=beyond-the-gaze] .rf-gaze-method-facts{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:0 0 8px}
+body[data-project=beyond-the-gaze] .rf-gaze-method-facts>div{min-width:0}
+body[data-project=beyond-the-gaze] .rf-gaze-method-facts dt{display:flex;align-items:baseline;gap:10px;color:var(--ink);margin:0}
+body[data-project=beyond-the-gaze] .rf-gaze-method-facts dt strong{color:var(--accent)}
+body[data-project=beyond-the-gaze] .rf-gaze-method-facts dd{margin:6px 0 0;color:var(--muted)}
+body[data-project=beyond-the-gaze] #evidence>.section-visuals{display:flex!important;flex-direction:column;gap:32px;width:100%;max-width:none;grid-column:1/-1!important;grid-row:auto!important}
+body[data-project=beyond-the-gaze] #evidence .data-visual{width:min(1100px,100%)!important;max-width:none!important;margin:0 auto}
+body[data-project=beyond-the-gaze] #evidence .dv-shell{padding:0}
+body[data-project=beyond-the-gaze] #evidence .dv-panels{gap:36px}
+body[data-project=beyond-the-gaze] #evidence .rf-gaze-archive{width:min(1100px,100%);margin:32px auto 0}
+body[data-project=beyond-the-gaze] #evidence .rf-gaze-archive>h3{margin-bottom:12px}
+body[data-project=beyond-the-gaze] #evidence .rf-gaze-archive>.rf-tabs{margin-bottom:16px}
+body[data-project=beyond-the-gaze] #study .rf-composition-grid{gap:24px}
+body[data-project=beyond-the-gaze] #study .rf-composition-grid img{max-height:210px;width:100%;object-fit:contain}
+body[data-project=beyond-the-gaze] #study .rf-composition-grid h4{margin:12px 0 6px}
+body[data-project=beyond-the-gaze] #study .rf-composition-grid p{margin:0}
+@layer case-typography{
+ body[data-project=beyond-the-gaze] .case-study .rf-gaze-method-facts dt{font-size:var(--case-copy)!important}
+ body[data-project=beyond-the-gaze] .case-study .rf-gaze-method-facts dt strong{font-size:var(--case-subhead)!important;font-weight:600!important}
+ body[data-project=beyond-the-gaze] .case-study .rf-gaze-method-facts dd{font-size:var(--case-note)!important;line-height:1.5!important}
+}
+@media(max-width:760px){
+ body[data-project=beyond-the-gaze] .rf-gaze-method-facts{grid-template-columns:1fr;gap:18px;margin-bottom:4px}
+ body[data-project=beyond-the-gaze] #evidence>.section-visuals{gap:26px}
+ body[data-project=beyond-the-gaze] #evidence .dv-panels{gap:20px}
+ body[data-project=beyond-the-gaze] #evidence .rf-gaze-archive{margin-top:0}
+ body[data-project=beyond-the-gaze] #study .rf-composition-grid{gap:24px}
+}
+body[data-project=beyond-the-gaze] .case-study #evidence>.section-visuals{display:flex!important;flex-direction:column;gap:32px}
+body[data-project=beyond-the-gaze] .case-study #evidence .data-visual{margin-block:32px 0!important}
+body[data-project=beyond-the-gaze] #evidence .dv-shell{padding:0;background:transparent;border:0;box-shadow:none}
+body[data-project=beyond-the-gaze] #evidence .dv-kicker{display:none}
+body[data-project=beyond-the-gaze] #evidence .dv-title{margin:0 0 10px}
+body[data-project=beyond-the-gaze] #evidence .dv-description{margin:0;max-width:none}
+body[data-project=beyond-the-gaze] #evidence .dv-panels{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:24px}
+body[data-project=beyond-the-gaze] #evidence .dv-panel+.dv-panel{border:0;padding:0}
+body[data-project=beyond-the-gaze] #evidence .dv-panel-title{min-height:0;margin-bottom:8px}
+body[data-project=beyond-the-gaze] #evidence .dv-table-disclosure{margin-top:20px}
+@layer case-typography{
+ body[data-project=beyond-the-gaze] .case-study #evidence .dv-description{font-size:var(--case-copy)!important;line-height:1.5!important}
+ body[data-project=beyond-the-gaze] .case-study #evidence .dv-row-label{font-size:var(--case-note)!important;line-height:1.4!important}
+ body[data-project=beyond-the-gaze] .case-study #evidence .dv-value{font-size:var(--case-subhead)!important;font-weight:600!important}
+ body[data-project=beyond-the-gaze] .case-study #evidence :is(.dv-unit,.dv-axis){font-size:var(--case-caption)!important}
+}
+@media(max-width:760px){
+ body[data-project=beyond-the-gaze] .case-study #evidence>.section-visuals{gap:26px}
+ body[data-project=beyond-the-gaze] #evidence .dv-panels{grid-template-columns:1fr;gap:24px;margin-top:20px}
+}
+
+@media(max-width:760px){body[data-project=beyond-the-gaze] .case-study #evidence .data-visual{margin-block:26px 0!important}body[data-project=beyond-the-gaze] #evidence .rf-gaze-archive{margin-top:26px}}

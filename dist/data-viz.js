@@ -307,7 +307,7 @@ export const DATA_VISUAL_REPLACEMENTS = [
       "id": "verse-effect-sizes",
       "type": "bars",
       "title": "Stronger support for making connections",
-      "description": "Two reported standardized differences between VerseColor and Souyun.",
+      "description": "Two reported standardized differences between VerseColor and the poetry website.",
       "panels": [
         {
           "title": "Questionnaire effects favoring VerseColor",
@@ -331,7 +331,7 @@ export const DATA_VISUAL_REPLACEMENTS = [
           "note": ""
         }
       ],
-      "scope": "Cohen’s d is an effect size, not a percentage, multiplier, or learning score. Souyun received higher usability ratings; retrieval-precision ratings were broadly comparable. Short-term questionnaire ratings do not establish durable learning gains."
+      "scope": "Cohen’s d is an effect size, not a percentage, multiplier, or learning score. The poetry website received higher usability ratings; retrieval-precision ratings were broadly comparable. Short-term questionnaire ratings do not establish durable learning gains."
     },
     "sources": [
       "../research_portfolio/verse.txt:322–335 — Results",

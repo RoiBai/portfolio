@@ -7,12 +7,11 @@ export function renderVerseInteraction() {
   const original = siteURL('/assets/research-clarity/verse-interface-lossless.webp');
   return `<figure class="project-figure verse-interaction reveal" data-verse-interaction data-selection="color" aria-labelledby="${id}-title">
     <section class="vi-original" aria-label="Original interface and review process">
-      <p>Filter by color, poet or dynasty, then explore links among colors, imagery and emotions. Each association leads back to poems, where readers can check the proposed meaning.</p>
       <p class="vi-pan-hint">Swipe across the original interface to read its details →</p>
       <div class="vi-original-viewport" tabindex="0" role="region" aria-label="Original VerseColor interface; scroll horizontally on smaller screens"><img src="${original}" width="5314" height="1749" alt="Original VerseColor interface: color filters, poet browsing, a poet–color network, and links between colors, imagery and emotions" loading="lazy" decoding="async"></div>
     </section>
-    <div class="vi-heading"><h3 id="${id}-title">Follow a color back to the poem</h3><p>Try the same sequence with Wang Wei’s farewell poem.</p></div>
-    <ol class="vi-reading-flow"><li><span>01</span><strong>Select a color</strong><p>Start with <b>green</b> in the line below.</p></li><li><span>02</span><strong>Explore a connection</strong><p>Choose the willow scene or the farewell reading.</p></li><li><span>03</span><strong>Check the poem</strong><p>Read the next lines to see what supports that interpretation.</p></li></ol>
+    <div class="vi-heading"><h3 id="${id}-title">Try one reading: Wang Wei’s farewell poem</h3><p>Select <strong>green</strong>, choose a reading, then check the next lines.</p></div>
+
     <div class="vi-canvas">
       <svg class="vi-connections" aria-hidden="true" focusable="false"><path data-vi-edge="rain"/><path data-vi-edge="farewell"/><path data-vi-edge="evidence"/><path class="vi-live-connection"/><circle class="vi-live-point" r="3"/></svg>
       <div class="vi-example">
@@ -25,7 +24,7 @@ export function renderVerseInteraction() {
       </div>
       <blockquote class="vi-evidence vi-block" data-vi-node="evidence" data-source-node="1835:6918"><span class="vi-source-label">The next lines supply the farewell context</span><p>“I urge you to drink another cup;<br>beyond Yang Pass, no old friends remain.”</p></blockquote>
     </div>
-    <p class="vi-judgment"><strong>The context supports farewell.</strong> Green describes the willows; parting comes from the surrounding poem. The same color can mean something else elsewhere.</p>
+    <p class="vi-judgment"><strong>Here, “green” describes fresh willows.</strong> The farewell reading comes from the next lines.</p>
     <p class="vi-status" aria-live="polite" aria-atomic="true">Green connects to fresh willows. The following lines supply the farewell context.</p>
   </figure>`;
 }
