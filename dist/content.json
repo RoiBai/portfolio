@@ -4,7 +4,7 @@
       "id": "glancemap",
       "title": "GlanceMap",
       "subtitle": "Follow the lesson. Find your place again",
-      "description": "An AR prototype for prepared audio lessons: a growing mind map keeps ideas connected and earlier context visible while you walk.",
+      "description": "An AR prototype that keeps the structure of prepared audio lessons visible while you walk.",
       "kicker": "AR · LEARNING ON THE MOVE",
       "meta": [
         {
@@ -69,11 +69,11 @@
         {
           "id": "abstract",
           "eyebrow": "OVERVIEW",
-          "title": "Research summary",
+          "title": "A mind map that grows with the audio",
           "body": [
-            "Walking divides attention between a lesson and the path. We asked whether visible relationships could help listeners return to an explanation.",
-            "Fourteen pilot rounds and a five-designer workshop informed an illustrated mind map that grows with prepared narration and keeps earlier branches readable.",
-            "A counterbalanced, within-subjects study compared GlanceMap with an AudioXtend-inspired Illustration Only interface. GlanceMap improved immediate and seven-day free recall, with lower picture recognition."
+            "AR glasses could make walks and commutes opportunities for hands-free learning. But learning podcasts demand concentration: listeners check the path, then return to an explanation that has moved on.",
+            "Across 14 pilot rounds and a designer workshop, we developed GlanceMap for prepared audio lessons. Its illustrated mind map grows with the narration and keeps earlier ideas visible, so learners can recover how the ideas connect.",
+            "In a 16-person study, free recall exceeded our AudioXtend-inspired Illustration Only baseline by 9.6 percentage points immediately and 7.0 points after seven days. Picture recognition was lower—a trade-off between lesson and picture memory."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -85,11 +85,15 @@
           ],
           "items": [],
           "highlights": [
-            "visible relationships",
-            "keeps earlier branches readable",
-            "immediate and seven-day free recall"
-          ],
-          "summary": "The research question, design process and evaluation."
+            "hands-free learning",
+            "prepared audio lessons",
+            "14 pilot rounds",
+            "keeps earlier ideas visible",
+            "16-person study",
+            "9.6 percentage points",
+            "7.0 points",
+            "Picture recognition was lower"
+          ]
         },
         {
           "id": "problem",
@@ -252,9 +256,7 @@
               ],
               "quote": {
                 "text": "“I don’t have time to read such long passages, so I keep missing content. The text blocks my view of the path and traffic lights—it could be unsafe.”",
-                "attribution": "Participant 4",
-                "excerpt": "“I don’t have time to read such long passages, so I keep missing content.”",
-                "remainder": "“The text blocks my view of the path and traffic lights—it could be unsafe.”"
+                "attribution": "Participant 4"
               },
               "figureLayout": "comparison",
               "items": [
@@ -277,7 +279,7 @@
               "eyebrow": "ROUND 2",
               "title": "Replace learned codes with familiar meaning",
               "body": [
-                "Use familiar parent–child links and illustrations instead of codes readers must learn."
+                "Structured Keywords required learning a visual code. We kept familiar parent–child links and used illustrations for concrete meaning."
               ],
               "nav": "Pilots 4–9",
               "figures": [
@@ -325,9 +327,7 @@
               "figureLayout": "comparison",
               "quote": {
                 "text": "“I don’t know what the designer means. I would rather read the words—understanding these symbols takes time.”",
-                "attribution": "Participant 3 · feedback on Structured Keywords",
-                "excerpt": "“I would rather read the words—understanding these symbols takes time.”",
-                "remainder": "“I don’t know what the designer means.”"
+                "attribution": "Participant 3 · feedback on Structured Keywords"
               },
               "highlights": [
                 "Structured Keywords",
@@ -415,13 +415,13 @@
           "sourceNotes": [
             "Grouped participant counts 13 / 27 / 24 confirmed as actual counts by the project author, 15 October 2026. Participants differ by round.",
             "Workshop: five UI/UX and HMD researchers, final manuscript section 3.",
-            "20 October 2026: the five workshop designers are separate from the 27 participants listed for Pilots 4–9; counts are not combined."
+            "20 October 2026 author clarification: the five workshop designers are separate from the 27 pilot participants in Round 2; do not combine the counts."
           ]
         },
         {
           "id": "goals",
           "eyebrow": "FINAL DESIGN",
-          "title": "Three actions, one glanceable lesson",
+          "title": "Six goals, one final design",
           "body": [
             "New ideas appear with the audio; earlier branches stay readable."
           ],
@@ -463,19 +463,19 @@
           ],
           "items": [],
           "figureLayout": "final-design",
-          "deck": "Keep relationships clear, ground them in pictures, and preserve context as the lesson unfolds.",
+          "deck": "Fourteen pilot rounds led to one principle: reveal the current idea and retain its context",
           "sourceNotes": [
             "Glance sequence uses unchanged original Mindmap + illu (4), (5), and (7) lesson frames. The look-away scenario is illustrative, not a recorded gaze trace.",
             "Active green and retained yellow-green branches: submission-ready manuscript §4.1–4.2, lines 521–547.",
-            "20 October 2026: three scroll actions group DG01–03, DG04 and DG05–06. Unchanged original lesson frames advance chronologically; curved leaders connect the current action to its feature."
+            "18 October 2026 interaction refinement: six scroll steps reveal DG01 through DG06 individually. Original lesson frames stay unchanged and advance chronologically; local curved SVG leaders connect each goal to its corresponding feature. Previous goals remain neutral while the current one is highlighted."
           ]
         },
         {
           "id": "study",
-          "eyebrow": "MAIN STUDY",
-          "title": "Comparing two interfaces on the same route",
+          "eyebrow": "WITHIN-PARTICIPANT COMPARISON",
+          "title": "The study, on one shared route",
           "body": [],
-          "nav": "Main study",
+          "nav": "Formative study",
           "figures": [
             {
               "src": "/assets/design-revision/glance-route.svg",
@@ -695,9 +695,9 @@
       },
       "sourceNotes": [
         "Responsibilities confirmed from the author’s CV record, 14 October 2026.",
-        "15 October 2026: author clarified the 14-round iteration narrative and pilot feedback; final within-subject study details checked against submission-ready manuscript.",
+        "15 October 2026: author clarified the 14-round iteration narrative and pilot feedback; final within-subject study details checked against submission-ready manuscript. Website chapter label “Formative study” follows the author’s requested navigation wording.",
         "16 October 2026 comprehension edit: prepared-stimulus scope and Structured Keywords encoding grounded in submission-ready manuscript §3.2–3.3, §4 and §6 limitations; current/history sequence uses the author’s original consecutive lesson PNGs.",
-        "20 October 2026 author correction: timeline 2025.07–2026.09; CHI under review; recall tested immediately and seven days later, not a second interview. Main study distinguishes the evaluation from the pilots."
+        "20 October 2026: restored the earlier reading structure while retaining the three contribution points and contribution-first discussion. Timeline 2025.07–2026.09; CHI under review. Recall was tested immediately and seven days later, not a second interview."
       ],
       "tags": [
         "AR",
@@ -705,11 +705,10 @@
         "Glanceable interfaces"
       ],
       "highlights": [
-        "prepared audio lessons",
-        "keeps ideas connected"
+        "prepared audio lessons"
       ],
       "outcome": "",
-      "contentRevision": "2026-10-20-gm-reading-path-w1-w7"
+      "contentRevision": "2026-10-20-gm-restore-keep-w2-w7"
     },
     {
       "id": "icon-colors",
