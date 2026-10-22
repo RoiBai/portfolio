@@ -4,7 +4,7 @@
       "id": "glancemap",
       "title": "GlanceMap",
       "subtitle": "Follow the lesson. Find your place again",
-      "description": "An AR prototype that keeps the structure of prepared audio lessons visible while you walk.",
+      "description": "An AR prototype that keeps the structure of audio lessons visible while you walk.",
       "kicker": "AR · LEARNING ON THE MOVE",
       "meta": [
         {
@@ -22,12 +22,14 @@
       ],
       "stats": [
         {
-          "value": "+9.6 pp",
-          "label": "Immediate free recall"
+          "value": "+9.6",
+          "label": "Immediate free recall",
+          "unit": "percentage points"
         },
         {
-          "value": "+7.0 pp",
-          "label": "Day-7 free recall"
+          "value": "+7.0",
+          "label": "Day-7 free recall",
+          "unit": "percentage points"
         },
         {
           "value": "16",
@@ -56,7 +58,7 @@
         "width": 2010,
         "height": 782,
         "alt": "GlanceMap pairs a growing mind map with illustrations while the listener walks.",
-        "caption": "GlanceMap in use. The lesson shown is example study material.",
+        "caption": "GlanceMap in use.",
         "displayWidth": 960,
         "sourceRefs": [
           {
@@ -72,8 +74,8 @@
           "title": "A mind map that grows with the audio",
           "body": [
             "AR glasses could make walks and commutes opportunities for hands-free learning. But learning podcasts demand concentration: listeners check the path, then return to an explanation that has moved on.",
-            "Across 14 pilot rounds and a designer workshop, we developed GlanceMap for prepared audio lessons. Its illustrated mind map grows with the narration and keeps earlier ideas visible, so learners can recover how the ideas connect.",
-            "In a 16-person study, free recall exceeded our AudioXtend-inspired Illustration Only baseline by 9.6 percentage points immediately and 7.0 points after seven days. Picture recognition was lower—a trade-off between lesson and picture memory."
+            "Across 14 pilot rounds and a designer workshop, we developed GlanceMap for audio lessons on the go. Its illustrated mind map grows with the narration and keeps earlier ideas visible, so learners can recover how the ideas connect.",
+            "In a 16-person study, free recall exceeded our AudioXtend-inspired Illustration Only baseline by 9.6 percentage points immediately and 7.0 percentage points after seven days. Picture recognition was lower—a trade-off between lesson and picture memory."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -86,13 +88,13 @@
           "items": [],
           "highlights": [
             "hands-free learning",
-            "prepared audio lessons",
             "14 pilot rounds",
-            "keeps earlier ideas visible",
             "16-person study",
             "9.6 percentage points",
-            "7.0 points",
-            "Picture recognition was lower"
+            "7.0 percentage points",
+            "Picture recognition was lower",
+            "GlanceMap",
+            "audio lessons"
           ]
         },
         {
@@ -231,7 +233,11 @@
                       "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                       "nodeId": "1827:532"
                     }
-                  ]
+                  ],
+                  "tradeoff": {
+                    "pro": "Keeps every spoken detail available.",
+                    "con": "Too much to read while walking: listeners missed content, and text blocked their view of the path."
+                  }
                 },
                 {
                   "src": "/assets/glance-clarity/naive-keywords-original.png",
@@ -245,7 +251,11 @@
                       "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                       "nodeId": "1827:535"
                     }
-                  ]
+                  ],
+                  "tradeoff": {
+                    "pro": "Keeps key information without blocking the path.",
+                    "con": "Fragmented words were hard to follow or connect into a coherent explanation."
+                  }
                 }
               ],
               "sourceRefs": [
@@ -268,11 +278,7 @@
               "highlights": [
                 "reconstruct the relationships"
               ],
-              "pilotParticipants": 13,
-              "figureNotes": [
-                "Every spoken word was available as text.",
-                "Fewer words reduced reading, but removed their relationships."
-              ]
+              "pilotParticipants": 13
             },
             {
               "id": "process-visuals",
@@ -295,7 +301,11 @@
                       "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                       "nodeId": "1827:542"
                     }
-                  ]
+                  ],
+                  "tradeoff": {
+                    "pro": "For listeners who understood the layout, the structure was clearer and icons faster to read than words.",
+                    "con": "The workshop’s visual code was not intuitive to everyone; color coding added confusion."
+                  }
                 },
                 {
                   "src": "/assets/glance-clarity/illustration-only-original.png",
@@ -309,7 +319,11 @@
                       "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                       "nodeId": "1827:545"
                     }
-                  ]
+                  ],
+                  "tradeoff": {
+                    "pro": "A state-of-the-art illustrated-audio approach: rich images convey meaning with little reading.",
+                    "con": "Each image explains the current sentence, but gives no overview of the lesson’s logic."
+                  }
                 }
               ],
               "sourceRefs": [
@@ -334,11 +348,7 @@
                 "familiar parent–child links",
                 "concrete meaning"
               ],
-              "pilotParticipants": 27,
-              "figureNotes": [
-                "Color-coded operators and indentation introduced rules to decode.",
-                "Pictures quickly grounded concrete topics, but lacked precise terms."
-              ]
+              "pilotParticipants": 27
             },
             {
               "id": "process-history",
@@ -361,7 +371,11 @@
                       "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                       "nodeId": "1827:552"
                     }
-                  ]
+                  ],
+                  "tradeoff": {
+                    "pro": "Shows the complete logic and relationships between ideas.",
+                    "con": "The map obstructed the path and limited how fast listeners could walk."
+                  }
                 },
                 {
                   "src": "/assets/glance-clarity/partial-logic-map-original.png",
@@ -375,7 +389,11 @@
                       "fileKey": "fxEaTzMakzZPfG2dzSPHOR",
                       "nodeId": "1827:555"
                     }
-                  ]
+                  ],
+                  "tradeoff": {
+                    "pro": "Shows the current branch while keeping the path visible.",
+                    "con": "Learners mainly recalled the current branch; earlier ideas were easily lost without repeated glances back."
+                  }
                 },
                 {
                   "src": "/assets/glance-clarity/gray-past-nodes-illustration.svg",
@@ -383,7 +401,11 @@
                   "height": 300,
                   "displayWidth": 650,
                   "alt": "Illustration of the gray-past-nodes iteration: earlier branches are gray while the current Distance Cost branch stays green",
-                  "caption": "Gray past nodes"
+                  "caption": "Gray past nodes",
+                  "tradeoff": {
+                    "pro": "Keeps the path visible and earlier branches available for a glance back.",
+                    "con": "On Quest Pro, gray text was hard to distinguish, so rereading it demanded extra visual effort."
+                  }
                 }
               ],
               "sourceRefs": [
@@ -404,18 +426,14 @@
                 "earlier branches"
               ],
               "pilotParticipants": 24,
-              "figureNotes": [
-                "All branches restored the overview, but made the active topic hard to find.",
-                "Showing only the active branch removed context needed later.",
-                "Iteration illustration: faded earlier branches remained difficult to read."
-              ],
-              "historyNote": "Gray past nodes were hard to read. The final design uses bright green for the current branch and legible yellow-green for completed branches."
+              "colorIteration": "Using findings from Icon Colors, we replaced gray with readable grass green for past branches. Bright green marks the current branch, making it easier to find the active topic and distinguish it from earlier ideas."
             }
           ],
           "sourceNotes": [
             "Grouped participant counts 13 / 27 / 24 confirmed as actual counts by the project author, 15 October 2026. Participants differ by round.",
             "Workshop: five UI/UX and HMD researchers, final manuscript section 3.",
-            "20 October 2026 author clarification: the five workshop designers are separate from the 27 pilot participants in Round 2; do not combine the counts."
+            "20 October 2026 author clarification: the five workshop designers are separate from the 27 pilot participants in Round 2; do not combine the counts.",
+            "22 October 2026: Pro/Con summaries and the Icon Colors connection were supplied and confirmed by the project author. Grouped pilot counts remain separate from the five-person designer workshop."
           ]
         },
         {
@@ -705,10 +723,10 @@
         "Glanceable interfaces"
       ],
       "highlights": [
-        "prepared audio lessons"
+        "audio lessons"
       ],
       "outcome": "",
-      "contentRevision": "2026-10-20-gm-restore-keep-w2-w7"
+      "contentRevision": "2026-10-22-gm-pilot-tradeoffs-and-lab"
     },
     {
       "id": "icon-colors",

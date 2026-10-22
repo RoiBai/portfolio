@@ -14,6 +14,7 @@ import { renderGlanceScroll, setupGlanceScroll } from './glance-scroll.js';
 import { setupNewsEmbeds } from './news-embeds.js';
 import { renderPersonaIntent } from './research-interactions.js';
 import { renderGlanceChapter, setupGlanceEditorial } from './glance-editorial.js';
+import { setupGlanceLabBadge } from './gm-lab-badge.js';
 import { layeredFigure, compositionLabels, setupLayeredFigures } from './case-compositions.js';
 import { siteURL, sitePath } from './site-paths.js';
 import { games, gameSection, setupGames } from './game-embeds.js';
@@ -88,7 +89,7 @@ function projectMetadata(p){
  return entries.length?`<div class="project-meta" aria-label="Project dates and publication">${entries.map(e=>`<span class="meta-badge meta-${e.kind}">${esc(e.text)}</span>`).join('')}</div>`:'';
 }
 function renderStats(p) {
- const item=s=>`<div class="stat-item"><strong class="${String(s.value).length>8?'stat-long':''}">${esc(s.value)}</strong><span>${esc(s.label)}</span>${s.detail?`<small>${esc(s.detail)}</small>`:''}</div>`;
+ const item=s=>`<div class="stat-item"><strong class="${String(s.value).length>8?'stat-long':''}">${esc(s.value)}</strong>${s.unit?` <small class="stat-unit">${esc(s.unit)}</small>`:''}<span>${esc(s.label)}</span>${s.detail?`<small>${esc(s.detail)}</small>`:''}</div>`;
  if(!p.stats?.length)return '';
  if(!p.stats.some(s=>s.group))return `<div class="stats">${p.stats.map(item).join('')}</div>`;
  const groups=[...new Set(p.stats.map(s=>s.group||''))];
@@ -99,7 +100,7 @@ function renderProject(p) {
  setTheme(p);document.body.dataset.view='project';document.title=`${p.title} — Ruiyuan Bai`;
  const meta=projectMetadata(p);
  main.innerHTML=`<div class="chapter-bar"><a class="back-link" href="${siteURL('/')}">← All projects</a><nav class="chapter-nav" aria-label="On this page"><a href="#overview" class="active">Overview</a>${games[p.id]&&!['hersound','ourworld'].includes(p.id)?'<a href="#play">Play</a>':''}${p.sections.filter(s=>!s.navParent).map(s=>`<a href="#${esc(s.id)}">${esc(s.nav||s.id.replaceAll('-',' '))}</a>`).join('')}</nav></div><article class="case-study"><section class="case-hero" id="overview"><div class="project-title-row"><h1>${heading(p.title)}</h1><div class="project-pills" aria-label="Project themes">${(p.tags||[]).map(tag=>`<span class="project-pill">${esc(tag)}</span>`).join('')}</div></div>${p.subtitle?`<p class="hero-subtitle">${esc(String(p.subtitle||'').replace(/[.。]+$/,''))}</p>`:''}<div class="hero-overview" data-reveal-group><div class="hero-bottom reveal"><p>${emphasize(p.description,p.highlights||[])}</p>${rolePanel(p.role)}${outcomePanel(p.outcome)}<div class="hero-links">${links(p)}</div>${meta}</div>${figure(p.hero,0,true)}</div>${renderStats(p)}</section>${['hersound','ourworld'].includes(p.id)?'':gameSection(p.id)}${p.sections.map((s,i)=>section(s,i,false,p.id)).join('')}${renderProjectNavigation(p,projects)}</article>`;
- glanceResultsCleanup=setupGlanceResults(main);glanceScrollCleanup=setupGlanceScroll(main);glanceCleanup=setupGlanceEditorial(main);gamesCleanup=setupGames(main);setupDataViz(main);setupHerEditorial(main,p);experienceCleanup=setupGameExperiences(main);newsCleanup=setupNewsEmbeds(main);sourceCleanup=setupSourceFigures(main);colorCleanup=setupColorInteractions(main,p);iconCleanup=setupIconInteractions(main,p);layeredCleanup=setupLayeredFigures(main);researchFiguresCleanup=setupResearchFigures(main);gamesMotionCleanup=setupGamesMotion(main);
+ setupGlanceLabBadge(main);glanceResultsCleanup=setupGlanceResults(main);glanceScrollCleanup=setupGlanceScroll(main);glanceCleanup=setupGlanceEditorial(main);gamesCleanup=setupGames(main);setupDataViz(main);setupHerEditorial(main,p);experienceCleanup=setupGameExperiences(main);newsCleanup=setupNewsEmbeds(main);sourceCleanup=setupSourceFigures(main);colorCleanup=setupColorInteractions(main,p);iconCleanup=setupIconInteractions(main,p);layeredCleanup=setupLayeredFigures(main);researchFiguresCleanup=setupResearchFigures(main);gamesMotionCleanup=setupGamesMotion(main);
  ambulanceCleanup=setupAmbulanceEditorial(main,p);ambulanceRecordingCleanup=setupAmbulanceRecording(main,p);loofaCleanup=setupLoofaEditorial(main,p);
  if(p.id==='versecolor')verseCleanup=setupVerseInteraction(main);
  compactEmptySectionCopy();

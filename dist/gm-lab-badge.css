@@ -1,0 +1,36 @@
+/* Official Synteraction brand purple, taken from shengdongzhao.com. */
+body[data-project=glancemap] .case-hero .project-pills {
+  flex:1 1 auto;
+}
+body[data-project=glancemap] .case-hero .project-pill.gm-lab-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-inline-start:auto;
+  padding:4px 10px 4px 4px;
+  background:#7929d8!important;
+  color:#fff!important;
+  border:1px solid #a96ce8;
+  text-decoration:none;
+  transition:background .18s ease,border-color .18s ease;
+}
+body[data-project=glancemap] .gm-lab-badge img {
+  width:28px;
+  height:28px;
+  border-radius:3px;
+  object-fit:contain;
+  background:#fff;
+  flex:0 0 auto;
+}
+body[data-project=glancemap] .gm-lab-badge .gm-lab-arrow {opacity:.8}
+body[data-project=glancemap] .case-hero .project-pill.gm-lab-badge:hover {
+  background:#934af3!important;
+  border-color:#d7baff;
+}
+body[data-project=glancemap] .gm-lab-badge:focus-visible {
+  outline:2px solid #d7baff;
+  outline-offset:4px;
+}
+@media(max-width:700px) {
+  body[data-project=glancemap] .case-hero .project-pills {flex-basis:100%}
+}

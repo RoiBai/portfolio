@@ -5,6 +5,16 @@ body[data-project=glancemap] .glance-pilot .pilot-heading-line{display:flex;alig
 body[data-project=glancemap] .glance-pilot .pilot-heading-line>span{white-space:nowrap}
 body[data-project=glancemap] .glance-pilot .pilot-heading-line .pilot-count{display:inline-block;white-space:nowrap;margin:0;color:#a8fa2d;font:650 23px/1.3 var(--font-body);letter-spacing:0;text-transform:none}
 body[data-project=glancemap] .glance-pilot .pilot-gallery{margin-top:26px}
+/* Each tested condition keeps its benefit and limitation directly below its image. */
+body[data-project=glancemap] #process .pilot-tradeoffs{display:grid;gap:10px;margin-top:16px}
+body[data-project=glancemap] #process .pilot-tradeoffs p{width:100%;max-width:none;margin:0;color:var(--ink)}
+body[data-project=glancemap] #process .pilot-tradeoffs strong{color:var(--accent)}
+body[data-project=glancemap] #process .pilot-example>.pilot-source-link{display:inline-block;margin-top:10px;font-size:var(--case-caption);color:var(--accent);text-underline-offset:4px}
+body[data-project=glancemap] #process .pilot-color-iteration{width:100%;max-width:none;margin:24px 0 0;color:var(--ink)}
+body[data-project=glancemap] #process .pilot-color-iteration a{color:var(--accent);font-weight:600;text-underline-offset:4px}
+@layer case-typography{
+ body[data-view=project][data-project=glancemap] .case-study .pilot-example>.pilot-source-link{font-size:var(--case-caption)!important}
+}
 @media(max-width:540px){
  body[data-project=glancemap] .glance-pilot .section-heading .pilot-heading-line{font-size:18px!important;gap:8px 16px}
  body[data-project=glancemap] .glance-pilot .pilot-heading-line .pilot-count{font-size:18px}

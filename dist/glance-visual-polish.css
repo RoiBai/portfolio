@@ -282,3 +282,13 @@ body[data-project=glancemap] #study .study-measures {margin-top:26px}
 @media(prefers-reduced-motion:reduce),(max-height:650px){
  body[data-project=glancemap] .goals-scroll-cue {display:none}
 }
+
+/* Project name emphasis requested for the abstract. */
+body[data-project=glancemap] #abstract .text-emphasis.gm-name-mark {
+  background:#d5efb1;
+  color:#17250f;
+  padding:.04em .24em;
+  border-radius:3px;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
