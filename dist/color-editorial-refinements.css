@@ -316,7 +316,7 @@ body[data-project=traditional-color] .case-study .color-problem-badge {
  color:var(--color-cologene);background:color-mix(in srgb,var(--color-cologene) 12%,transparent);
 }
 body[data-project=traditional-color] .case-study .color-reference-swatches .color-reference-note {
- flex:0 1 390px;align-self:center;color:var(--muted);margin:0!important;
+ flex:0 0 100%;width:100%;max-width:none;min-width:0;color:var(--muted);margin:0!important;text-wrap:wrap;
 }
 @layer case-typography {
  body[data-view=project][data-project=traditional-color] .case-study .color-reference-swatches .color-reference-note {
