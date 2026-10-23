@@ -27,7 +27,8 @@ export function setupAmbulanceEditorial(root=document,project){
  const abstractCopy=sectionCopy('abstract'),gameplayCopy=sectionCopy('gameplay'),reflectionCopy=sectionCopy('reflection');
  const reflectionItems=(reflectionCopy.items||[]).map(item=>item.quote?`<blockquote><span>${esc(item.title)}</span><p>“${esc(item.quote)}”</p></blockquote>`:`<div class="ar-reflection-evidence"><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></div>`).join('');
  const originalNews=abstract?.querySelector('.news-preview');originalNews?.querySelector('.news-inline-reader')?.remove();
- const sourceCard=originalNews?`<div class="ar-covered-news"><span>The news we covered</span>${originalNews.outerHTML}</div>`:'';
+ const sourceLink=originalNews?.querySelector('.news-preview-actions a');
+ const sourceCard=sourceLink?`<aside class="ar-news-source" aria-label="Original news source"><span class="ar-news-source-meta">ABC News <span aria-hidden="true">·</span> ${esc(originalNews.querySelector('time')?.textContent||'')}</span><a href="${esc(sourceLink.href)}" target="_blank" rel="noopener noreferrer">${esc(originalNews.querySelector('h4')?.textContent||'Read the original reporting')} <span aria-hidden="true">↗</span></a></aside>`:'';
  const coverageNews=publication?.querySelector('[data-news="indaily-game"]');
  coverageNews?.querySelector('.news-inline-reader')?.remove();
  const coverage={title:coverageNews?.querySelector('h4')?.textContent||'',date:coverageNews?.querySelector('time')?.textContent||'',url:coverageNews?.querySelector('.news-preview-actions a')?.href||''};

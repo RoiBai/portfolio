@@ -47,7 +47,7 @@ function setupResearch(root,p){
  const section=root.querySelector('#research'),data=p.sections.find(s=>s.id==='research');if(!section||!data)return;
  section.classList.add('color-research-brief');section.querySelector('.section-visuals')?.remove();section.classList.remove('with-visual','editorial-pair');
  section.querySelector('.insights')?.remove();
- const swatches=`<div class="color-reference-swatches" aria-label="Two illustrative digital references for Zhu sha">${[['#CA3433','Reference A'],['#9D2933','Reference B']].map(([hex,label])=>`<div><i style="background:${hex}" aria-hidden="true"></i><span><strong>Zhu sha / 朱砂</strong><small>${hex}</small></span></div>`).join('')}</div>`;
+ const swatches=`<div class="color-reference-swatches" aria-label="Two illustrative digital references for Zhu sha">${[['#CA3433','Reference A'],['#9D2933','Reference B']].map(([hex,label])=>`<div><i style="background:${hex}" aria-hidden="true"></i><span><strong>Zhu sha / 朱砂</strong><small>${hex}</small></span></div>`).join('')}<p class="color-reference-note">Different sources give the same color name different shades.</p></div>`;
  section.insertAdjacentHTML('beforeend',`<div class="color-research-questions">${(data.items||[]).map((item,i)=>`<article class="color-research-question"><div><div class="color-problem-heading"><span class="color-problem-badge">Problem ${i+1}</span><h3>${esc(item.title)}</h3></div>${item.quote?`<blockquote class="color-formative-quote">“${esc(item.quote.text)}”<cite>${esc(item.quote.attribution)}</cite></blockquote>`:''}<p>${esc(item.body)}</p>${i===1?swatches:''}</div></article>`).join('')}</div>`);
 }
 

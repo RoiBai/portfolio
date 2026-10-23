@@ -1537,7 +1537,7 @@
           "body": [
             "Designers can find traditional color values online, but it is harder to judge their historical fit, trust the reference, or combine them into a complete palette.",
             "We began with ColoGene, connecting color values with their names, origins, periods and meanings. Interviews and the pilot informed Color Atlas; later feedback points toward a future Color Agent.",
-            "The small ColoGene pilot suggested a larger self-reported gain. Atlas artwork revisions and feedback point toward more palette options, fuller sources and support for the whole composition."
+            "In the ten-designer pilot, mean self-reported color understanding and decision scores rose by 8.66 points with ColoGene versus 1.21 with usual workflows (five per group). In Atlas feedback, most designers said they would use the system and judged their Atlas-assisted palettes more workable, better justified and more harmonious than those made without it."
           ],
           "nav": "Abstract",
           "figures": [],
@@ -1568,8 +1568,13 @@
             }
           ],
           "highlights": [
-            "status and symbolism",
-            "material source"
+            "8.66 points with ColoGene",
+            "most designers said they would use the system",
+            "more workable, better justified and more harmonious"
+          ],
+          "sourceNotes": [
+            "ColoGene §5.2, pp. 5–6: mean TCSCDS total gain of 8.66 points versus 1.21 for the usual-workflow group, with five participants per group. These are descriptive pilot results; no statistical significance is claimed.",
+            "Atlas willingness and palette judgments: confirmed by the project author on 23 October 2026. This describes participant feedback, not a completed quantitative analysis."
           ]
         },
         {
@@ -2161,7 +2166,7 @@
         "Chinese product designers",
         "origins, cultural meanings and historical context"
       ],
-      "contentRevision": "2026-10-21-problem-evidence-and-capability-labels"
+      "contentRevision": "2026-10-23-concrete-findings-and-source-example"
     },
     {
       "id": "personamail",

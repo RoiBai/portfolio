@@ -634,3 +634,21 @@ body[data-project=icon-colors] .icon-context-comparison .icon-parking-pair :is(.
 @media(max-width:600px) {
  body[data-project=icon-colors] .icon-context-comparison .icon-parking-pair :is(.icon-result-check,.icon-result-cross) {left:calc(100% + 8px);width:44px;height:44px}
 }
+
+/* Start with a readable example; keep the expanded ratings compact and in flow. */
+body[data-project=icon-colors] .icon-study-cards .icon-hue-comparison {display:grid;grid-template-columns:minmax(150px,.55fr) minmax(0,2fr);gap:24px;margin-top:16px;padding-top:16px;align-items:start}
+body[data-project=icon-colors] .icon-study-cards .icon-compare-head {flex-direction:column;gap:12px}
+body[data-project=icon-colors] .icon-study-cards .icon-compare-head>button {padding:5px 0}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-results {width:100%;max-width:none;margin:0}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-table :is(th,td) {padding:6px 7px}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-table thead th {padding-top:0;padding-bottom:8px}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-table .icon-specimen-disc {width:42px;height:42px}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-table thead th>span:last-child {margin-top:4px}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-table caption {padding-bottom:10px}
+body[data-project=icon-colors] .icon-study-cards .icon-rating-source-note {margin-top:9px}
+@media(max-width:700px) {
+ body[data-project=icon-colors] .icon-study-cards .icon-hue-comparison {grid-template-columns:1fr;gap:12px}
+ body[data-project=icon-colors] .icon-study-cards .icon-compare-head {flex-direction:row;align-items:center;gap:12px}
+ body[data-project=icon-colors] .icon-study-cards .icon-rating-table :is(th,td) {padding:6px 3px}
+ body[data-project=icon-colors] .icon-study-cards .icon-rating-table .icon-specimen-disc {width:36px;height:36px}
+}
