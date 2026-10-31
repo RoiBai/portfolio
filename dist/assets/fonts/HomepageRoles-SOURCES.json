@@ -39,6 +39,45 @@
       "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/nunito/OFL.txt",
       "sha256": "8002bfda4cc3553ab2de613958b9107518708e338ff75db8391d52a399e0ee90",
       "bytes": 1568
+    },
+    {
+      "family": "Libre Baskerville",
+      "weight": 700,
+      "subset_text": "Researcher",
+      "font_file": "LibreBaskerville-Researcher.woff2",
+      "source_css": "https://fonts.googleapis.com/css2?family=Libre+Baskerville%3Awght%40700&text=Researcher&display=swap",
+      "source_binary": "https://fonts.gstatic.com/l/font?kit=kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17ujFgkSDAlOvuLKfZIY6ueoKtjjVQ&skey=1ccff9706b4dcbb3&v=v24",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "LibreBaskerville-Researcher-OFL.txt",
+      "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/librebaskerville/OFL.txt",
+      "sha256": "f2ff80c42dbee5c1c08bdff54980d32c38c290ceb0f37f16c5acccdaa8d569c5",
+      "bytes": 1524
+    },
+    {
+      "family": "VT323",
+      "weight": 400,
+      "subset_text": "Developer",
+      "font_file": "VT323-Developer.woff2",
+      "source_css": "https://fonts.googleapis.com/css2?family=VT323%3Awght%40400&text=Developer&display=swap",
+      "source_binary": "https://fonts.gstatic.com/l/font?kit=pxiKyp0ihIEF2hsdHpL2d2lCVJLnJzk23A&skey=8f4976db8da1d41&v=v18",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "VT323-Developer-OFL.txt",
+      "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/vt323/OFL.txt",
+      "sha256": "ed98ee18fa980dc3135749188598585eb04fa250ca3e3a923a438df17604dcf2",
+      "bytes": 892
+    },
+    {
+      "family": "Baloo 2",
+      "weight": 700,
+      "subset_text": "Dog Walker",
+      "font_file": "Baloo2-DogWalker.woff2",
+      "source_css": "https://fonts.googleapis.com/css2?family=Baloo+2%3Awght%40700&text=Dog+Walker&display=swap",
+      "source_binary": "https://fonts.gstatic.com/l/font?kit=wXK0E3kTposypRydzVT08TS3JnAmtdj9yqpq9Fat7G8NiT8ayb1UP1Jhm2Cs&skey=f84d20f19091b325&v=v23",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "Baloo2-DogWalker-OFL.txt",
+      "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/baloo2/OFL.txt",
+      "sha256": "a51f1421164d3b9df9a8f5ec38c65793100d6c6d6cc234a21fcdfd9230c34262",
+      "bytes": 1624
     }
   ]
 }

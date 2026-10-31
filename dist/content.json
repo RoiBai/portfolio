@@ -426,7 +426,7 @@
                 "earlier branches"
               ],
               "pilotParticipants": 24,
-              "colorIteration": "Using findings from Icon Colors, we replaced gray with readable grass green for past branches. Bright green marks the current branch, making it easier to find the active topic and distinguish it from earlier ideas."
+              "colorIteration": "Using findings from Icon Color Design in OHMDs, we replaced gray with readable grass green for past branches. Bright green marks the current branch, making it easier to find the active topic and distinguish it from earlier ideas."
             }
           ],
           "sourceNotes": [
@@ -730,7 +730,7 @@
     },
     {
       "id": "icon-colors",
-      "title": "Icon Colors",
+      "title": "Icon Color Design in OHMDs",
       "subtitle": "Color guidelines for AR glasses",
       "description": "Guidelines for clear, comfortable AR icons that keep their intended meaning.",
       "kicker": "AR UI · COLOR PERCEPTION · DESIGN GUIDELINES",

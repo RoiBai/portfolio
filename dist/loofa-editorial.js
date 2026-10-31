@@ -66,6 +66,8 @@ function setupRoutes(section,project){
 export function setupLoofaEditorial(root,project){
  if(project.id!=='loofasoup')return()=>{};
  const clean=[],title=root.querySelector('.project-title-row');
+ const role=root.querySelector('.case-hero .project-role'),abstract=root.querySelector('#abstract');
+ if(role&&abstract){role.classList.add('loofa-pre-abstract-role');abstract.before(role);}
  root.querySelector('#play .loofa-play-note')?.remove();
  const reclining=document.createElement('img');reclining.className='loofa-title-character';reclining.src=siteURL('/assets/games-revision/loofa/lufa-reclining.png');reclining.alt='Lufa reclining beside the title';reclining.width=569;reclining.height=399;const heading=title?.querySelector('h1');if(heading){const lockup=document.createElement('div');lockup.className='loofa-name-lockup';heading.before(lockup);const ending=document.createElement('span');ending.className='loofa-title-ending';ending.append(document.createTextNode('Connection'),reclining);heading.replaceChildren(document.createTextNode('Taste of '),ending);lockup.append(heading);}
  const gameplay=root.querySelector('#gameplay');if(gameplay)clean.push(setupVideoAnnotations(gameplay,project));

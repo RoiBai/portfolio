@@ -5,10 +5,10 @@ const hero = document.querySelector('#name-hero');
 const canvas = hero?.querySelector('#hero-space');
 // Role lettering is deliberately independent of the unchanged particle name.
 const roleFonts = Object.freeze({
-  'Researcher': {family: '"Inter", Arial, sans-serif', weight: 500, key: 'researcher'},
+  'Researcher': {family: '"Role Researcher", Georgia, serif', weight: 700, key: 'researcher'},
   'Gamer': {family: '"Role Gamer", monospace', weight: 400, key: 'gamer'},
-  'Developer': {family: '"Role Developer", monospace', weight: 600, key: 'developer'},
-  'Dog Walker': {family: '"Role Dog Walker", sans-serif', weight: 800, key: 'dog-walker'}
+  'Developer': {family: '"Role Developer", monospace', weight: 400, scale: 1.25, key: 'developer'},
+  'Dog Walker': {family: '"Role Dog Walker", sans-serif', weight: 700, key: 'dog-walker'}
 });
 const roleWords = Object.keys(roleFonts);
 // The static stylesheet link also lets the release builder collect these fonts.
@@ -44,7 +44,7 @@ async function startNameHero() {
   const fontFamily = getComputedStyle(hero).getPropertyValue('--hero-particle-font').trim() || '"Source Serif Pro", Georgia, serif';
   await Promise.all([
     document.fonts.load(`600 120px ${fontFamily}`),
-    ...roleWords.map(word => document.fonts.load(`${roleFonts[word].weight} 64px ${roleFonts[word].family}`, word))
+    ...roleWords.map(word => document.fonts.load(`${roleFonts[word].weight} ${64 * (roleFonts[word].scale || 1)}px ${roleFonts[word].family}`, word))
   ]).catch(() => {});
   interaction.setAttribute('aria-label', 'Ruiyuan Bai. Researcher, Gamer, Developer, Dog Walker orbit the name. Drag to rotate the 3D space; arrow keys rotate, Home resets.');
   const renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: false, powerPreference: 'low-power'});
@@ -286,7 +286,7 @@ async function startNameHero() {
   const identityOrbit = new THREE.Group(); scene.add(identityOrbit);
   const labels=roleWords.map(word=>{
     const c=document.createElement('canvas'); c.width=720;c.height=128;
-    const ctx=c.getContext('2d');const roleFont=roleFonts[word];ctx.font=`${roleFont.weight} 64px ${roleFont.family}`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#e4e4e4';ctx.fillText(word,360,64);
+    const ctx=c.getContext('2d');const roleFont=roleFonts[word];ctx.font=`${roleFont.weight} ${64 * (roleFont.scale || 1)}px ${roleFont.family}`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#e4e4e4';ctx.fillText(word,360,64);
     const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;
     const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,transparent:true,depthTest:false,depthWrite:false}));
     sprite.userData.word=word;sprite.userData.font=ctx.font;identityOrbit.add(sprite);return sprite;
@@ -329,14 +329,14 @@ async function startNameHero() {
       const size = width < 350 ? 24 : 28, line = 44;
       ctx.textAlign = 'left';
       roleWords.forEach((word, i) => {
-        ctx.font = `${roleFonts[word].weight} ${size}px ${roleFonts[word].family}`;
+        ctx.font = `${roleFonts[word].weight} ${size * (roleFonts[word].scale || 1)}px ${roleFonts[word].family}`;
         ctx.fillText(word, Math.round(width * .08), Math.round(maskHeight * .39 + i * line));
       });
     } else {
       const size = Math.min(60, width * .042), line = size * 1.55;
       ctx.textAlign = 'left';
       [['Researcher', .23, -.5], ['Gamer', .50, -.5], ['Developer', .23, .5], ['Dog Walker', .50, .5]].forEach(([word, x, y]) => {
-        ctx.font = `${roleFonts[word].weight} ${size}px ${roleFonts[word].family}`;
+        ctx.font = `${roleFonts[word].weight} ${size * (roleFonts[word].scale || 1)}px ${roleFonts[word].family}`;
         ctx.fillText(word, Math.round(width * x), Math.round(maskHeight * .45 + y * line));
       });
     }

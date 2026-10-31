@@ -164,3 +164,7 @@ body[data-project=loofasoup] #implementation>.section-heading{margin-bottom:24px
 .loofa-production-flow p{margin:0}
 .loofa-production-flow li:last-child{grid-column:1/-1}
 @media(max-width:760px){.loofa-implementation-layout{grid-template-columns:1fr;gap:28px}.loofa-implementation-art{width:100%;max-width:460px;justify-self:center}.loofa-implementation-example>div{height:185px}.loofa-playable-hand img{max-height:185px}.loofa-production-flow{grid-template-columns:1fr;gap:18px}}
+
+/* Contribution credit belongs immediately before the abstract, outside the contents. */
+body[data-project=loofasoup] .case-study>.loofa-pre-abstract-role{width:100%;max-width:none;margin:24px 0 0;padding:18px 22px;box-sizing:border-box}
+body[data-project=loofasoup] .loofa-pre-abstract-role .role-detail{max-width:none;margin:0;text-wrap:wrap}

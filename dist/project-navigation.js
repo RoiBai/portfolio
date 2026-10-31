@@ -19,7 +19,7 @@ export function renderProjectNavigation(project,projects){
  const index=sequence.findIndex(item=>item.id===project.id);
  if(index<0||sequence.length<2)return '';
  const previous=sequence[(index-1+sequence.length)%sequence.length];
- const next=index===sequence.length-1?{id:'home',slug:'/',title:'Back to home'}:sequence[index+1];
+ const next=sequence[(index+1)%sequence.length];
  const card=(item,direction)=>`<a class="project-neighbor neighbor-${direction}" href="${siteURL(item.slug)}" aria-label="${item.id==='home'?'Back to home — all projects':`${direction==='previous'?'Previous':'Next'} project: ${esc(item.title)}`}"><span class="project-neighbor-direction">${direction==='previous'?'<span aria-hidden="true">←</span> Previous project':`${item.id==='home'?'All projects':'Next project'} <span aria-hidden="true">→</span>`}</span>${cover(item)}<h3>${esc(item.title)}</h3></a>`;
  return `<nav class="project-neighbors" aria-label="Previous and next projects" style="--neighbor-left:${palettes[previous.id]};--neighbor-right:${palettes[next.id]}">${card(previous,'previous')}${card(next,'next')}</nav>`;
 }
