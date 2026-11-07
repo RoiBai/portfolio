@@ -1,0 +1,16 @@
+/* Compact orbital identity above the homepage introduction. */
+.profile-home .hero-stage{position:relative;width:100%;height:340px;min-height:0;background:#000;margin:0;container-type:inline-size}
+.profile-home .hero-stage #name-hero{position:relative;top:auto;width:100%;height:100%;min-height:0;background:#000;--hero-height:340px}
+.profile-home #name-hero .hero-name-fallback{top:50%;width:86%;font-size:clamp(40px,9cqw,100px)}
+.profile-home #name-hero .hero-scroll-cue{display:none}
+.profile-home #name-hero .hero-roles-fallback>span{--hero-role-size:20px}
+.profile-home #name-hero [data-hero-role=researcher],.profile-home #name-hero [data-hero-role=dog-walker]{left:75%}
+.profile-home #name-hero [data-hero-role=gamer],.profile-home #name-hero [data-hero-role=developer]{left:25%}
+.profile-home #name-hero [data-hero-role=researcher],.profile-home #name-hero [data-hero-role=gamer]{top:28%}
+.profile-home #name-hero [data-hero-role=developer],.profile-home #name-hero [data-hero-role=dog-walker]{top:72%}
+@media(max-width:760px){
+ .profile-home .hero-stage{height:230px}
+ .profile-home .hero-stage #name-hero{--hero-height:230px}
+ .profile-home #name-hero .hero-name-fallback{font-size:clamp(38px,16cqw,75px)}
+ .profile-home #name-hero .hero-roles-fallback>span{--hero-role-size:16px}
+}

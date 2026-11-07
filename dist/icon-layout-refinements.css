@@ -652,3 +652,8 @@ body[data-project=icon-colors] .icon-study-cards .icon-rating-source-note {margi
  body[data-project=icon-colors] .icon-study-cards .icon-rating-table :is(th,td) {padding:6px 3px}
  body[data-project=icon-colors] .icon-study-cards .icon-rating-table .icon-specimen-disc {width:36px;height:36px}
 }
+
+/* Smooth the experiment photos' baked-in cut corners without reframing them. */
+body[data-project=icon-colors] #setup .figure-media>img {
+ width:auto;max-width:100%;height:auto;margin:0 auto;border-radius:12% / 16%;
+}

@@ -14,36 +14,68 @@
   <link rel="stylesheet" href="/code-flow.css">
   <link rel="stylesheet" href="/icon-readability.css">
   <link rel="stylesheet" href="/home-visual-polish.css">
+  <link rel="stylesheet" href="/home-profile.css">
+  <link rel="stylesheet" href="/home-orbit.css">
   <script src="/code-flow.js"></script>
   <script type="module" src="/homepage.js" blocking="render"></script>
 </head>
 <body>
   <a class="skip-link" href="#selected-work">Skip to selected work</a>
   <main>
-    <div class="hero-stage">
-    <section id="name-hero" aria-labelledby="hero-title">
-      <canvas id="hero-space" aria-hidden="true"></canvas>
-      <h1 class="hero-name-fallback" id="hero-title">Ruiyuan Bai</h1>
-      <button class="hero-interaction" aria-label="Ruiyuan Bai — Researcher, Gamer, Developer, Dog Walker. Drag to rotate the 3D space." type="button">
-
-      </button>
-      <a class="hero-scroll-cue" href="#selected-work" aria-label="Scroll to selected projects">
-        <svg viewBox="0 0 14 8" aria-hidden="true"><path d="m1 1 6 6 6-6"/></svg>
-        <span>Explore</span>
-      </a>
+    <header class="home-topbar"><a href="#about" class="home-wordmark">RB<span> / </span> Research &amp; creative practice</a><nav aria-label="Home"><a href="#news">News</a><a href="#selected-work">Projects ↘</a></nav></header>
+    <section class="profile-home" id="about" aria-label="About Ruiyuan Bai">
+      <aside class="profile-sidebar">
+        <button class="profile-portrait" type="button" aria-label="Reveal this portrait in color" aria-pressed="false">
+          <img class="portrait-color" src="/assets/home-profile/ruiyuan-color.webp" alt="Ruiyuan Bai in the light of stained-glass windows" width="4281" height="5263" fetchpriority="high">
+          <img class="portrait-bw" src="/assets/home-profile/ruiyuan-bw.webp" alt="" aria-hidden="true" width="4281" height="5263" fetchpriority="high">
+          <span class="portrait-cue" aria-hidden="true">A little color ↗</span>
+        </button>
+        <h1 class="profile-name">Ruiyuan Bai</h1>
+        <p class="profile-tagline">Researcher · Creative technologist</p>
+        <div class="profile-links"><a class="resume-link" href="/assets/home-profile/Ruiyuan_Bai_CV.pdf" target="_blank" rel="noopener">Résumé <span>↗</span></a><a href="mailto:Roibai0405@gmail.com">Roibai0405@gmail.com <span>↗</span></a></div>
+        <div class="profile-education" aria-label="Education">
+          <article><img src="/assets/home-profile/polyu-logo.png" alt="PolyU" class="school-mark"><div><a href="https://www.polyu.edu.hk/" target="_blank" rel="noopener">The Hong Kong Polytechnic University ↗</a><h2>BSc Computing</h2><p>Financial Technology &amp; AI<br>School of Engineering</p></div></article>
+          <article><span class="cityu-emblem" role="img" aria-label="CityUHK"><img src="/assets/home-profile/cityu-logo.png" alt=""></span><div><a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener">City University of Hong Kong ↗</a><h2>Master of Fine Arts</h2><p>HCI stream<br>School of Creative Media</p></div></article>
+        </div>
+      </aside>
+      <div class="home-intro-column">
+        <div class="hero-stage"><section id="name-hero" aria-labelledby="hero-title">
+          <canvas id="hero-space" aria-hidden="true"></canvas>
+          <h2 class="hero-name-fallback" id="hero-title">Ruiyuan Bai</h2>
+          <button class="hero-interaction" aria-label="Ruiyuan Bai — Researcher, Gamer, Developer, Dog Walker. Drag to rotate the 3D space." type="button"></button>
+        </section></div>
+        <div class="home-introduction">
+          <p class="intro-opening">I build interactive experiences that help people <strong>understand more—and put that understanding to use.</strong></p>
+          <p>I’m an HCI researcher and creative technologist, currently pursuing an MFA at <a class="inline-affiliation" href="https://www.cityu.edu.hk/" target="_blank" rel="noopener"><span class="cityu-emblem" aria-hidden="true"><img src="/assets/home-profile/cityu-logo.png" alt=""></span>CityUHK</a>. I’m supervised by <a href="https://www.shengdongzhao.com/" target="_blank" rel="noopener">Prof. Shengdong Zhao</a> in the <a class="inline-affiliation lab-affiliation" href="https://www.shengdongzhao.com/" target="_blank" rel="noopener"><img src="/assets/brand/synteraction-logo.jpeg" alt="">Synteraction Lab</a>, building on my computing background at <a class="inline-affiliation" href="https://www.polyu.edu.hk/" target="_blank" rel="noopener"><img src="/assets/home-profile/polyu-logo.png" alt="">PolyU</a>.</p>
+          <p>My work follows two connected directions: <strong>making learning fit everyday life</strong>—designing AR interfaces that help people follow information while their attention moves between a lesson and the world; and <strong>making knowledge usable</strong>—turning cultural sources, stories, and research into tools people can explore, question, and create with.</p>
+          <p class="intro-interests"><img src="/assets/games-motion/loofa-ensemble-cutout.png" alt="Characters from Taste of Connection">I also make and play games, enjoy visual storytelling, and take time for a good dog walk.</p>
+        </div>
+        <section class="home-news" id="news" aria-labelledby="news-title"><div class="home-section-label"><h2 id="news-title">Recent News</h2><span>A few things I’m excited about</span></div><ol>
+          <li><time datetime="2026-11">2026.11</time><p>Excited that <a href="/glancemap">GlanceMap</a> advanced to <strong>round two of CHI 2027 review</strong>—among the 22% selected from 7,000+ submissions.</p></li>
+          <li><time datetime="2026-10">2026.10</time><p>Our co-first-authored paper, <a href="/research/beyond-the-gaze">Beyond the Gaze: Exploring Visual Attention and Interpretation in Open-Ended Art Viewing</a>, was accepted at <strong>ACM Multimedia Asia 2026</strong>.</p></li>
+          <li><time datetime="2026">2026</time><p><a href="/color-in-context">ColoGene: Empowering Designers with Genetic Narratives of Traditional Chinese Colors</a> was accepted as a <strong>CHI 2026 Poster</strong>.</p></li>
+          <li><time datetime="2026">2026</time><p><a href="/research/personamail">Demonstrating PersonaMail: Learning and Adapting Personal Communication Preferences for Context-Aware Email Writing</a> was accepted at <strong>IUI 2026 Companion</strong>.</p></li>
+        </ol></section>
+      </div>
     </section>
-    </div>
     <div id="selected-work" tabindex="-1">
+      <header class="selected-projects-header"><p class="home-kicker">Selected Projects</p><h2>What can technology help us understand?</h2><div class="project-filters" role="group" aria-label="Filter projects by the question they explore">
+        <button type="button" data-filter="all" aria-pressed="true">All projects</button>
+        <button type="button" data-filter="everyday" aria-pressed="false">Learn on the go?</button>
+        <button type="button" data-filter="culture" aria-pressed="false">Explore culture?</button>
+        <button type="button" data-filter="ai" aria-pressed="false">Create with AI?</button>
+        <button type="button" data-filter="play" aria-pressed="false">Learn through play?</button>
+      </div><p class="filter-status" role="status" aria-live="polite">11 projects</p></header>
       <a class="project-row glance-row" href="/glancemap" aria-label="GlanceMap — open project" data-project="glancemap">
-        <div class="row-copy"><h2>GlanceMap</h2><p class="row-description">A glanceable AR concept map helps listeners reconnect with explanations while walking and learning.</p><div class="pills"><span>AR</span><span>Learning on-the-go</span><span>Glanceable interfaces</span></div></div>
+        <div class="row-copy"><h2>GlanceMap</h2><p class="row-description">How can we help people understand audio lessons while moving through the world?</p><div class="pills"><span>AR</span><span>Learning on-the-go</span><span>Glanceable interfaces</span></div></div>
         <div class="row-art teaser-art"><img src="/website-assets/glancemap-teaser-current.png" alt="GlanceMap: a glanceable spatial interface that supports reading while walking" width="2010" height="782" fetchpriority="high"></div><span class="row-open" aria-hidden="true">↗</span>
       </a>
       <a class="project-row color-row" href="/color-in-context" aria-label="Color in Context — open project" data-project="color-in-context">
-        <div class="row-copy"><h2>Color in Context</h2><p class="row-description">Exploring traditional Chinese colors through their origins, cultural meanings, and use in contemporary design.</p><div class="pills"><span>Information Design</span><span>Cultural Heritage</span><span>Co-design</span><span>AI Assistance</span></div></div>
+        <div class="row-copy"><h2>Color in Context</h2><p class="row-description">How can designers learn from traditional Chinese colors—and use that knowledge in their own work?</p><div class="pills"><span>Information Design</span><span>Cultural Heritage</span><span>Co-design</span><span>AI Assistance</span></div></div>
         <div class="row-art atlas-art"><img src="/website-assets/atlas-display.svg" alt="A circular atlas connecting traditional Chinese colors with materials, nature, and cultural sources" width="470" height="401" loading="lazy"></div><span class="row-open" aria-hidden="true">↗</span>
       </a>
       <a class="project-row icon-row" href="/icon-colors" aria-label="Icon Color Design in OHMDs — open project" data-project="icon-colors">
-        <div class="row-copy"><h2>Icon Color Design in OHMDs</h2><p class="row-description">Guidelines for clear, comfortable AR icons that keep their intended meaning.</p><div class="pills"><span>AR UI</span><span>Color perception</span><span>Design guidelines</span></div></div>
+        <div class="row-copy"><h2>Icon Color Design in OHMDs</h2><p class="row-description">How can AR icons communicate clearly and meaningfully in the places where people learn and act?</p><div class="pills"><span>AR UI</span><span>Color perception</span><span>Design guidelines</span></div></div>
         <div class="row-art comic-art" aria-label="Alex’s journey from screen design to comfortable AR icons">
           <figure><img src="/website-assets/icon-comic-cutout-1.svg" alt="Alex designs icons using familiar screen color rules" width="691" height="590" loading="lazy"><figcaption>Alex designs AR UIs</figcaption></figure>
           <figure><img src="/website-assets/icon-comic-cutout-2.svg" alt="Through AR glasses, Alex encounters glare and confusing icon colors" width="691" height="590" loading="lazy"><figcaption>“Too much glare”<br>“Hard to see”</figcaption></figure>
@@ -52,7 +84,7 @@
       </a>
       <section class="group-row games-row" id="games" data-group="games" aria-labelledby="games-title">
         <div class="group-material" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="group-active-material" aria-hidden="true"></div>
-        <div class="group-heading"><div class="group-title-line"><h2 id="games-title" data-default-title="Games">Games</h2><span class="category-tag" hidden>Game</span></div><p class="group-description" data-default-description="Four games explore public health, dining rituals, women’s history, and animal lives.">Four games explore public health, dining rituals, women’s history, and animal lives.</p><div class="group-keywords" aria-label="Project keywords"></div><a class="group-open" tabindex="-1" aria-hidden="true">Open project ↗</a></div>
+        <div class="group-heading"><div class="group-title-line"><h2 id="games-title" data-default-title="Games">Games</h2><span class="category-tag" hidden>Game</span></div><p class="group-description" data-default-description="Playable stories about public health, dining rituals, women’s history, and animal lives.">Playable stories about public health, dining rituals, women’s history, and animal lives.</p><div class="group-keywords" aria-label="Project keywords"></div><a class="group-open" tabindex="-1" aria-hidden="true">Open project ↗</a></div>
         <div class="project-choices">
           <a class="project-choice" href="/games/ambulance-rush" data-project="ambulance" data-description="Manage ambulance routes and crowded hospitals to explore Adelaide’s ramping crisis." data-keywords="Serious Game|Public Health|News Games" data-title="Ambulance Rush" data-colors="#394b5a,#76525d" aria-label="Ambulance Rush — open game"><span class="object-hit art-town"><img src="/website-assets/ambulance-display.svg" alt="The original three-dimensional town from Ambulance Rush" width="360" height="190" loading="lazy"></span><span class="choice-label"><span>01</span>Ambulance Rush<i aria-hidden="true">↗</i></span></a>
           <a class="project-choice" href="/games/loofasoup" data-project="loofasoup" data-description="Solve seating puzzles to explore the relationships and rituals of a shared meal." data-keywords="Narrative Game|Social Puzzle|Dining Culture" data-title="Taste of Connection" data-colors="#354e3b,#82734b" aria-label="Taste of Connection — Loofa Soup, open game"><span class="object-hit art-lufa"><img src="/assets/games-motion/loofa-ensemble-cutout.png" alt="The Loofa Soup cast together" width="1677" height="941" loading="lazy"></span><span class="choice-label"><span>02</span>Taste of Connection<i aria-hidden="true">↗</i></span></a>
@@ -62,7 +94,7 @@
       </section>
       <section class="group-row research-row" id="research" data-group="research" aria-labelledby="research-title">
         <div class="group-material" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="group-active-material" aria-hidden="true"></div>
-        <div class="group-heading"><div class="group-title-line"><h2 id="research-title" data-default-title="Research">Research</h2><span class="category-tag" hidden>Research</span></div><p class="group-description" data-default-description="Four studies explore personal writing, art interpretation, cultural heritage, and poetry.">Four studies explore personal writing, art interpretation, cultural heritage, and poetry.</p><div class="group-keywords" aria-label="Project keywords"></div><a class="group-open" tabindex="-1" aria-hidden="true">Open project ↗</a></div>
+        <div class="group-heading"><div class="group-title-line"><h2 id="research-title" data-default-title="Research">Research</h2><span class="category-tag" hidden>Research</span></div><p class="group-description" data-default-description="Interactive tools and studies for personal writing, art interpretation, cultural heritage, and poetry.">Interactive tools and studies for personal writing, art interpretation, cultural heritage, and poetry.</p><div class="group-keywords" aria-label="Project keywords"></div><a class="group-open" tabindex="-1" aria-hidden="true">Open project ↗</a></div>
         <div class="project-choices">
           <a class="project-choice" href="/research/personamail" data-project="personamail" data-description="Co-write emails that reflect your intent, your relationships, and your own voice." data-keywords="AI Co-writing|Personalization|Communication Intent" data-title="PersonaMail" data-colors="#746844,#4c5b78" aria-label="PersonaMail — open research"><span class="object-hit art-persona"><img src="/website-assets/research-personamail@3x.png" alt="PersonaMail’s original illustration of communication with different recipients" width="240" height="180" loading="eager" decoding="async"></span><span class="choice-label"><span>01</span>PersonaMail<i aria-hidden="true">↗</i></span></a>
           <a class="project-choice" href="/research/beyond-the-gaze" data-project="beyond-the-gaze" data-description="Connect gaze and spoken reflection to understand how people interpret paintings." data-keywords="Eye Tracking|Art Interpretation|Multimodal Evidence" data-title="Beyond the Gaze" data-colors="#334e5c,#7b7159" aria-label="Beyond the Gaze — open research"><span class="object-hit art-gaze art-gaze-grid"><img src="/assets/research-interactive/gaze-art-2-original.jpg" alt="Paris Street, Rainy Day — Artwork" loading="eager" decoding="async"><img src="/assets/research-interactive/gaze-1-heatmap.webp" alt="Paris Street, Rainy Day — Gaze heatmap" loading="eager" decoding="async"><img src="/assets/research-interactive/gaze-1-scanpath.webp" alt="Paris Street, Rainy Day — Eye path" loading="eager" decoding="async"><img src="/assets/research-interactive/gaze-1-regions.webp" alt="Paris Street, Rainy Day — Region map" loading="eager" decoding="async"></span><span class="choice-label"><span>02</span>Beyond the Gaze<i aria-hidden="true">↗</i></span></a>
@@ -71,7 +103,9 @@
         </div>
       </section>
     </div>
+    <footer class="profile-footer"><span>Made with curiosity, code, and care.</span><a href="#about">Back to the stars ↑</a></footer>
   </main>
+  <script type="module" src="/home-profile.js"></script>
   <script type="module" src="/name-hero.js"></script>
 </body>
 </html>

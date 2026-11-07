@@ -1,0 +1,21 @@
+{
+  "verified_on": "2026-11-08",
+  "assets": {
+    "polyu-logo.png": {
+      "source": "https://www.polyu.edu.hk/assets/img/main-logo-3x.png",
+      "host": "Official PolyU website",
+      "modification": "None"
+    },
+    "cityu-logo.png": {
+      "source": "https://personal.cityu.edu.hk/dangylei/images/CityUHK_Logo.png",
+      "host": "Official CityUHK faculty website",
+      "modification": "None"
+    },
+    "Ruiyuan_Bai_CV.pdf": {
+      "source": "output/cv/Ruiyuan_Bai_CV.tex",
+      "source_modified": "2026-11-04",
+      "generation": "Visible LaTeX content rendered to two-page PDF; comments excluded; text unchanged",
+      "verification": "Whitespace-normalized text match against render; both pages visually checked"
+    }
+  }
+}

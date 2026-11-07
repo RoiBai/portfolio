@@ -30,6 +30,7 @@ if (hero && canvas) startNameHero().catch(error => {
 async function startNameHero() {
   const interaction = hero.querySelector('.hero-interaction') || hero;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const compactProfile = !!hero.closest('.profile-home');
   const portrait = hero.querySelector('#hero-portrait');
   canvas.setAttribute('aria-hidden', 'true');
   if (!interaction.hasAttribute('tabindex')) interaction.tabIndex = 0;
@@ -73,36 +74,34 @@ async function startNameHero() {
   const orbitLimit = {yaw: Infinity, pitch: THREE.MathUtils.degToRad(60)};
   let gesture = null, dragging = false, suppressHover = false;
 
-  // Genuine displaced sphere geometry, restored from the original universe scene.
-  const moonRandom = rng(4096), moonGeometry = new THREE.SphereGeometry(3.25, 112, 80);
-  const craters = Array.from({length: 52}, () => ({center: new THREE.Vector3(moonRandom() - .5, moonRandom() - .5, moonRandom() - .5).normalize(), radius: .035 + moonRandom() * .16}));
-  // A few larger depressions face the initial view so relief survives small screens.
-  craters.push(...[[.66,.3,.7,.24],[.34,.59,.72,.18],[.84,-.15,.52,.16]].map(([x,y,z,radius])=>({center:new THREE.Vector3(x,y,z).normalize(),radius,depth:.17})));
-  const moonPosition = moonGeometry.attributes.position, normal = new THREE.Vector3();
-  for (let i = 0; i < moonPosition.count; i++) {
-    normal.fromBufferAttribute(moonPosition, i).normalize();
-    let relief = Math.sin(normal.x * 25 + normal.z * 14) * Math.sin(normal.y * 30) * .018;
-    for (const crater of craters) {
-      const d = normal.distanceTo(crater.center) / crater.radius;
-      if (d < 1.3) relief += d < .8 ? -(crater.depth || .09) * (1 - d * .6) : .045 * (1 - Math.abs(d - 1) * 3.3);
-    }
-    normal.multiplyScalar(3.25 + relief); moonPosition.setXYZ(i, normal.x, normal.y, normal.z);
+  // Quiet code comets replace the old moon, staying behind the identity ring.
+  const cometGroup = new THREE.Group(); scene.add(cometGroup);
+  const cometGlyphs = ['</>', '{ }', '=>'];
+  const comets = cometGlyphs.map((glyph, index) => {
+    const art = document.createElement('canvas'); art.width = 320; art.height = 56;
+    const ctx = art.getContext('2d');
+    const tail = ctx.createLinearGradient(0, 0, 230, 0);
+    tail.addColorStop(0, 'rgba(178,205,213,0)'); tail.addColorStop(1, 'rgba(178,205,213,.6)');
+    ctx.strokeStyle = tail; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(8,28); ctx.lineTo(226,28); ctx.stroke();
+    ctx.fillStyle = '#cbd9dd'; ctx.font = '400 30px "Role Developer", monospace'; ctx.textBaseline = 'middle'; ctx.fillText(glyph,234,28);
+    const texture = new THREE.CanvasTexture(art); texture.colorSpace = THREE.SRGBColorSpace;
+    const material = new THREE.SpriteMaterial({map:texture,transparent:true,depthWrite:false,opacity:0});
+    material.rotation = -.32;
+    const sprite = new THREE.Sprite(material); sprite.userData.index = index; cometGroup.add(sprite); return sprite;
+  });
+  let cometSize = {width:1,height:1};
+  function updateComets() {
+    cometGroup.visible = !reduced.matches;
+    if (!cometGroup.visible) return;
+    comets.forEach((comet, index) => {
+      const travel = ((motionTime + index * 7.9) % 24) / 24;
+      const flight = THREE.MathUtils.clamp(travel / .27, 0, 1);
+      const opacity = travel < .27 ? Math.sin(flight * Math.PI) * .22 : 0;
+      const band = index % 2 === 0 ? .39 : -.38;
+      comet.position.set((flight * 1.35 - .70) * cometSize.width, (band + .12 - flight * .25) * cometSize.height, -2);
+      comet.material.opacity = opacity;
+    });
   }
-  moonGeometry.computeVertexNormals();
-  const moonMaterial = new THREE.MeshStandardMaterial({color: 0x666666, roughness: 1, metalness: 0});
-  moonMaterial.onBeforeCompile = shader => {
-    shader.fragmentShader = shader.fragmentShader.replace('#include <dithering_fragment>', `#include <dithering_fragment>
-      float gray = dot(gl_FragColor.rgb, vec3(.333333));
-      vec2 cell = floor(gl_FragCoord.xy / 1.6);
-      float grain = fract(sin(dot(cell, vec2(12.9898,78.233))) * 43758.5453);
-      gray = floor(gray * 9.0 + grain * .72) / 9.0;
-      gl_FragColor.rgb = vec3(gray);`);
-  };
-  moonMaterial.customProgramCacheKey = () => 'hero-crater-halftone-v1';
-  // Rotate its relief, while keeping the moon's projected framing stable.
-  const moon = new THREE.Mesh(moonGeometry, moonMaterial); scene.add(moon);
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x050505, .55));
-  const moonLight = new THREE.DirectionalLight(0xffffff, 2.8); moonLight.position.set(-14, 12, 18); scene.add(moonLight);
 
   const uniforms = {
     uProgress: {value: 0}, uTime: {value: 0}, uMotion: {value: reduced.matches ? 0 : 1},
@@ -324,7 +323,7 @@ async function startNameHero() {
       ctx.font = `600 ${size}px ${family}`;
       size *= Math.min(1, (width * (mobile ? .90 : .80)) / ctx.measureText('Ruiyuan Bai').width);
       ctx.font = `600 ${size}px ${family}`;
-      ctx.fillText('Ruiyuan Bai', Math.round(width * .5), Math.round(maskHeight * (mobile ? .44 : .48)));
+      ctx.fillText('Ruiyuan Bai', Math.round(width * .5), Math.round(maskHeight * (compactProfile ? .5 : mobile ? .44 : .48)));
     } else if (mobile) {
       const size = width < 350 ? 24 : 28, line = 44;
       ctx.textAlign = 'left';
@@ -407,37 +406,33 @@ async function startNameHero() {
     const nextWidth = Math.max(1, Math.round(bounds.width)), nextHeight = Math.max(1, Math.round(bounds.height));
     const widthChanged=nextWidth!==width, sizeChanged=widthChanged||nextHeight!==height;
     width = nextWidth; height = nextHeight; mobile = width < 700;
-    maskHeight=mobile?520:420;
+    maskHeight=compactProfile?height:mobile?520:420;
     if(sizeChanged){
       camera.aspect = width / height; camera.updateProjectionMatrix();
       renderer.setSize(width, height, false);resizeCount++;
     }
-    expandedHeight=introMetrics?.expandedHeight||Math.max(innerHeight,height);
+    expandedHeight=compactProfile?height:introMetrics?.expandedHeight||Math.max(innerHeight,height);
     compactHeight=introMetrics?.compactHeight||Math.min(expandedHeight,maskHeight);
     const declaredProgress=Number.parseFloat(hero.dataset.introProgress);
     introProgress=Number.isFinite(declaredProgress)?Math.max(0,Math.min(1,declaredProgress)):1;
-    introActive=hero.dataset.introActive==='true';
+    introActive=!compactProfile&&hero.dataset.introActive==='true';
     const expansion=expandedHeight>compactHeight?THREE.MathUtils.clamp((height-compactHeight)/(expandedHeight-compactHeight),0,1):0;
     uniforms.uWorldPerPixel.value = worldHeight / height;
     uniforms.uPointSize.value = mobile ? 1.16 : 1.40;
     uniforms.uNameOffsetY.value=(height-maskHeight)*(.5-(mobile?.44:.48));
     uniforms.uRoleOffsetY.value=(height-maskHeight)*(.5-(mobile?.39:.45));
     uniforms.uBurstHeight.value=height/maskHeight;
-    if(widthChanged||!points)rebuild();
+    if(widthChanged||(compactProfile&&sizeChanged)||!points)rebuild();
     buildStars();
     const offsetBounds=(source,anchor)=>source?{...source,top:source.top+(height-maskHeight)*anchor,bottom:source.bottom+(height-maskHeight)*anchor}:null;
-    nameBounds=offsetBounds(nameMaskBounds,mobile?.44:.48);
+    nameBounds=offsetBounds(nameMaskBounds,compactProfile?.5:mobile?.44:.48);
     roleBounds=offsetBounds(roleMaskBounds,mobile?.39:.45);
     layoutIdentityOrbit();
     starUniforms.uExpanded.value=expansion;
-    const moonDepth = 36, units = worldHeight / height * moonDepth / 28;
-    const compactRadius = mobile ? Math.min(94,width*.24) : Math.min(128,compactHeight*.31);
-    const expandedRadius=mobile?Math.min(width*.28,expandedHeight*.17):Math.min(210,width*.15,expandedHeight*.22);
-    const radius=THREE.MathUtils.lerp(compactRadius,expandedRadius,expansion);
-    const moonX=THREE.MathUtils.lerp(mobile?.24:.11,mobile?.20:.13,expansion);
-    const moonY=THREE.MathUtils.lerp(.87,mobile?.80:.79,expansion);
-    moon.position.set((width*moonX-width/2)*units,(height/2-height*moonY)*units,-8);
-    moon.scale.setScalar(radius*units/3.25); moon.visible=true;
+    const unit = worldHeight / height;
+    cometSize = {width:width*unit,height:height*unit};
+    const cometPixels = mobile ? 110 : 160;
+    comets.forEach(comet => comet.scale.set(cometPixels*unit,cometPixels/320*56*unit,1));
     guideUniforms.uHeight.value=height;guideUniforms.uWorldPerPixel.value=worldHeight/height;
     guideUniforms.uOpacity.value=introActive?1-smooth(.03,.35,introProgress):0;
     guide.visible=guideUniforms.uOpacity.value>.001;
@@ -494,8 +489,7 @@ async function startNameHero() {
     const spaceEase = reduced.matches ? 1 : 1 - Math.exp(-dt * (dragging ? 16 : 7));
     space.rotation.y += (orbit.yaw + (reduced.matches ? 0 : pointer.x * .10) - space.rotation.y) * spaceEase;
     space.rotation.x += (orbit.pitch + (reduced.matches ? 0 : pointer.y * .065) - space.rotation.x) * spaceEase;
-    moon.rotation.y = space.rotation.y * .95;
-    moon.rotation.x = space.rotation.x * .9;
+    updateComets();
     const nameTilt = 1 - smooth(.18, .80, progress);
     if (points) {
       points.rotation.y = THREE.MathUtils.clamp(space.rotation.y * .36, -.38, .38) * nameTilt;
@@ -572,7 +566,7 @@ async function startNameHero() {
     roles: roleWords, roleFonts: labels.map(label=>({word:label.userData.word,font:label.userData.font})), rolesAlwaysVisible:true, orbitRadii:{...orbitRadii}, rolePositions:labels.map(l=>({word:l.userData.word,position:l.position.toArray()})),
     name: 'Ruiyuan Bai', nameBounds: {...nameBounds}, roleBounds: {...roleBounds},
     positionDimensions: 3, depthPixels: mobile ? 18 : 32, font: fontFamily, fontWeight: 600, textFacing: progress > .80 ? 'front-facing-roles' : 'restrained-3d-name', textRotation: points ? [points.rotation.x,points.rotation.y,points.rotation.z] : [0,0,0],
-    moon: {visible:moon.visible,geometry:moonGeometry.type,vertices:moonPosition.count,craters:craters.length,position:moon.position.toArray(),rotation:[moon.rotation.x,moon.rotation.y,moon.rotation.z],scale:moon.scale.x},
+    moon: {visible:false}, codeComets:{count:comets.length,visible:cometGroup.visible,opacity:comets.map(comet=>comet.material.opacity)},
     spaceRotation: [space.rotation.x,space.rotation.y,space.rotation.z],
     orbit: {yaw:orbit.yaw,pitch:orbit.pitch,yawDegrees:THREE.MathUtils.radToDeg(orbit.yaw),pitchDegrees:THREE.MathUtils.radToDeg(orbit.pitch),limitsDegrees:{yaw:'unlimited',pitch:60},dragging,intent:gesture?.intent||null,suppressHover},
     reducedMotion: reduced.matches, visible, documentHidden: document.hidden, running: !!raf,

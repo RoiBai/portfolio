@@ -62,7 +62,7 @@ groups.forEach(group => {
   });
   group.addEventListener('keydown', event => { if (event.key === 'Escape') { document.activeElement?.blur(); setProject(group, null); } });
 });
-setupHeroIntro();
+if (!document.querySelector('.profile-home')) setupHeroIntro();
 setupHomePosition();
 window.addEventListener('pageshow', () => { groups.forEach(group => setProject(group, null)); });
 

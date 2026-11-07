@@ -40,9 +40,20 @@ export function setupIconEditorial(root,project,visuals={}){
  if(problem){
   problem.querySelector('.section-visuals')?.remove();
   problem.insertAdjacentHTML('beforeend',`<div class="icon-context-comparison">
-   <figure><div class="icon-desktop-context"><div class="icon-monitor"><span class="icon-parking-pair"><span class="icon-screen-parking" aria-label="White parking symbol on blue">P</span><span class="icon-result-check" aria-label="Clear on screen"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 33 26 47 54 16"/></svg></span></span></div><div class="icon-monitor-foot"></div></div><figcaption><h3>On a screen</h3><small><strong>9.06 : 1</strong> calculated screen contrast · #0000F5 / #FFFFFF</small></figcaption></figure>
-   <figure><div class="icon-ar-context">${img('/assets/icon-original-explorations/outdoor-prototype-source.png','Original outdoor street scene behind an AR parking symbol')}<span class="icon-parking-pair icon-parking-pair-ar"><span class="icon-ar-parking" aria-label="Parking symbol at 70 percent opacity">P</span><span class="icon-result-cross" aria-label="Screen contrast does not guarantee AR clarity"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m16 16 32 32m0-32L16 48"/></svg></span></span></div><figcaption><h3>Through AR glasses</h3><small>The real scene shows through the icon</small></figcaption></figure>
-  </div><div class="icon-context-explanation"><p>The screen’s blue background is opaque. In AR, <strong>the real scene shines through</strong>; white can glare or merge with a bright background. <strong>Test clarity through the glasses</strong>, alongside screen contrast.</p></div>
+   <figure><svg class="icon-problem-art" viewBox="0 0 900 360" role="img" aria-label="A black parking symbol on an opaque blue-violet circle inside a desktop monitor, with a green check mark">
+    <rect x="82" y="16" width="736" height="290" rx="22" fill="#aeb8bc"/><rect x="96" y="30" width="708" height="248" rx="6" fill="#f7f7f9"/>
+    <path d="M395 306h110v40H395z" fill="#aeb8bc"/><path d="M318 352Q450 336 582 352v8H318z" fill="#d1d5d8"/>
+    <circle cx="316" cy="154" r="110" fill="#443cff"/>
+    <path d="M289 201V106h31c55 0 55 60 0 60h-31" fill="none" stroke="#000" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m397 211 35 34 76-79" fill="none" stroke="#2e9b42" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
+   </svg><figcaption><h3>On a screen</h3><small>An opaque background keeps the symbol distinct</small></figcaption></figure>
+   <figure><svg class="icon-problem-art" viewBox="0 0 900 360" role="img" aria-label="The same black parking symbol and blue-violet circle over a sunlit street scene, with a red cross showing reduced clarity">
+    <defs><clipPath id="icon-problem-street-clip"><rect x="0" y="16" width="900" height="334" rx="26"/></clipPath></defs>
+    <image href="${siteURL('/assets/icon-original-explorations/outdoor-prototype-source.png')}" x="0" y="16" width="900" height="334" preserveAspectRatio="xMidYMid slice" clip-path="url(#icon-problem-street-clip)"/>
+    <g opacity=".7"><circle cx="236" cy="165" r="110" fill="#443cff"/><path d="M209 212V117h31c55 0 55 60 0 60h-31" fill="none" stroke="#000" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <path d="m300 185 92 92m0-92-92 92" fill="none" stroke="#ff3e50" stroke-width="32" stroke-linecap="round"/>
+   </svg><figcaption><h3>Through AR glasses</h3><small>The real scene shows through the icon</small></figcaption></figure>
+  </div><div class="icon-context-explanation"><p>The screen’s blue background is opaque. In AR, <strong>the real scene shines through</strong>, making the same symbol harder to distinguish. <strong>Test clarity through the glasses</strong>, alongside screen contrast.</p></div>
 `);
  }
  const setup=root.querySelector('#setup'),setupData=project.sections?.find(s=>s.id==='setup');

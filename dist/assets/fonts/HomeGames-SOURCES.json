@@ -1,0 +1,10 @@
+{
+  "family": "Press Start 2P",
+  "subset_text": "Games",
+  "font_file": "PressStart2P-Games.woff2",
+  "css": "https://fonts.googleapis.com/css2?family=Press+Start+2P&text=Games&display=swap",
+  "binary": "https://fonts.gstatic.com/l/font?kit=e3t4euO8T-267oIAQAu6jDQyK0nXgPRE4rUwQvR4gBk&skey=24cc298767068e24&v=v16",
+  "license_file": "PressStart2P-Gamer-OFL.txt",
+  "bytes": 732,
+  "sha256": "efb15be969941ee538c055ccb56fc9ba585a3e490961635863f76cf40538a5dc"
+}

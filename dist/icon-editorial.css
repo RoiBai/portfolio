@@ -73,3 +73,7 @@ body[data-project=icon-colors] #refinement>.section-body p+p{margin-top:16px}
 .icon-alternative-family figcaption{font-size:13px;padding-top:10px!important}
 @media(max-width:1050px){.icon-tested-row{gap:12px}.icon-tested-art{width:62px}.icon-tested-row figcaption{font-size:12px}}
 @media(max-width:760px){.icon-tested-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 15px}.icon-tested-art{width:68px}.icon-tested-row figcaption{font-size:14px;min-height:42px}.icon-alternative-family img{max-width:66px}.icon-alternative-family figcaption{font-size:14px}}
+
+/* Matched screen/AR illustrations: same symbol size and color in both contexts. */
+body[data-project=icon-colors] .icon-context-comparison>figure {min-width:0;margin:0}
+body[data-project=icon-colors] .icon-context-comparison .icon-problem-art {display:block;width:100%;height:auto;max-width:none;aspect-ratio:5/2;overflow:visible}
