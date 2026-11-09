@@ -22,16 +22,13 @@
 <body>
   <a class="skip-link" href="#selected-work">Skip to selected work</a>
   <main>
-    <header class="home-topbar"><a href="#about" class="home-wordmark">RB<span> / </span> Research &amp; creative practice</a><nav aria-label="Home"><a href="#news">News</a><a href="#selected-work">Projects ↘</a></nav></header>
     <section class="profile-home" id="about" aria-label="About Ruiyuan Bai">
       <aside class="profile-sidebar">
         <button class="profile-portrait" type="button" aria-label="Reveal this portrait in color" aria-pressed="false">
-          <img class="portrait-color" src="/assets/home-profile/ruiyuan-color.webp" alt="Ruiyuan Bai in the light of stained-glass windows" width="4281" height="5263" fetchpriority="high">
-          <img class="portrait-bw" src="/assets/home-profile/ruiyuan-bw.webp" alt="" aria-hidden="true" width="4281" height="5263" fetchpriority="high">
+          <img class="portrait-color" src="/assets/home-profile/ruiyuan-clean.webp" alt="Ruiyuan Bai in the light of stained-glass windows" width="1131" height="1391" fetchpriority="high">
+          <img class="portrait-bw" src="/assets/home-profile/ruiyuan-clean.webp" alt="" aria-hidden="true" width="1131" height="1391" fetchpriority="high">
           <span class="portrait-cue" aria-hidden="true">A little color ↗</span>
         </button>
-        <h1 class="profile-name">Ruiyuan Bai</h1>
-        <p class="profile-tagline">Researcher · Creative technologist</p>
         <div class="profile-links"><a class="resume-link" href="/assets/home-profile/Ruiyuan_Bai_CV.pdf" target="_blank" rel="noopener">Résumé <span>↗</span></a><a href="mailto:Roibai0405@gmail.com">Roibai0405@gmail.com <span>↗</span></a></div>
         <div class="profile-education" aria-label="Education">
           <article><img src="/assets/home-profile/polyu-logo.png" alt="PolyU" class="school-mark"><div><a href="https://www.polyu.edu.hk/" target="_blank" rel="noopener">The Hong Kong Polytechnic University ↗</a><h2>BSc Computing</h2><p>Financial Technology &amp; AI<br>School of Engineering</p></div></article>
@@ -41,7 +38,7 @@
       <div class="home-intro-column">
         <div class="hero-stage"><section id="name-hero" aria-labelledby="hero-title">
           <canvas id="hero-space" aria-hidden="true"></canvas>
-          <h2 class="hero-name-fallback" id="hero-title">Ruiyuan Bai</h2>
+          <h1 class="hero-name-fallback" id="hero-title">Ruiyuan Bai</h1>
           <button class="hero-interaction" aria-label="Ruiyuan Bai — Researcher, Gamer, Developer, Dog Walker. Drag to rotate the 3D space." type="button"></button>
         </section></div>
         <div class="home-introduction">
@@ -51,21 +48,15 @@
           <p class="intro-interests"><img src="/assets/games-motion/loofa-ensemble-cutout.png" alt="Characters from Taste of Connection">I also make and play games, enjoy visual storytelling, and take time for a good dog walk.</p>
         </div>
         <section class="home-news" id="news" aria-labelledby="news-title"><div class="home-section-label"><h2 id="news-title">Recent News</h2><span>A few things I’m excited about</span></div><ol>
-          <li><time datetime="2026-11">2026.11</time><p>Excited that <a href="/glancemap">GlanceMap</a> advanced to <strong>round two of CHI 2027 review</strong>—among the 22% selected from 7,000+ submissions.</p></li>
-          <li><time datetime="2026-10">2026.10</time><p>Our co-first-authored paper, <a href="/research/beyond-the-gaze">Beyond the Gaze: Exploring Visual Attention and Interpretation in Open-Ended Art Viewing</a>, was accepted at <strong>ACM Multimedia Asia 2026</strong>.</p></li>
-          <li><time datetime="2026">2026</time><p><a href="/color-in-context">ColoGene: Empowering Designers with Genetic Narratives of Traditional Chinese Colors</a> was accepted as a <strong>CHI 2026 Poster</strong>.</p></li>
-          <li><time datetime="2026">2026</time><p><a href="/research/personamail">Demonstrating PersonaMail: Learning and Adapting Personal Communication Preferences for Context-Aware Email Writing</a> was accepted at <strong>IUI 2026 Companion</strong>.</p></li>
+          <li><time datetime="2026-11">2026.11</time><p>Excited that <a class="news-project news-glance" href="/glancemap">GlanceMap <span aria-hidden="true">↗</span></a> advanced to <strong>round two of CHI 2027 review</strong>—among the 22% selected from 7,000+ submissions.</p></li>
+          <li><time datetime="2026-10">2026.10</time><p>Our co-first-authored paper, <a class="news-project news-gaze" href="/research/beyond-the-gaze">Beyond the Gaze: Exploring Visual Attention and Interpretation in Open-Ended Art Viewing <span aria-hidden="true">↗</span></a>, was accepted at <strong>ACM Multimedia Asia 2026</strong>.</p></li>
+          <li><time datetime="2026-04">2026.04</time><p><a class="news-project news-color" href="/color-in-context">ColoGene: Empowering Designers with Genetic Narratives of Traditional Chinese Colors <span aria-hidden="true">↗</span></a> was published as a <strong>CHI 2026 Poster</strong>.</p></li>
+          <li><time datetime="2026-03">2026.03</time><p><a class="news-project news-persona" href="/research/personamail">Demonstrating PersonaMail: Learning and Adapting Personal Communication Preferences for Context-Aware Email Writing <span aria-hidden="true">↗</span></a> was published in <strong>IUI 2026 Companion</strong>.</p></li>
         </ol></section>
       </div>
     </section>
     <div id="selected-work" tabindex="-1">
-      <header class="selected-projects-header"><p class="home-kicker">Selected Projects</p><h2>What can technology help us understand?</h2><div class="project-filters" role="group" aria-label="Filter projects by the question they explore">
-        <button type="button" data-filter="all" aria-pressed="true">All projects</button>
-        <button type="button" data-filter="everyday" aria-pressed="false">Learn on the go?</button>
-        <button type="button" data-filter="culture" aria-pressed="false">Explore culture?</button>
-        <button type="button" data-filter="ai" aria-pressed="false">Create with AI?</button>
-        <button type="button" data-filter="play" aria-pressed="false">Learn through play?</button>
-      </div><p class="filter-status" role="status" aria-live="polite">11 projects</p></header>
+      <header class="selected-projects-header"><p class="home-kicker">Selected Projects</p><h2>What can technology help us understand?</h2></header>
       <a class="project-row glance-row" href="/glancemap" aria-label="GlanceMap — open project" data-project="glancemap">
         <div class="row-copy"><h2>GlanceMap</h2><p class="row-description">How can we help people understand audio lessons while moving through the world?</p><div class="pills"><span>AR</span><span>Learning on-the-go</span><span>Glanceable interfaces</span></div></div>
         <div class="row-art teaser-art"><img src="/website-assets/glancemap-teaser-current.png" alt="GlanceMap: a glanceable spatial interface that supports reading while walking" width="2010" height="782" fetchpriority="high"></div><span class="row-open" aria-hidden="true">↗</span>
