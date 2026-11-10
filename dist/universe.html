@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/home-visual-polish.css">
   <link rel="stylesheet" href="/home-profile.css">
   <link rel="stylesheet" href="/home-orbit.css">
+  <link rel="stylesheet" href="/home-starfield.css">
   <script src="/code-flow.js"></script>
   <script type="module" src="/homepage.js" blocking="render"></script>
 </head>
@@ -23,6 +24,13 @@
   <a class="skip-link" href="#selected-work">Skip to selected work</a>
   <main>
     <section class="profile-home" id="about" aria-label="About Ruiyuan Bai">
+      <header class="home-identity">
+        <div class="hero-stage"><section id="name-hero" aria-labelledby="hero-title">
+          <canvas id="hero-space" aria-hidden="true"></canvas>
+          <h1 class="hero-name-fallback" id="hero-title">Ruiyuan Bai</h1>
+          <button class="hero-interaction" aria-label="Ruiyuan Bai — Researcher, Gamer, Developer, Dog Walker. Drag to rotate the 3D space." type="button"></button>
+        </section></div>
+      </header>
       <aside class="profile-sidebar">
         <button class="profile-portrait" type="button" aria-label="Reveal this portrait in color" aria-pressed="false">
           <img class="portrait-color" src="/assets/home-profile/ruiyuan-clean.webp" alt="Ruiyuan Bai in the light of stained-glass windows" width="1131" height="1391" fetchpriority="high">
@@ -36,16 +44,11 @@
         </div>
       </aside>
       <div class="home-intro-column">
-        <div class="hero-stage"><section id="name-hero" aria-labelledby="hero-title">
-          <canvas id="hero-space" aria-hidden="true"></canvas>
-          <h1 class="hero-name-fallback" id="hero-title">Ruiyuan Bai</h1>
-          <button class="hero-interaction" aria-label="Ruiyuan Bai — Researcher, Gamer, Developer, Dog Walker. Drag to rotate the 3D space." type="button"></button>
-        </section></div>
         <div class="home-introduction">
-          <p class="intro-opening">I build interactive experiences that help people <strong>understand more—and put that understanding to use.</strong></p>
-          <p>I’m an HCI researcher and creative technologist, currently pursuing an MFA at <a class="inline-affiliation" href="https://www.cityu.edu.hk/" target="_blank" rel="noopener"><span class="cityu-emblem" aria-hidden="true"><img src="/assets/home-profile/cityu-logo.png" alt=""></span>CityUHK</a>. I’m supervised by <a href="https://www.shengdongzhao.com/" target="_blank" rel="noopener">Prof. Shengdong Zhao</a> in the <a class="inline-affiliation lab-affiliation" href="https://www.shengdongzhao.com/" target="_blank" rel="noopener"><img src="/assets/brand/synteraction-logo.jpeg" alt="">Synteraction Lab</a>, building on my computing background at <a class="inline-affiliation" href="https://www.polyu.edu.hk/" target="_blank" rel="noopener"><img src="/assets/home-profile/polyu-logo.png" alt="">PolyU</a>.</p>
-          <p>My work follows two connected directions: <strong>making learning fit everyday life</strong>—designing AR interfaces that help people follow information while their attention moves between a lesson and the world; and <strong>making knowledge usable</strong>—turning cultural sources, stories, and research into tools people can explore, question, and create with.</p>
-          <p class="intro-interests"><img src="/assets/games-motion/loofa-ensemble-cutout.png" alt="Characters from Taste of Connection">I also make and play games, enjoy visual storytelling, and take time for a good dog walk.</p>
+          <p>Hi, I’m <strong>Ruiyuan Bai</strong>, an HCI researcher pursuing a <strong>Master of Fine Arts in Human-Computer Interaction</strong> at <a class="inline-affiliation" href="https://www.cityu.edu.hk/" target="_blank" rel="noopener"><span class="cityu-emblem" aria-hidden="true"><img src="/assets/home-profile/cityu-logo.png" alt=""></span><strong>City University of Hong Kong</strong></a>, advised by <a href="https://www.shengdongzhao.com/" target="_blank" rel="noopener"><strong>Prof. Shengdong Zhao</strong></a> in the <a class="inline-affiliation lab-affiliation" href="https://www.shengdongzhao.com/" target="_blank" rel="noopener"><img src="/assets/brand/synteraction-logo.jpeg" alt=""><strong>Synteraction Lab</strong></a>. I previously studied <strong>Computing – FinTech &amp; AI</strong> at <a class="inline-affiliation" href="https://www.polyu.edu.hk/" target="_blank" rel="noopener"><img src="/assets/home-profile/polyu-logo.png" alt=""><strong>The Hong Kong Polytechnic University</strong></a>. Studying across mainland China, the United States, and Hong Kong sparked my interest in <strong>culture and learning</strong>.</p>
+          <p>I’m applying to <strong>master’s programs in education</strong>, with a longer-term goal of a <strong>PhD in educational technology</strong>. I want to build games and interactive stories that help adults explore public and cultural issues beyond formal education.</p>
+          <p>My research asks <strong>how interfaces help people understand information</strong>—from audio learning on the go <span class="intro-project-ref intro-project-glance"><span class="intro-project-identity"><img class="intro-project-sticker" src="/assets/home-profile/glancemap-ar-glasses.svg" alt="" aria-hidden="true" width="38" height="34">(<a href="/glancemap"><strong>GlanceMap</strong> <span aria-hidden="true">↗</span></a></span>)</span> to learning and applying traditional Chinese color knowledge <span class="intro-project-ref intro-project-color"><span class="intro-project-identity"><img class="intro-project-sticker" src="/website-assets/atlas-display.svg" alt="" aria-hidden="true" width="38" height="34">(<a href="/color-in-context"><strong>ColoGene</strong> <span aria-hidden="true">↗</span></a></span>, CHI 2026 Poster)</span>. I combine prototyping, interviews and experiments. Other published and accepted work includes <span class="intro-project-ref intro-project-persona"><span class="intro-project-identity"><img class="intro-project-sticker" src="/website-assets/research-personamail@3x.png" alt="" aria-hidden="true" width="38" height="34">(<a href="/research/personamail"><strong>PersonaMail</strong> <span aria-hidden="true">↗</span></a></span>, IUI 2026 Companion)</span>, <span class="intro-project-ref intro-project-ambulance"><span class="intro-project-identity"><img class="intro-project-sticker" src="/assets/ambulance-editorial/ambulance-cutout.png" alt="" aria-hidden="true" width="38" height="34">(<a href="/games/ambulance-rush"><strong>Ambulance Rush!</strong> <span aria-hidden="true">↗</span></a></span>, Australian Journalism Review, 2025)</span>, and <span class="intro-project-ref intro-project-gaze"><span class="intro-project-identity"><img class="intro-project-sticker" src="/website-assets/research-gaze@3x.png" alt="" aria-hidden="true" width="38" height="34">(<a href="/research/beyond-the-gaze"><strong>Beyond the Gaze</strong> <span aria-hidden="true">↗</span></a></span>, ACM Multimedia Asia 2026, co-first author)</span>.</p>
+          <p>I also make games about <strong>young people’s pressures in China</strong> <span class="intro-project-ref intro-project-loofa"><span class="intro-project-identity"><img class="intro-project-sticker" src="/assets/home-profile/loofa-head.png" alt="" aria-hidden="true" width="38" height="34">(<a href="/games/loofasoup"><strong>Taste of Connection</strong> <span aria-hidden="true">↗</span></a></span>)</span>, <strong>overlooked women’s history</strong> <span class="intro-project-ref intro-project-her"><span class="intro-project-identity"><img class="intro-project-sticker" src="/website-assets/waner-original-2.png" alt="" aria-hidden="true" width="38" height="34">(<a href="/games/her-sound"><strong>Her Sound Re-sound</strong> <span aria-hidden="true">↗</span></a></span>)</span>, and <strong>animal welfare</strong> <span class="intro-project-ref intro-project-world"><span class="intro-project-identity"><img class="intro-project-sticker" src="/website-assets/freya-original.png" alt="" aria-hidden="true" width="38" height="34">(<a href="/games/our-world"><strong>Our World</strong> <span aria-hidden="true">↗</span></a></span>)</span>, inviting people to consider perspectives they might otherwise miss. Outside work, I love traveling and spending time with my <span class="intro-dogs"><strong>two dogs</strong> <img class="intro-dog" src="/assets/home-profile/dog-head-transparent.png" alt="One of my two dogs, smiling" width="48" height="48"></span>.</p>
         </div>
         <section class="home-news" id="news" aria-labelledby="news-title"><div class="home-section-label"><h2 id="news-title">Recent News</h2><span>A few things I’m excited about</span></div><ol>
           <li><time datetime="2026-11">2026.11</time><p>Excited that <a class="news-project news-glance" href="/glancemap">GlanceMap <span aria-hidden="true">↗</span></a> advanced to <strong>round two of CHI 2027 review</strong>—among the 22% selected from 7,000+ submissions.</p></li>
@@ -97,6 +100,7 @@
     <footer class="profile-footer"><span>Made with curiosity, code, and care.</span><a href="#about">Back to the stars ↑</a></footer>
   </main>
   <script type="module" src="/home-profile.js"></script>
+  <script type="module" src="/home-starfield.js"></script>
   <script type="module" src="/name-hero.js"></script>
 </body>
 </html>

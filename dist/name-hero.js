@@ -48,8 +48,8 @@ async function startNameHero() {
     ...roleWords.map(word => document.fonts.load(`${roleFonts[word].weight} ${64 * (roleFonts[word].scale || 1)}px ${roleFonts[word].family}`, word))
   ]).catch(() => {});
   interaction.setAttribute('aria-label', 'Ruiyuan Bai. Researcher, Gamer, Developer, Dog Walker orbit the name. Drag to rotate the 3D space; arrow keys rotate, Home resets.');
-  const renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: false, powerPreference: 'low-power'});
-  renderer.setClearColor(0x000000, 1);
+  const renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: true, powerPreference: 'low-power'});
+  renderer.setClearColor(0x000000, 0);
   renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.8));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   const scene = new THREE.Scene();

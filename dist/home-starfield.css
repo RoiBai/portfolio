@@ -1,0 +1,7 @@
+/* A quiet sky shared by the complete homepage, behind every reading surface. */
+body.has-home-starfield{isolation:isolate;background:#000}
+.home-starfield{position:fixed;inset:0;display:block;width:100%;height:100%;z-index:0;pointer-events:none;user-select:none}
+body.has-home-starfield>main{position:relative;z-index:1}
+.has-home-starfield .profile-home .hero-stage,
+.has-home-starfield .profile-home #name-hero{background:transparent}
+.has-home-starfield #selected-work :is(.project-row,.group-row){--rest-bg:transparent;--group-bg:transparent}

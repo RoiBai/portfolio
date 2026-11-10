@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 48" fill="none" role="img" aria-labelledby="title">
+  <title id="title">GlanceMap AR glasses</title>
+  <g stroke="#a3f63d" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 22 18 10h13M78 22 70 10H57"/>
+    <path d="M7 23h31l3 4h6l3-4h31l-5 15H54l-5-9H39l-5 9H12L7 23Z"/>
+    <path d="M15 27h17M56 27h17" opacity=".55"/>
+    <path d="M61 17v-6M58 14h6" stroke-width="1.7"/>
+  </g>
+</svg>
