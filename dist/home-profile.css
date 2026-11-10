@@ -3,7 +3,7 @@
 body{background:#000;color:#e8e8e3}
 .home-topbar{max-width:1320px;margin:auto;padding:28px 44px 0;display:flex;justify-content:space-between;gap:20px;font:400 13px/1.4 "Source Sans 3",sans-serif;color:#a2a8a7}
 .home-wordmark{letter-spacing:.025em}.home-wordmark span{color:#6c817d;padding:0 8px}.home-topbar nav{display:flex;gap:26px}.home-topbar a:hover{color:#fff}
-.profile-home{max-width:1320px;margin:0 auto;padding:12px 44px 65px;display:grid;grid-template-columns:minmax(300px,360px) minmax(0,1fr);column-gap:clamp(45px,5vw,76px);row-gap:22px;align-items:start;font-family:"Source Sans 3",sans-serif}
+.profile-home{max-width:1320px;margin:0 auto;padding:12px 44px 65px;display:grid;grid-template-columns:minmax(300px,360px) minmax(0,1fr);column-gap:clamp(30px,3vw,46px);row-gap:22px;align-items:start;font-family:"Source Sans 3",sans-serif}
 .home-identity{grid-column:1/-1;text-align:center;min-width:0}
 .home-identity .intro-opening{max-width:1040px;margin:0 auto;font-size:24px;line-height:1.35;color:#e4eae3;letter-spacing:-.015em;text-wrap:balance}
 .home-identity .intro-opening strong{font-weight:600;color:#b8d7c6}
@@ -24,6 +24,7 @@ body{background:#000;color:#e8e8e3}
 .home-intro-column{min-width:0}.home-introduction{font-size:18px;line-height:1.55;color:#bdc3bf}.home-introduction p{margin:0 0 19px;max-width:none;text-wrap:wrap}.home-introduction strong{font-weight:600;color:#eef1eb}
 .home-introduction .intro-opening{font-size:24px;line-height:1.35;color:#e4eae3;letter-spacing:-.015em;margin-bottom:23px}.intro-opening strong{color:#b8d7c6}
 .home-introduction a{color:#e6e8e3;border-bottom:1px solid #ffffff35}.home-introduction a:hover{border-color:#b8d7c6;color:#b8d7c6}
+.home-introduction .intro-name-link{font-weight:400;border-bottom:0;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:#ffffff66;text-underline-offset:3px}
 .home-introduction .intro-project-ref{display:inline;white-space:normal}
 .home-introduction .intro-project-identity,.home-introduction .intro-dogs{white-space:nowrap}
 .home-introduction .intro-project-ref a{white-space:nowrap;color:var(--project-color);border-bottom-color:color-mix(in srgb,var(--project-color) 45%,transparent);font-weight:600}
@@ -39,6 +40,7 @@ body{background:#000;color:#e8e8e3}
 .home-introduction .intro-project-her .intro-project-sticker{width:28px;height:42px;object-fit:cover;object-position:43% center}
 .home-introduction .intro-project-world .intro-project-sticker{width:44px;height:30px;object-fit:cover}
 .home-introduction .intro-dog{display:inline-block;vertical-align:middle;width:48px;height:48px;object-fit:contain;border-radius:50%;margin:0 3px 0 5px;background:transparent}
+.home-introduction .intro-dog-second{margin-left:1px}
 .inline-affiliation{white-space:nowrap}.inline-affiliation img{display:inline-block;object-fit:contain;height:20px;width:20px;vertical-align:-4px;margin:0 5px 0 2px}.lab-affiliation img{border-radius:4px}
 .home-introduction .intro-interests{font-size:16px;color:#9fa9a2;margin-top:22px}.intro-interests>img{display:inline-block;vertical-align:middle;width:62px;height:34px;object-fit:contain;margin-right:9px;filter:saturate(.7)}
 .home-news{margin-top:34px;scroll-margin-top:30px}.home-section-label{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:15px}.home-section-label h2{font-size:18px;line-height:1.4;letter-spacing:.02em;font-weight:600;margin:0;color:#d6e2d8}.home-section-label>span{font-size:13px;color:#7d8981}
