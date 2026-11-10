@@ -6,7 +6,7 @@ body{background:#000;color:#e8e8e3}
 .profile-home{max-width:1320px;margin:0 auto;padding:30px 44px 65px;display:grid;grid-template-columns:minmax(250px,310px) minmax(0,1fr);gap:clamp(45px,6vw,95px);align-items:start;font-family:"Source Sans 3",sans-serif}
 .profile-sidebar{padding-top:30px;min-width:0}
 .profile-portrait{display:block;position:relative;width:100%;aspect-ratio:3/4;padding:0;overflow:hidden;border:0;border-radius:14px;background:#151714;cursor:pointer;isolation:isolate}
-.profile-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%;transform:scale(1.9);transform-origin:50% 92%;transition:opacity 1s ease;pointer-events:none}
+.profile-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%;transform:scale(3.4);transform-origin:50% 77.5%;transition:opacity 1s ease;pointer-events:none}
 .profile-portrait .portrait-bw{filter:grayscale(1) contrast(1.18) brightness(.94);opacity:1}
 .profile-portrait.is-color .portrait-bw{opacity:0}
 .portrait-cue{position:absolute;right:15px;bottom:14px;font:400 12px/1.3 "Source Sans 3",sans-serif;background:#0007;backdrop-filter:blur(8px);padding:7px 10px;border-radius:20px;color:#fff;transition:opacity .6s}
